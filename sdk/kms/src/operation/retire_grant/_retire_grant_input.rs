@@ -7,14 +7,14 @@ pub struct RetireGrantInput {
     /// <p>Only the <code>CreateGrant</code> operation returns a grant token. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub grant_token: ::std::option::Option<::std::string::String>,
     /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <code>ListKeys</code> operation.</p>
-    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
+    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p>
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li> <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p> </li>
+    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub grant_id: ::std::option::Option<::std::string::String>,
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -25,18 +25,18 @@ impl RetireGrantInput {
         self.grant_token.as_deref()
     }
     /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <code>ListKeys</code> operation.</p>
-    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
+    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p>
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li> <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p> </li>
+    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn grant_id(&self) -> ::std::option::Option<&str> {
         self.grant_id.as_deref()
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -77,25 +77,25 @@ impl RetireGrantInputBuilder {
         &self.grant_token
     }
     /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <code>ListKeys</code> operation.</p>
-    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
+    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <code>ListKeys</code> operation.</p>
-    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
+    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }
     /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <code>ListKeys</code> operation.</p>
-    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
+    /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li> <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p> </li>
+    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_id = ::std::option::Option::Some(input.into());
@@ -103,7 +103,7 @@ impl RetireGrantInputBuilder {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li> <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p> </li>
+    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_id = input;
@@ -111,24 +111,24 @@ impl RetireGrantInputBuilder {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li> <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p> </li>
+    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_id
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run

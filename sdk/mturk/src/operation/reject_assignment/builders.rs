@@ -22,9 +22,9 @@ impl RejectAssignmentInputBuilder {
 }
 /// Fluent builder constructing a request to `RejectAssignment`.
 ///
-/// <p> The <code>RejectAssignment</code> operation rejects the results of a completed assignment. </p>
-/// <p> You can include an optional feedback message with the rejection, which the Worker can see in the Status section of the web site. When you include a feedback message with the rejection, it helps the Worker understand why the assignment was rejected, and can improve the quality of the results the Worker submits in the future. </p>
-/// <p> Only the Requester who created the HIT can reject an assignment for the HIT. </p>
+/// <p>The <code>RejectAssignment</code> operation rejects the results of a completed assignment.</p>
+/// <p>You can include an optional feedback message with the rejection, which the Worker can see in the Status section of the web site. When you include a feedback message with the rejection, it helps the Worker understand why the assignment was rejected, and can improve the quality of the results the Worker submits in the future.</p>
+/// <p>Only the Requester who created the HIT can reject an assignment for the HIT.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectAssignmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,31 +110,31 @@ impl RejectAssignmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_id(input.into());
         self
     }
-    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
-    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assignment_id()
     }
-    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub fn requester_feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requester_feedback(input.into());
         self
     }
-    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub fn set_requester_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_requester_feedback(input);
         self
     }
-    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_requester_feedback()
     }

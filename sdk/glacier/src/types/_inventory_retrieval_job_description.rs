@@ -10,7 +10,7 @@ pub struct InventoryRetrievalJobDescription {
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     pub end_date: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
+    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request.</p>
     pub limit: ::std::option::Option<::std::string::String>,
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl InventoryRetrievalJobDescription {
     pub fn end_date(&self) -> ::std::option::Option<&str> {
         self.end_date.as_deref()
     }
-    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
+    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request.</p>
     pub fn limit(&self) -> ::std::option::Option<&str> {
         self.limit.as_deref()
     }
@@ -97,17 +97,17 @@ impl InventoryRetrievalJobDescriptionBuilder {
     pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_date
     }
-    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
+    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request.</p>
     pub fn limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
+    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
+    /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request.</p>
     pub fn get_limit(&self) -> &::std::option::Option<::std::string::String> {
         &self.limit
     }

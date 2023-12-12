@@ -9,7 +9,7 @@ pub struct UserIdGroupPair {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID. </p>
+    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of a VPC peering connection, if applicable.</p>
@@ -32,7 +32,7 @@ impl UserIdGroupPair {
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID. </p>
+    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
@@ -106,19 +106,19 @@ impl UserIdGroupPairBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID. </p>
+    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID. </p>
+    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID. </p>
+    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name

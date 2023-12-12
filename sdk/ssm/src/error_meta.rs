@@ -15,7 +15,7 @@ pub enum Error {
     AssociationExecutionDoesNotExist(crate::types::error::AssociationExecutionDoesNotExist),
     /// <p>You can have at most 2,000 active associations.</p>
     AssociationLimitExceeded(crate::types::error::AssociationLimitExceeded),
-    /// <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions. </p>
+    /// <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions.</p>
     AssociationVersionLimitExceeded(crate::types::error::AssociationVersionLimitExceeded),
     /// <p>Indicates that the Change Manager change template used in the change request was rejected or is still in a pending state.</p>
     AutomationDefinitionNotApprovedException(crate::types::error::AutomationDefinitionNotApprovedException),
@@ -29,7 +29,7 @@ pub enum Error {
     AutomationExecutionNotFoundException(crate::types::error::AutomationExecutionNotFoundException),
     /// <p>The specified step name and execution ID don't exist. Verify the information and try again.</p>
     AutomationStepNotFoundException(crate::types::error::AutomationStepNotFoundException),
-    /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types. </p>
+    /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types.</p>
     ComplianceTypeCountLimitExceededException(crate::types::error::ComplianceTypeCountLimitExceededException),
     /// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
     CustomSchemaCountLimitExceededException(crate::types::error::CustomSchemaCountLimitExceededException),
@@ -52,13 +52,13 @@ pub enum Error {
     DuplicateDocumentVersionName(crate::types::error::DuplicateDocumentVersionName),
     /// <p>You can't specify a managed node ID in more than one association.</p>
     DuplicateInstanceId(crate::types::error::DuplicateInstanceId),
-    /// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a region where the corresponding service isn't available. </p>
+    /// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a region where the corresponding service isn't available.</p>
     FeatureNotAvailableException(crate::types::error::FeatureNotAvailableException),
-    /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     HierarchyLevelLimitExceededException(crate::types::error::HierarchyLevelLimitExceededException),
     /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
     HierarchyTypeMismatchException(crate::types::error::HierarchyTypeMismatchException),
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token.</p>
     IdempotentParameterMismatch(crate::types::error::IdempotentParameterMismatch),
     /// <p>There is a conflict in the policies specified for this parameter. You can't, for example, specify two Expiration policies for a parameter. Review your policies, and try again.</p>
     IncompatiblePolicyException(crate::types::error::IncompatiblePolicyException),
@@ -72,7 +72,7 @@ pub enum Error {
     InvalidAggregatorException(crate::types::error::InvalidAggregatorException),
     /// <p>The request doesn't meet the regular expression requirement.</p>
     InvalidAllowedPatternException(crate::types::error::InvalidAllowedPatternException),
-    /// <p>The association isn't valid or doesn't exist. </p>
+    /// <p>The association isn't valid or doesn't exist.</p>
     InvalidAssociation(crate::types::error::InvalidAssociation),
     /// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of an association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.</p>
     InvalidAssociationVersion(crate::types::error::InvalidAssociationVersion),
@@ -110,10 +110,10 @@ pub enum Error {
     InvalidFilterValue(crate::types::error::InvalidFilterValue),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li> <p>You don't have permission to access the managed node.</p> </li>
-    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
-    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
-    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
+    /// <li><p>You don't have permission to access the managed node.</p></li>
+    /// <li><p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p></li>
+    /// <li><p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p></li>
+    /// <li><p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p></li>
     /// </ul>
     InvalidInstanceId(crate::types::error::InvalidInstanceId),
     /// <p>The specified filter value isn't valid.</p>
@@ -144,7 +144,7 @@ pub enum Error {
     InvalidPermissionType(crate::types::error::InvalidPermissionType),
     /// <p>The plugin name isn't valid.</p>
     InvalidPluginName(crate::types::error::InvalidPluginName),
-    /// <p>A policy attribute or its value is invalid. </p>
+    /// <p>A policy attribute or its value is invalid.</p>
     InvalidPolicyAttributeException(crate::types::error::InvalidPolicyAttributeException),
     /// <p>The policy type isn't supported. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
     InvalidPolicyTypeException(crate::types::error::InvalidPolicyTypeException),
@@ -168,9 +168,9 @@ pub enum Error {
     InvalidTypeNameException(crate::types::error::InvalidTypeNameException),
     /// <p>The update isn't valid.</p>
     InvalidUpdate(crate::types::error::InvalidUpdate),
-    /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the command ID and the managed node ID and try again. </p>
+    /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the command ID and the managed node ID and try again.</p>
     InvocationDoesNotExist(crate::types::error::InvocationDoesNotExist),
-    /// <p>The inventory item has invalid content. </p>
+    /// <p>The inventory item has invalid content.</p>
     ItemContentMismatchException(crate::types::error::ItemContentMismatchException),
     /// <p>The inventory item size has exceeded the size limit.</p>
     ItemSizeLimitExceededException(crate::types::error::ItemSizeLimitExceededException),
@@ -194,13 +194,13 @@ pub enum Error {
     OpsItemRelatedItemAssociationNotFoundException(crate::types::error::OpsItemRelatedItemAssociationNotFoundException),
     /// <p>An OpsMetadata object already exists for the selected resource.</p>
     OpsMetadataAlreadyExistsException(crate::types::error::OpsMetadataAlreadyExistsException),
-    /// <p>One of the arguments passed is invalid. </p>
+    /// <p>One of the arguments passed is invalid.</p>
     OpsMetadataInvalidArgumentException(crate::types::error::OpsMetadataInvalidArgumentException),
     /// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an application in Application Manager.</p>
     OpsMetadataKeyLimitExceededException(crate::types::error::OpsMetadataKeyLimitExceededException),
     /// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
     OpsMetadataLimitExceededException(crate::types::error::OpsMetadataLimitExceededException),
-    /// <p>The OpsMetadata object doesn't exist. </p>
+    /// <p>The OpsMetadata object doesn't exist.</p>
     OpsMetadataNotFoundException(crate::types::error::OpsMetadataNotFoundException),
     /// <p>The system is processing too many concurrent updates. Wait a few moments and try again.</p>
     OpsMetadataTooManyUpdatesException(crate::types::error::OpsMetadataTooManyUpdatesException),
@@ -209,8 +209,8 @@ pub enum Error {
     /// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more parameters and try again.</p>
     ParameterLimitExceeded(crate::types::error::ParameterLimitExceeded),
     /// <p>Parameter Store retains the 100 most recently created versions of a parameter. After this number of versions has been created, Parameter Store deletes the oldest version when a new one is created. However, if the oldest version has a <i>label</i> attached to it, Parameter Store won't delete the version and instead presents this error message:</p>
-    /// <p> <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code> </p>
-    /// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to them from being deleted. To continue creating new parameters, first move the label from the oldest version of the parameter to a newer one for use in your operations. For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p><code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code></p>
+    /// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to them from being deleted. To continue creating new parameters, first move the label from the oldest version of the parameter to a newer one for use in your operations. For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ParameterMaxVersionLimitExceeded(crate::types::error::ParameterMaxVersionLimitExceeded),
     /// <p>The parameter couldn't be found. Verify the name and try again.</p>
     ParameterNotFound(crate::types::error::ParameterNotFound),

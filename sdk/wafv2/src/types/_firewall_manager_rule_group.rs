@@ -10,12 +10,12 @@ pub struct FirewallManagerRuleGroup {
     pub priority: i32,
     /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
     pub firewall_manager_statement: ::std::option::Option<crate::types::FirewallManagerStatement>,
-    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub override_action: ::std::option::Option<crate::types::OverrideAction>,
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
 }
 impl FirewallManagerRuleGroup {
@@ -32,14 +32,14 @@ impl FirewallManagerRuleGroup {
     pub fn firewall_manager_statement(&self) -> ::std::option::Option<&crate::types::FirewallManagerStatement> {
         self.firewall_manager_statement.as_ref()
     }
-    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub fn override_action(&self) -> ::std::option::Option<&crate::types::OverrideAction> {
         self.override_action.as_ref()
     }
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
@@ -107,42 +107,42 @@ impl FirewallManagerRuleGroupBuilder {
     pub fn get_firewall_manager_statement(&self) -> &::std::option::Option<crate::types::FirewallManagerStatement> {
         &self.firewall_manager_statement
     }
-    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     /// This field is required.
     pub fn override_action(mut self, input: crate::types::OverrideAction) -> Self {
         self.override_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::OverrideAction>) -> Self {
         self.override_action = input;
         self
     }
-    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub fn get_override_action(&self) -> &::std::option::Option<crate::types::OverrideAction> {
         &self.override_action
     }
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     /// This field is required.
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::VisibilityConfig>) -> Self {
         self.visibility_config = input;
         self
     }
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
         &self.visibility_config
     }

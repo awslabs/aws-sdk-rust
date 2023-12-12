@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOutpostResolverInput {
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
-    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p><code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route&nbsp;53 console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Number of Amazon EC2 instances for the Resolver on Outpost. The default and minimal value is 4.</p>
     pub instance_count: ::std::option::Option<i32>,
-    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// <p>The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
-    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    /// <p>A string that helps identify the Route&nbsp;53 Resolvers on Outpost.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOutpostResolverInput {
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
-    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p><code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -31,7 +31,7 @@ impl CreateOutpostResolverInput {
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
-    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// <p>The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn preferred_instance_type(&self) -> ::std::option::Option<&str> {
         self.preferred_instance_type.as_deref()
     }
@@ -39,7 +39,7 @@ impl CreateOutpostResolverInput {
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
-    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    /// <p>A string that helps identify the Route&nbsp;53 Resolvers on Outpost.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -65,21 +65,21 @@ pub struct CreateOutpostResolverInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOutpostResolverInputBuilder {
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
-    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p><code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     /// This field is required.
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
-    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p><code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
-    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p><code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }
@@ -112,18 +112,18 @@ impl CreateOutpostResolverInputBuilder {
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
     }
-    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// <p>The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     /// This field is required.
     pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// <p>The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_instance_type = input;
         self
     }
-    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// <p>The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_instance_type
     }
@@ -146,19 +146,19 @@ impl CreateOutpostResolverInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    /// <p>A string that helps identify the Route&nbsp;53 Resolvers on Outpost.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    /// <p>A string that helps identify the Route&nbsp;53 Resolvers on Outpost.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    /// <p>A string that helps identify the Route&nbsp;53 Resolvers on Outpost.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

@@ -164,17 +164,17 @@ impl CreateDomainFluentBuilder {
     pub fn get_domain_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_execution_role()
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_identifier(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_identifier(input);
         self
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_identifier()
     }

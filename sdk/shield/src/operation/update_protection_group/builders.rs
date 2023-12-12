@@ -22,7 +22,7 @@ impl UpdateProtectionGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateProtectionGroup`.
 ///
-/// <p>Updates an existing protection group. A protection group is a grouping of protected resources so they can be handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+/// <p>Updates an existing protection group. A protection group is a grouping of protected resources so they can be handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProtectionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,25 +108,25 @@ impl UpdateProtectionGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
     pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_group_id(input.into());
         self
     }
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
     pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_group_id(input);
         self
     }
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
     pub fn get_protection_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_protection_group_id()
     }
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
+    /// <li><p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p></li>
+    /// <li><p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p></li>
+    /// <li><p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p></li>
     /// </ul>
     pub fn aggregation(mut self, input: crate::types::ProtectionGroupAggregation) -> Self {
         self.inner = self.inner.aggregation(input);
@@ -134,9 +134,9 @@ impl UpdateProtectionGroupFluentBuilder {
     }
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
+    /// <li><p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p></li>
+    /// <li><p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p></li>
+    /// <li><p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p></li>
     /// </ul>
     pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::ProtectionGroupAggregation>) -> Self {
         self.inner = self.inner.set_aggregation(input);
@@ -144,9 +144,9 @@ impl UpdateProtectionGroupFluentBuilder {
     }
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
+    /// <li><p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p></li>
+    /// <li><p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p></li>
+    /// <li><p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p></li>
     /// </ul>
     pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::ProtectionGroupAggregation> {
         self.inner.get_aggregation()
@@ -165,17 +165,17 @@ impl UpdateProtectionGroupFluentBuilder {
     pub fn get_pattern(&self) -> &::std::option::Option<crate::types::ProtectionGroupPattern> {
         self.inner.get_pattern()
     }
-    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting.</p>
     pub fn resource_type(mut self, input: crate::types::ProtectedResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
-    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ProtectedResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ProtectedResourceType> {
         self.inner.get_resource_type()
     }
@@ -183,17 +183,17 @@ impl UpdateProtectionGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_members`](Self::set_members).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting.</p>
     pub fn members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.members(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting.</p>
     pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_members(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting.</p>
     pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_members()
     }

@@ -22,7 +22,7 @@ impl ListFleetMetricsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFleetMetrics`.
 ///
-/// <p>Lists all your fleet metrics. </p>
+/// <p>Lists all your fleet metrics.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListFleetMetrics</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFleetMetricsFluentBuilder {

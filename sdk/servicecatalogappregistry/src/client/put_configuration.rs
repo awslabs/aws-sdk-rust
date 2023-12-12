@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutConfiguration`](crate::operation::put_configuration::builders::PutConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration(AppRegistryConfiguration)`](crate::operation::put_configuration::builders::PutConfigurationFluentBuilder::configuration) / [`set_configuration(Option<AppRegistryConfiguration>)`](crate::operation::put_configuration::builders::PutConfigurationFluentBuilder::set_configuration):<br>required: **true**<br><p> Associates a <code>TagKey</code> configuration to an account. </p><br>
+    ///   - [`configuration(AppRegistryConfiguration)`](crate::operation::put_configuration::builders::PutConfigurationFluentBuilder::configuration) / [`set_configuration(Option<AppRegistryConfiguration>)`](crate::operation::put_configuration::builders::PutConfigurationFluentBuilder::set_configuration):<br>required: **true**<br><p>Associates a <code>TagKey</code> configuration to an account.</p><br>
     /// - On success, responds with [`PutConfigurationOutput`](crate::operation::put_configuration::PutConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationError>`](crate::operation::put_configuration::PutConfigurationError)
     pub fn put_configuration(&self) -> crate::operation::put_configuration::builders::PutConfigurationFluentBuilder {

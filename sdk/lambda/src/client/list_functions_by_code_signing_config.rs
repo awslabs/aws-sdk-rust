@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_items(i32)`](crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigFluentBuilder::set_max_items):<br>required: **false**<br><p>Maximum number of items to return.</p><br>
     /// - On success, responds with [`ListFunctionsByCodeSigningConfigOutput`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
-    ///   - [`function_arns(Option<Vec::<String>>)`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput::function_arns): <p>The function ARNs. </p>
+    ///   - [`function_arns(Option<Vec::<String>>)`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput::function_arns): <p>The function ARNs.</p>
     /// - On failure, responds with [`SdkError<ListFunctionsByCodeSigningConfigError>`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError)
     pub fn list_functions_by_code_signing_config(
         &self,

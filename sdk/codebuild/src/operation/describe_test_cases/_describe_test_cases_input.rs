@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTestCasesInput {
-    /// <p> The ARN of the report for which test cases are returned. </p>
+    /// <p>The ARN of the report for which test cases are returned.</p>
     pub report_arn: ::std::option::Option<::std::string::String>,
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    /// <p>A <code>TestCaseFilter</code> object used to filter the returned reports.</p>
     pub filter: ::std::option::Option<crate::types::TestCaseFilter>,
 }
 impl DescribeTestCasesInput {
-    /// <p> The ARN of the report for which test cases are returned. </p>
+    /// <p>The ARN of the report for which test cases are returned.</p>
     pub fn report_arn(&self) -> ::std::option::Option<&str> {
         self.report_arn.as_deref()
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    /// <p>A <code>TestCaseFilter</code> object used to filter the returned reports.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::TestCaseFilter> {
         self.filter.as_ref()
     }
@@ -47,60 +47,60 @@ pub struct DescribeTestCasesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::TestCaseFilter>,
 }
 impl DescribeTestCasesInputBuilder {
-    /// <p> The ARN of the report for which test cases are returned. </p>
+    /// <p>The ARN of the report for which test cases are returned.</p>
     /// This field is required.
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the report for which test cases are returned. </p>
+    /// <p>The ARN of the report for which test cases are returned.</p>
     pub fn set_report_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_arn = input;
         self
     }
-    /// <p> The ARN of the report for which test cases are returned. </p>
+    /// <p>The ARN of the report for which test cases are returned.</p>
     pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_arn
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    /// <p>A <code>TestCaseFilter</code> object used to filter the returned reports.</p>
     pub fn filter(mut self, input: crate::types::TestCaseFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    /// <p>A <code>TestCaseFilter</code> object used to filter the returned reports.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TestCaseFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    /// <p>A <code>TestCaseFilter</code> object used to filter the returned reports.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::TestCaseFilter> {
         &self.filter
     }

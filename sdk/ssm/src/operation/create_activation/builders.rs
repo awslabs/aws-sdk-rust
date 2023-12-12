@@ -22,7 +22,7 @@ impl CreateActivationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateActivation`.
 ///
-/// <p>Generates an activation code and activation ID you can use to register your on-premises servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+/// <p>Generates an activation code and activation ID you can use to register your on-premises servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
 /// <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises servers and VMs that are configured for Systems Manager are all called <i>managed nodes</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,21 +110,21 @@ impl CreateActivationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +204,8 @@ impl CreateActivationFluentBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <important>
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
@@ -216,8 +216,8 @@ impl CreateActivationFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <important>
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
@@ -228,8 +228,8 @@ impl CreateActivationFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <important>
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>

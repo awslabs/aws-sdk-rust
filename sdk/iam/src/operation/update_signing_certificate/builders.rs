@@ -143,17 +143,17 @@ impl UpdateSigningCertificateFluentBuilder {
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_id()
     }
-    /// <p> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
+    /// <p>The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
+    /// <p>The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
+    /// <p>The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
         self.inner.get_status()
     }

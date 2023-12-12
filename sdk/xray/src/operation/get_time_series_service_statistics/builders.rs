@@ -170,17 +170,17 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
     pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_arn()
     }
-    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.</p>
     pub fn entity_selector_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_selector_expression(input.into());
         self
     }
-    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.</p>
     pub fn set_entity_selector_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_selector_expression(input);
         self
     }
-    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.</p>
     pub fn get_entity_selector_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entity_selector_expression()
     }

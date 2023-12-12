@@ -22,7 +22,7 @@ impl DetectDominantLanguageInputBuilder {
 }
 /// Fluent builder constructing a request to `DetectDominantLanguage`.
 ///
-/// <p>Determines the dominant language of the input text. For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>. </p>
+/// <p>Determines the dominant language of the input text. For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectDominantLanguageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

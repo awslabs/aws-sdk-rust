@@ -23,14 +23,14 @@ impl ListChannelsInputBuilder {
 /// Fluent builder constructing a request to `ListChannels`.
 ///
 /// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p>
-/// <p class="title"> <b>Functionality &amp; restrictions</b> </p>
+/// <p class="title"><b>Functionality &amp; restrictions</b></p>
 /// <ul>
-/// <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p> </li>
-/// <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li>
+/// <li><p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p></li>
+/// <li><p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p></li>
 /// </ul> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
 /// </note> <important>
-/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannels.html">ListChannels</a>, in the Amazon Chime SDK.</p>
+/// <p><b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannels.html">ListChannels</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
 #[deprecated(note = "Replaced by ListChannels in the Amazon Chime SDK Messaging Namespace")]
@@ -139,17 +139,17 @@ impl ListChannelsFluentBuilder {
     pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_instance_arn()
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.</p>
     pub fn privacy(mut self, input: crate::types::ChannelPrivacy) -> Self {
         self.inner = self.inner.privacy(input);
         self
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.</p>
     pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.inner = self.inner.set_privacy(input);
         self
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.</p>
     pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
         self.inner.get_privacy()
     }

@@ -22,7 +22,7 @@ impl DeleteLocalGatewayRouteTableInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteLocalGatewayRouteTable`.
 ///
-/// <p> Deletes a local gateway route table. </p>
+/// <p>Deletes a local gateway route table.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteLocalGatewayRouteTableFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the local gateway route table. </p>
+    /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_route_table_id(input.into());
         self
     }
-    /// <p> The ID of the local gateway route table. </p>
+    /// <p>The ID of the local gateway route table.</p>
     pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
-    /// <p> The ID of the local gateway route table. </p>
+    /// <p>The ID of the local gateway route table.</p>
     pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_gateway_route_table_id()
     }

@@ -5,7 +5,7 @@
 pub struct SearchSystemInstancesOutput {
     /// <p>An array of objects that contain summary data abour the system instances in the result set.</p>
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>>,
-    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl SearchSystemInstancesOutput {
     pub fn summaries(&self) -> &[crate::types::SystemInstanceSummary] {
         self.summaries.as_deref().unwrap_or_default()
     }
-    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl SearchSystemInstancesOutputBuilder {
     pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>> {
         &self.summaries
     }
-    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

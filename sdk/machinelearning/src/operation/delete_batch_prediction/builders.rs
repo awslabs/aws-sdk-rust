@@ -24,7 +24,7 @@ impl DeleteBatchPredictionInputBuilder {
 ///
 /// <p>Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it unusable.</p>
 /// <p>After using the <code>DeleteBatchPrediction</code> operation, you can use the <code>GetBatchPrediction</code> operation to verify that the status of the <code>BatchPrediction</code> changed to DELETED.</p>
-/// <p> <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
+/// <p><b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBatchPredictionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

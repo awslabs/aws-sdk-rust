@@ -138,8 +138,8 @@ impl CreateProfileJobFluentBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.inner = self.inner.encryption_mode(input);
@@ -147,8 +147,8 @@ impl CreateProfileJobFluentBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
@@ -156,8 +156,8 @@ impl CreateProfileJobFluentBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         self.inner.get_encryption_mode()

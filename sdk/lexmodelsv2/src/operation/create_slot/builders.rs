@@ -22,7 +22,7 @@ impl CreateSlotInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSlot`.
 ///
-/// <p>Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user. </p>
+/// <p>Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSlotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,17 @@ impl CreateSlotFluentBuilder {
     pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_slot_type_id()
     }
-    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
+    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.</p>
     pub fn value_elicitation_setting(mut self, input: crate::types::SlotValueElicitationSetting) -> Self {
         self.inner = self.inner.value_elicitation_setting(input);
         self
     }
-    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
+    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.</p>
     pub fn set_value_elicitation_setting(mut self, input: ::std::option::Option<crate::types::SlotValueElicitationSetting>) -> Self {
         self.inner = self.inner.set_value_elicitation_setting(input);
         self
     }
-    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
+    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.</p>
     pub fn get_value_elicitation_setting(&self) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
         self.inner.get_value_elicitation_setting()
     }
@@ -237,19 +237,19 @@ impl CreateSlotFluentBuilder {
     pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_intent_id()
     }
-    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub fn multiple_values_setting(mut self, input: crate::types::MultipleValuesSetting) -> Self {
         self.inner = self.inner.multiple_values_setting(input);
         self
     }
-    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub fn set_multiple_values_setting(mut self, input: ::std::option::Option<crate::types::MultipleValuesSetting>) -> Self {
         self.inner = self.inner.set_multiple_values_setting(input);
         self
     }
-    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub fn get_multiple_values_setting(&self) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
         self.inner.get_multiple_values_setting()

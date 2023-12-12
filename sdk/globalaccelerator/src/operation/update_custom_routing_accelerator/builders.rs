@@ -22,7 +22,7 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCustomRoutingAccelerator`.
 ///
-/// <p>Update a custom routing accelerator. </p>
+/// <p>Update a custom routing accelerator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,19 +150,19 @@ impl UpdateCustomRoutingAcceleratorFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()

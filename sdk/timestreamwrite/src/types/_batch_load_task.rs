@@ -16,7 +16,7 @@ pub struct BatchLoadTask {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the Timestream batch load task was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> </p>
+    /// <p></p>
     pub resumable_until: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BatchLoadTask {
@@ -44,7 +44,7 @@ impl BatchLoadTask {
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p> </p>
+    /// <p></p>
     pub fn resumable_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.resumable_until.as_ref()
     }
@@ -153,17 +153,17 @@ impl BatchLoadTaskBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
-    /// <p> </p>
+    /// <p></p>
     pub fn resumable_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resumable_until = ::std::option::Option::Some(input);
         self
     }
-    /// <p> </p>
+    /// <p></p>
     pub fn set_resumable_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resumable_until = input;
         self
     }
-    /// <p> </p>
+    /// <p></p>
     pub fn get_resumable_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.resumable_until
     }

@@ -22,8 +22,8 @@ impl ListFirewallDomainListsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFirewallDomainLists`.
 ///
-/// <p>Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the domains that are defined for a list by calling <code>ListFirewallDomains</code>. </p>
-/// <p>A single call to this list operation might return only a partial list of the domain lists. For information, see <code>MaxResults</code>. </p>
+/// <p>Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the domains that are defined for a list by calling <code>ListFirewallDomains</code>.</p>
+/// <p>A single call to this list operation might return only a partial list of the domain lists. For information, see <code>MaxResults</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallDomainListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,19 +116,19 @@ impl ListFirewallDomainListsFluentBuilder {
         crate::operation::list_firewall_domain_lists::paginator::ListFirewallDomainListsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

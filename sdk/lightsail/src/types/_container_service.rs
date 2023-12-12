@@ -24,13 +24,13 @@ pub struct ContainerService {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
-    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
-    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
+    /// <li><p><code>PENDING</code> - The container service is being created.</p></li>
+    /// <li><p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
+    /// <li><p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
+    /// <li><p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
+    /// <li><p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The container service is being deleted.</p></li>
+    /// <li><p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::ContainerServiceState>,
     /// <p>An object that describes the current state of the container service.</p> <note>
@@ -106,13 +106,13 @@ impl ContainerService {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
-    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
-    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
+    /// <li><p><code>PENDING</code> - The container service is being created.</p></li>
+    /// <li><p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
+    /// <li><p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
+    /// <li><p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
+    /// <li><p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The container service is being deleted.</p></li>
+    /// <li><p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ContainerServiceState> {
         self.state.as_ref()
@@ -329,13 +329,13 @@ impl ContainerServiceBuilder {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
-    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
-    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
+    /// <li><p><code>PENDING</code> - The container service is being created.</p></li>
+    /// <li><p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
+    /// <li><p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
+    /// <li><p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
+    /// <li><p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The container service is being deleted.</p></li>
+    /// <li><p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::ContainerServiceState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -344,13 +344,13 @@ impl ContainerServiceBuilder {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
-    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
-    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
+    /// <li><p><code>PENDING</code> - The container service is being created.</p></li>
+    /// <li><p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
+    /// <li><p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
+    /// <li><p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
+    /// <li><p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The container service is being deleted.</p></li>
+    /// <li><p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ContainerServiceState>) -> Self {
         self.state = input;
@@ -359,13 +359,13 @@ impl ContainerServiceBuilder {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
-    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
-    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
+    /// <li><p><code>PENDING</code> - The container service is being created.</p></li>
+    /// <li><p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
+    /// <li><p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
+    /// <li><p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
+    /// <li><p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The container service is being deleted.</p></li>
+    /// <li><p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ContainerServiceState> {
         &self.state

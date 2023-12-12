@@ -24,7 +24,7 @@ impl DeleteMlModelInputBuilder {
 ///
 /// <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.</p>
 /// <p>After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code> operation to verify that the status of the <code>MLModel</code> changed to DELETED.</p>
-/// <p> <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.</p>
+/// <p><b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMLModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

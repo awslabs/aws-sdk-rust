@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Compute {
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15.</p>
     pub simulation_unit_limit: ::std::option::Option<i32>,
     /// <p>Compute type information for the simulation job.</p>
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
@@ -12,7 +12,7 @@ pub struct Compute {
     pub gpu_unit_limit: ::std::option::Option<i32>,
 }
 impl Compute {
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15.</p>
     pub fn simulation_unit_limit(&self) -> ::std::option::Option<i32> {
         self.simulation_unit_limit
     }
@@ -41,17 +41,17 @@ pub struct ComputeBuilder {
     pub(crate) gpu_unit_limit: ::std::option::Option<i32>,
 }
 impl ComputeBuilder {
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15.</p>
     pub fn simulation_unit_limit(mut self, input: i32) -> Self {
         self.simulation_unit_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15.</p>
     pub fn set_simulation_unit_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.simulation_unit_limit = input;
         self
     }
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15.</p>
     pub fn get_simulation_unit_limit(&self) -> &::std::option::Option<i32> {
         &self.simulation_unit_limit
     }

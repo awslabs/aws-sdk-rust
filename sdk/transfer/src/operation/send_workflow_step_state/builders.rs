@@ -23,7 +23,7 @@ impl SendWorkflowStepStateInputBuilder {
 /// Fluent builder constructing a request to `SendWorkflowStepState`.
 ///
 /// <p>Sends a callback for asynchronous custom steps.</p>
-/// <p> The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are passed to the target resource during execution of a custom step of a workflow. You must include those with their callback as well as providing a status. </p>
+/// <p>The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are passed to the target resource during execution of a custom step of a workflow. You must include those with their callback as well as providing a status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendWorkflowStepStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

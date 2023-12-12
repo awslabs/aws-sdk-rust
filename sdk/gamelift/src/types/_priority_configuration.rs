@@ -2,8 +2,8 @@
 
 /// <p>Custom prioritization settings for use by a game session queue when placing new game sessions with available game servers. When defined, this configuration replaces the default FleetIQ prioritization process, which is as follows:</p>
 /// <ul>
-/// <li> <p>If player latency data is included in a game session request, destinations and locations are prioritized first based on lowest average latency (1), then on lowest hosting cost (2), then on destination list order (3), and finally on location (alphabetical) (4). This approach ensures that the queue's top priority is to place game sessions where average player latency is lowest, and--if latency is the same--where the hosting cost is less, etc.</p> </li>
-/// <li> <p>If player latency data is not included, destinations and locations are prioritized first on destination list order (1), and then on location (alphabetical) (2). This approach ensures that the queue's top priority is to place game sessions on the first destination fleet listed. If that fleet has multiple locations, the game session is placed on the first location (when listed alphabetically).</p> </li>
+/// <li><p>If player latency data is included in a game session request, destinations and locations are prioritized first based on lowest average latency (1), then on lowest hosting cost (2), then on destination list order (3), and finally on location (alphabetical) (4). This approach ensures that the queue's top priority is to place game sessions where average player latency is lowest, and--if latency is the same--where the hosting cost is less, etc.</p></li>
+/// <li><p>If player latency data is not included, destinations and locations are prioritized first on destination list order (1), and then on location (alphabetical) (2). This approach ensures that the queue's top priority is to place game sessions on the first destination fleet listed. If that fleet has multiple locations, the game session is placed on the first location (when listed alphabetically).</p></li>
 /// </ul>
 /// <p>Changing the priority order will affect how game sessions are placed.</p>
 #[non_exhaustive]
@@ -11,29 +11,29 @@
 pub struct PriorityConfiguration {
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
-    /// <li> <p> <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest. </p> </li>
-    /// <li> <p> <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p> </li>
-    /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
-    /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
+    /// <li><p><code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest.</p></li>
+    /// <li><p><code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p></li>
+    /// <li><p><code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p></li>
+    /// <li><p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     pub priority_order: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>,
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
     pub location_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PriorityConfiguration {
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
-    /// <li> <p> <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest. </p> </li>
-    /// <li> <p> <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p> </li>
-    /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
-    /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
+    /// <li><p><code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest.</p></li>
+    /// <li><p><code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p></li>
+    /// <li><p><code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p></li>
+    /// <li><p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.priority_order.is_none()`.
     pub fn priority_order(&self) -> &[crate::types::PriorityType] {
         self.priority_order.as_deref().unwrap_or_default()
     }
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_order.is_none()`.
     pub fn location_order(&self) -> &[::std::string::String] {
@@ -61,10 +61,10 @@ impl PriorityConfigurationBuilder {
     ///
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
-    /// <li> <p> <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest. </p> </li>
-    /// <li> <p> <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p> </li>
-    /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
-    /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
+    /// <li><p><code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest.</p></li>
+    /// <li><p><code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p></li>
+    /// <li><p><code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p></li>
+    /// <li><p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     pub fn priority_order(mut self, input: crate::types::PriorityType) -> Self {
         let mut v = self.priority_order.unwrap_or_default();
@@ -74,10 +74,10 @@ impl PriorityConfigurationBuilder {
     }
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
-    /// <li> <p> <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest. </p> </li>
-    /// <li> <p> <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p> </li>
-    /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
-    /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
+    /// <li><p><code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest.</p></li>
+    /// <li><p><code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p></li>
+    /// <li><p><code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p></li>
+    /// <li><p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     pub fn set_priority_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>) -> Self {
         self.priority_order = input;
@@ -85,10 +85,10 @@ impl PriorityConfigurationBuilder {
     }
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
-    /// <li> <p> <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest. </p> </li>
-    /// <li> <p> <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p> </li>
-    /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
-    /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
+    /// <li><p><code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest.</p></li>
+    /// <li><p><code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p></li>
+    /// <li><p><code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p></li>
+    /// <li><p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     pub fn get_priority_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriorityType>> {
         &self.priority_order
@@ -97,19 +97,19 @@ impl PriorityConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_location_order`](Self::set_location_order).
     ///
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
     pub fn location_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.location_order.unwrap_or_default();
         v.push(input.into());
         self.location_order = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
     pub fn set_location_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.location_order = input;
         self
     }
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
     pub fn get_location_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.location_order
     }

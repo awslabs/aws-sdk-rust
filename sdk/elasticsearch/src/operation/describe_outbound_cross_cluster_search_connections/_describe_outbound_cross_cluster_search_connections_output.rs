@@ -6,7 +6,7 @@
 pub struct DescribeOutboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>OutboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
     pub cross_cluster_search_connections: ::std::option::Option<::std::vec::Vec<crate::types::OutboundCrossClusterSearchConnection>>,
-    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -17,7 +17,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsOutput {
     pub fn cross_cluster_search_connections(&self) -> &[crate::types::OutboundCrossClusterSearchConnection] {
         self.cross_cluster_search_connections.as_deref().unwrap_or_default()
     }
-    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -70,17 +70,17 @@ impl DescribeOutboundCrossClusterSearchConnectionsOutputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutboundCrossClusterSearchConnection>> {
         &self.cross_cluster_search_connections
     }
-    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -24,7 +24,7 @@ pub struct Insight {
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p>List of data objects containing metrics and references from the time range while generating the insight.</p>
     pub insight_data: ::std::option::Option<::std::vec::Vec<crate::types::Data>>,
-    /// <p> Metric names and values from the timeframe used as baseline to generate the insight.</p>
+    /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
     pub baseline_data: ::std::option::Option<::std::vec::Vec<crate::types::Data>>,
 }
 impl Insight {
@@ -75,7 +75,7 @@ impl Insight {
     pub fn insight_data(&self) -> &[crate::types::Data] {
         self.insight_data.as_deref().unwrap_or_default()
     }
-    /// <p> Metric names and values from the timeframe used as baseline to generate the insight.</p>
+    /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.baseline_data.is_none()`.
     pub fn baseline_data(&self) -> &[crate::types::Data] {
@@ -286,19 +286,19 @@ impl InsightBuilder {
     ///
     /// To override the contents of this collection use [`set_baseline_data`](Self::set_baseline_data).
     ///
-    /// <p> Metric names and values from the timeframe used as baseline to generate the insight.</p>
+    /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
     pub fn baseline_data(mut self, input: crate::types::Data) -> Self {
         let mut v = self.baseline_data.unwrap_or_default();
         v.push(input);
         self.baseline_data = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Metric names and values from the timeframe used as baseline to generate the insight.</p>
+    /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
     pub fn set_baseline_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Data>>) -> Self {
         self.baseline_data = input;
         self
     }
-    /// <p> Metric names and values from the timeframe used as baseline to generate the insight.</p>
+    /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
     pub fn get_baseline_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Data>> {
         &self.baseline_data
     }

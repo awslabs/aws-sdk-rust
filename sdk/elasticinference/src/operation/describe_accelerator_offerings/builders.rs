@@ -22,8 +22,8 @@ impl DescribeAcceleratorOfferingsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAcceleratorOfferings`.
 ///
-/// <p> Describes the locations in which a given accelerator type or set of types is present in a given region. </p>
-/// <p> February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p>
+/// <p>Describes the locations in which a given accelerator type or set of types is present in a given region.</p>
+/// <p>February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
+    /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
         self.inner = self.inner.location_type(input);
         self
     }
-    /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
+    /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
     pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.inner = self.inner.set_location_type(input);
         self
     }
-    /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
+    /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
     pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
         self.inner.get_location_type()
     }
@@ -127,17 +127,17 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
-    /// <p> The list of accelerator types to describe. </p>
+    /// <p>The list of accelerator types to describe.</p>
     pub fn accelerator_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accelerator_types(input.into());
         self
     }
-    /// <p> The list of accelerator types to describe. </p>
+    /// <p>The list of accelerator types to describe.</p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_accelerator_types(input);
         self
     }
-    /// <p> The list of accelerator types to describe. </p>
+    /// <p>The list of accelerator types to describe.</p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_accelerator_types()
     }

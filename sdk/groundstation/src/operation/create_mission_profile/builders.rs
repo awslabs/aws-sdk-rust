@@ -23,7 +23,7 @@ impl CreateMissionProfileInputBuilder {
 /// Fluent builder constructing a request to `CreateMissionProfile`.
 ///
 /// <p>Creates a mission profile.</p>
-/// <p> <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>
+/// <p><code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMissionProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

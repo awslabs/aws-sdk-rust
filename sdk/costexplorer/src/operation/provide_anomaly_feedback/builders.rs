@@ -22,7 +22,7 @@ impl ProvideAnomalyFeedbackInputBuilder {
 }
 /// Fluent builder constructing a request to `ProvideAnomalyFeedback`.
 ///
-/// <p>Modifies the feedback property of a given cost anomaly. </p>
+/// <p>Modifies the feedback property of a given cost anomaly.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ProvideAnomalyFeedbackFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A cost anomaly ID. </p>
+    /// <p>A cost anomaly ID.</p>
     pub fn anomaly_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_id(input.into());
         self
     }
-    /// <p>A cost anomaly ID. </p>
+    /// <p>A cost anomaly ID.</p>
     pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_id(input);
         self
     }
-    /// <p>A cost anomaly ID. </p>
+    /// <p>A cost anomaly ID.</p>
     pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_anomaly_id()
     }
-    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
         self.inner = self.inner.feedback(input);
         self
     }
-    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
         self.inner = self.inner.set_feedback(input);
         self
     }
-    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
         self.inner.get_feedback()
     }

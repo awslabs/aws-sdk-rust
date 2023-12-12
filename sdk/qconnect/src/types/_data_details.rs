@@ -6,7 +6,7 @@
 pub enum DataDetails {
     /// <p>Details about the content data.</p>
     ContentData(crate::types::ContentDataDetails),
-    /// <p> Details about the generative data.</p>
+    /// <p>Details about the generative data.</p>
     GenerativeData(crate::types::GenerativeDataDetails),
     /// <p>Details about the content data.</p>
     SourceContentData(crate::types::SourceContentDataDetails),

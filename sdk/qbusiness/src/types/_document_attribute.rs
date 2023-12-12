@@ -6,7 +6,7 @@
 pub struct DocumentAttribute {
     /// <p>The identifier for the attribute.</p>
     pub name: ::std::string::String,
-    /// <p>The value of the attribute. </p>
+    /// <p>The value of the attribute.</p>
     pub value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
 impl DocumentAttribute {
@@ -15,7 +15,7 @@ impl DocumentAttribute {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The value of the attribute. </p>
+    /// <p>The value of the attribute.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
         self.value.as_ref()
     }
@@ -50,18 +50,18 @@ impl DocumentAttributeBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The value of the attribute. </p>
+    /// <p>The value of the attribute.</p>
     /// This field is required.
     pub fn value(mut self, input: crate::types::DocumentAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value of the attribute. </p>
+    /// <p>The value of the attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The value of the attribute. </p>
+    /// <p>The value of the attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
         &self.value
     }

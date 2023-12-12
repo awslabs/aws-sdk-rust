@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddNotificationChannelInput {
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
     pub config: ::std::option::Option<crate::types::NotificationChannelConfig>,
 }
 impl AddNotificationChannelInput {
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
     pub fn config(&self) -> ::std::option::Option<&crate::types::NotificationChannelConfig> {
         self.config.as_ref()
     }
@@ -26,18 +26,18 @@ pub struct AddNotificationChannelInputBuilder {
     pub(crate) config: ::std::option::Option<crate::types::NotificationChannelConfig>,
 }
 impl AddNotificationChannelInputBuilder {
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
     /// This field is required.
     pub fn config(mut self, input: crate::types::NotificationChannelConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::NotificationChannelConfig>) -> Self {
         self.config = input;
         self
     }
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::NotificationChannelConfig> {
         &self.config
     }

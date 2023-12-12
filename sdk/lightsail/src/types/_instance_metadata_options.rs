@@ -7,8 +7,8 @@ pub struct InstanceMetadataOptions {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
-    /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::InstanceMetadataState>,
     /// <p>The state of token usage for your instance metadata requests.</p>
@@ -29,8 +29,8 @@ impl InstanceMetadataOptions {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
-    /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceMetadataState> {
         self.state.as_ref()
@@ -78,8 +78,8 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
-    /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::InstanceMetadataState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -88,8 +88,8 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
-    /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceMetadataState>) -> Self {
         self.state = input;
@@ -98,8 +98,8 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
-    /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceMetadataState> {
         &self.state

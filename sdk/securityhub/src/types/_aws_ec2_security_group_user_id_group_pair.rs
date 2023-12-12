@@ -12,7 +12,7 @@ pub struct AwsEc2SecurityGroupUserIdGroupPair {
     pub peering_status: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an Amazon Web Services account.</p>
     /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
-    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
+    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC for the referenced security group, if applicable.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl AwsEc2SecurityGroupUserIdGroupPair {
     }
     /// <p>The ID of an Amazon Web Services account.</p>
     /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
-    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
+    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -110,21 +110,21 @@ impl AwsEc2SecurityGroupUserIdGroupPairBuilder {
     }
     /// <p>The ID of an Amazon Web Services account.</p>
     /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
-    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
+    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an Amazon Web Services account.</p>
     /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
-    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
+    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
     /// <p>The ID of an Amazon Web Services account.</p>
     /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
-    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
+    /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

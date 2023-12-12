@@ -9,7 +9,7 @@ pub struct AuditEvent {
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
     pub event_data: ::std::string::String,
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
-    /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
+    /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
     pub event_data_checksum: ::std::option::Option<::std::string::String>,
 }
 impl AuditEvent {
@@ -24,7 +24,7 @@ impl AuditEvent {
         self.event_data.deref()
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
-    /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
+    /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
     pub fn event_data_checksum(&self) -> ::std::option::Option<&str> {
         self.event_data_checksum.as_deref()
     }
@@ -76,19 +76,19 @@ impl AuditEventBuilder {
         &self.event_data
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
-    /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
+    /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
     pub fn event_data_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
-    /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
+    /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
     pub fn set_event_data_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_checksum = input;
         self
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
-    /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
+    /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
     pub fn get_event_data_checksum(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_data_checksum
     }

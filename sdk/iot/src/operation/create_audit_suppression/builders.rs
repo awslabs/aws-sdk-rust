@@ -22,7 +22,7 @@ impl CreateAuditSuppressionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAuditSuppression`.
 ///
-/// <p> Creates a Device Defender audit suppression. </p>
+/// <p>Creates a Device Defender audit suppression.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuditSuppression</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAuditSuppressionFluentBuilder {
@@ -137,59 +137,59 @@ impl CreateAuditSuppressionFluentBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         self.inner.get_resource_identifier()
     }
-    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
+    /// <p>The epoch timestamp in seconds at which this suppression expires.</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expiration_date(input);
         self
     }
-    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
+    /// <p>The epoch timestamp in seconds at which this suppression expires.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiration_date(input);
         self
     }
-    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
+    /// <p>The epoch timestamp in seconds at which this suppression expires.</p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_expiration_date()
     }
-    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
     pub fn suppress_indefinitely(mut self, input: bool) -> Self {
         self.inner = self.inner.suppress_indefinitely(input);
         self
     }
-    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
     pub fn set_suppress_indefinitely(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_suppress_indefinitely(input);
         self
     }
-    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
     pub fn get_suppress_indefinitely(&self) -> &::std::option::Option<bool> {
         self.inner.get_suppress_indefinitely()
     }
-    /// <p> The description of the audit suppression. </p>
+    /// <p>The description of the audit suppression.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The description of the audit suppression. </p>
+    /// <p>The description of the audit suppression.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> The description of the audit suppression. </p>
+    /// <p>The description of the audit suppression.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p>Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p>Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p>Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }

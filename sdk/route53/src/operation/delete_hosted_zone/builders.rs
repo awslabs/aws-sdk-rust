@@ -31,8 +31,8 @@ impl DeleteHostedZoneInputBuilder {
 /// <p>You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If you try to delete a hosted zone that contains other resource record sets, the request fails, and Route&nbsp;53 returns a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p>
 /// <p>To verify that the hosted zone has been deleted, do one of the following:</p>
 /// <ul>
-/// <li> <p>Use the <code>GetHostedZone</code> action to request information about the hosted zone.</p> </li>
-/// <li> <p>Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated with the current Amazon Web Services account.</p> </li>
+/// <li><p>Use the <code>GetHostedZone</code> action to request information about the hosted zone.</p></li>
+/// <li><p>Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated with the current Amazon Web Services account.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHostedZoneFluentBuilder {

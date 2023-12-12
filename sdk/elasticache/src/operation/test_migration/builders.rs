@@ -22,7 +22,7 @@ impl TestMigrationInputBuilder {
 }
 /// Fluent builder constructing a request to `TestMigration`.
 ///
-/// <p> Async API to test connection between source and target replication group. </p>
+/// <p>Async API to test connection between source and target replication group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestMigrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl TestMigrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the replication group to which data is to be migrated. </p>
+    /// <p>The ID of the replication group to which data is to be migrated.</p>
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
-    /// <p> The ID of the replication group to which data is to be migrated. </p>
+    /// <p>The ID of the replication group to which data is to be migrated.</p>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
-    /// <p> The ID of the replication group to which data is to be migrated. </p>
+    /// <p>The ID of the replication group to which data is to be migrated.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_group_id()
     }
@@ -126,17 +126,17 @@ impl TestMigrationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_customer_node_endpoint_list`](Self::set_customer_node_endpoint_list).
     ///
-    /// <p> List of endpoints from which data should be migrated. List should have only one element. </p>
+    /// <p>List of endpoints from which data should be migrated. List should have only one element.</p>
     pub fn customer_node_endpoint_list(mut self, input: crate::types::CustomerNodeEndpoint) -> Self {
         self.inner = self.inner.customer_node_endpoint_list(input);
         self
     }
-    /// <p> List of endpoints from which data should be migrated. List should have only one element. </p>
+    /// <p>List of endpoints from which data should be migrated. List should have only one element.</p>
     pub fn set_customer_node_endpoint_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>) -> Self {
         self.inner = self.inner.set_customer_node_endpoint_list(input);
         self
     }
-    /// <p> List of endpoints from which data should be migrated. List should have only one element. </p>
+    /// <p>List of endpoints from which data should be migrated. List should have only one element.</p>
     pub fn get_customer_node_endpoint_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>> {
         self.inner.get_customer_node_endpoint_list()
     }

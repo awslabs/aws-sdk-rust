@@ -49,17 +49,17 @@ pub struct GetRunOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The run's tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p> The computational accelerator used to run the workflow. </p>
+    /// <p>The computational accelerator used to run the workflow.</p>
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
     /// <p>The run's retention mode.</p>
     pub retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
-    /// <p> The reason a run has failed. </p>
+    /// <p>The reason a run has failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p> The location of the run log. </p>
+    /// <p>The location of the run log.</p>
     pub log_location: ::std::option::Option<crate::types::RunLogLocation>,
-    /// <p> The universally unique identifier for a run. </p>
+    /// <p>The universally unique identifier for a run.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
-    /// <p> The destination for workflow outputs. </p>
+    /// <p>The destination for workflow outputs.</p>
     pub run_output_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -156,7 +156,7 @@ impl GetRunOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p> The computational accelerator used to run the workflow. </p>
+    /// <p>The computational accelerator used to run the workflow.</p>
     pub fn accelerators(&self) -> ::std::option::Option<&crate::types::Accelerators> {
         self.accelerators.as_ref()
     }
@@ -164,19 +164,19 @@ impl GetRunOutput {
     pub fn retention_mode(&self) -> ::std::option::Option<&crate::types::RunRetentionMode> {
         self.retention_mode.as_ref()
     }
-    /// <p> The reason a run has failed. </p>
+    /// <p>The reason a run has failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p> The location of the run log. </p>
+    /// <p>The location of the run log.</p>
     pub fn log_location(&self) -> ::std::option::Option<&crate::types::RunLogLocation> {
         self.log_location.as_ref()
     }
-    /// <p> The universally unique identifier for a run. </p>
+    /// <p>The universally unique identifier for a run.</p>
     pub fn uuid(&self) -> ::std::option::Option<&str> {
         self.uuid.as_deref()
     }
-    /// <p> The destination for workflow outputs. </p>
+    /// <p>The destination for workflow outputs.</p>
     pub fn run_output_uri(&self) -> ::std::option::Option<&str> {
         self.run_output_uri.as_deref()
     }
@@ -570,17 +570,17 @@ impl GetRunOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p> The computational accelerator used to run the workflow. </p>
+    /// <p>The computational accelerator used to run the workflow.</p>
     pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
         self.accelerators = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The computational accelerator used to run the workflow. </p>
+    /// <p>The computational accelerator used to run the workflow.</p>
     pub fn set_accelerators(mut self, input: ::std::option::Option<crate::types::Accelerators>) -> Self {
         self.accelerators = input;
         self
     }
-    /// <p> The computational accelerator used to run the workflow. </p>
+    /// <p>The computational accelerator used to run the workflow.</p>
     pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
         &self.accelerators
     }
@@ -598,59 +598,59 @@ impl GetRunOutputBuilder {
     pub fn get_retention_mode(&self) -> &::std::option::Option<crate::types::RunRetentionMode> {
         &self.retention_mode
     }
-    /// <p> The reason a run has failed. </p>
+    /// <p>The reason a run has failed.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The reason a run has failed. </p>
+    /// <p>The reason a run has failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p> The reason a run has failed. </p>
+    /// <p>The reason a run has failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p> The location of the run log. </p>
+    /// <p>The location of the run log.</p>
     pub fn log_location(mut self, input: crate::types::RunLogLocation) -> Self {
         self.log_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The location of the run log. </p>
+    /// <p>The location of the run log.</p>
     pub fn set_log_location(mut self, input: ::std::option::Option<crate::types::RunLogLocation>) -> Self {
         self.log_location = input;
         self
     }
-    /// <p> The location of the run log. </p>
+    /// <p>The location of the run log.</p>
     pub fn get_log_location(&self) -> &::std::option::Option<crate::types::RunLogLocation> {
         &self.log_location
     }
-    /// <p> The universally unique identifier for a run. </p>
+    /// <p>The universally unique identifier for a run.</p>
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uuid = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The universally unique identifier for a run. </p>
+    /// <p>The universally unique identifier for a run.</p>
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uuid = input;
         self
     }
-    /// <p> The universally unique identifier for a run. </p>
+    /// <p>The universally unique identifier for a run.</p>
     pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
         &self.uuid
     }
-    /// <p> The destination for workflow outputs. </p>
+    /// <p>The destination for workflow outputs.</p>
     pub fn run_output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_output_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The destination for workflow outputs. </p>
+    /// <p>The destination for workflow outputs.</p>
     pub fn set_run_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_output_uri = input;
         self
     }
-    /// <p> The destination for workflow outputs. </p>
+    /// <p>The destination for workflow outputs.</p>
     pub fn get_run_output_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_output_uri
     }

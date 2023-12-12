@@ -9,11 +9,11 @@ pub struct UpdateCostCategoryDefinitionInput {
     pub effective_start: ::std::option::Option<::std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
-    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     /// <p>The default value for the cost category.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
-    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
     pub split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
 }
 impl UpdateCostCategoryDefinitionInput {
@@ -29,7 +29,7 @@ impl UpdateCostCategoryDefinitionInput {
     pub fn rule_version(&self) -> ::std::option::Option<&crate::types::CostCategoryRuleVersion> {
         self.rule_version.as_ref()
     }
-    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
     pub fn rules(&self) -> &[crate::types::CostCategoryRule] {
@@ -39,7 +39,7 @@ impl UpdateCostCategoryDefinitionInput {
     pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.split_charge_rules.is_none()`.
     pub fn split_charge_rules(&self) -> &[crate::types::CostCategorySplitChargeRule] {
@@ -113,19 +113,19 @@ impl UpdateCostCategoryDefinitionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>.</p>
     pub fn rules(mut self, input: crate::types::CostCategoryRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
         self.rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>.</p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
         self.rules = input;
         self
     }
-    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>.</p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
         &self.rules
     }
@@ -147,19 +147,19 @@ impl UpdateCostCategoryDefinitionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
     ///
-    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
     pub fn split_charge_rules(mut self, input: crate::types::CostCategorySplitChargeRule) -> Self {
         let mut v = self.split_charge_rules.unwrap_or_default();
         v.push(input);
         self.split_charge_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
     pub fn set_split_charge_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
         self.split_charge_rules = input;
         self
     }
-    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
     pub fn get_split_charge_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
         &self.split_charge_rules
     }

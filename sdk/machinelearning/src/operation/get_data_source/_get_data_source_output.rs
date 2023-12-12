@@ -24,11 +24,11 @@ pub struct GetDataSourceOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p> </li>
-    /// <li> <p> <code>INPROGRESS</code> - The creation process is underway.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>
+    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
@@ -39,9 +39,9 @@ pub struct GetDataSourceOutput {
     pub redshift_metadata: ::std::option::Option<crate::types::RedshiftMetadata>,
     /// <p>The datasource details that are specific to Amazon RDS.</p>
     pub rds_metadata: ::std::option::Option<crate::types::RdsMetadata>,
-    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
+    /// <p>The parameter is <code>true</code> if statistics need to be generated from the observation data.</p>
     pub compute_statistics: bool,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
     pub compute_time: ::std::option::Option<i64>,
@@ -50,7 +50,7 @@ pub struct GetDataSourceOutput {
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub data_source_schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -93,11 +93,11 @@ impl GetDataSourceOutput {
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p> </li>
-    /// <li> <p> <code>INPROGRESS</code> - The creation process is underway.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>
+    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
         self.status.as_ref()
@@ -118,11 +118,11 @@ impl GetDataSourceOutput {
     pub fn rds_metadata(&self) -> ::std::option::Option<&crate::types::RdsMetadata> {
         self.rds_metadata.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
+    /// <p>The parameter is <code>true</code> if statistics need to be generated from the observation data.</p>
     pub fn compute_statistics(&self) -> bool {
         self.compute_statistics
     }
@@ -139,7 +139,7 @@ impl GetDataSourceOutput {
         self.started_at.as_ref()
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn data_source_schema(&self) -> ::std::option::Option<&str> {
         self.data_source_schema.as_deref()
     }
@@ -311,11 +311,11 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p> </li>
-    /// <li> <p> <code>INPROGRESS</code> - The creation process is underway.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>
+    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EntityStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -323,11 +323,11 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p> </li>
-    /// <li> <p> <code>INPROGRESS</code> - The creation process is underway.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>
+    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
         self.status = input;
@@ -335,11 +335,11 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p> </li>
-    /// <li> <p> <code>INPROGRESS</code> - The creation process is underway.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>
+    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatus> {
         &self.status
@@ -400,31 +400,31 @@ impl GetDataSourceOutputBuilder {
     pub fn get_rds_metadata(&self) -> &::std::option::Option<crate::types::RdsMetadata> {
         &self.rds_metadata
     }
-    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
+    /// <p>The parameter is <code>true</code> if statistics need to be generated from the observation data.</p>
     pub fn compute_statistics(mut self, input: bool) -> Self {
         self.compute_statistics = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
+    /// <p>The parameter is <code>true</code> if statistics need to be generated from the observation data.</p>
     pub fn set_compute_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.compute_statistics = input;
         self
     }
-    /// <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
+    /// <p>The parameter is <code>true</code> if statistics need to be generated from the observation data.</p>
     pub fn get_compute_statistics(&self) -> &::std::option::Option<bool> {
         &self.compute_statistics
     }
@@ -471,19 +471,19 @@ impl GetDataSourceOutputBuilder {
         &self.started_at
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn data_source_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn set_data_source_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_schema = input;
         self
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn get_data_source_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_schema
     }

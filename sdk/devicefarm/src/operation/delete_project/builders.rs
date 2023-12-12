@@ -23,7 +23,7 @@ impl DeleteProjectInputBuilder {
 /// Fluent builder constructing a request to `DeleteProject`.
 ///
 /// <p>Deletes an AWS Device Farm project, given the project ARN.</p>
-/// <p> Deleting this resource does not stop an in-progress run.</p>
+/// <p>Deleting this resource does not stop an in-progress run.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -5,7 +5,7 @@
 pub struct CreateRoomInput {
     /// <p>Room name. The value does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub maximum_message_rate_per_second: ::std::option::Option<i32>,
     /// <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     pub maximum_message_length: ::std::option::Option<i32>,
@@ -21,7 +21,7 @@ impl CreateRoomInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn maximum_message_rate_per_second(&self) -> ::std::option::Option<i32> {
         self.maximum_message_rate_per_second
     }
@@ -77,17 +77,17 @@ impl CreateRoomInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
         self.maximum_message_rate_per_second = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn set_maximum_message_rate_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_message_rate_per_second = input;
         self
     }
-    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn get_maximum_message_rate_per_second(&self) -> &::std::option::Option<i32> {
         &self.maximum_message_rate_per_second
     }

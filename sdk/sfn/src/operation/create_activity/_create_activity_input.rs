@@ -6,11 +6,11 @@ pub struct CreateActivityInput {
     /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// <li><p>white space</p></li>
+    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li><p>wildcard characters <code>? *</code></p></li>
+    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -23,11 +23,11 @@ impl CreateActivityInput {
     /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// <li><p>white space</p></li>
+    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li><p>wildcard characters <code>? *</code></p></li>
+    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -60,11 +60,11 @@ impl CreateActivityInputBuilder {
     /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// <li><p>white space</p></li>
+    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li><p>wildcard characters <code>? *</code></p></li>
+    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     /// This field is required.
@@ -75,11 +75,11 @@ impl CreateActivityInputBuilder {
     /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// <li><p>white space</p></li>
+    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li><p>wildcard characters <code>? *</code></p></li>
+    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -89,11 +89,11 @@ impl CreateActivityInputBuilder {
     /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// <li><p>white space</p></li>
+    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li><p>wildcard characters <code>? *</code></p></li>
+    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

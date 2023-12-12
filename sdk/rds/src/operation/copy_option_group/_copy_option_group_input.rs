@@ -7,29 +7,29 @@ pub struct CopyOptionGroupInput {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// <li><p>Must specify a valid option group.</p></li>
     /// </ul>
     pub source_option_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Can't be null, empty, or blank</p></li>
+    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    /// <p>Example: <code>my-option-group</code> </p>
+    /// <p>Example: <code>my-option-group</code></p>
     pub target_option_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description for the copied option group.</p>
     pub target_option_group_description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyOptionGroupInput {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// <li><p>Must specify a valid option group.</p></li>
     /// </ul>
     pub fn source_option_group_identifier(&self) -> ::std::option::Option<&str> {
         self.source_option_group_identifier.as_deref()
@@ -37,12 +37,12 @@ impl CopyOptionGroupInput {
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Can't be null, empty, or blank</p></li>
+    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    /// <p>Example: <code>my-option-group</code> </p>
+    /// <p>Example: <code>my-option-group</code></p>
     pub fn target_option_group_identifier(&self) -> ::std::option::Option<&str> {
         self.target_option_group_identifier.as_deref()
     }
@@ -50,7 +50,7 @@ impl CopyOptionGroupInput {
     pub fn target_option_group_description(&self) -> ::std::option::Option<&str> {
         self.target_option_group_description.as_deref()
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -77,7 +77,7 @@ impl CopyOptionGroupInputBuilder {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// <li><p>Must specify a valid option group.</p></li>
     /// </ul>
     /// This field is required.
     pub fn source_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,7 +87,7 @@ impl CopyOptionGroupInputBuilder {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// <li><p>Must specify a valid option group.</p></li>
     /// </ul>
     pub fn set_source_option_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_option_group_identifier = input;
@@ -96,7 +96,7 @@ impl CopyOptionGroupInputBuilder {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// <li><p>Must specify a valid option group.</p></li>
     /// </ul>
     pub fn get_source_option_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_option_group_identifier
@@ -104,12 +104,12 @@ impl CopyOptionGroupInputBuilder {
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Can't be null, empty, or blank</p></li>
+    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    /// <p>Example: <code>my-option-group</code> </p>
+    /// <p>Example: <code>my-option-group</code></p>
     /// This field is required.
     pub fn target_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_option_group_identifier = ::std::option::Option::Some(input.into());
@@ -118,12 +118,12 @@ impl CopyOptionGroupInputBuilder {
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Can't be null, empty, or blank</p></li>
+    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    /// <p>Example: <code>my-option-group</code> </p>
+    /// <p>Example: <code>my-option-group</code></p>
     pub fn set_target_option_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_option_group_identifier = input;
         self
@@ -131,12 +131,12 @@ impl CopyOptionGroupInputBuilder {
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Can't be null, empty, or blank</p></li>
+    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    /// <p>Example: <code>my-option-group</code> </p>
+    /// <p>Example: <code>my-option-group</code></p>
     pub fn get_target_option_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_option_group_identifier
     }
@@ -159,19 +159,19 @@ impl CopyOptionGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

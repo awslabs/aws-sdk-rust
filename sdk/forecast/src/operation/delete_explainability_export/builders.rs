@@ -108,17 +108,17 @@ impl DeleteExplainabilityExportFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub fn explainability_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explainability_export_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub fn set_explainability_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explainability_export_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub fn get_explainability_export_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_explainability_export_arn()
     }

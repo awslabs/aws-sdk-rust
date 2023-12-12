@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsOutput {
-    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
+    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved.</p>
     pub billing_group_cost_reports: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>>,
-    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListBillingGroupCostReportsOutput {
-    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
+    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_group_cost_reports.is_none()`.
     pub fn billing_group_cost_reports(&self) -> &[crate::types::BillingGroupCostReportElement] {
         self.billing_group_cost_reports.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,14 +46,14 @@ impl ListBillingGroupCostReportsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_billing_group_cost_reports`](Self::set_billing_group_cost_reports).
     ///
-    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
+    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved.</p>
     pub fn billing_group_cost_reports(mut self, input: crate::types::BillingGroupCostReportElement) -> Self {
         let mut v = self.billing_group_cost_reports.unwrap_or_default();
         v.push(input);
         self.billing_group_cost_reports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
+    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved.</p>
     pub fn set_billing_group_cost_reports(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>>,
@@ -61,21 +61,21 @@ impl ListBillingGroupCostReportsOutputBuilder {
         self.billing_group_cost_reports = input;
         self
     }
-    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
+    /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved.</p>
     pub fn get_billing_group_cost_reports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>> {
         &self.billing_group_cost_reports
     }
-    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
+    /// <p>The pagination token that's used on subsequent calls to get reports.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

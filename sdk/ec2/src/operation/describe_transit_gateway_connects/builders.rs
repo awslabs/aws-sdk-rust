@@ -138,11 +138,11 @@ impl DescribeTransitGatewayConnectsFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>options.protocol</code> - The tunnel protocol (<code>gre</code>).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the attachment (<code>initiating</code> | <code>initiatingRequest</code> | <code>pendingAcceptance</code> | <code>rollingBack</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code> | <code>rejecting</code> | <code>failing</code>).</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the Connect attachment.</p> </li>
-    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
-    /// <li> <p> <code>transport-transit-gateway-attachment-id</code> - The ID of the transit gateway attachment from which the Connect attachment was created.</p> </li>
+    /// <li><p><code>options.protocol</code> - The tunnel protocol (<code>gre</code>).</p></li>
+    /// <li><p><code>state</code> - The state of the attachment (<code>initiating</code> | <code>initiatingRequest</code> | <code>pendingAcceptance</code> | <code>rollingBack</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code> | <code>rejecting</code> | <code>failing</code>).</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the Connect attachment.</p></li>
+    /// <li><p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
+    /// <li><p><code>transport-transit-gateway-attachment-id</code> - The ID of the transit gateway attachment from which the Connect attachment was created.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -150,11 +150,11 @@ impl DescribeTransitGatewayConnectsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>options.protocol</code> - The tunnel protocol (<code>gre</code>).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the attachment (<code>initiating</code> | <code>initiatingRequest</code> | <code>pendingAcceptance</code> | <code>rollingBack</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code> | <code>rejecting</code> | <code>failing</code>).</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the Connect attachment.</p> </li>
-    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
-    /// <li> <p> <code>transport-transit-gateway-attachment-id</code> - The ID of the transit gateway attachment from which the Connect attachment was created.</p> </li>
+    /// <li><p><code>options.protocol</code> - The tunnel protocol (<code>gre</code>).</p></li>
+    /// <li><p><code>state</code> - The state of the attachment (<code>initiating</code> | <code>initiatingRequest</code> | <code>pendingAcceptance</code> | <code>rollingBack</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code> | <code>rejecting</code> | <code>failing</code>).</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the Connect attachment.</p></li>
+    /// <li><p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
+    /// <li><p><code>transport-transit-gateway-attachment-id</code> - The ID of the transit gateway attachment from which the Connect attachment was created.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -162,11 +162,11 @@ impl DescribeTransitGatewayConnectsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>options.protocol</code> - The tunnel protocol (<code>gre</code>).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the attachment (<code>initiating</code> | <code>initiatingRequest</code> | <code>pendingAcceptance</code> | <code>rollingBack</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code> | <code>rejecting</code> | <code>failing</code>).</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the Connect attachment.</p> </li>
-    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
-    /// <li> <p> <code>transport-transit-gateway-attachment-id</code> - The ID of the transit gateway attachment from which the Connect attachment was created.</p> </li>
+    /// <li><p><code>options.protocol</code> - The tunnel protocol (<code>gre</code>).</p></li>
+    /// <li><p><code>state</code> - The state of the attachment (<code>initiating</code> | <code>initiatingRequest</code> | <code>pendingAcceptance</code> | <code>rollingBack</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code> | <code>rejecting</code> | <code>failing</code>).</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the Connect attachment.</p></li>
+    /// <li><p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
+    /// <li><p><code>transport-transit-gateway-attachment-id</code> - The ID of the transit gateway attachment from which the Connect attachment was created.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

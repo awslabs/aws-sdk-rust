@@ -109,17 +109,17 @@ impl DisassociateSkillFromUsersFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
+    /// <p>The private skill ID you want to make unavailable for enrolled users.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_id(input.into());
         self
     }
-    /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
+    /// <p>The private skill ID you want to make unavailable for enrolled users.</p>
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_id(input);
         self
     }
-    /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
+    /// <p>The private skill ID you want to make unavailable for enrolled users.</p>
     pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_skill_id()
     }

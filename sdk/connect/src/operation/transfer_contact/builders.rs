@@ -25,11 +25,11 @@ impl TransferContactInputBuilder {
 /// <p>Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You can transfer a contact to another queue by providing the flow which orchestrates the contact to the destination queue. This gives you more control over contact handling and helps you adhere to the service level agreement (SLA) guaranteed to your customers.</p>
 /// <p>Note the following requirements:</p>
 /// <ul>
-/// <li> <p>Transfer is supported for only <code>TASK</code> contacts.</p> </li>
-/// <li> <p>Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.</p> </li>
-/// <li> <p>The following flow types are supported: Inbound flow, Transfer to agent flow, and Transfer to queue flow.</p> </li>
-/// <li> <p>The <code>TransferContact</code> API can be called only on active contacts.</p> </li>
-/// <li> <p>A contact cannot be transferred more than 11 times.</p> </li>
+/// <li><p>Transfer is supported for only <code>TASK</code> contacts.</p></li>
+/// <li><p>Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.</p></li>
+/// <li><p>The following flow types are supported: Inbound flow, Transfer to agent flow, and Transfer to queue flow.</p></li>
+/// <li><p>The <code>TransferContact</code> API can be called only on active contacts.</p></li>
+/// <li><p>A contact cannot be transferred more than 11 times.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TransferContactFluentBuilder {
@@ -130,17 +130,17 @@ impl TransferContactFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }

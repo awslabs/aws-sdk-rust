@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionOutput {
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub effective_start: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateCostCategoryDefinitionOutput {
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct UpdateCostCategoryDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateCostCategoryDefinitionOutputBuilder {
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cost_category_arn
     }

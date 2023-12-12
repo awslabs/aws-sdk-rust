@@ -7,7 +7,7 @@ pub struct CreateSkillGroupInput {
     pub skill_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the skill group.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the skill group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -21,7 +21,7 @@ impl CreateSkillGroupInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -78,17 +78,17 @@ impl CreateSkillGroupInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

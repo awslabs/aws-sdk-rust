@@ -19,13 +19,13 @@ pub struct CreateAccessPointInput {
     /// <my-bucket-name></my-bucket-name>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
-    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
@@ -51,7 +51,7 @@ impl CreateAccessPointInput {
     /// <my-bucket-name></my-bucket-name>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -61,7 +61,7 @@ impl CreateAccessPointInput {
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
-    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
     pub fn public_access_block_configuration(&self) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
@@ -131,7 +131,7 @@ impl CreateAccessPointInputBuilder {
     /// <my-bucket-name></my-bucket-name>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -149,7 +149,7 @@ impl CreateAccessPointInputBuilder {
     /// <my-bucket-name></my-bucket-name>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
@@ -166,7 +166,7 @@ impl CreateAccessPointInputBuilder {
     /// <my-bucket-name></my-bucket-name>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
@@ -190,17 +190,17 @@ impl CreateAccessPointInputBuilder {
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
         &self.vpc_configuration
     }
-    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
     pub fn public_access_block_configuration(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.public_access_block_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
     pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
         self.public_access_block_configuration = input;
         self
     }
-    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
     pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         &self.public_access_block_configuration
     }

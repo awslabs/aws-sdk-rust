@@ -129,18 +129,18 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>The targets (either managed nodes or maintenance window targets).</p> <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    /// <p>Specify managed nodes using the following format: </p>
-    /// <p> <code>Key=InstanceIds,Values=
+    /// <p>Specify managed nodes using the following format:</p>
+    /// <p><code>Key=InstanceIds,Values=
     /// <instance-id-1>
     /// ,
     /// <instance-id-2></instance-id-2>
-    /// </instance-id-1></code> </p>
+    /// </instance-id-1></code></p>
     /// <p>Specify maintenance window targets using the following format:</p>
-    /// <p> <code>Key=WindowTargetIds,Values=
+    /// <p><code>Key=WindowTargetIds,Values=
     /// <window-target-id-1>
     /// ,
     /// <window-target-id-2></window-target-id-2>
-    /// </window-target-id-1></code> </p>
+    /// </window-target-id-1></code></p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         self.inner = self.inner.targets(input);
         self
@@ -148,18 +148,18 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>The targets (either managed nodes or maintenance window targets).</p> <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    /// <p>Specify managed nodes using the following format: </p>
-    /// <p> <code>Key=InstanceIds,Values=
+    /// <p>Specify managed nodes using the following format:</p>
+    /// <p><code>Key=InstanceIds,Values=
     /// <instance-id-1>
     /// ,
     /// <instance-id-2></instance-id-2>
-    /// </instance-id-1></code> </p>
+    /// </instance-id-1></code></p>
     /// <p>Specify maintenance window targets using the following format:</p>
-    /// <p> <code>Key=WindowTargetIds,Values=
+    /// <p><code>Key=WindowTargetIds,Values=
     /// <window-target-id-1>
     /// ,
     /// <window-target-id-2></window-target-id-2>
-    /// </window-target-id-1></code> </p>
+    /// </window-target-id-1></code></p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
@@ -167,18 +167,18 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>The targets (either managed nodes or maintenance window targets).</p> <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    /// <p>Specify managed nodes using the following format: </p>
-    /// <p> <code>Key=InstanceIds,Values=
+    /// <p>Specify managed nodes using the following format:</p>
+    /// <p><code>Key=InstanceIds,Values=
     /// <instance-id-1>
     /// ,
     /// <instance-id-2></instance-id-2>
-    /// </instance-id-1></code> </p>
+    /// </instance-id-1></code></p>
     /// <p>Specify maintenance window targets using the following format:</p>
-    /// <p> <code>Key=WindowTargetIds,Values=
+    /// <p><code>Key=WindowTargetIds,Values=
     /// <window-target-id-1>
     /// ,
     /// <window-target-id-2></window-target-id-2>
-    /// </window-target-id-1></code> </p>
+    /// </window-target-id-1></code></p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         self.inner.get_targets()
     }
@@ -199,8 +199,8 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
     /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a></p></li>
     /// </ul>
     pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
@@ -209,8 +209,8 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
     /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a></p></li>
     /// </ul>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
@@ -219,8 +219,8 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
     /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a></p></li>
     /// </ul>
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_role_arn()
@@ -244,7 +244,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
     ///
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
         mut self,
@@ -255,7 +255,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
         self
     }
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_task_parameters(
         mut self,
@@ -265,24 +265,24 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
         self
     }
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_task_parameters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
         self.inner.get_task_parameters()
     }
-    /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
+    /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p>
     pub fn task_invocation_parameters(mut self, input: crate::types::MaintenanceWindowTaskInvocationParameters) -> Self {
         self.inner = self.inner.task_invocation_parameters(input);
         self
     }
-    /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
+    /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p>
     pub fn set_task_invocation_parameters(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>) -> Self {
         self.inner = self.inner.set_task_invocation_parameters(input);
         self
     }
-    /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
+    /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p>
     pub fn get_task_invocation_parameters(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
         self.inner.get_task_invocation_parameters()
     }
@@ -346,22 +346,22 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_max_errors()
     }
-    /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to.</p> <note>
+    /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.inner = self.inner.logging_info(input);
         self
     }
-    /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to.</p> <note>
+    /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.inner = self.inner.set_logging_info(input);
         self
     }
-    /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to.</p> <note>
+    /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
         self.inner.get_logging_info()
@@ -408,40 +408,40 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.</p>
     /// <ul>
-    /// <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>
-    /// <li> <p> <code>CANCEL_TASK</code>:</p>
+    /// <li><p><code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p></li>
+    /// <li><p><code>CANCEL_TASK</code>:</p>
     /// <ul>
-    /// <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>
-    /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
-    /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
+    /// <li><p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p></li>
+    /// <li><p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p></li>
+    /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p></li>
     /// </ul>
     pub fn cutoff_behavior(mut self, input: crate::types::MaintenanceWindowTaskCutoffBehavior) -> Self {
         self.inner = self.inner.cutoff_behavior(input);
         self
     }
-    /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.</p>
     /// <ul>
-    /// <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>
-    /// <li> <p> <code>CANCEL_TASK</code>:</p>
+    /// <li><p><code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p></li>
+    /// <li><p><code>CANCEL_TASK</code>:</p>
     /// <ul>
-    /// <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>
-    /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
-    /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
+    /// <li><p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p></li>
+    /// <li><p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p></li>
+    /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p></li>
     /// </ul>
     pub fn set_cutoff_behavior(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>) -> Self {
         self.inner = self.inner.set_cutoff_behavior(input);
         self
     }
-    /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.</p>
     /// <ul>
-    /// <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>
-    /// <li> <p> <code>CANCEL_TASK</code>:</p>
+    /// <li><p><code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p></li>
+    /// <li><p><code>CANCEL_TASK</code>:</p>
     /// <ul>
-    /// <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>
-    /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
-    /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
+    /// <li><p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p></li>
+    /// <li><p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p></li>
+    /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p></li>
     /// </ul>
     pub fn get_cutoff_behavior(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
         self.inner.get_cutoff_behavior()

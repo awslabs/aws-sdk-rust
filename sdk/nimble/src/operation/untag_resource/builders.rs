@@ -108,17 +108,17 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
+    /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
+    /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
+    /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

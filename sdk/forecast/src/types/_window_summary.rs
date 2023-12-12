@@ -13,8 +13,8 @@ pub struct WindowSummary {
     pub item_count: ::std::option::Option<i32>,
     /// <p>The type of evaluation.</p>
     /// <ul>
-    /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
-    /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
+    /// <li><p><code>SUMMARY</code> - The average metrics across all windows.</p></li>
+    /// <li><p><code>COMPUTED</code> - The metrics for the specified window.</p></li>
     /// </ul>
     pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
@@ -35,8 +35,8 @@ impl WindowSummary {
     }
     /// <p>The type of evaluation.</p>
     /// <ul>
-    /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
-    /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
+    /// <li><p><code>SUMMARY</code> - The average metrics across all windows.</p></li>
+    /// <li><p><code>COMPUTED</code> - The metrics for the specified window.</p></li>
     /// </ul>
     pub fn evaluation_type(&self) -> ::std::option::Option<&crate::types::EvaluationType> {
         self.evaluation_type.as_ref()
@@ -108,8 +108,8 @@ impl WindowSummaryBuilder {
     }
     /// <p>The type of evaluation.</p>
     /// <ul>
-    /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
-    /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
+    /// <li><p><code>SUMMARY</code> - The average metrics across all windows.</p></li>
+    /// <li><p><code>COMPUTED</code> - The metrics for the specified window.</p></li>
     /// </ul>
     pub fn evaluation_type(mut self, input: crate::types::EvaluationType) -> Self {
         self.evaluation_type = ::std::option::Option::Some(input);
@@ -117,8 +117,8 @@ impl WindowSummaryBuilder {
     }
     /// <p>The type of evaluation.</p>
     /// <ul>
-    /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
-    /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
+    /// <li><p><code>SUMMARY</code> - The average metrics across all windows.</p></li>
+    /// <li><p><code>COMPUTED</code> - The metrics for the specified window.</p></li>
     /// </ul>
     pub fn set_evaluation_type(mut self, input: ::std::option::Option<crate::types::EvaluationType>) -> Self {
         self.evaluation_type = input;
@@ -126,8 +126,8 @@ impl WindowSummaryBuilder {
     }
     /// <p>The type of evaluation.</p>
     /// <ul>
-    /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
-    /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
+    /// <li><p><code>SUMMARY</code> - The average metrics across all windows.</p></li>
+    /// <li><p><code>COMPUTED</code> - The metrics for the specified window.</p></li>
     /// </ul>
     pub fn get_evaluation_type(&self) -> &::std::option::Option<crate::types::EvaluationType> {
         &self.evaluation_type

@@ -22,8 +22,8 @@ impl RebootDbInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `RebootDBInstance`.
 ///
-/// <p>You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the instance for the changes to take effect. </p>
-/// <p>Rebooting an instance restarts the database engine service. Rebooting an instance results in a momentary outage, during which the instance status is set to <i>rebooting</i>. </p>
+/// <p>You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the instance for the changes to take effect.</p>
+/// <p>Rebooting an instance restarts the database engine service. Rebooting an instance results in a momentary outage, during which the instance status is set to <i>rebooting</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RebootDBInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,7 +112,7 @@ impl RebootDBInstanceFluentBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
+    /// <li><p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
@@ -121,7 +121,7 @@ impl RebootDBInstanceFluentBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
+    /// <li><p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
@@ -130,24 +130,24 @@ impl RebootDBInstanceFluentBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
+    /// <li><p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()
     }
-    /// <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>
+    /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub fn force_failover(mut self, input: bool) -> Self {
         self.inner = self.inner.force_failover(input);
         self
     }
-    /// <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>
+    /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub fn set_force_failover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_failover(input);
         self
     }
-    /// <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>
+    /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub fn get_force_failover(&self) -> &::std::option::Option<bool> {
         self.inner.get_force_failover()

@@ -114,45 +114,45 @@ impl ListCostCategoryDefinitionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator {
         crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The date when the Cost Category was effective. </p>
+    /// <p>The date when the Cost Category was effective.</p>
     pub fn effective_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_on(input.into());
         self
     }
-    /// <p>The date when the Cost Category was effective. </p>
+    /// <p>The date when the Cost Category was effective.</p>
     pub fn set_effective_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_effective_on(input);
         self
     }
-    /// <p>The date when the Cost Category was effective. </p>
+    /// <p>The date when the Cost Category was effective.</p>
     pub fn get_effective_on(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_on()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The number of entries a paginated response contains. </p>
+    /// <p>The number of entries a paginated response contains.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The number of entries a paginated response contains. </p>
+    /// <p>The number of entries a paginated response contains.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The number of entries a paginated response contains. </p>
+    /// <p>The number of entries a paginated response contains.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

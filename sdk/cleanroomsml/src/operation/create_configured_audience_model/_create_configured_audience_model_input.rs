@@ -20,13 +20,13 @@ pub struct CreateConfiguredAudienceModelInput {
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50.</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case sensitive.</p></li>
+    /// <li><p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
@@ -67,13 +67,13 @@ impl CreateConfiguredAudienceModelInput {
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50.</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case sensitive.</p></li>
+    /// <li><p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -220,13 +220,13 @@ impl CreateConfiguredAudienceModelInputBuilder {
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50.</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case sensitive.</p></li>
+    /// <li><p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
@@ -237,13 +237,13 @@ impl CreateConfiguredAudienceModelInputBuilder {
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50.</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case sensitive.</p></li>
+    /// <li><p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
@@ -252,13 +252,13 @@ impl CreateConfiguredAudienceModelInputBuilder {
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50.</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case sensitive.</p></li>
+    /// <li><p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags

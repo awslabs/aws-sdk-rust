@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`data_set_org(Option<DatasetDetailOrgAttributes>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::data_set_org): <p>The type of data set. The only supported value is VSAM.</p>
     ///   - [`record_length(Option<i32>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::record_length): <p>The length of records in the data set.</p>
     ///   - [`location(Option<String>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::location): <p>The location where the data set is stored.</p>
-    ///   - [`blocksize(Option<i32>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::blocksize): <p>The size of the block on disk. </p>
+    ///   - [`blocksize(Option<i32>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::blocksize): <p>The size of the block on disk.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::creation_time): <p>The timestamp when the data set was created.</p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::last_updated_time): <p>The last time the data set was updated.</p>
     ///   - [`last_referenced_time(Option<DateTime>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::last_referenced_time): <p>The last time the data set was referenced.</p>

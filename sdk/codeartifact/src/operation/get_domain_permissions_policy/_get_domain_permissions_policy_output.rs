@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainPermissionsPolicyOutput {
-    /// <p> The returned resource policy. </p>
+    /// <p>The returned resource policy.</p>
     pub policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
 }
 impl GetDomainPermissionsPolicyOutput {
-    /// <p> The returned resource policy. </p>
+    /// <p>The returned resource policy.</p>
     pub fn policy(&self) -> ::std::option::Option<&crate::types::ResourcePolicy> {
         self.policy.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetDomainPermissionsPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetDomainPermissionsPolicyOutputBuilder {
-    /// <p> The returned resource policy. </p>
+    /// <p>The returned resource policy.</p>
     pub fn policy(mut self, input: crate::types::ResourcePolicy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The returned resource policy. </p>
+    /// <p>The returned resource policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResourcePolicy>) -> Self {
         self.policy = input;
         self
     }
-    /// <p> The returned resource policy. </p>
+    /// <p>The returned resource policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::ResourcePolicy> {
         &self.policy
     }

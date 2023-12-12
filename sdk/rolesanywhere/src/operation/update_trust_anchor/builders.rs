@@ -23,7 +23,7 @@ impl UpdateTrustAnchorInputBuilder {
 /// Fluent builder constructing a request to `UpdateTrustAnchor`.
 ///
 /// <p>Updates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTrustAnchorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

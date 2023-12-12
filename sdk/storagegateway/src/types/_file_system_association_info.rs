@@ -8,7 +8,7 @@ pub struct FileSystemAssociationInfo {
     pub file_system_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
     pub file_system_association_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl FileSystemAssociationInfo {
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
     pub fn file_system_association_status(&self) -> ::std::option::Option<&str> {
         self.file_system_association_status.as_deref()
     }
@@ -119,17 +119,17 @@ impl FileSystemAssociationInfoBuilder {
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
     pub fn file_system_association_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_association_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
     pub fn set_file_system_association_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_association_status = input;
         self
     }
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
     pub fn get_file_system_association_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_association_status
     }

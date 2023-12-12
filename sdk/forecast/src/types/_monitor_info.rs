@@ -8,11 +8,11 @@ pub struct MonitorInfo {
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -23,11 +23,11 @@ impl MonitorInfo {
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -64,11 +64,11 @@ impl MonitorInfoBuilder {
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -76,11 +76,11 @@ impl MonitorInfoBuilder {
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -88,11 +88,11 @@ impl MonitorInfoBuilder {
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

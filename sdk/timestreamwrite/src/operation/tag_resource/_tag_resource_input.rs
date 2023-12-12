@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p> Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN). </p>
+    /// <p>Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The tags to be assigned to the Timestream resource. </p>
+    /// <p>The tags to be assigned to the Timestream resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {
-    /// <p> Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN). </p>
+    /// <p>Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p> The tags to be assigned to the Timestream resource. </p>
+    /// <p>The tags to be assigned to the Timestream resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -35,18 +35,18 @@ pub struct TagResourceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInputBuilder {
-    /// <p> Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN). </p>
+    /// <p>Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN). </p>
+    /// <p>Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p> Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN). </p>
+    /// <p>Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
@@ -54,19 +54,19 @@ impl TagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags to be assigned to the Timestream resource. </p>
+    /// <p>The tags to be assigned to the Timestream resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The tags to be assigned to the Timestream resource. </p>
+    /// <p>The tags to be assigned to the Timestream resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> The tags to be assigned to the Timestream resource. </p>
+    /// <p>The tags to be assigned to the Timestream resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

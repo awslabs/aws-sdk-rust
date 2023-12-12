@@ -123,19 +123,19 @@ impl CreateScheduledActionFluentBuilder {
         self.inner.get_scheduled_action_name()
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
-    /// <p> <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code> </p>
+    /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub fn target_action(mut self, input: crate::types::TargetAction) -> Self {
         self.inner = self.inner.target_action(input);
         self
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
-    /// <p> <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code> </p>
+    /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::TargetAction>) -> Self {
         self.inner = self.inner.set_target_action(input);
         self
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
-    /// <p> <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code> </p>
+    /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub fn get_target_action(&self) -> &::std::option::Option<crate::types::TargetAction> {
         self.inner.get_target_action()
     }

@@ -22,7 +22,7 @@ impl ListGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListGroups`.
 ///
-/// <p>Lists all user groups in Amazon QuickSight. </p>
+/// <p>Lists all user groups in Amazon QuickSight.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

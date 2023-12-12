@@ -108,17 +108,17 @@ impl DeleteInventoryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
+    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
         self
     }
-    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
+    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
         self
     }
-    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
+    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_type_name()
     }

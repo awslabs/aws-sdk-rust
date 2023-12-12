@@ -9,7 +9,7 @@ pub struct UpdateEventLabelInput {
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The new label to assign to the event.</p>
     pub assigned_label: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub label_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEventLabelInput {
@@ -25,7 +25,7 @@ impl UpdateEventLabelInput {
     pub fn assigned_label(&self) -> ::std::option::Option<&str> {
         self.assigned_label.as_deref()
     }
-    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub fn label_timestamp(&self) -> ::std::option::Option<&str> {
         self.label_timestamp.as_deref()
     }
@@ -92,18 +92,18 @@ impl UpdateEventLabelInputBuilder {
     pub fn get_assigned_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.assigned_label
     }
-    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// This field is required.
     pub fn label_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_timestamp = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub fn set_label_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_timestamp = input;
         self
     }
-    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub fn get_label_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_timestamp
     }

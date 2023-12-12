@@ -13,8 +13,8 @@ pub struct VolumeRecommendation {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
+    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub finding: ::std::option::Option<crate::types::EbsFinding>,
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
@@ -27,9 +27,9 @@ pub struct VolumeRecommendation {
     pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
-    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    /// <p>A list of tags assigned to your Amazon EBS volume recommendations.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    /// <p>Describes the effective recommendation preferences for Amazon EBS volume.</p>
     pub effective_recommendation_preferences: ::std::option::Option<crate::types::EbsEffectiveRecommendationPreferences>,
 }
 impl VolumeRecommendation {
@@ -48,8 +48,8 @@ impl VolumeRecommendation {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
+    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub fn finding(&self) -> ::std::option::Option<&crate::types::EbsFinding> {
         self.finding.as_ref()
@@ -78,13 +78,13 @@ impl VolumeRecommendation {
     pub fn current_performance_risk(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
-    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    /// <p>A list of tags assigned to your Amazon EBS volume recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    /// <p>Describes the effective recommendation preferences for Amazon EBS volume.</p>
     pub fn effective_recommendation_preferences(&self) -> ::std::option::Option<&crate::types::EbsEffectiveRecommendationPreferences> {
         self.effective_recommendation_preferences.as_ref()
     }
@@ -158,8 +158,8 @@ impl VolumeRecommendationBuilder {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
+    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::EbsFinding) -> Self {
         self.finding = ::std::option::Option::Some(input);
@@ -168,8 +168,8 @@ impl VolumeRecommendationBuilder {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
+    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub fn set_finding(mut self, input: ::std::option::Option<crate::types::EbsFinding>) -> Self {
         self.finding = input;
@@ -178,8 +178,8 @@ impl VolumeRecommendationBuilder {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
+    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub fn get_finding(&self) -> &::std::option::Option<crate::types::EbsFinding> {
         &self.finding
@@ -273,28 +273,28 @@ impl VolumeRecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    /// <p>A list of tags assigned to your Amazon EBS volume recommendations.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    /// <p>A list of tags assigned to your Amazon EBS volume recommendations.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    /// <p>A list of tags assigned to your Amazon EBS volume recommendations.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    /// <p>Describes the effective recommendation preferences for Amazon EBS volume.</p>
     pub fn effective_recommendation_preferences(mut self, input: crate::types::EbsEffectiveRecommendationPreferences) -> Self {
         self.effective_recommendation_preferences = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    /// <p>Describes the effective recommendation preferences for Amazon EBS volume.</p>
     pub fn set_effective_recommendation_preferences(
         mut self,
         input: ::std::option::Option<crate::types::EbsEffectiveRecommendationPreferences>,
@@ -302,7 +302,7 @@ impl VolumeRecommendationBuilder {
         self.effective_recommendation_preferences = input;
         self
     }
-    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    /// <p>Describes the effective recommendation preferences for Amazon EBS volume.</p>
     pub fn get_effective_recommendation_preferences(&self) -> &::std::option::Option<crate::types::EbsEffectiveRecommendationPreferences> {
         &self.effective_recommendation_preferences
     }

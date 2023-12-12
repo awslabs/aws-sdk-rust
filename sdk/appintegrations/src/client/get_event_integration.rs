@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEventIntegration`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::set_name):<br>required: **true**<br><p>The name of the event integration. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::set_name):<br>required: **true**<br><p>The name of the event integration.</p><br>
     /// - On success, responds with [`GetEventIntegrationOutput`](crate::operation::get_event_integration::GetEventIntegrationOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::name): <p>The name of the event integration. </p>
+    ///   - [`name(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::name): <p>The name of the event integration.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::description): <p>The description of the event integration.</p>
     ///   - [`event_integration_arn(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::event_integration_arn): <p>The Amazon Resource Name (ARN) for the event integration.</p>
     ///   - [`event_bridge_bus(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::event_bridge_bus): <p>The EventBridge bus.</p>

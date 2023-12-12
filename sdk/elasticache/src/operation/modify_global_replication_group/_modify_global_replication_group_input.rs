@@ -5,17 +5,17 @@
 pub struct ModifyGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.</p>
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
     pub cache_node_type: ::std::option::Option<::std::string::String>,
-    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the Global datastore</p>
     pub global_replication_group_description: ::std::option::Option<::std::string::String>,
-    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     pub automatic_failover_enabled: ::std::option::Option<bool>,
 }
 impl ModifyGlobalReplicationGroupInput {
@@ -23,7 +23,7 @@ impl ModifyGlobalReplicationGroupInput {
     pub fn global_replication_group_id(&self) -> ::std::option::Option<&str> {
         self.global_replication_group_id.as_deref()
     }
-    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.</p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
@@ -31,7 +31,7 @@ impl ModifyGlobalReplicationGroupInput {
     pub fn cache_node_type(&self) -> ::std::option::Option<&str> {
         self.cache_node_type.as_deref()
     }
-    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -43,7 +43,7 @@ impl ModifyGlobalReplicationGroupInput {
     pub fn global_replication_group_description(&self) -> ::std::option::Option<&str> {
         self.global_replication_group_description.as_deref()
     }
-    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     pub fn automatic_failover_enabled(&self) -> ::std::option::Option<bool> {
         self.automatic_failover_enabled
     }
@@ -83,18 +83,18 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_replication_group_id
     }
-    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.</p>
     /// This field is required.
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
     }
-    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         &self.apply_immediately
     }
@@ -112,17 +112,17 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_node_type
     }
-    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
@@ -154,17 +154,17 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     pub fn get_global_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_replication_group_description
     }
-    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     pub fn automatic_failover_enabled(mut self, input: bool) -> Self {
         self.automatic_failover_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     pub fn set_automatic_failover_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_failover_enabled = input;
         self
     }
-    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     pub fn get_automatic_failover_enabled(&self) -> &::std::option::Option<bool> {
         &self.automatic_failover_enabled
     }

@@ -22,8 +22,8 @@ impl AssociateConnectPeerInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateConnectPeer`.
 ///
-/// <p>Associates a core network Connect peer with a device and optionally, with a link. </p>
-/// <p>If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network. </p>
+/// <p>Associates a core network Connect peer with a device and optionally, with a link.</p>
+/// <p>If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateConnectPeerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

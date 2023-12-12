@@ -150,17 +150,17 @@ impl DescribeImagesFluentBuilder {
     pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_arns()
     }
-    /// <p>The type of image (public, private, or shared) to describe. </p>
+    /// <p>The type of image (public, private, or shared) to describe.</p>
     pub fn r#type(mut self, input: crate::types::VisibilityType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of image (public, private, or shared) to describe. </p>
+    /// <p>The type of image (public, private, or shared) to describe.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::VisibilityType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of image (public, private, or shared) to describe. </p>
+    /// <p>The type of image (public, private, or shared) to describe.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::VisibilityType> {
         self.inner.get_type()
     }

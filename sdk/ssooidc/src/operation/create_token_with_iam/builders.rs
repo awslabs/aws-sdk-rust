@@ -123,28 +123,28 @@ impl CreateTokenWithIAMFluentBuilder {
         self.inner.get_client_id()
     }
     /// <p>Supports the following OAuth grant types: Authorization Code, Refresh Token, JWT Bearer, and Token Exchange. Specify one of the following values, depending on the grant type that you want:</p>
-    /// <p>* Authorization Code - <code>authorization_code</code> </p>
-    /// <p>* Refresh Token - <code>refresh_token</code> </p>
-    /// <p>* JWT Bearer - <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code> </p>
-    /// <p>* Token Exchange - <code>urn:ietf:params:oauth:grant-type:token-exchange</code> </p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
+    /// <p>* JWT Bearer - <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code></p>
+    /// <p>* Token Exchange - <code>urn:ietf:params:oauth:grant-type:token-exchange</code></p>
     pub fn grant_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_type(input.into());
         self
     }
     /// <p>Supports the following OAuth grant types: Authorization Code, Refresh Token, JWT Bearer, and Token Exchange. Specify one of the following values, depending on the grant type that you want:</p>
-    /// <p>* Authorization Code - <code>authorization_code</code> </p>
-    /// <p>* Refresh Token - <code>refresh_token</code> </p>
-    /// <p>* JWT Bearer - <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code> </p>
-    /// <p>* Token Exchange - <code>urn:ietf:params:oauth:grant-type:token-exchange</code> </p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
+    /// <p>* JWT Bearer - <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code></p>
+    /// <p>* Token Exchange - <code>urn:ietf:params:oauth:grant-type:token-exchange</code></p>
     pub fn set_grant_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_type(input);
         self
     }
     /// <p>Supports the following OAuth grant types: Authorization Code, Refresh Token, JWT Bearer, and Token Exchange. Specify one of the following values, depending on the grant type that you want:</p>
-    /// <p>* Authorization Code - <code>authorization_code</code> </p>
-    /// <p>* Refresh Token - <code>refresh_token</code> </p>
-    /// <p>* JWT Bearer - <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code> </p>
-    /// <p>* Token Exchange - <code>urn:ietf:params:oauth:grant-type:token-exchange</code> </p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
+    /// <p>* JWT Bearer - <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code></p>
+    /// <p>* Token Exchange - <code>urn:ietf:params:oauth:grant-type:token-exchange</code></p>
     pub fn get_grant_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grant_type()
     }
@@ -211,17 +211,17 @@ impl CreateTokenWithIAMFluentBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scope()
     }
-    /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code. </p>
+    /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
     pub fn redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.redirect_uri(input.into());
         self
     }
-    /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code. </p>
+    /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
     pub fn set_redirect_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_redirect_uri(input);
         self
     }
-    /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code. </p>
+    /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
     pub fn get_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_redirect_uri()
     }
@@ -240,39 +240,39 @@ impl CreateTokenWithIAMFluentBuilder {
         self.inner.get_subject_token()
     }
     /// <p>Used only when calling this API for the Token Exchange grant type. This value specifies the type of token that is passed as the subject of the exchange. The following value is supported:</p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
     pub fn subject_token_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subject_token_type(input.into());
         self
     }
     /// <p>Used only when calling this API for the Token Exchange grant type. This value specifies the type of token that is passed as the subject of the exchange. The following value is supported:</p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
     pub fn set_subject_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subject_token_type(input);
         self
     }
     /// <p>Used only when calling this API for the Token Exchange grant type. This value specifies the type of token that is passed as the subject of the exchange. The following value is supported:</p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
     pub fn get_subject_token_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subject_token_type()
     }
     /// <p>Used only when calling this API for the Token Exchange grant type. This value specifies the type of token that the requester can receive. The following values are supported:</p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
-    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
+    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub fn requested_token_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requested_token_type(input.into());
         self
     }
     /// <p>Used only when calling this API for the Token Exchange grant type. This value specifies the type of token that the requester can receive. The following values are supported:</p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
-    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
+    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub fn set_requested_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_requested_token_type(input);
         self
     }
     /// <p>Used only when calling this API for the Token Exchange grant type. This value specifies the type of token that the requester can receive. The following values are supported:</p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
-    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
+    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub fn get_requested_token_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_requested_token_type()
     }

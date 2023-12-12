@@ -7,10 +7,10 @@ pub struct GetAdminScopeOutput {
     pub admin_scope: ::std::option::Option<crate::types::AdminScope>,
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
+    /// <li><p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
+    /// <li><p><code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p></li>
+    /// <li><p><code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p></li>
+    /// <li><p><code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::OrganizationStatus>,
     _request_id: Option<String>,
@@ -22,10 +22,10 @@ impl GetAdminScopeOutput {
     }
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
+    /// <li><p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
+    /// <li><p><code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p></li>
+    /// <li><p><code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p></li>
+    /// <li><p><code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OrganizationStatus> {
         self.status.as_ref()
@@ -68,10 +68,10 @@ impl GetAdminScopeOutputBuilder {
     }
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
+    /// <li><p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
+    /// <li><p><code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p></li>
+    /// <li><p><code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p></li>
+    /// <li><p><code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::OrganizationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -79,10 +79,10 @@ impl GetAdminScopeOutputBuilder {
     }
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
+    /// <li><p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
+    /// <li><p><code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p></li>
+    /// <li><p><code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p></li>
+    /// <li><p><code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationStatus>) -> Self {
         self.status = input;
@@ -90,10 +90,10 @@ impl GetAdminScopeOutputBuilder {
     }
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
+    /// <li><p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
+    /// <li><p><code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p></li>
+    /// <li><p><code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p></li>
+    /// <li><p><code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OrganizationStatus> {
         &self.status

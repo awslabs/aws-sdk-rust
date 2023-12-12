@@ -23,7 +23,7 @@ impl DeleteCustomRoutingAcceleratorInputBuilder {
 /// Fluent builder constructing a request to `DeleteCustomRoutingAccelerator`.
 ///
 /// <p>Delete a custom routing accelerator. Before you can delete an accelerator, you must disable it and remove all dependent resources (listeners and endpoint groups). To disable the accelerator, update the accelerator to set <code>Enabled</code> to false.</p> <important>
-/// <p>When you create a custom routing accelerator, by default, Global Accelerator provides you with a set of two static IP addresses. </p>
+/// <p>When you create a custom routing accelerator, by default, Global Accelerator provides you with a set of two static IP addresses.</p>
 /// <p>The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them. As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Identity and access management</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

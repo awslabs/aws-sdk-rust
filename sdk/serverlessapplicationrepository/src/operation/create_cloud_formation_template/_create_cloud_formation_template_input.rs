@@ -6,7 +6,7 @@ pub struct CreateCloudFormationTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub semantic_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateCloudFormationTemplateInput {
@@ -15,7 +15,7 @@ impl CreateCloudFormationTemplateInput {
         self.application_id.as_deref()
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn semantic_version(&self) -> ::std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
@@ -51,19 +51,19 @@ impl CreateCloudFormationTemplateInputBuilder {
         &self.application_id
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.semantic_version
     }

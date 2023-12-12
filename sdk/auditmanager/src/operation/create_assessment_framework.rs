@@ -250,15 +250,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAssessm
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateAssessmentFrameworkError {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p>Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
+    /// <p>An internal service error occurred during the processing of your request. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The resource that's specified in the request can't be found. </p>
+    /// <p>The resource that's specified in the request can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p> The request has invalid or missing parameters. </p>
+    /// <p>The request has invalid or missing parameters.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

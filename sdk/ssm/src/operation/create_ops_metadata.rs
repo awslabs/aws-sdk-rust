@@ -249,7 +249,7 @@ pub enum CreateOpsMetadataError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>An OpsMetadata object already exists for the selected resource.</p>
     OpsMetadataAlreadyExistsException(crate::types::error::OpsMetadataAlreadyExistsException),
-    /// <p>One of the arguments passed is invalid. </p>
+    /// <p>One of the arguments passed is invalid.</p>
     OpsMetadataInvalidArgumentException(crate::types::error::OpsMetadataInvalidArgumentException),
     /// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
     OpsMetadataLimitExceededException(crate::types::error::OpsMetadataLimitExceededException),

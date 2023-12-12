@@ -9,17 +9,17 @@ pub struct ParameterConstraints {
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
     pub allowed_pattern: ::std::option::Option<::std::string::String>,
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub constraint_description: ::std::option::Option<::std::string::String>,
-    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types.</p>
     pub max_length: ::std::option::Option<::std::string::String>,
     /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
     pub min_length: ::std::option::Option<::std::string::String>,
     /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
     pub max_value: ::std::option::Option<::std::string::String>,
-    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types.</p>
     pub min_value: ::std::option::Option<::std::string::String>,
 }
 impl ParameterConstraints {
@@ -34,13 +34,13 @@ impl ParameterConstraints {
         self.allowed_pattern.as_deref()
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub fn constraint_description(&self) -> ::std::option::Option<&str> {
         self.constraint_description.as_deref()
     }
-    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types.</p>
     pub fn max_length(&self) -> ::std::option::Option<&str> {
         self.max_length.as_deref()
     }
@@ -52,7 +52,7 @@ impl ParameterConstraints {
     pub fn max_value(&self) -> ::std::option::Option<&str> {
         self.max_value.as_deref()
     }
-    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types.</p>
     pub fn min_value(&self) -> ::std::option::Option<&str> {
         self.min_value.as_deref()
     }
@@ -112,39 +112,39 @@ impl ParameterConstraintsBuilder {
         &self.allowed_pattern
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub fn constraint_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constraint_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub fn set_constraint_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constraint_description = input;
         self
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
+    /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub fn get_constraint_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.constraint_description
     }
-    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types.</p>
     pub fn max_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_length = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types.</p>
     pub fn set_max_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_length = input;
         self
     }
-    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types.</p>
     pub fn get_max_length(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_length
     }
@@ -176,17 +176,17 @@ impl ParameterConstraintsBuilder {
     pub fn get_max_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_value
     }
-    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types.</p>
     pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.min_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types.</p>
     pub fn set_min_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min_value = input;
         self
     }
-    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types.</p>
     pub fn get_min_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.min_value
     }

@@ -24,7 +24,7 @@ impl RebootDbInstanceInputBuilder {
 ///
 /// <p>You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain modifications, or if you change the DB parameter group associated with the DB instance, you must reboot the instance for the changes to take effect.</p>
 /// <p>Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary outage, during which the DB instance status is set to rebooting.</p>
-/// <p>For more information about rebooting, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+/// <p>For more information about rebooting, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB Instance</a> in the <i>Amazon RDS User Guide.</i></p>
 /// <p>This command doesn't apply to RDS Custom.</p>
 /// <p>If your DB instance is part of a Multi-AZ DB cluster, you can reboot the DB cluster with the <code>RebootDBCluster</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -115,7 +115,7 @@ impl RebootDBInstanceFluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
@@ -124,7 +124,7 @@ impl RebootDBInstanceFluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
@@ -133,7 +133,7 @@ impl RebootDBInstanceFluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()

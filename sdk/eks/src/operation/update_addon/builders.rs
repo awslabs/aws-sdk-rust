@@ -172,9 +172,9 @@ impl UpdateAddonFluentBuilder {
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
-    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
-    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
-    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+    /// <li><p><b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p></li>
+    /// <li><p><b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p></li>
+    /// <li><p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
     /// </ul>
     pub fn resolve_conflicts(mut self, input: crate::types::ResolveConflicts) -> Self {
         self.inner = self.inner.resolve_conflicts(input);
@@ -182,9 +182,9 @@ impl UpdateAddonFluentBuilder {
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
-    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
-    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
-    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+    /// <li><p><b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p></li>
+    /// <li><p><b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p></li>
+    /// <li><p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
     /// </ul>
     pub fn set_resolve_conflicts(mut self, input: ::std::option::Option<crate::types::ResolveConflicts>) -> Self {
         self.inner = self.inner.set_resolve_conflicts(input);
@@ -192,9 +192,9 @@ impl UpdateAddonFluentBuilder {
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
-    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
-    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
-    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+    /// <li><p><b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p></li>
+    /// <li><p><b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p></li>
+    /// <li><p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
     /// </ul>
     pub fn get_resolve_conflicts(&self) -> &::std::option::Option<crate::types::ResolveConflicts> {
         self.inner.get_resolve_conflicts()

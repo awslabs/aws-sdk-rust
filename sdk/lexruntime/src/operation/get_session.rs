@@ -289,7 +289,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetSessionEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetSessionError {
-    /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
+    /// <p>Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>Internal service error. Retry the call.</p>
     InternalFailureException(crate::types::error::InternalFailureException),

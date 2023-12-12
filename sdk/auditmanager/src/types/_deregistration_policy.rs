@@ -9,16 +9,16 @@
 pub struct DeregistrationPolicy {
     /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
     /// <ul>
-    /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
-    /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+    /// <li><p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p></li>
+    /// <li><p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p></li>
     /// </ul>
     pub delete_resources: ::std::option::Option<crate::types::DeleteResources>,
 }
 impl DeregistrationPolicy {
     /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
     /// <ul>
-    /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
-    /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+    /// <li><p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p></li>
+    /// <li><p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p></li>
     /// </ul>
     pub fn delete_resources(&self) -> ::std::option::Option<&crate::types::DeleteResources> {
         self.delete_resources.as_ref()
@@ -40,8 +40,8 @@ pub struct DeregistrationPolicyBuilder {
 impl DeregistrationPolicyBuilder {
     /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
     /// <ul>
-    /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
-    /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+    /// <li><p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p></li>
+    /// <li><p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p></li>
     /// </ul>
     pub fn delete_resources(mut self, input: crate::types::DeleteResources) -> Self {
         self.delete_resources = ::std::option::Option::Some(input);
@@ -49,8 +49,8 @@ impl DeregistrationPolicyBuilder {
     }
     /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
     /// <ul>
-    /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
-    /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+    /// <li><p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p></li>
+    /// <li><p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p></li>
     /// </ul>
     pub fn set_delete_resources(mut self, input: ::std::option::Option<crate::types::DeleteResources>) -> Self {
         self.delete_resources = input;
@@ -58,8 +58,8 @@ impl DeregistrationPolicyBuilder {
     }
     /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
     /// <ul>
-    /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
-    /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+    /// <li><p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p></li>
+    /// <li><p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p></li>
     /// </ul>
     pub fn get_delete_resources(&self) -> &::std::option::Option<crate::types::DeleteResources> {
         &self.delete_resources

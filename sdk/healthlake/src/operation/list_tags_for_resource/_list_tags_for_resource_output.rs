@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
-    /// <p> Returns a list of tags associated with a data store. </p>
+    /// <p>Returns a list of tags associated with a data store.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
-    /// <p> Returns a list of tags associated with a data store. </p>
+    /// <p>Returns a list of tags associated with a data store.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -39,19 +39,19 @@ impl ListTagsForResourceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> Returns a list of tags associated with a data store. </p>
+    /// <p>Returns a list of tags associated with a data store.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Returns a list of tags associated with a data store. </p>
+    /// <p>Returns a list of tags associated with a data store.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> Returns a list of tags associated with a data store. </p>
+    /// <p>Returns a list of tags associated with a data store.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

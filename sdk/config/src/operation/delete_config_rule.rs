@@ -248,15 +248,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteConfigR
 pub enum DeleteConfigRuleError {
     /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::types::error::NoSuchConfigRuleException),
-    /// <p>You see this exception in the following cases: </p>
+    /// <p>You see this exception in the following cases:</p>
     /// <ul>
-    /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
+    /// <li><p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p></li>
+    /// <li><p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p></li>
+    /// <li><p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p></li>
+    /// <li><p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p></li>
+    /// <li><p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p></li>
+    /// <li><p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p></li>
+    /// <li><p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p></li>
     /// </ul>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

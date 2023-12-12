@@ -6,18 +6,18 @@
 pub struct AnalyticsIntentStageMetricResult {
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li> <p> <code>Count</code> – The number of times the intent stage occurred.</p> </li>
-    /// <li> <p> <code>Success</code> – The number of times the intent stage succeeded.</p> </li>
-    /// <li> <p> <code>Failure</code> – The number of times the intent stage failed.</p> </li>
-    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent stage.</p> </li>
-    /// <li> <p> <code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p> </li>
+    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::AnalyticsIntentStageMetricName>,
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
     /// <p>The value of the summary statistic for the metric that you requested.</p>
@@ -26,20 +26,20 @@ pub struct AnalyticsIntentStageMetricResult {
 impl AnalyticsIntentStageMetricResult {
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li> <p> <code>Count</code> – The number of times the intent stage occurred.</p> </li>
-    /// <li> <p> <code>Success</code> – The number of times the intent stage succeeded.</p> </li>
-    /// <li> <p> <code>Failure</code> – The number of times the intent stage failed.</p> </li>
-    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent stage.</p> </li>
-    /// <li> <p> <code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p> </li>
+    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsIntentStageMetricName> {
         self.name.as_ref()
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn statistic(&self) -> ::std::option::Option<&crate::types::AnalyticsMetricStatistic> {
         self.statistic.as_ref()
@@ -67,11 +67,11 @@ pub struct AnalyticsIntentStageMetricResultBuilder {
 impl AnalyticsIntentStageMetricResultBuilder {
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li> <p> <code>Count</code> – The number of times the intent stage occurred.</p> </li>
-    /// <li> <p> <code>Success</code> – The number of times the intent stage succeeded.</p> </li>
-    /// <li> <p> <code>Failure</code> – The number of times the intent stage failed.</p> </li>
-    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent stage.</p> </li>
-    /// <li> <p> <code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p> </li>
+    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::AnalyticsIntentStageMetricName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -79,11 +79,11 @@ impl AnalyticsIntentStageMetricResultBuilder {
     }
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li> <p> <code>Count</code> – The number of times the intent stage occurred.</p> </li>
-    /// <li> <p> <code>Success</code> – The number of times the intent stage succeeded.</p> </li>
-    /// <li> <p> <code>Failure</code> – The number of times the intent stage failed.</p> </li>
-    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent stage.</p> </li>
-    /// <li> <p> <code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p> </li>
+    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentStageMetricName>) -> Self {
         self.name = input;
@@ -91,20 +91,20 @@ impl AnalyticsIntentStageMetricResultBuilder {
     }
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li> <p> <code>Count</code> – The number of times the intent stage occurred.</p> </li>
-    /// <li> <p> <code>Success</code> – The number of times the intent stage succeeded.</p> </li>
-    /// <li> <p> <code>Failure</code> – The number of times the intent stage failed.</p> </li>
-    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent stage.</p> </li>
-    /// <li> <p> <code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p> </li>
+    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentStageMetricName> {
         &self.name
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn statistic(mut self, input: crate::types::AnalyticsMetricStatistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
@@ -112,9 +112,9 @@ impl AnalyticsIntentStageMetricResultBuilder {
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
@@ -122,9 +122,9 @@ impl AnalyticsIntentStageMetricResultBuilder {
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p> </li>
-    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
         &self.statistic

@@ -27,26 +27,26 @@ pub struct DescribeLaunchTemplateVersionsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>create-time</code> - The time the launch template version was created.</p> </li>
-    /// <li> <p> <code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p> </li>
-    /// <li> <p> <code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p> </li>
-    /// <li> <p> <code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p> </li>
-    /// <li> <p> <code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p> </li>
-    /// <li> <p> <code>image-id</code> - The ID of the AMI.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
-    /// <li> <p> <code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p> </li>
-    /// <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
-    /// <li> <p> <code>license-configuration-arn</code> - The ARN of the license configuration.</p> </li>
-    /// <li> <p> <code>network-card-index</code> - The index of the network card.</p> </li>
-    /// <li> <p> <code>ram-disk-id</code> - The RAM disk ID.</p> </li>
+    /// <li><p><code>create-time</code> - The time the launch template version was created.</p></li>
+    /// <li><p><code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p></li>
+    /// <li><p><code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p></li>
+    /// <li><p><code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p></li>
+    /// <li><p><code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p></li>
+    /// <li><p><code>image-id</code> - The ID of the AMI.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type.</p></li>
+    /// <li><p><code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p></li>
+    /// <li><p><code>kernel-id</code> - The kernel ID.</p></li>
+    /// <li><p><code>license-configuration-arn</code> - The ARN of the license configuration.</p></li>
+    /// <li><p><code>network-card-index</code> - The index of the network card.</p></li>
+    /// <li><p><code>ram-disk-id</code> - The RAM disk ID.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageId</code>.</p>
     /// <p>If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is displayed in the response for <code>imageId</code>.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
     pub resolve_alias: ::std::option::Option<bool>,
 }
 impl DescribeLaunchTemplateVersionsInput {
@@ -92,20 +92,20 @@ impl DescribeLaunchTemplateVersionsInput {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>create-time</code> - The time the launch template version was created.</p> </li>
-    /// <li> <p> <code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p> </li>
-    /// <li> <p> <code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p> </li>
-    /// <li> <p> <code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p> </li>
-    /// <li> <p> <code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p> </li>
-    /// <li> <p> <code>image-id</code> - The ID of the AMI.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
-    /// <li> <p> <code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p> </li>
-    /// <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
-    /// <li> <p> <code>license-configuration-arn</code> - The ARN of the license configuration.</p> </li>
-    /// <li> <p> <code>network-card-index</code> - The index of the network card.</p> </li>
-    /// <li> <p> <code>ram-disk-id</code> - The RAM disk ID.</p> </li>
+    /// <li><p><code>create-time</code> - The time the launch template version was created.</p></li>
+    /// <li><p><code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p></li>
+    /// <li><p><code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p></li>
+    /// <li><p><code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p></li>
+    /// <li><p><code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p></li>
+    /// <li><p><code>image-id</code> - The ID of the AMI.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type.</p></li>
+    /// <li><p><code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p></li>
+    /// <li><p><code>kernel-id</code> - The kernel ID.</p></li>
+    /// <li><p><code>license-configuration-arn</code> - The ARN of the license configuration.</p></li>
+    /// <li><p><code>network-card-index</code> - The index of the network card.</p></li>
+    /// <li><p><code>ram-disk-id</code> - The RAM disk ID.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -114,8 +114,8 @@ impl DescribeLaunchTemplateVersionsInput {
     }
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageId</code>.</p>
     /// <p>If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is displayed in the response for <code>imageId</code>.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
     pub fn resolve_alias(&self) -> ::std::option::Option<bool> {
         self.resolve_alias
     }
@@ -285,20 +285,20 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>create-time</code> - The time the launch template version was created.</p> </li>
-    /// <li> <p> <code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p> </li>
-    /// <li> <p> <code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p> </li>
-    /// <li> <p> <code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p> </li>
-    /// <li> <p> <code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p> </li>
-    /// <li> <p> <code>image-id</code> - The ID of the AMI.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
-    /// <li> <p> <code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p> </li>
-    /// <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
-    /// <li> <p> <code>license-configuration-arn</code> - The ARN of the license configuration.</p> </li>
-    /// <li> <p> <code>network-card-index</code> - The index of the network card.</p> </li>
-    /// <li> <p> <code>ram-disk-id</code> - The RAM disk ID.</p> </li>
+    /// <li><p><code>create-time</code> - The time the launch template version was created.</p></li>
+    /// <li><p><code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p></li>
+    /// <li><p><code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p></li>
+    /// <li><p><code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p></li>
+    /// <li><p><code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p></li>
+    /// <li><p><code>image-id</code> - The ID of the AMI.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type.</p></li>
+    /// <li><p><code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p></li>
+    /// <li><p><code>kernel-id</code> - The kernel ID.</p></li>
+    /// <li><p><code>license-configuration-arn</code> - The ARN of the license configuration.</p></li>
+    /// <li><p><code>network-card-index</code> - The index of the network card.</p></li>
+    /// <li><p><code>ram-disk-id</code> - The RAM disk ID.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -308,20 +308,20 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>create-time</code> - The time the launch template version was created.</p> </li>
-    /// <li> <p> <code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p> </li>
-    /// <li> <p> <code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p> </li>
-    /// <li> <p> <code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p> </li>
-    /// <li> <p> <code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p> </li>
-    /// <li> <p> <code>image-id</code> - The ID of the AMI.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
-    /// <li> <p> <code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p> </li>
-    /// <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
-    /// <li> <p> <code>license-configuration-arn</code> - The ARN of the license configuration.</p> </li>
-    /// <li> <p> <code>network-card-index</code> - The index of the network card.</p> </li>
-    /// <li> <p> <code>ram-disk-id</code> - The RAM disk ID.</p> </li>
+    /// <li><p><code>create-time</code> - The time the launch template version was created.</p></li>
+    /// <li><p><code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p></li>
+    /// <li><p><code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p></li>
+    /// <li><p><code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p></li>
+    /// <li><p><code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p></li>
+    /// <li><p><code>image-id</code> - The ID of the AMI.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type.</p></li>
+    /// <li><p><code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p></li>
+    /// <li><p><code>kernel-id</code> - The kernel ID.</p></li>
+    /// <li><p><code>license-configuration-arn</code> - The ARN of the license configuration.</p></li>
+    /// <li><p><code>network-card-index</code> - The index of the network card.</p></li>
+    /// <li><p><code>ram-disk-id</code> - The RAM disk ID.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -329,44 +329,44 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>create-time</code> - The time the launch template version was created.</p> </li>
-    /// <li> <p> <code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p> </li>
-    /// <li> <p> <code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p> </li>
-    /// <li> <p> <code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p> </li>
-    /// <li> <p> <code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p> </li>
-    /// <li> <p> <code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p> </li>
-    /// <li> <p> <code>image-id</code> - The ID of the AMI.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
-    /// <li> <p> <code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p> </li>
-    /// <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
-    /// <li> <p> <code>license-configuration-arn</code> - The ARN of the license configuration.</p> </li>
-    /// <li> <p> <code>network-card-index</code> - The index of the network card.</p> </li>
-    /// <li> <p> <code>ram-disk-id</code> - The RAM disk ID.</p> </li>
+    /// <li><p><code>create-time</code> - The time the launch template version was created.</p></li>
+    /// <li><p><code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized for Amazon EBS I/O.</p></li>
+    /// <li><p><code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your instances is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance metadata service is enabled (<code>enabled</code> | <code>disabled</code>).</p></li>
+    /// <li><p><code>host-resource-group-arn</code> - The ARN of the host resource group in which to launch the instances.</p></li>
+    /// <li><p><code>http-tokens</code> - The state of token usage for your instance metadata requests (<code>optional</code> | <code>required</code>).</p></li>
+    /// <li><p><code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p></li>
+    /// <li><p><code>image-id</code> - The ID of the AMI.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type.</p></li>
+    /// <li><p><code>is-default-version</code> - A boolean that indicates whether the launch template version is the default version.</p></li>
+    /// <li><p><code>kernel-id</code> - The kernel ID.</p></li>
+    /// <li><p><code>license-configuration-arn</code> - The ARN of the license configuration.</p></li>
+    /// <li><p><code>network-card-index</code> - The index of the network card.</p></li>
+    /// <li><p><code>ram-disk-id</code> - The RAM disk ID.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageId</code>.</p>
     /// <p>If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is displayed in the response for <code>imageId</code>.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
     pub fn resolve_alias(mut self, input: bool) -> Self {
         self.resolve_alias = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageId</code>.</p>
     /// <p>If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is displayed in the response for <code>imageId</code>.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_resolve_alias(mut self, input: ::std::option::Option<bool>) -> Self {
         self.resolve_alias = input;
         self
     }
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageId</code>.</p>
     /// <p>If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is displayed in the response for <code>imageId</code>.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_resolve_alias(&self) -> &::std::option::Option<bool> {
         &self.resolve_alias
     }

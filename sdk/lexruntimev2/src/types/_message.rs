@@ -8,7 +8,7 @@ pub struct Message {
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of response.</p>
     pub content_type: crate::types::MessageContentType,
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
@@ -21,7 +21,7 @@ impl Message {
     pub fn content_type(&self) -> &crate::types::MessageContentType {
         &self.content_type
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn image_response_card(&self) -> ::std::option::Option<&crate::types::ImageResponseCard> {
         self.image_response_card.as_ref()
@@ -81,19 +81,19 @@ impl MessageBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::MessageContentType> {
         &self.content_type
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn image_response_card(mut self, input: crate::types::ImageResponseCard) -> Self {
         self.image_response_card = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn set_image_response_card(mut self, input: ::std::option::Option<crate::types::ImageResponseCard>) -> Self {
         self.image_response_card = input;
         self
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn get_image_response_card(&self) -> &::std::option::Option<crate::types::ImageResponseCard> {
         &self.image_response_card

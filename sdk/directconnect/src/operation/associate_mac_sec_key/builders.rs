@@ -149,7 +149,7 @@ impl AssociateMacSecKeyFluentBuilder {
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn ckn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ckn(input.into());
@@ -157,7 +157,7 @@ impl AssociateMacSecKeyFluentBuilder {
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn set_ckn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ckn(input);
@@ -165,14 +165,14 @@ impl AssociateMacSecKeyFluentBuilder {
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn get_ckn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ckn()
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn cak(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cak(input.into());
@@ -180,7 +180,7 @@ impl AssociateMacSecKeyFluentBuilder {
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn set_cak(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cak(input);
@@ -188,7 +188,7 @@ impl AssociateMacSecKeyFluentBuilder {
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn get_cak(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cak()

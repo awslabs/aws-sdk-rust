@@ -224,25 +224,25 @@ impl PutSessionFluentBuilder {
     pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_attributes()
     }
-    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
+    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
-    /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_content_type(input.into());
         self
     }
-    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
+    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
-    /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_content_type(input);
         self
     }
-    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
+    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
-    /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub fn get_response_content_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_response_content_type()

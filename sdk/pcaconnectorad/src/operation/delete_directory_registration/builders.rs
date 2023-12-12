@@ -22,7 +22,7 @@ impl DeleteDirectoryRegistrationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDirectoryRegistration`.
 ///
-/// <p>Deletes a directory registration. Deleting a directory registration deauthorizes Amazon Web Services Private CA with the directory. </p>
+/// <p>Deletes a directory registration. Deleting a directory registration deauthorizes Amazon Web Services Private CA with the directory.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDirectoryRegistrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

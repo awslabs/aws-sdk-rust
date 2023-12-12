@@ -4,39 +4,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PermissionGroup {
-    /// <p> The unique identifier for the permission group.</p>
+    /// <p>The unique identifier for the permission group.</p>
     pub permission_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the permission group.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> A brief description for the permission group.</p>
+    /// <p>A brief description for the permission group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
     /// </important>
     /// <ul>
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// <li><p><code>CreateDataset</code> – Group members can create new datasets.</p></li>
+    /// <li><p><code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p></li>
+    /// <li><p><code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p></li>
+    /// <li><p><code>ManageAttributeSets</code> – Group members can manage attribute sets.</p></li>
+    /// <li><p><code>ViewAuditData</code> – Group members can view audit data.</p></li>
+    /// <li><p><code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p></li>
+    /// <li><p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
     pub application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
-    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub create_time: i64,
-    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
+    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds.</p>
     pub last_modified_time: i64,
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <li><p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
+    /// <li><p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
+    /// <li><p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
     /// </ul>
     pub membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroup {
-    /// <p> The unique identifier for the permission group.</p>
+    /// <p>The unique identifier for the permission group.</p>
     pub fn permission_group_id(&self) -> ::std::option::Option<&str> {
         self.permission_group_id.as_deref()
     }
@@ -44,7 +44,7 @@ impl PermissionGroup {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> A brief description for the permission group.</p>
+    /// <p>A brief description for the permission group.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -52,32 +52,32 @@ impl PermissionGroup {
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
     /// </important>
     /// <ul>
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// <li><p><code>CreateDataset</code> – Group members can create new datasets.</p></li>
+    /// <li><p><code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p></li>
+    /// <li><p><code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p></li>
+    /// <li><p><code>ManageAttributeSets</code> – Group members can manage attribute sets.</p></li>
+    /// <li><p><code>ViewAuditData</code> – Group members can view audit data.</p></li>
+    /// <li><p><code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p></li>
+    /// <li><p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_permissions.is_none()`.
     pub fn application_permissions(&self) -> &[crate::types::ApplicationPermission] {
         self.application_permissions.as_deref().unwrap_or_default()
     }
-    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub fn create_time(&self) -> i64 {
         self.create_time
     }
-    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
+    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds.</p>
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <li><p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
+    /// <li><p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
+    /// <li><p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
     /// </ul>
     pub fn membership_status(&self) -> ::std::option::Option<&crate::types::PermissionGroupMembershipStatus> {
         self.membership_status.as_ref()
@@ -116,17 +116,17 @@ pub struct PermissionGroupBuilder {
     pub(crate) membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroupBuilder {
-    /// <p> The unique identifier for the permission group.</p>
+    /// <p>The unique identifier for the permission group.</p>
     pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier for the permission group.</p>
+    /// <p>The unique identifier for the permission group.</p>
     pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_group_id = input;
         self
     }
-    /// <p> The unique identifier for the permission group.</p>
+    /// <p>The unique identifier for the permission group.</p>
     pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_group_id
     }
@@ -144,17 +144,17 @@ impl PermissionGroupBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> A brief description for the permission group.</p>
+    /// <p>A brief description for the permission group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A brief description for the permission group.</p>
+    /// <p>A brief description for the permission group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> A brief description for the permission group.</p>
+    /// <p>A brief description for the permission group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -166,13 +166,13 @@ impl PermissionGroupBuilder {
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
     /// </important>
     /// <ul>
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// <li><p><code>CreateDataset</code> – Group members can create new datasets.</p></li>
+    /// <li><p><code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p></li>
+    /// <li><p><code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p></li>
+    /// <li><p><code>ManageAttributeSets</code> – Group members can manage attribute sets.</p></li>
+    /// <li><p><code>ViewAuditData</code> – Group members can view audit data.</p></li>
+    /// <li><p><code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p></li>
+    /// <li><p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
     pub fn application_permissions(mut self, input: crate::types::ApplicationPermission) -> Self {
         let mut v = self.application_permissions.unwrap_or_default();
@@ -184,13 +184,13 @@ impl PermissionGroupBuilder {
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
     /// </important>
     /// <ul>
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// <li><p><code>CreateDataset</code> – Group members can create new datasets.</p></li>
+    /// <li><p><code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p></li>
+    /// <li><p><code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p></li>
+    /// <li><p><code>ManageAttributeSets</code> – Group members can manage attribute sets.</p></li>
+    /// <li><p><code>ViewAuditData</code> – Group members can view audit data.</p></li>
+    /// <li><p><code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p></li>
+    /// <li><p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
     pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>) -> Self {
         self.application_permissions = input;
@@ -200,50 +200,50 @@ impl PermissionGroupBuilder {
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
     /// </important>
     /// <ul>
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// <li><p><code>CreateDataset</code> – Group members can create new datasets.</p></li>
+    /// <li><p><code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p></li>
+    /// <li><p><code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p></li>
+    /// <li><p><code>ManageAttributeSets</code> – Group members can manage attribute sets.</p></li>
+    /// <li><p><code>ViewAuditData</code> – Group members can view audit data.</p></li>
+    /// <li><p><code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p></li>
+    /// <li><p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
     pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
         &self.application_permissions
     }
-    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub fn create_time(mut self, input: i64) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<i64> {
         &self.create_time
     }
-    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
+    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
+    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
+    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
         &self.last_modified_time
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <li><p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
+    /// <li><p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
+    /// <li><p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
     /// </ul>
     pub fn membership_status(mut self, input: crate::types::PermissionGroupMembershipStatus) -> Self {
         self.membership_status = ::std::option::Option::Some(input);
@@ -251,9 +251,9 @@ impl PermissionGroupBuilder {
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <li><p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
+    /// <li><p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
+    /// <li><p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
     /// </ul>
     pub fn set_membership_status(mut self, input: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>) -> Self {
         self.membership_status = input;
@@ -261,9 +261,9 @@ impl PermissionGroupBuilder {
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <li><p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
+    /// <li><p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
+    /// <li><p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
     /// </ul>
     pub fn get_membership_status(&self) -> &::std::option::Option<crate::types::PermissionGroupMembershipStatus> {
         &self.membership_status

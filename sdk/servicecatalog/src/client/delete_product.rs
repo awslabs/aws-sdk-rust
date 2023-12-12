@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProduct`](crate::operation::delete_product::builders::DeleteProductFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::operation::delete_product::builders::DeleteProductFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::delete_product::builders::DeleteProductFluentBuilder::set_accept_language):<br>required: **false**<br><p>The language code.</p>  <ul>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul><br>
+    ///   - [`accept_language(impl Into<String>)`](crate::operation::delete_product::builders::DeleteProductFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::delete_product::builders::DeleteProductFluentBuilder::set_accept_language):<br>required: **false**<br><p>The language code.</p> <ul>  <li><p><code>jp</code> - Japanese</p></li>  <li><p><code>zh</code> - Chinese</p></li> </ul><br>
     ///   - [`id(impl Into<String>)`](crate::operation::delete_product::builders::DeleteProductFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_product::builders::DeleteProductFluentBuilder::set_id):<br>required: **true**<br><p>The product identifier.</p><br>
     /// - On success, responds with [`DeleteProductOutput`](crate::operation::delete_product::DeleteProductOutput)
     /// - On failure, responds with [`SdkError<DeleteProductError>`](crate::operation::delete_product::DeleteProductError)

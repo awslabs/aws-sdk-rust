@@ -8,7 +8,7 @@ pub struct NetworkFirewallMissingExpectedRtViolation {
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
     pub vpc: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
     pub current_route_table: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl NetworkFirewallMissingExpectedRtViolation {
     pub fn vpc(&self) -> ::std::option::Option<&str> {
         self.vpc.as_deref()
     }
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -83,17 +83,17 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
     pub fn get_vpc(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc
     }
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }

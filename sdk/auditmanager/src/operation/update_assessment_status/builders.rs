@@ -22,7 +22,7 @@ impl UpdateAssessmentStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAssessmentStatus`.
 ///
-/// <p> Updates the status of an assessment in Audit Manager. </p>
+/// <p>Updates the status of an assessment in Audit Manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssessmentStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateAssessmentStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }
-    /// <p> The current status of the assessment. </p>
+    /// <p>The current status of the assessment.</p>
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p> The current status of the assessment. </p>
+    /// <p>The current status of the assessment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p> The current status of the assessment. </p>
+    /// <p>The current status of the assessment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
         self.inner.get_status()
     }

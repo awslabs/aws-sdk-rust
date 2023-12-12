@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteSnapsho
 pub enum DeleteSnapshotScheduleError {
     /// <p>The cluster snapshot schedule state is not valid.</p>
     InvalidClusterSnapshotScheduleStateFault(crate::types::error::InvalidClusterSnapshotScheduleStateFault),
-    /// <p>We could not find the specified snapshot schedule. </p>
+    /// <p>We could not find the specified snapshot schedule.</p>
     SnapshotScheduleNotFoundFault(crate::types::error::SnapshotScheduleNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -18,7 +18,7 @@ pub struct ParallelDataProperties {
     pub target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
     pub parallel_data_config: ::std::option::Option<crate::types::ParallelDataConfig>,
-    /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
+    /// <p>Additional information from Amazon Translate about the parallel data resource.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
     pub imported_data_size: ::std::option::Option<i64>,
@@ -70,7 +70,7 @@ impl ParallelDataProperties {
     pub fn parallel_data_config(&self) -> ::std::option::Option<&crate::types::ParallelDataConfig> {
         self.parallel_data_config.as_ref()
     }
-    /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
+    /// <p>Additional information from Amazon Translate about the parallel data resource.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -245,17 +245,17 @@ impl ParallelDataPropertiesBuilder {
     pub fn get_parallel_data_config(&self) -> &::std::option::Option<crate::types::ParallelDataConfig> {
         &self.parallel_data_config
     }
-    /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
+    /// <p>Additional information from Amazon Translate about the parallel data resource.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
+    /// <p>Additional information from Amazon Translate about the parallel data resource.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
+    /// <p>Additional information from Amazon Translate about the parallel data resource.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

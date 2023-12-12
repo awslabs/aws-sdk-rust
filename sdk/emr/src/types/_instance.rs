@@ -22,7 +22,7 @@ pub struct Instance {
     pub instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the instance fleet to which an Amazon EC2 instance belongs.</p>
     pub instance_fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
+    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.</p>
     pub market: ::std::option::Option<crate::types::MarketType>,
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
@@ -66,7 +66,7 @@ impl Instance {
     pub fn instance_fleet_id(&self) -> ::std::option::Option<&str> {
         self.instance_fleet_id.as_deref()
     }
-    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
+    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.</p>
     pub fn market(&self) -> ::std::option::Option<&crate::types::MarketType> {
         self.market.as_ref()
     }
@@ -232,17 +232,17 @@ impl InstanceBuilder {
     pub fn get_instance_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_fleet_id
     }
-    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
+    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.</p>
     pub fn market(mut self, input: crate::types::MarketType) -> Self {
         self.market = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
+    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.</p>
     pub fn set_market(mut self, input: ::std::option::Option<crate::types::MarketType>) -> Self {
         self.market = input;
         self
     }
-    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
+    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.</p>
     pub fn get_market(&self) -> &::std::option::Option<crate::types::MarketType> {
         &self.market
     }

@@ -260,7 +260,7 @@ pub enum UpdateDirectorySetupError {
     ClientException(crate::types::error::ClientException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::types::error::DirectoryDoesNotExistException),
-    /// <p> The directory is already updated to desired update type settings. </p>
+    /// <p>The directory is already updated to desired update type settings.</p>
     DirectoryInDesiredStateException(crate::types::error::DirectoryInDesiredStateException),
     /// <p>The specified directory is unavailable or could not be found.</p>
     DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),

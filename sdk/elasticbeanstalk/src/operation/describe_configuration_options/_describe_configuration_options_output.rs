@@ -8,7 +8,7 @@ pub struct DescribeConfigurationOptionsOutput {
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
-    /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationOptionDescription</code>.</p>
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>,
     _request_id: Option<String>,
 }
@@ -21,7 +21,7 @@ impl DescribeConfigurationOptionsOutput {
     pub fn platform_arn(&self) -> ::std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
-    /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationOptionDescription</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
     pub fn options(&self) -> &[crate::types::ConfigurationOptionDescription] {
@@ -82,19 +82,19 @@ impl DescribeConfigurationOptionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
-    /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationOptionDescription</code>.</p>
     pub fn options(mut self, input: crate::types::ConfigurationOptionDescription) -> Self {
         let mut v = self.options.unwrap_or_default();
         v.push(input);
         self.options = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationOptionDescription</code>.</p>
     pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>) -> Self {
         self.options = input;
         self
     }
-    /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationOptionDescription</code>.</p>
     pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>> {
         &self.options
     }

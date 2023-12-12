@@ -144,8 +144,8 @@ impl ListBuildBatchesFluentBuilder {
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p></li>
+    /// <li><p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -153,8 +153,8 @@ impl ListBuildBatchesFluentBuilder {
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p></li>
+    /// <li><p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
@@ -162,8 +162,8 @@ impl ListBuildBatchesFluentBuilder {
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p></li>
+    /// <li><p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         self.inner.get_sort_order()

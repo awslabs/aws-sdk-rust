@@ -22,24 +22,24 @@ impl CreateHostedZoneInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateHostedZone`.
 ///
-/// <p>Creates a new public or private hosted zone. You create records in a public hosted zone to define how you want to route traffic on the internet for a domain, such as example.com, and its subdomains (apex.example.com, acme.example.com). You create records in a private hosted zone to define how you want to route traffic for a domain and its subdomains within one or more Amazon Virtual Private Clouds (Amazon VPCs). </p> <important>
+/// <p>Creates a new public or private hosted zone. You create records in a public hosted zone to define how you want to route traffic on the internet for a domain, such as example.com, and its subdomains (apex.example.com, acme.example.com). You create records in a private hosted zone to define how you want to route traffic for a domain and its subdomains within one or more Amazon Virtual Private Clouds (Amazon VPCs).</p> <important>
 /// <p>You can't convert a public hosted zone to a private hosted zone or vice versa. Instead, you must create a new hosted zone with the same name and create new resource record sets.</p>
 /// </important>
 /// <p>For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
 /// <p>Note the following:</p>
 /// <ul>
-/// <li> <p>You can't create a hosted zone for a top-level domain (TLD) such as .com.</p> </li>
-/// <li> <p>For public hosted zones, Route 53 automatically creates a default SOA record and four NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route&nbsp;53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you want to use the same name servers for multiple public hosted zones, you can optionally associate a reusable delegation set with the hosted zone. See the <code>DelegationSetId</code> element.</p> </li>
-/// <li> <p>If your domain is registered with a registrar other than Route&nbsp;53, you must update the name servers with your registrar to make Route 53 the DNS service for the domain. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an Existing Domain to Amazon Route&nbsp;53</a> in the <i>Amazon Route 53 Developer Guide</i>. </p> </li>
+/// <li><p>You can't create a hosted zone for a top-level domain (TLD) such as .com.</p></li>
+/// <li><p>For public hosted zones, Route 53 automatically creates a default SOA record and four NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route&nbsp;53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you want to use the same name servers for multiple public hosted zones, you can optionally associate a reusable delegation set with the hosted zone. See the <code>DelegationSetId</code> element.</p></li>
+/// <li><p>If your domain is registered with a registrar other than Route&nbsp;53, you must update the name servers with your registrar to make Route 53 the DNS service for the domain. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an Existing Domain to Amazon Route&nbsp;53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p></li>
 /// </ul>
 /// <p>When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is <code>PENDING</code>. For public hosted zones, this means that the NS and SOA records are not yet available on all Route&nbsp;53 DNS servers. When the NS and SOA records are available, the status of the zone changes to <code>INSYNC</code>.</p>
 /// <p>The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code> permission.</p> <note>
 /// <p>When creating private hosted zones, the Amazon VPC must belong to the same partition where the hosted zone is created. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
 /// <p>The following are the supported partitions:</p>
 /// <ul>
-/// <li> <p> <code>aws</code> - Amazon Web Services Regions</p> </li>
-/// <li> <p> <code>aws-cn</code> - China Regions</p> </li>
-/// <li> <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+/// <li><p><code>aws</code> - Amazon Web Services Regions</p></li>
+/// <li><p><code>aws-cn</code> - China Regions</p></li>
+/// <li><p><code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
 /// </note>
@@ -181,8 +181,8 @@ impl CreateHostedZoneFluentBuilder {
     }
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
+    /// <li><p>For public and private hosted zones, an optional comment</p></li>
+    /// <li><p>For private hosted zones, an optional <code>PrivateZone</code> element</p></li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub fn hosted_zone_config(mut self, input: crate::types::HostedZoneConfig) -> Self {
@@ -191,8 +191,8 @@ impl CreateHostedZoneFluentBuilder {
     }
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
+    /// <li><p>For public and private hosted zones, an optional comment</p></li>
+    /// <li><p>For private hosted zones, an optional <code>PrivateZone</code> element</p></li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub fn set_hosted_zone_config(mut self, input: ::std::option::Option<crate::types::HostedZoneConfig>) -> Self {
@@ -201,8 +201,8 @@ impl CreateHostedZoneFluentBuilder {
     }
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
+    /// <li><p>For public and private hosted zones, an optional comment</p></li>
+    /// <li><p>For private hosted zones, an optional <code>PrivateZone</code> element</p></li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub fn get_hosted_zone_config(&self) -> &::std::option::Option<crate::types::HostedZoneConfig> {

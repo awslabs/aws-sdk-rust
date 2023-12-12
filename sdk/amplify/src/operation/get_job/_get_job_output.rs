@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobOutput {
-    /// <p> Describes an execution job for an Amplify app. </p>
+    /// <p>Describes an execution job for an Amplify app.</p>
     pub job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
 }
 impl GetJobOutput {
-    /// <p> Describes an execution job for an Amplify app. </p>
+    /// <p>Describes an execution job for an Amplify app.</p>
     pub fn job(&self) -> ::std::option::Option<&crate::types::Job> {
         self.job.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetJobOutputBuilder {
-    /// <p> Describes an execution job for an Amplify app. </p>
+    /// <p>Describes an execution job for an Amplify app.</p>
     /// This field is required.
     pub fn job(mut self, input: crate::types::Job) -> Self {
         self.job = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes an execution job for an Amplify app. </p>
+    /// <p>Describes an execution job for an Amplify app.</p>
     pub fn set_job(mut self, input: ::std::option::Option<crate::types::Job>) -> Self {
         self.job = input;
         self
     }
-    /// <p> Describes an execution job for an Amplify app. </p>
+    /// <p>Describes an execution job for an Amplify app.</p>
     pub fn get_job(&self) -> &::std::option::Option<crate::types::Job> {
         &self.job
     }

@@ -108,31 +108,31 @@ impl EnableVgwRoutePropagationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with. </p>
+    /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with.</p>
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_id(input.into());
         self
     }
-    /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with. </p>
+    /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_id(input);
         self
     }
-    /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with. </p>
+    /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_id()
     }
-    /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
+    /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to.</p>
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_id(input.into());
         self
     }
-    /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
+    /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to.</p>
     pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
     }
-    /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
+    /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to.</p>
     pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_route_table_id()
     }

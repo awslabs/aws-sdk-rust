@@ -15,13 +15,13 @@ pub struct ListAggregatedUtterancesOutput {
     pub aggregation_duration: ::std::option::Option<crate::types::UtteranceAggregationDuration>,
     /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
     pub aggregation_window_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
+    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results.</p>
     pub aggregation_window_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
     /// <ul>
-    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-    /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+    /// <li><p><b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p></li>
+    /// <li><p><b>Days</b> - every 6 hours</p></li>
+    /// <li><p><b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p></li>
     /// </ul>
     pub aggregation_last_refreshed_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
@@ -55,15 +55,15 @@ impl ListAggregatedUtterancesOutput {
     pub fn aggregation_window_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.aggregation_window_start_time.as_ref()
     }
-    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
+    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results.</p>
     pub fn aggregation_window_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.aggregation_window_end_time.as_ref()
     }
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
     /// <ul>
-    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-    /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+    /// <li><p><b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p></li>
+    /// <li><p><b>Days</b> - every 6 hours</p></li>
+    /// <li><p><b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p></li>
     /// </ul>
     pub fn aggregation_last_refreshed_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.aggregation_last_refreshed_date_time.as_ref()
@@ -192,25 +192,25 @@ impl ListAggregatedUtterancesOutputBuilder {
     pub fn get_aggregation_window_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.aggregation_window_start_time
     }
-    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
+    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results.</p>
     pub fn aggregation_window_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.aggregation_window_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
+    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results.</p>
     pub fn set_aggregation_window_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.aggregation_window_end_time = input;
         self
     }
-    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
+    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results.</p>
     pub fn get_aggregation_window_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.aggregation_window_end_time
     }
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
     /// <ul>
-    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-    /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+    /// <li><p><b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p></li>
+    /// <li><p><b>Days</b> - every 6 hours</p></li>
+    /// <li><p><b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p></li>
     /// </ul>
     pub fn aggregation_last_refreshed_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.aggregation_last_refreshed_date_time = ::std::option::Option::Some(input);
@@ -218,9 +218,9 @@ impl ListAggregatedUtterancesOutputBuilder {
     }
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
     /// <ul>
-    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-    /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+    /// <li><p><b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p></li>
+    /// <li><p><b>Days</b> - every 6 hours</p></li>
+    /// <li><p><b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p></li>
     /// </ul>
     pub fn set_aggregation_last_refreshed_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.aggregation_last_refreshed_date_time = input;
@@ -228,9 +228,9 @@ impl ListAggregatedUtterancesOutputBuilder {
     }
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
     /// <ul>
-    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-    /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+    /// <li><p><b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p></li>
+    /// <li><p><b>Days</b> - every 6 hours</p></li>
+    /// <li><p><b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p></li>
     /// </ul>
     pub fn get_aggregation_last_refreshed_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.aggregation_last_refreshed_date_time

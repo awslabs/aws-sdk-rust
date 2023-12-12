@@ -5,7 +5,7 @@
 pub struct ListTagsForResourceOutput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The tags that are associated with the resource. </p>
+    /// <p>The tags that are associated with the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListTagsForResourceOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The tags that are associated with the resource. </p>
+    /// <p>The tags that are associated with the resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -60,19 +60,19 @@ impl ListTagsForResourceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags that are associated with the resource. </p>
+    /// <p>The tags that are associated with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags that are associated with the resource. </p>
+    /// <p>The tags that are associated with the resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags that are associated with the resource. </p>
+    /// <p>The tags that are associated with the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

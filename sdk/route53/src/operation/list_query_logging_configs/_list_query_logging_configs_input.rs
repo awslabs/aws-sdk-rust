@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsInput {
-    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
+    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>.</p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
@@ -15,7 +15,7 @@ pub struct ListQueryLoggingConfigsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListQueryLoggingConfigsInput {
-    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
+    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>.</p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
     pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
@@ -48,19 +48,19 @@ pub struct ListQueryLoggingConfigsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListQueryLoggingConfigsInputBuilder {
-    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
+    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>.</p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
+    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>.</p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
-    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
+    /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>.</p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hosted_zone_id

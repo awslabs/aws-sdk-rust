@@ -8,7 +8,7 @@ pub struct ListBillingGroupsFilter {
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
     pub pricing_plan: ::std::option::Option<::std::string::String>,
-    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>,
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub auto_associate: ::std::option::Option<bool>,
@@ -24,7 +24,7 @@ impl ListBillingGroupsFilter {
     pub fn pricing_plan(&self) -> ::std::option::Option<&str> {
         self.pricing_plan.as_deref()
     }
-    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
     pub fn statuses(&self) -> &[crate::types::BillingGroupStatus] {
@@ -90,19 +90,19 @@ impl ListBillingGroupsFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
     ///
-    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
     pub fn statuses(mut self, input: crate::types::BillingGroupStatus) -> Self {
         let mut v = self.statuses.unwrap_or_default();
         v.push(input);
         self.statuses = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
     pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>) -> Self {
         self.statuses = input;
         self
     }
-    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
     pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>> {
         &self.statuses
     }

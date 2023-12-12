@@ -5,7 +5,7 @@
 pub struct CreateProductOutput {
     /// <p>Information about the product view.</p>
     pub product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
-    /// <p>Information about the provisioning artifact. </p>
+    /// <p>Information about the provisioning artifact.</p>
     pub provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
     /// <p>Information about the tags associated with the product.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -16,7 +16,7 @@ impl CreateProductOutput {
     pub fn product_view_detail(&self) -> ::std::option::Option<&crate::types::ProductViewDetail> {
         self.product_view_detail.as_ref()
     }
-    /// <p>Information about the provisioning artifact. </p>
+    /// <p>Information about the provisioning artifact.</p>
     pub fn provisioning_artifact_detail(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
@@ -63,17 +63,17 @@ impl CreateProductOutputBuilder {
     pub fn get_product_view_detail(&self) -> &::std::option::Option<crate::types::ProductViewDetail> {
         &self.product_view_detail
     }
-    /// <p>Information about the provisioning artifact. </p>
+    /// <p>Information about the provisioning artifact.</p>
     pub fn provisioning_artifact_detail(mut self, input: crate::types::ProvisioningArtifactDetail) -> Self {
         self.provisioning_artifact_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the provisioning artifact. </p>
+    /// <p>Information about the provisioning artifact.</p>
     pub fn set_provisioning_artifact_detail(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactDetail>) -> Self {
         self.provisioning_artifact_detail = input;
         self
     }
-    /// <p>Information about the provisioning artifact. </p>
+    /// <p>Information about the provisioning artifact.</p>
     pub fn get_provisioning_artifact_detail(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactDetail> {
         &self.provisioning_artifact_detail
     }

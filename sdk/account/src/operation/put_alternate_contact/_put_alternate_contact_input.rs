@@ -7,7 +7,7 @@ pub struct PutAlternateContactInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a title for the alternate contact.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies an email address for the alternate contact. </p>
+    /// <p>Specifies an email address for the alternate contact.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a phone number for the alternate contact.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl PutAlternateContactInput {
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>Specifies an email address for the alternate contact. </p>
+    /// <p>Specifies an email address for the alternate contact.</p>
     pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -113,18 +113,18 @@ impl PutAlternateContactInputBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>Specifies an email address for the alternate contact. </p>
+    /// <p>Specifies an email address for the alternate contact.</p>
     /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies an email address for the alternate contact. </p>
+    /// <p>Specifies an email address for the alternate contact.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
-    /// <p>Specifies an email address for the alternate contact. </p>
+    /// <p>Specifies an email address for the alternate contact.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }

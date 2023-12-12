@@ -22,7 +22,7 @@ impl DescribeImagePermissionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeImagePermissions`.
 ///
-/// <p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own. </p>
+/// <p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImagePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl DescribeImagePermissionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_image_permissions::paginator::DescribeImagePermissionsPaginator {
         crate::operation::describe_image_permissions::paginator::DescribeImagePermissionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

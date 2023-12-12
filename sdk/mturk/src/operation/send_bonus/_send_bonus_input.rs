@@ -5,7 +5,7 @@
 pub struct SendBonusInput {
     /// <p>The ID of the Worker being paid the bonus.</p>
     pub worker_id: ::std::option::Option<::std::string::String>,
-    /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    /// <p>The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.</p>
     pub bonus_amount: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the assignment for which this bonus is paid.</p>
     pub assignment_id: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl SendBonusInput {
     pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
-    /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    /// <p>The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.</p>
     pub fn bonus_amount(&self) -> ::std::option::Option<&str> {
         self.bonus_amount.as_deref()
     }
@@ -69,18 +69,18 @@ impl SendBonusInputBuilder {
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_id
     }
-    /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    /// <p>The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.</p>
     /// This field is required.
     pub fn bonus_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bonus_amount = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    /// <p>The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.</p>
     pub fn set_bonus_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bonus_amount = input;
         self
     }
-    /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    /// <p>The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.</p>
     pub fn get_bonus_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.bonus_amount
     }

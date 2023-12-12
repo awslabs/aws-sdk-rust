@@ -30,17 +30,17 @@ impl PutBucketMetricsConfigurationInputBuilder {
 /// <p>For information about CloudWatch request metrics for Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring Metrics with Amazon CloudWatch</a>.</p>
 /// <p>The following operations are related to <code>PutBucketMetricsConfiguration</code>:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a></p></li>
 /// </ul>
-/// <p> <code>PutBucketMetricsConfiguration</code> has the following special error:</p>
+/// <p><code>PutBucketMetricsConfiguration</code> has the following special error:</p>
 /// <ul>
-/// <li> <p>Error code: <code>TooManyConfigurations</code> </p>
+/// <li><p>Error code: <code>TooManyConfigurations</code></p>
 /// <ul>
-/// <li> <p>Description: You are attempting to create a new configuration but have already reached the 1,000-configuration limit.</p> </li>
-/// <li> <p>HTTP Status Code: HTTP 400 Bad Request</p> </li>
-/// </ul> </li>
+/// <li><p>Description: You are attempting to create a new configuration but have already reached the 1,000-configuration limit.</p></li>
+/// <li><p>HTTP Status Code: HTTP 400 Bad Request</p></li>
+/// </ul></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketMetricsConfigurationFluentBuilder {

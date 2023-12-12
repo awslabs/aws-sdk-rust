@@ -9,9 +9,9 @@ pub struct UpdateSizeConstraintSetInput {
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <li><p><code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code></p></li>
+    /// <li><p><code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>>,
 }
@@ -26,9 +26,9 @@ impl UpdateSizeConstraintSetInput {
     }
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <li><p><code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code></p></li>
+    /// <li><p><code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
@@ -88,9 +88,9 @@ impl UpdateSizeConstraintSetInputBuilder {
     ///
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <li><p><code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code></p></li>
+    /// <li><p><code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::SizeConstraintSetUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
@@ -100,9 +100,9 @@ impl UpdateSizeConstraintSetInputBuilder {
     }
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <li><p><code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code></p></li>
+    /// <li><p><code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>>) -> Self {
         self.updates = input;
@@ -110,9 +110,9 @@ impl UpdateSizeConstraintSetInputBuilder {
     }
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <li><p><code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code></p></li>
+    /// <li><p><code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>> {
         &self.updates

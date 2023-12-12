@@ -23,26 +23,26 @@ impl CreateSolutionVersionInputBuilder {
 /// Fluent builder constructing a request to `CreateSolutionVersion`.
 ///
 /// <p>Trains or retrains an active solution in a Custom dataset group. A solution is created using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>. A new version of the solution is created every time you call this operation.</p>
-/// <p> <b>Status</b> </p>
+/// <p><b>Status</b></p>
 /// <p>A solution version can be in one of the following states:</p>
 /// <ul>
-/// <li> <p>CREATE PENDING</p> </li>
-/// <li> <p>CREATE IN_PROGRESS</p> </li>
-/// <li> <p>ACTIVE</p> </li>
-/// <li> <p>CREATE FAILED</p> </li>
-/// <li> <p>CREATE STOPPING</p> </li>
-/// <li> <p>CREATE STOPPED</p> </li>
+/// <li><p>CREATE PENDING</p></li>
+/// <li><p>CREATE IN_PROGRESS</p></li>
+/// <li><p>ACTIVE</p></li>
+/// <li><p>CREATE FAILED</p></li>
+/// <li><p>CREATE STOPPING</p></li>
+/// <li><p>CREATE STOPPED</p></li>
 /// </ul>
 /// <p>To get the status of the version, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.</p>
 /// <p>If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p>
-/// <p class="title"> <b>Related APIs</b> </p>
+/// <p class="title"><b>Related APIs</b></p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSolutionVersionFluentBuilder {
@@ -157,22 +157,22 @@ impl CreateSolutionVersionFluentBuilder {
     pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_solution_arn()
     }
-    /// <p>The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This creates a completely new model based on the entirety of the training data from the datasets in your dataset group. </p>
-    /// <p>If you use <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to consider new items for recommendations. It is not a full retraining. You should still complete a full retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a campaign. For more information about automatic updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates">Automatic updates</a>. </p>
+    /// <p>The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This creates a completely new model based on the entirety of the training data from the datasets in your dataset group.</p>
+    /// <p>If you use <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to consider new items for recommendations. It is not a full retraining. You should still complete a full retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a campaign. For more information about automatic updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates">Automatic updates</a>.</p>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the legacy <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     pub fn training_mode(mut self, input: crate::types::TrainingMode) -> Self {
         self.inner = self.inner.training_mode(input);
         self
     }
-    /// <p>The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This creates a completely new model based on the entirety of the training data from the datasets in your dataset group. </p>
-    /// <p>If you use <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to consider new items for recommendations. It is not a full retraining. You should still complete a full retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a campaign. For more information about automatic updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates">Automatic updates</a>. </p>
+    /// <p>The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This creates a completely new model based on the entirety of the training data from the datasets in your dataset group.</p>
+    /// <p>If you use <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to consider new items for recommendations. It is not a full retraining. You should still complete a full retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a campaign. For more information about automatic updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates">Automatic updates</a>.</p>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the legacy <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     pub fn set_training_mode(mut self, input: ::std::option::Option<crate::types::TrainingMode>) -> Self {
         self.inner = self.inner.set_training_mode(input);
         self
     }
-    /// <p>The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This creates a completely new model based on the entirety of the training data from the datasets in your dataset group. </p>
-    /// <p>If you use <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to consider new items for recommendations. It is not a full retraining. You should still complete a full retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a campaign. For more information about automatic updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates">Automatic updates</a>. </p>
+    /// <p>The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This creates a completely new model based on the entirety of the training data from the datasets in your dataset group.</p>
+    /// <p>If you use <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to consider new items for recommendations. It is not a full retraining. You should still complete a full retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a campaign. For more information about automatic updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates">Automatic updates</a>.</p>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the legacy <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     pub fn get_training_mode(&self) -> &::std::option::Option<crate::types::TrainingMode> {
         self.inner.get_training_mode()

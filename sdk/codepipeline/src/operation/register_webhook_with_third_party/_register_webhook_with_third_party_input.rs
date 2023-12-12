@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdPartyInput {
-    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party.</p>
     pub webhook_name: ::std::option::Option<::std::string::String>,
 }
 impl RegisterWebhookWithThirdPartyInput {
-    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party.</p>
     pub fn webhook_name(&self) -> ::std::option::Option<&str> {
         self.webhook_name.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct RegisterWebhookWithThirdPartyInputBuilder {
     pub(crate) webhook_name: ::std::option::Option<::std::string::String>,
 }
 impl RegisterWebhookWithThirdPartyInputBuilder {
-    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party.</p>
     pub fn webhook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.webhook_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party.</p>
     pub fn set_webhook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.webhook_name = input;
         self
     }
-    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party.</p>
     pub fn get_webhook_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.webhook_name
     }

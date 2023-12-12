@@ -7,7 +7,7 @@ pub struct UpdatePodIdentityAssociationInput {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the association to be updated.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
-    /// <p>The new IAM role to change the </p>
+    /// <p>The new IAM role to change the</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl UpdatePodIdentityAssociationInput {
     pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
-    /// <p>The new IAM role to change the </p>
+    /// <p>The new IAM role to change the</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -77,17 +77,17 @@ impl UpdatePodIdentityAssociationInputBuilder {
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_id
     }
-    /// <p>The new IAM role to change the </p>
+    /// <p>The new IAM role to change the</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new IAM role to change the </p>
+    /// <p>The new IAM role to change the</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The new IAM role to change the </p>
+    /// <p>The new IAM role to change the</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

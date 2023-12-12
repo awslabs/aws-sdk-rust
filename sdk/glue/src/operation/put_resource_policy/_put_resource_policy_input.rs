@@ -13,8 +13,8 @@ pub struct PutResourcePolicyInput {
     pub policy_exists_condition: ::std::option::Option<crate::types::ExistCondition>,
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
+    /// <li><p>By directly updating the resource policy with <code>PutResourePolicy</code></p></li>
+    /// <li><p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p></li>
     /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub enable_hybrid: ::std::option::Option<crate::types::EnableHybridValues>,
@@ -38,8 +38,8 @@ impl PutResourcePolicyInput {
     }
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
+    /// <li><p>By directly updating the resource policy with <code>PutResourePolicy</code></p></li>
+    /// <li><p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p></li>
     /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub fn enable_hybrid(&self) -> ::std::option::Option<&crate::types::EnableHybridValues> {
@@ -123,8 +123,8 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
+    /// <li><p>By directly updating the resource policy with <code>PutResourePolicy</code></p></li>
+    /// <li><p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p></li>
     /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub fn enable_hybrid(mut self, input: crate::types::EnableHybridValues) -> Self {
@@ -133,8 +133,8 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
+    /// <li><p>By directly updating the resource policy with <code>PutResourePolicy</code></p></li>
+    /// <li><p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p></li>
     /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub fn set_enable_hybrid(mut self, input: ::std::option::Option<crate::types::EnableHybridValues>) -> Self {
@@ -143,8 +143,8 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
+    /// <li><p>By directly updating the resource policy with <code>PutResourePolicy</code></p></li>
+    /// <li><p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p></li>
     /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub fn get_enable_hybrid(&self) -> &::std::option::Option<crate::types::EnableHybridValues> {

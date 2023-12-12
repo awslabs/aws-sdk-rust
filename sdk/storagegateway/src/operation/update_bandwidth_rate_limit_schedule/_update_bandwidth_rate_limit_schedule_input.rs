@@ -5,7 +5,7 @@
 pub struct UpdateBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
-    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
 }
 impl UpdateBandwidthRateLimitScheduleInput {
@@ -13,7 +13,7 @@ impl UpdateBandwidthRateLimitScheduleInput {
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
-    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bandwidth_rate_limit_intervals.is_none()`.
     pub fn bandwidth_rate_limit_intervals(&self) -> &[crate::types::BandwidthRateLimitInterval] {
@@ -54,14 +54,14 @@ impl UpdateBandwidthRateLimitScheduleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
     ///
-    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
         v.push(input);
         self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     pub fn set_bandwidth_rate_limit_intervals(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
@@ -69,7 +69,7 @@ impl UpdateBandwidthRateLimitScheduleInputBuilder {
         self.bandwidth_rate_limit_intervals = input;
         self
     }
-    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
         &self.bandwidth_rate_limit_intervals
     }

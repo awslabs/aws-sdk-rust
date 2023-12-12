@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSiteAddress`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::set_site_id):<br>required: **true**<br><p> The ID or the Amazon Resource Name (ARN) of the site. </p><br>
-    ///   - [`address_type(AddressType)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::address_type) / [`set_address_type(Option<AddressType>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::set_address_type):<br>required: **true**<br><p>The type of the address you request. </p><br>
+    ///   - [`site_id(impl Into<String>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::set_site_id):<br>required: **true**<br><p>The ID or the Amazon Resource Name (ARN) of the site.</p><br>
+    ///   - [`address_type(AddressType)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::address_type) / [`set_address_type(Option<AddressType>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::set_address_type):<br>required: **true**<br><p>The type of the address you request.</p><br>
     /// - On success, responds with [`GetSiteAddressOutput`](crate::operation::get_site_address::GetSiteAddressOutput) with field(s):
     ///   - [`site_id(Option<String>)`](crate::operation::get_site_address::GetSiteAddressOutput::site_id): <p>The ID of the site.</p>
-    ///   - [`address_type(Option<AddressType>)`](crate::operation::get_site_address::GetSiteAddressOutput::address_type): <p>The type of the address you receive. </p>
-    ///   - [`address(Option<Address>)`](crate::operation::get_site_address::GetSiteAddressOutput::address): <p> Information about the address. </p>
+    ///   - [`address_type(Option<AddressType>)`](crate::operation::get_site_address::GetSiteAddressOutput::address_type): <p>The type of the address you receive.</p>
+    ///   - [`address(Option<Address>)`](crate::operation::get_site_address::GetSiteAddressOutput::address): <p>Information about the address.</p>
     /// - On failure, responds with [`SdkError<GetSiteAddressError>`](crate::operation::get_site_address::GetSiteAddressError)
     pub fn get_site_address(&self) -> crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder {
         crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::new(self.handle.clone())

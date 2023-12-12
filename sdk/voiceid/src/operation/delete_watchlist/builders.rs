@@ -22,7 +22,7 @@ impl DeleteWatchlistInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWatchlist`.
 ///
-/// <p>Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every domain has a default watchlist which cannot be deleted. </p>
+/// <p>Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every domain has a default watchlist which cannot be deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWatchlistFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

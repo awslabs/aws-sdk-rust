@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelPackagingJobOutput {
-    /// <p>The description of the model packaging job. </p>
+    /// <p>The description of the model packaging job.</p>
     pub model_packaging_description: ::std::option::Option<crate::types::ModelPackagingDescription>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackagingJobOutput {
-    /// <p>The description of the model packaging job. </p>
+    /// <p>The description of the model packaging job.</p>
     pub fn model_packaging_description(&self) -> ::std::option::Option<&crate::types::ModelPackagingDescription> {
         self.model_packaging_description.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeModelPackagingJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeModelPackagingJobOutputBuilder {
-    /// <p>The description of the model packaging job. </p>
+    /// <p>The description of the model packaging job.</p>
     pub fn model_packaging_description(mut self, input: crate::types::ModelPackagingDescription) -> Self {
         self.model_packaging_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The description of the model packaging job. </p>
+    /// <p>The description of the model packaging job.</p>
     pub fn set_model_packaging_description(mut self, input: ::std::option::Option<crate::types::ModelPackagingDescription>) -> Self {
         self.model_packaging_description = input;
         self
     }
-    /// <p>The description of the model packaging job. </p>
+    /// <p>The description of the model packaging job.</p>
     pub fn get_model_packaging_description(&self) -> &::std::option::Option<crate::types::ModelPackagingDescription> {
         &self.model_packaging_description
     }

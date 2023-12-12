@@ -251,7 +251,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCluster
 pub enum CreateClusterSecurityGroupError {
     /// <p>A cluster security group with the same name already exists.</p>
     ClusterSecurityGroupAlreadyExistsFault(crate::types::error::ClusterSecurityGroupAlreadyExistsFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     ClusterSecurityGroupQuotaExceededFault(crate::types::error::ClusterSecurityGroupQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::types::error::InvalidTagFault),

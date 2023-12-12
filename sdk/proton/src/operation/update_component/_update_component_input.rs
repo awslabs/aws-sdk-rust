@@ -9,12 +9,12 @@ pub struct UpdateComponentInput {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>NONE</code> </p>
+    /// <p><code>NONE</code></p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p><code>CURRENT_VERSION</code></p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -43,12 +43,12 @@ impl UpdateComponentInput {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>NONE</code> </p>
+    /// <p><code>NONE</code></p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p><code>CURRENT_VERSION</code></p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -136,12 +136,12 @@ impl UpdateComponentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>NONE</code> </p>
+    /// <p><code>NONE</code></p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p><code>CURRENT_VERSION</code></p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -154,12 +154,12 @@ impl UpdateComponentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>NONE</code> </p>
+    /// <p><code>NONE</code></p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p><code>CURRENT_VERSION</code></p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -171,12 +171,12 @@ impl UpdateComponentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>NONE</code> </p>
+    /// <p><code>NONE</code></p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p><code>CURRENT_VERSION</code></p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>

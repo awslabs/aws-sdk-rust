@@ -108,17 +108,17 @@ impl GetAssessmentFrameworkFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The identifier for the framework. </p>
+    /// <p>The identifier for the framework.</p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_id(input.into());
         self
     }
-    /// <p> The identifier for the framework. </p>
+    /// <p>The identifier for the framework.</p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_id(input);
         self
     }
-    /// <p> The identifier for the framework. </p>
+    /// <p>The identifier for the framework.</p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_framework_id()
     }

@@ -22,39 +22,39 @@ impl IndexFacesInputBuilder {
 }
 /// Fluent builder constructing a request to `IndexFaces`.
 ///
-/// <p>Detects faces in the input image and adds them to the specified collection. </p>
+/// <p>Detects faces in the input image and adds them to the specified collection.</p>
 /// <p>Amazon Rekognition doesn't save the actual faces that are detected. Instead, the underlying detection algorithm first detects the faces in the input image. For each face, the algorithm extracts facial features into a feature vector, and stores it in the backend database. Amazon Rekognition uses feature vectors when it performs face match and search operations using the <code>SearchFaces</code> and <code>SearchFacesByImage</code> operations.</p>
 /// <p>For more information, see Adding faces to a collection in the Amazon Rekognition Developer Guide.</p>
-/// <p>To get the number of faces in a collection, call <code>DescribeCollection</code>. </p>
-/// <p>If you're using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in the input image. Later versions of the face detection model index the 100 largest faces in the input image. </p>
-/// <p>If you're using version 4 or later of the face model, image orientation information is not returned in the <code>OrientationCorrection</code> field. </p>
-/// <p>To determine which version of the model you're using, call <code>DescribeCollection</code> and supply the collection ID. You can also get the model version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code> </p>
+/// <p>To get the number of faces in a collection, call <code>DescribeCollection</code>.</p>
+/// <p>If you're using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in the input image. Later versions of the face detection model index the 100 largest faces in the input image.</p>
+/// <p>If you're using version 4 or later of the face model, image orientation information is not returned in the <code>OrientationCorrection</code> field.</p>
+/// <p>To determine which version of the model you're using, call <code>DescribeCollection</code> and supply the collection ID. You can also get the model version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code></p>
 /// <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p>
 /// <p>If you provide the optional <code>ExternalImageId</code> for the input image you provided, Amazon Rekognition associates this ID with all faces that it detects. When you call the <code>ListFaces</code> operation, the response returns the external ID. You can use this external image ID to create a client-side index to associate the faces with each image. You can then use the index to find all faces in an image.</p>
 /// <p>You can specify the maximum number of faces to index with the <code>MaxFaces</code> input parameter. This is useful when you want to index the largest faces in an image and don't want to index smaller faces, such as those belonging to people standing in the background.</p>
-/// <p>The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required quality bar. The quality bar is based on a variety of common use cases. By default, <code>IndexFaces</code> chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>. </p> <note>
-/// <p>To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the version of the face model associated with a collection, call <code>DescribeCollection</code>. </p>
+/// <p>The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required quality bar. The quality bar is based on a variety of common use cases. By default, <code>IndexFaces</code> chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.</p> <note>
+/// <p>To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the version of the face model associated with a collection, call <code>DescribeCollection</code>.</p>
 /// </note>
 /// <p>Information about faces detected in an image, but not indexed, is returned in an array of <code>UnindexedFace</code> objects, <code>UnindexedFaces</code>. Faces aren't indexed for reasons such as:</p>
 /// <ul>
-/// <li> <p>The number of faces detected exceeds the value of the <code>MaxFaces</code> request parameter.</p> </li>
-/// <li> <p>The face is too small compared to the image dimensions.</p> </li>
-/// <li> <p>The face is too blurry.</p> </li>
-/// <li> <p>The image is too dark.</p> </li>
-/// <li> <p>The face has an extreme pose.</p> </li>
-/// <li> <p>The face doesn’t have enough detail to be suitable for face search.</p> </li>
+/// <li><p>The number of faces detected exceeds the value of the <code>MaxFaces</code> request parameter.</p></li>
+/// <li><p>The face is too small compared to the image dimensions.</p></li>
+/// <li><p>The face is too blurry.</p></li>
+/// <li><p>The image is too dark.</p></li>
+/// <li><p>The face has an extreme pose.</p></li>
+/// <li><p>The face doesn’t have enough detail to be suitable for face search.</p></li>
 /// </ul>
-/// <p>In response, the <code>IndexFaces</code> operation returns an array of metadata for all detected faces, <code>FaceRecords</code>. This includes: </p>
+/// <p>In response, the <code>IndexFaces</code> operation returns an array of metadata for all detected faces, <code>FaceRecords</code>. This includes:</p>
 /// <ul>
-/// <li> <p>The bounding box, <code>BoundingBox</code>, of the detected face. </p> </li>
-/// <li> <p>A confidence value, <code>Confidence</code>, which indicates the confidence that the bounding box contains a face.</p> </li>
-/// <li> <p>A face ID, <code>FaceId</code>, assigned by the service for each face that's detected and stored.</p> </li>
-/// <li> <p>An image ID, <code>ImageId</code>, assigned by the service for the input image.</p> </li>
+/// <li><p>The bounding box, <code>BoundingBox</code>, of the detected face.</p></li>
+/// <li><p>A confidence value, <code>Confidence</code>, which indicates the confidence that the bounding box contains a face.</p></li>
+/// <li><p>A face ID, <code>FaceId</code>, assigned by the service for each face that's detected and stored.</p></li>
+/// <li><p>An image ID, <code>ImageId</code>, assigned by the service for the input image.</p></li>
 /// </ul>
 /// <p>If you request <code>ALL</code> or specific facial attributes (e.g., <code>FACE_OCCLUDED</code>) by using the detectionAttributes parameter, Amazon Rekognition returns detailed facial attributes, such as facial landmarks (for example, location of eye and mouth), facial occlusion, and other facial attributes.</p>
 /// <p>If you provide the same image, specify the same collection, and use the same external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.</p>
 /// <p></p>
-/// <p>The input image is passed either as base64-encoded image bytes, or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file. </p>
+/// <p>The input image is passed either as base64-encoded image bytes, or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct IndexFacesFluentBuilder {
@@ -155,19 +155,19 @@ impl IndexFacesFluentBuilder {
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_collection_id()
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.inner = self.inner.image(input);
         self
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_image(input);
         self
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
         self.inner.get_image()
@@ -191,58 +191,58 @@ impl IndexFacesFluentBuilder {
     /// To override the contents of this collection use [`set_detection_attributes`](Self::set_detection_attributes).
     ///
     /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
     pub fn detection_attributes(mut self, input: crate::types::Attribute) -> Self {
         self.inner = self.inner.detection_attributes(input);
         self
     }
     /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
     pub fn set_detection_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_detection_attributes(input);
         self
     }
     /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
     pub fn get_detection_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         self.inner.get_detection_attributes()
     }
     /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
-    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array.</p>
     /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
-    /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
+    /// <p><code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
     pub fn max_faces(mut self, input: i32) -> Self {
         self.inner = self.inner.max_faces(input);
         self
     }
     /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
-    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array.</p>
     /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
-    /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
+    /// <p><code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
     pub fn set_max_faces(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_faces(input);
         self
     }
     /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
-    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array.</p>
     /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
-    /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
+    /// <p><code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
     pub fn get_max_faces(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_faces()
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed.</p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn quality_filter(mut self, input: crate::types::QualityFilter) -> Self {
         self.inner = self.inner.quality_filter(input);
         self
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed.</p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn set_quality_filter(mut self, input: ::std::option::Option<crate::types::QualityFilter>) -> Self {
         self.inner = self.inner.set_quality_filter(input);
         self
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed.</p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn get_quality_filter(&self) -> &::std::option::Option<crate::types::QualityFilter> {
         self.inner.get_quality_filter()

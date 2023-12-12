@@ -7,13 +7,13 @@ pub struct DescribeLocalGatewayRouteTableVpcAssociationsInput {
     pub local_gateway_route_table_vpc_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the association.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
+    /// <li><p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
+    /// <li><p><code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p></li>
+    /// <li><p><code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p></li>
+    /// <li><p><code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p></li>
+    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p></li>
+    /// <li><p><code>state</code> - The state of the association.</p></li>
+    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -32,13 +32,13 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsInput {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the association.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
+    /// <li><p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
+    /// <li><p><code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p></li>
+    /// <li><p><code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p></li>
+    /// <li><p><code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p></li>
+    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p></li>
+    /// <li><p><code>state</code> - The state of the association.</p></li>
+    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -104,13 +104,13 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsInputBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the association.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
+    /// <li><p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
+    /// <li><p><code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p></li>
+    /// <li><p><code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p></li>
+    /// <li><p><code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p></li>
+    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p></li>
+    /// <li><p><code>state</code> - The state of the association.</p></li>
+    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -120,13 +120,13 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the association.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
+    /// <li><p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
+    /// <li><p><code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p></li>
+    /// <li><p><code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p></li>
+    /// <li><p><code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p></li>
+    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p></li>
+    /// <li><p><code>state</code> - The state of the association.</p></li>
+    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -134,13 +134,13 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
-    /// <li> <p> <code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the association.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
+    /// <li><p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
+    /// <li><p><code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the local gateway route table for the association.</p></li>
+    /// <li><p><code>local-gateway-route-table-id</code> - The ID of the local gateway route table.</p></li>
+    /// <li><p><code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.</p></li>
+    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p></li>
+    /// <li><p><code>state</code> - The state of the association.</p></li>
+    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

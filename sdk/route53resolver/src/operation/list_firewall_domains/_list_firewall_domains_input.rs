@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFirewallDomainsInput {
-    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// <p>The ID of the domain list whose domains you want to retrieve.</p>
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListFirewallDomainsInput {
-    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// <p>The ID of the domain list whose domains you want to retrieve.</p>
     pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
         self.firewall_domain_list_id.as_deref()
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -44,35 +44,35 @@ pub struct ListFirewallDomainsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListFirewallDomainsInputBuilder {
-    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// <p>The ID of the domain list whose domains you want to retrieve.</p>
     /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// <p>The ID of the domain list whose domains you want to retrieve.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_domain_list_id = input;
         self
     }
-    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// <p>The ID of the domain list whose domains you want to retrieve.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_domain_list_id
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

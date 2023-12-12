@@ -25,9 +25,9 @@ impl ChannelFlowCallbackInputBuilder {
 /// <p>Calls back Amazon Chime SDK messaging with a processing response message. This should be invoked from the processor Lambda. This is a developer API.</p>
 /// <p>You can return one of the following processing responses:</p>
 /// <ul>
-/// <li> <p>Update message content or metadata</p> </li>
-/// <li> <p>Deny a message</p> </li>
-/// <li> <p>Make no changes to the message</p> </li>
+/// <li><p>Update message content or metadata</p></li>
+/// <li><p>Deny a message</p></li>
+/// <li><p>Make no changes to the message</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChannelFlowCallbackFluentBuilder {

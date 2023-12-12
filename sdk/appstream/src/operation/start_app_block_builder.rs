@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartAppBlock
 pub enum StartAppBlockBuilderError {
     /// <p>An API error occurred. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>
+    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support.</p>
     InvalidAccountStatusException(crate::types::error::InvalidAccountStatusException),
     /// <p>The requested limit exceeds the permitted limit for an account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

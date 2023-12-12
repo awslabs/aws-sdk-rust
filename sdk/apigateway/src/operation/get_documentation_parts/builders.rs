@@ -122,17 +122,17 @@ impl GetDocumentationPartsFluentBuilder {
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rest_api_id()
     }
-    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
+    /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
     pub fn r#type(mut self, input: crate::types::DocumentationPartType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
+    /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentationPartType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
+    /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentationPartType> {
         self.inner.get_type()
     }

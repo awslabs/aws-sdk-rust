@@ -7,7 +7,7 @@ pub struct FailoverDbClusterInput {
     /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
+    /// <li><p>Must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the instance to promote to the primary instance.</p>
@@ -18,7 +18,7 @@ impl FailoverDbClusterInput {
     /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
+    /// <li><p>Must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
@@ -47,7 +47,7 @@ impl FailoverDbClusterInputBuilder {
     /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
+    /// <li><p>Must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -56,7 +56,7 @@ impl FailoverDbClusterInputBuilder {
     /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
+    /// <li><p>Must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
@@ -65,7 +65,7 @@ impl FailoverDbClusterInputBuilder {
     /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
+    /// <li><p>Must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier

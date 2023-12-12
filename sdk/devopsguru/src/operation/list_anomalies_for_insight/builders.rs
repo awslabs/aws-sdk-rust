@@ -22,7 +22,7 @@ impl ListAnomaliesForInsightInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAnomaliesForInsight`.
 ///
-/// <p> Returns a list of the anomalies that belong to an insight that you specify using its ID. </p>
+/// <p>Returns a list of the anomalies that belong to an insight that you specify using its ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnomaliesForInsightFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl ListAnomaliesForInsightFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator {
         crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator::new(self.handle, self.inner)
     }
-    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
+    /// <p>The ID of the insight. The returned anomalies belong to this insight.</p>
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.insight_id(input.into());
         self
     }
-    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
+    /// <p>The ID of the insight. The returned anomalies belong to this insight.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_insight_id(input);
         self
     }
-    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
+    /// <p>The ID of the insight. The returned anomalies belong to this insight.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_insight_id()
     }
-    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
+    /// <p>A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.</p>
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
         self.inner = self.inner.start_time_range(input);
         self
     }
-    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
+    /// <p>A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.</p>
     pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.inner = self.inner.set_start_time_range(input);
         self
     }
-    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
+    /// <p>A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.</p>
     pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
         self.inner.get_start_time_range()
     }
@@ -170,31 +170,31 @@ impl ListAnomaliesForInsightFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    /// <p>Specifies one or more service names that are used to list anomalies.</p>
     pub fn filters(mut self, input: crate::types::ListAnomaliesForInsightFilters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    /// <p>Specifies one or more service names that are used to list anomalies.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p> Specifies one or more service names that are used to list anomalies. </p>
+    /// <p>Specifies one or more service names that are used to list anomalies.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListAnomaliesForInsightFilters> {
         self.inner.get_filters()
     }

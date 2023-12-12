@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCoipCidrOutput {
-    /// <p> Information about a range of customer-owned IP addresses. </p>
+    /// <p>Information about a range of customer-owned IP addresses.</p>
     pub coip_cidr: ::std::option::Option<crate::types::CoipCidr>,
     _request_id: Option<String>,
 }
 impl CreateCoipCidrOutput {
-    /// <p> Information about a range of customer-owned IP addresses. </p>
+    /// <p>Information about a range of customer-owned IP addresses.</p>
     pub fn coip_cidr(&self) -> ::std::option::Option<&crate::types::CoipCidr> {
         self.coip_cidr.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateCoipCidrOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateCoipCidrOutputBuilder {
-    /// <p> Information about a range of customer-owned IP addresses. </p>
+    /// <p>Information about a range of customer-owned IP addresses.</p>
     pub fn coip_cidr(mut self, input: crate::types::CoipCidr) -> Self {
         self.coip_cidr = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Information about a range of customer-owned IP addresses. </p>
+    /// <p>Information about a range of customer-owned IP addresses.</p>
     pub fn set_coip_cidr(mut self, input: ::std::option::Option<crate::types::CoipCidr>) -> Self {
         self.coip_cidr = input;
         self
     }
-    /// <p> Information about a range of customer-owned IP addresses. </p>
+    /// <p>Information about a range of customer-owned IP addresses.</p>
     pub fn get_coip_cidr(&self) -> &::std::option::Option<crate::types::CoipCidr> {
         &self.coip_cidr
     }

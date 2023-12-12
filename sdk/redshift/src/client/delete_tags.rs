@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTags`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_name(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_resource_name):<br>required: **true**<br><p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p><br>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_resource_name):<br>required: **true**<br><p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p><br>
     ///   - [`tag_keys(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The tag key that you want to delete.</p><br>
     /// - On success, responds with [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput)
     /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::operation::delete_tags::DeleteTagsError)

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFleetInput {
-    /// <p>The name of the fleet. </p>
+    /// <p>The name of the fleet.</p>
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateFleetInput {
-    /// <p>The name of the fleet. </p>
+    /// <p>The name of the fleet.</p>
     pub fn fleet_name(&self) -> ::std::option::Option<&str> {
         self.fleet_name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct AssociateFleetInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateFleetInputBuilder {
-    /// <p>The name of the fleet. </p>
+    /// <p>The name of the fleet.</p>
     /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the fleet. </p>
+    /// <p>The name of the fleet.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_name = input;
         self
     }
-    /// <p>The name of the fleet. </p>
+    /// <p>The name of the fleet.</p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_name
     }

@@ -6,7 +6,7 @@
 pub struct UpdateProfilingGroupInput {
     /// <p>The name of the profiling group to update.</p>
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// <p>Specifies whether profiling is enabled or disabled for a profiling group.</p>
     pub agent_orchestration_config: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
 }
 impl UpdateProfilingGroupInput {
@@ -14,7 +14,7 @@ impl UpdateProfilingGroupInput {
     pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// <p>Specifies whether profiling is enabled or disabled for a profiling group.</p>
     pub fn agent_orchestration_config(&self) -> ::std::option::Option<&crate::types::AgentOrchestrationConfig> {
         self.agent_orchestration_config.as_ref()
     }
@@ -49,18 +49,18 @@ impl UpdateProfilingGroupInputBuilder {
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.profiling_group_name
     }
-    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// <p>Specifies whether profiling is enabled or disabled for a profiling group.</p>
     /// This field is required.
     pub fn agent_orchestration_config(mut self, input: crate::types::AgentOrchestrationConfig) -> Self {
         self.agent_orchestration_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// <p>Specifies whether profiling is enabled or disabled for a profiling group.</p>
     pub fn set_agent_orchestration_config(mut self, input: ::std::option::Option<crate::types::AgentOrchestrationConfig>) -> Self {
         self.agent_orchestration_config = input;
         self
     }
-    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// <p>Specifies whether profiling is enabled or disabled for a profiling group.</p>
     pub fn get_agent_orchestration_config(&self) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
         &self.agent_orchestration_config
     }

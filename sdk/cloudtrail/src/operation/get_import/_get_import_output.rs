@@ -3,62 +3,62 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImportOutput {
-    /// <p> The ID of the import. </p>
+    /// <p>The ID of the import.</p>
     pub import_id: ::std::option::Option<::std::string::String>,
-    /// <p> The ARN of the destination event data store. </p>
+    /// <p>The ARN of the destination event data store.</p>
     pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The source S3 bucket. </p>
+    /// <p>The source S3 bucket.</p>
     pub import_source: ::std::option::Option<crate::types::ImportSource>,
-    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub start_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub end_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The status of the import. </p>
+    /// <p>The status of the import.</p>
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
-    /// <p> The timestamp of the import's creation. </p>
+    /// <p>The timestamp of the import's creation.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The timestamp of when the import was updated. </p>
+    /// <p>The timestamp of when the import was updated.</p>
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
+    /// <p>Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import.</p>
     pub import_statistics: ::std::option::Option<crate::types::ImportStatistics>,
     _request_id: Option<String>,
 }
 impl GetImportOutput {
-    /// <p> The ID of the import. </p>
+    /// <p>The ID of the import.</p>
     pub fn import_id(&self) -> ::std::option::Option<&str> {
         self.import_id.as_deref()
     }
-    /// <p> The ARN of the destination event data store. </p>
+    /// <p>The ARN of the destination event data store.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
     pub fn destinations(&self) -> &[::std::string::String] {
         self.destinations.as_deref().unwrap_or_default()
     }
-    /// <p> The source S3 bucket. </p>
+    /// <p>The source S3 bucket.</p>
     pub fn import_source(&self) -> ::std::option::Option<&crate::types::ImportSource> {
         self.import_source.as_ref()
     }
-    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub fn start_event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_event_time.as_ref()
     }
-    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub fn end_event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_event_time.as_ref()
     }
-    /// <p> The status of the import. </p>
+    /// <p>The status of the import.</p>
     pub fn import_status(&self) -> ::std::option::Option<&crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
-    /// <p> The timestamp of the import's creation. </p>
+    /// <p>The timestamp of the import's creation.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
-    /// <p> The timestamp of when the import was updated. </p>
+    /// <p>The timestamp of when the import was updated.</p>
     pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
-    /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
+    /// <p>Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import.</p>
     pub fn import_statistics(&self) -> ::std::option::Option<&crate::types::ImportStatistics> {
         self.import_statistics.as_ref()
     }
@@ -91,17 +91,17 @@ pub struct GetImportOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetImportOutputBuilder {
-    /// <p> The ID of the import. </p>
+    /// <p>The ID of the import.</p>
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the import. </p>
+    /// <p>The ID of the import.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_id = input;
         self
     }
-    /// <p> The ID of the import. </p>
+    /// <p>The ID of the import.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_id
     }
@@ -109,117 +109,117 @@ impl GetImportOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
     ///
-    /// <p> The ARN of the destination event data store. </p>
+    /// <p>The ARN of the destination event data store.</p>
     pub fn destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input.into());
         self.destinations = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The ARN of the destination event data store. </p>
+    /// <p>The ARN of the destination event data store.</p>
     pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destinations = input;
         self
     }
-    /// <p> The ARN of the destination event data store. </p>
+    /// <p>The ARN of the destination event data store.</p>
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destinations
     }
-    /// <p> The source S3 bucket. </p>
+    /// <p>The source S3 bucket.</p>
     pub fn import_source(mut self, input: crate::types::ImportSource) -> Self {
         self.import_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The source S3 bucket. </p>
+    /// <p>The source S3 bucket.</p>
     pub fn set_import_source(mut self, input: ::std::option::Option<crate::types::ImportSource>) -> Self {
         self.import_source = input;
         self
     }
-    /// <p> The source S3 bucket. </p>
+    /// <p>The source S3 bucket.</p>
     pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportSource> {
         &self.import_source
     }
-    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub fn start_event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_event_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub fn set_start_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_event_time = input;
         self
     }
-    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub fn get_start_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_event_time
     }
-    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub fn end_event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_event_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub fn set_end_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_event_time = input;
         self
     }
-    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    /// <p>Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
     pub fn get_end_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_event_time
     }
-    /// <p> The status of the import. </p>
+    /// <p>The status of the import.</p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
         self.import_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of the import. </p>
+    /// <p>The status of the import.</p>
     pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
         self.import_status = input;
         self
     }
-    /// <p> The status of the import. </p>
+    /// <p>The status of the import.</p>
     pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
         &self.import_status
     }
-    /// <p> The timestamp of the import's creation. </p>
+    /// <p>The timestamp of the import's creation.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The timestamp of the import's creation. </p>
+    /// <p>The timestamp of the import's creation.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
-    /// <p> The timestamp of the import's creation. </p>
+    /// <p>The timestamp of the import's creation.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
-    /// <p> The timestamp of when the import was updated. </p>
+    /// <p>The timestamp of when the import was updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The timestamp of when the import was updated. </p>
+    /// <p>The timestamp of when the import was updated.</p>
     pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
-    /// <p> The timestamp of when the import was updated. </p>
+    /// <p>The timestamp of when the import was updated.</p>
     pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_timestamp
     }
-    /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
+    /// <p>Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import.</p>
     pub fn import_statistics(mut self, input: crate::types::ImportStatistics) -> Self {
         self.import_statistics = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
+    /// <p>Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import.</p>
     pub fn set_import_statistics(mut self, input: ::std::option::Option<crate::types::ImportStatistics>) -> Self {
         self.import_statistics = input;
         self
     }
-    /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
+    /// <p>Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import.</p>
     pub fn get_import_statistics(&self) -> &::std::option::Option<crate::types::ImportStatistics> {
         &self.import_statistics
     }

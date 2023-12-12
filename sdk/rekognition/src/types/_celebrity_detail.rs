@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CelebrityDetail {
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     pub urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the celebrity.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the celebrity. </p>
+    /// <p>The unique identifier for the celebrity.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
     pub confidence: ::std::option::Option<f32>,
     /// <p>Bounding box around the body of a celebrity.</p>
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
@@ -20,7 +20,7 @@ pub struct CelebrityDetail {
     pub known_gender: ::std::option::Option<crate::types::KnownGender>,
 }
 impl CelebrityDetail {
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.urls.is_none()`.
     pub fn urls(&self) -> &[::std::string::String] {
@@ -30,11 +30,11 @@ impl CelebrityDetail {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The unique identifier for the celebrity. </p>
+    /// <p>The unique identifier for the celebrity.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
     pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
@@ -75,19 +75,19 @@ impl CelebrityDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_urls`](Self::set_urls).
     ///
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     pub fn urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.urls.unwrap_or_default();
         v.push(input.into());
         self.urls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     pub fn set_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.urls = input;
         self
     }
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     pub fn get_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.urls
     }
@@ -105,31 +105,31 @@ impl CelebrityDetailBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The unique identifier for the celebrity. </p>
+    /// <p>The unique identifier for the celebrity.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the celebrity. </p>
+    /// <p>The unique identifier for the celebrity.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The unique identifier for the celebrity. </p>
+    /// <p>The unique identifier for the celebrity.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }
-    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
         &self.confidence
     }

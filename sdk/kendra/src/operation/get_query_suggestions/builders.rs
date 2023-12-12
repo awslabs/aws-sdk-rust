@@ -23,7 +23,7 @@ impl GetQuerySuggestionsInputBuilder {
 /// Fluent builder constructing a request to `GetQuerySuggestions`.
 ///
 /// <p>Fetches the queries that are suggested to your users.</p>
-/// <p> <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+/// <p><code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQuerySuggestionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

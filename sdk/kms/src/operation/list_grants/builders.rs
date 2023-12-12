@@ -22,19 +22,19 @@ impl ListGrantsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListGrants`.
 ///
-/// <p>Gets a list of all grants for the specified KMS key. </p>
+/// <p>Gets a list of all grants for the specified KMS key.</p>
 /// <p>You must specify the KMS key in all requests. You can filter the grant list by grant ID or grantee principal.</p>
-/// <p>For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming grants</a>. </p> <note>
+/// <p>For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming grants</a>.</p> <note>
 /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
 /// </note>
-/// <p> <b>Cross-account use</b>: Yes. To perform this operation on a KMS key in a different Amazon Web Services account, specify the key ARN in the value of the <code>KeyId</code> parameter.</p>
-/// <p> <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListGrants</a> (key policy)</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use</b>: Yes. To perform this operation on a KMS key in a different Amazon Web Services account, specify the key ARN in the value of the <code>KeyId</code> parameter.</p>
+/// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListGrants</a> (key policy)</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>CreateGrant</code> </p> </li>
-/// <li> <p> <code>ListRetirableGrants</code> </p> </li>
-/// <li> <p> <code>RetireGrant</code> </p> </li>
-/// <li> <p> <code>RevokeGrant</code> </p> </li>
+/// <li><p><code>CreateGrant</code></p></li>
+/// <li><p><code>ListRetirableGrants</code></p></li>
+/// <li><p><code>RetireGrant</code></p></li>
+/// <li><p><code>RevokeGrant</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGrantsFluentBuilder {
@@ -162,8 +162,8 @@ impl ListGrantsFluentBuilder {
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,8 +174,8 @@ impl ListGrantsFluentBuilder {
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -186,24 +186,24 @@ impl ListGrantsFluentBuilder {
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_id()
     }
-    /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the grant. </p>
+    /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the grant.</p>
     pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_id(input.into());
         self
     }
-    /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the grant. </p>
+    /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the grant.</p>
     pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_id(input);
         self
     }
-    /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the grant. </p>
+    /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the grant.</p>
     pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grant_id()
     }

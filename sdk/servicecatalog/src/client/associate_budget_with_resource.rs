@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`budget_name(impl Into<String>)`](crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::budget_name) / [`set_budget_name(Option<String>)`](crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::set_budget_name):<br>required: **true**<br><p>The name of the budget you want to associate.</p><br>
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::set_resource_id):<br>required: **true**<br><p> The resource identifier. Either a portfolio-id or a product-id.</p><br>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceFluentBuilder::set_resource_id):<br>required: **true**<br><p>The resource identifier. Either a portfolio-id or a product-id.</p><br>
     /// - On success, responds with [`AssociateBudgetWithResourceOutput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput)
     /// - On failure, responds with [`SdkError<AssociateBudgetWithResourceError>`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceError)
     pub fn associate_budget_with_resource(

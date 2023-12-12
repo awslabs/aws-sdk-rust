@@ -19,7 +19,7 @@ pub struct GetMetricDataInput {
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     pub groupings: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
-    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -197,7 +197,7 @@ pub struct GetMetricDataInput {
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
     pub historical_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>,
@@ -235,7 +235,7 @@ impl GetMetricDataInput {
         self.groupings.as_deref().unwrap_or_default()
     }
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
-    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -413,7 +413,7 @@ impl GetMetricDataInput {
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
     ///
@@ -551,7 +551,7 @@ impl GetMetricDataInputBuilder {
     /// To override the contents of this collection use [`set_historical_metrics`](Self::set_historical_metrics).
     ///
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
-    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -729,7 +729,7 @@ impl GetMetricDataInputBuilder {
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
     pub fn historical_metrics(mut self, input: crate::types::HistoricalMetric) -> Self {
@@ -739,7 +739,7 @@ impl GetMetricDataInputBuilder {
         self
     }
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
-    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -917,7 +917,7 @@ impl GetMetricDataInputBuilder {
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
     pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>) -> Self {
@@ -925,7 +925,7 @@ impl GetMetricDataInputBuilder {
         self
     }
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
-    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -1103,7 +1103,7 @@ impl GetMetricDataInputBuilder {
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
     pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {

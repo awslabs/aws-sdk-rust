@@ -247,11 +247,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagResourceEn
 pub enum TagResourceError {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
-    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
     InvalidResourceException(crate::types::error::InvalidResourceException),
-    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelingJobOutput {
-    /// <p>The processing status of the labeling job. </p>
+    /// <p>The processing status of the labeling job.</p>
     pub labeling_job_status: ::std::option::Option<crate::types::LabelingJobStatus>,
-    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
+    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled.</p>
     pub label_counters: ::std::option::Option<crate::types::LabelCounters>,
-    /// <p>If the job failed, the reason that it failed. </p>
+    /// <p>If the job failed, the reason that it failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the labeling job was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -29,25 +29,25 @@ pub struct DescribeLabelingJobOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li> <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p> </li>
-    /// <li> <p>Box bounding labeling jobs (all): 10 labels</p> </li>
+    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
-    /// <p> <code>{</code> </p>
-    /// <p> <code> "document-version": "2018-11-28"</code> </p>
-    /// <p> <code> "labels": [</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 1</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 2</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> ...</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label n</i>"</code> </p>
-    /// <p> <code> }</code> </p>
-    /// <p> <code> ]</code> </p>
-    /// <p> <code>}</code> </p>
+    /// <p><code>{</code></p>
+    /// <p><code> "document-version": "2018-11-28"</code></p>
+    /// <p><code> "labels": [</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 1</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 2</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> ...</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label n</i>"</code></p>
+    /// <p><code> }</code></p>
+    /// <p><code> ]</code></p>
+    /// <p><code>}</code></p>
     pub label_category_config_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped.</p>
     pub stopping_conditions: ::std::option::Option<crate::types::LabelingJobStoppingConditions>,
@@ -62,15 +62,15 @@ pub struct DescribeLabelingJobOutput {
     _request_id: Option<String>,
 }
 impl DescribeLabelingJobOutput {
-    /// <p>The processing status of the labeling job. </p>
+    /// <p>The processing status of the labeling job.</p>
     pub fn labeling_job_status(&self) -> ::std::option::Option<&crate::types::LabelingJobStatus> {
         self.labeling_job_status.as_ref()
     }
-    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
+    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled.</p>
     pub fn label_counters(&self) -> ::std::option::Option<&crate::types::LabelCounters> {
         self.label_counters.as_ref()
     }
-    /// <p>If the job failed, the reason that it failed. </p>
+    /// <p>If the job failed, the reason that it failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
@@ -112,25 +112,25 @@ impl DescribeLabelingJobOutput {
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li> <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p> </li>
-    /// <li> <p>Box bounding labeling jobs (all): 10 labels</p> </li>
+    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
-    /// <p> <code>{</code> </p>
-    /// <p> <code> "document-version": "2018-11-28"</code> </p>
-    /// <p> <code> "labels": [</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 1</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 2</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> ...</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label n</i>"</code> </p>
-    /// <p> <code> }</code> </p>
-    /// <p> <code> ]</code> </p>
-    /// <p> <code>}</code> </p>
+    /// <p><code>{</code></p>
+    /// <p><code> "document-version": "2018-11-28"</code></p>
+    /// <p><code> "labels": [</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 1</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 2</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> ...</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label n</i>"</code></p>
+    /// <p><code> }</code></p>
+    /// <p><code> ]</code></p>
+    /// <p><code>}</code></p>
     pub fn label_category_config_s3_uri(&self) -> ::std::option::Option<&str> {
         self.label_category_config_s3_uri.as_deref()
     }
@@ -194,47 +194,47 @@ pub struct DescribeLabelingJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeLabelingJobOutputBuilder {
-    /// <p>The processing status of the labeling job. </p>
+    /// <p>The processing status of the labeling job.</p>
     /// This field is required.
     pub fn labeling_job_status(mut self, input: crate::types::LabelingJobStatus) -> Self {
         self.labeling_job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The processing status of the labeling job. </p>
+    /// <p>The processing status of the labeling job.</p>
     pub fn set_labeling_job_status(mut self, input: ::std::option::Option<crate::types::LabelingJobStatus>) -> Self {
         self.labeling_job_status = input;
         self
     }
-    /// <p>The processing status of the labeling job. </p>
+    /// <p>The processing status of the labeling job.</p>
     pub fn get_labeling_job_status(&self) -> &::std::option::Option<crate::types::LabelingJobStatus> {
         &self.labeling_job_status
     }
-    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
+    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled.</p>
     /// This field is required.
     pub fn label_counters(mut self, input: crate::types::LabelCounters) -> Self {
         self.label_counters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
+    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled.</p>
     pub fn set_label_counters(mut self, input: ::std::option::Option<crate::types::LabelCounters>) -> Self {
         self.label_counters = input;
         self
     }
-    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
+    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled.</p>
     pub fn get_label_counters(&self) -> &::std::option::Option<crate::types::LabelCounters> {
         &self.label_counters
     }
-    /// <p>If the job failed, the reason that it failed. </p>
+    /// <p>If the job failed, the reason that it failed.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the job failed, the reason that it failed. </p>
+    /// <p>If the job failed, the reason that it failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>If the job failed, the reason that it failed. </p>
+    /// <p>If the job failed, the reason that it failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
@@ -374,75 +374,75 @@ impl DescribeLabelingJobOutputBuilder {
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li> <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p> </li>
-    /// <li> <p>Box bounding labeling jobs (all): 10 labels</p> </li>
+    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
-    /// <p> <code>{</code> </p>
-    /// <p> <code> "document-version": "2018-11-28"</code> </p>
-    /// <p> <code> "labels": [</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 1</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 2</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> ...</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label n</i>"</code> </p>
-    /// <p> <code> }</code> </p>
-    /// <p> <code> ]</code> </p>
-    /// <p> <code>}</code> </p>
+    /// <p><code>{</code></p>
+    /// <p><code> "document-version": "2018-11-28"</code></p>
+    /// <p><code> "labels": [</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 1</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 2</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> ...</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label n</i>"</code></p>
+    /// <p><code> }</code></p>
+    /// <p><code> ]</code></p>
+    /// <p><code>}</code></p>
     pub fn label_category_config_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_category_config_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li> <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p> </li>
-    /// <li> <p>Box bounding labeling jobs (all): 10 labels</p> </li>
+    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
-    /// <p> <code>{</code> </p>
-    /// <p> <code> "document-version": "2018-11-28"</code> </p>
-    /// <p> <code> "labels": [</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 1</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 2</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> ...</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label n</i>"</code> </p>
-    /// <p> <code> }</code> </p>
-    /// <p> <code> ]</code> </p>
-    /// <p> <code>}</code> </p>
+    /// <p><code>{</code></p>
+    /// <p><code> "document-version": "2018-11-28"</code></p>
+    /// <p><code> "labels": [</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 1</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 2</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> ...</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label n</i>"</code></p>
+    /// <p><code> }</code></p>
+    /// <p><code> ]</code></p>
+    /// <p><code>}</code></p>
     pub fn set_label_category_config_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_category_config_s3_uri = input;
         self
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li> <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p> </li>
-    /// <li> <p>Box bounding labeling jobs (all): 10 labels</p> </li>
+    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
-    /// <p> <code>{</code> </p>
-    /// <p> <code> "document-version": "2018-11-28"</code> </p>
-    /// <p> <code> "labels": [</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 1</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label 2</i>"</code> </p>
-    /// <p> <code> },</code> </p>
-    /// <p> <code> ...</code> </p>
-    /// <p> <code> {</code> </p>
-    /// <p> <code> "label": "<i>label n</i>"</code> </p>
-    /// <p> <code> }</code> </p>
-    /// <p> <code> ]</code> </p>
-    /// <p> <code>}</code> </p>
+    /// <p><code>{</code></p>
+    /// <p><code> "document-version": "2018-11-28"</code></p>
+    /// <p><code> "labels": [</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 1</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label 2</i>"</code></p>
+    /// <p><code> },</code></p>
+    /// <p><code> ...</code></p>
+    /// <p><code> {</code></p>
+    /// <p><code> "label": "<i>label n</i>"</code></p>
+    /// <p><code> }</code></p>
+    /// <p><code> ]</code></p>
+    /// <p><code>}</code></p>
     pub fn get_label_category_config_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_category_config_s3_uri
     }

@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub catalog: ::std::option::Option<crate::types::CatalogResource>,
-    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
+    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal.</p>
     pub database: ::std::option::Option<crate::types::DatabaseResource>,
-    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
     pub table: ::std::option::Option<crate::types::TableResource>,
     /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
     pub table_with_columns: ::std::option::Option<crate::types::TableWithColumnsResource>,
-    /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
+    /// <p>The location of an Amazon S3 path where permissions are granted or revoked.</p>
     pub data_location: ::std::option::Option<crate::types::DataLocationResource>,
     /// <p>A data cell filter.</p>
     pub data_cells_filter: ::std::option::Option<crate::types::DataCellsFilterResource>,
@@ -22,15 +22,15 @@ pub struct Resource {
     pub lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
 }
 impl Resource {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn catalog(&self) -> ::std::option::Option<&crate::types::CatalogResource> {
         self.catalog.as_ref()
     }
-    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
+    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal.</p>
     pub fn database(&self) -> ::std::option::Option<&crate::types::DatabaseResource> {
         self.database.as_ref()
     }
-    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
     pub fn table(&self) -> ::std::option::Option<&crate::types::TableResource> {
         self.table.as_ref()
     }
@@ -38,7 +38,7 @@ impl Resource {
     pub fn table_with_columns(&self) -> ::std::option::Option<&crate::types::TableWithColumnsResource> {
         self.table_with_columns.as_ref()
     }
-    /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
+    /// <p>The location of an Amazon S3 path where permissions are granted or revoked.</p>
     pub fn data_location(&self) -> ::std::option::Option<&crate::types::DataLocationResource> {
         self.data_location.as_ref()
     }
@@ -76,45 +76,45 @@ pub struct ResourceBuilder {
     pub(crate) lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
 }
 impl ResourceBuilder {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn catalog(mut self, input: crate::types::CatalogResource) -> Self {
         self.catalog = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<crate::types::CatalogResource>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogResource> {
         &self.catalog
     }
-    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
+    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal.</p>
     pub fn database(mut self, input: crate::types::DatabaseResource) -> Self {
         self.database = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
+    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal.</p>
     pub fn set_database(mut self, input: ::std::option::Option<crate::types::DatabaseResource>) -> Self {
         self.database = input;
         self
     }
-    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
+    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal.</p>
     pub fn get_database(&self) -> &::std::option::Option<crate::types::DatabaseResource> {
         &self.database
     }
-    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
     pub fn table(mut self, input: crate::types::TableResource) -> Self {
         self.table = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
     pub fn set_table(mut self, input: ::std::option::Option<crate::types::TableResource>) -> Self {
         self.table = input;
         self
     }
-    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
     pub fn get_table(&self) -> &::std::option::Option<crate::types::TableResource> {
         &self.table
     }
@@ -132,17 +132,17 @@ impl ResourceBuilder {
     pub fn get_table_with_columns(&self) -> &::std::option::Option<crate::types::TableWithColumnsResource> {
         &self.table_with_columns
     }
-    /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
+    /// <p>The location of an Amazon S3 path where permissions are granted or revoked.</p>
     pub fn data_location(mut self, input: crate::types::DataLocationResource) -> Self {
         self.data_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
+    /// <p>The location of an Amazon S3 path where permissions are granted or revoked.</p>
     pub fn set_data_location(mut self, input: ::std::option::Option<crate::types::DataLocationResource>) -> Self {
         self.data_location = input;
         self
     }
-    /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
+    /// <p>The location of an Amazon S3 path where permissions are granted or revoked.</p>
     pub fn get_data_location(&self) -> &::std::option::Option<crate::types::DataLocationResource> {
         &self.data_location
     }

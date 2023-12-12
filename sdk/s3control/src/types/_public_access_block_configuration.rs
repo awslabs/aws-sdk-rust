@@ -7,18 +7,18 @@
 pub struct PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
+    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub block_public_acls: ::std::option::Option<bool>,
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub ignore_public_acls: ::std::option::Option<bool>,
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access.</p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub block_public_policy: ::std::option::Option<bool>,
@@ -30,22 +30,22 @@ pub struct PublicAccessBlockConfiguration {
 impl PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
+    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn block_public_acls(&self) -> ::std::option::Option<bool> {
         self.block_public_acls
     }
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn ignore_public_acls(&self) -> ::std::option::Option<bool> {
         self.ignore_public_acls
     }
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access.</p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn block_public_policy(&self) -> ::std::option::Option<bool> {
@@ -77,9 +77,9 @@ pub struct PublicAccessBlockConfigurationBuilder {
 impl PublicAccessBlockConfigurationBuilder {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
+    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
@@ -89,9 +89,9 @@ impl PublicAccessBlockConfigurationBuilder {
     }
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
+    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
@@ -101,50 +101,50 @@ impl PublicAccessBlockConfigurationBuilder {
     }
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
+    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn get_block_public_acls(&self) -> &::std::option::Option<bool> {
         &self.block_public_acls
     }
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn ignore_public_acls(mut self, input: bool) -> Self {
         self.ignore_public_acls = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn set_ignore_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_public_acls = input;
         self
     }
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn get_ignore_public_acls(&self) -> &::std::option::Option<bool> {
         &self.ignore_public_acls
     }
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access.</p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn block_public_policy(mut self, input: bool) -> Self {
         self.block_public_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access.</p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.block_public_policy = input;
         self
     }
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access.</p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn get_block_public_policy(&self) -> &::std::option::Option<bool> {

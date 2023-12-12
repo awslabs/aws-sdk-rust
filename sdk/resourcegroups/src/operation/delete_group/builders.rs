@@ -23,10 +23,10 @@ impl DeleteGroupInputBuilder {
 /// Fluent builder constructing a request to `DeleteGroup`.
 ///
 /// <p>Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of the group; it only deletes the group structure.</p>
-/// <p> <b>Minimum permissions</b> </p>
+/// <p><b>Minimum permissions</b></p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li> <p> <code>resource-groups:DeleteGroup</code> </p> </li>
+/// <li><p><code>resource-groups:DeleteGroup</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGroupFluentBuilder {

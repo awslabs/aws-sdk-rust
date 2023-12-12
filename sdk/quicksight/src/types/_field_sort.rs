@@ -8,8 +8,8 @@ pub struct FieldSort {
     pub field_id: ::std::string::String,
     /// <p>The sort direction. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ASC</code>: Ascending</p> </li>
-    /// <li> <p> <code>DESC</code>: Descending</p> </li>
+    /// <li><p><code>ASC</code>: Ascending</p></li>
+    /// <li><p><code>DESC</code>: Descending</p></li>
     /// </ul>
     pub direction: crate::types::SortDirection,
 }
@@ -21,8 +21,8 @@ impl FieldSort {
     }
     /// <p>The sort direction. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ASC</code>: Ascending</p> </li>
-    /// <li> <p> <code>DESC</code>: Descending</p> </li>
+    /// <li><p><code>ASC</code>: Ascending</p></li>
+    /// <li><p><code>DESC</code>: Descending</p></li>
     /// </ul>
     pub fn direction(&self) -> &crate::types::SortDirection {
         &self.direction
@@ -60,8 +60,8 @@ impl FieldSortBuilder {
     }
     /// <p>The sort direction. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ASC</code>: Ascending</p> </li>
-    /// <li> <p> <code>DESC</code>: Descending</p> </li>
+    /// <li><p><code>ASC</code>: Ascending</p></li>
+    /// <li><p><code>DESC</code>: Descending</p></li>
     /// </ul>
     /// This field is required.
     pub fn direction(mut self, input: crate::types::SortDirection) -> Self {
@@ -70,8 +70,8 @@ impl FieldSortBuilder {
     }
     /// <p>The sort direction. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ASC</code>: Ascending</p> </li>
-    /// <li> <p> <code>DESC</code>: Descending</p> </li>
+    /// <li><p><code>ASC</code>: Ascending</p></li>
+    /// <li><p><code>DESC</code>: Descending</p></li>
     /// </ul>
     pub fn set_direction(mut self, input: ::std::option::Option<crate::types::SortDirection>) -> Self {
         self.direction = input;
@@ -79,8 +79,8 @@ impl FieldSortBuilder {
     }
     /// <p>The sort direction. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ASC</code>: Ascending</p> </li>
-    /// <li> <p> <code>DESC</code>: Descending</p> </li>
+    /// <li><p><code>ASC</code>: Ascending</p></li>
+    /// <li><p><code>DESC</code>: Descending</p></li>
     /// </ul>
     pub fn get_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
         &self.direction

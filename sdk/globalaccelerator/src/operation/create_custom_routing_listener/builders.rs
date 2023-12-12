@@ -22,7 +22,7 @@ impl CreateCustomRoutingListenerInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCustomRoutingListener`.
 ///
-/// <p>Create a listener to process inbound connections from clients to a custom routing accelerator. Connections arrive to assigned static IP addresses on the port range that you specify. </p>
+/// <p>Create a listener to process inbound connections from clients to a custom routing accelerator. Connections arrive to assigned static IP addresses on the port range that you specify.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingListenerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,17 +6,17 @@ pub struct CreateMultipartUploadInput {
     /// <p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the <code>x-amz-acl</code> request header.</p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
     /// <p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub cache_control: ::std::option::Option<::std::string::String>,
@@ -36,28 +36,28 @@ pub struct CreateMultipartUploadInput {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub grant_full_control: ::std::option::Option<::std::string::String>,
@@ -65,28 +65,28 @@ pub struct CreateMultipartUploadInput {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub grant_read: ::std::option::Option<::std::string::String>,
@@ -94,28 +94,28 @@ pub struct CreateMultipartUploadInput {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub grant_read_acp: ::std::option::Option<::std::string::String>,
@@ -123,28 +123,28 @@ pub struct CreateMultipartUploadInput {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub grant_write_acp: ::std::option::Option<::std::string::String>,
@@ -158,8 +158,8 @@ pub struct CreateMultipartUploadInput {
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <ul>
-    /// <li> <p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p> </li>
-    /// <li> <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li>
+    /// <li><p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p></li>
+    /// <li><p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p></li>
     /// </ul>
     /// </note>
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
@@ -221,19 +221,19 @@ impl CreateMultipartUploadInput {
     /// <p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the <code>x-amz-acl</code> request header.</p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn acl(&self) -> ::std::option::Option<&crate::types::ObjectCannedAcl> {
         self.acl.as_ref()
     }
     /// <p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -267,28 +267,28 @@ impl CreateMultipartUploadInput {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn grant_full_control(&self) -> ::std::option::Option<&str> {
@@ -298,28 +298,28 @@ impl CreateMultipartUploadInput {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn grant_read(&self) -> ::std::option::Option<&str> {
@@ -329,28 +329,28 @@ impl CreateMultipartUploadInput {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn grant_read_acp(&self) -> ::std::option::Option<&str> {
@@ -360,28 +360,28 @@ impl CreateMultipartUploadInput {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn grant_write_acp(&self) -> ::std::option::Option<&str> {
@@ -403,8 +403,8 @@ impl CreateMultipartUploadInput {
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <ul>
-    /// <li> <p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p> </li>
-    /// <li> <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li>
+    /// <li><p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p></li>
+    /// <li><p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p></li>
     /// </ul>
     /// </note>
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
@@ -574,8 +574,8 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the <code>x-amz-acl</code> request header.</p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn acl(mut self, input: crate::types::ObjectCannedAcl) -> Self {
@@ -585,8 +585,8 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the <code>x-amz-acl</code> request header.</p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::ObjectCannedAcl>) -> Self {
@@ -596,40 +596,40 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the <code>x-amz-acl</code> request header.</p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn get_acl(&self) -> &::std::option::Option<crate::types::ObjectCannedAcl> {
         &self.acl
     }
     /// <p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
@@ -727,28 +727,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn grant_full_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -759,28 +759,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -791,28 +791,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn get_grant_full_control(&self) -> &::std::option::Option<::std::string::String> {
@@ -822,28 +822,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn grant_read(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -854,28 +854,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -886,28 +886,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn get_grant_read(&self) -> &::std::option::Option<::std::string::String> {
@@ -917,28 +917,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn grant_read_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -949,28 +949,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -981,28 +981,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn get_grant_read_acp(&self) -> &::std::option::Option<::std::string::String> {
@@ -1012,28 +1012,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn grant_write_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1044,28 +1044,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1076,28 +1076,28 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-    /// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-    /// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <li><p><code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p></li>
+    /// <li><p><code>uri</code> – if you are granting permissions to a predefined group</p></li>
+    /// <li><p><code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
-    /// <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> <note>
+    /// <p><code>x-amz-grant-read: id="11112222333", id="444455556666" </code></p> <note>
     /// <ul>
-    /// <li> <p>This functionality is not supported for directory buckets.</p> </li>
-    /// <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+    /// <li><p>This functionality is not supported for directory buckets.</p></li>
+    /// <li><p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
     pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
@@ -1160,8 +1160,8 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <ul>
-    /// <li> <p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p> </li>
-    /// <li> <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li>
+    /// <li><p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p></li>
+    /// <li><p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p></li>
     /// </ul>
     /// </note>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
@@ -1170,8 +1170,8 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <ul>
-    /// <li> <p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p> </li>
-    /// <li> <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li>
+    /// <li><p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p></li>
+    /// <li><p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p></li>
     /// </ul>
     /// </note>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
@@ -1180,8 +1180,8 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <ul>
-    /// <li> <p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p> </li>
-    /// <li> <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li>
+    /// <li><p>For directory buckets, only the S3 Express One Zone storage class is supported to store newly created objects.</p></li>
+    /// <li><p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p></li>
     /// </ul>
     /// </note>
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {

@@ -22,7 +22,7 @@ impl UpdateComponentConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateComponentConfiguration`.
 ///
-/// <p>Updates the monitoring configurations for the component. The configuration input parameter is an escaped JSON of the configuration and should match the schema of what is returned by <code>DescribeComponentConfigurationRecommendation</code>. </p>
+/// <p>Updates the monitoring configurations for the component. The configuration input parameter is an escaped JSON of the configuration and should match the schema of what is returned by <code>DescribeComponentConfigurationRecommendation</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateComponentConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -178,17 +178,17 @@ impl UpdateComponentConfigurationFluentBuilder {
     pub fn get_component_configuration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_configuration()
     }
-    /// <p> Automatically configures the component by applying the recommended configurations. </p>
+    /// <p>Automatically configures the component by applying the recommended configurations.</p>
     pub fn auto_config_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_config_enabled(input);
         self
     }
-    /// <p> Automatically configures the component by applying the recommended configurations. </p>
+    /// <p>Automatically configures the component by applying the recommended configurations.</p>
     pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_config_enabled(input);
         self
     }
-    /// <p> Automatically configures the component by applying the recommended configurations. </p>
+    /// <p>Automatically configures the component by applying the recommended configurations.</p>
     pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_config_enabled()
     }

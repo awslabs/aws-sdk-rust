@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyCustomD
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyCustomDomainAssociationError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>An error occurred when an attempt was made to change the custom domain association.</p>
     CustomCnameAssociationFault(crate::types::error::CustomCnameAssociationFault),

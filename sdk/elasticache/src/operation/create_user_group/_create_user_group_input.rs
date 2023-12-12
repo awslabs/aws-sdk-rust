@@ -5,7 +5,7 @@
 pub struct CreateUserGroupInput {
     /// <p>The ID of the user group.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -17,7 +17,7 @@ impl CreateUserGroupInput {
     pub fn user_group_id(&self) -> ::std::option::Option<&str> {
         self.user_group_id.as_deref()
     }
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -66,18 +66,18 @@ impl CreateUserGroupInputBuilder {
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_group_id
     }
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

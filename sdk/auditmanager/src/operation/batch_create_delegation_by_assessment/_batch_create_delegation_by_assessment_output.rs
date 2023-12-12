@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchCreateDelegationByAssessmentOutput {
-    /// <p> The delegations that are associated with the assessment. </p>
+    /// <p>The delegations that are associated with the assessment.</p>
     pub delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
-    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
+    /// <p>A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateDelegationByAssessmentOutput {
-    /// <p> The delegations that are associated with the assessment. </p>
+    /// <p>The delegations that are associated with the assessment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegations.is_none()`.
     pub fn delegations(&self) -> &[crate::types::Delegation] {
         self.delegations.as_deref().unwrap_or_default()
     }
-    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
+    /// <p>A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::BatchCreateDelegationByAssessmentError] {
@@ -57,19 +57,19 @@ impl BatchCreateDelegationByAssessmentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
     ///
-    /// <p> The delegations that are associated with the assessment. </p>
+    /// <p>The delegations that are associated with the assessment.</p>
     pub fn delegations(mut self, input: crate::types::Delegation) -> Self {
         let mut v = self.delegations.unwrap_or_default();
         v.push(input);
         self.delegations = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The delegations that are associated with the assessment. </p>
+    /// <p>The delegations that are associated with the assessment.</p>
     pub fn set_delegations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>) -> Self {
         self.delegations = input;
         self
     }
-    /// <p> The delegations that are associated with the assessment. </p>
+    /// <p>The delegations that are associated with the assessment.</p>
     pub fn get_delegations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Delegation>> {
         &self.delegations
     }
@@ -77,19 +77,19 @@ impl BatchCreateDelegationByAssessmentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
+    /// <p>A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.</p>
     pub fn errors(mut self, input: crate::types::BatchCreateDelegationByAssessmentError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
+    /// <p>A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
+    /// <p>A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>> {
         &self.errors
     }

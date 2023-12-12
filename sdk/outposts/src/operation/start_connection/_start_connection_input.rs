@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConnectionInput {
-    /// <p> The serial number of the dongle. </p>
+    /// <p>The serial number of the dongle.</p>
     pub device_serial_number: ::std::option::Option<::std::string::String>,
-    /// <p> The ID of the Outpost server. </p>
+    /// <p>The ID of the Outpost server.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
-    /// <p> The public key of the client. </p>
+    /// <p>The public key of the client.</p>
     pub client_public_key: ::std::option::Option<::std::string::String>,
-    /// <p> The device index of the network interface on the Outpost server. </p>
+    /// <p>The device index of the network interface on the Outpost server.</p>
     pub network_interface_device_index: ::std::option::Option<i32>,
 }
 impl StartConnectionInput {
-    /// <p> The serial number of the dongle. </p>
+    /// <p>The serial number of the dongle.</p>
     pub fn device_serial_number(&self) -> ::std::option::Option<&str> {
         self.device_serial_number.as_deref()
     }
-    /// <p> The ID of the Outpost server. </p>
+    /// <p>The ID of the Outpost server.</p>
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
-    /// <p> The public key of the client. </p>
+    /// <p>The public key of the client.</p>
     pub fn client_public_key(&self) -> ::std::option::Option<&str> {
         self.client_public_key.as_deref()
     }
-    /// <p> The device index of the network interface on the Outpost server. </p>
+    /// <p>The device index of the network interface on the Outpost server.</p>
     pub fn network_interface_device_index(&self) -> ::std::option::Option<i32> {
         self.network_interface_device_index
     }
@@ -47,63 +47,63 @@ pub struct StartConnectionInputBuilder {
     pub(crate) network_interface_device_index: ::std::option::Option<i32>,
 }
 impl StartConnectionInputBuilder {
-    /// <p> The serial number of the dongle. </p>
+    /// <p>The serial number of the dongle.</p>
     /// This field is required.
     pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_serial_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The serial number of the dongle. </p>
+    /// <p>The serial number of the dongle.</p>
     pub fn set_device_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_serial_number = input;
         self
     }
-    /// <p> The serial number of the dongle. </p>
+    /// <p>The serial number of the dongle.</p>
     pub fn get_device_serial_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_serial_number
     }
-    /// <p> The ID of the Outpost server. </p>
+    /// <p>The ID of the Outpost server.</p>
     /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the Outpost server. </p>
+    /// <p>The ID of the Outpost server.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
-    /// <p> The ID of the Outpost server. </p>
+    /// <p>The ID of the Outpost server.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }
-    /// <p> The public key of the client. </p>
+    /// <p>The public key of the client.</p>
     /// This field is required.
     pub fn client_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_public_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The public key of the client. </p>
+    /// <p>The public key of the client.</p>
     pub fn set_client_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_public_key = input;
         self
     }
-    /// <p> The public key of the client. </p>
+    /// <p>The public key of the client.</p>
     pub fn get_client_public_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_public_key
     }
-    /// <p> The device index of the network interface on the Outpost server. </p>
+    /// <p>The device index of the network interface on the Outpost server.</p>
     /// This field is required.
     pub fn network_interface_device_index(mut self, input: i32) -> Self {
         self.network_interface_device_index = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The device index of the network interface on the Outpost server. </p>
+    /// <p>The device index of the network interface on the Outpost server.</p>
     pub fn set_network_interface_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_interface_device_index = input;
         self
     }
-    /// <p> The device index of the network interface on the Outpost server. </p>
+    /// <p>The device index of the network interface on the Outpost server.</p>
     pub fn get_network_interface_device_index(&self) -> &::std::option::Option<i32> {
         &self.network_interface_device_index
     }

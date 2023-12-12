@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchDetectSentimentInput {
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     pub text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl BatchDetectSentimentInput {
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_list.is_none()`.
     pub fn text_list(&self) -> &[::std::string::String] {
@@ -47,19 +47,19 @@ impl BatchDetectSentimentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
     ///
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     pub fn text_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.text_list.unwrap_or_default();
         v.push(input.into());
         self.text_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.text_list = input;
         self
     }
-    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.text_list
     }

@@ -22,7 +22,7 @@ impl BatchCreateChannelMembershipInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchCreateChannelMembership`.
 ///
-/// <p>Adds a specified number of users and bots to a channel. </p>
+/// <p>Adds a specified number of users and bots to a channel.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -168,21 +168,21 @@ impl BatchCreateChannelMembershipFluentBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chime_bearer()
     }
-    /// <p>The ID of the SubChannel in the request. </p> <note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request. </p> <note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
-    /// <p>The ID of the SubChannel in the request. </p> <note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
     pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {

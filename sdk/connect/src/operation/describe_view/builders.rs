@@ -24,7 +24,7 @@ impl DescribeViewInputBuilder {
 ///
 /// <p>Retrieves the view for the specified Amazon Connect instance and view identifier.</p>
 /// <p>The view identifier can be supplied as a ViewId or ARN.</p>
-/// <p> <code>$SAVED</code> needs to be supplied if a view is unpublished.</p>
+/// <p><code>$SAVED</code> needs to be supplied if a view is unpublished.</p>
 /// <p>The view identifier can contain an optional qualifier, for example, <code>
 /// <view-id>
 /// :$SAVED

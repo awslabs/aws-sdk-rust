@@ -25,9 +25,9 @@ impl StartMedicalStreamTranscriptionInputBuilder {
 /// <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe Medical and the transcription results are streamed to your application.</p>
 /// <p>The following parameters are required:</p>
 /// <ul>
-/// <li> <p> <code>language-code</code> </p> </li>
-/// <li> <p> <code>media-encoding</code> </p> </li>
-/// <li> <p> <code>sample-rate</code> </p> </li>
+/// <li><p><code>language-code</code></p></li>
+/// <li><p><code>media-encoding</code></p></li>
+/// <li><p><code>sample-rate</code></p></li>
 /// </ul>
 /// <p>For more information on streaming with Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
 #[derive(::std::fmt::Debug)]
@@ -151,9 +151,9 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     }
     /// <p>Specify the encoding used for the input audio. Supported formats are:</p>
     /// <ul>
-    /// <li> <p>FLAC</p> </li>
-    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
-    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
+    /// <li><p>FLAC</p></li>
+    /// <li><p>OPUS-encoded audio in an Ogg container</p></li>
+    /// <li><p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn media_encoding(mut self, input: crate::types::MediaEncoding) -> Self {
@@ -162,9 +162,9 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     }
     /// <p>Specify the encoding used for the input audio. Supported formats are:</p>
     /// <ul>
-    /// <li> <p>FLAC</p> </li>
-    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
-    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
+    /// <li><p>FLAC</p></li>
+    /// <li><p>OPUS-encoded audio in an Ogg container</p></li>
+    /// <li><p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
@@ -173,9 +173,9 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     }
     /// <p>Specify the encoding used for the input audio. Supported formats are:</p>
     /// <ul>
-    /// <li> <p>FLAC</p> </li>
-    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
-    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
+    /// <li><p>FLAC</p></li>
+    /// <li><p>OPUS-encoded audio in an Ogg container</p></li>
+    /// <li><p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn get_media_encoding(&self) -> &::std::option::Option<crate::types::MediaEncoding> {

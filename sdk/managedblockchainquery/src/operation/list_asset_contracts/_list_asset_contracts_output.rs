@@ -5,7 +5,7 @@
 pub struct ListAssetContractsOutput {
     /// <p>An array of contract objects that contain the properties for each contract.</p>
     pub contracts: ::std::vec::Vec<crate::types::AssetContract>,
-    /// <p>The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListAssetContractsOutput {
         use std::ops::Deref;
         self.contracts.deref()
     }
-    /// <p>The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListAssetContractsOutputBuilder {
     pub fn get_contracts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetContract>> {
         &self.contracts
     }
-    /// <p>The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -18,15 +18,15 @@ pub struct CreateSlackChannelConfigurationInput {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul>
     /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
@@ -62,15 +62,15 @@ impl CreateSlackChannelConfigurationInput {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul>
     /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
@@ -192,15 +192,15 @@ impl CreateSlackChannelConfigurationInputBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul>
     /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
@@ -212,15 +212,15 @@ impl CreateSlackChannelConfigurationInputBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul>
     /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
@@ -231,15 +231,15 @@ impl CreateSlackChannelConfigurationInputBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul>
     /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
     /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// <li><p><code>notifyOnAddCorrespondenceToCase</code></p></li>
+    /// <li><p><code>notifyOnCreateOrReopenCase</code></p></li>
+    /// <li><p><code>notifyOnResolveCase</code></p></li>
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>

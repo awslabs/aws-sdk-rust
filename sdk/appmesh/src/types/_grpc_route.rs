@@ -10,7 +10,7 @@ pub struct GrpcRoute {
     pub r#match: ::std::option::Option<crate::types::GrpcRouteMatch>,
     /// <p>An object that represents a retry policy.</p>
     pub retry_policy: ::std::option::Option<crate::types::GrpcRetryPolicy>,
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     pub timeout: ::std::option::Option<crate::types::GrpcTimeout>,
 }
 impl GrpcRoute {
@@ -26,7 +26,7 @@ impl GrpcRoute {
     pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::GrpcRetryPolicy> {
         self.retry_policy.as_ref()
     }
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     pub fn timeout(&self) -> ::std::option::Option<&crate::types::GrpcTimeout> {
         self.timeout.as_ref()
     }
@@ -92,17 +92,17 @@ impl GrpcRouteBuilder {
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::GrpcRetryPolicy> {
         &self.retry_policy
     }
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     pub fn timeout(mut self, input: crate::types::GrpcTimeout) -> Self {
         self.timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::GrpcTimeout>) -> Self {
         self.timeout = input;
         self
     }
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<crate::types::GrpcTimeout> {
         &self.timeout
     }

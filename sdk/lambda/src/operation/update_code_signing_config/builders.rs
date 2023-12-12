@@ -22,7 +22,7 @@ impl UpdateCodeSigningConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCodeSigningConfig`.
 ///
-/// <p>Update the code signing configuration. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function. </p>
+/// <p>Update the code signing configuration. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCodeSigningConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

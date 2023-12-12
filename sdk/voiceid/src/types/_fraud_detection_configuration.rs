@@ -6,7 +6,7 @@
 pub struct FraudDetectionConfiguration {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     pub risk_threshold: ::std::option::Option<i32>,
-    /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
+    /// <p>The identifier of the watchlist against which fraud detection is performed.</p>
     pub watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl FraudDetectionConfiguration {
@@ -14,7 +14,7 @@ impl FraudDetectionConfiguration {
     pub fn risk_threshold(&self) -> ::std::option::Option<i32> {
         self.risk_threshold
     }
-    /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
+    /// <p>The identifier of the watchlist against which fraud detection is performed.</p>
     pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
         self.watchlist_id.as_deref()
     }
@@ -48,17 +48,17 @@ impl FraudDetectionConfigurationBuilder {
     pub fn get_risk_threshold(&self) -> &::std::option::Option<i32> {
         &self.risk_threshold
     }
-    /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
+    /// <p>The identifier of the watchlist against which fraud detection is performed.</p>
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.watchlist_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
+    /// <p>The identifier of the watchlist against which fraud detection is performed.</p>
     pub fn set_watchlist_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.watchlist_id = input;
         self
     }
-    /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
+    /// <p>The identifier of the watchlist against which fraud detection is performed.</p>
     pub fn get_watchlist_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.watchlist_id
     }

@@ -22,7 +22,7 @@ impl DeleteFlowInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFlow`.
 ///
-/// <p> Enables your application to delete an existing flow. Before deleting the flow, Amazon AppFlow validates the request by checking the flow configuration and status. You can delete flows one at a time. </p>
+/// <p>Enables your application to delete an existing flow. Before deleting the flow, Amazon AppFlow validates the request by checking the flow configuration and status. You can delete flows one at a time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_name(input.into());
         self
     }
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_name(input);
         self
     }
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_name()
     }
-    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
+    /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
         self
     }
-    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
+    /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self
     }
-    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
+    /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         self.inner.get_force_delete()
     }

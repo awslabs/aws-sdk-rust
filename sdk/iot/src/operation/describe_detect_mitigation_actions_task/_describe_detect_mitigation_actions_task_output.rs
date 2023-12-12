@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDetectMitigationActionsTaskOutput {
-    /// <p> The description of a task. </p>
+    /// <p>The description of a task.</p>
     pub task_summary: ::std::option::Option<crate::types::DetectMitigationActionsTaskSummary>,
     _request_id: Option<String>,
 }
 impl DescribeDetectMitigationActionsTaskOutput {
-    /// <p> The description of a task. </p>
+    /// <p>The description of a task.</p>
     pub fn task_summary(&self) -> ::std::option::Option<&crate::types::DetectMitigationActionsTaskSummary> {
         self.task_summary.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeDetectMitigationActionsTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeDetectMitigationActionsTaskOutputBuilder {
-    /// <p> The description of a task. </p>
+    /// <p>The description of a task.</p>
     pub fn task_summary(mut self, input: crate::types::DetectMitigationActionsTaskSummary) -> Self {
         self.task_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The description of a task. </p>
+    /// <p>The description of a task.</p>
     pub fn set_task_summary(mut self, input: ::std::option::Option<crate::types::DetectMitigationActionsTaskSummary>) -> Self {
         self.task_summary = input;
         self
     }
-    /// <p> The description of a task. </p>
+    /// <p>The description of a task.</p>
     pub fn get_task_summary(&self) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskSummary> {
         &self.task_summary
     }

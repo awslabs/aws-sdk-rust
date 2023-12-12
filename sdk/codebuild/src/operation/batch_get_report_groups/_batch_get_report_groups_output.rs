@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetReportGroupsOutput {
-    /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+    /// <p>The array of report groups returned by <code>BatchGetReportGroups</code>.</p>
     pub report_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>>,
-    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
+    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.</p>
     pub report_groups_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetReportGroupsOutput {
-    /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+    /// <p>The array of report groups returned by <code>BatchGetReportGroups</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_groups.is_none()`.
     pub fn report_groups(&self) -> &[crate::types::ReportGroup] {
         self.report_groups.as_deref().unwrap_or_default()
     }
-    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
+    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_groups_not_found.is_none()`.
     pub fn report_groups_not_found(&self) -> &[::std::string::String] {
@@ -48,19 +48,19 @@ impl BatchGetReportGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_report_groups`](Self::set_report_groups).
     ///
-    /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+    /// <p>The array of report groups returned by <code>BatchGetReportGroups</code>.</p>
     pub fn report_groups(mut self, input: crate::types::ReportGroup) -> Self {
         let mut v = self.report_groups.unwrap_or_default();
         v.push(input);
         self.report_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+    /// <p>The array of report groups returned by <code>BatchGetReportGroups</code>.</p>
     pub fn set_report_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>>) -> Self {
         self.report_groups = input;
         self
     }
-    /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+    /// <p>The array of report groups returned by <code>BatchGetReportGroups</code>.</p>
     pub fn get_report_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>> {
         &self.report_groups
     }
@@ -68,19 +68,19 @@ impl BatchGetReportGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_report_groups_not_found`](Self::set_report_groups_not_found).
     ///
-    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
+    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.</p>
     pub fn report_groups_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.report_groups_not_found.unwrap_or_default();
         v.push(input.into());
         self.report_groups_not_found = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
+    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.</p>
     pub fn set_report_groups_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.report_groups_not_found = input;
         self
     }
-    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
+    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.</p>
     pub fn get_report_groups_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.report_groups_not_found
     }

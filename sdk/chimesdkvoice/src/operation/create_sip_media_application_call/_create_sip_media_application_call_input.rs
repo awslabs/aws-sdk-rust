@@ -11,7 +11,7 @@ pub struct CreateSipMediaApplicationCallInput {
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The SIP headers added to an outbound call leg.</p>
     pub sip_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
     pub arguments_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSipMediaApplicationCallInput {
@@ -31,7 +31,7 @@ impl CreateSipMediaApplicationCallInput {
     pub fn sip_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.sip_headers.as_ref()
     }
-    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
     pub fn arguments_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.arguments_map.as_ref()
     }
@@ -137,14 +137,14 @@ impl CreateSipMediaApplicationCallInputBuilder {
     ///
     /// To override the contents of this collection use [`set_arguments_map`](Self::set_arguments_map).
     ///
-    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
     pub fn arguments_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.arguments_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.arguments_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
     pub fn set_arguments_map(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -152,7 +152,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self.arguments_map = input;
         self
     }
-    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
     pub fn get_arguments_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.arguments_map
     }

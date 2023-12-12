@@ -24,15 +24,15 @@ impl GetEntitiesInputBuilder {
 ///
 /// <p>Gets definitions of the specified entities. Uses the latest version of the user's namespace by default. This API returns the following TDM entities.</p>
 /// <ul>
-/// <li> <p>Properties</p> </li>
-/// <li> <p>States</p> </li>
-/// <li> <p>Events</p> </li>
-/// <li> <p>Actions</p> </li>
-/// <li> <p>Capabilities</p> </li>
-/// <li> <p>Mappings</p> </li>
-/// <li> <p>Devices</p> </li>
-/// <li> <p>Device Models</p> </li>
-/// <li> <p>Services</p> </li>
+/// <li><p>Properties</p></li>
+/// <li><p>States</p></li>
+/// <li><p>Events</p></li>
+/// <li><p>Actions</p></li>
+/// <li><p>Capabilities</p></li>
+/// <li><p>Mappings</p></li>
+/// <li><p>Devices</p></li>
+/// <li><p>Device Models</p></li>
+/// <li><p>Services</p></li>
 /// </ul>
 /// <p>This action doesn't return definitions for systems, flows, and deployments.</p>
 #[deprecated(note = "since: 2022-08-30")]
@@ -127,21 +127,21 @@ impl GetEntitiesFluentBuilder {
     ///
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ids(input.into());
         self
     }
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ids()
     }

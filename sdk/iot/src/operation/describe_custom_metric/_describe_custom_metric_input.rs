@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomMetricInput {
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCustomMetricInput {
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeCustomMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCustomMetricInputBuilder {
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_name
     }

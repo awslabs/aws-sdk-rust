@@ -6,13 +6,13 @@
 pub struct ModelInputConfiguration {
     /// <p>The event type name.</p>
     pub event_type_name: ::std::option::Option<::std::string::String>,
-    /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
+    /// <p>The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
     pub format: ::std::option::Option<crate::types::ModelInputDataFormat>,
     /// <p>The event variables.</p>
     pub use_event_variables: bool,
-    /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub json_input_template: ::std::option::Option<::std::string::String>,
-    /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub csv_input_template: ::std::option::Option<::std::string::String>,
 }
 impl ModelInputConfiguration {
@@ -20,7 +20,7 @@ impl ModelInputConfiguration {
     pub fn event_type_name(&self) -> ::std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
-    /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
+    /// <p>The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::ModelInputDataFormat> {
         self.format.as_ref()
     }
@@ -28,11 +28,11 @@ impl ModelInputConfiguration {
     pub fn use_event_variables(&self) -> bool {
         self.use_event_variables
     }
-    /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub fn json_input_template(&self) -> ::std::option::Option<&str> {
         self.json_input_template.as_deref()
     }
-    /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub fn csv_input_template(&self) -> ::std::option::Option<&str> {
         self.csv_input_template.as_deref()
     }
@@ -69,17 +69,17 @@ impl ModelInputConfigurationBuilder {
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_type_name
     }
-    /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
+    /// <p>The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
     pub fn format(mut self, input: crate::types::ModelInputDataFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
+    /// <p>The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::ModelInputDataFormat>) -> Self {
         self.format = input;
         self
     }
-    /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
+    /// <p>The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::ModelInputDataFormat> {
         &self.format
     }
@@ -98,31 +98,31 @@ impl ModelInputConfigurationBuilder {
     pub fn get_use_event_variables(&self) -> &::std::option::Option<bool> {
         &self.use_event_variables
     }
-    /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub fn json_input_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.json_input_template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub fn set_json_input_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.json_input_template = input;
         self
     }
-    /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub fn get_json_input_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.json_input_template
     }
-    /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub fn csv_input_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csv_input_template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub fn set_csv_input_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csv_input_template = input;
         self
     }
-    /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    /// <p>Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker.</p>
     pub fn get_csv_input_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.csv_input_template
     }

@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsOutput {
-    /// <p> The returned list of proactive insights. </p>
+    /// <p>The returned list of proactive insights.</p>
     pub proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
-    /// <p> The returned list of reactive insights. </p>
+    /// <p>The returned list of reactive insights.</p>
     pub reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInsightsOutput {
-    /// <p> The returned list of proactive insights. </p>
+    /// <p>The returned list of proactive insights.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proactive_insights.is_none()`.
     pub fn proactive_insights(&self) -> &[crate::types::ProactiveInsightSummary] {
         self.proactive_insights.as_deref().unwrap_or_default()
     }
-    /// <p> The returned list of reactive insights. </p>
+    /// <p>The returned list of reactive insights.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reactive_insights.is_none()`.
     pub fn reactive_insights(&self) -> &[crate::types::ReactiveInsightSummary] {
@@ -55,19 +55,19 @@ impl ListInsightsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_proactive_insights`](Self::set_proactive_insights).
     ///
-    /// <p> The returned list of proactive insights. </p>
+    /// <p>The returned list of proactive insights.</p>
     pub fn proactive_insights(mut self, input: crate::types::ProactiveInsightSummary) -> Self {
         let mut v = self.proactive_insights.unwrap_or_default();
         v.push(input);
         self.proactive_insights = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The returned list of proactive insights. </p>
+    /// <p>The returned list of proactive insights.</p>
     pub fn set_proactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>) -> Self {
         self.proactive_insights = input;
         self
     }
-    /// <p> The returned list of proactive insights. </p>
+    /// <p>The returned list of proactive insights.</p>
     pub fn get_proactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>> {
         &self.proactive_insights
     }
@@ -75,19 +75,19 @@ impl ListInsightsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
     ///
-    /// <p> The returned list of reactive insights. </p>
+    /// <p>The returned list of reactive insights.</p>
     pub fn reactive_insights(mut self, input: crate::types::ReactiveInsightSummary) -> Self {
         let mut v = self.reactive_insights.unwrap_or_default();
         v.push(input);
         self.reactive_insights = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The returned list of reactive insights. </p>
+    /// <p>The returned list of reactive insights.</p>
     pub fn set_reactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>) -> Self {
         self.reactive_insights = input;
         self
     }
-    /// <p> The returned list of reactive insights. </p>
+    /// <p>The returned list of reactive insights.</p>
     pub fn get_reactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>> {
         &self.reactive_insights
     }

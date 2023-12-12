@@ -8,9 +8,9 @@ pub struct StorageLensConfiguration {
     pub id: ::std::string::String,
     /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
     pub account_level: ::std::option::Option<crate::types::AccountLevel>,
-    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty.</p>
     pub include: ::std::option::Option<crate::types::Include>,
-    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty.</p>
     pub exclude: ::std::option::Option<crate::types::Exclude>,
     /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>
     pub data_export: ::std::option::Option<crate::types::StorageLensDataExport>,
@@ -18,7 +18,7 @@ pub struct StorageLensConfiguration {
     pub is_enabled: bool,
     /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
     pub aws_org: ::std::option::Option<crate::types::StorageLensAwsOrg>,
-    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code></p>
     pub storage_lens_arn: ::std::option::Option<::std::string::String>,
 }
 impl StorageLensConfiguration {
@@ -31,11 +31,11 @@ impl StorageLensConfiguration {
     pub fn account_level(&self) -> ::std::option::Option<&crate::types::AccountLevel> {
         self.account_level.as_ref()
     }
-    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty.</p>
     pub fn include(&self) -> ::std::option::Option<&crate::types::Include> {
         self.include.as_ref()
     }
-    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty.</p>
     pub fn exclude(&self) -> ::std::option::Option<&crate::types::Exclude> {
         self.exclude.as_ref()
     }
@@ -51,7 +51,7 @@ impl StorageLensConfiguration {
     pub fn aws_org(&self) -> ::std::option::Option<&crate::types::StorageLensAwsOrg> {
         self.aws_org.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code></p>
     pub fn storage_lens_arn(&self) -> ::std::option::Option<&str> {
         self.storage_lens_arn.as_deref()
     }
@@ -107,31 +107,31 @@ impl StorageLensConfigurationBuilder {
     pub fn get_account_level(&self) -> &::std::option::Option<crate::types::AccountLevel> {
         &self.account_level
     }
-    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty.</p>
     pub fn include(mut self, input: crate::types::Include) -> Self {
         self.include = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty.</p>
     pub fn set_include(mut self, input: ::std::option::Option<crate::types::Include>) -> Self {
         self.include = input;
         self
     }
-    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty.</p>
     pub fn get_include(&self) -> &::std::option::Option<crate::types::Include> {
         &self.include
     }
-    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty.</p>
     pub fn exclude(mut self, input: crate::types::Exclude) -> Self {
         self.exclude = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty.</p>
     pub fn set_exclude(mut self, input: ::std::option::Option<crate::types::Exclude>) -> Self {
         self.exclude = input;
         self
     }
-    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
+    /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty.</p>
     pub fn get_exclude(&self) -> &::std::option::Option<crate::types::Exclude> {
         &self.exclude
     }
@@ -178,17 +178,17 @@ impl StorageLensConfigurationBuilder {
     pub fn get_aws_org(&self) -> &::std::option::Option<crate::types::StorageLensAwsOrg> {
         &self.aws_org
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code></p>
     pub fn storage_lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_lens_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code></p>
     pub fn set_storage_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_lens_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code></p>
     pub fn get_storage_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_lens_arn
     }

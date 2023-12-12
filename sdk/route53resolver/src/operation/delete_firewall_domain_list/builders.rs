@@ -22,7 +22,7 @@ impl DeleteFirewallDomainListInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFirewallDomainList`.
 ///
-/// <p>Deletes the specified domain list. </p>
+/// <p>Deletes the specified domain list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallDomainListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteFirewallDomainListFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the domain list that you want to delete. </p>
+    /// <p>The ID of the domain list that you want to delete.</p>
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
-    /// <p>The ID of the domain list that you want to delete. </p>
+    /// <p>The ID of the domain list that you want to delete.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
-    /// <p>The ID of the domain list that you want to delete. </p>
+    /// <p>The ID of the domain list that you want to delete.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_domain_list_id()
     }

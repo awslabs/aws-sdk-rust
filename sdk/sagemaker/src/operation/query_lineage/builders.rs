@@ -146,27 +146,27 @@ impl QueryLineageFluentBuilder {
     pub fn get_direction(&self) -> &::std::option::Option<crate::types::Direction> {
         self.inner.get_direction()
     }
-    /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+    /// <p>Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     pub fn include_edges(mut self, input: bool) -> Self {
         self.inner = self.inner.include_edges(input);
         self
     }
-    /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+    /// <p>Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     pub fn set_include_edges(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_edges(input);
         self
     }
-    /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+    /// <p>Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     pub fn get_include_edges(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_edges()
     }
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
+    /// <li><p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
+    /// <li><p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
+    /// <li><p>CreatedBefore - Filter entities created before this date.</p></li>
+    /// <li><p>ModifiedBefore - Filter entities modified before this date.</p></li>
+    /// <li><p>ModifiedAfter - Filter entities modified after this date.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::QueryFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -174,11 +174,11 @@ impl QueryLineageFluentBuilder {
     }
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
+    /// <li><p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
+    /// <li><p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
+    /// <li><p>CreatedBefore - Filter entities created before this date.</p></li>
+    /// <li><p>ModifiedBefore - Filter entities modified before this date.</p></li>
+    /// <li><p>ModifiedAfter - Filter entities modified after this date.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::QueryFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -186,11 +186,11 @@ impl QueryLineageFluentBuilder {
     }
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
+    /// <li><p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
+    /// <li><p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
+    /// <li><p>CreatedBefore - Filter entities created before this date.</p></li>
+    /// <li><p>ModifiedBefore - Filter entities modified before this date.</p></li>
+    /// <li><p>ModifiedAfter - Filter entities modified after this date.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::QueryFilters> {
         self.inner.get_filters()

@@ -22,7 +22,7 @@ impl ListConfigurationPolicyAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListConfigurationPolicyAssociations`.
 ///
-/// <p> Provides information about the associations for your configuration policies and self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region. </p>
+/// <p>Provides information about the associations for your configuration policies and self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConfigurationPolicyAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -118,45 +118,45 @@ impl ListConfigurationPolicyAssociationsFluentBuilder {
             self.inner,
         )
     }
-    /// <p> The <code>NextToken</code> value that's returned from a previous paginated <code>ListConfigurationPolicyAssociations</code> request where <code>MaxResults</code> was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The <code>NextToken</code> value that's returned from a previous paginated <code>ListConfigurationPolicyAssociations</code> request where <code>MaxResults</code> was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The <code>NextToken</code> value that's returned from a previous paginated <code>ListConfigurationPolicyAssociations</code> request where <code>MaxResults</code> was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The <code>NextToken</code> value that's returned from a previous paginated <code>ListConfigurationPolicyAssociations</code> request where <code>MaxResults</code> was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The <code>NextToken</code> value that's returned from a previous paginated <code>ListConfigurationPolicyAssociations</code> request where <code>MaxResults</code> was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The <code>NextToken</code> value that's returned from a previous paginated <code>ListConfigurationPolicyAssociations</code> request where <code>MaxResults</code> was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of results that's returned by <code>ListConfigurationPolicies</code> in each page of the response. When this parameter is used, <code>ListConfigurationPolicyAssociations</code> returns the specified number of results in a single page and a <code>NextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListConfigurationPolicyAssociations</code> request with the returned <code>NextToken</code> value. A valid range for <code>MaxResults</code> is between 1 and 100. </p>
+    /// <p>The maximum number of results that's returned by <code>ListConfigurationPolicies</code> in each page of the response. When this parameter is used, <code>ListConfigurationPolicyAssociations</code> returns the specified number of results in a single page and a <code>NextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListConfigurationPolicyAssociations</code> request with the returned <code>NextToken</code> value. A valid range for <code>MaxResults</code> is between 1 and 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of results that's returned by <code>ListConfigurationPolicies</code> in each page of the response. When this parameter is used, <code>ListConfigurationPolicyAssociations</code> returns the specified number of results in a single page and a <code>NextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListConfigurationPolicyAssociations</code> request with the returned <code>NextToken</code> value. A valid range for <code>MaxResults</code> is between 1 and 100. </p>
+    /// <p>The maximum number of results that's returned by <code>ListConfigurationPolicies</code> in each page of the response. When this parameter is used, <code>ListConfigurationPolicyAssociations</code> returns the specified number of results in a single page and a <code>NextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListConfigurationPolicyAssociations</code> request with the returned <code>NextToken</code> value. A valid range for <code>MaxResults</code> is between 1 and 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of results that's returned by <code>ListConfigurationPolicies</code> in each page of the response. When this parameter is used, <code>ListConfigurationPolicyAssociations</code> returns the specified number of results in a single page and a <code>NextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListConfigurationPolicyAssociations</code> request with the returned <code>NextToken</code> value. A valid range for <code>MaxResults</code> is between 1 and 100. </p>
+    /// <p>The maximum number of results that's returned by <code>ListConfigurationPolicies</code> in each page of the response. When this parameter is used, <code>ListConfigurationPolicyAssociations</code> returns the specified number of results in a single page and a <code>NextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListConfigurationPolicyAssociations</code> request with the returned <code>NextToken</code> value. A valid range for <code>MaxResults</code> is between 1 and 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> Options for filtering the <code>ListConfigurationPolicyAssociations</code> response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration, <code>AssociationType</code>, or <code>AssociationStatus</code>. </p>
+    /// <p>Options for filtering the <code>ListConfigurationPolicyAssociations</code> response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration, <code>AssociationType</code>, or <code>AssociationStatus</code>.</p>
     pub fn filters(mut self, input: crate::types::AssociationFilters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> Options for filtering the <code>ListConfigurationPolicyAssociations</code> response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration, <code>AssociationType</code>, or <code>AssociationStatus</code>. </p>
+    /// <p>Options for filtering the <code>ListConfigurationPolicyAssociations</code> response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration, <code>AssociationType</code>, or <code>AssociationStatus</code>.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AssociationFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p> Options for filtering the <code>ListConfigurationPolicyAssociations</code> response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration, <code>AssociationType</code>, or <code>AssociationStatus</code>. </p>
+    /// <p>Options for filtering the <code>ListConfigurationPolicyAssociations</code> response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration, <code>AssociationType</code>, or <code>AssociationStatus</code>.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::AssociationFilters> {
         self.inner.get_filters()
     }

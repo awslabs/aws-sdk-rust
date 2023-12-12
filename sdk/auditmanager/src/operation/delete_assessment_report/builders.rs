@@ -22,14 +22,14 @@ impl DeleteAssessmentReportInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAssessmentReport`.
 ///
-/// <p>Deletes an assessment report in Audit Manager. </p>
+/// <p>Deletes an assessment report in Audit Manager.</p>
 /// <p>When you run the <code>DeleteAssessmentReport</code> operation, Audit Manager attempts to delete the following data:</p>
 /// <ol>
-/// <li> <p>The specified assessment report that’s stored in your S3 bucket</p> </li>
-/// <li> <p>The associated metadata that’s stored in Audit Manager</p> </li>
+/// <li><p>The specified assessment report that’s stored in your S3 bucket</p></li>
+/// <li><p>The associated metadata that’s stored in Audit Manager</p></li>
 /// </ol>
-/// <p>If Audit Manager can’t access the assessment report in your S3 bucket, the report isn’t deleted. In this event, the <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds to delete the associated metadata only. You must then delete the assessment report from the S3 bucket yourself. </p>
-/// <p>This scenario happens when Audit Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code> error from Amazon S3. To avoid this, make sure that your S3 bucket is available, and that you configured the correct permissions for Audit Manager to delete resources in your S3 bucket. For an example permissions policy that you can use, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment report destination permissions</a> in the <i>Audit Manager User Guide</i>. For information about the issues that could cause a <code>403 (Forbidden)</code> or <code>404 (Not Found</code>) error from Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>. </p>
+/// <p>If Audit Manager can’t access the assessment report in your S3 bucket, the report isn’t deleted. In this event, the <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds to delete the associated metadata only. You must then delete the assessment report from the S3 bucket yourself.</p>
+/// <p>This scenario happens when Audit Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code> error from Amazon S3. To avoid this, make sure that your S3 bucket is available, and that you configured the correct permissions for Audit Manager to delete resources in your S3 bucket. For an example permissions policy that you can use, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment report destination permissions</a> in the <i>Audit Manager User Guide</i>. For information about the issues that could cause a <code>403 (Forbidden)</code> or <code>404 (Not Found</code>) error from Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAssessmentReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,31 +115,31 @@ impl DeleteAssessmentReportFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn assessment_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_report_id(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn set_assessment_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_report_id(input);
         self
     }
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn get_assessment_report_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_report_id()
     }

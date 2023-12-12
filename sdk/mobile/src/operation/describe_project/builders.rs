@@ -22,7 +22,7 @@ impl DescribeProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeProject`.
 ///
-/// <p> Gets details about a project in AWS Mobile Hub. </p>
+/// <p>Gets details about a project in AWS Mobile Hub.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeProjectFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_id(input.into());
         self
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_id(input);
         self
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_id()
     }
-    /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
+    /// <p>If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.</p>
     pub fn sync_from_resources(mut self, input: bool) -> Self {
         self.inner = self.inner.sync_from_resources(input);
         self
     }
-    /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
+    /// <p>If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.</p>
     pub fn set_sync_from_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sync_from_resources(input);
         self
     }
-    /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
+    /// <p>If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.</p>
     pub fn get_sync_from_resources(&self) -> &::std::option::Option<bool> {
         self.inner.get_sync_from_resources()
     }

@@ -12,7 +12,7 @@ pub struct ListSecretsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The filters to apply to the list of secrets.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
+    /// <p>Secrets are listed by <code>CreatedDate</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
 }
 impl ListSecretsInput {
@@ -35,7 +35,7 @@ impl ListSecretsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
+    /// <p>Secrets are listed by <code>CreatedDate</code>.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
@@ -123,17 +123,17 @@ impl ListSecretsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
+    /// <p>Secrets are listed by <code>CreatedDate</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
+    /// <p>Secrets are listed by <code>CreatedDate</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
-    /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
+    /// <p>Secrets are listed by <code>CreatedDate</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         &self.sort_order
     }

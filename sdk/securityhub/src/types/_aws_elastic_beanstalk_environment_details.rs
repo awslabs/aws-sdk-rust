@@ -32,14 +32,14 @@ pub struct AwsElasticBeanstalkEnvironmentDetails {
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>Aborting</code> </p> </li>
-    /// <li> <p> <code>Launching</code> </p> </li>
-    /// <li> <p> <code>LinkingFrom</code> </p> </li>
-    /// <li> <p> <code>LinkingTo</code> </p> </li>
-    /// <li> <p> <code>Ready</code> </p> </li>
-    /// <li> <p> <code>Terminated</code> </p> </li>
-    /// <li> <p> <code>Terminating</code> </p> </li>
-    /// <li> <p> <code>Updating</code> </p> </li>
+    /// <li><p><code>Aborting</code></p></li>
+    /// <li><p><code>Launching</code></p></li>
+    /// <li><p><code>LinkingFrom</code></p></li>
+    /// <li><p><code>LinkingTo</code></p></li>
+    /// <li><p><code>Ready</code></p></li>
+    /// <li><p><code>Terminated</code></p></li>
+    /// <li><p><code>Terminating</code></p></li>
+    /// <li><p><code>Updating</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The tier of the environment.</p>
@@ -106,14 +106,14 @@ impl AwsElasticBeanstalkEnvironmentDetails {
     }
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>Aborting</code> </p> </li>
-    /// <li> <p> <code>Launching</code> </p> </li>
-    /// <li> <p> <code>LinkingFrom</code> </p> </li>
-    /// <li> <p> <code>LinkingTo</code> </p> </li>
-    /// <li> <p> <code>Ready</code> </p> </li>
-    /// <li> <p> <code>Terminated</code> </p> </li>
-    /// <li> <p> <code>Terminating</code> </p> </li>
-    /// <li> <p> <code>Updating</code> </p> </li>
+    /// <li><p><code>Aborting</code></p></li>
+    /// <li><p><code>Launching</code></p></li>
+    /// <li><p><code>LinkingFrom</code></p></li>
+    /// <li><p><code>LinkingTo</code></p></li>
+    /// <li><p><code>Ready</code></p></li>
+    /// <li><p><code>Terminated</code></p></li>
+    /// <li><p><code>Terminating</code></p></li>
+    /// <li><p><code>Updating</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -358,14 +358,14 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     }
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>Aborting</code> </p> </li>
-    /// <li> <p> <code>Launching</code> </p> </li>
-    /// <li> <p> <code>LinkingFrom</code> </p> </li>
-    /// <li> <p> <code>LinkingTo</code> </p> </li>
-    /// <li> <p> <code>Ready</code> </p> </li>
-    /// <li> <p> <code>Terminated</code> </p> </li>
-    /// <li> <p> <code>Terminating</code> </p> </li>
-    /// <li> <p> <code>Updating</code> </p> </li>
+    /// <li><p><code>Aborting</code></p></li>
+    /// <li><p><code>Launching</code></p></li>
+    /// <li><p><code>LinkingFrom</code></p></li>
+    /// <li><p><code>LinkingTo</code></p></li>
+    /// <li><p><code>Ready</code></p></li>
+    /// <li><p><code>Terminated</code></p></li>
+    /// <li><p><code>Terminating</code></p></li>
+    /// <li><p><code>Updating</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -373,14 +373,14 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     }
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>Aborting</code> </p> </li>
-    /// <li> <p> <code>Launching</code> </p> </li>
-    /// <li> <p> <code>LinkingFrom</code> </p> </li>
-    /// <li> <p> <code>LinkingTo</code> </p> </li>
-    /// <li> <p> <code>Ready</code> </p> </li>
-    /// <li> <p> <code>Terminated</code> </p> </li>
-    /// <li> <p> <code>Terminating</code> </p> </li>
-    /// <li> <p> <code>Updating</code> </p> </li>
+    /// <li><p><code>Aborting</code></p></li>
+    /// <li><p><code>Launching</code></p></li>
+    /// <li><p><code>LinkingFrom</code></p></li>
+    /// <li><p><code>LinkingTo</code></p></li>
+    /// <li><p><code>Ready</code></p></li>
+    /// <li><p><code>Terminated</code></p></li>
+    /// <li><p><code>Terminating</code></p></li>
+    /// <li><p><code>Updating</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -388,14 +388,14 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     }
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>Aborting</code> </p> </li>
-    /// <li> <p> <code>Launching</code> </p> </li>
-    /// <li> <p> <code>LinkingFrom</code> </p> </li>
-    /// <li> <p> <code>LinkingTo</code> </p> </li>
-    /// <li> <p> <code>Ready</code> </p> </li>
-    /// <li> <p> <code>Terminated</code> </p> </li>
-    /// <li> <p> <code>Terminating</code> </p> </li>
-    /// <li> <p> <code>Updating</code> </p> </li>
+    /// <li><p><code>Aborting</code></p></li>
+    /// <li><p><code>Launching</code></p></li>
+    /// <li><p><code>LinkingFrom</code></p></li>
+    /// <li><p><code>LinkingTo</code></p></li>
+    /// <li><p><code>Ready</code></p></li>
+    /// <li><p><code>Terminated</code></p></li>
+    /// <li><p><code>Terminating</code></p></li>
+    /// <li><p><code>Updating</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

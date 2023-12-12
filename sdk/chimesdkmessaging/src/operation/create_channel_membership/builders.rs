@@ -24,16 +24,16 @@ impl CreateChannelMembershipInputBuilder {
 ///
 /// <p>Adds a member to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the request header. A channel member can:</p>
 /// <ul>
-/// <li> <p>List messages</p> </li>
-/// <li> <p>Send messages</p> </li>
-/// <li> <p>Receive messages</p> </li>
-/// <li> <p>Edit their own messages</p> </li>
-/// <li> <p>Leave the channel</p> </li>
+/// <li><p>List messages</p></li>
+/// <li><p>Send messages</p></li>
+/// <li><p>Receive messages</p></li>
+/// <li><p>Edit their own messages</p></li>
+/// <li><p>Leave the channel</p></li>
 /// </ul>
 /// <p>Privacy settings impact this action as follows:</p>
 /// <ul>
-/// <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li>
-/// <li> <p>Private Channels: You must be a member to list or send messages.</p> </li>
+/// <li><p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p></li>
+/// <li><p>Private Channels: You must be a member to list or send messages.</p></li>
 /// </ul> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>

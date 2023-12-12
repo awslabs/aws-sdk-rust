@@ -12,7 +12,7 @@ pub struct SyntaxToken {
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based offset from the beginning of the source text to the last character in the word.</p>
     pub end_offset: ::std::option::Option<i32>,
-    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
     pub part_of_speech: ::std::option::Option<crate::types::PartOfSpeechTag>,
 }
 impl SyntaxToken {
@@ -32,7 +32,7 @@ impl SyntaxToken {
     pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
-    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
     pub fn part_of_speech(&self) -> ::std::option::Option<&crate::types::PartOfSpeechTag> {
         self.part_of_speech.as_ref()
     }
@@ -111,17 +111,17 @@ impl SyntaxTokenBuilder {
     pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
         &self.end_offset
     }
-    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
     pub fn part_of_speech(mut self, input: crate::types::PartOfSpeechTag) -> Self {
         self.part_of_speech = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
     pub fn set_part_of_speech(mut self, input: ::std::option::Option<crate::types::PartOfSpeechTag>) -> Self {
         self.part_of_speech = input;
         self
     }
-    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
     pub fn get_part_of_speech(&self) -> &::std::option::Option<crate::types::PartOfSpeechTag> {
         &self.part_of_speech
     }

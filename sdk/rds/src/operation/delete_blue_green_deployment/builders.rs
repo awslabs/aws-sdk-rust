@@ -110,27 +110,27 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
         self
     }
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints: </p>
+    /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// <li><p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blue_green_deployment_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints: </p>
+    /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// <li><p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blue_green_deployment_identifier(input);
         self
     }
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints: </p>
+    /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// <li><p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_blue_green_deployment_identifier()

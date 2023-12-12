@@ -131,21 +131,21 @@ impl ListObservabilityConfigurationsFluentBuilder {
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn latest_only(mut self, input: bool) -> Self {
         self.inner = self.inner.latest_only(input);
         self
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn set_latest_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_latest_only(input);
         self
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn get_latest_only(&self) -> &::std::option::Option<bool> {
         self.inner.get_latest_only()
     }

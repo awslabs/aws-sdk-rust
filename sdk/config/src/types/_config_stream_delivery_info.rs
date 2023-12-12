@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigStreamDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
-    /// <p> <b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
+    /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
     pub last_status: ::std::option::Option<crate::types::DeliveryStatus>,
     /// <p>The error code from the last attempted delivery.</p>
     pub last_error_code: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct ConfigStreamDeliveryInfo {
 }
 impl ConfigStreamDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
-    /// <p> <b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
+    /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
     pub fn last_status(&self) -> ::std::option::Option<&crate::types::DeliveryStatus> {
         self.last_status.as_ref()
     }
@@ -51,19 +51,19 @@ pub struct ConfigStreamDeliveryInfoBuilder {
 }
 impl ConfigStreamDeliveryInfoBuilder {
     /// <p>Status of the last attempted delivery.</p>
-    /// <p> <b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
+    /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
     pub fn last_status(mut self, input: crate::types::DeliveryStatus) -> Self {
         self.last_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the last attempted delivery.</p>
-    /// <p> <b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
+    /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
     pub fn set_last_status(mut self, input: ::std::option::Option<crate::types::DeliveryStatus>) -> Self {
         self.last_status = input;
         self
     }
     /// <p>Status of the last attempted delivery.</p>
-    /// <p> <b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
+    /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
     pub fn get_last_status(&self) -> &::std::option::Option<crate::types::DeliveryStatus> {
         &self.last_status
     }

@@ -148,8 +148,8 @@ impl GetResourceSharesFluentBuilder {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
+    /// <li><p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
+    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.inner = self.inner.resource_owner(input);
@@ -157,8 +157,8 @@ impl GetResourceSharesFluentBuilder {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
+    /// <li><p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
+    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
@@ -166,8 +166,8 @@ impl GetResourceSharesFluentBuilder {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
+    /// <li><p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
+    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         self.inner.get_resource_owner()

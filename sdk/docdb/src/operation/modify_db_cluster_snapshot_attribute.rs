@@ -255,11 +255,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBClust
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyDBClusterSnapshotAttributeError {
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p><code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// <p>The provided value isn't a valid cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::types::error::InvalidDbClusterSnapshotStateFault),
-    /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with. </p>
+    /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
     SharedSnapshotQuotaExceededFault(crate::types::error::SharedSnapshotQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

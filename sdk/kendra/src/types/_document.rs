@@ -9,7 +9,7 @@ pub struct Document {
     pub id: ::std::string::String,
     /// <p>The title of the document.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>The contents of the document. </p>
+    /// <p>The contents of the document.</p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
@@ -22,7 +22,8 @@ pub struct Document {
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
+    /// <p></p>
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
     pub access_control_configuration_id: ::std::option::Option<::std::string::String>,
@@ -38,7 +39,7 @@ impl Document {
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The contents of the document. </p>
+    /// <p>The contents of the document.</p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.blob.as_ref()
@@ -67,7 +68,8 @@ impl Document {
         self.hierarchical_access_control_list.as_deref().unwrap_or_default()
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
+    /// <p></p>
     pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
         self.content_type.as_ref()
     }
@@ -130,19 +132,19 @@ impl DocumentBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>The contents of the document. </p>
+    /// <p>The contents of the document.</p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn blob(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.blob = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The contents of the document. </p>
+    /// <p>The contents of the document.</p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn set_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.blob = input;
         self
     }
-    /// <p>The contents of the document. </p>
+    /// <p>The contents of the document.</p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn get_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.blob
@@ -228,19 +230,22 @@ impl DocumentBuilder {
         &self.hierarchical_access_control_list
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
+    /// <p></p>
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
+    /// <p></p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
+    /// <p></p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
         &self.content_type
     }

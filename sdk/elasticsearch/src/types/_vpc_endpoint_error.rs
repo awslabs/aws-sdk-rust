@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpointError {
-    /// <p>The unique identifier of the endpoint. </p>
+    /// <p>The unique identifier of the endpoint.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The code associated with the error.</p>
     pub error_code: ::std::option::Option<crate::types::VpcEndpointErrorCode>,
@@ -12,7 +12,7 @@ pub struct VpcEndpointError {
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointError {
-    /// <p>The unique identifier of the endpoint. </p>
+    /// <p>The unique identifier of the endpoint.</p>
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct VpcEndpointErrorBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointErrorBuilder {
-    /// <p>The unique identifier of the endpoint. </p>
+    /// <p>The unique identifier of the endpoint.</p>
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the endpoint. </p>
+    /// <p>The unique identifier of the endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
-    /// <p>The unique identifier of the endpoint. </p>
+    /// <p>The unique identifier of the endpoint.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }

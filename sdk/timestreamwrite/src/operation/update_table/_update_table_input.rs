@@ -11,7 +11,7 @@ pub struct UpdateTableInput {
     pub retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
-    /// <p> The schema of the table. </p>
+    /// <p>The schema of the table.</p>
     pub schema: ::std::option::Option<crate::types::Schema>,
 }
 impl UpdateTableInput {
@@ -31,7 +31,7 @@ impl UpdateTableInput {
     pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
         self.magnetic_store_write_properties.as_ref()
     }
-    /// <p> The schema of the table. </p>
+    /// <p>The schema of the table.</p>
     pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
         self.schema.as_ref()
     }
@@ -112,17 +112,17 @@ impl UpdateTableInputBuilder {
     pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
         &self.magnetic_store_write_properties
     }
-    /// <p> The schema of the table. </p>
+    /// <p>The schema of the table.</p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The schema of the table. </p>
+    /// <p>The schema of the table.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.schema = input;
         self
     }
-    /// <p> The schema of the table. </p>
+    /// <p>The schema of the table.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
         &self.schema
     }

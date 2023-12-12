@@ -249,7 +249,7 @@ pub enum CreateCampaignError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>A service quota was exceeded. </p>
+    /// <p>A service quota was exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource wasn't found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

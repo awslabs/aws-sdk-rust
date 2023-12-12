@@ -22,7 +22,7 @@ impl GetResourcePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetResourcePolicy`.
 ///
-/// <p>Gets the resource-based permission policy that is set for the given environment. </p>
+/// <p>Gets the resource-based permission policy that is set for the given environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

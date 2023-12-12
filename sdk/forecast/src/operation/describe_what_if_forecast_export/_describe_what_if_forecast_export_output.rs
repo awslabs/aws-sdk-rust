@@ -9,16 +9,16 @@ pub struct DescribeWhatIfForecastExportOutput {
     pub what_if_forecast_export_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
     pub what_if_forecast_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
     /// </note>
@@ -29,11 +29,11 @@ pub struct DescribeWhatIfForecastExportOutput {
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
@@ -55,7 +55,7 @@ impl DescribeWhatIfForecastExportOutput {
     pub fn what_if_forecast_arns(&self) -> &[::std::string::String] {
         self.what_if_forecast_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::DataDestination> {
         self.destination.as_ref()
     }
@@ -65,10 +65,10 @@ impl DescribeWhatIfForecastExportOutput {
     }
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
     /// </note>
@@ -85,11 +85,11 @@ impl DescribeWhatIfForecastExportOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -176,17 +176,17 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     pub fn get_what_if_forecast_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.what_if_forecast_arns
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.destination = input;
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
         &self.destination
     }
@@ -206,10 +206,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
     /// </note>
@@ -219,10 +219,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
     /// </note>
@@ -232,10 +232,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
     /// </note>
@@ -272,11 +272,11 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -284,11 +284,11 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
@@ -296,11 +296,11 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time

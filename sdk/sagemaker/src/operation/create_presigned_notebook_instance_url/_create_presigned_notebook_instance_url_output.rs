@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePresignedNotebookInstanceUrlOutput {
-    /// <p>A JSON object that contains the URL string. </p>
+    /// <p>A JSON object that contains the URL string.</p>
     pub authorized_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePresignedNotebookInstanceUrlOutput {
-    /// <p>A JSON object that contains the URL string. </p>
+    /// <p>A JSON object that contains the URL string.</p>
     pub fn authorized_url(&self) -> ::std::option::Option<&str> {
         self.authorized_url.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreatePresignedNotebookInstanceUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreatePresignedNotebookInstanceUrlOutputBuilder {
-    /// <p>A JSON object that contains the URL string. </p>
+    /// <p>A JSON object that contains the URL string.</p>
     pub fn authorized_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A JSON object that contains the URL string. </p>
+    /// <p>A JSON object that contains the URL string.</p>
     pub fn set_authorized_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorized_url = input;
         self
     }
-    /// <p>A JSON object that contains the URL string. </p>
+    /// <p>A JSON object that contains the URL string.</p>
     pub fn get_authorized_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorized_url
     }

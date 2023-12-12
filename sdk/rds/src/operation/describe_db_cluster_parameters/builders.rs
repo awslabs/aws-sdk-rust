@@ -119,7 +119,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
@@ -128,7 +128,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
@@ -137,7 +137,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
@@ -145,9 +145,9 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>A specific source to return parameters for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>customer</code> </p> </li>
-    /// <li> <p> <code>engine</code> </p> </li>
-    /// <li> <p> <code>service</code> </p> </li>
+    /// <li><p><code>customer</code></p></li>
+    /// <li><p><code>engine</code></p></li>
+    /// <li><p><code>service</code></p></li>
     /// </ul>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
@@ -156,9 +156,9 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>A specific source to return parameters for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>customer</code> </p> </li>
-    /// <li> <p> <code>engine</code> </p> </li>
-    /// <li> <p> <code>service</code> </p> </li>
+    /// <li><p><code>customer</code></p></li>
+    /// <li><p><code>engine</code></p></li>
+    /// <li><p><code>service</code></p></li>
     /// </ul>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
@@ -167,9 +167,9 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>A specific source to return parameters for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>customer</code> </p> </li>
-    /// <li> <p> <code>engine</code> </p> </li>
-    /// <li> <p> <code>service</code> </p> </li>
+    /// <li><p><code>customer</code></p></li>
+    /// <li><p><code>engine</code></p></li>
+    /// <li><p><code>service</code></p></li>
     /// </ul>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source()

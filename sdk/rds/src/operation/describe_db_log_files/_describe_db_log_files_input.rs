@@ -7,7 +7,7 @@ pub struct DescribeDbLogFilesInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
@@ -27,7 +27,7 @@ impl DescribeDbLogFilesInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -82,7 +82,7 @@ impl DescribeDbLogFilesInputBuilder {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,7 +92,7 @@ impl DescribeDbLogFilesInputBuilder {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -101,7 +101,7 @@ impl DescribeDbLogFilesInputBuilder {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier

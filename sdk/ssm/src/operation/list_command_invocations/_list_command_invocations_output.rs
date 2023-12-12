@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCommandInvocationsOutput {
-    /// <p>(Optional) A list of all invocations. </p>
+    /// <p>(Optional) A list of all invocations.</p>
     pub command_invocations: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCommandInvocationsOutput {
-    /// <p>(Optional) A list of all invocations. </p>
+    /// <p>(Optional) A list of all invocations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_invocations.is_none()`.
     pub fn command_invocations(&self) -> &[crate::types::CommandInvocation] {
@@ -46,19 +46,19 @@ impl ListCommandInvocationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_command_invocations`](Self::set_command_invocations).
     ///
-    /// <p>(Optional) A list of all invocations. </p>
+    /// <p>(Optional) A list of all invocations.</p>
     pub fn command_invocations(mut self, input: crate::types::CommandInvocation) -> Self {
         let mut v = self.command_invocations.unwrap_or_default();
         v.push(input);
         self.command_invocations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Optional) A list of all invocations. </p>
+    /// <p>(Optional) A list of all invocations.</p>
     pub fn set_command_invocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>) -> Self {
         self.command_invocations = input;
         self
     }
-    /// <p>(Optional) A list of all invocations. </p>
+    /// <p>(Optional) A list of all invocations.</p>
     pub fn get_command_invocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>> {
         &self.command_invocations
     }

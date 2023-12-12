@@ -22,12 +22,12 @@ impl CreatePlayerSessionsInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePlayerSessions`.
 ///
-/// <p>Reserves open slots in a game session for a group of players. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a> </p>
-/// <p>To create player sessions, specify a game session ID and a list of player IDs. Optionally, provide a set of player data for each player ID. </p>
+/// <p>Reserves open slots in a game session for a group of players. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a></p>
+/// <p>To create player sessions, specify a game session ID and a list of player IDs. Optionally, provide a set of player data for each player ID.</p>
 /// <p>If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code> objects are returned with player session IDs. Each player references their player session ID when sending a connection request to the game session, and the game server can use it to validate the player reservation with the Amazon GameLift service. Player sessions cannot be updated.</p>
-/// <p>The maximum number of players per game session is 200. It is not adjustable. </p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p>The maximum number of players per game session is 200. It is not adjustable.</p>
+/// <p><b>Related actions</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePlayerSessionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,7 +149,7 @@ impl CreatePlayerSessionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_player_data_map`](Self::set_player_data_map).
     ///
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
     pub fn player_data_map(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -158,7 +158,7 @@ impl CreatePlayerSessionsFluentBuilder {
         self.inner = self.inner.player_data_map(k.into(), v.into());
         self
     }
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
     pub fn set_player_data_map(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -166,7 +166,7 @@ impl CreatePlayerSessionsFluentBuilder {
         self.inner = self.inner.set_player_data_map(input);
         self
     }
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
     pub fn get_player_data_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_player_data_map()
     }

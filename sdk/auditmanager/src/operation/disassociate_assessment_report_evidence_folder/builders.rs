@@ -22,7 +22,7 @@ impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateAssessmentReportEvidenceFolder`.
 ///
-/// <p> Disassociates an evidence folder from the specified assessment report in Audit Manager. </p>
+/// <p>Disassociates an evidence folder from the specified assessment report in Audit Manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateAssessmentReportEvidenceFolderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,31 +115,31 @@ impl DisassociateAssessmentReportEvidenceFolderFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }
-    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_folder_id(input.into());
         self
     }
-    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
     }
-    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_evidence_folder_id()
     }

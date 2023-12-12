@@ -114,17 +114,17 @@ impl GetResourcePoliciesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator {
         crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

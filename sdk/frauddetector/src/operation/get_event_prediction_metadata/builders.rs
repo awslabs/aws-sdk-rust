@@ -22,7 +22,7 @@ impl GetEventPredictionMetadataInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEventPredictionMetadata`.
 ///
-/// <p> Gets details of the past fraud predictions for the specified event ID, event type, detector ID, and detector version ID that was generated in the specified time period. </p>
+/// <p>Gets details of the past fraud predictions for the specified event ID, event type, detector ID, and detector version ID that was generated in the specified time period.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEventPredictionMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,75 +108,75 @@ impl GetEventPredictionMetadataFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The event ID. </p>
+    /// <p>The event ID.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
         self
     }
-    /// <p> The event ID. </p>
+    /// <p>The event ID.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
     }
-    /// <p> The event ID. </p>
+    /// <p>The event ID.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_id()
     }
-    /// <p> The event type associated with the detector specified for the prediction. </p>
+    /// <p>The event type associated with the detector specified for the prediction.</p>
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
-    /// <p> The event type associated with the detector specified for the prediction. </p>
+    /// <p>The event type associated with the detector specified for the prediction.</p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
-    /// <p> The event type associated with the detector specified for the prediction. </p>
+    /// <p>The event type associated with the detector specified for the prediction.</p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_type_name()
     }
-    /// <p> The detector ID. </p>
+    /// <p>The detector ID.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
-    /// <p> The detector ID. </p>
+    /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p> The detector ID. </p>
+    /// <p>The detector ID.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }
-    /// <p> The detector version ID. </p>
+    /// <p>The detector version ID.</p>
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_version_id(input.into());
         self
     }
-    /// <p> The detector version ID. </p>
+    /// <p>The detector version ID.</p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
-    /// <p> The detector version ID. </p>
+    /// <p>The detector version ID.</p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_version_id()
     }
-    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn prediction_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prediction_timestamp(input.into());
         self
     }
-    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn set_prediction_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prediction_timestamp(input);
         self
     }
-    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn get_prediction_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prediction_timestamp()

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBotChannelAssociationsOutput {
-    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
+    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
     pub bot_channel_associations: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
-    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBotChannelAssociationsOutput {
-    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
+    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_channel_associations.is_none()`.
     pub fn bot_channel_associations(&self) -> &[crate::types::BotChannelAssociation] {
         self.bot_channel_associations.as_deref().unwrap_or_default()
     }
-    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl GetBotChannelAssociationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_bot_channel_associations`](Self::set_bot_channel_associations).
     ///
-    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
+    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
     pub fn bot_channel_associations(mut self, input: crate::types::BotChannelAssociation) -> Self {
         let mut v = self.bot_channel_associations.unwrap_or_default();
         v.push(input);
         self.bot_channel_associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
+    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
     pub fn set_bot_channel_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>) -> Self {
         self.bot_channel_associations = input;
         self
     }
-    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
+    /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
     pub fn get_bot_channel_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>> {
         &self.bot_channel_associations
     }
-    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

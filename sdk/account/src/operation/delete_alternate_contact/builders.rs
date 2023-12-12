@@ -111,17 +111,17 @@ impl DeleteAlternateContactFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// <p>Specifies which of the alternate contacts to delete.</p>
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
         self.inner = self.inner.alternate_contact_type(input);
         self
     }
-    /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// <p>Specifies which of the alternate contacts to delete.</p>
     pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
         self.inner = self.inner.set_alternate_contact_type(input);
         self
     }
-    /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// <p>Specifies which of the alternate contacts to delete.</p>
     pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
         self.inner.get_alternate_contact_type()
     }

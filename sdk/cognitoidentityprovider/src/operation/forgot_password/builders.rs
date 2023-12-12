@@ -22,7 +22,7 @@ impl ForgotPasswordInputBuilder {
 }
 /// Fluent builder constructing a request to `ForgotPassword`.
 ///
-/// <p>Calling this API causes a message to be sent to the end user with a confirmation code that is required to change the user's password. For the <code>Username</code> parameter, you can use the username or user alias. The method used to send the confirmation code is sent according to the specified AccountRecoverySetting. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. To use the confirmation code for resetting the password, call <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>. </p>
+/// <p>Calling this API causes a message to be sent to the end user with a confirmation code that is required to change the user's password. For the <code>Username</code> parameter, you can use the username or user alias. The method used to send the confirmation code is sent according to the specified AccountRecoverySetting. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. To use the confirmation code for resetting the password, call <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p>
 /// <p>If neither a verified phone number nor a verified email exists, this API returns <code>InvalidParameterException</code>. If your app client has a client secret and you don't provide a <code>SECRET_HASH</code> parameter, this API returns <code>NotAuthorizedException</code>.</p> <note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito native and OIDC APIs</a>.</p>
 /// </note> <note>
@@ -193,9 +193,9 @@ impl ForgotPasswordFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
     /// <ul>
-    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
-    /// <li> <p>Validate the ClientMetadata value.</p> </li>
-    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
+    /// <li><p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <li><p>Validate the ClientMetadata value.</p></li>
+    /// <li><p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -211,9 +211,9 @@ impl ForgotPasswordFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
     /// <ul>
-    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
-    /// <li> <p>Validate the ClientMetadata value.</p> </li>
-    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
+    /// <li><p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <li><p>Validate the ClientMetadata value.</p></li>
+    /// <li><p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
     pub fn set_client_metadata(
@@ -228,9 +228,9 @@ impl ForgotPasswordFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
     /// <ul>
-    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
-    /// <li> <p>Validate the ClientMetadata value.</p> </li>
-    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
+    /// <li><p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <li><p>Validate the ClientMetadata value.</p></li>
+    /// <li><p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
     pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

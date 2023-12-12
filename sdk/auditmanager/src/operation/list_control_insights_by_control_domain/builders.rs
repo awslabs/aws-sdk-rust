@@ -23,7 +23,7 @@ impl ListControlInsightsByControlDomainInputBuilder {
 /// Fluent builder constructing a request to `ListControlInsightsByControlDomain`.
 ///
 /// <p>Lists the latest analytics data for controls within a specific control domain across all active assessments.</p> <note>
-/// <p>Control insights are listed only if the control belongs to the control domain that was specified and the control collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data is listed for that control. </p>
+/// <p>Control insights are listed only if the control belongs to the control domain that was specified and the control collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data is listed for that control.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListControlInsightsByControlDomainFluentBuilder {
@@ -120,45 +120,45 @@ impl ListControlInsightsByControlDomainFluentBuilder {
             self.inner,
         )
     }
-    /// <p>The unique identifier for the control domain. </p>
+    /// <p>The unique identifier for the control domain.</p>
     pub fn control_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_domain_id(input.into());
         self
     }
-    /// <p>The unique identifier for the control domain. </p>
+    /// <p>The unique identifier for the control domain.</p>
     pub fn set_control_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_domain_id(input);
         self
     }
-    /// <p>The unique identifier for the control domain. </p>
+    /// <p>The unique identifier for the control domain.</p>
     pub fn get_control_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_control_domain_id()
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -123,17 +123,17 @@ impl ProvisionByoipCidrFluentBuilder {
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr()
     }
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
     pub fn cidr_authorization_context(mut self, input: crate::types::CidrAuthorizationContext) -> Self {
         self.inner = self.inner.cidr_authorization_context(input);
         self
     }
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
     pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::CidrAuthorizationContext>) -> Self {
         self.inner = self.inner.set_cidr_authorization_context(input);
         self
     }
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
     pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
         self.inner.get_cidr_authorization_context()
     }

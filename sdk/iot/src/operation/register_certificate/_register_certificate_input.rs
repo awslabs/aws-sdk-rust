@@ -9,7 +9,7 @@ pub struct RegisterCertificateInput {
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
     pub ca_certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub set_as_active: ::std::option::Option<bool>,
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
@@ -25,7 +25,7 @@ impl RegisterCertificateInput {
         self.ca_certificate_pem.as_deref()
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub fn set_as_active(&self) -> ::std::option::Option<bool> {
         self.set_as_active
@@ -82,21 +82,21 @@ impl RegisterCertificateInputBuilder {
         &self.ca_certificate_pem
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub fn set_as_active(mut self, input: bool) -> Self {
         self.set_as_active = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.set_as_active = input;
         self
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
         &self.set_as_active

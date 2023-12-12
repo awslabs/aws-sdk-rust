@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::set_name):<br>required: **true**<br><p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p><br>
     ///   - [`version(i32)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::version) / [`set_version(Option<i32>)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::set_version):<br>required: **false**<br><p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p><br>
     /// - On success, responds with [`GetPipelineOutput`](crate::operation::get_pipeline::GetPipelineOutput) with field(s):
-    ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::operation::get_pipeline::GetPipelineOutput::pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::operation::get_pipeline::GetPipelineOutput::pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     ///   - [`metadata(Option<PipelineMetadata>)`](crate::operation::get_pipeline::GetPipelineOutput::metadata): <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     /// - On failure, responds with [`SdkError<GetPipelineError>`](crate::operation::get_pipeline::GetPipelineError)
     pub fn get_pipeline(&self) -> crate::operation::get_pipeline::builders::GetPipelineFluentBuilder {

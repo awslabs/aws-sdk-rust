@@ -10,7 +10,7 @@ pub struct DbClusterMember {
     pub is_cluster_writer: ::std::option::Option<bool>,
     /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
     pub db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub promotion_tier: ::std::option::Option<i32>,
 }
 impl DbClusterMember {
@@ -26,7 +26,7 @@ impl DbClusterMember {
     pub fn db_cluster_parameter_group_status(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_status.as_deref()
     }
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
         self.promotion_tier
     }
@@ -90,17 +90,17 @@ impl DbClusterMemberBuilder {
     pub fn get_db_cluster_parameter_group_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_status
     }
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
     }
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
         &self.promotion_tier
     }

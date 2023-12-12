@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AddRoleToDBIn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AddRoleToDBInstanceError {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The specified <code>RoleArn</code> or <code>FeatureName</code> value is already associated with the DB instance.</p>
     DbInstanceRoleAlreadyExistsFault(crate::types::error::DbInstanceRoleAlreadyExistsFault),

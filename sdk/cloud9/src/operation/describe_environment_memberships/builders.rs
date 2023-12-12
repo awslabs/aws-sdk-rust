@@ -148,9 +148,9 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     ///
     /// <p>The type of environment member permissions to get information about. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>owner</code>: Owns the environment.</p></li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
     pub fn permissions(mut self, input: crate::types::Permissions) -> Self {
@@ -159,9 +159,9 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     }
     /// <p>The type of environment member permissions to get information about. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>owner</code>: Owns the environment.</p></li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permissions>>) -> Self {
@@ -170,9 +170,9 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     }
     /// <p>The type of environment member permissions to get information about. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>owner</code>: Owns the environment.</p></li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permissions>> {

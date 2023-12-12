@@ -22,7 +22,7 @@ impl DescribeWorkspaceImagesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeWorkspaceImages`.
 ///
-/// <p>Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described. </p>
+/// <p>Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceImagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

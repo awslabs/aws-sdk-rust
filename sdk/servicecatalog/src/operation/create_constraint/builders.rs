@@ -111,8 +111,8 @@ impl CreateConstraintFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -120,8 +120,8 @@ impl CreateConstraintFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -129,8 +129,8 @@ impl CreateConstraintFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()
@@ -171,9 +171,9 @@ impl CreateConstraintFluentBuilder {
     /// <dd>
     /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
     /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-    /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
+    /// <p><code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code></p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-    /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+    /// <p><code>{"LocalRoleName": "SCBasicLaunchRole"}</code></p>
     /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
@@ -185,14 +185,14 @@ impl CreateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
+    /// <p><code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code></p>
     /// </dd>
     /// <dt>
     /// RESOURCE_UPDATE
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-    /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
+    /// <p><code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code></p>
     /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
     /// </dd>
     /// <dt>
@@ -200,7 +200,7 @@ impl CreateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
+    /// <p><code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
@@ -224,9 +224,9 @@ impl CreateConstraintFluentBuilder {
     /// <dd>
     /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
     /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-    /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
+    /// <p><code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code></p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-    /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+    /// <p><code>{"LocalRoleName": "SCBasicLaunchRole"}</code></p>
     /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
@@ -238,14 +238,14 @@ impl CreateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
+    /// <p><code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code></p>
     /// </dd>
     /// <dt>
     /// RESOURCE_UPDATE
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-    /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
+    /// <p><code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code></p>
     /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
     /// </dd>
     /// <dt>
@@ -253,7 +253,7 @@ impl CreateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
+    /// <p><code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
@@ -277,9 +277,9 @@ impl CreateConstraintFluentBuilder {
     /// <dd>
     /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
     /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-    /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
+    /// <p><code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code></p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-    /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+    /// <p><code>{"LocalRoleName": "SCBasicLaunchRole"}</code></p>
     /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
@@ -291,14 +291,14 @@ impl CreateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
+    /// <p><code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code></p>
     /// </dd>
     /// <dt>
     /// RESOURCE_UPDATE
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-    /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
+    /// <p><code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code></p>
     /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
     /// </dd>
     /// <dt>
@@ -306,7 +306,7 @@ impl CreateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
+    /// <p><code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
@@ -323,11 +323,11 @@ impl CreateConstraintFluentBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li> <p> <code>LAUNCH</code> </p> </li>
-    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
-    /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
-    /// <li> <p> <code>STACKSET</code> </p> </li>
-    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+    /// <li><p><code>LAUNCH</code></p></li>
+    /// <li><p><code>NOTIFICATION</code></p></li>
+    /// <li><p><code>RESOURCE_UPDATE</code></p></li>
+    /// <li><p><code>STACKSET</code></p></li>
+    /// <li><p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
@@ -335,11 +335,11 @@ impl CreateConstraintFluentBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li> <p> <code>LAUNCH</code> </p> </li>
-    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
-    /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
-    /// <li> <p> <code>STACKSET</code> </p> </li>
-    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+    /// <li><p><code>LAUNCH</code></p></li>
+    /// <li><p><code>NOTIFICATION</code></p></li>
+    /// <li><p><code>RESOURCE_UPDATE</code></p></li>
+    /// <li><p><code>STACKSET</code></p></li>
+    /// <li><p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -347,11 +347,11 @@ impl CreateConstraintFluentBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li> <p> <code>LAUNCH</code> </p> </li>
-    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
-    /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
-    /// <li> <p> <code>STACKSET</code> </p> </li>
-    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+    /// <li><p><code>LAUNCH</code></p></li>
+    /// <li><p><code>NOTIFICATION</code></p></li>
+    /// <li><p><code>RESOURCE_UPDATE</code></p></li>
+    /// <li><p><code>STACKSET</code></p></li>
+    /// <li><p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_type()

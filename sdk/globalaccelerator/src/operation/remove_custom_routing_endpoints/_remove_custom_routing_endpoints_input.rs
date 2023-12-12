@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsInput {
-    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
     pub endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveCustomRoutingEndpointsInput {
-    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_ids.is_none()`.
     pub fn endpoint_ids(&self) -> &[::std::string::String] {
@@ -39,19 +39,19 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_endpoint_ids`](Self::set_endpoint_ids).
     ///
-    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
     pub fn endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.endpoint_ids.unwrap_or_default();
         v.push(input.into());
         self.endpoint_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
     pub fn set_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.endpoint_ids = input;
         self
     }
-    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
     pub fn get_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.endpoint_ids
     }

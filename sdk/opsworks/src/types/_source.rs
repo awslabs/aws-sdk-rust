@@ -10,14 +10,14 @@ pub struct Source {
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p></li>
+    /// <li><p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p></li>
     /// </ul>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p></li>
+    /// <li><p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p></li>
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -39,16 +39,16 @@ impl Source {
     }
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p></li>
+    /// <li><p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p></li>
     /// </ul>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p></li>
+    /// <li><p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p></li>
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -114,8 +114,8 @@ impl SourceBuilder {
     }
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p></li>
+    /// <li><p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p></li>
     /// </ul>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -123,8 +123,8 @@ impl SourceBuilder {
     }
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p></li>
+    /// <li><p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p></li>
     /// </ul>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
@@ -132,16 +132,16 @@ impl SourceBuilder {
     }
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p></li>
+    /// <li><p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p></li>
     /// </ul>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p></li>
+    /// <li><p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p></li>
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -151,8 +151,8 @@ impl SourceBuilder {
     }
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p></li>
+    /// <li><p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p></li>
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -162,8 +162,8 @@ impl SourceBuilder {
     }
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
+    /// <li><p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p></li>
+    /// <li><p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p></li>
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>

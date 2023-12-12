@@ -14,11 +14,11 @@ pub struct PhysicalResourceId {
     /// <dd>
     /// <p>The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ECS::Service</code> </p> </li>
-    /// <li> <p> <code>AWS::EFS::FileSystem</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
-    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
+    /// <li><p><code>AWS::ECS::Service</code></p></li>
+    /// <li><p><code>AWS::EFS::FileSystem</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancingV2::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::Lambda::Function</code></p></li>
+    /// <li><p><code>AWS::SNS::Topic</code></p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -27,25 +27,25 @@ pub struct PhysicalResourceId {
     /// <dd>
     /// <p>The resource identifier is an Resilience Hub-native identifier and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ApiGateway::RestApi</code> </p> </li>
-    /// <li> <p> <code>AWS::ApiGatewayV2::Api</code> </p> </li>
-    /// <li> <p> <code>AWS::AutoScaling::AutoScalingGroup</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBGlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::GlobalTable</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::EC2Fleet</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Instance</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::NatGateway</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Volume</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancing::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::GlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::Route53::RecordSet</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Bucket</code> </p> </li>
-    /// <li> <p> <code>AWS::SQS::Queue</code> </p> </li>
+    /// <li><p><code>AWS::ApiGateway::RestApi</code></p></li>
+    /// <li><p><code>AWS::ApiGatewayV2::Api</code></p></li>
+    /// <li><p><code>AWS::AutoScaling::AutoScalingGroup</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBGlobalCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBInstance</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::GlobalTable</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::Table</code></p></li>
+    /// <li><p><code>AWS::EC2::EC2Fleet</code></p></li>
+    /// <li><p><code>AWS::EC2::Instance</code></p></li>
+    /// <li><p><code>AWS::EC2::NatGateway</code></p></li>
+    /// <li><p><code>AWS::EC2::Volume</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancing::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::RDS::DBCluster</code></p></li>
+    /// <li><p><code>AWS::RDS::DBInstance</code></p></li>
+    /// <li><p><code>AWS::RDS::GlobalCluster</code></p></li>
+    /// <li><p><code>AWS::Route53::RecordSet</code></p></li>
+    /// <li><p><code>AWS::S3::Bucket</code></p></li>
+    /// <li><p><code>AWS::SQS::Queue</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -69,11 +69,11 @@ impl PhysicalResourceId {
     /// <dd>
     /// <p>The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ECS::Service</code> </p> </li>
-    /// <li> <p> <code>AWS::EFS::FileSystem</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
-    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
+    /// <li><p><code>AWS::ECS::Service</code></p></li>
+    /// <li><p><code>AWS::EFS::FileSystem</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancingV2::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::Lambda::Function</code></p></li>
+    /// <li><p><code>AWS::SNS::Topic</code></p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -82,25 +82,25 @@ impl PhysicalResourceId {
     /// <dd>
     /// <p>The resource identifier is an Resilience Hub-native identifier and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ApiGateway::RestApi</code> </p> </li>
-    /// <li> <p> <code>AWS::ApiGatewayV2::Api</code> </p> </li>
-    /// <li> <p> <code>AWS::AutoScaling::AutoScalingGroup</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBGlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::GlobalTable</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::EC2Fleet</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Instance</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::NatGateway</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Volume</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancing::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::GlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::Route53::RecordSet</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Bucket</code> </p> </li>
-    /// <li> <p> <code>AWS::SQS::Queue</code> </p> </li>
+    /// <li><p><code>AWS::ApiGateway::RestApi</code></p></li>
+    /// <li><p><code>AWS::ApiGatewayV2::Api</code></p></li>
+    /// <li><p><code>AWS::AutoScaling::AutoScalingGroup</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBGlobalCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBInstance</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::GlobalTable</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::Table</code></p></li>
+    /// <li><p><code>AWS::EC2::EC2Fleet</code></p></li>
+    /// <li><p><code>AWS::EC2::Instance</code></p></li>
+    /// <li><p><code>AWS::EC2::NatGateway</code></p></li>
+    /// <li><p><code>AWS::EC2::Volume</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancing::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::RDS::DBCluster</code></p></li>
+    /// <li><p><code>AWS::RDS::DBInstance</code></p></li>
+    /// <li><p><code>AWS::RDS::GlobalCluster</code></p></li>
+    /// <li><p><code>AWS::Route53::RecordSet</code></p></li>
+    /// <li><p><code>AWS::S3::Bucket</code></p></li>
+    /// <li><p><code>AWS::SQS::Queue</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -156,11 +156,11 @@ impl PhysicalResourceIdBuilder {
     /// <dd>
     /// <p>The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ECS::Service</code> </p> </li>
-    /// <li> <p> <code>AWS::EFS::FileSystem</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
-    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
+    /// <li><p><code>AWS::ECS::Service</code></p></li>
+    /// <li><p><code>AWS::EFS::FileSystem</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancingV2::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::Lambda::Function</code></p></li>
+    /// <li><p><code>AWS::SNS::Topic</code></p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -169,25 +169,25 @@ impl PhysicalResourceIdBuilder {
     /// <dd>
     /// <p>The resource identifier is an Resilience Hub-native identifier and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ApiGateway::RestApi</code> </p> </li>
-    /// <li> <p> <code>AWS::ApiGatewayV2::Api</code> </p> </li>
-    /// <li> <p> <code>AWS::AutoScaling::AutoScalingGroup</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBGlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::GlobalTable</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::EC2Fleet</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Instance</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::NatGateway</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Volume</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancing::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::GlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::Route53::RecordSet</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Bucket</code> </p> </li>
-    /// <li> <p> <code>AWS::SQS::Queue</code> </p> </li>
+    /// <li><p><code>AWS::ApiGateway::RestApi</code></p></li>
+    /// <li><p><code>AWS::ApiGatewayV2::Api</code></p></li>
+    /// <li><p><code>AWS::AutoScaling::AutoScalingGroup</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBGlobalCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBInstance</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::GlobalTable</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::Table</code></p></li>
+    /// <li><p><code>AWS::EC2::EC2Fleet</code></p></li>
+    /// <li><p><code>AWS::EC2::Instance</code></p></li>
+    /// <li><p><code>AWS::EC2::NatGateway</code></p></li>
+    /// <li><p><code>AWS::EC2::Volume</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancing::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::RDS::DBCluster</code></p></li>
+    /// <li><p><code>AWS::RDS::DBInstance</code></p></li>
+    /// <li><p><code>AWS::RDS::GlobalCluster</code></p></li>
+    /// <li><p><code>AWS::Route53::RecordSet</code></p></li>
+    /// <li><p><code>AWS::S3::Bucket</code></p></li>
+    /// <li><p><code>AWS::SQS::Queue</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -204,11 +204,11 @@ impl PhysicalResourceIdBuilder {
     /// <dd>
     /// <p>The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ECS::Service</code> </p> </li>
-    /// <li> <p> <code>AWS::EFS::FileSystem</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
-    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
+    /// <li><p><code>AWS::ECS::Service</code></p></li>
+    /// <li><p><code>AWS::EFS::FileSystem</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancingV2::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::Lambda::Function</code></p></li>
+    /// <li><p><code>AWS::SNS::Topic</code></p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -217,25 +217,25 @@ impl PhysicalResourceIdBuilder {
     /// <dd>
     /// <p>The resource identifier is an Resilience Hub-native identifier and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ApiGateway::RestApi</code> </p> </li>
-    /// <li> <p> <code>AWS::ApiGatewayV2::Api</code> </p> </li>
-    /// <li> <p> <code>AWS::AutoScaling::AutoScalingGroup</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBGlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::GlobalTable</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::EC2Fleet</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Instance</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::NatGateway</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Volume</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancing::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::GlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::Route53::RecordSet</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Bucket</code> </p> </li>
-    /// <li> <p> <code>AWS::SQS::Queue</code> </p> </li>
+    /// <li><p><code>AWS::ApiGateway::RestApi</code></p></li>
+    /// <li><p><code>AWS::ApiGatewayV2::Api</code></p></li>
+    /// <li><p><code>AWS::AutoScaling::AutoScalingGroup</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBGlobalCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBInstance</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::GlobalTable</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::Table</code></p></li>
+    /// <li><p><code>AWS::EC2::EC2Fleet</code></p></li>
+    /// <li><p><code>AWS::EC2::Instance</code></p></li>
+    /// <li><p><code>AWS::EC2::NatGateway</code></p></li>
+    /// <li><p><code>AWS::EC2::Volume</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancing::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::RDS::DBCluster</code></p></li>
+    /// <li><p><code>AWS::RDS::DBInstance</code></p></li>
+    /// <li><p><code>AWS::RDS::GlobalCluster</code></p></li>
+    /// <li><p><code>AWS::Route53::RecordSet</code></p></li>
+    /// <li><p><code>AWS::S3::Bucket</code></p></li>
+    /// <li><p><code>AWS::SQS::Queue</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -251,11 +251,11 @@ impl PhysicalResourceIdBuilder {
     /// <dd>
     /// <p>The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ECS::Service</code> </p> </li>
-    /// <li> <p> <code>AWS::EFS::FileSystem</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
-    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
+    /// <li><p><code>AWS::ECS::Service</code></p></li>
+    /// <li><p><code>AWS::EFS::FileSystem</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancingV2::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::Lambda::Function</code></p></li>
+    /// <li><p><code>AWS::SNS::Topic</code></p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -264,25 +264,25 @@ impl PhysicalResourceIdBuilder {
     /// <dd>
     /// <p>The resource identifier is an Resilience Hub-native identifier and it can identify the following list of resources:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::ApiGateway::RestApi</code> </p> </li>
-    /// <li> <p> <code>AWS::ApiGatewayV2::Api</code> </p> </li>
-    /// <li> <p> <code>AWS::AutoScaling::AutoScalingGroup</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBGlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::DocDB::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::GlobalTable</code> </p> </li>
-    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::EC2Fleet</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Instance</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::NatGateway</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Volume</code> </p> </li>
-    /// <li> <p> <code>AWS::ElasticLoadBalancing::LoadBalancer</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::DBInstance</code> </p> </li>
-    /// <li> <p> <code>AWS::RDS::GlobalCluster</code> </p> </li>
-    /// <li> <p> <code>AWS::Route53::RecordSet</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Bucket</code> </p> </li>
-    /// <li> <p> <code>AWS::SQS::Queue</code> </p> </li>
+    /// <li><p><code>AWS::ApiGateway::RestApi</code></p></li>
+    /// <li><p><code>AWS::ApiGatewayV2::Api</code></p></li>
+    /// <li><p><code>AWS::AutoScaling::AutoScalingGroup</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBGlobalCluster</code></p></li>
+    /// <li><p><code>AWS::DocDB::DBInstance</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::GlobalTable</code></p></li>
+    /// <li><p><code>AWS::DynamoDB::Table</code></p></li>
+    /// <li><p><code>AWS::EC2::EC2Fleet</code></p></li>
+    /// <li><p><code>AWS::EC2::Instance</code></p></li>
+    /// <li><p><code>AWS::EC2::NatGateway</code></p></li>
+    /// <li><p><code>AWS::EC2::Volume</code></p></li>
+    /// <li><p><code>AWS::ElasticLoadBalancing::LoadBalancer</code></p></li>
+    /// <li><p><code>AWS::RDS::DBCluster</code></p></li>
+    /// <li><p><code>AWS::RDS::DBInstance</code></p></li>
+    /// <li><p><code>AWS::RDS::GlobalCluster</code></p></li>
+    /// <li><p><code>AWS::Route53::RecordSet</code></p></li>
+    /// <li><p><code>AWS::S3::Bucket</code></p></li>
+    /// <li><p><code>AWS::SQS::Queue</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>

@@ -5,7 +5,7 @@
 pub struct CreateVpcIngressConnectionInput {
     /// <p>The Amazon Resource Name (ARN) for this App Runner service that is used to create the VPC Ingress Connection resource.</p>
     pub service_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub vpc_ingress_connection_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
     pub ingress_vpc_configuration: ::std::option::Option<crate::types::IngressVpcConfiguration>,
@@ -17,7 +17,7 @@ impl CreateVpcIngressConnectionInput {
     pub fn service_arn(&self) -> ::std::option::Option<&str> {
         self.service_arn.as_deref()
     }
-    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub fn vpc_ingress_connection_name(&self) -> ::std::option::Option<&str> {
         self.vpc_ingress_connection_name.as_deref()
     }
@@ -64,18 +64,18 @@ impl CreateVpcIngressConnectionInputBuilder {
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_arn
     }
-    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region.</p>
     /// This field is required.
     pub fn vpc_ingress_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_ingress_connection_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub fn set_vpc_ingress_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_ingress_connection_name = input;
         self
     }
-    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub fn get_vpc_ingress_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_ingress_connection_name
     }

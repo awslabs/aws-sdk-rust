@@ -10,10 +10,10 @@ pub struct PostTextInput {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
-    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
-    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
-    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
+    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
@@ -41,10 +41,10 @@ impl PostTextInput {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
-    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
-    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
-    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
+    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
@@ -138,10 +138,10 @@ impl PostTextInputBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
-    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
-    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
-    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
+    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,10 +151,10 @@ impl PostTextInputBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
-    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
-    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
-    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
+    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
@@ -163,10 +163,10 @@ impl PostTextInputBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
-    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
-    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
-    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
+    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id

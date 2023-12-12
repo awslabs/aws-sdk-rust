@@ -6,9 +6,9 @@
 pub struct SamlProperties {
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
-    /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+    /// <li><p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p></li>
+    /// <li><p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p></li>
+    /// <li><p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::SamlStatusEnum>,
     /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
@@ -20,9 +20,9 @@ pub struct SamlProperties {
 impl SamlProperties {
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
-    /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+    /// <li><p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p></li>
+    /// <li><p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p></li>
+    /// <li><p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::SamlStatusEnum> {
         self.status.as_ref()
@@ -55,9 +55,9 @@ pub struct SamlPropertiesBuilder {
 impl SamlPropertiesBuilder {
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
-    /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+    /// <li><p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p></li>
+    /// <li><p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p></li>
+    /// <li><p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::SamlStatusEnum) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -65,9 +65,9 @@ impl SamlPropertiesBuilder {
     }
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
-    /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+    /// <li><p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p></li>
+    /// <li><p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p></li>
+    /// <li><p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SamlStatusEnum>) -> Self {
         self.status = input;
@@ -75,9 +75,9 @@ impl SamlPropertiesBuilder {
     }
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
-    /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
-    /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+    /// <li><p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p></li>
+    /// <li><p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p></li>
+    /// <li><p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SamlStatusEnum> {
         &self.status

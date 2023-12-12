@@ -22,7 +22,7 @@ impl GetConnectorInputBuilder {
 }
 /// Fluent builder constructing a request to `GetConnector`.
 ///
-/// <p>Lists information about your connector. You specify the connector on input by its ARN (Amazon Resource Name). </p>
+/// <p>Lists information about your connector. You specify the connector on input by its ARN (Amazon Resource Name).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetConnectorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_arn()
     }

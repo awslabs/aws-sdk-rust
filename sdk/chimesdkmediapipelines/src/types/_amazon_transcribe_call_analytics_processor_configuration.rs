@@ -9,17 +9,17 @@ pub struct AmazonTranscribeCallAnalyticsProcessorConfiguration {
     /// <p>Specifies the name of the custom vocabulary to use when processing a transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the custom vocabulary filter to use when processing a transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how to apply a vocabulary filter to a transcript.</p>
     /// <p>To replace words with <b>***</b>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
-    /// <p>To flag words without changing them, choose <code>tag</code>. </p>
+    /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     /// <p>Specifies the name of the custom language model to use when processing a transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code specified in the transcription request. If the languages don't match, the custom language model isn't applied. Language mismatches don't generate errors or warnings.</p>
@@ -42,7 +42,7 @@ pub struct AmazonTranscribeCallAnalyticsProcessorConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
     pub content_redaction_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>Specifies the types of personally identifiable information (PII) to redact from a transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both. </p>
+    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both.</p>
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
     pub pii_entity_types: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ pub struct AmazonTranscribeCallAnalyticsProcessorConfiguration {
     pub filter_partial_results: bool,
     /// <p>The settings for a post-call analysis task in an analytics configuration.</p>
     pub post_call_analytics_settings: ::std::option::Option<crate::types::PostCallAnalyticsSettings>,
-    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target. </p>
+    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target.</p>
     pub call_analytics_stream_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AmazonTranscribeCallAnalyticsProcessorConfiguration {
@@ -61,21 +61,21 @@ impl AmazonTranscribeCallAnalyticsProcessorConfiguration {
     /// <p>Specifies the name of the custom vocabulary to use when processing a transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>Specifies the name of the custom vocabulary filter to use when processing a transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub fn vocabulary_filter_name(&self) -> ::std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>Specifies how to apply a vocabulary filter to a transcript.</p>
     /// <p>To replace words with <b>***</b>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
-    /// <p>To flag words without changing them, choose <code>tag</code>. </p>
+    /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
@@ -110,7 +110,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfiguration {
         self.content_redaction_type.as_ref()
     }
     /// <p>Specifies the types of personally identifiable information (PII) to redact from a transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both. </p>
+    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both.</p>
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
     pub fn pii_entity_types(&self) -> ::std::option::Option<&str> {
@@ -124,7 +124,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfiguration {
     pub fn post_call_analytics_settings(&self) -> ::std::option::Option<&crate::types::PostCallAnalyticsSettings> {
         self.post_call_analytics_settings.as_ref()
     }
-    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target. </p>
+    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.call_analytics_stream_categories.is_none()`.
     pub fn call_analytics_stream_categories(&self) -> &[::std::string::String] {
@@ -175,7 +175,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// <p>Specifies the name of the custom vocabulary to use when processing a transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
@@ -183,7 +183,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// <p>Specifies the name of the custom vocabulary to use when processing a transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
@@ -191,14 +191,14 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// <p>Specifies the name of the custom vocabulary to use when processing a transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_name
     }
     /// <p>Specifies the name of the custom vocabulary filter to use when processing a transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
@@ -206,7 +206,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// <p>Specifies the name of the custom vocabulary filter to use when processing a transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_name = input;
         self
@@ -214,14 +214,14 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// <p>Specifies the name of the custom vocabulary filter to use when processing a transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
     pub fn get_vocabulary_filter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_filter_name
     }
     /// <p>Specifies how to apply a vocabulary filter to a transcript.</p>
     /// <p>To replace words with <b>***</b>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
-    /// <p>To flag words without changing them, choose <code>tag</code>. </p>
+    /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn vocabulary_filter_method(mut self, input: crate::types::VocabularyFilterMethod) -> Self {
         self.vocabulary_filter_method = ::std::option::Option::Some(input);
         self
@@ -229,7 +229,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// <p>Specifies how to apply a vocabulary filter to a transcript.</p>
     /// <p>To replace words with <b>***</b>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
-    /// <p>To flag words without changing them, choose <code>tag</code>. </p>
+    /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::VocabularyFilterMethod>) -> Self {
         self.vocabulary_filter_method = input;
         self
@@ -237,7 +237,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// <p>Specifies how to apply a vocabulary filter to a transcript.</p>
     /// <p>To replace words with <b>***</b>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
-    /// <p>To flag words without changing them, choose <code>tag</code>. </p>
+    /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn get_vocabulary_filter_method(&self) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
         &self.vocabulary_filter_method
     }
@@ -342,7 +342,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
         &self.content_redaction_type
     }
     /// <p>Specifies the types of personally identifiable information (PII) to redact from a transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both. </p>
+    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both.</p>
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
     pub fn pii_entity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -350,7 +350,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
         self
     }
     /// <p>Specifies the types of personally identifiable information (PII) to redact from a transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both. </p>
+    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both.</p>
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
     pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -358,7 +358,7 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
         self
     }
     /// <p>Specifies the types of personally identifiable information (PII) to redact from a transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both. </p>
+    /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both.</p>
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
     pub fn get_pii_entity_types(&self) -> &::std::option::Option<::std::string::String> {
@@ -396,19 +396,19 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_call_analytics_stream_categories`](Self::set_call_analytics_stream_categories).
     ///
-    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target. </p>
+    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target.</p>
     pub fn call_analytics_stream_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.call_analytics_stream_categories.unwrap_or_default();
         v.push(input.into());
         self.call_analytics_stream_categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target. </p>
+    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target.</p>
     pub fn set_call_analytics_stream_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.call_analytics_stream_categories = input;
         self
     }
-    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target. </p>
+    /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target.</p>
     pub fn get_call_analytics_stream_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.call_analytics_stream_categories
     }

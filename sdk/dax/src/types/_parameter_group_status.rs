@@ -6,7 +6,7 @@
 pub struct ParameterGroupStatus {
     /// <p>The name of the parameter group.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of parameter updates. </p>
+    /// <p>The status of parameter updates.</p>
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
     pub node_ids_to_reboot: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,7 +16,7 @@ impl ParameterGroupStatus {
     pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
-    /// <p>The status of parameter updates. </p>
+    /// <p>The status of parameter updates.</p>
     pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
         self.parameter_apply_status.as_deref()
     }
@@ -57,17 +57,17 @@ impl ParameterGroupStatusBuilder {
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_group_name
     }
-    /// <p>The status of parameter updates. </p>
+    /// <p>The status of parameter updates.</p>
     pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of parameter updates. </p>
+    /// <p>The status of parameter updates.</p>
     pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_status = input;
         self
     }
-    /// <p>The status of parameter updates. </p>
+    /// <p>The status of parameter updates.</p>
     pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_apply_status
     }

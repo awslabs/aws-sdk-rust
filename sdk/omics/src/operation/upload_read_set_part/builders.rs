@@ -22,7 +22,7 @@ impl UploadReadSetPartInputBuilder {
 }
 /// Fluent builder constructing a request to `UploadReadSetPart`.
 ///
-/// <p> This operation uploads a specific part of a read set. If you upload a new part using a previously used part number, the previously uploaded part will be overwritten. </p>
+/// <p>This operation uploads a specific part of a read set. If you upload a new part using a previously used part number, the previously uploaded part will be overwritten.</p>
 #[derive(::std::fmt::Debug)]
 pub struct UploadReadSetPartFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl UploadReadSetPartFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// <p>The Sequence Store ID used for the multipart upload.</p>
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
-    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// <p>The Sequence Store ID used for the multipart upload.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
-    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// <p>The Sequence Store ID used for the multipart upload.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sequence_store_id()
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
         self
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_upload_id()
     }
-    /// <p> The source file for an upload part. </p>
+    /// <p>The source file for an upload part.</p>
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
         self.inner = self.inner.part_source(input);
         self
     }
-    /// <p> The source file for an upload part. </p>
+    /// <p>The source file for an upload part.</p>
     pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
         self.inner = self.inner.set_part_source(input);
         self
     }
-    /// <p> The source file for an upload part. </p>
+    /// <p>The source file for an upload part.</p>
     pub fn get_part_source(&self) -> &::std::option::Option<crate::types::ReadSetPartSource> {
         self.inner.get_part_source()
     }
-    /// <p> The number of the part being uploaded. </p>
+    /// <p>The number of the part being uploaded.</p>
     pub fn part_number(mut self, input: i32) -> Self {
         self.inner = self.inner.part_number(input);
         self
     }
-    /// <p> The number of the part being uploaded. </p>
+    /// <p>The number of the part being uploaded.</p>
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_part_number(input);
         self
     }
-    /// <p> The number of the part being uploaded. </p>
+    /// <p>The number of the part being uploaded.</p>
     pub fn get_part_number(&self) -> &::std::option::Option<i32> {
         self.inner.get_part_number()
     }
-    /// <p> The read set data to upload for a part. </p>
+    /// <p>The read set data to upload for a part.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.payload(input);
         self
     }
-    /// <p> The read set data to upload for a part. </p>
+    /// <p>The read set data to upload for a part.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
-    /// <p> The read set data to upload for a part. </p>
+    /// <p>The read set data to upload for a part.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_payload()
     }

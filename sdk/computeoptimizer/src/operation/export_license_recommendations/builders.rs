@@ -22,7 +22,7 @@ impl ExportLicenseRecommendationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ExportLicenseRecommendations`.
 ///
-/// <p> Export optimization recommendations for your licenses. </p>
+/// <p>Export optimization recommendations for your licenses.</p>
 /// <p>Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p>
 /// <p>You can have only one license export job in progress per Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -144,17 +144,17 @@ impl ExportLicenseRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> An array of objects to specify a filter that exports a more specific set of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
     pub fn filters(mut self, input: crate::types::LicenseRecommendationFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> An array of objects to specify a filter that exports a more specific set of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p> An array of objects to specify a filter that exports a more specific set of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>> {
         self.inner.get_filters()
     }

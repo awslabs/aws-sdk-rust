@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PurgeQueue`](crate::operation::purge_queue::builders::PurgeQueueFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`queue_url(impl Into<String>)`](crate::operation::purge_queue::builders::PurgeQueueFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::purge_queue::builders::PurgeQueueFluentBuilder::set_queue_url):<br>required: **true**<br><p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>  <p>Queue URLs and names are case-sensitive.</p><br>
+    ///   - [`queue_url(impl Into<String>)`](crate::operation::purge_queue::builders::PurgeQueueFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::purge_queue::builders::PurgeQueueFluentBuilder::set_queue_url):<br>required: **true**<br><p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p> <p>Queue URLs and names are case-sensitive.</p><br>
     /// - On success, responds with [`PurgeQueueOutput`](crate::operation::purge_queue::PurgeQueueOutput)
     /// - On failure, responds with [`SdkError<PurgeQueueError>`](crate::operation::purge_queue::PurgeQueueError)
     pub fn purge_queue(&self) -> crate::operation::purge_queue::builders::PurgeQueueFluentBuilder {

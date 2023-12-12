@@ -13,11 +13,11 @@ pub struct Invitation {
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the invitation:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+    /// <li><p><code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p></li>
+    /// <li><p><code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p></li>
+    /// <li><p><code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p></li>
+    /// <li><p><code>REJECTED</code> - The invitee rejected the invitation.</p></li>
+    /// <li><p><code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::InvitationStatus>,
     /// <p>A summary of network configuration properties.</p>
@@ -40,11 +40,11 @@ impl Invitation {
     }
     /// <p>The status of the invitation:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+    /// <li><p><code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p></li>
+    /// <li><p><code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p></li>
+    /// <li><p><code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p></li>
+    /// <li><p><code>REJECTED</code> - The invitee rejected the invitation.</p></li>
+    /// <li><p><code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InvitationStatus> {
         self.status.as_ref()
@@ -121,11 +121,11 @@ impl InvitationBuilder {
     }
     /// <p>The status of the invitation:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+    /// <li><p><code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p></li>
+    /// <li><p><code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p></li>
+    /// <li><p><code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p></li>
+    /// <li><p><code>REJECTED</code> - The invitee rejected the invitation.</p></li>
+    /// <li><p><code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::InvitationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -133,11 +133,11 @@ impl InvitationBuilder {
     }
     /// <p>The status of the invitation:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+    /// <li><p><code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p></li>
+    /// <li><p><code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p></li>
+    /// <li><p><code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p></li>
+    /// <li><p><code>REJECTED</code> - The invitee rejected the invitation.</p></li>
+    /// <li><p><code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InvitationStatus>) -> Self {
         self.status = input;
@@ -145,11 +145,11 @@ impl InvitationBuilder {
     }
     /// <p>The status of the invitation:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+    /// <li><p><code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p></li>
+    /// <li><p><code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p></li>
+    /// <li><p><code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p></li>
+    /// <li><p><code>REJECTED</code> - The invitee rejected the invitation.</p></li>
+    /// <li><p><code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InvitationStatus> {
         &self.status

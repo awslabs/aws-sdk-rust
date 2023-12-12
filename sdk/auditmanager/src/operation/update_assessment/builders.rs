@@ -22,7 +22,7 @@ impl UpdateAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAssessment`.
 ///
-/// <p> Edits an Audit Manager assessment. </p>
+/// <p>Edits an Audit Manager assessment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl UpdateAssessmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }
-    /// <p> The name of the assessment to be updated. </p>
+    /// <p>The name of the assessment to be updated.</p>
     pub fn assessment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_name(input.into());
         self
     }
-    /// <p> The name of the assessment to be updated. </p>
+    /// <p>The name of the assessment to be updated.</p>
     pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_name(input);
         self
     }
-    /// <p> The name of the assessment to be updated. </p>
+    /// <p>The name of the assessment to be updated.</p>
     pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_name()
     }
-    /// <p> The description of the assessment. </p>
+    /// <p>The description of the assessment.</p>
     pub fn assessment_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_description(input.into());
         self
     }
-    /// <p> The description of the assessment. </p>
+    /// <p>The description of the assessment.</p>
     pub fn set_assessment_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_description(input);
         self
     }
-    /// <p> The description of the assessment. </p>
+    /// <p>The description of the assessment.</p>
     pub fn get_assessment_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_description()
     }
-    /// <p> The scope of the assessment. </p>
+    /// <p>The scope of the assessment.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p> The scope of the assessment. </p>
+    /// <p>The scope of the assessment.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p> The scope of the assessment. </p>
+    /// <p>The scope of the assessment.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         self.inner.get_scope()
     }
-    /// <p> The assessment report storage destination for the assessment that's being updated. </p>
+    /// <p>The assessment report storage destination for the assessment that's being updated.</p>
     pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.inner = self.inner.assessment_reports_destination(input);
         self
     }
-    /// <p> The assessment report storage destination for the assessment that's being updated. </p>
+    /// <p>The assessment report storage destination for the assessment that's being updated.</p>
     pub fn set_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.inner = self.inner.set_assessment_reports_destination(input);
         self
     }
-    /// <p> The assessment report storage destination for the assessment that's being updated. </p>
+    /// <p>The assessment report storage destination for the assessment that's being updated.</p>
     pub fn get_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         self.inner.get_assessment_reports_destination()
     }
@@ -182,17 +182,17 @@ impl UpdateAssessmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
     ///
-    /// <p> The list of roles for the assessment. </p>
+    /// <p>The list of roles for the assessment.</p>
     pub fn roles(mut self, input: crate::types::Role) -> Self {
         self.inner = self.inner.roles(input);
         self
     }
-    /// <p> The list of roles for the assessment. </p>
+    /// <p>The list of roles for the assessment.</p>
     pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.inner = self.inner.set_roles(input);
         self
     }
-    /// <p> The list of roles for the assessment. </p>
+    /// <p>The list of roles for the assessment.</p>
     pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
         self.inner.get_roles()
     }

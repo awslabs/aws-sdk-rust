@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemOutput {
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully.</p>
     pub successfully_disassociated_resources: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item.</p>
     pub failed_disassociated_resources: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemOutput {
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successfully_disassociated_resources.is_none()`.
     pub fn successfully_disassociated_resources(&self) -> &[crate::types::DisassociateResourceResponseElement] {
         self.successfully_disassociated_resources.as_deref().unwrap_or_default()
     }
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_disassociated_resources.is_none()`.
     pub fn failed_disassociated_resources(&self) -> &[crate::types::DisassociateResourceResponseElement] {
@@ -50,14 +50,14 @@ impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_successfully_disassociated_resources`](Self::set_successfully_disassociated_resources).
     ///
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully.</p>
     pub fn successfully_disassociated_resources(mut self, input: crate::types::DisassociateResourceResponseElement) -> Self {
         let mut v = self.successfully_disassociated_resources.unwrap_or_default();
         v.push(input);
         self.successfully_disassociated_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully.</p>
     pub fn set_successfully_disassociated_resources(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
@@ -65,7 +65,7 @@ impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
         self.successfully_disassociated_resources = input;
         self
     }
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully.</p>
     pub fn get_successfully_disassociated_resources(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>> {
@@ -75,14 +75,14 @@ impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_disassociated_resources`](Self::set_failed_disassociated_resources).
     ///
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item.</p>
     pub fn failed_disassociated_resources(mut self, input: crate::types::DisassociateResourceResponseElement) -> Self {
         let mut v = self.failed_disassociated_resources.unwrap_or_default();
         v.push(input);
         self.failed_disassociated_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item.</p>
     pub fn set_failed_disassociated_resources(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
@@ -90,7 +90,7 @@ impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
         self.failed_disassociated_resources = input;
         self
     }
-    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
+    /// <p>A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item.</p>
     pub fn get_failed_disassociated_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>> {
         &self.failed_disassociated_resources
     }

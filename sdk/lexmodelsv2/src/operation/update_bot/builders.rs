@@ -22,7 +22,7 @@ impl UpdateBotInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateBot`.
 ///
-/// <p>Updates the configuration of an existing bot. </p>
+/// <p>Updates the configuration of an existing bot.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

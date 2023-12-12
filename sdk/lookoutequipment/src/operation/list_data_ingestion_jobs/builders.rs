@@ -22,7 +22,7 @@ impl ListDataIngestionJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDataIngestionJobs`.
 ///
-/// <p>Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location of the input data, status, and so on. </p>
+/// <p>Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location of the input data, status, and so on.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListDataIngestionJobsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator {
         crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    /// <p>The name of the dataset being used for the data ingestion job.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
         self
     }
-    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    /// <p>The name of the dataset being used for the data ingestion job.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
-    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    /// <p>The name of the dataset being used for the data ingestion job.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_name()
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    /// <p>Specifies the maximum number of data ingestion jobs to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    /// <p>Specifies the maximum number of data ingestion jobs to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    /// <p>Specifies the maximum number of data ingestion jobs to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Indicates the status of the data ingestion job. </p>
+    /// <p>Indicates the status of the data ingestion job.</p>
     pub fn status(mut self, input: crate::types::IngestionJobStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>Indicates the status of the data ingestion job. </p>
+    /// <p>Indicates the status of the data ingestion job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>Indicates the status of the data ingestion job. </p>
+    /// <p>Indicates the status of the data ingestion job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionJobStatus> {
         self.inner.get_status()
     }

@@ -13,17 +13,17 @@ pub struct ClarifyInferenceConfig {
     /// <p>The maximum payload size (MB) allowed of a request from the explainer to the model container. Defaults to <code>6</code> MB.</p>
     pub max_payload_in_mb: ::std::option::Option<i32>,
     /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
-    /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+    /// <p><b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
     pub probability_index: ::std::option::Option<i32>,
     /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
     pub label_index: ::std::option::Option<i32>,
     /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
-    /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+    /// <p><b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
     pub probability_attribute: ::std::option::Option<::std::string::String>,
     /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
-    /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+    /// <p><b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code></p>
     pub label_attribute: ::std::option::Option<::std::string::String>,
     /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
     pub label_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,23 +50,23 @@ impl ClarifyInferenceConfig {
         self.max_payload_in_mb
     }
     /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
-    /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+    /// <p><b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
     pub fn probability_index(&self) -> ::std::option::Option<i32> {
         self.probability_index
     }
     /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
     pub fn label_index(&self) -> ::std::option::Option<i32> {
         self.label_index
     }
     /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
-    /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+    /// <p><b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
     pub fn probability_attribute(&self) -> ::std::option::Option<&str> {
         self.probability_attribute.as_deref()
     }
     /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
-    /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+    /// <p><b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code></p>
     pub fn label_attribute(&self) -> ::std::option::Option<&str> {
         self.label_attribute.as_deref()
     }
@@ -170,73 +170,73 @@ impl ClarifyInferenceConfigBuilder {
         &self.max_payload_in_mb
     }
     /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
-    /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+    /// <p><b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
     pub fn probability_index(mut self, input: i32) -> Self {
         self.probability_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
-    /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+    /// <p><b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
     pub fn set_probability_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.probability_index = input;
         self
     }
     /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
-    /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+    /// <p><b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
     pub fn get_probability_index(&self) -> &::std::option::Option<i32> {
         &self.probability_index
     }
     /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
     pub fn label_index(mut self, input: i32) -> Self {
         self.label_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
     pub fn set_label_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.label_index = input;
         self
     }
     /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
-    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+    /// <p><b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
     pub fn get_label_index(&self) -> &::std::option::Option<i32> {
         &self.label_index
     }
     /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
-    /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+    /// <p><b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
     pub fn probability_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.probability_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
-    /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+    /// <p><b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
     pub fn set_probability_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.probability_attribute = input;
         self
     }
     /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
-    /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+    /// <p><b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
     pub fn get_probability_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.probability_attribute
     }
     /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
-    /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+    /// <p><b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code></p>
     pub fn label_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
-    /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+    /// <p><b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code></p>
     pub fn set_label_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_attribute = input;
         self
     }
     /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
-    /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+    /// <p><b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code></p>
     pub fn get_label_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_attribute
     }

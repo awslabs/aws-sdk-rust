@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsOutput {
-    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    /// <p>Returns an <code>EnvironmentDescription</code> list.</p>
     pub environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentsOutput {
-    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    /// <p>Returns an <code>EnvironmentDescription</code> list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environments.is_none()`.
     pub fn environments(&self) -> &[crate::types::EnvironmentDescription] {
@@ -47,19 +47,19 @@ impl DescribeEnvironmentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_environments`](Self::set_environments).
     ///
-    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    /// <p>Returns an <code>EnvironmentDescription</code> list.</p>
     pub fn environments(mut self, input: crate::types::EnvironmentDescription) -> Self {
         let mut v = self.environments.unwrap_or_default();
         v.push(input);
         self.environments = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    /// <p>Returns an <code>EnvironmentDescription</code> list.</p>
     pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>) -> Self {
         self.environments = input;
         self
     }
-    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    /// <p>Returns an <code>EnvironmentDescription</code> list.</p>
     pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>> {
         &self.environments
     }

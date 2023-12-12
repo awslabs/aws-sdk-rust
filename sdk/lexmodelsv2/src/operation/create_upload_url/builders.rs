@@ -22,7 +22,7 @@ impl CreateUploadUrlInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateUploadUrl`.
 ///
-/// <p>Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale. </p>
+/// <p>Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUploadUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

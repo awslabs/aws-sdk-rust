@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetBundleExportJobsInput {
-    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListAssetBundleExportJobsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAssetBundleExportJobsInput {
-    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListAssetBundleExportJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListAssetBundleExportJobsInputBuilder {
-    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the export jobs were executed in.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

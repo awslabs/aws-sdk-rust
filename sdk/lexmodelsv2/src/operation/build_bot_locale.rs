@@ -276,13 +276,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BuildBotLocal
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BuildBotLocaleError {
-    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
-    /// <p>You have reached a quota for your bot. </p>
+    /// <p>You have reached a quota for your bot.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

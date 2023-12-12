@@ -14,7 +14,7 @@ pub struct Behavior {
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
     /// </note>
     pub criteria: ::std::option::Option<crate::types::BehaviorCriteria>,
-    /// <p> Suppresses alerts. </p>
+    /// <p>Suppresses alerts.</p>
     pub suppress_alerts: ::std::option::Option<bool>,
     /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
     pub export_metric: ::std::option::Option<bool>,
@@ -39,7 +39,7 @@ impl Behavior {
     pub fn criteria(&self) -> ::std::option::Option<&crate::types::BehaviorCriteria> {
         self.criteria.as_ref()
     }
-    /// <p> Suppresses alerts. </p>
+    /// <p>Suppresses alerts.</p>
     pub fn suppress_alerts(&self) -> ::std::option::Option<bool> {
         self.suppress_alerts
     }
@@ -130,17 +130,17 @@ impl BehaviorBuilder {
     pub fn get_criteria(&self) -> &::std::option::Option<crate::types::BehaviorCriteria> {
         &self.criteria
     }
-    /// <p> Suppresses alerts. </p>
+    /// <p>Suppresses alerts.</p>
     pub fn suppress_alerts(mut self, input: bool) -> Self {
         self.suppress_alerts = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Suppresses alerts. </p>
+    /// <p>Suppresses alerts.</p>
     pub fn set_suppress_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suppress_alerts = input;
         self
     }
-    /// <p> Suppresses alerts. </p>
+    /// <p>Suppresses alerts.</p>
     pub fn get_suppress_alerts(&self) -> &::std::option::Option<bool> {
         &self.suppress_alerts
     }

@@ -145,41 +145,41 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
     /// <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>
     /// </note>
     /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been applied to managed nodes.</p>
-    /// <p> <b>Example 1</b>: Specify managed node IDs</p>
-    /// <p> <code>Key=InstanceIds,Values=
+    /// <p><b>Example 1</b>: Specify managed node IDs</p>
+    /// <p><code>Key=InstanceIds,Values=
     /// <instance-id-1>
     /// ,
     /// <instance-id-2>
     /// ,
     /// <instance-id-3></instance-id-3>
     /// </instance-id-2>
-    /// </instance-id-1></code> </p>
-    /// <p> <b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
-    /// <p> <code>Key=tag:
+    /// </instance-id-1></code></p>
+    /// <p><b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
+    /// <p><code>Key=tag:
     /// <my-tag-key>
     /// ,Values=
     /// <my-tag-value-1>
     /// ,
     /// <my-tag-value-2></my-tag-value-2>
     /// </my-tag-value-1>
-    /// </my-tag-key></code> </p>
-    /// <p> <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
-    /// <p> <code>Key=tag-key,Values=
+    /// </my-tag-key></code></p>
+    /// <p><b>Example 3</b>: Use tag-keys applied to managed nodes</p>
+    /// <p><code>Key=tag-key,Values=
     /// <my-tag-key-1>
     /// ,
     /// <my-tag-key-2></my-tag-key-2>
-    /// </my-tag-key-1></code> </p>
-    /// <p> <b>Example 4</b>: Use resource group names</p>
-    /// <p> <code>Key=resource-groups:Name,Values=
-    /// <resource-group-name></resource-group-name></code> </p>
-    /// <p> <b>Example 5</b>: Use filters for resource group types</p>
-    /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=
+    /// </my-tag-key-1></code></p>
+    /// <p><b>Example 4</b>: Use resource group names</p>
+    /// <p><code>Key=resource-groups:Name,Values=
+    /// <resource-group-name></resource-group-name></code></p>
+    /// <p><b>Example 5</b>: Use filters for resource group types</p>
+    /// <p><code>Key=resource-groups:ResourceTypeFilters,Values=
     /// <resource-type-1>
     /// ,
     /// <resource-type-2></resource-type-2>
-    /// </resource-type-1></code> </p> <note>
+    /// </resource-type-1></code></p> <note>
     /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format</p>
-    /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
+    /// <p><code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code></p>
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
@@ -190,41 +190,41 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
     /// <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>
     /// </note>
     /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been applied to managed nodes.</p>
-    /// <p> <b>Example 1</b>: Specify managed node IDs</p>
-    /// <p> <code>Key=InstanceIds,Values=
+    /// <p><b>Example 1</b>: Specify managed node IDs</p>
+    /// <p><code>Key=InstanceIds,Values=
     /// <instance-id-1>
     /// ,
     /// <instance-id-2>
     /// ,
     /// <instance-id-3></instance-id-3>
     /// </instance-id-2>
-    /// </instance-id-1></code> </p>
-    /// <p> <b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
-    /// <p> <code>Key=tag:
+    /// </instance-id-1></code></p>
+    /// <p><b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
+    /// <p><code>Key=tag:
     /// <my-tag-key>
     /// ,Values=
     /// <my-tag-value-1>
     /// ,
     /// <my-tag-value-2></my-tag-value-2>
     /// </my-tag-value-1>
-    /// </my-tag-key></code> </p>
-    /// <p> <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
-    /// <p> <code>Key=tag-key,Values=
+    /// </my-tag-key></code></p>
+    /// <p><b>Example 3</b>: Use tag-keys applied to managed nodes</p>
+    /// <p><code>Key=tag-key,Values=
     /// <my-tag-key-1>
     /// ,
     /// <my-tag-key-2></my-tag-key-2>
-    /// </my-tag-key-1></code> </p>
-    /// <p> <b>Example 4</b>: Use resource group names</p>
-    /// <p> <code>Key=resource-groups:Name,Values=
-    /// <resource-group-name></resource-group-name></code> </p>
-    /// <p> <b>Example 5</b>: Use filters for resource group types</p>
-    /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=
+    /// </my-tag-key-1></code></p>
+    /// <p><b>Example 4</b>: Use resource group names</p>
+    /// <p><code>Key=resource-groups:Name,Values=
+    /// <resource-group-name></resource-group-name></code></p>
+    /// <p><b>Example 5</b>: Use filters for resource group types</p>
+    /// <p><code>Key=resource-groups:ResourceTypeFilters,Values=
     /// <resource-type-1>
     /// ,
     /// <resource-type-2></resource-type-2>
-    /// </resource-type-1></code> </p> <note>
+    /// </resource-type-1></code></p> <note>
     /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format</p>
-    /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
+    /// <p><code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code></p>
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
@@ -235,41 +235,41 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
     /// <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>
     /// </note>
     /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been applied to managed nodes.</p>
-    /// <p> <b>Example 1</b>: Specify managed node IDs</p>
-    /// <p> <code>Key=InstanceIds,Values=
+    /// <p><b>Example 1</b>: Specify managed node IDs</p>
+    /// <p><code>Key=InstanceIds,Values=
     /// <instance-id-1>
     /// ,
     /// <instance-id-2>
     /// ,
     /// <instance-id-3></instance-id-3>
     /// </instance-id-2>
-    /// </instance-id-1></code> </p>
-    /// <p> <b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
-    /// <p> <code>Key=tag:
+    /// </instance-id-1></code></p>
+    /// <p><b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
+    /// <p><code>Key=tag:
     /// <my-tag-key>
     /// ,Values=
     /// <my-tag-value-1>
     /// ,
     /// <my-tag-value-2></my-tag-value-2>
     /// </my-tag-value-1>
-    /// </my-tag-key></code> </p>
-    /// <p> <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
-    /// <p> <code>Key=tag-key,Values=
+    /// </my-tag-key></code></p>
+    /// <p><b>Example 3</b>: Use tag-keys applied to managed nodes</p>
+    /// <p><code>Key=tag-key,Values=
     /// <my-tag-key-1>
     /// ,
     /// <my-tag-key-2></my-tag-key-2>
-    /// </my-tag-key-1></code> </p>
-    /// <p> <b>Example 4</b>: Use resource group names</p>
-    /// <p> <code>Key=resource-groups:Name,Values=
-    /// <resource-group-name></resource-group-name></code> </p>
-    /// <p> <b>Example 5</b>: Use filters for resource group types</p>
-    /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=
+    /// </my-tag-key-1></code></p>
+    /// <p><b>Example 4</b>: Use resource group names</p>
+    /// <p><code>Key=resource-groups:Name,Values=
+    /// <resource-group-name></resource-group-name></code></p>
+    /// <p><b>Example 5</b>: Use filters for resource group types</p>
+    /// <p><code>Key=resource-groups:ResourceTypeFilters,Values=
     /// <resource-type-1>
     /// ,
     /// <resource-type-2></resource-type-2>
-    /// </resource-type-1></code> </p> <note>
+    /// </resource-type-1></code></p> <note>
     /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format</p>
-    /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
+    /// <p><code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code></p>
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {

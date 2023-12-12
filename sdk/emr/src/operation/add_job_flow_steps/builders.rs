@@ -114,17 +114,17 @@ impl AddJobFlowStepsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
+    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>.</p>
     pub fn job_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_flow_id(input.into());
         self
     }
-    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
+    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>.</p>
     pub fn set_job_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_flow_id(input);
         self
     }
-    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
+    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>.</p>
     pub fn get_job_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_flow_id()
     }
@@ -132,33 +132,33 @@ impl AddJobFlowStepsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
     ///
-    /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
+    /// <p>A list of <code>StepConfig</code> to be executed by the job flow.</p>
     pub fn steps(mut self, input: crate::types::StepConfig) -> Self {
         self.inner = self.inner.steps(input);
         self
     }
-    /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
+    /// <p>A list of <code>StepConfig</code> to be executed by the job flow.</p>
     pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>) -> Self {
         self.inner = self.inner.set_steps(input);
         self
     }
-    /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
+    /// <p>A list of <code>StepConfig</code> to be executed by the job flow.</p>
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepConfig>> {
         self.inner.get_steps()
     }
-    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_arn()

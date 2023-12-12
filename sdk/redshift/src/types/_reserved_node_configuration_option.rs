@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedNodeConfigurationOption {
-    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
+    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
     pub source_reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     /// <p>The target reserved-node count.</p>
     pub target_reserved_node_count: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct ReservedNodeConfigurationOption {
     pub target_reserved_node_offering: ::std::option::Option<crate::types::ReservedNodeOffering>,
 }
 impl ReservedNodeConfigurationOption {
-    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
+    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
     pub fn source_reserved_node(&self) -> ::std::option::Option<&crate::types::ReservedNode> {
         self.source_reserved_node.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct ReservedNodeConfigurationOptionBuilder {
     pub(crate) target_reserved_node_offering: ::std::option::Option<crate::types::ReservedNodeOffering>,
 }
 impl ReservedNodeConfigurationOptionBuilder {
-    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
+    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
     pub fn source_reserved_node(mut self, input: crate::types::ReservedNode) -> Self {
         self.source_reserved_node = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
+    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
     pub fn set_source_reserved_node(mut self, input: ::std::option::Option<crate::types::ReservedNode>) -> Self {
         self.source_reserved_node = input;
         self
     }
-    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
+    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
     pub fn get_source_reserved_node(&self) -> &::std::option::Option<crate::types::ReservedNode> {
         &self.source_reserved_node
     }

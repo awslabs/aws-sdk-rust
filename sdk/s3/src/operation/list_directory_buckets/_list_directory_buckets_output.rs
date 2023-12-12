@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDirectoryBucketsOutput {
-    /// <p>The list of buckets owned by the requester. </p>
+    /// <p>The list of buckets owned by the requester.</p>
     pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
     /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListDirectoryBucketsOutput {
     _request_id: Option<String>,
 }
 impl ListDirectoryBucketsOutput {
-    /// <p>The list of buckets owned by the requester. </p>
+    /// <p>The list of buckets owned by the requester.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
     pub fn buckets(&self) -> &[crate::types::Bucket] {
@@ -53,19 +53,19 @@ impl ListDirectoryBucketsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
     ///
-    /// <p>The list of buckets owned by the requester. </p>
+    /// <p>The list of buckets owned by the requester.</p>
     pub fn buckets(mut self, input: crate::types::Bucket) -> Self {
         let mut v = self.buckets.unwrap_or_default();
         v.push(input);
         self.buckets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of buckets owned by the requester. </p>
+    /// <p>The list of buckets owned by the requester.</p>
     pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>) -> Self {
         self.buckets = input;
         self
     }
-    /// <p>The list of buckets owned by the requester. </p>
+    /// <p>The list of buckets owned by the requester.</p>
     pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
         &self.buckets
     }

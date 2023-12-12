@@ -22,9 +22,9 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateTransitGatewayConnectPeer`.
 ///
-/// <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. </p>
+/// <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device.</p>
 /// <p>You can only associate transit gateway Connect peers that have been created on a transit gateway that's registered in your global network.</p>
-/// <p>You cannot associate a transit gateway Connect peer with more than one device and link. </p>
+/// <p>You cannot associate a transit gateway Connect peer with more than one device and link.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateTransitGatewayConnectPeerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

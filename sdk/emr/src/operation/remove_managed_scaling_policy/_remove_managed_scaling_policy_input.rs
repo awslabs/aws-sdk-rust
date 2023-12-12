@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveManagedScalingPolicyInput {
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveManagedScalingPolicyInput {
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct RemoveManagedScalingPolicyInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveManagedScalingPolicyInputBuilder {
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
     }
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_id
     }

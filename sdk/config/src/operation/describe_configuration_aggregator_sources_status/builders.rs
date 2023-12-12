@@ -22,7 +22,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeConfigurationAggregatorSourcesStatus`.
 ///
-/// <p>Returns status information for sources within an aggregator. The status includes information about the last time Config verified authorization between the source account and an aggregator account. In case of a failure, the status contains the related error code or message. </p>
+/// <p>Returns status information for sources within an aggregator. The status includes information about the last time Config verified authorization between the source account and an aggregator account. In case of a failure, the status contains the related error code or message.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -145,9 +145,9 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     ///
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
-    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
-    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
+    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn update_status(mut self, input: crate::types::AggregatedSourceStatusType) -> Self {
         self.inner = self.inner.update_status(input);
@@ -155,9 +155,9 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     }
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
-    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
-    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
+    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn set_update_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>) -> Self {
         self.inner = self.inner.set_update_status(input);
@@ -165,9 +165,9 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     }
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
-    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
-    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
+    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn get_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>> {
         self.inner.get_update_status()

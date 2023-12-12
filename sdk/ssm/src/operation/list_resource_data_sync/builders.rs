@@ -23,7 +23,7 @@ impl ListResourceDataSyncInputBuilder {
 /// Fluent builder constructing a request to `ListResourceDataSync`.
 ///
 /// <p>Lists your resource data sync configurations. Includes information about the last time a sync attempted to start, the last sync status, and the last time a sync successfully completed.</p>
-/// <p>The number of sync configurations might be too large to return using a single call to <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the <code>MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the value of <code>NextToken</code> in the output. If there are more sync configurations to list, you can request them by specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent call. </p>
+/// <p>The number of sync configurations might be too large to return using a single call to <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the <code>MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the value of <code>NextToken</code> in the output. If there are more sync configurations to list, you can request them by specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceDataSyncFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -129,17 +129,17 @@ impl ListResourceDataSyncFluentBuilder {
     pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sync_type()
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

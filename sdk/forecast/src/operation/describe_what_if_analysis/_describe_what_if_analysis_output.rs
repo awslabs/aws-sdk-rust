@@ -13,10 +13,10 @@ pub struct DescribeWhatIfAnalysisOutput {
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>The status of the what-if analysis. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
@@ -27,19 +27,19 @@ pub struct DescribeWhatIfAnalysisOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
     _request_id: Option<String>,
@@ -63,10 +63,10 @@ impl DescribeWhatIfAnalysisOutput {
     }
     /// <p>The status of the what-if analysis. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
@@ -83,11 +83,11 @@ impl DescribeWhatIfAnalysisOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -95,9 +95,9 @@ impl DescribeWhatIfAnalysisOutput {
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub fn time_series_selector(&self) -> ::std::option::Option<&crate::types::TimeSeriesSelector> {
         self.time_series_selector.as_ref()
@@ -189,10 +189,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The status of the what-if analysis. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
@@ -202,10 +202,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The status of the what-if analysis. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
@@ -215,10 +215,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The status of the what-if analysis. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
@@ -255,11 +255,11 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -267,11 +267,11 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
@@ -279,11 +279,11 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
@@ -291,9 +291,9 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub fn time_series_selector(mut self, input: crate::types::TimeSeriesSelector) -> Self {
         self.time_series_selector = ::std::option::Option::Some(input);
@@ -302,9 +302,9 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
         self.time_series_selector = input;
@@ -313,9 +313,9 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub fn get_time_series_selector(&self) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
         &self.time_series_selector

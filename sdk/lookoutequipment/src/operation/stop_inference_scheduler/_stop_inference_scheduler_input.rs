@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInferenceSchedulerInput {
-    /// <p>The name of the inference scheduler to be stopped. </p>
+    /// <p>The name of the inference scheduler to be stopped.</p>
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
 impl StopInferenceSchedulerInput {
-    /// <p>The name of the inference scheduler to be stopped. </p>
+    /// <p>The name of the inference scheduler to be stopped.</p>
     pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct StopInferenceSchedulerInputBuilder {
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
 impl StopInferenceSchedulerInputBuilder {
-    /// <p>The name of the inference scheduler to be stopped. </p>
+    /// <p>The name of the inference scheduler to be stopped.</p>
     /// This field is required.
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the inference scheduler to be stopped. </p>
+    /// <p>The name of the inference scheduler to be stopped.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
-    /// <p>The name of the inference scheduler to be stopped. </p>
+    /// <p>The name of the inference scheduler to be stopped.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_scheduler_name
     }

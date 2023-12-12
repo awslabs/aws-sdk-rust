@@ -171,31 +171,31 @@ impl ListViolationEventsFluentBuilder {
     pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_profile_name()
     }
-    /// <p> The criteria for a behavior. </p>
+    /// <p>The criteria for a behavior.</p>
     pub fn behavior_criteria_type(mut self, input: crate::types::BehaviorCriteriaType) -> Self {
         self.inner = self.inner.behavior_criteria_type(input);
         self
     }
-    /// <p> The criteria for a behavior. </p>
+    /// <p>The criteria for a behavior.</p>
     pub fn set_behavior_criteria_type(mut self, input: ::std::option::Option<crate::types::BehaviorCriteriaType>) -> Self {
         self.inner = self.inner.set_behavior_criteria_type(input);
         self
     }
-    /// <p> The criteria for a behavior. </p>
+    /// <p>The criteria for a behavior.</p>
     pub fn get_behavior_criteria_type(&self) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
         self.inner.get_behavior_criteria_type()
     }
-    /// <p> A list of all suppressed alerts. </p>
+    /// <p>A list of all suppressed alerts.</p>
     pub fn list_suppressed_alerts(mut self, input: bool) -> Self {
         self.inner = self.inner.list_suppressed_alerts(input);
         self
     }
-    /// <p> A list of all suppressed alerts. </p>
+    /// <p>A list of all suppressed alerts.</p>
     pub fn set_list_suppressed_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_list_suppressed_alerts(input);
         self
     }
-    /// <p> A list of all suppressed alerts. </p>
+    /// <p>A list of all suppressed alerts.</p>
     pub fn get_list_suppressed_alerts(&self) -> &::std::option::Option<bool> {
         self.inner.get_list_suppressed_alerts()
     }

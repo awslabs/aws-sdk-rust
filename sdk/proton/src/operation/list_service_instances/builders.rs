@@ -176,38 +176,38 @@ impl ListServiceInstancesFluentBuilder {
     }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
-    /// <p>Default: <code>serviceName</code> </p>
+    /// <p>Default: <code>serviceName</code></p>
     pub fn sort_by(mut self, input: crate::types::ListServiceInstancesSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
-    /// <p>Default: <code>serviceName</code> </p>
+    /// <p>Default: <code>serviceName</code></p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListServiceInstancesSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
-    /// <p>Default: <code>serviceName</code> </p>
+    /// <p>Default: <code>serviceName</code></p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListServiceInstancesSortBy> {
         self.inner.get_sort_by()
     }
     /// <p>Result list sort order.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
     /// <p>Result list sort order.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
     /// <p>Result list sort order.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }

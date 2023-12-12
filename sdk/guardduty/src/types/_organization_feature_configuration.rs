@@ -8,9 +8,9 @@ pub struct OrganizationFeatureConfiguration {
     pub name: ::std::option::Option<crate::types::OrgFeature>,
     /// <p>Describes the status of the feature that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically. </p> </li>
-    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
-    /// <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p> </li>
+    /// <li><p><code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically.</p></li>
+    /// <li><p><code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p></li>
+    /// <li><p><code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p></li>
     /// </ul>
     pub auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
     /// <p>The additional information that will be configured for the organization.</p>
@@ -23,9 +23,9 @@ impl OrganizationFeatureConfiguration {
     }
     /// <p>Describes the status of the feature that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically. </p> </li>
-    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
-    /// <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p> </li>
+    /// <li><p><code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically.</p></li>
+    /// <li><p><code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p></li>
+    /// <li><p><code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p></li>
     /// </ul>
     pub fn auto_enable(&self) -> ::std::option::Option<&crate::types::OrgFeatureStatus> {
         self.auto_enable.as_ref()
@@ -69,9 +69,9 @@ impl OrganizationFeatureConfigurationBuilder {
     }
     /// <p>Describes the status of the feature that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically. </p> </li>
-    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
-    /// <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p> </li>
+    /// <li><p><code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically.</p></li>
+    /// <li><p><code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p></li>
+    /// <li><p><code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p></li>
     /// </ul>
     pub fn auto_enable(mut self, input: crate::types::OrgFeatureStatus) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
@@ -79,9 +79,9 @@ impl OrganizationFeatureConfigurationBuilder {
     }
     /// <p>Describes the status of the feature that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically. </p> </li>
-    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
-    /// <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p> </li>
+    /// <li><p><code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically.</p></li>
+    /// <li><p><code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p></li>
+    /// <li><p><code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p></li>
     /// </ul>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::OrgFeatureStatus>) -> Self {
         self.auto_enable = input;
@@ -89,9 +89,9 @@ impl OrganizationFeatureConfigurationBuilder {
     }
     /// <p>Describes the status of the feature that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically. </p> </li>
-    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
-    /// <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p> </li>
+    /// <li><p><code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled automatically.</p></li>
+    /// <li><p><code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p></li>
+    /// <li><p><code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the organization. The administrator must manage the feature for each account individually.</p></li>
     /// </ul>
     pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::OrgFeatureStatus> {
         &self.auto_enable

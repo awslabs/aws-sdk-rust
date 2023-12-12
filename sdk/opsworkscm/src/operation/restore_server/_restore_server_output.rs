@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreServerOutput {
-    /// <p>Describes a configuration management server. </p>
+    /// <p>Describes a configuration management server.</p>
     pub server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
 }
 impl RestoreServerOutput {
-    /// <p>Describes a configuration management server. </p>
+    /// <p>Describes a configuration management server.</p>
     pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
         self.server.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct RestoreServerOutputBuilder {
     _request_id: Option<String>,
 }
 impl RestoreServerOutputBuilder {
-    /// <p>Describes a configuration management server. </p>
+    /// <p>Describes a configuration management server.</p>
     pub fn server(mut self, input: crate::types::Server) -> Self {
         self.server = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes a configuration management server. </p>
+    /// <p>Describes a configuration management server.</p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
         self.server = input;
         self
     }
-    /// <p>Describes a configuration management server. </p>
+    /// <p>Describes a configuration management server.</p>
     pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
         &self.server
     }

@@ -247,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListEventType
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListEventTypesError {
-    /// <p>The value for the enumeration token used in the request to return the next batch of the results is not valid. </p>
+    /// <p>The value for the enumeration token used in the request to return the next batch of the results is not valid.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::types::error::ValidationException),

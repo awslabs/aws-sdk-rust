@@ -9,7 +9,7 @@ pub struct ListApplicationsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Filters response results. </p>
+    /// <p>Filters response results.</p>
     pub filter: ::std::option::Option<crate::types::ListApplicationsFilter>,
 }
 impl ListApplicationsInput {
@@ -25,7 +25,7 @@ impl ListApplicationsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters response results. </p>
+    /// <p>Filters response results.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::ListApplicationsFilter> {
         self.filter.as_ref()
     }
@@ -90,17 +90,17 @@ impl ListApplicationsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Filters response results. </p>
+    /// <p>Filters response results.</p>
     pub fn filter(mut self, input: crate::types::ListApplicationsFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters response results. </p>
+    /// <p>Filters response results.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListApplicationsFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>Filters response results. </p>
+    /// <p>Filters response results.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListApplicationsFilter> {
         &self.filter
     }

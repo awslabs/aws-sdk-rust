@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Order {
-    /// <p> The ID of the Outpost in the order. </p>
+    /// <p>The ID of the Outpost in the order.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the order.</p>
     pub order_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// <li><p><code>PREPARING</code> - Order is received and being prepared.</p></li>
+    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
     /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub status: ::std::option::Option<crate::types::OrderStatus>,
     /// <p>The line items for the order</p>
@@ -33,7 +33,7 @@ pub struct Order {
     pub order_type: ::std::option::Option<crate::types::OrderType>,
 }
 impl Order {
-    /// <p> The ID of the Outpost in the order. </p>
+    /// <p>The ID of the Outpost in the order.</p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -43,13 +43,13 @@ impl Order {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// <li><p><code>PREPARING</code> - Order is received and being prepared.</p></li>
+    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
     /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OrderStatus> {
         self.status.as_ref()
@@ -103,17 +103,17 @@ pub struct OrderBuilder {
     pub(crate) order_type: ::std::option::Option<crate::types::OrderType>,
 }
 impl OrderBuilder {
-    /// <p> The ID of the Outpost in the order. </p>
+    /// <p>The ID of the Outpost in the order.</p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the Outpost in the order. </p>
+    /// <p>The ID of the Outpost in the order.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }
-    /// <p> The ID of the Outpost in the order. </p>
+    /// <p>The ID of the Outpost in the order.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
     }
@@ -133,13 +133,13 @@ impl OrderBuilder {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// <li><p><code>PREPARING</code> - Order is received and being prepared.</p></li>
+    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
     /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub fn status(mut self, input: crate::types::OrderStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -147,13 +147,13 @@ impl OrderBuilder {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// <li><p><code>PREPARING</code> - Order is received and being prepared.</p></li>
+    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
     /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrderStatus>) -> Self {
         self.status = input;
@@ -161,13 +161,13 @@ impl OrderBuilder {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// <li><p><code>PREPARING</code> - Order is received and being prepared.</p></li>
+    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p></li>
+    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
     /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OrderStatus> {
         &self.status

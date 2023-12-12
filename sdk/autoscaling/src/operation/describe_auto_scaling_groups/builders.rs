@@ -23,8 +23,8 @@ impl DescribeAutoScalingGroupsInputBuilder {
 /// Fluent builder constructing a request to `DescribeAutoScalingGroups`.
 ///
 /// <p>Gets information about the Auto Scaling groups in the account and Region.</p>
-/// <p>If you specify Auto Scaling group names, the output includes information for only the specified Auto Scaling groups. If you specify filters, the output includes information for only those Auto Scaling groups that meet the filter criteria. If you do not specify group names or filters, the output includes information for all Auto Scaling groups. </p>
-/// <p>This operation also returns information about instances in Auto Scaling groups. To retrieve information about the instances in a warm pool, you must call the <code>DescribeWarmPool</code> API. </p>
+/// <p>If you specify Auto Scaling group names, the output includes information for only the specified Auto Scaling groups. If you specify filters, the output includes information for only those Auto Scaling groups that meet the filter criteria. If you do not specify group names or filters, the output includes information for all Auto Scaling groups.</p>
+/// <p>This operation also returns information about instances in Auto Scaling groups. To retrieve information about the instances in a warm pool, you must call the <code>DescribeWarmPool</code> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -169,17 +169,17 @@ impl DescribeAutoScalingGroupsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters to limit the results based on specific tags. </p>
+    /// <p>One or more filters to limit the results based on specific tags.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters to limit the results based on specific tags. </p>
+    /// <p>One or more filters to limit the results based on specific tags.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>One or more filters to limit the results based on specific tags. </p>
+    /// <p>One or more filters to limit the results based on specific tags.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

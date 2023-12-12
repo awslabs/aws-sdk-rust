@@ -5,7 +5,7 @@
 pub struct CreateConfigurationSetInput {
     /// <p>The name to use for the new configuration set.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
+    /// <p>An array of key and value pair tags that's associated with the new configuration set.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl CreateConfigurationSetInput {
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
+    /// <p>An array of key and value pair tags that's associated with the new configuration set.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -61,19 +61,19 @@ impl CreateConfigurationSetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
+    /// <p>An array of key and value pair tags that's associated with the new configuration set.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
+    /// <p>An array of key and value pair tags that's associated with the new configuration set.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
+    /// <p>An array of key and value pair tags that's associated with the new configuration set.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

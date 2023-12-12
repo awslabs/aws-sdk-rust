@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`client_token(impl Into<String>)`](crate::operation::create_index::builders::CreateIndexFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::create_index::builders::CreateIndexFluentBuilder::set_client_token):<br>required: **false**<br><p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p><br>
     /// - On success, responds with [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput) with field(s):
     ///   - [`index_id(Option<String>)`](crate::operation::create_index::CreateIndexOutput::index_id): <p>The identifier for the Amazon Q index.</p>
-    ///   - [`index_arn(Option<String>)`](crate::operation::create_index::CreateIndexOutput::index_arn): <p> The Amazon Resource Name (ARN) of an Amazon Q index.</p>
+    ///   - [`index_arn(Option<String>)`](crate::operation::create_index::CreateIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) of an Amazon Q index.</p>
     /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::operation::create_index::CreateIndexError)
     pub fn create_index(&self) -> crate::operation::create_index::builders::CreateIndexFluentBuilder {
         crate::operation::create_index::builders::CreateIndexFluentBuilder::new(self.handle.clone())

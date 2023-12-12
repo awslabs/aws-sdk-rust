@@ -251,15 +251,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestoreDBClus
 pub enum RestoreDBClusterFromSnapshotError {
     /// <p>User already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
-    /// <p> <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.</p>
+    /// <p><i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
-    /// <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
+    /// <p><i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
-    /// <p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.</p>
+    /// <p><i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
-    /// <p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
+    /// <p><i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The DB cluster does not have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::types::error::InsufficientDbClusterCapacityFault),

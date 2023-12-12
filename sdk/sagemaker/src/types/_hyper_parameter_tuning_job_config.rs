@@ -12,7 +12,7 @@ pub struct HyperParameterTuningJobConfig {
     pub hyper_parameter_tuning_job_objective: ::std::option::Option<crate::types::HyperParameterTuningJobObjective>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that can be used for this hyperparameter tuning job.</p>
     pub resource_limits: ::std::option::Option<crate::types::ResourceLimits>,
-    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric. </p>
+    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric.</p>
     pub parameter_ranges: ::std::option::Option<crate::types::ParameterRanges>,
     /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
     /// <dl>
@@ -52,7 +52,7 @@ impl HyperParameterTuningJobConfig {
     pub fn resource_limits(&self) -> ::std::option::Option<&crate::types::ResourceLimits> {
         self.resource_limits.as_ref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric. </p>
+    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric.</p>
     pub fn parameter_ranges(&self) -> ::std::option::Option<&crate::types::ParameterRanges> {
         self.parameter_ranges.as_ref()
     }
@@ -162,17 +162,17 @@ impl HyperParameterTuningJobConfigBuilder {
     pub fn get_resource_limits(&self) -> &::std::option::Option<crate::types::ResourceLimits> {
         &self.resource_limits
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric. </p>
+    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric.</p>
     pub fn parameter_ranges(mut self, input: crate::types::ParameterRanges) -> Self {
         self.parameter_ranges = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric. </p>
+    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric.</p>
     pub fn set_parameter_ranges(mut self, input: ::std::option::Option<crate::types::ParameterRanges>) -> Self {
         self.parameter_ranges = input;
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric. </p>
+    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric.</p>
     pub fn get_parameter_ranges(&self) -> &::std::option::Option<crate::types::ParameterRanges> {
         &self.parameter_ranges
     }

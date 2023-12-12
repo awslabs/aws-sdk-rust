@@ -6,7 +6,7 @@
 pub struct Instance {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     pub agent_version: ::std::option::Option<::std::string::String>,
-    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
+    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance architecture: "i386" or "x86_64".</p>
     pub architecture: ::std::option::Option<crate::types::Architecture>,
@@ -34,7 +34,7 @@ pub struct Instance {
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     pub infrastructure_class: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub install_updates_on_boot: ::std::option::Option<bool>,
@@ -82,21 +82,21 @@ pub struct Instance {
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance status:</p>
     /// <ul>
-    /// <li> <p> <code>booting</code> </p> </li>
-    /// <li> <p> <code>connection_lost</code> </p> </li>
-    /// <li> <p> <code>online</code> </p> </li>
-    /// <li> <p> <code>pending</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>requested</code> </p> </li>
-    /// <li> <p> <code>running_setup</code> </p> </li>
-    /// <li> <p> <code>setup_failed</code> </p> </li>
-    /// <li> <p> <code>shutting_down</code> </p> </li>
-    /// <li> <p> <code>start_failed</code> </p> </li>
-    /// <li> <p> <code>stop_failed</code> </p> </li>
-    /// <li> <p> <code>stopped</code> </p> </li>
-    /// <li> <p> <code>stopping</code> </p> </li>
-    /// <li> <p> <code>terminated</code> </p> </li>
-    /// <li> <p> <code>terminating</code> </p> </li>
+    /// <li><p><code>booting</code></p></li>
+    /// <li><p><code>connection_lost</code></p></li>
+    /// <li><p><code>online</code></p></li>
+    /// <li><p><code>pending</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>requested</code></p></li>
+    /// <li><p><code>running_setup</code></p></li>
+    /// <li><p><code>setup_failed</code></p></li>
+    /// <li><p><code>shutting_down</code></p></li>
+    /// <li><p><code>start_failed</code></p></li>
+    /// <li><p><code>stop_failed</code></p></li>
+    /// <li><p><code>stopped</code></p></li>
+    /// <li><p><code>stopping</code></p></li>
+    /// <li><p><code>terminated</code></p></li>
+    /// <li><p><code>terminating</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
@@ -111,7 +111,7 @@ impl Instance {
     pub fn agent_version(&self) -> ::std::option::Option<&str> {
         self.agent_version.as_deref()
     }
-    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
+    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     pub fn ami_id(&self) -> ::std::option::Option<&str> {
         self.ami_id.as_deref()
     }
@@ -169,7 +169,7 @@ impl Instance {
     pub fn infrastructure_class(&self) -> ::std::option::Option<&str> {
         self.infrastructure_class.as_deref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(&self) -> ::std::option::Option<bool> {
@@ -265,21 +265,21 @@ impl Instance {
     }
     /// <p>The instance status:</p>
     /// <ul>
-    /// <li> <p> <code>booting</code> </p> </li>
-    /// <li> <p> <code>connection_lost</code> </p> </li>
-    /// <li> <p> <code>online</code> </p> </li>
-    /// <li> <p> <code>pending</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>requested</code> </p> </li>
-    /// <li> <p> <code>running_setup</code> </p> </li>
-    /// <li> <p> <code>setup_failed</code> </p> </li>
-    /// <li> <p> <code>shutting_down</code> </p> </li>
-    /// <li> <p> <code>start_failed</code> </p> </li>
-    /// <li> <p> <code>stop_failed</code> </p> </li>
-    /// <li> <p> <code>stopped</code> </p> </li>
-    /// <li> <p> <code>stopping</code> </p> </li>
-    /// <li> <p> <code>terminated</code> </p> </li>
-    /// <li> <p> <code>terminating</code> </p> </li>
+    /// <li><p><code>booting</code></p></li>
+    /// <li><p><code>connection_lost</code></p></li>
+    /// <li><p><code>online</code></p></li>
+    /// <li><p><code>pending</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>requested</code></p></li>
+    /// <li><p><code>running_setup</code></p></li>
+    /// <li><p><code>setup_failed</code></p></li>
+    /// <li><p><code>shutting_down</code></p></li>
+    /// <li><p><code>start_failed</code></p></li>
+    /// <li><p><code>stop_failed</code></p></li>
+    /// <li><p><code>stopped</code></p></li>
+    /// <li><p><code>stopping</code></p></li>
+    /// <li><p><code>terminated</code></p></li>
+    /// <li><p><code>terminating</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -365,17 +365,17 @@ impl InstanceBuilder {
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_version
     }
-    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
+    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
+    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_id = input;
         self
     }
-    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
+    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ami_id
     }
@@ -567,21 +567,21 @@ impl InstanceBuilder {
     pub fn get_infrastructure_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_class
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(mut self, input: bool) -> Self {
         self.install_updates_on_boot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn set_install_updates_on_boot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.install_updates_on_boot = input;
         self
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn get_install_updates_on_boot(&self) -> &::std::option::Option<bool> {
@@ -895,21 +895,21 @@ impl InstanceBuilder {
     }
     /// <p>The instance status:</p>
     /// <ul>
-    /// <li> <p> <code>booting</code> </p> </li>
-    /// <li> <p> <code>connection_lost</code> </p> </li>
-    /// <li> <p> <code>online</code> </p> </li>
-    /// <li> <p> <code>pending</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>requested</code> </p> </li>
-    /// <li> <p> <code>running_setup</code> </p> </li>
-    /// <li> <p> <code>setup_failed</code> </p> </li>
-    /// <li> <p> <code>shutting_down</code> </p> </li>
-    /// <li> <p> <code>start_failed</code> </p> </li>
-    /// <li> <p> <code>stop_failed</code> </p> </li>
-    /// <li> <p> <code>stopped</code> </p> </li>
-    /// <li> <p> <code>stopping</code> </p> </li>
-    /// <li> <p> <code>terminated</code> </p> </li>
-    /// <li> <p> <code>terminating</code> </p> </li>
+    /// <li><p><code>booting</code></p></li>
+    /// <li><p><code>connection_lost</code></p></li>
+    /// <li><p><code>online</code></p></li>
+    /// <li><p><code>pending</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>requested</code></p></li>
+    /// <li><p><code>running_setup</code></p></li>
+    /// <li><p><code>setup_failed</code></p></li>
+    /// <li><p><code>shutting_down</code></p></li>
+    /// <li><p><code>start_failed</code></p></li>
+    /// <li><p><code>stop_failed</code></p></li>
+    /// <li><p><code>stopped</code></p></li>
+    /// <li><p><code>stopping</code></p></li>
+    /// <li><p><code>terminated</code></p></li>
+    /// <li><p><code>terminating</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -917,21 +917,21 @@ impl InstanceBuilder {
     }
     /// <p>The instance status:</p>
     /// <ul>
-    /// <li> <p> <code>booting</code> </p> </li>
-    /// <li> <p> <code>connection_lost</code> </p> </li>
-    /// <li> <p> <code>online</code> </p> </li>
-    /// <li> <p> <code>pending</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>requested</code> </p> </li>
-    /// <li> <p> <code>running_setup</code> </p> </li>
-    /// <li> <p> <code>setup_failed</code> </p> </li>
-    /// <li> <p> <code>shutting_down</code> </p> </li>
-    /// <li> <p> <code>start_failed</code> </p> </li>
-    /// <li> <p> <code>stop_failed</code> </p> </li>
-    /// <li> <p> <code>stopped</code> </p> </li>
-    /// <li> <p> <code>stopping</code> </p> </li>
-    /// <li> <p> <code>terminated</code> </p> </li>
-    /// <li> <p> <code>terminating</code> </p> </li>
+    /// <li><p><code>booting</code></p></li>
+    /// <li><p><code>connection_lost</code></p></li>
+    /// <li><p><code>online</code></p></li>
+    /// <li><p><code>pending</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>requested</code></p></li>
+    /// <li><p><code>running_setup</code></p></li>
+    /// <li><p><code>setup_failed</code></p></li>
+    /// <li><p><code>shutting_down</code></p></li>
+    /// <li><p><code>start_failed</code></p></li>
+    /// <li><p><code>stop_failed</code></p></li>
+    /// <li><p><code>stopped</code></p></li>
+    /// <li><p><code>stopping</code></p></li>
+    /// <li><p><code>terminated</code></p></li>
+    /// <li><p><code>terminating</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -939,21 +939,21 @@ impl InstanceBuilder {
     }
     /// <p>The instance status:</p>
     /// <ul>
-    /// <li> <p> <code>booting</code> </p> </li>
-    /// <li> <p> <code>connection_lost</code> </p> </li>
-    /// <li> <p> <code>online</code> </p> </li>
-    /// <li> <p> <code>pending</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>requested</code> </p> </li>
-    /// <li> <p> <code>running_setup</code> </p> </li>
-    /// <li> <p> <code>setup_failed</code> </p> </li>
-    /// <li> <p> <code>shutting_down</code> </p> </li>
-    /// <li> <p> <code>start_failed</code> </p> </li>
-    /// <li> <p> <code>stop_failed</code> </p> </li>
-    /// <li> <p> <code>stopped</code> </p> </li>
-    /// <li> <p> <code>stopping</code> </p> </li>
-    /// <li> <p> <code>terminated</code> </p> </li>
-    /// <li> <p> <code>terminating</code> </p> </li>
+    /// <li><p><code>booting</code></p></li>
+    /// <li><p><code>connection_lost</code></p></li>
+    /// <li><p><code>online</code></p></li>
+    /// <li><p><code>pending</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>requested</code></p></li>
+    /// <li><p><code>running_setup</code></p></li>
+    /// <li><p><code>setup_failed</code></p></li>
+    /// <li><p><code>shutting_down</code></p></li>
+    /// <li><p><code>start_failed</code></p></li>
+    /// <li><p><code>stop_failed</code></p></li>
+    /// <li><p><code>stopped</code></p></li>
+    /// <li><p><code>stopping</code></p></li>
+    /// <li><p><code>terminated</code></p></li>
+    /// <li><p><code>terminating</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

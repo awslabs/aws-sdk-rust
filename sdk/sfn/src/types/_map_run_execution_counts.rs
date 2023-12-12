@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapRunExecutionCounts {
-    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet.</p>
     pub pending: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run and are currently in-progress.</p>
     pub running: i64,
@@ -14,7 +14,7 @@ pub struct MapRunExecutionCounts {
     pub failed: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run and have timed out.</p>
     pub timed_out: i64,
-    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed.</p>
     pub aborted: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run.</p>
     pub total: i64,
@@ -26,7 +26,7 @@ pub struct MapRunExecutionCounts {
     pub pending_redrive: ::std::option::Option<i64>,
 }
 impl MapRunExecutionCounts {
-    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet.</p>
     pub fn pending(&self) -> i64 {
         self.pending
     }
@@ -46,7 +46,7 @@ impl MapRunExecutionCounts {
     pub fn timed_out(&self) -> i64 {
         self.timed_out
     }
-    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed.</p>
     pub fn aborted(&self) -> i64 {
         self.aborted
     }
@@ -90,18 +90,18 @@ pub struct MapRunExecutionCountsBuilder {
     pub(crate) pending_redrive: ::std::option::Option<i64>,
 }
 impl MapRunExecutionCountsBuilder {
-    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet.</p>
     /// This field is required.
     pub fn pending(mut self, input: i64) -> Self {
         self.pending = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet.</p>
     pub fn set_pending(mut self, input: ::std::option::Option<i64>) -> Self {
         self.pending = input;
         self
     }
-    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet.</p>
     pub fn get_pending(&self) -> &::std::option::Option<i64> {
         &self.pending
     }
@@ -165,18 +165,18 @@ impl MapRunExecutionCountsBuilder {
     pub fn get_timed_out(&self) -> &::std::option::Option<i64> {
         &self.timed_out
     }
-    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed.</p>
     /// This field is required.
     pub fn aborted(mut self, input: i64) -> Self {
         self.aborted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed.</p>
     pub fn set_aborted(mut self, input: ::std::option::Option<i64>) -> Self {
         self.aborted = input;
         self
     }
-    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed. </p>
+    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed.</p>
     pub fn get_aborted(&self) -> &::std::option::Option<i64> {
         &self.aborted
     }

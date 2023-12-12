@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesOutput {
-    /// <p> The list of <code>ServiceSummary</code> objects. </p>
+    /// <p>The list of <code>ServiceSummary</code> objects.</p>
     pub service_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListServicesOutput {
-    /// <p> The list of <code>ServiceSummary</code> objects. </p>
+    /// <p>The list of <code>ServiceSummary</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_summary_list.is_none()`.
     pub fn service_summary_list(&self) -> &[crate::types::ServiceSummary] {
@@ -46,19 +46,19 @@ impl ListServicesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_service_summary_list`](Self::set_service_summary_list).
     ///
-    /// <p> The list of <code>ServiceSummary</code> objects. </p>
+    /// <p>The list of <code>ServiceSummary</code> objects.</p>
     pub fn service_summary_list(mut self, input: crate::types::ServiceSummary) -> Self {
         let mut v = self.service_summary_list.unwrap_or_default();
         v.push(input);
         self.service_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of <code>ServiceSummary</code> objects. </p>
+    /// <p>The list of <code>ServiceSummary</code> objects.</p>
     pub fn set_service_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>) -> Self {
         self.service_summary_list = input;
         self
     }
-    /// <p> The list of <code>ServiceSummary</code> objects. </p>
+    /// <p>The list of <code>ServiceSummary</code> objects.</p>
     pub fn get_service_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
         &self.service_summary_list
     }

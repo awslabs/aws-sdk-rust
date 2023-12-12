@@ -22,17 +22,17 @@ impl DescribePlayerSessionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribePlayerSessions`.
 ///
-/// <p>Retrieves properties for one or more player sessions. </p>
-/// <p>This action can be used in the following ways: </p>
+/// <p>Retrieves properties for one or more player sessions.</p>
+/// <p>This action can be used in the following ways:</p>
 /// <ul>
-/// <li> <p>To retrieve a specific player session, provide the player session ID only.</p> </li>
-/// <li> <p>To retrieve all player sessions in a game session, provide the game session ID only.</p> </li>
-/// <li> <p>To retrieve all player sessions for a specific player, provide a player ID only.</p> </li>
+/// <li><p>To retrieve a specific player session, provide the player session ID only.</p></li>
+/// <li><p>To retrieve all player sessions in a game session, provide the game session ID only.</p></li>
+/// <li><p>To retrieve all player sessions for a specific player, provide a player ID only.</p></li>
 /// </ul>
-/// <p>To request player sessions, specify either a player session ID, game session ID, or player ID. You can filter this request by player session status. If you provide a specific <code>PlayerSessionId</code> or <code>PlayerId</code>, Amazon GameLift ignores the filter criteria. Use the pagination parameters to retrieve results as a set of sequential pages. </p>
+/// <p>To request player sessions, specify either a player session ID, game session ID, or player ID. You can filter this request by player session status. If you provide a specific <code>PlayerSessionId</code> or <code>PlayerId</code>, Amazon GameLift ignores the filter criteria. Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a <code>PlayerSession</code> object is returned for each session that matches the request.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p><b>Related actions</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePlayerSessionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -169,10 +169,10 @@ impl DescribePlayerSessionsFluentBuilder {
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn player_session_status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.player_session_status_filter(input.into());
@@ -181,10 +181,10 @@ impl DescribePlayerSessionsFluentBuilder {
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn set_player_session_status_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_player_session_status_filter(input);
@@ -193,10 +193,10 @@ impl DescribePlayerSessionsFluentBuilder {
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn get_player_session_status_filter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_player_session_status_filter()

@@ -24,10 +24,10 @@ impl CreateIdentityProviderInputBuilder {
 ///
 /// <p>Creates an IdP for a user pool.</p> <note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
-/// <p class="title"> <b>Learn more</b> </p>
+/// <p class="title"><b>Learn more</b></p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a></p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -163,51 +163,51 @@ impl CreateIdentityProviderFluentBuilder {
     ///
     /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
-    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <li><p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Facebook:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// </ul></li>
+    /// <li><p>For Facebook:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>api_version</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Sign in with Apple:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// <li><p>api_version</p></li>
+    /// </ul></li>
+    /// <li><p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>team_id</p> </li>
-    /// <li> <p>key_id</p> </li>
-    /// <li> <p>private_key</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For OpenID Connect (OIDC) providers:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>team_id</p></li>
+    /// <li><p>key_id</p></li>
+    /// <li><p>private_key</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// </ul></li>
+    /// <li><p>For OpenID Connect (OIDC) providers:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>attributes_request_method</p> </li>
-    /// <li> <p>oidc_issuer</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>attributes_request_method</p></li>
+    /// <li><p>oidc_issuer</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// <li><p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
     /// <ul>
-    /// <li> <p>authorize_url </p> </li>
-    /// <li> <p>token_url </p> </li>
-    /// <li> <p>attributes_url </p> </li>
-    /// <li> <p>jwks_uri </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <li><p>authorize_url</p></li>
+    /// <li><p>token_url</p></li>
+    /// <li><p>attributes_url</p></li>
+    /// <li><p>jwks_uri</p></li>
+    /// </ul></li>
+    /// <li><p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
     /// <ul>
-    /// <li> <p>attributes_url_add_attributes </p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>For SAML providers:</p>
+    /// <li><p>attributes_url_add_attributes</p></li>
+    /// </ul></li>
+    /// </ul></li>
+    /// <li><p>For SAML providers:</p>
     /// <ul>
-    /// <li> <p>MetadataFile or MetadataURL</p> </li>
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
-    /// </ul> </li>
+    /// <li><p>MetadataFile or MetadataURL</p></li>
+    /// <li><p>IDPSignout <i>optional</i></p></li>
+    /// </ul></li>
     /// </ul>
     pub fn provider_details(
         mut self,
@@ -219,51 +219,51 @@ impl CreateIdentityProviderFluentBuilder {
     }
     /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
-    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <li><p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Facebook:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// </ul></li>
+    /// <li><p>For Facebook:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>api_version</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Sign in with Apple:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// <li><p>api_version</p></li>
+    /// </ul></li>
+    /// <li><p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>team_id</p> </li>
-    /// <li> <p>key_id</p> </li>
-    /// <li> <p>private_key</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For OpenID Connect (OIDC) providers:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>team_id</p></li>
+    /// <li><p>key_id</p></li>
+    /// <li><p>private_key</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// </ul></li>
+    /// <li><p>For OpenID Connect (OIDC) providers:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>attributes_request_method</p> </li>
-    /// <li> <p>oidc_issuer</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>attributes_request_method</p></li>
+    /// <li><p>oidc_issuer</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// <li><p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
     /// <ul>
-    /// <li> <p>authorize_url </p> </li>
-    /// <li> <p>token_url </p> </li>
-    /// <li> <p>attributes_url </p> </li>
-    /// <li> <p>jwks_uri </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <li><p>authorize_url</p></li>
+    /// <li><p>token_url</p></li>
+    /// <li><p>attributes_url</p></li>
+    /// <li><p>jwks_uri</p></li>
+    /// </ul></li>
+    /// <li><p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
     /// <ul>
-    /// <li> <p>attributes_url_add_attributes </p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>For SAML providers:</p>
+    /// <li><p>attributes_url_add_attributes</p></li>
+    /// </ul></li>
+    /// </ul></li>
+    /// <li><p>For SAML providers:</p>
     /// <ul>
-    /// <li> <p>MetadataFile or MetadataURL</p> </li>
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
-    /// </ul> </li>
+    /// <li><p>MetadataFile or MetadataURL</p></li>
+    /// <li><p>IDPSignout <i>optional</i></p></li>
+    /// </ul></li>
     /// </ul>
     pub fn set_provider_details(
         mut self,
@@ -274,51 +274,51 @@ impl CreateIdentityProviderFluentBuilder {
     }
     /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
-    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <li><p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Facebook:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// </ul></li>
+    /// <li><p>For Facebook:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>api_version</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Sign in with Apple:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// <li><p>api_version</p></li>
+    /// </ul></li>
+    /// <li><p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>team_id</p> </li>
-    /// <li> <p>key_id</p> </li>
-    /// <li> <p>private_key</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For OpenID Connect (OIDC) providers:</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>team_id</p></li>
+    /// <li><p>key_id</p></li>
+    /// <li><p>private_key</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// </ul></li>
+    /// <li><p>For OpenID Connect (OIDC) providers:</p>
     /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>attributes_request_method</p> </li>
-    /// <li> <p>oidc_issuer</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <li><p>client_id</p></li>
+    /// <li><p>client_secret</p></li>
+    /// <li><p>attributes_request_method</p></li>
+    /// <li><p>oidc_issuer</p></li>
+    /// <li><p>authorize_scopes</p></li>
+    /// <li><p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
     /// <ul>
-    /// <li> <p>authorize_url </p> </li>
-    /// <li> <p>token_url </p> </li>
-    /// <li> <p>attributes_url </p> </li>
-    /// <li> <p>jwks_uri </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <li><p>authorize_url</p></li>
+    /// <li><p>token_url</p></li>
+    /// <li><p>attributes_url</p></li>
+    /// <li><p>jwks_uri</p></li>
+    /// </ul></li>
+    /// <li><p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
     /// <ul>
-    /// <li> <p>attributes_url_add_attributes </p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>For SAML providers:</p>
+    /// <li><p>attributes_url_add_attributes</p></li>
+    /// </ul></li>
+    /// </ul></li>
+    /// <li><p>For SAML providers:</p>
     /// <ul>
-    /// <li> <p>MetadataFile or MetadataURL</p> </li>
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
-    /// </ul> </li>
+    /// <li><p>MetadataFile or MetadataURL</p></li>
+    /// <li><p>IDPSignout <i>optional</i></p></li>
+    /// </ul></li>
     /// </ul>
     pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_provider_details()

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutManagedInsightRulesInput {
-    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    /// <p>A list of <code>ManagedRules</code> to enable.</p>
     pub managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>,
 }
 impl PutManagedInsightRulesInput {
-    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    /// <p>A list of <code>ManagedRules</code> to enable.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rules.is_none()`.
     pub fn managed_rules(&self) -> &[crate::types::ManagedRule] {
@@ -32,19 +32,19 @@ impl PutManagedInsightRulesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_rules`](Self::set_managed_rules).
     ///
-    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    /// <p>A list of <code>ManagedRules</code> to enable.</p>
     pub fn managed_rules(mut self, input: crate::types::ManagedRule) -> Self {
         let mut v = self.managed_rules.unwrap_or_default();
         v.push(input);
         self.managed_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    /// <p>A list of <code>ManagedRules</code> to enable.</p>
     pub fn set_managed_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>) -> Self {
         self.managed_rules = input;
         self
     }
-    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    /// <p>A list of <code>ManagedRules</code> to enable.</p>
     pub fn get_managed_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>> {
         &self.managed_rules
     }

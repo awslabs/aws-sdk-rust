@@ -243,13 +243,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for FailoverGloba
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum FailoverGlobalClusterError {
-    /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
+    /// <p><i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),
     /// <p>The DB cluster is not in a valid state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
-    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
     InvalidGlobalClusterStateFault(crate::types::error::InvalidGlobalClusterStateFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

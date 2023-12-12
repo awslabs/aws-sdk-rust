@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentConfirmationSetting {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
     pub prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
-    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
+    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled.</p>
     pub declination_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and declination responses aren't sent. If the <code>active</code> field isn't specified, the default is true.</p>
     pub active: ::std::option::Option<bool>,
@@ -27,18 +27,18 @@ pub struct IntentConfirmationSetting {
     pub failure_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
     pub failure_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
-    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>.</p>
     pub code_hook: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
     /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
     pub elicitation_code_hook: ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
 }
 impl IntentConfirmationSetting {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
     pub fn prompt_specification(&self) -> ::std::option::Option<&crate::types::PromptSpecification> {
         self.prompt_specification.as_ref()
     }
-    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
+    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled.</p>
     pub fn declination_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.declination_response.as_ref()
     }
@@ -78,7 +78,7 @@ impl IntentConfirmationSetting {
     pub fn failure_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
-    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>.</p>
     pub fn code_hook(&self) -> ::std::option::Option<&crate::types::DialogCodeHookInvocationSetting> {
         self.code_hook.as_ref()
     }
@@ -114,34 +114,34 @@ pub struct IntentConfirmationSettingBuilder {
 }
 impl IntentConfirmationSettingBuilder {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
     /// This field is required.
     pub fn prompt_specification(mut self, input: crate::types::PromptSpecification) -> Self {
         self.prompt_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
     pub fn set_prompt_specification(mut self, input: ::std::option::Option<crate::types::PromptSpecification>) -> Self {
         self.prompt_specification = input;
         self
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
     pub fn get_prompt_specification(&self) -> &::std::option::Option<crate::types::PromptSpecification> {
         &self.prompt_specification
     }
-    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
+    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled.</p>
     pub fn declination_response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.declination_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
+    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled.</p>
     pub fn set_declination_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.declination_response = input;
         self
     }
-    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
+    /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled.</p>
     pub fn get_declination_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.declination_response
     }
@@ -271,17 +271,17 @@ impl IntentConfirmationSettingBuilder {
     pub fn get_failure_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.failure_conditional
     }
-    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>.</p>
     pub fn code_hook(mut self, input: crate::types::DialogCodeHookInvocationSetting) -> Self {
         self.code_hook = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>.</p>
     pub fn set_code_hook(mut self, input: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>) -> Self {
         self.code_hook = input;
         self
     }
-    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>.</p>
     pub fn get_code_hook(&self) -> &::std::option::Option<crate::types::DialogCodeHookInvocationSetting> {
         &self.code_hook
     }

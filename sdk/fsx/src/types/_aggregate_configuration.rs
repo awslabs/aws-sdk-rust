@@ -7,9 +7,9 @@ pub struct AggregateConfiguration {
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li> <p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p> </li>
-    /// <li> <p>The value of <code>Aggregates</code> contains aggregates that are not present.</p> </li>
-    /// <li> <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p> </li>
+    /// <li><p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p></li>
+    /// <li><p>The value of <code>Aggregates</code> contains aggregates that are not present.</p></li>
+    /// <li><p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
     pub aggregates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The total number of constituents this FlexGroup volume has. Not applicable for FlexVols.</p>
@@ -19,9 +19,9 @@ impl AggregateConfiguration {
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li> <p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p> </li>
-    /// <li> <p>The value of <code>Aggregates</code> contains aggregates that are not present.</p> </li>
-    /// <li> <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p> </li>
+    /// <li><p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p></li>
+    /// <li><p>The value of <code>Aggregates</code> contains aggregates that are not present.</p></li>
+    /// <li><p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregates.is_none()`.
@@ -55,9 +55,9 @@ impl AggregateConfigurationBuilder {
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li> <p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p> </li>
-    /// <li> <p>The value of <code>Aggregates</code> contains aggregates that are not present.</p> </li>
-    /// <li> <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p> </li>
+    /// <li><p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p></li>
+    /// <li><p>The value of <code>Aggregates</code> contains aggregates that are not present.</p></li>
+    /// <li><p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
     pub fn aggregates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aggregates.unwrap_or_default();
@@ -68,9 +68,9 @@ impl AggregateConfigurationBuilder {
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li> <p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p> </li>
-    /// <li> <p>The value of <code>Aggregates</code> contains aggregates that are not present.</p> </li>
-    /// <li> <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p> </li>
+    /// <li><p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p></li>
+    /// <li><p>The value of <code>Aggregates</code> contains aggregates that are not present.</p></li>
+    /// <li><p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
     pub fn set_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.aggregates = input;
@@ -79,9 +79,9 @@ impl AggregateConfigurationBuilder {
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li> <p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p> </li>
-    /// <li> <p>The value of <code>Aggregates</code> contains aggregates that are not present.</p> </li>
-    /// <li> <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p> </li>
+    /// <li><p>The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>, where X is a number between 1 and 6.</p></li>
+    /// <li><p>The value of <code>Aggregates</code> contains aggregates that are not present.</p></li>
+    /// <li><p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
     pub fn get_aggregates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aggregates

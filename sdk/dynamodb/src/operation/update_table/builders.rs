@@ -23,15 +23,15 @@ impl UpdateTableInputBuilder {
 /// Fluent builder constructing a request to `UpdateTable`.
 ///
 /// <p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p> <important>
-/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
+/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables.</p>
 /// </important>
 /// <p>You can only perform one of the following operations at once:</p>
 /// <ul>
-/// <li> <p>Modify the provisioned throughput settings of the table.</p> </li>
-/// <li> <p>Remove a global secondary index from the table.</p> </li>
-/// <li> <p>Create a new global secondary index on the table. After the index begins backfilling, you can use <code>UpdateTable</code> to perform other operations.</p> </li>
+/// <li><p>Modify the provisioned throughput settings of the table.</p></li>
+/// <li><p>Remove a global secondary index from the table.</p></li>
+/// <li><p>Create a new global secondary index on the table. After the index begins backfilling, you can use <code>UpdateTable</code> to perform other operations.</p></li>
 /// </ul>
-/// <p> <code>UpdateTable</code> is an asynchronous operation; while it is executing, the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request. When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is complete.</p>
+/// <p><code>UpdateTable</code> is an asynchronous operation; while it is executing, the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request. When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is complete.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -151,8 +151,8 @@ impl UpdateTableFluentBuilder {
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
-    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
+    /// <li><p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
+    /// <li><p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
     /// </ul>
     pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
         self.inner = self.inner.billing_mode(input);
@@ -160,8 +160,8 @@ impl UpdateTableFluentBuilder {
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
-    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
+    /// <li><p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
+    /// <li><p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
     /// </ul>
     pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
         self.inner = self.inner.set_billing_mode(input);
@@ -169,8 +169,8 @@ impl UpdateTableFluentBuilder {
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
-    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
+    /// <li><p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
+    /// <li><p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
     /// </ul>
     pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
         self.inner.get_billing_mode()
@@ -195,24 +195,24 @@ impl UpdateTableFluentBuilder {
     ///
     /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
     /// <ul>
-    /// <li> <p> <code>Create</code> - add a new global secondary index to the table.</p> </li>
-    /// <li> <p> <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p> </li>
-    /// <li> <p> <code>Delete</code> - remove a global secondary index from the table.</p> </li>
+    /// <li><p><code>Create</code> - add a new global secondary index to the table.</p></li>
+    /// <li><p><code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p></li>
+    /// <li><p><code>Delete</code> - remove a global secondary index from the table.</p></li>
     /// </ul>
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn global_secondary_index_updates(mut self, input: crate::types::GlobalSecondaryIndexUpdate) -> Self {
         self.inner = self.inner.global_secondary_index_updates(input);
         self
     }
     /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
     /// <ul>
-    /// <li> <p> <code>Create</code> - add a new global secondary index to the table.</p> </li>
-    /// <li> <p> <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p> </li>
-    /// <li> <p> <code>Delete</code> - remove a global secondary index from the table.</p> </li>
+    /// <li><p><code>Create</code> - add a new global secondary index to the table.</p></li>
+    /// <li><p><code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p></li>
+    /// <li><p><code>Delete</code> - remove a global secondary index from the table.</p></li>
     /// </ul>
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_global_secondary_index_updates(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>>,
@@ -222,12 +222,12 @@ impl UpdateTableFluentBuilder {
     }
     /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
     /// <ul>
-    /// <li> <p> <code>Create</code> - add a new global secondary index to the table.</p> </li>
-    /// <li> <p> <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p> </li>
-    /// <li> <p> <code>Delete</code> - remove a global secondary index from the table.</p> </li>
+    /// <li><p><code>Create</code> - add a new global secondary index to the table.</p></li>
+    /// <li><p><code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p></li>
+    /// <li><p><code>Delete</code> - remove a global secondary index from the table.</p></li>
     /// </ul>
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn get_global_secondary_index_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>> {
         self.inner.get_global_secondary_index_updates()
     }
@@ -270,21 +270,21 @@ impl UpdateTableFluentBuilder {
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
     ///
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables.</p>
     /// </note>
     pub fn replica_updates(mut self, input: crate::types::ReplicationGroupUpdate) -> Self {
         self.inner = self.inner.replica_updates(input);
         self
     }
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables.</p>
     /// </note>
     pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
     }
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables.</p>
     /// </note>
     pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>> {
         self.inner.get_replica_updates()

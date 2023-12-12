@@ -23,10 +23,10 @@ impl StartConnectionInputBuilder {
 /// Fluent builder constructing a request to `StartConnection`.
 ///
 /// <note>
-/// <p> Amazon Web Services uses this action to install Outpost servers.</p>
+/// <p>Amazon Web Services uses this action to install Outpost servers.</p>
 /// </note>
-/// <p> Starts the connection required for Outpost server installation. </p>
-/// <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
+/// <p>Starts the connection required for Outpost server installation.</p>
+/// <p>Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,59 +112,59 @@ impl StartConnectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The serial number of the dongle. </p>
+    /// <p>The serial number of the dongle.</p>
     pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_serial_number(input.into());
         self
     }
-    /// <p> The serial number of the dongle. </p>
+    /// <p>The serial number of the dongle.</p>
     pub fn set_device_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_serial_number(input);
         self
     }
-    /// <p> The serial number of the dongle. </p>
+    /// <p>The serial number of the dongle.</p>
     pub fn get_device_serial_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_serial_number()
     }
-    /// <p> The ID of the Outpost server. </p>
+    /// <p>The ID of the Outpost server.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());
         self
     }
-    /// <p> The ID of the Outpost server. </p>
+    /// <p>The ID of the Outpost server.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_id(input);
         self
     }
-    /// <p> The ID of the Outpost server. </p>
+    /// <p>The ID of the Outpost server.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_id()
     }
-    /// <p> The public key of the client. </p>
+    /// <p>The public key of the client.</p>
     pub fn client_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_public_key(input.into());
         self
     }
-    /// <p> The public key of the client. </p>
+    /// <p>The public key of the client.</p>
     pub fn set_client_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_public_key(input);
         self
     }
-    /// <p> The public key of the client. </p>
+    /// <p>The public key of the client.</p>
     pub fn get_client_public_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_public_key()
     }
-    /// <p> The device index of the network interface on the Outpost server. </p>
+    /// <p>The device index of the network interface on the Outpost server.</p>
     pub fn network_interface_device_index(mut self, input: i32) -> Self {
         self.inner = self.inner.network_interface_device_index(input);
         self
     }
-    /// <p> The device index of the network interface on the Outpost server. </p>
+    /// <p>The device index of the network interface on the Outpost server.</p>
     pub fn set_network_interface_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_network_interface_device_index(input);
         self
     }
-    /// <p> The device index of the network interface on the Outpost server. </p>
+    /// <p>The device index of the network interface on the Outpost server.</p>
     pub fn get_network_interface_device_index(&self) -> &::std::option::Option<i32> {
         self.inner.get_network_interface_device_index()
     }

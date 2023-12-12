@@ -6,8 +6,8 @@
 pub struct DescribeStackResourcesInput {
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// <li><p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
+    /// <li><p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
@@ -24,8 +24,8 @@ pub struct DescribeStackResourcesInput {
 impl DescribeStackResourcesInput {
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// <li><p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
+    /// <li><p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
@@ -63,8 +63,8 @@ pub struct DescribeStackResourcesInputBuilder {
 impl DescribeStackResourcesInputBuilder {
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// <li><p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
+    /// <li><p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
@@ -74,8 +74,8 @@ impl DescribeStackResourcesInputBuilder {
     }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// <li><p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
+    /// <li><p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
@@ -85,8 +85,8 @@ impl DescribeStackResourcesInputBuilder {
     }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// <li><p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
+    /// <li><p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>

@@ -8,14 +8,14 @@ pub struct BatchPutMessageInput {
     /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
     /// <ul>
-    /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
-    /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
-    /// <li> <p>Cannot contain hyphens (-).</p> </li>
-    /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
-    /// <li> <p>Cannot be more than 255 characters.</p> </li>
-    /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
+    /// <li><p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p></li>
+    /// <li><p>Must begin with an alphabetic character or single underscore (_).</p></li>
+    /// <li><p>Cannot contain hyphens (-).</p></li>
+    /// <li><p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <li><p>Cannot be more than 255 characters.</p></li>
+    /// <li><p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p></li>
     /// </ul>
-    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.</p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
 }
 impl BatchPutMessageInput {
@@ -26,14 +26,14 @@ impl BatchPutMessageInput {
     /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
     /// <ul>
-    /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
-    /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
-    /// <li> <p>Cannot contain hyphens (-).</p> </li>
-    /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
-    /// <li> <p>Cannot be more than 255 characters.</p> </li>
-    /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
+    /// <li><p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p></li>
+    /// <li><p>Must begin with an alphabetic character or single underscore (_).</p></li>
+    /// <li><p>Cannot contain hyphens (-).</p></li>
+    /// <li><p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <li><p>Cannot be more than 255 characters.</p></li>
+    /// <li><p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p></li>
     /// </ul>
-    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
     pub fn messages(&self) -> &[crate::types::Message] {
@@ -77,14 +77,14 @@ impl BatchPutMessageInputBuilder {
     /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
     /// <ul>
-    /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
-    /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
-    /// <li> <p>Cannot contain hyphens (-).</p> </li>
-    /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
-    /// <li> <p>Cannot be more than 255 characters.</p> </li>
-    /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
+    /// <li><p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p></li>
+    /// <li><p>Must begin with an alphabetic character or single underscore (_).</p></li>
+    /// <li><p>Cannot contain hyphens (-).</p></li>
+    /// <li><p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <li><p>Cannot be more than 255 characters.</p></li>
+    /// <li><p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p></li>
     /// </ul>
-    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.</p>
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input);
@@ -94,14 +94,14 @@ impl BatchPutMessageInputBuilder {
     /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
     /// <ul>
-    /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
-    /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
-    /// <li> <p>Cannot contain hyphens (-).</p> </li>
-    /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
-    /// <li> <p>Cannot be more than 255 characters.</p> </li>
-    /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
+    /// <li><p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p></li>
+    /// <li><p>Must begin with an alphabetic character or single underscore (_).</p></li>
+    /// <li><p>Cannot contain hyphens (-).</p></li>
+    /// <li><p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <li><p>Cannot be more than 255 characters.</p></li>
+    /// <li><p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p></li>
     /// </ul>
-    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.</p>
     pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
@@ -109,14 +109,14 @@ impl BatchPutMessageInputBuilder {
     /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
     /// <ul>
-    /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
-    /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
-    /// <li> <p>Cannot contain hyphens (-).</p> </li>
-    /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
-    /// <li> <p>Cannot be more than 255 characters.</p> </li>
-    /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
+    /// <li><p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p></li>
+    /// <li><p>Must begin with an alphabetic character or single underscore (_).</p></li>
+    /// <li><p>Cannot contain hyphens (-).</p></li>
+    /// <li><p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <li><p>Cannot be more than 255 characters.</p></li>
+    /// <li><p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p></li>
     /// </ul>
-    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.</p>
     pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
         &self.messages
     }

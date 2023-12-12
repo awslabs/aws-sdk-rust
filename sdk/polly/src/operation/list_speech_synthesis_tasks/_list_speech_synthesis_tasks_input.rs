@@ -5,7 +5,7 @@
 pub struct ListSpeechSynthesisTasksInput {
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
     pub status: ::std::option::Option<crate::types::TaskStatus>,
@@ -15,7 +15,7 @@ impl ListSpeechSynthesisTasksInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -54,17 +54,17 @@ impl ListSpeechSynthesisTasksInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

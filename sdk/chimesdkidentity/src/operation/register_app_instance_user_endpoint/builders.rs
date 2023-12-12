@@ -138,9 +138,9 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
-    /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
-    /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
-    /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
+    /// <li><p><code>APNS</code>: The mobile notification service for an Apple device.</p></li>
+    /// <li><p><code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p></li>
+    /// <li><p><code>GCM</code>: The mobile notification service for an Android device.</p></li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
     pub fn r#type(mut self, input: crate::types::AppInstanceUserEndpointType) -> Self {
@@ -149,9 +149,9 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
-    /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
-    /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
-    /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
+    /// <li><p><code>APNS</code>: The mobile notification service for an Apple device.</p></li>
+    /// <li><p><code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p></li>
+    /// <li><p><code>GCM</code>: The mobile notification service for an Android device.</p></li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AppInstanceUserEndpointType>) -> Self {
@@ -160,9 +160,9 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
-    /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
-    /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
-    /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
+    /// <li><p><code>APNS</code>: The mobile notification service for an Apple device.</p></li>
+    /// <li><p><code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p></li>
+    /// <li><p><code>GCM</code>: The mobile notification service for an Android device.</p></li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AppInstanceUserEndpointType> {

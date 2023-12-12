@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalSizeConfig {
-    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent.</p>
     pub max_local_media_size_in_mb: ::std::option::Option<i32>,
     /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
     pub strategy_on_full_size: ::std::option::Option<crate::types::StrategyOnFullSize>,
 }
 impl LocalSizeConfig {
-    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent.</p>
     pub fn max_local_media_size_in_mb(&self) -> ::std::option::Option<i32> {
         self.max_local_media_size_in_mb
     }
@@ -34,17 +34,17 @@ pub struct LocalSizeConfigBuilder {
     pub(crate) strategy_on_full_size: ::std::option::Option<crate::types::StrategyOnFullSize>,
 }
 impl LocalSizeConfigBuilder {
-    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent.</p>
     pub fn max_local_media_size_in_mb(mut self, input: i32) -> Self {
         self.max_local_media_size_in_mb = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent.</p>
     pub fn set_max_local_media_size_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_local_media_size_in_mb = input;
         self
     }
-    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
+    /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent.</p>
     pub fn get_max_local_media_size_in_mb(&self) -> &::std::option::Option<i32> {
         &self.max_local_media_size_in_mb
     }

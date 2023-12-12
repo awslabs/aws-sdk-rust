@@ -7,8 +7,8 @@
 pub struct CapacitySize {
     /// <p>Specifies the endpoint capacity type.</p>
     /// <ul>
-    /// <li> <p> <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p> </li>
-    /// <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p> </li>
+    /// <li><p><code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p></li>
+    /// <li><p><code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::CapacitySizeType>,
     /// <p>Defines the capacity size, either as a number of instances or a capacity percentage.</p>
@@ -17,8 +17,8 @@ pub struct CapacitySize {
 impl CapacitySize {
     /// <p>Specifies the endpoint capacity type.</p>
     /// <ul>
-    /// <li> <p> <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p> </li>
-    /// <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p> </li>
+    /// <li><p><code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p></li>
+    /// <li><p><code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CapacitySizeType> {
         self.r#type.as_ref()
@@ -45,8 +45,8 @@ pub struct CapacitySizeBuilder {
 impl CapacitySizeBuilder {
     /// <p>Specifies the endpoint capacity type.</p>
     /// <ul>
-    /// <li> <p> <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p> </li>
-    /// <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p> </li>
+    /// <li><p><code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p></li>
+    /// <li><p><code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::CapacitySizeType) -> Self {
@@ -55,8 +55,8 @@ impl CapacitySizeBuilder {
     }
     /// <p>Specifies the endpoint capacity type.</p>
     /// <ul>
-    /// <li> <p> <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p> </li>
-    /// <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p> </li>
+    /// <li><p><code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p></li>
+    /// <li><p><code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CapacitySizeType>) -> Self {
         self.r#type = input;
@@ -64,8 +64,8 @@ impl CapacitySizeBuilder {
     }
     /// <p>Specifies the endpoint capacity type.</p>
     /// <ul>
-    /// <li> <p> <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p> </li>
-    /// <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p> </li>
+    /// <li><p><code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p></li>
+    /// <li><p><code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CapacitySizeType> {
         &self.r#type

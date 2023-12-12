@@ -22,7 +22,7 @@ impl CreateObjectInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateObject`.
 ///
-/// <p>Creates an object in a <code>Directory</code>. Additionally attaches the object to a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a collection of <code>Facet</code> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet. </p>
+/// <p>Creates an object in a <code>Directory</code>. Additionally attaches the object to a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a collection of <code>Facet</code> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateObjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

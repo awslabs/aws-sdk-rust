@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProposalVotesOutput {
-    /// <p> The list of votes. </p>
+    /// <p>The list of votes.</p>
     pub proposal_votes: ::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>>,
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProposalVotesOutput {
-    /// <p> The list of votes. </p>
+    /// <p>The list of votes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proposal_votes.is_none()`.
     pub fn proposal_votes(&self) -> &[crate::types::VoteSummary] {
         self.proposal_votes.as_deref().unwrap_or_default()
     }
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListProposalVotesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_proposal_votes`](Self::set_proposal_votes).
     ///
-    /// <p> The list of votes. </p>
+    /// <p>The list of votes.</p>
     pub fn proposal_votes(mut self, input: crate::types::VoteSummary) -> Self {
         let mut v = self.proposal_votes.unwrap_or_default();
         v.push(input);
         self.proposal_votes = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of votes. </p>
+    /// <p>The list of votes.</p>
     pub fn set_proposal_votes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>>) -> Self {
         self.proposal_votes = input;
         self
     }
-    /// <p> The list of votes. </p>
+    /// <p>The list of votes.</p>
     pub fn get_proposal_votes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>> {
         &self.proposal_votes
     }
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

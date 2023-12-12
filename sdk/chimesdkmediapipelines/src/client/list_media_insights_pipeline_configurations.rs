@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListMediaInsightsPipelineConfigurationsOutput`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput) with field(s):
     ///   - [`media_insights_pipeline_configurations(Option<Vec::<MediaInsightsPipelineConfigurationSummary>>)`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput::media_insights_pipeline_configurations): <p>The requested list of media insights pipeline configurations.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput::next_token): <p>The token used to return the next page of results. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput::next_token): <p>The token used to return the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListMediaInsightsPipelineConfigurationsError>`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError)
     pub fn list_media_insights_pipeline_configurations(
         &self,

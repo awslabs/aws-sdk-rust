@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`workteam_name(impl Into<String>)`](crate::operation::describe_workteam::builders::DescribeWorkteamFluentBuilder::workteam_name) / [`set_workteam_name(Option<String>)`](crate::operation::describe_workteam::builders::DescribeWorkteamFluentBuilder::set_workteam_name):<br>required: **true**<br><p>The name of the work team to return a description of.</p><br>
     /// - On success, responds with [`DescribeWorkteamOutput`](crate::operation::describe_workteam::DescribeWorkteamOutput) with field(s):
-    ///   - [`workteam(Option<Workteam>)`](crate::operation::describe_workteam::DescribeWorkteamOutput::workteam): <p>A <code>Workteam</code> instance that contains information about the work team. </p>
+    ///   - [`workteam(Option<Workteam>)`](crate::operation::describe_workteam::DescribeWorkteamOutput::workteam): <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkteamError>`](crate::operation::describe_workteam::DescribeWorkteamError)
     pub fn describe_workteam(&self) -> crate::operation::describe_workteam::builders::DescribeWorkteamFluentBuilder {
         crate::operation::describe_workteam::builders::DescribeWorkteamFluentBuilder::new(self.handle.clone())

@@ -214,33 +214,33 @@ impl CreatePortalFluentBuilder {
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
-    /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
+    /// <li><p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
+    /// <li><p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
-    /// <p>Default: <code>SSO</code> </p>
+    /// <p>Default: <code>SSO</code></p>
     pub fn portal_auth_mode(mut self, input: crate::types::AuthMode) -> Self {
         self.inner = self.inner.portal_auth_mode(input);
         self
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
-    /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
+    /// <li><p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
+    /// <li><p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
-    /// <p>Default: <code>SSO</code> </p>
+    /// <p>Default: <code>SSO</code></p>
     pub fn set_portal_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
         self.inner = self.inner.set_portal_auth_mode(input);
         self
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
-    /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
+    /// <li><p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
+    /// <li><p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
-    /// <p>Default: <code>SSO</code> </p>
+    /// <p>Default: <code>SSO</code></p>
     pub fn get_portal_auth_mode(&self) -> &::std::option::Option<crate::types::AuthMode> {
         self.inner.get_portal_auth_mode()
     }

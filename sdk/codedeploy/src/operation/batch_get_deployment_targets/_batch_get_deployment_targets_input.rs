@@ -3,36 +3,36 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsInput {
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
-    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
+    /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
-    /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+    /// <li><p>For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
-    /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
+    /// </clustername></code>. Their target type is <code>ecsTarget</code>.</p></li>
+    /// <li><p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
     pub target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentTargetsInput {
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
+    /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
-    /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+    /// <li><p>For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
-    /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
+    /// </clustername></code>. Their target type is <code>ecsTarget</code>.</p></li>
+    /// <li><p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ids.is_none()`.
@@ -55,18 +55,18 @@ pub struct BatchGetDeploymentTargetsInputBuilder {
     pub(crate) target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentTargetsInputBuilder {
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
@@ -74,16 +74,16 @@ impl BatchGetDeploymentTargetsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_ids`](Self::set_target_ids).
     ///
-    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
+    /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
-    /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+    /// <li><p>For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
-    /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
+    /// </clustername></code>. Their target type is <code>ecsTarget</code>.</p></li>
+    /// <li><p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
     pub fn target_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_ids.unwrap_or_default();
@@ -91,31 +91,31 @@ impl BatchGetDeploymentTargetsInputBuilder {
         self.target_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
+    /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
-    /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+    /// <li><p>For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
-    /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
+    /// </clustername></code>. Their target type is <code>ecsTarget</code>.</p></li>
+    /// <li><p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
     pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_ids = input;
         self
     }
-    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
+    /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
-    /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
-    /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+    /// <li><p>For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>.</p></li>
+    /// <li><p>For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
-    /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
+    /// </clustername></code>. Their target type is <code>ecsTarget</code>.</p></li>
+    /// <li><p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
     pub fn get_target_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_ids

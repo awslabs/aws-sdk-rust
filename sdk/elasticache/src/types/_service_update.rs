@@ -24,7 +24,7 @@ pub struct ServiceUpdate {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticache engine version to which the update applies. Either Redis or Memcached engine version</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
+    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired.</p>
     pub auto_update_after_recommended_apply_by_date: ::std::option::Option<bool>,
     /// <p>The estimated length of time the service update will take</p>
     pub estimated_update_time: ::std::option::Option<::std::string::String>,
@@ -70,7 +70,7 @@ impl ServiceUpdate {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
+    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired.</p>
     pub fn auto_update_after_recommended_apply_by_date(&self) -> ::std::option::Option<bool> {
         self.auto_update_after_recommended_apply_by_date
     }
@@ -244,17 +244,17 @@ impl ServiceUpdateBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
+    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired.</p>
     pub fn auto_update_after_recommended_apply_by_date(mut self, input: bool) -> Self {
         self.auto_update_after_recommended_apply_by_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
+    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired.</p>
     pub fn set_auto_update_after_recommended_apply_by_date(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_update_after_recommended_apply_by_date = input;
         self
     }
-    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
+    /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired.</p>
     pub fn get_auto_update_after_recommended_apply_by_date(&self) -> &::std::option::Option<bool> {
         &self.auto_update_after_recommended_apply_by_date
     }

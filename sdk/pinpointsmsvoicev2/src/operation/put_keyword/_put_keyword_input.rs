@@ -11,9 +11,9 @@ pub struct PutKeywordInput {
     pub keyword_message: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform for the new keyword when it is received.</p>
     /// <ul>
-    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+    /// <li><p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
+    /// <li><p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
+    /// <li><p>OPT_IN: The recipient wants to receive future messages.</p></li>
     /// </ul>
     pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
 }
@@ -32,9 +32,9 @@ impl PutKeywordInput {
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     /// <ul>
-    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+    /// <li><p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
+    /// <li><p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
+    /// <li><p>OPT_IN: The recipient wants to receive future messages.</p></li>
     /// </ul>
     pub fn keyword_action(&self) -> ::std::option::Option<&crate::types::KeywordAction> {
         self.keyword_action.as_ref()
@@ -104,9 +104,9 @@ impl PutKeywordInputBuilder {
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     /// <ul>
-    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+    /// <li><p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
+    /// <li><p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
+    /// <li><p>OPT_IN: The recipient wants to receive future messages.</p></li>
     /// </ul>
     pub fn keyword_action(mut self, input: crate::types::KeywordAction) -> Self {
         self.keyword_action = ::std::option::Option::Some(input);
@@ -114,9 +114,9 @@ impl PutKeywordInputBuilder {
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     /// <ul>
-    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+    /// <li><p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
+    /// <li><p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
+    /// <li><p>OPT_IN: The recipient wants to receive future messages.</p></li>
     /// </ul>
     pub fn set_keyword_action(mut self, input: ::std::option::Option<crate::types::KeywordAction>) -> Self {
         self.keyword_action = input;
@@ -124,9 +124,9 @@ impl PutKeywordInputBuilder {
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     /// <ul>
-    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
-    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
-    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+    /// <li><p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
+    /// <li><p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
+    /// <li><p>OPT_IN: The recipient wants to receive future messages.</p></li>
     /// </ul>
     pub fn get_keyword_action(&self) -> &::std::option::Option<crate::types::KeywordAction> {
         &self.keyword_action

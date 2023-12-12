@@ -8,7 +8,7 @@ pub struct CloudWatchLoggingOptionDescription {
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
     pub log_stream_arn: ::std::string::String,
-    /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
+    /// <p>The IAM ARN of the role to use to send application messages.</p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl CloudWatchLoggingOptionDescription {
         use std::ops::Deref;
         self.log_stream_arn.deref()
     }
-    /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
+    /// <p>The IAM ARN of the role to use to send application messages.</p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -75,21 +75,21 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
     pub fn get_log_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_stream_arn
     }
-    /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
+    /// <p>The IAM ARN of the role to use to send application messages.</p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
+    /// <p>The IAM ARN of the role to use to send application messages.</p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
+    /// <p>The IAM ARN of the role to use to send application messages.</p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {

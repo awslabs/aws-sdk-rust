@@ -8,7 +8,7 @@ pub struct DescribeGatewayOutput {
     /// <p>The name of the gateway.</p>
     pub gateway_name: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code></p>
     pub gateway_arn: ::std::string::String,
     /// <p>The gateway's platform.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
@@ -32,7 +32,7 @@ impl DescribeGatewayOutput {
         self.gateway_name.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code></p>
     pub fn gateway_arn(&self) -> &str {
         use std::ops::Deref;
         self.gateway_arn.deref()
@@ -112,20 +112,20 @@ impl DescribeGatewayOutputBuilder {
         &self.gateway_name
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code></p>
     /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code></p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code></p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }

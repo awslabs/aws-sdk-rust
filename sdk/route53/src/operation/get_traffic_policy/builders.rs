@@ -23,7 +23,7 @@ impl GetTrafficPolicyInputBuilder {
 /// Fluent builder constructing a request to `GetTrafficPolicy`.
 ///
 /// <p>Gets information about a specific traffic policy version.</p>
-/// <p>For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>. </p>
+/// <p>For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

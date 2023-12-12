@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>Exception that indicates the specified <code>AttackId</code> does not exist, or the requester does not have the appropriate permissions to access the <code>AttackId</code>.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>In order to grant the necessary access to the Shield Response Team (SRT) the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
+    /// <p>In order to grant the necessary access to the Shield Response Team (SRT) the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an Amazon Web Services Service</a>.</p>
     AccessDeniedForDependencyException(crate::types::error::AccessDeniedForDependencyException),
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
@@ -13,7 +13,7 @@ pub enum Error {
     InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>Exception that indicates that the <code>NextToken</code> specified in the request is invalid. Submit the request using the <code>NextToken</code> value that was returned in the prior response.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
-    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
     InvalidResourceException(crate::types::error::InvalidResourceException),
@@ -25,9 +25,9 @@ pub enum Error {
     NoAssociatedRoleException(crate::types::error::NoAssociatedRoleException),
     /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::types::error::OptimisticLockException),
-    /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
+    /// <p>The ARN of the Elastic Inference Accelerator to tag.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The tags to add to the Elastic Inference Accelerator. </p>
+    /// <p>The tags to add to the Elastic Inference Accelerator.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
+    /// <p>The ARN of the Elastic Inference Accelerator to tag.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p> The tags to add to the Elastic Inference Accelerator. </p>
+    /// <p>The tags to add to the Elastic Inference Accelerator.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct TagResourceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInputBuilder {
-    /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
+    /// <p>The ARN of the Elastic Inference Accelerator to tag.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
+    /// <p>The ARN of the Elastic Inference Accelerator to tag.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
+    /// <p>The ARN of the Elastic Inference Accelerator to tag.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
@@ -52,19 +52,19 @@ impl TagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags to add to the Elastic Inference Accelerator. </p>
+    /// <p>The tags to add to the Elastic Inference Accelerator.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> The tags to add to the Elastic Inference Accelerator. </p>
+    /// <p>The tags to add to the Elastic Inference Accelerator.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> The tags to add to the Elastic Inference Accelerator. </p>
+    /// <p>The tags to add to the Elastic Inference Accelerator.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

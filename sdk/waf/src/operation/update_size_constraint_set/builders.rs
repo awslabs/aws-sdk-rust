@@ -24,22 +24,22 @@ impl UpdateSizeConstraintSetInputBuilder {
 ///
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
+/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
 /// </note>
-/// <p>Inserts or deletes <code>SizeConstraint</code> objects (filters) in a <code>SizeConstraintSet</code>. For each <code>SizeConstraint</code> object, you specify the following values: </p>
+/// <p>Inserts or deletes <code>SizeConstraint</code> objects (filters) in a <code>SizeConstraintSet</code>. For each <code>SizeConstraint</code> object, you specify the following values:</p>
 /// <ul>
-/// <li> <p>Whether to insert or delete the object from the array. If you want to change a <code>SizeConstraintSetUpdate</code> object, you delete the existing object and add a new one.</p> </li>
-/// <li> <p>The part of a web request that you want AWS WAF to evaluate, such as the length of a query string or the length of the <code>User-Agent</code> header.</p> </li>
-/// <li> <p>Whether to perform any transformations on the request, such as converting it to lowercase, before checking its length. Note that transformations of the request body are not supported because the AWS resource forwards only the first <code>8192</code> bytes of your request to AWS WAF.</p> <p>You can only specify a single type of TextTransformation.</p> </li>
-/// <li> <p>A <code>ComparisonOperator</code> used for evaluating the selected part of the request against the specified <code>Size</code>, such as equals, greater than, less than, and so on.</p> </li>
-/// <li> <p>The length, in bytes, that you want AWS WAF to watch for in selected part of the request. The length is computed after applying the transformation.</p> </li>
+/// <li><p>Whether to insert or delete the object from the array. If you want to change a <code>SizeConstraintSetUpdate</code> object, you delete the existing object and add a new one.</p></li>
+/// <li><p>The part of a web request that you want AWS WAF to evaluate, such as the length of a query string or the length of the <code>User-Agent</code> header.</p></li>
+/// <li><p>Whether to perform any transformations on the request, such as converting it to lowercase, before checking its length. Note that transformations of the request body are not supported because the AWS resource forwards only the first <code>8192</code> bytes of your request to AWS WAF.</p> <p>You can only specify a single type of TextTransformation.</p></li>
+/// <li><p>A <code>ComparisonOperator</code> used for evaluating the selected part of the request against the specified <code>Size</code>, such as equals, greater than, less than, and so on.</p></li>
+/// <li><p>The length, in bytes, that you want AWS WAF to watch for in selected part of the request. The length is computed after applying the transformation.</p></li>
 /// </ul>
 /// <p>For example, you can add a <code>SizeConstraintSetUpdate</code> object that matches web requests in which the length of the <code>User-Agent</code> header is greater than 100 bytes. You can then configure AWS WAF to block those requests.</p>
 /// <p>To create and configure a <code>SizeConstraintSet</code>, perform the following steps:</p>
 /// <ol>
-/// <li> <p>Create a <code>SizeConstraintSet.</code> For more information, see <code>CreateSizeConstraintSet</code>.</p> </li>
-/// <li> <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateSizeConstraintSet</code> request.</p> </li>
-/// <li> <p>Submit an <code>UpdateSizeConstraintSet</code> request to specify the part of the request that you want AWS WAF to inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</p> </li>
+/// <li><p>Create a <code>SizeConstraintSet.</code> For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
+/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateSizeConstraintSet</code> request.</p></li>
+/// <li><p>Submit an <code>UpdateSizeConstraintSet</code> request to specify the part of the request that you want AWS WAF to inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</p></li>
 /// </ol>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -161,9 +161,9 @@ impl UpdateSizeConstraintSetFluentBuilder {
     ///
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <li><p><code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code></p></li>
+    /// <li><p><code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::SizeConstraintSetUpdate) -> Self {
         self.inner = self.inner.updates(input);
@@ -171,9 +171,9 @@ impl UpdateSizeConstraintSetFluentBuilder {
     }
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <li><p><code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code></p></li>
+    /// <li><p><code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
@@ -181,9 +181,9 @@ impl UpdateSizeConstraintSetFluentBuilder {
     }
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <li><p><code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code></p></li>
+    /// <li><p><code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>> {
         self.inner.get_updates()

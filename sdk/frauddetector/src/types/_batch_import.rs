@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchImport {
-    /// <p>The ID of the batch import job. </p>
+    /// <p>The ID of the batch import job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the batch import job.</p>
     pub status: ::std::option::Option<crate::types::AsyncJobStatus>,
@@ -26,13 +26,13 @@ pub struct BatchImport {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of records processed by batch import job.</p>
     pub processed_records_count: ::std::option::Option<i32>,
-    /// <p>The number of records that failed to import. </p>
+    /// <p>The number of records that failed to import.</p>
     pub failed_records_count: ::std::option::Option<i32>,
     /// <p>The total number of records in the batch import job.</p>
     pub total_records_count: ::std::option::Option<i32>,
 }
 impl BatchImport {
-    /// <p>The ID of the batch import job. </p>
+    /// <p>The ID of the batch import job.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -76,7 +76,7 @@ impl BatchImport {
     pub fn processed_records_count(&self) -> ::std::option::Option<i32> {
         self.processed_records_count
     }
-    /// <p>The number of records that failed to import. </p>
+    /// <p>The number of records that failed to import.</p>
     pub fn failed_records_count(&self) -> ::std::option::Option<i32> {
         self.failed_records_count
     }
@@ -111,17 +111,17 @@ pub struct BatchImportBuilder {
     pub(crate) total_records_count: ::std::option::Option<i32>,
 }
 impl BatchImportBuilder {
-    /// <p>The ID of the batch import job. </p>
+    /// <p>The ID of the batch import job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the batch import job. </p>
+    /// <p>The ID of the batch import job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The ID of the batch import job. </p>
+    /// <p>The ID of the batch import job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
@@ -265,17 +265,17 @@ impl BatchImportBuilder {
     pub fn get_processed_records_count(&self) -> &::std::option::Option<i32> {
         &self.processed_records_count
     }
-    /// <p>The number of records that failed to import. </p>
+    /// <p>The number of records that failed to import.</p>
     pub fn failed_records_count(mut self, input: i32) -> Self {
         self.failed_records_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of records that failed to import. </p>
+    /// <p>The number of records that failed to import.</p>
     pub fn set_failed_records_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_records_count = input;
         self
     }
-    /// <p>The number of records that failed to import. </p>
+    /// <p>The number of records that failed to import.</p>
     pub fn get_failed_records_count(&self) -> &::std::option::Option<i32> {
         &self.failed_records_count
     }

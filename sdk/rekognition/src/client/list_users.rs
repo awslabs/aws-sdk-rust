@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`collection_id(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_collection_id):<br>required: **true**<br><p>The ID of an existing collection.</p><br>
-    ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of UsersID to return. </p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of UsersID to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagingation token to receive the next set of UsersID.</p><br>
     /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
     ///   - [`users(Option<Vec::<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>List of UsersID associated with the specified collection.</p>

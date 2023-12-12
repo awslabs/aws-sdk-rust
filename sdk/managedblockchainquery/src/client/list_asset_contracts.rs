@@ -5,11 +5,11 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`contract_filter(ContractFilter)`](crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::contract_filter) / [`set_contract_filter(Option<ContractFilter>)`](crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::set_contract_filter):<br>required: **true**<br><p>Contains the filter parameter for the request.</p><br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::set_next_token):<br>required: **false**<br><p> The pagination token that indicates the next set of results to retrieve.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of contracts to list.</p><br>
     /// - On success, responds with [`ListAssetContractsOutput`](crate::operation::list_asset_contracts::ListAssetContractsOutput) with field(s):
     ///   - [`contracts(Vec::<AssetContract>)`](crate::operation::list_asset_contracts::ListAssetContractsOutput::contracts): <p>An array of contract objects that contain the properties for each contract.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_asset_contracts::ListAssetContractsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_asset_contracts::ListAssetContractsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListAssetContractsError>`](crate::operation::list_asset_contracts::ListAssetContractsError)
     pub fn list_asset_contracts(&self) -> crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder {
         crate::operation::list_asset_contracts::builders::ListAssetContractsFluentBuilder::new(self.handle.clone())

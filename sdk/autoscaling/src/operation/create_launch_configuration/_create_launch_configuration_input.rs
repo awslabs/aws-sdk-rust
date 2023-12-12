@@ -56,7 +56,7 @@ pub struct CreateLaunchConfigurationInput {
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
-    /// <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+    /// <p>Valid values: <code>default</code> | <code>dedicated</code></p>
     pub placement_tenancy: ::std::option::Option<::std::string::String>,
     /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
@@ -155,7 +155,7 @@ impl CreateLaunchConfigurationInput {
     }
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
-    /// <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+    /// <p>Valid values: <code>default</code> | <code>dedicated</code></p>
     pub fn placement_tenancy(&self) -> ::std::option::Option<&str> {
         self.placement_tenancy.as_deref()
     }
@@ -506,21 +506,21 @@ impl CreateLaunchConfigurationInputBuilder {
     }
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
-    /// <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+    /// <p>Valid values: <code>default</code> | <code>dedicated</code></p>
     pub fn placement_tenancy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_tenancy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
-    /// <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+    /// <p>Valid values: <code>default</code> | <code>dedicated</code></p>
     pub fn set_placement_tenancy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_tenancy = input;
         self
     }
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
-    /// <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+    /// <p>Valid values: <code>default</code> | <code>dedicated</code></p>
     pub fn get_placement_tenancy(&self) -> &::std::option::Option<::std::string::String> {
         &self.placement_tenancy
     }

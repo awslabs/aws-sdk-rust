@@ -7,7 +7,7 @@ pub enum Error {
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence level is acceptable for your application, you can use the language in the exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>. </p>
+    /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence level is acceptable for your application, you can use the language in the exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>.</p>
     DetectedLanguageLowConfidenceException(crate::types::error::DetectedLanguageLowConfidenceException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -15,7 +15,7 @@ pub enum Error {
     InvalidFilterException(crate::types::error::InvalidFilterException),
     /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
+    /// <p>The request that you made is not valid. Check your request to determine why it's not valid and then retry the request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
@@ -23,15 +23,15 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Amazon Translate service is temporarily unavailable. Wait a bit and then retry your request.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
+    /// <p>The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request.</p>
     TextSizeLimitExceededException(crate::types::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
+    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>You have added too many tags to this resource. The maximum is 50 tags.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>Requested display language code is not supported.</p>
     UnsupportedDisplayLanguageCodeException(crate::types::error::UnsupportedDisplayLanguageCodeException),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>. </p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     UnsupportedLanguagePairException(crate::types::error::UnsupportedLanguagePairException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

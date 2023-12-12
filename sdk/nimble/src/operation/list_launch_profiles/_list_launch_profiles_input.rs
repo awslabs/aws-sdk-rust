@@ -7,11 +7,11 @@ pub struct ListLaunchProfilesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>Filter this request to launch profiles in any of the given states.</p>
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>>,
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl ListLaunchProfilesInput {
@@ -23,7 +23,7 @@ impl ListLaunchProfilesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -33,7 +33,7 @@ impl ListLaunchProfilesInput {
     pub fn states(&self) -> &[crate::types::LaunchProfileState] {
         self.states.as_deref().unwrap_or_default()
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -84,17 +84,17 @@ impl ListLaunchProfilesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
     }
-    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_id
     }
@@ -118,18 +118,18 @@ impl ListLaunchProfilesInputBuilder {
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>> {
         &self.states
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

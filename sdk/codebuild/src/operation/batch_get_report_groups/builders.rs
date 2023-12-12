@@ -22,7 +22,7 @@ impl BatchGetReportGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetReportGroups`.
 ///
-/// <p> Returns an array of report groups. </p>
+/// <p>Returns an array of report groups.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetReportGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl BatchGetReportGroupsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_report_group_arns`](Self::set_report_group_arns).
     ///
-    /// <p> An array of report group ARNs that identify the report groups to return. </p>
+    /// <p>An array of report group ARNs that identify the report groups to return.</p>
     pub fn report_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_group_arns(input.into());
         self
     }
-    /// <p> An array of report group ARNs that identify the report groups to return. </p>
+    /// <p>An array of report group ARNs that identify the report groups to return.</p>
     pub fn set_report_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_report_group_arns(input);
         self
     }
-    /// <p> An array of report group ARNs that identify the report groups to return. </p>
+    /// <p>An array of report group ARNs that identify the report groups to return.</p>
     pub fn get_report_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_report_group_arns()
     }

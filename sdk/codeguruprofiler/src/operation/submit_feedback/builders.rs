@@ -136,17 +136,17 @@ impl SubmitFeedbackFluentBuilder {
     pub fn get_anomaly_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_anomaly_instance_id()
     }
-    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// <p>The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.</p>
     pub fn r#type(mut self, input: crate::types::FeedbackType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// <p>The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FeedbackType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// <p>The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FeedbackType> {
         self.inner.get_type()
     }

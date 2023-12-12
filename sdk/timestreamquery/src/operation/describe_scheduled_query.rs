@@ -255,9 +255,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeSched
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeScheduledQueryError {
-    /// <p> You are not authorized to perform this action. </p>
+    /// <p>You are not authorized to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p> Timestream was unable to fully process this request because of an internal server error. </p>
+    /// <p>Timestream was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested endpoint was not valid.</p>
     InvalidEndpointException(crate::types::error::InvalidEndpointException),
@@ -265,7 +265,7 @@ pub enum DescribeScheduledQueryError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p> Invalid or malformed request. </p>
+    /// <p>Invalid or malformed request.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

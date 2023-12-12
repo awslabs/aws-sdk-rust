@@ -8,7 +8,7 @@ pub struct SupportedInstanceType {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory that is available to Amazon EMR from the <code>SupportedInstanceType</code>. The kernel and hypervisor software consume some memory, so this value might be lower than the overall memory for the instance type.</p>
     pub memory_gb: ::std::option::Option<f32>,
-    /// <p> <code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
+    /// <p><code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub storage_gb: ::std::option::Option<i32>,
     /// <p>The number of vCPUs available for the <code>SupportedInstanceType</code>.</p>
     pub vcpu: ::std::option::Option<i32>,
@@ -36,7 +36,7 @@ impl SupportedInstanceType {
     pub fn memory_gb(&self) -> ::std::option::Option<f32> {
         self.memory_gb
     }
-    /// <p> <code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
+    /// <p><code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub fn storage_gb(&self) -> ::std::option::Option<i32> {
         self.storage_gb
     }
@@ -125,17 +125,17 @@ impl SupportedInstanceTypeBuilder {
     pub fn get_memory_gb(&self) -> &::std::option::Option<f32> {
         &self.memory_gb
     }
-    /// <p> <code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
+    /// <p><code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub fn storage_gb(mut self, input: i32) -> Self {
         self.storage_gb = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
+    /// <p><code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub fn set_storage_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_gb = input;
         self
     }
-    /// <p> <code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
+    /// <p><code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub fn get_storage_gb(&self) -> &::std::option::Option<i32> {
         &self.storage_gb
     }

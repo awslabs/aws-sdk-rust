@@ -21,18 +21,18 @@ pub struct PredefinedLoadMetricSpecification {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li> <p>app/<load-balancer-name>
+    /// <li><p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p> </li>
-    /// <li> <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p></li>
+    /// <li><p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p> </li>
+    /// </target-group-name></p></li>
     /// </ul>
     /// <p>This is an example: app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
@@ -57,18 +57,18 @@ impl PredefinedLoadMetricSpecification {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li> <p>app/<load-balancer-name>
+    /// <li><p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p> </li>
-    /// <li> <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p></li>
+    /// <li><p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p> </li>
+    /// </target-group-name></p></li>
     /// </ul>
     /// <p>This is an example: app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
@@ -120,18 +120,18 @@ impl PredefinedLoadMetricSpecificationBuilder {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li> <p>app/<load-balancer-name>
+    /// <li><p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p> </li>
-    /// <li> <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p></li>
+    /// <li><p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p> </li>
+    /// </target-group-name></p></li>
     /// </ul>
     /// <p>This is an example: app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
@@ -153,18 +153,18 @@ impl PredefinedLoadMetricSpecificationBuilder {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li> <p>app/<load-balancer-name>
+    /// <li><p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p> </li>
-    /// <li> <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p></li>
+    /// <li><p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p> </li>
+    /// </target-group-name></p></li>
     /// </ul>
     /// <p>This is an example: app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
@@ -186,18 +186,18 @@ impl PredefinedLoadMetricSpecificationBuilder {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li> <p>app/<load-balancer-name>
+    /// <li><p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p> </li>
-    /// <li> <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p></li>
+    /// <li><p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p> </li>
+    /// </target-group-name></p></li>
     /// </ul>
     /// <p>This is an example: app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>

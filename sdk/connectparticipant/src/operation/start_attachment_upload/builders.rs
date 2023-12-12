@@ -23,7 +23,7 @@ impl StartAttachmentUploadInputBuilder {
 /// Fluent builder constructing a request to `StartAttachmentUpload`.
 ///
 /// <p>Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.</p> <note>
-/// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+/// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

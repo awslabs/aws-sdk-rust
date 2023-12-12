@@ -20,8 +20,8 @@ pub struct ImportStacksToStackSetInput {
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
-    /// <li> <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p> </li>
+    /// <li><p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <li><p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p></li>
     /// </ul>
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
@@ -59,8 +59,8 @@ impl ImportStacksToStackSetInput {
     }
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
-    /// <li> <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p> </li>
+    /// <li><p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <li><p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p></li>
     /// </ul>
     pub fn call_as(&self) -> ::std::option::Option<&crate::types::CallAs> {
         self.call_as.as_ref()
@@ -194,8 +194,8 @@ impl ImportStacksToStackSetInputBuilder {
     }
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
-    /// <li> <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p> </li>
+    /// <li><p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <li><p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p></li>
     /// </ul>
     pub fn call_as(mut self, input: crate::types::CallAs) -> Self {
         self.call_as = ::std::option::Option::Some(input);
@@ -203,8 +203,8 @@ impl ImportStacksToStackSetInputBuilder {
     }
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
-    /// <li> <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p> </li>
+    /// <li><p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <li><p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p></li>
     /// </ul>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.call_as = input;
@@ -212,8 +212,8 @@ impl ImportStacksToStackSetInputBuilder {
     }
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
-    /// <li> <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p> </li>
+    /// <li><p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <li><p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p></li>
     /// </ul>
     pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
         &self.call_as

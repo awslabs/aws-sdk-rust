@@ -15,7 +15,7 @@ pub struct VehicleSummary {
     pub decoder_manifest_arn: ::std::string::String,
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
 }
 impl VehicleSummary {
@@ -43,7 +43,7 @@ impl VehicleSummary {
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
@@ -142,18 +142,18 @@ impl VehicleSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     /// This field is required.
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
-    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }

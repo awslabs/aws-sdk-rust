@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaLinuxProcessParams {
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
-    /// <p>Default: <code>GreengrassContainer</code> </p>
+    /// <p>Default: <code>GreengrassContainer</code></p>
     pub isolation_mode: ::std::option::Option<crate::types::LambdaIsolationMode>,
     /// <p>The parameters for the container in which the Lambda function runs.</p>
     pub container_params: ::std::option::Option<crate::types::LambdaContainerParams>,
 }
 impl LambdaLinuxProcessParams {
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
-    /// <p>Default: <code>GreengrassContainer</code> </p>
+    /// <p>Default: <code>GreengrassContainer</code></p>
     pub fn isolation_mode(&self) -> ::std::option::Option<&crate::types::LambdaIsolationMode> {
         self.isolation_mode.as_ref()
     }
@@ -37,19 +37,19 @@ pub struct LambdaLinuxProcessParamsBuilder {
 }
 impl LambdaLinuxProcessParamsBuilder {
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
-    /// <p>Default: <code>GreengrassContainer</code> </p>
+    /// <p>Default: <code>GreengrassContainer</code></p>
     pub fn isolation_mode(mut self, input: crate::types::LambdaIsolationMode) -> Self {
         self.isolation_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
-    /// <p>Default: <code>GreengrassContainer</code> </p>
+    /// <p>Default: <code>GreengrassContainer</code></p>
     pub fn set_isolation_mode(mut self, input: ::std::option::Option<crate::types::LambdaIsolationMode>) -> Self {
         self.isolation_mode = input;
         self
     }
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
-    /// <p>Default: <code>GreengrassContainer</code> </p>
+    /// <p>Default: <code>GreengrassContainer</code></p>
     pub fn get_isolation_mode(&self) -> &::std::option::Option<crate::types::LambdaIsolationMode> {
         &self.isolation_mode
     }

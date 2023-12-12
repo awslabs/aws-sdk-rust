@@ -22,7 +22,7 @@ impl GetMetricsSummaryInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMetricsSummary`.
 ///
-/// <p>Returns top level metrics about an account from a specified date, including number of open findings, the categories with most findings, the scans with most open findings, and scans with most open critical findings. </p>
+/// <p>Returns top level metrics about an account from a specified date, including number of open findings, the categories with most findings, the scans with most open findings, and scans with most open critical findings.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetricsSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

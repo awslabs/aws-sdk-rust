@@ -6,16 +6,16 @@
 pub struct CustomLogSourceCrawlerConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
     /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <li><p>The managed policy <code>AWSGlueServiceRole</code></p></li>
+    /// <li><p>A custom policy granting access to your Amazon S3 Data Lake</p></li>
     /// </ul>
     pub role_arn: ::std::string::String,
 }
 impl CustomLogSourceCrawlerConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
     /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <li><p>The managed policy <code>AWSGlueServiceRole</code></p></li>
+    /// <li><p>A custom policy granting access to your Amazon S3 Data Lake</p></li>
     /// </ul>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
@@ -38,8 +38,8 @@ pub struct CustomLogSourceCrawlerConfigurationBuilder {
 impl CustomLogSourceCrawlerConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
     /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <li><p>The managed policy <code>AWSGlueServiceRole</code></p></li>
+    /// <li><p>A custom policy granting access to your Amazon S3 Data Lake</p></li>
     /// </ul>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -48,8 +48,8 @@ impl CustomLogSourceCrawlerConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
     /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <li><p>The managed policy <code>AWSGlueServiceRole</code></p></li>
+    /// <li><p>A custom policy granting access to your Amazon S3 Data Lake</p></li>
     /// </ul>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
@@ -57,8 +57,8 @@ impl CustomLogSourceCrawlerConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
     /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <li><p>The managed policy <code>AWSGlueServiceRole</code></p></li>
+    /// <li><p>A custom policy granting access to your Amazon S3 Data Lake</p></li>
     /// </ul>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn

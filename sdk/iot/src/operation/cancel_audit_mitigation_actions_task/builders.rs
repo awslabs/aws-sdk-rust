@@ -109,17 +109,17 @@ impl CancelAuditMitigationActionsTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the task that you want to cancel. </p>
+    /// <p>The unique identifier for the task that you want to cancel.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// <p>The unique identifier for the task that you want to cancel. </p>
+    /// <p>The unique identifier for the task that you want to cancel.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// <p>The unique identifier for the task that you want to cancel. </p>
+    /// <p>The unique identifier for the task that you want to cancel.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }

@@ -22,7 +22,7 @@ impl ListNotebookInstancesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListNotebookInstances`.
 ///
-/// <p>Returns a list of the SageMaker notebook instances in the requester's account in an Amazon Web Services Region. </p>
+/// <p>Returns a list of the SageMaker notebook instances in the requester's account in an Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNotebookInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,22 +114,22 @@ impl ListNotebookInstancesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_notebook_instances::paginator::ListNotebookInstancesPaginator {
         crate::operation::list_notebook_instances::paginator::ListNotebookInstancesPaginator::new(self.handle, self.inner)
     }
-    /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
-    /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
+    /// <p>If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances.</p> <note>
+    /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request.</p>
     /// </note>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
-    /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
+    /// <p>If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances.</p> <note>
+    /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
-    /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
+    /// <p>If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances.</p> <note>
+    /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request.</p>
     /// </note>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
@@ -162,17 +162,17 @@ impl ListNotebookInstancesFluentBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::NotebookInstanceSortKey> {
         self.inner.get_sort_by()
     }
-    /// <p>The sort order for results. </p>
+    /// <p>The sort order for results.</p>
     pub fn sort_order(mut self, input: crate::types::NotebookInstanceSortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>The sort order for results. </p>
+    /// <p>The sort order for results.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::NotebookInstanceSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p>The sort order for results. </p>
+    /// <p>The sort order for results.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::NotebookInstanceSortOrder> {
         self.inner.get_sort_order()
     }
@@ -190,17 +190,17 @@ impl ListNotebookInstancesFluentBuilder {
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_contains()
     }
-    /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
+    /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
         self
     }
-    /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
+    /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp).</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
-    /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
+    /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp).</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_before()
     }

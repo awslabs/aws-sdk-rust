@@ -12,7 +12,7 @@ pub struct UpdateOrganizationConfigurationInput {
     /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
     /// <p>If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which specific security standards are enabled and associate the policy with new organization accounts.</p>
     pub auto_enable_standards: ::std::option::Option<crate::types::AutoEnableStandards>,
-    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
+    /// <p>Provides information about the way an organization is configured in Security Hub.</p>
     pub organization_configuration: ::std::option::Option<crate::types::OrganizationConfiguration>,
 }
 impl UpdateOrganizationConfigurationInput {
@@ -29,7 +29,7 @@ impl UpdateOrganizationConfigurationInput {
     pub fn auto_enable_standards(&self) -> ::std::option::Option<&crate::types::AutoEnableStandards> {
         self.auto_enable_standards.as_ref()
     }
-    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
+    /// <p>Provides information about the way an organization is configured in Security Hub.</p>
     pub fn organization_configuration(&self) -> ::std::option::Option<&crate::types::OrganizationConfiguration> {
         self.organization_configuration.as_ref()
     }
@@ -94,17 +94,17 @@ impl UpdateOrganizationConfigurationInputBuilder {
     pub fn get_auto_enable_standards(&self) -> &::std::option::Option<crate::types::AutoEnableStandards> {
         &self.auto_enable_standards
     }
-    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
+    /// <p>Provides information about the way an organization is configured in Security Hub.</p>
     pub fn organization_configuration(mut self, input: crate::types::OrganizationConfiguration) -> Self {
         self.organization_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
+    /// <p>Provides information about the way an organization is configured in Security Hub.</p>
     pub fn set_organization_configuration(mut self, input: ::std::option::Option<crate::types::OrganizationConfiguration>) -> Self {
         self.organization_configuration = input;
         self
     }
-    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
+    /// <p>Provides information about the way an organization is configured in Security Hub.</p>
     pub fn get_organization_configuration(&self) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
         &self.organization_configuration
     }

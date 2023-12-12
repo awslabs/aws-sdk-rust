@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSyncConfigurationOutput {
-    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource. </p>
+    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource.</p>
     pub sync_configuration: ::std::option::Option<crate::types::SyncConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateSyncConfigurationOutput {
-    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource. </p>
+    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource.</p>
     pub fn sync_configuration(&self) -> ::std::option::Option<&crate::types::SyncConfiguration> {
         self.sync_configuration.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct CreateSyncConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateSyncConfigurationOutputBuilder {
-    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource. </p>
+    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource.</p>
     /// This field is required.
     pub fn sync_configuration(mut self, input: crate::types::SyncConfiguration) -> Self {
         self.sync_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource. </p>
+    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource.</p>
     pub fn set_sync_configuration(mut self, input: ::std::option::Option<crate::types::SyncConfiguration>) -> Self {
         self.sync_configuration = input;
         self
     }
-    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource. </p>
+    /// <p>The created sync configuration for the connection. A sync configuration allows Amazon Web Services to sync content from a Git repository to update a specified Amazon Web Services resource.</p>
     pub fn get_sync_configuration(&self) -> &::std::option::Option<crate::types::SyncConfiguration> {
         &self.sync_configuration
     }

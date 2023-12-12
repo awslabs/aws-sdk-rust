@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnomalySubscriptionOutput {
-    /// <p>A cost anomaly subscription ARN. </p>
+    /// <p>A cost anomaly subscription ARN.</p>
     pub subscription_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateAnomalySubscriptionOutput {
-    /// <p>A cost anomaly subscription ARN. </p>
+    /// <p>A cost anomaly subscription ARN.</p>
     pub fn subscription_arn(&self) -> &str {
         use std::ops::Deref;
         self.subscription_arn.deref()
@@ -34,18 +34,18 @@ pub struct UpdateAnomalySubscriptionOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAnomalySubscriptionOutputBuilder {
-    /// <p>A cost anomaly subscription ARN. </p>
+    /// <p>A cost anomaly subscription ARN.</p>
     /// This field is required.
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A cost anomaly subscription ARN. </p>
+    /// <p>A cost anomaly subscription ARN.</p>
     pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_arn = input;
         self
     }
-    /// <p>A cost anomaly subscription ARN. </p>
+    /// <p>A cost anomaly subscription ARN.</p>
     pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_arn
     }

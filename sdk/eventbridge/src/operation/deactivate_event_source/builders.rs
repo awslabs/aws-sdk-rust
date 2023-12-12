@@ -22,7 +22,7 @@ impl DeactivateEventSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeactivateEventSource`.
 ///
-/// <p>You can use this operation to temporarily stop receiving events from the specified partner event source. The matching event bus is not deleted. </p>
+/// <p>You can use this operation to temporarily stop receiving events from the specified partner event source. The matching event bus is not deleted.</p>
 /// <p>When you deactivate a partner event source, the source goes into PENDING state. If it remains in PENDING state for more than two weeks, it is deleted.</p>
 /// <p>To activate a deactivated partner event source, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html">ActivateEventSource</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

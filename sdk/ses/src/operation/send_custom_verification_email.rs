@@ -247,7 +247,7 @@ pub enum SendCustomVerificationEmailError {
     ConfigurationSetDoesNotExistException(crate::types::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that a custom verification email template with the name you specified does not exist.</p>
     CustomVerificationEmailTemplateDoesNotExistException(crate::types::error::CustomVerificationEmailTemplateDoesNotExistException),
-    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
+    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email.</p>
     FromEmailAddressNotVerifiedException(crate::types::error::FromEmailAddressNotVerifiedException),
     /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::types::error::MessageRejected),

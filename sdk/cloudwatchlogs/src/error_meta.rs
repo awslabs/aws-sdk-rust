@@ -8,15 +8,15 @@ pub enum Error {
     /// <p>This operation attempted to create a resource that already exists.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The event was already logged.</p> <important>
-    /// <p> <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted. </p>
+    /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted.</p>
     /// </important>
     DataAlreadyAcceptedException(crate::types::error::DataAlreadyAcceptedException),
     /// <p>The operation is not valid on the specified resource.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message. </p> <important>
-    /// <p> <code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code> regardless of receiving an invalid sequence token. </p>
+    /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message.</p> <important>
+    /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code> regardless of receiving an invalid sequence token.</p>
     /// </important>
     InvalidSequenceTokenException(crate::types::error::InvalidSequenceTokenException),
     /// <p>You have reached the maximum number of resources that can be created.</p>

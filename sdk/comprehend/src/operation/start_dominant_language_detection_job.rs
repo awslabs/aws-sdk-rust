@@ -281,7 +281,7 @@ pub enum StartDominantLanguageDetectionJobError {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

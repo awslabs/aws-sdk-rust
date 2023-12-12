@@ -245,21 +245,21 @@ pub enum ModifyDBInstanceError {
     /// <p>The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified security group.</p>
     /// <p>Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
-    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+    /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
     /// <p>You already have a instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
+    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>The upgrade failed because a resource that the depends on can't be modified.</p>
     DbUpgradeDependencyFailureFault(crate::types::error::DbUpgradeDependencyFailureFault),
     /// <p>The specified instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
-    /// <p> The specified instance isn't in the <i>available</i> state. </p>
+    /// <p>The specified instance isn't in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The state of the security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::types::error::InvalidDbSecurityGroupStateFault),
@@ -267,7 +267,7 @@ pub enum ModifyDBInstanceError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
-    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance. </p>
+    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -22,7 +22,7 @@ impl GetImportInputBuilder {
 }
 /// Fluent builder constructing a request to `GetImport`.
 ///
-/// <p> Returns information about a specific import. </p>
+/// <p>Returns information about a specific import.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetImportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,17 +102,17 @@ impl GetImportFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID for the import. </p>
+    /// <p>The ID for the import.</p>
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.import_id(input.into());
         self
     }
-    /// <p> The ID for the import. </p>
+    /// <p>The ID for the import.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_import_id(input);
         self
     }
-    /// <p> The ID for the import. </p>
+    /// <p>The ID for the import.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_import_id()
     }

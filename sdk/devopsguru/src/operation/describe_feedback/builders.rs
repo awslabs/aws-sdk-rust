@@ -22,7 +22,7 @@ impl DescribeFeedbackInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeFeedback`.
 ///
-/// <p> Returns the most recent feedback submitted in the current Amazon Web Services account and Region. </p>
+/// <p>Returns the most recent feedback submitted in the current Amazon Web Services account and Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeFeedbackFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the insight for which the feedback was provided. </p>
+    /// <p>The ID of the insight for which the feedback was provided.</p>
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.insight_id(input.into());
         self
     }
-    /// <p> The ID of the insight for which the feedback was provided. </p>
+    /// <p>The ID of the insight for which the feedback was provided.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_insight_id(input);
         self
     }
-    /// <p> The ID of the insight for which the feedback was provided. </p>
+    /// <p>The ID of the insight for which the feedback was provided.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_insight_id()
     }

@@ -6,13 +6,13 @@
 pub struct SseDescription {
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p> </li>
+    /// <li><p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
+    /// <li><p><code>UPDATING</code> - Server-side encryption is being updated.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::SseStatus>,
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
     /// <p>The KMS key ARN used for the KMS encryption.</p>
@@ -23,15 +23,15 @@ pub struct SseDescription {
 impl SseDescription {
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p> </li>
+    /// <li><p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
+    /// <li><p><code>UPDATING</code> - Server-side encryption is being updated.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::SseStatus> {
         self.status.as_ref()
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
         self.sse_type.as_ref()
@@ -64,8 +64,8 @@ pub struct SseDescriptionBuilder {
 impl SseDescriptionBuilder {
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p> </li>
+    /// <li><p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
+    /// <li><p><code>UPDATING</code> - Server-side encryption is being updated.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::SseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -73,8 +73,8 @@ impl SseDescriptionBuilder {
     }
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p> </li>
+    /// <li><p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
+    /// <li><p><code>UPDATING</code> - Server-side encryption is being updated.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SseStatus>) -> Self {
         self.status = input;
@@ -82,15 +82,15 @@ impl SseDescriptionBuilder {
     }
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p> </li>
+    /// <li><p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
+    /// <li><p><code>UPDATING</code> - Server-side encryption is being updated.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SseStatus> {
         &self.status
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
         self.sse_type = ::std::option::Option::Some(input);
@@ -98,7 +98,7 @@ impl SseDescriptionBuilder {
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
         self.sse_type = input;
@@ -106,7 +106,7 @@ impl SseDescriptionBuilder {
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type

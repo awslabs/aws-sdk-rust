@@ -108,31 +108,31 @@ impl DeleteFirewallRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_rule_group_id()
     }
-    /// <p>The ID of the domain list that's used in the rule. </p>
+    /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
-    /// <p>The ID of the domain list that's used in the rule. </p>
+    /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
-    /// <p>The ID of the domain list that's used in the rule. </p>
+    /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_domain_list_id()
     }

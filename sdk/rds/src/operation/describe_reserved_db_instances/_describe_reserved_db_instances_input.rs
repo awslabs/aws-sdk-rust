@@ -11,12 +11,12 @@ pub struct DescribeReservedDbInstancesInput {
     /// <p>The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
-    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub duration: ::std::option::Option<::std::string::String>,
     /// <p>The product description filter value. Specify this parameter to show only those reservations matching the specified product description.</p>
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
-    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub multi_az: ::std::option::Option<bool>,
@@ -47,7 +47,7 @@ impl DescribeReservedDbInstancesInput {
         self.db_instance_class.as_deref()
     }
     /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
-    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn duration(&self) -> ::std::option::Option<&str> {
         self.duration.as_deref()
     }
@@ -56,7 +56,7 @@ impl DescribeReservedDbInstancesInput {
         self.product_description.as_deref()
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
-    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub fn offering_type(&self) -> ::std::option::Option<&str> {
         self.offering_type.as_deref()
     }
@@ -154,19 +154,19 @@ impl DescribeReservedDbInstancesInputBuilder {
         &self.db_instance_class
     }
     /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
-    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
-    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
     }
     /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
-    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
         &self.duration
     }
@@ -185,19 +185,19 @@ impl DescribeReservedDbInstancesInputBuilder {
         &self.product_description
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
-    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
-    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_type = input;
         self
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
-    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.offering_type
     }

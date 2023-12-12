@@ -267,7 +267,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetStreamingS
 pub enum GetStreamingSessionBackupError {
     /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Another operation is in progress. </p>
+    /// <p>Another operation is in progress.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),

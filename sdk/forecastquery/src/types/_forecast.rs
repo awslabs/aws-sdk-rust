@@ -7,22 +7,22 @@ pub struct Forecast {
     /// <p>The forecast.</p>
     /// <p>The <i>string</i> of the string-to-array map is one of the following values:</p>
     /// <ul>
-    /// <li> <p>p10</p> </li>
-    /// <li> <p>p50</p> </li>
-    /// <li> <p>p90</p> </li>
+    /// <li><p>p10</p></li>
+    /// <li><p>p50</p></li>
+    /// <li><p>p90</p></li>
     /// </ul>
-    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
+    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code></p>
     pub predictions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DataPoint>>>,
 }
 impl Forecast {
     /// <p>The forecast.</p>
     /// <p>The <i>string</i> of the string-to-array map is one of the following values:</p>
     /// <ul>
-    /// <li> <p>p10</p> </li>
-    /// <li> <p>p50</p> </li>
-    /// <li> <p>p90</p> </li>
+    /// <li><p>p10</p></li>
+    /// <li><p>p50</p></li>
+    /// <li><p>p90</p></li>
     /// </ul>
-    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
+    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code></p>
     pub fn predictions(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DataPoint>>> {
@@ -50,11 +50,11 @@ impl ForecastBuilder {
     /// <p>The forecast.</p>
     /// <p>The <i>string</i> of the string-to-array map is one of the following values:</p>
     /// <ul>
-    /// <li> <p>p10</p> </li>
-    /// <li> <p>p50</p> </li>
-    /// <li> <p>p90</p> </li>
+    /// <li><p>p10</p></li>
+    /// <li><p>p50</p></li>
+    /// <li><p>p90</p></li>
     /// </ul>
-    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
+    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code></p>
     pub fn predictions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::DataPoint>) -> Self {
         let mut hash_map = self.predictions.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -64,11 +64,11 @@ impl ForecastBuilder {
     /// <p>The forecast.</p>
     /// <p>The <i>string</i> of the string-to-array map is one of the following values:</p>
     /// <ul>
-    /// <li> <p>p10</p> </li>
-    /// <li> <p>p50</p> </li>
-    /// <li> <p>p90</p> </li>
+    /// <li><p>p10</p></li>
+    /// <li><p>p50</p></li>
+    /// <li><p>p90</p></li>
     /// </ul>
-    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
+    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code></p>
     pub fn set_predictions(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DataPoint>>>,
@@ -79,11 +79,11 @@ impl ForecastBuilder {
     /// <p>The forecast.</p>
     /// <p>The <i>string</i> of the string-to-array map is one of the following values:</p>
     /// <ul>
-    /// <li> <p>p10</p> </li>
-    /// <li> <p>p50</p> </li>
-    /// <li> <p>p90</p> </li>
+    /// <li><p>p10</p></li>
+    /// <li><p>p50</p></li>
+    /// <li><p>p90</p></li>
     /// </ul>
-    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
+    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code></p>
     pub fn get_predictions(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DataPoint>>> {

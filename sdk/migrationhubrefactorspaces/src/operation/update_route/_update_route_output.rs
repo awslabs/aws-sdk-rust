@@ -3,42 +3,42 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteOutput {
-    /// <p> The unique identifier of the route. </p>
+    /// <p>The unique identifier of the route.</p>
     pub route_id: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+    /// <p>The ID of service in which the route was created. Traffic that matches this route is forwarded to this service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
-    /// <p> The ID of the application in which the route is being updated. </p>
+    /// <p>The ID of the application in which the route is being updated.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p> The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub state: ::std::option::Option<crate::types::RouteState>,
-    /// <p> A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl UpdateRouteOutput {
-    /// <p> The unique identifier of the route. </p>
+    /// <p>The unique identifier of the route.</p>
     pub fn route_id(&self) -> ::std::option::Option<&str> {
         self.route_id.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+    /// <p>The ID of service in which the route was created. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_id(&self) -> ::std::option::Option<&str> {
         self.service_id.as_deref()
     }
-    /// <p> The ID of the application in which the route is being updated. </p>
+    /// <p>The ID of the application in which the route is being updated.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p> The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::RouteState> {
         self.state.as_ref()
     }
-    /// <p> A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
@@ -68,87 +68,87 @@ pub struct UpdateRouteOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateRouteOutputBuilder {
-    /// <p> The unique identifier of the route. </p>
+    /// <p>The unique identifier of the route.</p>
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier of the route. </p>
+    /// <p>The unique identifier of the route.</p>
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_id = input;
         self
     }
-    /// <p> The unique identifier of the route. </p>
+    /// <p>The unique identifier of the route.</p>
     pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.route_id
     }
-    /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+    /// <p>The ID of service in which the route was created. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+    /// <p>The ID of service in which the route was created. Traffic that matches this route is forwarded to this service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
     }
-    /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+    /// <p>The ID of service in which the route was created. Traffic that matches this route is forwarded to this service.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_id
     }
-    /// <p> The ID of the application in which the route is being updated. </p>
+    /// <p>The ID of the application in which the route is being updated.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the application in which the route is being updated. </p>
+    /// <p>The ID of the application in which the route is being updated.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p> The ID of the application in which the route is being updated. </p>
+    /// <p>The ID of the application in which the route is being updated.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p> The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn state(mut self, input: crate::types::RouteState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteState>) -> Self {
         self.state = input;
         self
     }
-    /// <p> The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
         &self.state
     }
-    /// <p> A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p> A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }

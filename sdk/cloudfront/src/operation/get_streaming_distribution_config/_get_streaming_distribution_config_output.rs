@@ -6,7 +6,7 @@
 pub struct GetStreamingDistributionConfigOutput {
     /// <p>The streaming distribution's configuration information.</p>
     pub streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
-    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl GetStreamingDistributionConfigOutput {
     pub fn streaming_distribution_config(&self) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
     }
-    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -55,17 +55,17 @@ impl GetStreamingDistributionConfigOutputBuilder {
     pub fn get_streaming_distribution_config(&self) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
         &self.streaming_distribution_config
     }
-    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }
-    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }

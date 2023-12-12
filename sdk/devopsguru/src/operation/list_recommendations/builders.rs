@@ -22,7 +22,7 @@ impl ListRecommendationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRecommendations`.
 ///
-/// <p> Returns a list of a specified insight's recommendations. Each recommendation includes a list of related metrics and a list of related events. </p>
+/// <p>Returns a list of a specified insight's recommendations. Each recommendation includes a list of related metrics and a list of related events.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListRecommendationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_recommendations::paginator::ListRecommendationsPaginator {
         crate::operation::list_recommendations::paginator::ListRecommendationsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The ID of the requested insight. </p>
+    /// <p>The ID of the requested insight.</p>
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.insight_id(input.into());
         self
     }
-    /// <p> The ID of the requested insight. </p>
+    /// <p>The ID of the requested insight.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_insight_id(input);
         self
     }
-    /// <p> The ID of the requested insight. </p>
+    /// <p>The ID of the requested insight.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_insight_id()
     }
@@ -156,17 +156,17 @@ impl ListRecommendationsFluentBuilder {
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
         self.inner.get_locale()
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }

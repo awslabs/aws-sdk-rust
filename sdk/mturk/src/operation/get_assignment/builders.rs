@@ -22,7 +22,7 @@ impl GetAssignmentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAssignment`.
 ///
-/// <p> The <code>GetAssignment</code> operation retrieves the details of the specified Assignment. </p>
+/// <p>The <code>GetAssignment</code> operation retrieves the details of the specified Assignment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssignmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

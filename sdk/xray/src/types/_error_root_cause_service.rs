@@ -12,7 +12,7 @@ pub struct ErrorRootCauseService {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The account ID associated to the service.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The path of root cause entities found on the service. </p>
+    /// <p>The path of root cause entities found on the service.</p>
     pub entity_path: ::std::option::Option<::std::vec::Vec<crate::types::ErrorRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub inferred: ::std::option::Option<bool>,
@@ -36,7 +36,7 @@ impl ErrorRootCauseService {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The path of root cause entities found on the service. </p>
+    /// <p>The path of root cause entities found on the service.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_path.is_none()`.
     pub fn entity_path(&self) -> &[crate::types::ErrorRootCauseEntity] {
@@ -132,19 +132,19 @@ impl ErrorRootCauseServiceBuilder {
     ///
     /// To override the contents of this collection use [`set_entity_path`](Self::set_entity_path).
     ///
-    /// <p>The path of root cause entities found on the service. </p>
+    /// <p>The path of root cause entities found on the service.</p>
     pub fn entity_path(mut self, input: crate::types::ErrorRootCauseEntity) -> Self {
         let mut v = self.entity_path.unwrap_or_default();
         v.push(input);
         self.entity_path = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The path of root cause entities found on the service. </p>
+    /// <p>The path of root cause entities found on the service.</p>
     pub fn set_entity_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorRootCauseEntity>>) -> Self {
         self.entity_path = input;
         self
     }
-    /// <p>The path of root cause entities found on the service. </p>
+    /// <p>The path of root cause entities found on the service.</p>
     pub fn get_entity_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorRootCauseEntity>> {
         &self.entity_path
     }

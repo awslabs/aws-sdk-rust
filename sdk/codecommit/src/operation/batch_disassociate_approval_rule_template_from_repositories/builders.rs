@@ -22,7 +22,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDisassociateApprovalRuleTemplateFromRepositories`.
 ///
-/// <p>Removes the association between an approval rule template and one or more specified repositories. </p>
+/// <p>Removes the association between an approval rule template and one or more specified repositories.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

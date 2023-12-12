@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceMetadataOptionsResponse {
     /// <p>The state of the metadata option changes.</p>
-    /// <p> <code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
-    /// <p> <code>applied</code> - The metadata options have been successfully applied on the instance.</p>
+    /// <p><code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
+    /// <p><code>applied</code> - The metadata options have been successfully applied on the instance.</p>
     pub state: ::std::option::Option<crate::types::InstanceMetadataOptionsState>,
     /// <p>IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code> (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).</p>
     /// <ul>
-    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
-    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// <li><p><code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p></li>
+    /// <li><p><code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: <code>optional</code> </p>
+    /// <p>Default: <code>optional</code></p>
     pub http_tokens: ::std::option::Option<crate::types::HttpTokensState>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
     /// <p>Default: 1</p>
@@ -29,17 +29,17 @@ pub struct InstanceMetadataOptionsResponse {
 }
 impl InstanceMetadataOptionsResponse {
     /// <p>The state of the metadata option changes.</p>
-    /// <p> <code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
-    /// <p> <code>applied</code> - The metadata options have been successfully applied on the instance.</p>
+    /// <p><code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
+    /// <p><code>applied</code> - The metadata options have been successfully applied on the instance.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptionsState> {
         self.state.as_ref()
     }
     /// <p>IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code> (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).</p>
     /// <ul>
-    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
-    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// <li><p><code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p></li>
+    /// <li><p><code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: <code>optional</code> </p>
+    /// <p>Default: <code>optional</code></p>
     pub fn http_tokens(&self) -> ::std::option::Option<&crate::types::HttpTokensState> {
         self.http_tokens.as_ref()
     }
@@ -83,51 +83,51 @@ pub struct InstanceMetadataOptionsResponseBuilder {
 }
 impl InstanceMetadataOptionsResponseBuilder {
     /// <p>The state of the metadata option changes.</p>
-    /// <p> <code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
-    /// <p> <code>applied</code> - The metadata options have been successfully applied on the instance.</p>
+    /// <p><code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
+    /// <p><code>applied</code> - The metadata options have been successfully applied on the instance.</p>
     pub fn state(mut self, input: crate::types::InstanceMetadataOptionsState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the metadata option changes.</p>
-    /// <p> <code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
-    /// <p> <code>applied</code> - The metadata options have been successfully applied on the instance.</p>
+    /// <p><code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
+    /// <p><code>applied</code> - The metadata options have been successfully applied on the instance.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptionsState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the metadata option changes.</p>
-    /// <p> <code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
-    /// <p> <code>applied</code> - The metadata options have been successfully applied on the instance.</p>
+    /// <p><code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
+    /// <p><code>applied</code> - The metadata options have been successfully applied on the instance.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptionsState> {
         &self.state
     }
     /// <p>IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code> (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).</p>
     /// <ul>
-    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
-    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// <li><p><code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p></li>
+    /// <li><p><code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: <code>optional</code> </p>
+    /// <p>Default: <code>optional</code></p>
     pub fn http_tokens(mut self, input: crate::types::HttpTokensState) -> Self {
         self.http_tokens = ::std::option::Option::Some(input);
         self
     }
     /// <p>IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code> (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).</p>
     /// <ul>
-    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
-    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// <li><p><code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p></li>
+    /// <li><p><code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: <code>optional</code> </p>
+    /// <p>Default: <code>optional</code></p>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::HttpTokensState>) -> Self {
         self.http_tokens = input;
         self
     }
     /// <p>IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code> (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).</p>
     /// <ul>
-    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
-    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// <li><p><code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p></li>
+    /// <li><p><code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: <code>optional</code> </p>
+    /// <p>Default: <code>optional</code></p>
     pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::HttpTokensState> {
         &self.http_tokens
     }

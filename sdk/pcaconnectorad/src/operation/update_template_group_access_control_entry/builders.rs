@@ -22,7 +22,7 @@ impl UpdateTemplateGroupAccessControlEntryInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTemplateGroupAccessControlEntry`.
 ///
-/// <p>Update a group access control entry you created using <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplateGroupAccessControlEntry.html">CreateTemplateGroupAccessControlEntry</a>. </p>
+/// <p>Update a group access control entry you created using <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplateGroupAccessControlEntry.html">CreateTemplateGroupAccessControlEntry</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTemplateGroupAccessControlEntryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

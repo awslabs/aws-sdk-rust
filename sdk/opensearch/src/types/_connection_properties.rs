@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionProperties {
     /// <important>
-    /// <p>The Endpoint attribute cannot be modified. </p>
+    /// <p>The Endpoint attribute cannot be modified.</p>
     /// </important>
     /// <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct ConnectionProperties {
 }
 impl ConnectionProperties {
     /// <important>
-    /// <p>The Endpoint attribute cannot be modified. </p>
+    /// <p>The Endpoint attribute cannot be modified.</p>
     /// </important>
     /// <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
@@ -41,7 +41,7 @@ pub struct ConnectionPropertiesBuilder {
 }
 impl ConnectionPropertiesBuilder {
     /// <important>
-    /// <p>The Endpoint attribute cannot be modified. </p>
+    /// <p>The Endpoint attribute cannot be modified.</p>
     /// </important>
     /// <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -49,7 +49,7 @@ impl ConnectionPropertiesBuilder {
         self
     }
     /// <important>
-    /// <p>The Endpoint attribute cannot be modified. </p>
+    /// <p>The Endpoint attribute cannot be modified.</p>
     /// </important>
     /// <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -57,7 +57,7 @@ impl ConnectionPropertiesBuilder {
         self
     }
     /// <important>
-    /// <p>The Endpoint attribute cannot be modified. </p>
+    /// <p>The Endpoint attribute cannot be modified.</p>
     /// </important>
     /// <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {

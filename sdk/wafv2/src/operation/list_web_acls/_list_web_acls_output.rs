@@ -5,7 +5,7 @@
 pub struct ListWebAcLsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
-    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub web_acls: ::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListWebAcLsOutput {
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.web_acls.is_none()`.
     pub fn web_acls(&self) -> &[crate::types::WebAclSummary] {
@@ -60,19 +60,19 @@ impl ListWebAcLsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_web_acls`](Self::set_web_acls).
     ///
-    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn web_acls(mut self, input: crate::types::WebAclSummary) -> Self {
         let mut v = self.web_acls.unwrap_or_default();
         v.push(input);
         self.web_acls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn set_web_acls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>>) -> Self {
         self.web_acls = input;
         self
     }
-    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn get_web_acls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>> {
         &self.web_acls
     }

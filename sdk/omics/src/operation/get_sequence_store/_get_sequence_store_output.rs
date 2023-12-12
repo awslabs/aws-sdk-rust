@@ -15,7 +15,7 @@ pub struct GetSequenceStoreOutput {
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>When the store was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fallback_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -46,7 +46,7 @@ impl GetSequenceStoreOutput {
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fn fallback_location(&self) -> ::std::option::Option<&str> {
         self.fallback_location.as_deref()
     }
@@ -164,17 +164,17 @@ impl GetSequenceStoreOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fn fallback_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fallback_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fn set_fallback_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fallback_location = input;
         self
     }
-    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fn get_fallback_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.fallback_location
     }

@@ -6,7 +6,7 @@
 pub struct BatchUpdateDevicePositionError {
     /// <p>The device associated with the failed location update.</p>
     pub device_id: ::std::string::String,
-    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub sample_time: ::aws_smithy_types::DateTime,
     /// <p>Contains details related to the error code such as the error code and error message.</p>
     pub error: ::std::option::Option<crate::types::BatchItemError>,
@@ -17,7 +17,7 @@ impl BatchUpdateDevicePositionError {
         use std::ops::Deref;
         self.device_id.deref()
     }
-    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn sample_time(&self) -> &::aws_smithy_types::DateTime {
         &self.sample_time
     }
@@ -57,18 +57,18 @@ impl BatchUpdateDevicePositionErrorBuilder {
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_id
     }
-    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// This field is required.
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sample_time = input;
         self
     }
-    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.sample_time
     }

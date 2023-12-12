@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeManagedProductsByVendorOutput {
-    /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
+    /// <p>High-level information for the managed rule groups owned by the specified vendor.</p>
     pub managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }
 impl DescribeManagedProductsByVendorOutput {
-    /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
+    /// <p>High-level information for the managed rule groups owned by the specified vendor.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_products.is_none()`.
     pub fn managed_products(&self) -> &[crate::types::ManagedProductDescriptor] {
@@ -39,19 +39,19 @@ impl DescribeManagedProductsByVendorOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_products`](Self::set_managed_products).
     ///
-    /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
+    /// <p>High-level information for the managed rule groups owned by the specified vendor.</p>
     pub fn managed_products(mut self, input: crate::types::ManagedProductDescriptor) -> Self {
         let mut v = self.managed_products.unwrap_or_default();
         v.push(input);
         self.managed_products = ::std::option::Option::Some(v);
         self
     }
-    /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
+    /// <p>High-level information for the managed rule groups owned by the specified vendor.</p>
     pub fn set_managed_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>) -> Self {
         self.managed_products = input;
         self
     }
-    /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
+    /// <p>High-level information for the managed rule groups owned by the specified vendor.</p>
     pub fn get_managed_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>> {
         &self.managed_products
     }

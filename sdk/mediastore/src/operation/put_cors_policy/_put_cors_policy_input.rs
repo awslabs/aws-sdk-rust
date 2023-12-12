@@ -5,7 +5,7 @@
 pub struct PutCorsPolicyInput {
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
-    /// <p>The CORS policy to apply to the container. </p>
+    /// <p>The CORS policy to apply to the container.</p>
     pub cors_policy: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
 }
 impl PutCorsPolicyInput {
@@ -13,7 +13,7 @@ impl PutCorsPolicyInput {
     pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>The CORS policy to apply to the container. </p>
+    /// <p>The CORS policy to apply to the container.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cors_policy.is_none()`.
     pub fn cors_policy(&self) -> &[crate::types::CorsRule] {
@@ -54,19 +54,19 @@ impl PutCorsPolicyInputBuilder {
     ///
     /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
     ///
-    /// <p>The CORS policy to apply to the container. </p>
+    /// <p>The CORS policy to apply to the container.</p>
     pub fn cors_policy(mut self, input: crate::types::CorsRule) -> Self {
         let mut v = self.cors_policy.unwrap_or_default();
         v.push(input);
         self.cors_policy = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The CORS policy to apply to the container. </p>
+    /// <p>The CORS policy to apply to the container.</p>
     pub fn set_cors_policy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>) -> Self {
         self.cors_policy = input;
         self
     }
-    /// <p>The CORS policy to apply to the container. </p>
+    /// <p>The CORS policy to apply to the container.</p>
     pub fn get_cors_policy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
         &self.cors_policy
     }

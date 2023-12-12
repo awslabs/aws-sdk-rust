@@ -136,17 +136,17 @@ impl UpdateResourceEventConfigurationFluentBuilder {
     pub fn get_identifier_type(&self) -> &::std::option::Option<crate::types::IdentifierType> {
         self.inner.get_identifier_type()
     }
-    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code></p>
     pub fn partner_type(mut self, input: crate::types::EventNotificationPartnerType) -> Self {
         self.inner = self.inner.partner_type(input);
         self
     }
-    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code></p>
     pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::EventNotificationPartnerType>) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
     }
-    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code></p>
     pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
         self.inner.get_partner_type()
     }

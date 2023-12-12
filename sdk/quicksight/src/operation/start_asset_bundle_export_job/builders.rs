@@ -144,13 +144,13 @@ impl StartAssetBundleExportJobFluentBuilder {
     ///
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
-    /// <li> <p> <code>Analysis</code> </p> </li>
-    /// <li> <p> <code>Dashboard</code> </p> </li>
-    /// <li> <p> <code>DataSet</code> </p> </li>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>RefreshSchedule</code> </p> </li>
-    /// <li> <p> <code>Theme</code> </p> </li>
-    /// <li> <p> <code>VPCConnection</code> </p> </li>
+    /// <li><p><code>Analysis</code></p></li>
+    /// <li><p><code>Dashboard</code></p></li>
+    /// <li><p><code>DataSet</code></p></li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>RefreshSchedule</code></p></li>
+    /// <li><p><code>Theme</code></p></li>
+    /// <li><p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,13 +159,13 @@ impl StartAssetBundleExportJobFluentBuilder {
     }
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
-    /// <li> <p> <code>Analysis</code> </p> </li>
-    /// <li> <p> <code>Dashboard</code> </p> </li>
-    /// <li> <p> <code>DataSet</code> </p> </li>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>RefreshSchedule</code> </p> </li>
-    /// <li> <p> <code>Theme</code> </p> </li>
-    /// <li> <p> <code>VPCConnection</code> </p> </li>
+    /// <li><p><code>Analysis</code></p></li>
+    /// <li><p><code>Dashboard</code></p></li>
+    /// <li><p><code>DataSet</code></p></li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>RefreshSchedule</code></p></li>
+    /// <li><p><code>Theme</code></p></li>
+    /// <li><p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -174,13 +174,13 @@ impl StartAssetBundleExportJobFluentBuilder {
     }
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
-    /// <li> <p> <code>Analysis</code> </p> </li>
-    /// <li> <p> <code>Dashboard</code> </p> </li>
-    /// <li> <p> <code>DataSet</code> </p> </li>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>RefreshSchedule</code> </p> </li>
-    /// <li> <p> <code>Theme</code> </p> </li>
-    /// <li> <p> <code>VPCConnection</code> </p> </li>
+    /// <li><p><code>Analysis</code></p></li>
+    /// <li><p><code>Dashboard</code></p></li>
+    /// <li><p><code>DataSet</code></p></li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>RefreshSchedule</code></p></li>
+    /// <li><p><code>Theme</code></p></li>
+    /// <li><p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -239,31 +239,31 @@ impl StartAssetBundleExportJobFluentBuilder {
     ) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
         self.inner.get_cloud_formation_override_property_configuration()
     }
-    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported. </p>
+    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.</p>
     pub fn include_permissions(mut self, input: bool) -> Self {
         self.inner = self.inner.include_permissions(input);
         self
     }
-    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported. </p>
+    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.</p>
     pub fn set_include_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_permissions(input);
         self
     }
-    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported. </p>
+    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.</p>
     pub fn get_include_permissions(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_permissions()
     }
-    /// <p> A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
+    /// <p>A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
     pub fn include_tags(mut self, input: bool) -> Self {
         self.inner = self.inner.include_tags(input);
         self
     }
-    /// <p> A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
+    /// <p>A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
     pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_tags(input);
         self
     }
-    /// <p> A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
+    /// <p>A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
     pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_tags()
     }

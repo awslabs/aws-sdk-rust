@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AddRoleToDBCl
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AddRoleToDBClusterError {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.</p>
     DbClusterRoleAlreadyExistsFault(crate::types::error::DbClusterRoleAlreadyExistsFault),

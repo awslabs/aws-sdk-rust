@@ -22,7 +22,7 @@ impl DeleteCoipCidrInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCoipCidr`.
 ///
-/// <p> Deletes a range of customer-owned IP addresses. </p>
+/// <p>Deletes a range of customer-owned IP addresses.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCoipCidrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteCoipCidrFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> A customer-owned IP address range that you want to delete. </p>
+    /// <p>A customer-owned IP address range that you want to delete.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
         self
     }
-    /// <p> A customer-owned IP address range that you want to delete. </p>
+    /// <p>A customer-owned IP address range that you want to delete.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self
     }
-    /// <p> A customer-owned IP address range that you want to delete. </p>
+    /// <p>A customer-owned IP address range that you want to delete.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr()
     }
-    /// <p> The ID of the customer-owned address pool. </p>
+    /// <p>The ID of the customer-owned address pool.</p>
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.coip_pool_id(input.into());
         self
     }
-    /// <p> The ID of the customer-owned address pool. </p>
+    /// <p>The ID of the customer-owned address pool.</p>
     pub fn set_coip_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_coip_pool_id(input);
         self
     }
-    /// <p> The ID of the customer-owned address pool. </p>
+    /// <p>The ID of the customer-owned address pool.</p>
     pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_coip_pool_id()
     }

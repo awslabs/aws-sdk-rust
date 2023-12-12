@@ -280,7 +280,7 @@ pub enum StartDetectMitigationActionsTaskError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>A limit has been exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p> This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken. </p>
+    /// <p>This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken.</p>
     TaskAlreadyExistsException(crate::types::error::TaskAlreadyExistsException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingRulesAssociatedToPricingPlanInput {
-    /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub billing_period: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub pricing_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> The optional pagination token returned by a previous call. </p>
+    /// <p>The optional pagination token returned by a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPricingRulesAssociatedToPricingPlanInput {
-    /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn billing_period(&self) -> ::std::option::Option<&str> {
         self.billing_period.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub fn pricing_plan_arn(&self) -> ::std::option::Option<&str> {
         self.pricing_plan_arn.as_deref()
     }
@@ -25,7 +25,7 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> The optional pagination token returned by a previous call. </p>
+    /// <p>The optional pagination token returned by a previous call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,32 +48,32 @@ pub struct ListPricingRulesAssociatedToPricingPlanInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
-    /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
-    /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.billing_period
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     /// This field is required.
     pub fn pricing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub fn set_pricing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_plan_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub fn get_pricing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pricing_plan_arn
     }
@@ -91,17 +91,17 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> The optional pagination token returned by a previous call. </p>
+    /// <p>The optional pagination token returned by a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The optional pagination token returned by a previous call. </p>
+    /// <p>The optional pagination token returned by a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The optional pagination token returned by a previous call. </p>
+    /// <p>The optional pagination token returned by a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

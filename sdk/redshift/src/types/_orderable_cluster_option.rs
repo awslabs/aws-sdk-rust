@@ -6,7 +6,7 @@
 pub struct OrderableClusterOption {
     /// <p>The version of the orderable cluster.</p>
     pub cluster_version: ::std::option::Option<::std::string::String>,
-    /// <p>The cluster type, for example <code>multi-node</code>. </p>
+    /// <p>The cluster type, for example <code>multi-node</code>.</p>
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the orderable cluster.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl OrderableClusterOption {
     pub fn cluster_version(&self) -> ::std::option::Option<&str> {
         self.cluster_version.as_deref()
     }
-    /// <p>The cluster type, for example <code>multi-node</code>. </p>
+    /// <p>The cluster type, for example <code>multi-node</code>.</p>
     pub fn cluster_type(&self) -> ::std::option::Option<&str> {
         self.cluster_type.as_deref()
     }
@@ -64,17 +64,17 @@ impl OrderableClusterOptionBuilder {
     pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_version
     }
-    /// <p>The cluster type, for example <code>multi-node</code>. </p>
+    /// <p>The cluster type, for example <code>multi-node</code>.</p>
     pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cluster type, for example <code>multi-node</code>. </p>
+    /// <p>The cluster type, for example <code>multi-node</code>.</p>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type = input;
         self
     }
-    /// <p>The cluster type, for example <code>multi-node</code>. </p>
+    /// <p>The cluster type, for example <code>multi-node</code>.</p>
     pub fn get_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_type
     }

@@ -42,7 +42,7 @@ pub struct StreamingSession {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that started the streaming session.</p>
     pub started_by: ::std::option::Option<::std::string::String>,
-    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
+    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.</p>
     pub stop_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The backup ID used to restore a streaming session.</p>
     pub started_from_backup_id: ::std::option::Option<::std::string::String>,
@@ -59,8 +59,8 @@ pub struct StreamingSession {
     pub volume_configuration: ::std::option::Option<crate::types::VolumeConfiguration>,
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
-    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
-    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// <li><p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p></li>
+    /// <li><p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p></li>
     /// </ul>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
     pub automatic_termination_mode: ::std::option::Option<crate::types::AutomaticTerminationMode>,
@@ -142,7 +142,7 @@ impl StreamingSession {
     pub fn started_by(&self) -> ::std::option::Option<&str> {
         self.started_by.as_deref()
     }
-    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
+    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.</p>
     pub fn stop_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stop_at.as_ref()
     }
@@ -173,8 +173,8 @@ impl StreamingSession {
     }
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
-    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
-    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// <li><p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p></li>
+    /// <li><p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p></li>
     /// </ul>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
     pub fn automatic_termination_mode(&self) -> ::std::option::Option<&crate::types::AutomaticTerminationMode> {
@@ -493,17 +493,17 @@ impl StreamingSessionBuilder {
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.started_by
     }
-    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
+    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.</p>
     pub fn stop_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
+    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.</p>
     pub fn set_stop_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_at = input;
         self
     }
-    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
+    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves.</p>
     pub fn get_stop_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stop_at
     }
@@ -596,8 +596,8 @@ impl StreamingSessionBuilder {
     }
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
-    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
-    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// <li><p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p></li>
+    /// <li><p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p></li>
     /// </ul>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
     pub fn automatic_termination_mode(mut self, input: crate::types::AutomaticTerminationMode) -> Self {
@@ -606,8 +606,8 @@ impl StreamingSessionBuilder {
     }
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
-    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
-    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// <li><p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p></li>
+    /// <li><p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p></li>
     /// </ul>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
     pub fn set_automatic_termination_mode(mut self, input: ::std::option::Option<crate::types::AutomaticTerminationMode>) -> Self {
@@ -616,8 +616,8 @@ impl StreamingSessionBuilder {
     }
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
-    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
-    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// <li><p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p></li>
+    /// <li><p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p></li>
     /// </ul>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
     pub fn get_automatic_termination_mode(&self) -> &::std::option::Option<crate::types::AutomaticTerminationMode> {

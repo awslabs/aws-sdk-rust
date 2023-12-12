@@ -23,7 +23,7 @@ impl CreateApplicationInputBuilder {
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
 /// <p>Creates an application.</p>
-/// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on Elastic fleet streaming instances. An application consists of the launch details, icon, and display name. Applications are associated with an app block that contains the application binaries and other files. The applications assigned to an Elastic fleet are the applications users can launch. </p>
+/// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on Elastic fleet streaming instances. An application consists of the launch details, icon, and display name. Applications are associated with an app block that contains the application binaries and other files. The applications assigned to an Elastic fleet are the applications users can launch.</p>
 /// <p>This is only supported for Elastic fleets.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {

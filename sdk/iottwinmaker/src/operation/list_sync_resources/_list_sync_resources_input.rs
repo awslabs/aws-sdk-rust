@@ -12,9 +12,9 @@ pub struct ListSyncResourcesInput {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <li><p>Filter with state</p></li>
+    /// <li><p>Filter with ResourceType and ResourceId</p></li>
+    /// <li><p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>,
     /// <p>The maximum number of results to return at one time. The default is 50.</p>
@@ -37,9 +37,9 @@ impl ListSyncResourcesInput {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <li><p>Filter with state</p></li>
+    /// <li><p>Filter with ResourceType and ResourceId</p></li>
+    /// <li><p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -117,9 +117,9 @@ impl ListSyncResourcesInputBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <li><p>Filter with state</p></li>
+    /// <li><p>Filter with ResourceType and ResourceId</p></li>
+    /// <li><p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::SyncResourceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -130,9 +130,9 @@ impl ListSyncResourcesInputBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <li><p>Filter with state</p></li>
+    /// <li><p>Filter with ResourceType and ResourceId</p></li>
+    /// <li><p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>) -> Self {
         self.filters = input;
@@ -141,9 +141,9 @@ impl ListSyncResourcesInputBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <li><p>Filter with state</p></li>
+    /// <li><p>Filter with ResourceType and ResourceId</p></li>
+    /// <li><p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
         &self.filters

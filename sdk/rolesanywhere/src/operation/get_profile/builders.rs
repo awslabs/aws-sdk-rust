@@ -23,7 +23,7 @@ impl GetProfileInputBuilder {
 /// Fluent builder constructing a request to `GetProfile`.
 ///
 /// <p>Gets a profile.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:GetProfile</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:GetProfile</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePortfolio`](crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder::set_accept_language):<br>required: **false**<br><p>The language code.</p>  <ul>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul><br>
+    ///   - [`accept_language(impl Into<String>)`](crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder::set_accept_language):<br>required: **false**<br><p>The language code.</p> <ul>  <li><p><code>jp</code> - Japanese</p></li>  <li><p><code>zh</code> - Chinese</p></li> </ul><br>
     ///   - [`id(impl Into<String>)`](crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder::set_id):<br>required: **true**<br><p>The portfolio identifier.</p><br>
     /// - On success, responds with [`DescribePortfolioOutput`](crate::operation::describe_portfolio::DescribePortfolioOutput) with field(s):
     ///   - [`portfolio_detail(Option<PortfolioDetail>)`](crate::operation::describe_portfolio::DescribePortfolioOutput::portfolio_detail): <p>Information about the portfolio.</p>

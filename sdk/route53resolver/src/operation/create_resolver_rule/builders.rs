@@ -108,17 +108,17 @@ impl CreateResolverRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_creator_request_id()
     }
@@ -178,19 +178,19 @@ impl CreateResolverRuleFluentBuilder {
     /// To override the contents of this collection use [`set_target_ips`](Self::set_target_ips).
     ///
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
-    /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
+    /// <p><code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
     pub fn target_ips(mut self, input: crate::types::TargetAddress) -> Self {
         self.inner = self.inner.target_ips(input);
         self
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
-    /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
+    /// <p><code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
     pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>) -> Self {
         self.inner = self.inner.set_target_ips(input);
         self
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
-    /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
+    /// <p><code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
     pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
         self.inner.get_target_ips()
     }

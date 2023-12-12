@@ -16,7 +16,7 @@ pub struct ThirdPartyJobData {
     pub input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
     /// <p>The name of the artifact that is the result of the action, if any. This name might be system-generated, such as "MyBuiltApp", or it might be defined by the user when the action is created.</p>
     pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
-    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.</p>
     pub artifact_credentials: ::std::option::Option<crate::types::AwsSessionCredentials>,
     /// <p>A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl ThirdPartyJobData {
     pub fn output_artifacts(&self) -> &[crate::types::Artifact] {
         self.output_artifacts.as_deref().unwrap_or_default()
     }
-    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.</p>
     pub fn artifact_credentials(&self) -> ::std::option::Option<&crate::types::AwsSessionCredentials> {
         self.artifact_credentials.as_ref()
     }
@@ -186,17 +186,17 @@ impl ThirdPartyJobDataBuilder {
     pub fn get_output_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Artifact>> {
         &self.output_artifacts
     }
-    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.</p>
     pub fn artifact_credentials(mut self, input: crate::types::AwsSessionCredentials) -> Self {
         self.artifact_credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.</p>
     pub fn set_artifact_credentials(mut self, input: ::std::option::Option<crate::types::AwsSessionCredentials>) -> Self {
         self.artifact_credentials = input;
         self
     }
-    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.</p>
     pub fn get_artifact_credentials(&self) -> &::std::option::Option<crate::types::AwsSessionCredentials> {
         &self.artifact_credentials
     }

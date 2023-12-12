@@ -5,15 +5,15 @@
 pub struct SearchProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub access_level_filter: ::std::option::Option<crate::types::AccessLevelFilter>,
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code></p>
     pub filters:
         ::std::option::Option<::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
@@ -28,8 +28,8 @@ pub struct SearchProvisionedProductsInput {
 impl SearchProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -40,7 +40,7 @@ impl SearchProvisionedProductsInput {
     }
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code></p>
     pub fn filters(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>
@@ -87,8 +87,8 @@ pub struct SearchProvisionedProductsInputBuilder {
 impl SearchProvisionedProductsInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -96,8 +96,8 @@ impl SearchProvisionedProductsInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -105,8 +105,8 @@ impl SearchProvisionedProductsInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -131,7 +131,7 @@ impl SearchProvisionedProductsInputBuilder {
     ///
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code></p>
     pub fn filters(mut self, k: crate::types::ProvisionedProductViewFilterBy, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k, v);
@@ -140,7 +140,7 @@ impl SearchProvisionedProductsInputBuilder {
     }
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code></p>
     pub fn set_filters(
         mut self,
         input: ::std::option::Option<
@@ -152,7 +152,7 @@ impl SearchProvisionedProductsInputBuilder {
     }
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code></p>
     pub fn get_filters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>

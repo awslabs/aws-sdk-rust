@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountOutput {
-    /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
+    /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     pub cloudwatch_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the API request limits configured for the current Account.</p>
     pub throttle_settings: ::std::option::Option<crate::types::ThrottleSettings>,
@@ -15,7 +15,7 @@ pub struct UpdateAccountOutput {
     _request_id: Option<String>,
 }
 impl UpdateAccountOutput {
-    /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
+    /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     pub fn cloudwatch_role_arn(&self) -> ::std::option::Option<&str> {
         self.cloudwatch_role_arn.as_deref()
     }
@@ -57,17 +57,17 @@ pub struct UpdateAccountOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAccountOutputBuilder {
-    /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
+    /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     pub fn cloudwatch_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloudwatch_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
+    /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     pub fn set_cloudwatch_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloudwatch_role_arn = input;
         self
     }
-    /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
+    /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     pub fn get_cloudwatch_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloudwatch_role_arn
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBotAlias`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::set_name):<br>required: **true**<br><p>The name of the alias to delete. The name is case sensitive. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::set_name):<br>required: **true**<br><p>The name of the alias to delete. The name is case sensitive.</p><br>
     ///   - [`bot_name(impl Into<String>)`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::bot_name) / [`set_bot_name(Option<String>)`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::set_bot_name):<br>required: **true**<br><p>The name of the bot that the alias points to.</p><br>
     /// - On success, responds with [`DeleteBotAliasOutput`](crate::operation::delete_bot_alias::DeleteBotAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteBotAliasError>`](crate::operation::delete_bot_alias::DeleteBotAliasError)

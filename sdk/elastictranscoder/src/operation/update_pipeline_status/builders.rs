@@ -23,7 +23,7 @@ impl UpdatePipelineStatusInputBuilder {
 /// Fluent builder constructing a request to `UpdatePipelineStatus`.
 ///
 /// <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p>
-/// <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <code>CancelJob</code> request. </p>
+/// <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <code>CancelJob</code> request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePipelineStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,8 +125,8 @@ impl UpdatePipelineStatusFluentBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
-    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status(input.into());
@@ -134,8 +134,8 @@ impl UpdatePipelineStatusFluentBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
-    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status(input);
@@ -143,8 +143,8 @@ impl UpdatePipelineStatusFluentBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
-    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_status()

@@ -6,16 +6,16 @@
 pub struct PlaceGeometry {
     /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
     /// <ul>
-    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+    /// <li><p><i>x</i> — Specifies the x coordinate or longitude.</p></li>
+    /// <li><p><i>y</i> — Specifies the y coordinate or latitude.</p></li>
     /// </ul>
     pub point: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl PlaceGeometry {
     /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
     /// <ul>
-    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+    /// <li><p><i>x</i> — Specifies the x coordinate or longitude.</p></li>
+    /// <li><p><i>y</i> — Specifies the y coordinate or latitude.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.point.is_none()`.
@@ -50,8 +50,8 @@ impl PlaceGeometryBuilder {
     ///
     /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
     /// <ul>
-    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+    /// <li><p><i>x</i> — Specifies the x coordinate or longitude.</p></li>
+    /// <li><p><i>y</i> — Specifies the y coordinate or latitude.</p></li>
     /// </ul>
     pub fn point(mut self, input: f64) -> Self {
         let mut v = self.point.unwrap_or_default();
@@ -61,8 +61,8 @@ impl PlaceGeometryBuilder {
     }
     /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
     /// <ul>
-    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+    /// <li><p><i>x</i> — Specifies the x coordinate or longitude.</p></li>
+    /// <li><p><i>y</i> — Specifies the y coordinate or latitude.</p></li>
     /// </ul>
     pub fn set_point(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.point = input;
@@ -70,8 +70,8 @@ impl PlaceGeometryBuilder {
     }
     /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
     /// <ul>
-    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+    /// <li><p><i>x</i> — Specifies the x coordinate or longitude.</p></li>
+    /// <li><p><i>y</i> — Specifies the y coordinate or latitude.</p></li>
     /// </ul>
     pub fn get_point(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.point

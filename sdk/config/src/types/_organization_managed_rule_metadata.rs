@@ -18,7 +18,7 @@ pub struct OrganizationManagedRuleMetadata {
     pub resource_types_scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub resource_id_scope: ::std::option::Option<::std::string::String>,
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub tag_key_scope: ::std::option::Option<::std::string::String>,
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub tag_value_scope: ::std::option::Option<::std::string::String>,
@@ -53,7 +53,7 @@ impl OrganizationManagedRuleMetadata {
     pub fn resource_id_scope(&self) -> ::std::option::Option<&str> {
         self.resource_id_scope.as_deref()
     }
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub fn tag_key_scope(&self) -> ::std::option::Option<&str> {
         self.tag_key_scope.as_deref()
     }
@@ -180,17 +180,17 @@ impl OrganizationManagedRuleMetadataBuilder {
     pub fn get_resource_id_scope(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id_scope
     }
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub fn tag_key_scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key_scope = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub fn set_tag_key_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key_scope = input;
         self
     }
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub fn get_tag_key_scope(&self) -> &::std::option::Option<::std::string::String> {
         &self.tag_key_scope
     }

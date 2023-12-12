@@ -5,19 +5,19 @@
 pub struct CreateApplicationInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub ops_center_enabled: ::std::option::Option<bool>,
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub cwe_monitor_enabled: ::std::option::Option<bool>,
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
+    /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub auto_config_enabled: ::std::option::Option<bool>,
-    /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
+    /// <p>Configures all of the resources in the resource group by applying the recommended configurations.</p>
     pub auto_create: ::std::option::Option<bool>,
-    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>.</p>
     pub grouping_type: ::std::option::Option<crate::types::GroupingType>,
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
     pub attach_missing_permission: ::std::option::Option<bool>,
@@ -27,15 +27,15 @@ impl CreateApplicationInput {
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn ops_center_enabled(&self) -> ::std::option::Option<bool> {
         self.ops_center_enabled
     }
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn cwe_monitor_enabled(&self) -> ::std::option::Option<bool> {
         self.cwe_monitor_enabled
     }
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
@@ -45,15 +45,15 @@ impl CreateApplicationInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
+    /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub fn auto_config_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_config_enabled
     }
-    /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
+    /// <p>Configures all of the resources in the resource group by applying the recommended configurations.</p>
     pub fn auto_create(&self) -> ::std::option::Option<bool> {
         self.auto_create
     }
-    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>.</p>
     pub fn grouping_type(&self) -> ::std::option::Option<&crate::types::GroupingType> {
         self.grouping_type.as_ref()
     }
@@ -98,45 +98,45 @@ impl CreateApplicationInputBuilder {
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
     }
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn ops_center_enabled(mut self, input: bool) -> Self {
         self.ops_center_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn set_ops_center_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ops_center_enabled = input;
         self
     }
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn get_ops_center_enabled(&self) -> &::std::option::Option<bool> {
         &self.ops_center_enabled
     }
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
         self.cwe_monitor_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn set_cwe_monitor_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cwe_monitor_enabled = input;
         self
     }
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn get_cwe_monitor_enabled(&self) -> &::std::option::Option<bool> {
         &self.cwe_monitor_enabled
     }
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn ops_item_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = input;
         self
     }
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_sns_topic_arn
     }
@@ -160,45 +160,45 @@ impl CreateApplicationInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
+    /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub fn auto_config_enabled(mut self, input: bool) -> Self {
         self.auto_config_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
+    /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_config_enabled = input;
         self
     }
-    /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
+    /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
         &self.auto_config_enabled
     }
-    /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
+    /// <p>Configures all of the resources in the resource group by applying the recommended configurations.</p>
     pub fn auto_create(mut self, input: bool) -> Self {
         self.auto_create = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
+    /// <p>Configures all of the resources in the resource group by applying the recommended configurations.</p>
     pub fn set_auto_create(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_create = input;
         self
     }
-    /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
+    /// <p>Configures all of the resources in the resource group by applying the recommended configurations.</p>
     pub fn get_auto_create(&self) -> &::std::option::Option<bool> {
         &self.auto_create
     }
-    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>.</p>
     pub fn grouping_type(mut self, input: crate::types::GroupingType) -> Self {
         self.grouping_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>.</p>
     pub fn set_grouping_type(mut self, input: ::std::option::Option<crate::types::GroupingType>) -> Self {
         self.grouping_type = input;
         self
     }
-    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>.</p>
     pub fn get_grouping_type(&self) -> &::std::option::Option<crate::types::GroupingType> {
         &self.grouping_type
     }

@@ -8,7 +8,7 @@ pub struct SseSpecification {
     pub enabled: ::std::option::Option<bool>,
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
     /// <p>The KMS key that should be used for the KMS encryption. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
@@ -21,7 +21,7 @@ impl SseSpecification {
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
         self.sse_type.as_ref()
@@ -63,7 +63,7 @@ impl SseSpecificationBuilder {
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
         self.sse_type = ::std::option::Option::Some(input);
@@ -71,7 +71,7 @@ impl SseSpecificationBuilder {
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
         self.sse_type = input;
@@ -79,7 +79,7 @@ impl SseSpecificationBuilder {
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <li><p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type

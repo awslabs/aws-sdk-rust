@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
     /// </note>
     pub resource_arn_update: ::std::string::String,
 }
 impl LambdaOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
     /// </note>
     pub fn resource_arn_update(&self) -> &str {
         use std::ops::Deref;
@@ -33,7 +33,7 @@ pub struct LambdaOutputUpdateBuilder {
 }
 impl LambdaOutputUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
     /// </note>
     /// This field is required.
     pub fn resource_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -41,14 +41,14 @@ impl LambdaOutputUpdateBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
     /// </note>
     pub fn set_resource_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn_update = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
     /// </note>
     pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn_update

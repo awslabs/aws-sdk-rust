@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`account_ids(impl Into<String>)`](crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoFluentBuilder::account_ids) / [`set_account_ids(Option<Vec::<String>>)`](crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoFluentBuilder::set_account_ids):<br>required: **true**<br><p>The account IDs to get free trial status for.</p><br>
     /// - On success, responds with [`BatchGetFreeTrialInfoOutput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput) with field(s):
-    ///   - [`accounts(Vec::<FreeTrialAccountInfo>)`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput::accounts): <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
+    ///   - [`accounts(Vec::<FreeTrialAccountInfo>)`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput::accounts): <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.</p>
     ///   - [`failed_accounts(Vec::<FreeTrialInfoError>)`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput::failed_accounts): <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
     /// - On failure, responds with [`SdkError<BatchGetFreeTrialInfoError>`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError)
     pub fn batch_get_free_trial_info(&self) -> crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoFluentBuilder {

@@ -122,17 +122,17 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_replication_group_id()
     }
-    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_immediately(input);
         self
     }
-    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
     }
-    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         self.inner.get_apply_immediately()
     }
@@ -150,17 +150,17 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
     pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_node_type()
     }
-    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }
@@ -192,17 +192,17 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
     pub fn get_global_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_replication_group_description()
     }
-    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     pub fn automatic_failover_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.automatic_failover_enabled(input);
         self
     }
-    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     pub fn set_automatic_failover_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_automatic_failover_enabled(input);
         self
     }
-    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     pub fn get_automatic_failover_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_automatic_failover_enabled()
     }

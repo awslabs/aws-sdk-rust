@@ -6,7 +6,7 @@
 pub struct DimensionMapping {
     /// <p>Column name from query result.</p>
     pub name: ::std::string::String,
-    /// <p>Type for the dimension. </p>
+    /// <p>Type for the dimension.</p>
     pub dimension_value_type: crate::types::DimensionValueType,
 }
 impl DimensionMapping {
@@ -15,7 +15,7 @@ impl DimensionMapping {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>Type for the dimension. </p>
+    /// <p>Type for the dimension.</p>
     pub fn dimension_value_type(&self) -> &crate::types::DimensionValueType {
         &self.dimension_value_type
     }
@@ -50,18 +50,18 @@ impl DimensionMappingBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Type for the dimension. </p>
+    /// <p>Type for the dimension.</p>
     /// This field is required.
     pub fn dimension_value_type(mut self, input: crate::types::DimensionValueType) -> Self {
         self.dimension_value_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Type for the dimension. </p>
+    /// <p>Type for the dimension.</p>
     pub fn set_dimension_value_type(mut self, input: ::std::option::Option<crate::types::DimensionValueType>) -> Self {
         self.dimension_value_type = input;
         self
     }
-    /// <p>Type for the dimension. </p>
+    /// <p>Type for the dimension.</p>
     pub fn get_dimension_value_type(&self) -> &::std::option::Option<crate::types::DimensionValueType> {
         &self.dimension_value_type
     }

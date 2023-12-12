@@ -10,15 +10,15 @@ pub enum Configuration {
     EcrRepository(crate::types::EcrRepositoryConfiguration),
     /// <p>The access control configuration is for an Amazon EFS file system.</p>
     EfsFileSystem(crate::types::EfsFileSystemConfiguration),
-    /// <p>The access control configuration is for an IAM role. </p>
+    /// <p>The access control configuration is for an IAM role.</p>
     IamRole(crate::types::IamRoleConfiguration),
-    /// <p>The access control configuration is for a KMS key. </p>
+    /// <p>The access control configuration is for a KMS key.</p>
     KmsKey(crate::types::KmsKeyConfiguration),
     /// <p>The access control configuration is for an Amazon RDS DB cluster snapshot.</p>
     RdsDbClusterSnapshot(crate::types::RdsDbClusterSnapshotConfiguration),
     /// <p>The access control configuration is for an Amazon RDS DB snapshot.</p>
     RdsDbSnapshot(crate::types::RdsDbSnapshotConfiguration),
-    /// <p>The access control configuration is for an Amazon S3 bucket. </p>
+    /// <p>The access control configuration is for an Amazon S3 bucket.</p>
     S3Bucket(crate::types::S3BucketConfiguration),
     /// <p>The access control configuration is for an Amazon S3 directory bucket.</p>
     S3ExpressDirectoryBucket(crate::types::S3ExpressDirectoryBucketConfiguration),
@@ -26,7 +26,7 @@ pub enum Configuration {
     SecretsManagerSecret(crate::types::SecretsManagerSecretConfiguration),
     /// <p>The access control configuration is for an Amazon SNS topic</p>
     SnsTopic(crate::types::SnsTopicConfiguration),
-    /// <p>The access control configuration is for an Amazon SQS queue. </p>
+    /// <p>The access control configuration is for an Amazon SQS queue.</p>
     SqsQueue(crate::types::SqsQueueConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

@@ -7,7 +7,7 @@ pub struct DeleteFhirDatastoreOutput {
     pub datastore_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub datastore_arn: ::std::string::String,
-    /// <p>The status of the data store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted.</p>
     pub datastore_status: crate::types::DatastoreStatus,
     /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     pub datastore_endpoint: ::std::string::String,
@@ -24,7 +24,7 @@ impl DeleteFhirDatastoreOutput {
         use std::ops::Deref;
         self.datastore_arn.deref()
     }
-    /// <p>The status of the data store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted.</p>
     pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
         &self.datastore_status
     }
@@ -87,18 +87,18 @@ impl DeleteFhirDatastoreOutputBuilder {
     pub fn get_datastore_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_arn
     }
-    /// <p>The status of the data store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted.</p>
     /// This field is required.
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the data store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted.</p>
     pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
         self.datastore_status = input;
         self
     }
-    /// <p>The status of the data store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted.</p>
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
         &self.datastore_status
     }

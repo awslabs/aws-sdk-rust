@@ -4,8 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetRouteOutput {
     /// <p>The unique identifier of the route.</p>
-    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
-    /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    /// <p><b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p><b>URI_PATH</b>: A route that is based on a URI path.</p>
     pub route_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -17,27 +17,27 @@ pub struct GetRouteOutput {
     pub route_type: ::std::option::Option<crate::types::RouteType>,
     /// <p>The unique identifier of the service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the application that the route belongs to. </p>
+    /// <p>The ID of the application that the route belongs to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier of the environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub source_path: ::std::option::Option<::std::string::String>,
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
     pub methods: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>,
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub include_child_paths: ::std::option::Option<bool>,
-    /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    /// <p>A mapping of Amazon API Gateway path resources to resource IDs.</p>
     pub path_resource_to_id: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub state: ::std::option::Option<crate::types::RouteState>,
-    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Any error associated with the route resource. </p>
+    /// <p>Any error associated with the route resource.</p>
     pub error: ::std::option::Option<crate::types::ErrorResponse>,
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp of when the route is created. </p>
+    /// <p>The timestamp of when the route is created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
     pub append_source_path: ::std::option::Option<bool>,
@@ -45,8 +45,8 @@ pub struct GetRouteOutput {
 }
 impl GetRouteOutput {
     /// <p>The unique identifier of the route.</p>
-    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
-    /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    /// <p><b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p><b>URI_PATH</b>: A route that is based on a URI path.</p>
     pub fn route_id(&self) -> ::std::option::Option<&str> {
         self.route_id.as_deref()
     }
@@ -70,7 +70,7 @@ impl GetRouteOutput {
     pub fn service_id(&self) -> ::std::option::Option<&str> {
         self.service_id.as_deref()
     }
-    /// <p>The ID of the application that the route belongs to. </p>
+    /// <p>The ID of the application that the route belongs to.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -82,37 +82,37 @@ impl GetRouteOutput {
     pub fn source_path(&self) -> ::std::option::Option<&str> {
         self.source_path.as_deref()
     }
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.methods.is_none()`.
     pub fn methods(&self) -> &[crate::types::HttpMethod] {
         self.methods.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub fn include_child_paths(&self) -> ::std::option::Option<bool> {
         self.include_child_paths
     }
-    /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    /// <p>A mapping of Amazon API Gateway path resources to resource IDs.</p>
     pub fn path_resource_to_id(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.path_resource_to_id.as_ref()
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::RouteState> {
         self.state.as_ref()
     }
-    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Any error associated with the route resource. </p>
+    /// <p>Any error associated with the route resource.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorResponse> {
         self.error.as_ref()
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>The timestamp of when the route is created. </p>
+    /// <p>The timestamp of when the route is created.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
@@ -184,22 +184,22 @@ pub struct GetRouteOutputBuilder {
 }
 impl GetRouteOutputBuilder {
     /// <p>The unique identifier of the route.</p>
-    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
-    /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    /// <p><b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p><b>URI_PATH</b>: A route that is based on a URI path.</p>
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the route.</p>
-    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
-    /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    /// <p><b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p><b>URI_PATH</b>: A route that is based on a URI path.</p>
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_id = input;
         self
     }
     /// <p>The unique identifier of the route.</p>
-    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
-    /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    /// <p><b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p><b>URI_PATH</b>: A route that is based on a URI path.</p>
     pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.route_id
     }
@@ -273,17 +273,17 @@ impl GetRouteOutputBuilder {
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_id
     }
-    /// <p>The ID of the application that the route belongs to. </p>
+    /// <p>The ID of the application that the route belongs to.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the application that the route belongs to. </p>
+    /// <p>The ID of the application that the route belongs to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The ID of the application that the route belongs to. </p>
+    /// <p>The ID of the application that the route belongs to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
@@ -319,33 +319,33 @@ impl GetRouteOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_methods`](Self::set_methods).
     ///
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
     pub fn methods(mut self, input: crate::types::HttpMethod) -> Self {
         let mut v = self.methods.unwrap_or_default();
         v.push(input);
         self.methods = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
     pub fn set_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>) -> Self {
         self.methods = input;
         self
     }
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
     pub fn get_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>> {
         &self.methods
     }
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub fn include_child_paths(mut self, input: bool) -> Self {
         self.include_child_paths = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub fn set_include_child_paths(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_child_paths = input;
         self
     }
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub fn get_include_child_paths(&self) -> &::std::option::Option<bool> {
         &self.include_child_paths
     }
@@ -353,7 +353,7 @@ impl GetRouteOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_path_resource_to_id`](Self::set_path_resource_to_id).
     ///
-    /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    /// <p>A mapping of Amazon API Gateway path resources to resource IDs.</p>
     pub fn path_resource_to_id(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -364,7 +364,7 @@ impl GetRouteOutputBuilder {
         self.path_resource_to_id = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    /// <p>A mapping of Amazon API Gateway path resources to resource IDs.</p>
     pub fn set_path_resource_to_id(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -372,21 +372,21 @@ impl GetRouteOutputBuilder {
         self.path_resource_to_id = input;
         self
     }
-    /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    /// <p>A mapping of Amazon API Gateway path resources to resource IDs.</p>
     pub fn get_path_resource_to_id(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.path_resource_to_id
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn state(mut self, input: crate::types::RouteState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
         &self.state
     }
@@ -394,61 +394,61 @@ impl GetRouteOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Any error associated with the route resource. </p>
+    /// <p>Any error associated with the route resource.</p>
     pub fn error(mut self, input: crate::types::ErrorResponse) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Any error associated with the route resource. </p>
+    /// <p>Any error associated with the route resource.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorResponse>) -> Self {
         self.error = input;
         self
     }
-    /// <p>Any error associated with the route resource. </p>
+    /// <p>Any error associated with the route resource.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorResponse> {
         &self.error
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
-    /// <p>The timestamp of when the route is created. </p>
+    /// <p>The timestamp of when the route is created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of when the route is created. </p>
+    /// <p>The timestamp of when the route is created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
-    /// <p>The timestamp of when the route is created. </p>
+    /// <p>The timestamp of when the route is created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_time
     }

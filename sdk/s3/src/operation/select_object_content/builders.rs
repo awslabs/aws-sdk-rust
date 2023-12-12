@@ -42,10 +42,10 @@ impl SelectObjectContentInputBuilder {
 /// <dd>
 /// <p>You can use Amazon S3 Select to query objects that have the following format properties:</p>
 /// <ul>
-/// <li> <p> <i>CSV, JSON, and Parquet</i> - Objects must be in CSV, JSON, or Parquet format.</p> </li>
-/// <li> <p> <i>UTF-8</i> - UTF-8 is the only encoding type Amazon S3 Select supports.</p> </li>
-/// <li> <p> <i>GZIP or BZIP2</i> - CSV and JSON files can be compressed using GZIP or BZIP2. GZIP and BZIP2 are the only compression formats that Amazon S3 Select supports for CSV and JSON files. Amazon S3 Select supports columnar compression for Parquet using GZIP or Snappy. Amazon S3 Select does not support whole-object compression for Parquet objects.</p> </li>
-/// <li> <p> <i>Server-side encryption</i> - Amazon S3 Select supports querying objects that are protected with server-side encryption.</p> <p>For objects that are encrypted with customer-provided encryption keys (SSE-C), you must use HTTPS, and you must use the headers that are documented in the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>. For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys)</a> in the <i>Amazon S3 User Guide</i>.</p> <p>For objects that are encrypted with Amazon S3 managed keys (SSE-S3) and Amazon Web Services KMS keys (SSE-KMS), server-side encryption is handled transparently, so you don't need to specify anything. For more information about server-side encryption, including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
+/// <li><p><i>CSV, JSON, and Parquet</i> - Objects must be in CSV, JSON, or Parquet format.</p></li>
+/// <li><p><i>UTF-8</i> - UTF-8 is the only encoding type Amazon S3 Select supports.</p></li>
+/// <li><p><i>GZIP or BZIP2</i> - CSV and JSON files can be compressed using GZIP or BZIP2. GZIP and BZIP2 are the only compression formats that Amazon S3 Select supports for CSV and JSON files. Amazon S3 Select supports columnar compression for Parquet using GZIP or Snappy. Amazon S3 Select does not support whole-object compression for Parquet objects.</p></li>
+/// <li><p><i>Server-side encryption</i> - Amazon S3 Select supports querying objects that are protected with server-side encryption.</p> <p>For objects that are encrypted with customer-provided encryption keys (SSE-C), you must use HTTPS, and you must use the headers that are documented in the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>. For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys)</a> in the <i>Amazon S3 User Guide</i>.</p> <p>For objects that are encrypted with Amazon S3 managed keys (SSE-S3) and Amazon Web Services KMS keys (SSE-KMS), server-side encryption is handled transparently, so you don't need to specify anything. For more information about server-side encryption, including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p></li>
 /// </ul>
 /// </dd>
 /// <dt>
@@ -60,22 +60,22 @@ impl SelectObjectContentInputBuilder {
 /// <dd>
 /// <p>The <code>SelectObjectContent</code> action does not support the following <code>GetObject</code> functionality. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>.</p>
 /// <ul>
-/// <li> <p> <code>Range</code>: Although you can specify a scan range for an Amazon S3 Select request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html#AmazonS3-SelectObjectContent-request-ScanRange">SelectObjectContentRequest - ScanRange</a> in the request parameters), you cannot specify the range of bytes of an object to return. </p> </li>
-/// <li> <p>The <code>GLACIER</code>, <code>DEEP_ARCHIVE</code>, and <code>REDUCED_REDUNDANCY</code> storage classes, or the <code>ARCHIVE_ACCESS</code> and <code>DEEP_ARCHIVE_ACCESS</code> access tiers of the <code>INTELLIGENT_TIERING</code> storage class: You cannot query objects in the <code>GLACIER</code>, <code>DEEP_ARCHIVE</code>, or <code>REDUCED_REDUNDANCY</code> storage classes, nor objects in the <code>ARCHIVE_ACCESS</code> or <code>DEEP_ARCHIVE_ACCESS</code> access tiers of the <code>INTELLIGENT_TIERING</code> storage class. For more information about storage classes, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">Using Amazon S3 storage classes</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
+/// <li><p><code>Range</code>: Although you can specify a scan range for an Amazon S3 Select request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html#AmazonS3-SelectObjectContent-request-ScanRange">SelectObjectContentRequest - ScanRange</a> in the request parameters), you cannot specify the range of bytes of an object to return.</p></li>
+/// <li><p>The <code>GLACIER</code>, <code>DEEP_ARCHIVE</code>, and <code>REDUCED_REDUNDANCY</code> storage classes, or the <code>ARCHIVE_ACCESS</code> and <code>DEEP_ARCHIVE_ACCESS</code> access tiers of the <code>INTELLIGENT_TIERING</code> storage class: You cannot query objects in the <code>GLACIER</code>, <code>DEEP_ARCHIVE</code>, or <code>REDUCED_REDUNDANCY</code> storage classes, nor objects in the <code>ARCHIVE_ACCESS</code> or <code>DEEP_ARCHIVE_ACCESS</code> access tiers of the <code>INTELLIGENT_TIERING</code> storage class. For more information about storage classes, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">Using Amazon S3 storage classes</a> in the <i>Amazon S3 User Guide</i>.</p></li>
 /// </ul>
 /// </dd>
 /// <dt>
 /// Special Errors
 /// </dt>
 /// <dd>
-/// <p>For a list of special errors for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#SelectObjectContentErrorCodeList">List of SELECT Object Content Error Codes</a> </p>
+/// <p>For a list of special errors for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#SelectObjectContentErrorCodeList">List of SELECT Object Content Error Codes</a></p>
 /// </dd>
 /// </dl>
 /// <p>The following operations are related to <code>SelectObjectContent</code>:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SelectObjectContentFluentBuilder {
@@ -303,9 +303,9 @@ impl SelectObjectContentFluentBuilder {
         self.inner.get_output_serialization()
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
-    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
+    /// <p><code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li> <p> <code>
+    /// <li><p><code>
     /// <scanrange>
     /// <start>
     /// 50
@@ -313,28 +313,28 @@ impl SelectObjectContentFluentBuilder {
     /// <end>
     /// 100
     /// </end>
-    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
-    /// <li> <p> <code>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
+    /// <li><p><code>
     /// <scanrange>
     /// <start>
     /// 50
     /// </start>
-    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
-    /// <li> <p> <code>
+    /// </scanrange></code> - process only the records starting after the byte 50</p></li>
+    /// <li><p><code>
     /// <scanrange>
     /// <end>
     /// 50
     /// </end>
-    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p></li>
     /// </ul>
     pub fn scan_range(mut self, input: crate::types::ScanRange) -> Self {
         self.inner = self.inner.scan_range(input);
         self
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
-    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
+    /// <p><code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li> <p> <code>
+    /// <li><p><code>
     /// <scanrange>
     /// <start>
     /// 50
@@ -342,28 +342,28 @@ impl SelectObjectContentFluentBuilder {
     /// <end>
     /// 100
     /// </end>
-    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
-    /// <li> <p> <code>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
+    /// <li><p><code>
     /// <scanrange>
     /// <start>
     /// 50
     /// </start>
-    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
-    /// <li> <p> <code>
+    /// </scanrange></code> - process only the records starting after the byte 50</p></li>
+    /// <li><p><code>
     /// <scanrange>
     /// <end>
     /// 50
     /// </end>
-    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p></li>
     /// </ul>
     pub fn set_scan_range(mut self, input: ::std::option::Option<crate::types::ScanRange>) -> Self {
         self.inner = self.inner.set_scan_range(input);
         self
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
-    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
+    /// <p><code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li> <p> <code>
+    /// <li><p><code>
     /// <scanrange>
     /// <start>
     /// 50
@@ -371,19 +371,19 @@ impl SelectObjectContentFluentBuilder {
     /// <end>
     /// 100
     /// </end>
-    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
-    /// <li> <p> <code>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
+    /// <li><p><code>
     /// <scanrange>
     /// <start>
     /// 50
     /// </start>
-    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
-    /// <li> <p> <code>
+    /// </scanrange></code> - process only the records starting after the byte 50</p></li>
+    /// <li><p><code>
     /// <scanrange>
     /// <end>
     /// 50
     /// </end>
-    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p></li>
     /// </ul>
     pub fn get_scan_range(&self) -> &::std::option::Option<crate::types::ScanRange> {
         self.inner.get_scan_range()

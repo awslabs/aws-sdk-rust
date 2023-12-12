@@ -254,9 +254,9 @@ pub enum PutProjectPolicyError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The supplied revision id for the project policy is invalid.</p>
     InvalidPolicyRevisionIdException(crate::types::error::InvalidPolicyRevisionIdException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect. </p>
+    /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect.</p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
     /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
@@ -265,7 +265,7 @@ pub enum PutProjectPolicyError {
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p></p>
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

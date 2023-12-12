@@ -25,8 +25,8 @@ impl DescribeTagsInputBuilder {
 /// <note>
 /// <p>DEPRECATED - The <code>DescribeTags</code> action is deprecated and not maintained. To view tags associated with EFS resources, use the <code>ListTagsForResource</code> API action.</p>
 /// </note>
-/// <p>Returns the tags associated with a file system. The order of tags returned in the response of one <code>DescribeTags</code> call and the order of tags returned across the responses of a multiple-call iteration (when using pagination) is unspecified. </p>
-/// <p> This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code> action. </p>
+/// <p>Returns the tags associated with a file system. The order of tags returned in the response of one <code>DescribeTags</code> call and the order of tags returned across the responses of a multiple-call iteration (when using pagination) is unspecified.</p>
+/// <p>This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code> action.</p>
 #[deprecated(note = "Use ListTagsForResource.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTagsFluentBuilder {

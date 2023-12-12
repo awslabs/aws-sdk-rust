@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentFrameworkOutput {
-    /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    /// <p>The framework that the <code>GetAssessmentFramework</code> API returned.</p>
     pub framework: ::std::option::Option<crate::types::Framework>,
     _request_id: Option<String>,
 }
 impl GetAssessmentFrameworkOutput {
-    /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    /// <p>The framework that the <code>GetAssessmentFramework</code> API returned.</p>
     pub fn framework(&self) -> ::std::option::Option<&crate::types::Framework> {
         self.framework.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetAssessmentFrameworkOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAssessmentFrameworkOutputBuilder {
-    /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    /// <p>The framework that the <code>GetAssessmentFramework</code> API returned.</p>
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
         self.framework = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    /// <p>The framework that the <code>GetAssessmentFramework</code> API returned.</p>
     pub fn set_framework(mut self, input: ::std::option::Option<crate::types::Framework>) -> Self {
         self.framework = input;
         self
     }
-    /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    /// <p>The framework that the <code>GetAssessmentFramework</code> API returned.</p>
     pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
         &self.framework
     }

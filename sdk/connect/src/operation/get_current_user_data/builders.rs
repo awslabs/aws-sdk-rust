@@ -22,7 +22,7 @@ impl GetCurrentUserDataInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCurrentUserData`.
 ///
-/// <p>Gets the real-time active user data from the specified Amazon Connect instance. </p>
+/// <p>Gets the real-time active user data from the specified Amazon Connect instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCurrentUserDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -130,13 +130,13 @@ impl GetCurrentUserDataFluentBuilder {
     }
     /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Agents: 100</p> </li>
-    /// <li> <p>Contact states: 9</p> </li>
-    /// <li> <p>User hierarchy groups: 1</p> </li>
+    /// <li><p>Queues: 100</p></li>
+    /// <li><p>Routing profiles: 100</p></li>
+    /// <li><p>Agents: 100</p></li>
+    /// <li><p>Contact states: 9</p></li>
+    /// <li><p>User hierarchy groups: 1</p></li>
     /// </ul>
-    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+    /// <p>The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn filters(mut self, input: crate::types::UserDataFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -144,13 +144,13 @@ impl GetCurrentUserDataFluentBuilder {
     }
     /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Agents: 100</p> </li>
-    /// <li> <p>Contact states: 9</p> </li>
-    /// <li> <p>User hierarchy groups: 1</p> </li>
+    /// <li><p>Queues: 100</p></li>
+    /// <li><p>Routing profiles: 100</p></li>
+    /// <li><p>Agents: 100</p></li>
+    /// <li><p>Contact states: 9</p></li>
+    /// <li><p>User hierarchy groups: 1</p></li>
     /// </ul>
-    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+    /// <p>The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::UserDataFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -158,13 +158,13 @@ impl GetCurrentUserDataFluentBuilder {
     }
     /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Agents: 100</p> </li>
-    /// <li> <p>Contact states: 9</p> </li>
-    /// <li> <p>User hierarchy groups: 1</p> </li>
+    /// <li><p>Queues: 100</p></li>
+    /// <li><p>Routing profiles: 100</p></li>
+    /// <li><p>Agents: 100</p></li>
+    /// <li><p>Contact states: 9</p></li>
+    /// <li><p>User hierarchy groups: 1</p></li>
     /// </ul>
-    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+    /// <p>The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::UserDataFilters> {
         self.inner.get_filters()

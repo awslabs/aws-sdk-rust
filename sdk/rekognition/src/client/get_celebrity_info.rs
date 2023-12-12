@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCelebrityInfo`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::set_id):<br>required: **true**<br><p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::set_id):<br>required: **true**<br><p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image.</p><br>
     /// - On success, responds with [`GetCelebrityInfoOutput`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput) with field(s):
-    ///   - [`urls(Option<Vec::<String>>)`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput::urls): <p>An array of URLs pointing to additional celebrity information. </p>
+    ///   - [`urls(Option<Vec::<String>>)`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput::urls): <p>An array of URLs pointing to additional celebrity information.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput::name): <p>The name of the celebrity.</p>
     ///   - [`known_gender(Option<KnownGender>)`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput::known_gender): <p>Retrieves the known gender for the celebrity.</p>
     /// - On failure, responds with [`SdkError<GetCelebrityInfoError>`](crate::operation::get_celebrity_info::GetCelebrityInfoError)

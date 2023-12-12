@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Setting {
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub name: ::std::string::String,
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
     pub value: ::std::string::String,
 }
 impl Setting {
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -39,20 +39,20 @@ pub struct SettingBuilder {
 }
 impl SettingBuilder {
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

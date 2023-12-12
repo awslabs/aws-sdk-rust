@@ -6,7 +6,7 @@
 pub struct ModelEndpointDataBlob {
     /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
     pub byte_buffer: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
+    /// <p>The content type of the Amazon SageMaker model endpoint input data blob.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl ModelEndpointDataBlob {
@@ -14,7 +14,7 @@ impl ModelEndpointDataBlob {
     pub fn byte_buffer(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.byte_buffer.as_ref()
     }
-    /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
+    /// <p>The content type of the Amazon SageMaker model endpoint input data blob.</p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -48,17 +48,17 @@ impl ModelEndpointDataBlobBuilder {
     pub fn get_byte_buffer(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.byte_buffer
     }
-    /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
+    /// <p>The content type of the Amazon SageMaker model endpoint input data blob.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
+    /// <p>The content type of the Amazon SageMaker model endpoint input data blob.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
+    /// <p>The content type of the Amazon SageMaker model endpoint input data blob.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }

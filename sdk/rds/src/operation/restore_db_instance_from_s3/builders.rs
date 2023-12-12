@@ -22,7 +22,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
 }
 /// Fluent builder constructing a request to `RestoreDBInstanceFromS3`.
 ///
-/// <p>Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+/// <p>Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i></p>
 /// <p>This operation doesn't apply to RDS Custom.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBInstanceFromS3FluentBuilder {
@@ -126,11 +126,11 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
@@ -138,11 +138,11 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
@@ -150,11 +150,11 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()
     }
@@ -178,46 +178,46 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         self.inner.get_allocated_storage()
     }
-    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.</p>
     pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_class(input.into());
         self
     }
-    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_class(input);
         self
     }
-    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_class()
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_username(input.into());
@@ -226,9 +226,9 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_username(input);
@@ -237,9 +237,9 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_username()
@@ -247,17 +247,17 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
-    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// <li><p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
@@ -266,17 +266,17 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
-    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// <li><p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
@@ -285,17 +285,17 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
-    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// <li><p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_password()
@@ -339,83 +339,83 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
-    /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
-    /// <p>Example: <code>us-east-1d</code> </p>
+    /// <p>Example: <code>us-east-1d</code></p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
-    /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
-    /// <p>Example: <code>us-east-1d</code> </p>
+    /// <p>Example: <code>us-east-1d</code></p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
-    /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
-    /// <p>Example: <code>us-east-1d</code> </p>
+    /// <p>Example: <code>us-east-1d</code></p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_subnet_group_name()
     }
-    /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred backup window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
-    /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred backup window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
-    /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred backup window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
@@ -451,61 +451,61 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_backup_retention_period()
     }
-    /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
-    /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
-    /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_backup_window()
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Type: Integer</p>
-    /// <p>Valid Values: <code>1150</code>-<code>65535</code> </p>
-    /// <p>Default: <code>3306</code> </p>
+    /// <p>Valid Values: <code>1150</code>-<code>65535</code></p>
+    /// <p>Default: <code>3306</code></p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
         self
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Type: Integer</p>
-    /// <p>Valid Values: <code>1150</code>-<code>65535</code> </p>
-    /// <p>Default: <code>3306</code> </p>
+    /// <p>Valid Values: <code>1150</code>-<code>65535</code></p>
+    /// <p>Default: <code>3306</code></p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Type: Integer</p>
-    /// <p>Valid Values: <code>1150</code>-<code>65535</code> </p>
-    /// <p>Default: <code>3306</code> </p>
+    /// <p>Valid Values: <code>1150</code>-<code>65535</code></p>
+    /// <p>Default: <code>3306</code></p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }
@@ -565,17 +565,17 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_model()
     }
-    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn iops(mut self, input: i32) -> Self {
         self.inner = self.inner.iops(input);
         self
     }
-    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_iops(input);
         self
     }
-    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         self.inner.get_iops()
     }
@@ -620,40 +620,40 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
-    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code></p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
-    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code></p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
-    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code></p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()
     }
@@ -708,7 +708,7 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: 0, 1, 5, 10, 15, 30, 60</p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Default: <code>0</code></p>
     pub fn monitoring_interval(mut self, input: i32) -> Self {
         self.inner = self.inner.monitoring_interval(input);
         self
@@ -716,7 +716,7 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: 0, 1, 5, 10, 15, 30, 60</p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Default: <code>0</code></p>
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_monitoring_interval(input);
         self
@@ -724,78 +724,78 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: 0, 1, 5, 10, 15, 30, 60</p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Default: <code>0</code></p>
     pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
         self.inner.get_monitoring_interval()
     }
-    /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     pub fn monitoring_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitoring_role_arn(input.into());
         self
     }
-    /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     pub fn set_monitoring_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_role_arn(input);
         self
     }
-    /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitoring_role_arn()
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_iam_database_authentication(input);
         self
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_database_authentication()
     }
     /// <p>The name of the engine of your source database.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn source_engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_engine(input.into());
         self
     }
     /// <p>The name of the engine of your source database.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn set_source_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_engine(input);
         self
     }
     /// <p>The name of the engine of your source database.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn get_source_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_engine()
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.6 and 5.7 are supported.</p>
-    /// <p>Example: <code>5.6.40</code> </p>
+    /// <p>Example: <code>5.6.40</code></p>
     pub fn source_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_engine_version(input.into());
         self
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.6 and 5.7 are supported.</p>
-    /// <p>Example: <code>5.6.40</code> </p>
+    /// <p>Example: <code>5.6.40</code></p>
     pub fn set_source_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_engine_version(input);
         self
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.6 and 5.7 are supported.</p>
-    /// <p>Example: <code>5.6.40</code> </p>
+    /// <p>Example: <code>5.6.40</code></p>
     pub fn get_source_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_engine_version()
     }
@@ -880,16 +880,16 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
-    /// <li> <p>7</p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-    /// <li> <p>731</p> </li>
+    /// <li><p>7</p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
+    /// <li><p>731</p></li>
     /// </ul>
     /// <p>For example, the following values are valid:</p>
     /// <ul>
-    /// <li> <p>93 (3 months * 31)</p> </li>
-    /// <li> <p>341 (11 months * 31)</p> </li>
-    /// <li> <p>589 (19 months * 31)</p> </li>
-    /// <li> <p>731</p> </li>
+    /// <li><p>93 (3 months * 31)</p></li>
+    /// <li><p>341 (11 months * 31)</p></li>
+    /// <li><p>589 (19 months * 31)</p></li>
+    /// <li><p>731</p></li>
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
@@ -898,16 +898,16 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
-    /// <li> <p>7</p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-    /// <li> <p>731</p> </li>
+    /// <li><p>7</p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
+    /// <li><p>731</p></li>
     /// </ul>
     /// <p>For example, the following values are valid:</p>
     /// <ul>
-    /// <li> <p>93 (3 months * 31)</p> </li>
-    /// <li> <p>341 (11 months * 31)</p> </li>
-    /// <li> <p>589 (19 months * 31)</p> </li>
-    /// <li> <p>731</p> </li>
+    /// <li><p>93 (3 months * 31)</p></li>
+    /// <li><p>341 (11 months * 31)</p></li>
+    /// <li><p>589 (19 months * 31)</p></li>
+    /// <li><p>731</p></li>
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -916,16 +916,16 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
-    /// <li> <p>7</p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-    /// <li> <p>731</p> </li>
+    /// <li><p>7</p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
+    /// <li><p>731</p></li>
     /// </ul>
     /// <p>For example, the following values are valid:</p>
     /// <ul>
-    /// <li> <p>93 (3 months * 31)</p> </li>
-    /// <li> <p>341 (11 months * 31)</p> </li>
-    /// <li> <p>589 (19 months * 31)</p> </li>
-    /// <li> <p>731</p> </li>
+    /// <li><p>93 (3 months * 31)</p></li>
+    /// <li><p>341 (11 months * 31)</p></li>
+    /// <li><p>589 (19 months * 31)</p></li>
+    /// <li><p>731</p></li>
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
@@ -1015,11 +1015,11 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_type(input.into());
         self
@@ -1027,11 +1027,11 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_type(input);
         self
@@ -1039,11 +1039,11 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
     }
@@ -1065,30 +1065,30 @@ impl RestoreDBInstanceFromS3FluentBuilder {
         self.inner.get_storage_throughput()
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.inner = self.inner.manage_master_user_password(input);
         self
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_manage_master_user_password(input);
         self
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         self.inner.get_manage_master_user_password()

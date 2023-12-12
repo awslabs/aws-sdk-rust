@@ -8,9 +8,9 @@ pub struct LifecycleExecutionResource {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the impacted resource. The resource ID depends on the type of resource, as follows.</p>
     /// <ul>
-    /// <li> <p>Image Builder image resources: Amazon Resource Name (ARN)</p> </li>
-    /// <li> <p>Distributed AMIs: AMI ID</p> </li>
-    /// <li> <p>Container images distributed to an ECR repository: image URI or SHA Digest</p> </li>
+    /// <li><p>Image Builder image resources: Amazon Resource Name (ARN)</p></li>
+    /// <li><p>Distributed AMIs: AMI ID</p></li>
+    /// <li><p>Container images distributed to an ECR repository: image URI or SHA Digest</p></li>
     /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The runtime state for the lifecycle execution.</p>
@@ -31,9 +31,9 @@ impl LifecycleExecutionResource {
     }
     /// <p>Identifies the impacted resource. The resource ID depends on the type of resource, as follows.</p>
     /// <ul>
-    /// <li> <p>Image Builder image resources: Amazon Resource Name (ARN)</p> </li>
-    /// <li> <p>Distributed AMIs: AMI ID</p> </li>
-    /// <li> <p>Container images distributed to an ECR repository: image URI or SHA Digest</p> </li>
+    /// <li><p>Image Builder image resources: Amazon Resource Name (ARN)</p></li>
+    /// <li><p>Distributed AMIs: AMI ID</p></li>
+    /// <li><p>Container images distributed to an ECR repository: image URI or SHA Digest</p></li>
     /// </ul>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
@@ -99,9 +99,9 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>Identifies the impacted resource. The resource ID depends on the type of resource, as follows.</p>
     /// <ul>
-    /// <li> <p>Image Builder image resources: Amazon Resource Name (ARN)</p> </li>
-    /// <li> <p>Distributed AMIs: AMI ID</p> </li>
-    /// <li> <p>Container images distributed to an ECR repository: image URI or SHA Digest</p> </li>
+    /// <li><p>Image Builder image resources: Amazon Resource Name (ARN)</p></li>
+    /// <li><p>Distributed AMIs: AMI ID</p></li>
+    /// <li><p>Container images distributed to an ECR repository: image URI or SHA Digest</p></li>
     /// </ul>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -109,9 +109,9 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>Identifies the impacted resource. The resource ID depends on the type of resource, as follows.</p>
     /// <ul>
-    /// <li> <p>Image Builder image resources: Amazon Resource Name (ARN)</p> </li>
-    /// <li> <p>Distributed AMIs: AMI ID</p> </li>
-    /// <li> <p>Container images distributed to an ECR repository: image URI or SHA Digest</p> </li>
+    /// <li><p>Image Builder image resources: Amazon Resource Name (ARN)</p></li>
+    /// <li><p>Distributed AMIs: AMI ID</p></li>
+    /// <li><p>Container images distributed to an ECR repository: image URI or SHA Digest</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
@@ -119,9 +119,9 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>Identifies the impacted resource. The resource ID depends on the type of resource, as follows.</p>
     /// <ul>
-    /// <li> <p>Image Builder image resources: Amazon Resource Name (ARN)</p> </li>
-    /// <li> <p>Distributed AMIs: AMI ID</p> </li>
-    /// <li> <p>Container images distributed to an ECR repository: image URI or SHA Digest</p> </li>
+    /// <li><p>Image Builder image resources: Amazon Resource Name (ARN)</p></li>
+    /// <li><p>Distributed AMIs: AMI ID</p></li>
+    /// <li><p>Container images distributed to an ECR repository: image URI or SHA Digest</p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id

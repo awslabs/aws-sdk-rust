@@ -22,7 +22,7 @@ impl DescribeFhirImportJobInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeFHIRImportJob`.
 ///
-/// <p>Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job. </p>
+/// <p>Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFHIRImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

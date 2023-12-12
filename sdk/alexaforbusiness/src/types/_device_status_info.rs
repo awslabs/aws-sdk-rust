@@ -6,7 +6,7 @@
 pub struct DeviceStatusInfo {
     /// <p>One or more device status detail descriptions.</p>
     pub device_status_details: ::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>>,
-    /// <p>The latest available information about the connection status of a device. </p>
+    /// <p>The latest available information about the connection status of a device.</p>
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     /// <p>The time (in epoch) when the device connection status changed.</p>
     pub connection_status_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +18,7 @@ impl DeviceStatusInfo {
     pub fn device_status_details(&self) -> &[crate::types::DeviceStatusDetail] {
         self.device_status_details.as_deref().unwrap_or_default()
     }
-    /// <p>The latest available information about the connection status of a device. </p>
+    /// <p>The latest available information about the connection status of a device.</p>
     pub fn connection_status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
         self.connection_status.as_ref()
     }
@@ -63,17 +63,17 @@ impl DeviceStatusInfoBuilder {
     pub fn get_device_status_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>> {
         &self.device_status_details
     }
-    /// <p>The latest available information about the connection status of a device. </p>
+    /// <p>The latest available information about the connection status of a device.</p>
     pub fn connection_status(mut self, input: crate::types::ConnectionStatus) -> Self {
         self.connection_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The latest available information about the connection status of a device. </p>
+    /// <p>The latest available information about the connection status of a device.</p>
     pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
         self.connection_status = input;
         self
     }
-    /// <p>The latest available information about the connection status of a device. </p>
+    /// <p>The latest available information about the connection status of a device.</p>
     pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
         &self.connection_status
     }

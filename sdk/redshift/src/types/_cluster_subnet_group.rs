@@ -10,9 +10,9 @@ pub struct ClusterSubnetGroup {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the cluster subnet group.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
+    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.</p>
     pub subnet_group_status: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the VPC <code>Subnet</code> elements. </p>
+    /// <p>A list of the VPC <code>Subnet</code> elements.</p>
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The list of tags for the cluster subnet group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -32,11 +32,11 @@ impl ClusterSubnetGroup {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
+    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.</p>
     pub fn subnet_group_status(&self) -> ::std::option::Option<&str> {
         self.subnet_group_status.as_deref()
     }
-    /// <p>A list of the VPC <code>Subnet</code> elements. </p>
+    /// <p>A list of the VPC <code>Subnet</code> elements.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
     pub fn subnets(&self) -> &[crate::types::Subnet] {
@@ -117,17 +117,17 @@ impl ClusterSubnetGroupBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
-    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
+    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.</p>
     pub fn subnet_group_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
+    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.</p>
     pub fn set_subnet_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_status = input;
         self
     }
-    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
+    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.</p>
     pub fn get_subnet_group_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_group_status
     }
@@ -135,19 +135,19 @@ impl ClusterSubnetGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
-    /// <p>A list of the VPC <code>Subnet</code> elements. </p>
+    /// <p>A list of the VPC <code>Subnet</code> elements.</p>
     pub fn subnets(mut self, input: crate::types::Subnet) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input);
         self.subnets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the VPC <code>Subnet</code> elements. </p>
+    /// <p>A list of the VPC <code>Subnet</code> elements.</p>
     pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>) -> Self {
         self.subnets = input;
         self
     }
-    /// <p>A list of the VPC <code>Subnet</code> elements. </p>
+    /// <p>A list of the VPC <code>Subnet</code> elements.</p>
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
         &self.subnets
     }

@@ -150,17 +150,17 @@ impl CreateUserFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<crate::types::Name> {
         self.inner.get_name()
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }

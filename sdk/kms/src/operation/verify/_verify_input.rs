@@ -7,10 +7,10 @@ pub struct VerifyInput {
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
-    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Alias name: <code>alias/ExampleAlias</code></p></li>
+    /// <li><p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
@@ -25,10 +25,10 @@ pub struct VerifyInput {
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, if the signed message is hashed once while signing, but twice while verifying, verification fails, even when the message hasn't changed.</p>
     /// <p>The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
     /// <ul>
-    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
-    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// <li><p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p></li>
+    /// <li><p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The signature that the <code>Sign</code> operation generated.</p>
@@ -38,7 +38,7 @@ pub struct VerifyInput {
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -47,10 +47,10 @@ impl VerifyInput {
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
-    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Alias name: <code>alias/ExampleAlias</code></p></li>
+    /// <li><p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub fn key_id(&self) -> ::std::option::Option<&str> {
@@ -69,10 +69,10 @@ impl VerifyInput {
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, if the signed message is hashed once while signing, but twice while verifying, verification fails, even when the message hasn't changed.</p>
     /// <p>The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
     /// <ul>
-    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
-    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// <li><p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p></li>
+    /// <li><p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
@@ -92,7 +92,7 @@ impl VerifyInput {
     pub fn grant_tokens(&self) -> &[::std::string::String] {
         self.grant_tokens.as_deref().unwrap_or_default()
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -135,10 +135,10 @@ impl VerifyInputBuilder {
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
-    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Alias name: <code>alias/ExampleAlias</code></p></li>
+    /// <li><p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     /// This field is required.
@@ -150,10 +150,10 @@ impl VerifyInputBuilder {
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
-    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Alias name: <code>alias/ExampleAlias</code></p></li>
+    /// <li><p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -164,10 +164,10 @@ impl VerifyInputBuilder {
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
-    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Alias name: <code>alias/ExampleAlias</code></p></li>
+    /// <li><p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,10 +199,10 @@ impl VerifyInputBuilder {
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, if the signed message is hashed once while signing, but twice while verifying, verification fails, even when the message hasn't changed.</p>
     /// <p>The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
     /// <ul>
-    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
-    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// <li><p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p></li>
+    /// <li><p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
@@ -216,10 +216,10 @@ impl VerifyInputBuilder {
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, if the signed message is hashed once while signing, but twice while verifying, verification fails, even when the message hasn't changed.</p>
     /// <p>The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
     /// <ul>
-    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
-    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// <li><p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p></li>
+    /// <li><p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
@@ -233,10 +233,10 @@ impl VerifyInputBuilder {
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, if the signed message is hashed once while signing, but twice while verifying, verification fails, even when the message hasn't changed.</p>
     /// <p>The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
     /// <ul>
-    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
-    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// <li><p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p></li>
+    /// <li><p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         &self.message_type
@@ -294,19 +294,19 @@ impl VerifyInputBuilder {
     pub fn get_grant_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.grant_tokens
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCampaignsOutput {
-    /// <p> A summary of information about each campaign. </p>
+    /// <p>A summary of information about each campaign.</p>
     pub campaign_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCampaignsOutput {
-    /// <p> A summary of information about each campaign. </p>
+    /// <p>A summary of information about each campaign.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.campaign_summaries.is_none()`.
     pub fn campaign_summaries(&self) -> &[crate::types::CampaignSummary] {
         self.campaign_summaries.as_deref().unwrap_or_default()
     }
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListCampaignsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_campaign_summaries`](Self::set_campaign_summaries).
     ///
-    /// <p> A summary of information about each campaign. </p>
+    /// <p>A summary of information about each campaign.</p>
     pub fn campaign_summaries(mut self, input: crate::types::CampaignSummary) -> Self {
         let mut v = self.campaign_summaries.unwrap_or_default();
         v.push(input);
         self.campaign_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A summary of information about each campaign. </p>
+    /// <p>A summary of information about each campaign.</p>
     pub fn set_campaign_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>) -> Self {
         self.campaign_summaries = input;
         self
     }
-    /// <p> A summary of information about each campaign. </p>
+    /// <p>A summary of information about each campaign.</p>
     pub fn get_campaign_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>> {
         &self.campaign_summaries
     }
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

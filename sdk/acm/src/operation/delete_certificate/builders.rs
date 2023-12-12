@@ -22,7 +22,7 @@ impl DeleteCertificateInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCertificate`.
 ///
-/// <p>Deletes a certificate and its associated private key. If this action succeeds, the certificate no longer appears in the list that can be displayed by calling the <code>ListCertificates</code> action or be retrieved by calling the <code>GetCertificate</code> action. The certificate will not be available for use by Amazon Web Services services integrated with ACM. </p> <note>
+/// <p>Deletes a certificate and its associated private key. If this action succeeds, the certificate no longer appears in the list that can be displayed by calling the <code>ListCertificates</code> action or be retrieved by calling the <code>GetCertificate</code> action. The certificate will not be available for use by Amazon Web Services services integrated with ACM.</p> <note>
 /// <p>You cannot delete an ACM certificate that is being used by another Amazon Web Services service. To delete a certificate that is in use, the certificate association must first be removed.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -111,21 +111,21 @@ impl DeleteCertificateFluentBuilder {
         self
     }
     /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
     /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_arn()

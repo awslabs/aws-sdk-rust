@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackVolume {
-    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks.</p>
     pub bits_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
-    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks.</p>
     pub packets_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
     pub requests_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
 }
 impl AttackVolume {
-    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks.</p>
     pub fn bits_per_second(&self) -> ::std::option::Option<&crate::types::AttackVolumeStatistics> {
         self.bits_per_second.as_ref()
     }
-    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks.</p>
     pub fn packets_per_second(&self) -> ::std::option::Option<&crate::types::AttackVolumeStatistics> {
         self.packets_per_second.as_ref()
     }
@@ -41,31 +41,31 @@ pub struct AttackVolumeBuilder {
     pub(crate) requests_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
 }
 impl AttackVolumeBuilder {
-    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks.</p>
     pub fn bits_per_second(mut self, input: crate::types::AttackVolumeStatistics) -> Self {
         self.bits_per_second = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks.</p>
     pub fn set_bits_per_second(mut self, input: ::std::option::Option<crate::types::AttackVolumeStatistics>) -> Self {
         self.bits_per_second = input;
         self
     }
-    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks.</p>
     pub fn get_bits_per_second(&self) -> &::std::option::Option<crate::types::AttackVolumeStatistics> {
         &self.bits_per_second
     }
-    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks.</p>
     pub fn packets_per_second(mut self, input: crate::types::AttackVolumeStatistics) -> Self {
         self.packets_per_second = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks.</p>
     pub fn set_packets_per_second(mut self, input: ::std::option::Option<crate::types::AttackVolumeStatistics>) -> Self {
         self.packets_per_second = input;
         self
     }
-    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
+    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks.</p>
     pub fn get_packets_per_second(&self) -> &::std::option::Option<crate::types::AttackVolumeStatistics> {
         &self.packets_per_second
     }

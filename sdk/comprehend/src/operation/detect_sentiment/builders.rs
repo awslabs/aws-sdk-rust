@@ -22,7 +22,7 @@ impl DetectSentimentInputBuilder {
 }
 /// Fluent builder constructing a request to `DetectSentiment`.
 ///
-/// <p>Inspects text and returns an inference of the prevailing sentiment (<code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>). </p>
+/// <p>Inspects text and returns an inference of the prevailing sentiment (<code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectSentimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

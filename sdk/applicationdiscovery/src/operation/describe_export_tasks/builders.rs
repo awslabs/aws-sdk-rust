@@ -138,7 +138,7 @@ impl DescribeExportTasksFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
+    /// <li><p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::ExportFilter) -> Self {
         self.inner = self.inner.filters(input);
@@ -146,7 +146,7 @@ impl DescribeExportTasksFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
+    /// <li><p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -154,7 +154,7 @@ impl DescribeExportTasksFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
+    /// <li><p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
         self.inner.get_filters()

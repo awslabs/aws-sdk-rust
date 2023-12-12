@@ -6,8 +6,8 @@
 pub struct DataRepositoryTaskFilter {
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
     /// <ul>
-    /// <li> <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p> </li>
-    /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
+    /// <li><p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p></li>
+    /// <li><p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>,
     /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
@@ -16,8 +16,8 @@ pub struct DataRepositoryTaskFilter {
 impl DataRepositoryTaskFilter {
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
     /// <ul>
-    /// <li> <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p> </li>
-    /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
+    /// <li><p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p></li>
+    /// <li><p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::DataRepositoryTaskFilterName> {
         self.name.as_ref()
@@ -46,8 +46,8 @@ pub struct DataRepositoryTaskFilterBuilder {
 impl DataRepositoryTaskFilterBuilder {
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
     /// <ul>
-    /// <li> <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p> </li>
-    /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
+    /// <li><p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p></li>
+    /// <li><p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::DataRepositoryTaskFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -55,8 +55,8 @@ impl DataRepositoryTaskFilterBuilder {
     }
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
     /// <ul>
-    /// <li> <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p> </li>
-    /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
+    /// <li><p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p></li>
+    /// <li><p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>) -> Self {
         self.name = input;
@@ -64,8 +64,8 @@ impl DataRepositoryTaskFilterBuilder {
     }
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
     /// <ul>
-    /// <li> <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p> </li>
-    /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
+    /// <li><p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p></li>
+    /// <li><p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskFilterName> {
         &self.name

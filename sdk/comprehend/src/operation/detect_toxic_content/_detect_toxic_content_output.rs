@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectToxicContentOutput {
-    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list. </p>
+    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
     pub result_list: ::std::option::Option<::std::vec::Vec<crate::types::ToxicLabels>>,
     _request_id: Option<String>,
 }
 impl DetectToxicContentOutput {
-    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list. </p>
+    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_list.is_none()`.
     pub fn result_list(&self) -> &[crate::types::ToxicLabels] {
@@ -39,19 +39,19 @@ impl DetectToxicContentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_result_list`](Self::set_result_list).
     ///
-    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list. </p>
+    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
     pub fn result_list(mut self, input: crate::types::ToxicLabels) -> Self {
         let mut v = self.result_list.unwrap_or_default();
         v.push(input);
         self.result_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list. </p>
+    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
     pub fn set_result_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicLabels>>) -> Self {
         self.result_list = input;
         self
     }
-    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list. </p>
+    /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
     pub fn get_result_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicLabels>> {
         &self.result_list
     }

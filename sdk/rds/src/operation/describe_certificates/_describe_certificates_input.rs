@@ -7,7 +7,7 @@ pub struct DescribeCertificatesInput {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the identified certificate is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing CertificateIdentifier.</p> </li>
+    /// <li><p>Must match an existing CertificateIdentifier.</p></li>
     /// </ul>
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>This parameter isn't currently supported.</p>
@@ -23,7 +23,7 @@ impl DescribeCertificatesInput {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the identified certificate is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing CertificateIdentifier.</p> </li>
+    /// <li><p>Must match an existing CertificateIdentifier.</p></li>
     /// </ul>
     pub fn certificate_identifier(&self) -> ::std::option::Option<&str> {
         self.certificate_identifier.as_deref()
@@ -65,7 +65,7 @@ impl DescribeCertificatesInputBuilder {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the identified certificate is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing CertificateIdentifier.</p> </li>
+    /// <li><p>Must match an existing CertificateIdentifier.</p></li>
     /// </ul>
     pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_identifier = ::std::option::Option::Some(input.into());
@@ -74,7 +74,7 @@ impl DescribeCertificatesInputBuilder {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the identified certificate is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing CertificateIdentifier.</p> </li>
+    /// <li><p>Must match an existing CertificateIdentifier.</p></li>
     /// </ul>
     pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_identifier = input;
@@ -83,7 +83,7 @@ impl DescribeCertificatesInputBuilder {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the identified certificate is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing CertificateIdentifier.</p> </li>
+    /// <li><p>Must match an existing CertificateIdentifier.</p></li>
     /// </ul>
     pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_identifier

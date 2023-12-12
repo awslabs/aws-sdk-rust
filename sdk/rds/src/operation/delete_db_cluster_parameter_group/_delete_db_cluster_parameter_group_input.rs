@@ -7,9 +7,9 @@ pub struct DeleteDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
-    /// <li> <p>Can't be associated with any DB clusters.</p> </li>
+    /// <li><p>Must be the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>You can't delete a default DB cluster parameter group.</p></li>
+    /// <li><p>Can't be associated with any DB clusters.</p></li>
     /// </ul>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -17,9 +17,9 @@ impl DeleteDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
-    /// <li> <p>Can't be associated with any DB clusters.</p> </li>
+    /// <li><p>Must be the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>You can't delete a default DB cluster parameter group.</p></li>
+    /// <li><p>Can't be associated with any DB clusters.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
@@ -42,9 +42,9 @@ impl DeleteDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
-    /// <li> <p>Can't be associated with any DB clusters.</p> </li>
+    /// <li><p>Must be the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>You can't delete a default DB cluster parameter group.</p></li>
+    /// <li><p>Can't be associated with any DB clusters.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,9 +54,9 @@ impl DeleteDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
-    /// <li> <p>Can't be associated with any DB clusters.</p> </li>
+    /// <li><p>Must be the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>You can't delete a default DB cluster parameter group.</p></li>
+    /// <li><p>Can't be associated with any DB clusters.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
@@ -65,9 +65,9 @@ impl DeleteDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
-    /// <li> <p>Can't be associated with any DB clusters.</p> </li>
+    /// <li><p>Must be the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>You can't delete a default DB cluster parameter group.</p></li>
+    /// <li><p>Can't be associated with any DB clusters.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name

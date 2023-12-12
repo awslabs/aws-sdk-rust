@@ -5,9 +5,9 @@
 pub struct GetLendingAnalysisSummaryOutput {
     /// <p>Information about the input document.</p>
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
-    /// <p> The current status of the lending analysis job. </p>
+    /// <p>The current status of the lending analysis job.</p>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
-    /// <p> Contains summary information for documents grouped by type.</p>
+    /// <p>Contains summary information for documents grouped by type.</p>
     pub summary: ::std::option::Option<crate::types::LendingSummary>,
     /// <p>A list of warnings that occurred during the lending analysis operation.</p>
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
@@ -22,11 +22,11 @@ impl GetLendingAnalysisSummaryOutput {
     pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
-    /// <p> The current status of the lending analysis job. </p>
+    /// <p>The current status of the lending analysis job.</p>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p> Contains summary information for documents grouped by type.</p>
+    /// <p>Contains summary information for documents grouped by type.</p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::LendingSummary> {
         self.summary.as_ref()
     }
@@ -84,31 +84,31 @@ impl GetLendingAnalysisSummaryOutputBuilder {
     pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
         &self.document_metadata
     }
-    /// <p> The current status of the lending analysis job. </p>
+    /// <p>The current status of the lending analysis job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The current status of the lending analysis job. </p>
+    /// <p>The current status of the lending analysis job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
     }
-    /// <p> The current status of the lending analysis job. </p>
+    /// <p>The current status of the lending analysis job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
-    /// <p> Contains summary information for documents grouped by type.</p>
+    /// <p>Contains summary information for documents grouped by type.</p>
     pub fn summary(mut self, input: crate::types::LendingSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Contains summary information for documents grouped by type.</p>
+    /// <p>Contains summary information for documents grouped by type.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::LendingSummary>) -> Self {
         self.summary = input;
         self
     }
-    /// <p> Contains summary information for documents grouped by type.</p>
+    /// <p>Contains summary information for documents grouped by type.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::LendingSummary> {
         &self.summary
     }

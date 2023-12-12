@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeBacku
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeBackupError {
-    /// <p>Backup not found for the given BackupARN. </p>
+    /// <p>Backup not found for the given BackupARN.</p>
     BackupNotFoundException(crate::types::error::BackupNotFoundException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),

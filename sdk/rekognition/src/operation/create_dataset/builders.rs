@@ -26,10 +26,10 @@ impl CreateDatasetInputBuilder {
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
 /// <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a dataset by using an Amazon Sagemaker format manifest file or by copying an existing Amazon Rekognition Custom Labels dataset.</p>
-/// <p>To create a training dataset for a project, specify <code>TRAIN</code> for the value of <code>DatasetType</code>. To create the test dataset for a project, specify <code>TEST</code> for the value of <code>DatasetType</code>. </p>
-/// <p>The response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for the dataset. Creating a dataset takes a while to complete. Use <code>DescribeDataset</code> to check the current status. The dataset created successfully if the value of <code>Status</code> is <code>CREATE_COMPLETE</code>. </p>
+/// <p>To create a training dataset for a project, specify <code>TRAIN</code> for the value of <code>DatasetType</code>. To create the test dataset for a project, specify <code>TEST</code> for the value of <code>DatasetType</code>.</p>
+/// <p>The response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for the dataset. Creating a dataset takes a while to complete. Use <code>DescribeDataset</code> to check the current status. The dataset created successfully if the value of <code>Status</code> is <code>CREATE_COMPLETE</code>.</p>
 /// <p>To check if any non-terminal errors occurred, call <code>ListDatasetEntries</code> and check for the presence of <code>errors</code> lists in the JSON Lines.</p>
-/// <p>Dataset creation fails if a terminal error occurs (<code>Status</code> = <code>CREATE_FAILED</code>). Currently, you can't access the terminal error information. </p>
+/// <p>Dataset creation fails if a terminal error occurs (<code>Status</code> = <code>CREATE_FAILED</code>). Currently, you can't access the terminal error information.</p>
 /// <p>For more information, see Creating dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:CreateDataset</code> action. If you want to copy an existing dataset, you also require permission to perform the <code>rekognition:ListDatasetEntries</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -117,45 +117,45 @@ impl CreateDatasetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
+    /// <p>The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>.</p>
     pub fn dataset_source(mut self, input: crate::types::DatasetSource) -> Self {
         self.inner = self.inner.dataset_source(input);
         self
     }
-    /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
+    /// <p>The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>.</p>
     pub fn set_dataset_source(mut self, input: ::std::option::Option<crate::types::DatasetSource>) -> Self {
         self.inner = self.inner.set_dataset_source(input);
         self
     }
-    /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
+    /// <p>The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>.</p>
     pub fn get_dataset_source(&self) -> &::std::option::Option<crate::types::DatasetSource> {
         self.inner.get_dataset_source()
     }
-    /// <p> The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset. </p>
+    /// <p>The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset.</p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
         self.inner = self.inner.dataset_type(input);
         self
     }
-    /// <p> The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset. </p>
+    /// <p>The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset.</p>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.inner = self.inner.set_dataset_type(input);
         self
     }
-    /// <p> The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset. </p>
+    /// <p>The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset.</p>
     pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
         self.inner.get_dataset_type()
     }
-    /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
+    /// <p>The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.</p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_arn(input.into());
         self
     }
-    /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
+    /// <p>The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_arn(input);
         self
     }
-    /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
+    /// <p>The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_arn()
     }

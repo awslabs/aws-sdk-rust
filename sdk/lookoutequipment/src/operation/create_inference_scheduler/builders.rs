@@ -22,7 +22,7 @@ impl CreateInferenceSchedulerInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateInferenceScheduler`.
 ///
-/// <p> Creates a scheduled inference. Scheduling an inference is setting up a continuous real-time inference plan to analyze new measurement data. When setting up the schedule, you provide an S3 bucket location for the input data, assign it a delimiter between separate entries in the data, set an offset delay if desired, and set the frequency of inferencing. You must also provide an S3 bucket location for the output data. </p>
+/// <p>Creates a scheduled inference. Scheduling an inference is setting up a continuous real-time inference plan to analyze new measurement data. When setting up the schedule, you provide an S3 bucket location for the input data, assign it a delimiter between separate entries in the data, set an offset delay if desired, and set the frequency of inferencing. You must also provide an S3 bucket location for the output data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateInferenceSchedulerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the previously trained machine learning model being used to create the inference scheduler. </p>
+    /// <p>The name of the previously trained machine learning model being used to create the inference scheduler.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
         self
     }
-    /// <p>The name of the previously trained machine learning model being used to create the inference scheduler. </p>
+    /// <p>The name of the previously trained machine learning model being used to create the inference scheduler.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
     }
-    /// <p>The name of the previously trained machine learning model being used to create the inference scheduler. </p>
+    /// <p>The name of the previously trained machine learning model being used to create the inference scheduler.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }
-    /// <p>The name of the inference scheduler being created. </p>
+    /// <p>The name of the inference scheduler being created.</p>
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
-    /// <p>The name of the inference scheduler being created. </p>
+    /// <p>The name of the inference scheduler being created.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
-    /// <p>The name of the inference scheduler being created. </p>
+    /// <p>The name of the inference scheduler being created.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_scheduler_name()
     }
@@ -153,90 +153,90 @@ impl CreateInferenceSchedulerFluentBuilder {
     pub fn get_data_delay_offset_in_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_data_delay_offset_in_minutes()
     }
-    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+    /// <p>How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     pub fn data_upload_frequency(mut self, input: crate::types::DataUploadFrequency) -> Self {
         self.inner = self.inner.data_upload_frequency(input);
         self
     }
-    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+    /// <p>How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     pub fn set_data_upload_frequency(mut self, input: ::std::option::Option<crate::types::DataUploadFrequency>) -> Self {
         self.inner = self.inner.set_data_upload_frequency(input);
         self
     }
-    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+    /// <p>How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     pub fn get_data_upload_frequency(&self) -> &::std::option::Option<crate::types::DataUploadFrequency> {
         self.inner.get_data_upload_frequency()
     }
-    /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
     pub fn data_input_configuration(mut self, input: crate::types::InferenceInputConfiguration) -> Self {
         self.inner = self.inner.data_input_configuration(input);
         self
     }
-    /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
     pub fn set_data_input_configuration(mut self, input: ::std::option::Option<crate::types::InferenceInputConfiguration>) -> Self {
         self.inner = self.inner.set_data_input_configuration(input);
         self
     }
-    /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
     pub fn get_data_input_configuration(&self) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
         self.inner.get_data_input_configuration()
     }
-    /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
+    /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output.</p>
     pub fn data_output_configuration(mut self, input: crate::types::InferenceOutputConfiguration) -> Self {
         self.inner = self.inner.data_output_configuration(input);
         self
     }
-    /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
+    /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output.</p>
     pub fn set_data_output_configuration(mut self, input: ::std::option::Option<crate::types::InferenceOutputConfiguration>) -> Self {
         self.inner = self.inner.set_data_output_configuration(input);
         self
     }
-    /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
+    /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output.</p>
     pub fn get_data_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
         self.inner.get_data_output_configuration()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment.</p>
     pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_side_kms_key_id(input.into());
         self
     }
-    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment.</p>
     pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
-    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment.</p>
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_side_kms_key_id()
     }
-    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -244,17 +244,17 @@ impl CreateInferenceSchedulerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Any tags associated with the inference scheduler. </p>
+    /// <p>Any tags associated with the inference scheduler.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Any tags associated with the inference scheduler. </p>
+    /// <p>Any tags associated with the inference scheduler.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Any tags associated with the inference scheduler. </p>
+    /// <p>Any tags associated with the inference scheduler.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

@@ -22,7 +22,7 @@ impl CreateModelManifestInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateModelManifest`.
 ///
-/// <p> Creates a vehicle model (model manifest) that specifies signals (attributes, branches, sensors, and actuators). </p>
+/// <p>Creates a vehicle model (model manifest) that specifies signals (attributes, branches, sensors, and actuators).</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/vehicle-models.html">Vehicle models</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelManifestFluentBuilder {
@@ -109,31 +109,31 @@ impl CreateModelManifestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the vehicle model to create.</p>
+    /// <p>The name of the vehicle model to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The name of the vehicle model to create.</p>
+    /// <p>The name of the vehicle model to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The name of the vehicle model to create.</p>
+    /// <p>The name of the vehicle model to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> A brief description of the vehicle model. </p>
+    /// <p>A brief description of the vehicle model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> A brief description of the vehicle model. </p>
+    /// <p>A brief description of the vehicle model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> A brief description of the vehicle model. </p>
+    /// <p>A brief description of the vehicle model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -141,31 +141,31 @@ impl CreateModelManifestFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
     ///
-    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    /// <p>A list of nodes, which are a general abstraction of signals.</p>
     pub fn nodes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodes(input.into());
         self
     }
-    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    /// <p>A list of nodes, which are a general abstraction of signals.</p>
     pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes(input);
         self
     }
-    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    /// <p>A list of nodes, which are a general abstraction of signals.</p>
     pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_nodes()
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signal_catalog_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_signal_catalog_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_signal_catalog_arn()
     }

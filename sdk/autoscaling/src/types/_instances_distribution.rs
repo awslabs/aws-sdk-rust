@@ -11,7 +11,7 @@ pub struct InstancesDistribution {
     /// lowest-price
     /// </dt>
     /// <dd>
-    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>. </p>
+    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>.</p>
     /// </dd>
     /// <dt>
     /// prioritized
@@ -74,7 +74,7 @@ impl InstancesDistribution {
     /// lowest-price
     /// </dt>
     /// <dd>
-    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>. </p>
+    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>.</p>
     /// </dd>
     /// <dt>
     /// prioritized
@@ -167,7 +167,7 @@ impl InstancesDistributionBuilder {
     /// lowest-price
     /// </dt>
     /// <dd>
-    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>. </p>
+    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>.</p>
     /// </dd>
     /// <dt>
     /// prioritized
@@ -187,7 +187,7 @@ impl InstancesDistributionBuilder {
     /// lowest-price
     /// </dt>
     /// <dd>
-    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>. </p>
+    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>.</p>
     /// </dd>
     /// <dt>
     /// prioritized
@@ -207,7 +207,7 @@ impl InstancesDistributionBuilder {
     /// lowest-price
     /// </dt>
     /// <dd>
-    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>. </p>
+    /// <p>Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify <code>InstanceRequirements</code>.</p>
     /// </dd>
     /// <dt>
     /// prioritized

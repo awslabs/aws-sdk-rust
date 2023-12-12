@@ -5,8 +5,8 @@
 pub struct DescribeProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
@@ -19,14 +19,14 @@ pub struct DescribeProvisioningArtifactInput {
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
     pub verbose: ::std::option::Option<bool>,
-    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters.</p>
     pub include_provisioning_artifact_parameters: ::std::option::Option<bool>,
 }
 impl DescribeProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -51,7 +51,7 @@ impl DescribeProvisioningArtifactInput {
     pub fn verbose(&self) -> ::std::option::Option<bool> {
         self.verbose
     }
-    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters.</p>
     pub fn include_provisioning_artifact_parameters(&self) -> ::std::option::Option<bool> {
         self.include_provisioning_artifact_parameters
     }
@@ -78,8 +78,8 @@ pub struct DescribeProvisioningArtifactInputBuilder {
 impl DescribeProvisioningArtifactInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -87,8 +87,8 @@ impl DescribeProvisioningArtifactInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -96,8 +96,8 @@ impl DescribeProvisioningArtifactInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -172,17 +172,17 @@ impl DescribeProvisioningArtifactInputBuilder {
     pub fn get_verbose(&self) -> &::std::option::Option<bool> {
         &self.verbose
     }
-    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters.</p>
     pub fn include_provisioning_artifact_parameters(mut self, input: bool) -> Self {
         self.include_provisioning_artifact_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters.</p>
     pub fn set_include_provisioning_artifact_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_provisioning_artifact_parameters = input;
         self
     }
-    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters.</p>
     pub fn get_include_provisioning_artifact_parameters(&self) -> &::std::option::Option<bool> {
         &self.include_provisioning_artifact_parameters
     }

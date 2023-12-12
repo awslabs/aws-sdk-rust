@@ -8,7 +8,7 @@ pub struct AnalyticsConfiguration {
     pub id: ::std::string::String,
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
     pub filter: ::std::option::Option<crate::types::AnalyticsFilter>,
-    /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
+    /// <p>Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes.</p>
     pub storage_class_analysis: ::std::option::Option<crate::types::StorageClassAnalysis>,
 }
 impl AnalyticsConfiguration {
@@ -21,7 +21,7 @@ impl AnalyticsConfiguration {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::AnalyticsFilter> {
         self.filter.as_ref()
     }
-    /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
+    /// <p>Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes.</p>
     pub fn storage_class_analysis(&self) -> ::std::option::Option<&crate::types::StorageClassAnalysis> {
         self.storage_class_analysis.as_ref()
     }
@@ -71,18 +71,18 @@ impl AnalyticsConfigurationBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::AnalyticsFilter> {
         &self.filter
     }
-    /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
+    /// <p>Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes.</p>
     /// This field is required.
     pub fn storage_class_analysis(mut self, input: crate::types::StorageClassAnalysis) -> Self {
         self.storage_class_analysis = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
+    /// <p>Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes.</p>
     pub fn set_storage_class_analysis(mut self, input: ::std::option::Option<crate::types::StorageClassAnalysis>) -> Self {
         self.storage_class_analysis = input;
         self
     }
-    /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
+    /// <p>Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes.</p>
     pub fn get_storage_class_analysis(&self) -> &::std::option::Option<crate::types::StorageClassAnalysis> {
         &self.storage_class_analysis
     }

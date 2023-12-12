@@ -23,17 +23,17 @@ impl DescribePredictorInputBuilder {
 /// Fluent builder constructing a request to `DescribePredictor`.
 ///
 /// <note>
-/// <p> This operation is only valid for legacy predictors created with CreatePredictor. If you are not using a legacy predictor, use <code>DescribeAutoPredictor</code>.</p>
+/// <p>This operation is only valid for legacy predictors created with CreatePredictor. If you are not using a legacy predictor, use <code>DescribeAutoPredictor</code>.</p>
 /// </note>
 /// <p>Describes a predictor created using the <code>CreatePredictor</code> operation.</p>
 /// <p>In addition to listing the properties provided in the <code>CreatePredictor</code> request, this operation lists the following properties:</p>
 /// <ul>
-/// <li> <p> <code>DatasetImportJobArns</code> - The dataset import jobs used to import training data.</p> </li>
-/// <li> <p> <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that were evaluated.</p> </li>
-/// <li> <p> <code>CreationTime</code> </p> </li>
-/// <li> <p> <code>LastModificationTime</code> </p> </li>
-/// <li> <p> <code>Status</code> </p> </li>
-/// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
+/// <li><p><code>DatasetImportJobArns</code> - The dataset import jobs used to import training data.</p></li>
+/// <li><p><code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that were evaluated.</p></li>
+/// <li><p><code>CreationTime</code></p></li>
+/// <li><p><code>LastModificationTime</code></p></li>
+/// <li><p><code>Status</code></p></li>
+/// <li><p><code>Message</code> - If an error occurred, information about the error.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePredictorFluentBuilder {

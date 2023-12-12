@@ -10,7 +10,7 @@ pub struct Certificate {
     pub certificate_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub certificate_pem: ::std::option::Option<::std::string::String>,
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
     pub certificate_wallet: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl Certificate {
     pub fn certificate_pem(&self) -> ::std::option::Option<&str> {
         self.certificate_pem.as_deref()
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
     pub fn certificate_wallet(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.certificate_wallet.as_ref()
     }
@@ -132,17 +132,17 @@ impl CertificateBuilder {
     pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_pem
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
     pub fn certificate_wallet(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.certificate_wallet = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
     pub fn set_certificate_wallet(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.certificate_wallet = input;
         self
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
     pub fn get_certificate_wallet(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.certificate_wallet
     }

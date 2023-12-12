@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleSelectQuestionRuleCategoryAutomation {
-    /// <p> The category name, as defined in Rules.</p>
+    /// <p>The category name, as defined in Rules.</p>
     pub category: ::std::string::String,
     /// <p>The condition to apply for the automation option. If the condition is <code>PRESENT</code>, then the option is applied when the contact data includes the category. Similarly, if the condition is <code>NOT_PRESENT</code>, then the option is applied when the contact data does not include the category.</p>
     pub condition: crate::types::SingleSelectQuestionRuleCategoryAutomationCondition,
@@ -12,7 +12,7 @@ pub struct SingleSelectQuestionRuleCategoryAutomation {
     pub option_ref_id: ::std::string::String,
 }
 impl SingleSelectQuestionRuleCategoryAutomation {
-    /// <p> The category name, as defined in Rules.</p>
+    /// <p>The category name, as defined in Rules.</p>
     pub fn category(&self) -> &str {
         use std::ops::Deref;
         self.category.deref()
@@ -43,18 +43,18 @@ pub struct SingleSelectQuestionRuleCategoryAutomationBuilder {
     pub(crate) option_ref_id: ::std::option::Option<::std::string::String>,
 }
 impl SingleSelectQuestionRuleCategoryAutomationBuilder {
-    /// <p> The category name, as defined in Rules.</p>
+    /// <p>The category name, as defined in Rules.</p>
     /// This field is required.
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The category name, as defined in Rules.</p>
+    /// <p>The category name, as defined in Rules.</p>
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
     }
-    /// <p> The category name, as defined in Rules.</p>
+    /// <p>The category name, as defined in Rules.</p>
     pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.category
     }

@@ -6,13 +6,13 @@
 pub struct DescribeConfigurationSetOutput {
     /// <p>The configuration set object associated with the specified configuration set.</p>
     pub configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
-    /// <p>A list of event destinations associated with the configuration set. </p>
+    /// <p>A list of event destinations associated with the configuration set.</p>
     pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
     pub tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
-    /// <p>An object that represents the reputation settings for the configuration set. </p>
+    /// <p>An object that represents the reputation settings for the configuration set.</p>
     pub reputation_options: ::std::option::Option<crate::types::ReputationOptions>,
     _request_id: Option<String>,
 }
@@ -21,7 +21,7 @@ impl DescribeConfigurationSetOutput {
     pub fn configuration_set(&self) -> ::std::option::Option<&crate::types::ConfigurationSet> {
         self.configuration_set.as_ref()
     }
-    /// <p>A list of event destinations associated with the configuration set. </p>
+    /// <p>A list of event destinations associated with the configuration set.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_destinations.is_none()`.
     pub fn event_destinations(&self) -> &[crate::types::EventDestination] {
@@ -35,7 +35,7 @@ impl DescribeConfigurationSetOutput {
     pub fn delivery_options(&self) -> ::std::option::Option<&crate::types::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
-    /// <p>An object that represents the reputation settings for the configuration set. </p>
+    /// <p>An object that represents the reputation settings for the configuration set.</p>
     pub fn reputation_options(&self) -> ::std::option::Option<&crate::types::ReputationOptions> {
         self.reputation_options.as_ref()
     }
@@ -82,19 +82,19 @@ impl DescribeConfigurationSetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_destinations`](Self::set_event_destinations).
     ///
-    /// <p>A list of event destinations associated with the configuration set. </p>
+    /// <p>A list of event destinations associated with the configuration set.</p>
     pub fn event_destinations(mut self, input: crate::types::EventDestination) -> Self {
         let mut v = self.event_destinations.unwrap_or_default();
         v.push(input);
         self.event_destinations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of event destinations associated with the configuration set. </p>
+    /// <p>A list of event destinations associated with the configuration set.</p>
     pub fn set_event_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>) -> Self {
         self.event_destinations = input;
         self
     }
-    /// <p>A list of event destinations associated with the configuration set. </p>
+    /// <p>A list of event destinations associated with the configuration set.</p>
     pub fn get_event_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDestination>> {
         &self.event_destinations
     }
@@ -126,17 +126,17 @@ impl DescribeConfigurationSetOutputBuilder {
     pub fn get_delivery_options(&self) -> &::std::option::Option<crate::types::DeliveryOptions> {
         &self.delivery_options
     }
-    /// <p>An object that represents the reputation settings for the configuration set. </p>
+    /// <p>An object that represents the reputation settings for the configuration set.</p>
     pub fn reputation_options(mut self, input: crate::types::ReputationOptions) -> Self {
         self.reputation_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents the reputation settings for the configuration set. </p>
+    /// <p>An object that represents the reputation settings for the configuration set.</p>
     pub fn set_reputation_options(mut self, input: ::std::option::Option<crate::types::ReputationOptions>) -> Self {
         self.reputation_options = input;
         self
     }
-    /// <p>An object that represents the reputation settings for the configuration set. </p>
+    /// <p>An object that represents the reputation settings for the configuration set.</p>
     pub fn get_reputation_options(&self) -> &::std::option::Option<crate::types::ReputationOptions> {
         &self.reputation_options
     }

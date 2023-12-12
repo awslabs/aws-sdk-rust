@@ -8,7 +8,7 @@ pub struct ModelDescription {
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub model_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    /// <p>The unix timestamp for the date and time that the model was created.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description for the model.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -24,11 +24,11 @@ pub struct ModelDescription {
     pub evaluation_manifest: ::std::option::Option<crate::types::OutputS3Object>,
     /// <p>The S3 location where Amazon Lookout for Vision saves the performance metrics.</p>
     pub evaluation_result: ::std::option::Option<crate::types::OutputS3Object>,
-    /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
+    /// <p>The unix timestamp for the date and time that the evaluation ended.</p>
     pub evaluation_end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code></p>
     pub min_inference_units: ::std::option::Option<i32>,
     /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
     pub max_inference_units: ::std::option::Option<i32>,
@@ -42,7 +42,7 @@ impl ModelDescription {
     pub fn model_arn(&self) -> ::std::option::Option<&str> {
         self.model_arn.as_deref()
     }
-    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    /// <p>The unix timestamp for the date and time that the model was created.</p>
     pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
@@ -74,7 +74,7 @@ impl ModelDescription {
     pub fn evaluation_result(&self) -> ::std::option::Option<&crate::types::OutputS3Object> {
         self.evaluation_result.as_ref()
     }
-    /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
+    /// <p>The unix timestamp for the date and time that the evaluation ended.</p>
     pub fn evaluation_end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.evaluation_end_timestamp.as_ref()
     }
@@ -82,7 +82,7 @@ impl ModelDescription {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code></p>
     pub fn min_inference_units(&self) -> ::std::option::Option<i32> {
         self.min_inference_units
     }
@@ -146,17 +146,17 @@ impl ModelDescriptionBuilder {
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
-    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    /// <p>The unix timestamp for the date and time that the model was created.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    /// <p>The unix timestamp for the date and time that the model was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
-    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    /// <p>The unix timestamp for the date and time that the model was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_timestamp
     }
@@ -258,17 +258,17 @@ impl ModelDescriptionBuilder {
     pub fn get_evaluation_result(&self) -> &::std::option::Option<crate::types::OutputS3Object> {
         &self.evaluation_result
     }
-    /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
+    /// <p>The unix timestamp for the date and time that the evaluation ended.</p>
     pub fn evaluation_end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.evaluation_end_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
+    /// <p>The unix timestamp for the date and time that the evaluation ended.</p>
     pub fn set_evaluation_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.evaluation_end_timestamp = input;
         self
     }
-    /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
+    /// <p>The unix timestamp for the date and time that the evaluation ended.</p>
     pub fn get_evaluation_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.evaluation_end_timestamp
     }
@@ -286,17 +286,17 @@ impl ModelDescriptionBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code></p>
     pub fn min_inference_units(mut self, input: i32) -> Self {
         self.min_inference_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code></p>
     pub fn set_min_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_inference_units = input;
         self
     }
-    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code></p>
     pub fn get_min_inference_units(&self) -> &::std::option::Option<i32> {
         &self.min_inference_units
     }

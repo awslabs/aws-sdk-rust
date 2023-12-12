@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientProperties {
-    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
+    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
     pub reconnect_enabled: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
     pub log_upload_enabled: ::std::option::Option<crate::types::LogUploadEnum>,
 }
 impl ClientProperties {
-    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
+    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
     pub fn reconnect_enabled(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
         self.reconnect_enabled.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct ClientPropertiesBuilder {
     pub(crate) log_upload_enabled: ::std::option::Option<crate::types::LogUploadEnum>,
 }
 impl ClientPropertiesBuilder {
-    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
+    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
     pub fn reconnect_enabled(mut self, input: crate::types::ReconnectEnum) -> Self {
         self.reconnect_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
+    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
     pub fn set_reconnect_enabled(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
         self.reconnect_enabled = input;
         self
     }
-    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
+    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
     pub fn get_reconnect_enabled(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
         &self.reconnect_enabled
     }

@@ -7,7 +7,7 @@ pub struct CreateUserInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
     pub passwords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -29,7 +29,7 @@ impl CreateUserInput {
     pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -109,18 +109,18 @@ impl CreateUserInputBuilder {
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The current supported value is Redis. </p>
+    /// <p>The current supported value is Redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

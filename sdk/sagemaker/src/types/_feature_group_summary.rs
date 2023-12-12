@@ -10,7 +10,7 @@ pub struct FeatureGroupSummary {
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
+    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>.</p>
     pub feature_group_status: ::std::option::Option<crate::types::FeatureGroupStatus>,
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
     pub offline_store_status: ::std::option::Option<crate::types::OfflineStoreStatus>,
@@ -28,7 +28,7 @@ impl FeatureGroupSummary {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
+    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>.</p>
     pub fn feature_group_status(&self) -> ::std::option::Option<&crate::types::FeatureGroupStatus> {
         self.feature_group_status.as_ref()
     }
@@ -100,17 +100,17 @@ impl FeatureGroupSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
+    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>.</p>
     pub fn feature_group_status(mut self, input: crate::types::FeatureGroupStatus) -> Self {
         self.feature_group_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
+    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>.</p>
     pub fn set_feature_group_status(mut self, input: ::std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
         self.feature_group_status = input;
         self
     }
-    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
+    /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>.</p>
     pub fn get_feature_group_status(&self) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
         &self.feature_group_status
     }

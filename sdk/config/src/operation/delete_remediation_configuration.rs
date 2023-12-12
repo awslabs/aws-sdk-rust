@@ -259,21 +259,21 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteRemedia
 pub enum DeleteRemediationConfigurationError {
     /// <p>Indicates one of the following errors:</p>
     /// <ul>
-    /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
-    /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
-    /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have the following permissions: </p>
+    /// <li><p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p></li>
+    /// <li><p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p></li>
+    /// <li><p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
+    /// <li><p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have the following permissions:</p>
     /// <ul>
-    /// <li> <p>You do not have permission to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
-    /// <li> <p>You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.</p> </li>
-    /// </ul> </li>
+    /// <li><p>You do not have permission to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
+    /// <li><p>You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.</p></li>
+    /// </ul></li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
     /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>You specified an Config rule without a remediation configuration.</p>
     NoSuchRemediationConfigurationException(crate::types::error::NoSuchRemediationConfigurationException),
-    /// <p>Remediation action is in progress. You can either cancel execution in Amazon Web Services Systems Manager or wait and try again later. </p>
+    /// <p>Remediation action is in progress. You can either cancel execution in Amazon Web Services Systems Manager or wait and try again later.</p>
     RemediationInProgressException(crate::types::error::RemediationInProgressException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

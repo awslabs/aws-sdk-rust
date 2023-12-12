@@ -22,7 +22,7 @@ impl ListPackageVersionDependenciesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPackageVersionDependencies`.
 ///
-/// <p> Returns the direct dependencies for a package version. The dependencies are returned as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file for Maven). Any package version dependencies that are not listed in the configuration file are not returned. </p>
+/// <p>Returns the direct dependencies for a package version. The dependencies are returned as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file for Maven). Any package version dependencies that are not listed in the configuration file are not returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPackageVersionDependenciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,68 +108,68 @@ impl ListPackageVersionDependenciesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
+    /// <p>The name of the domain that contains the repository that contains the requested package version dependencies.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
+    /// <p>The name of the domain that contains the repository that contains the requested package version dependencies.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
+    /// <p>The name of the domain that contains the repository that contains the requested package version dependencies.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_owner()
     }
-    /// <p> The name of the repository that contains the requested package version. </p>
+    /// <p>The name of the repository that contains the requested package version.</p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
         self
     }
-    /// <p> The name of the repository that contains the requested package version. </p>
+    /// <p>The name of the repository that contains the requested package version.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
-    /// <p> The name of the repository that contains the requested package version. </p>
+    /// <p>The name of the repository that contains the requested package version.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository()
     }
-    /// <p> The format of the package with the requested dependencies. </p>
+    /// <p>The format of the package with the requested dependencies.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
         self
     }
-    /// <p> The format of the package with the requested dependencies. </p>
+    /// <p>The format of the package with the requested dependencies.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
-    /// <p> The format of the package with the requested dependencies. </p>
+    /// <p>The format of the package with the requested dependencies.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         self.inner.get_format()
     }
     /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -177,10 +177,10 @@ impl ListPackageVersionDependenciesFluentBuilder {
     }
     /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -188,53 +188,53 @@ impl ListPackageVersionDependenciesFluentBuilder {
     }
     /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
-    /// <p> The name of the package versions' package. </p>
+    /// <p>The name of the package versions' package.</p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package(input.into());
         self
     }
-    /// <p> The name of the package versions' package. </p>
+    /// <p>The name of the package versions' package.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package(input);
         self
     }
-    /// <p> The name of the package versions' package. </p>
+    /// <p>The name of the package versions' package.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package()
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package_version()
     }
-    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

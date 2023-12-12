@@ -10,7 +10,7 @@ pub struct AwsSqsQueueDetails {
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new queue.</p>
     pub queue_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
     pub dead_letter_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsSqsQueueDetails {
@@ -26,7 +26,7 @@ impl AwsSqsQueueDetails {
     pub fn queue_name(&self) -> ::std::option::Option<&str> {
         self.queue_name.as_deref()
     }
-    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
     pub fn dead_letter_target_arn(&self) -> ::std::option::Option<&str> {
         self.dead_letter_target_arn.as_deref()
     }
@@ -90,17 +90,17 @@ impl AwsSqsQueueDetailsBuilder {
     pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_name
     }
-    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
     pub fn dead_letter_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dead_letter_target_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
     pub fn set_dead_letter_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dead_letter_target_arn = input;
         self
     }
-    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
     pub fn get_dead_letter_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dead_letter_target_arn
     }

@@ -23,15 +23,15 @@ impl TestIdentityProviderInputBuilder {
 /// Fluent builder constructing a request to `TestIdentityProvider`.
 ///
 /// <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests whether your identity provider is set up successfully. We highly recommend that you call this operation to test your authentication method as soon as you create your server. By doing so, you can troubleshoot issues with the identity provider integration to ensure that your users can successfully use the service.</p>
-/// <p> The <code>ServerId</code> and <code>UserName</code> parameters are required. The <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code> are all optional. </p>
+/// <p>The <code>ServerId</code> and <code>UserName</code> parameters are required. The <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code> are all optional.</p>
 /// <p>Note the following:</p>
 /// <ul>
-/// <li> <p> You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code> of your server is <code>SERVICE_MANAGED</code>.</p> </li>
-/// <li> <p> <code>TestIdentityProvider</code> does not work with keys: it only accepts passwords.</p> </li>
-/// <li> <p> <code>TestIdentityProvider</code> can test the password operation for a custom Identity Provider that handles keys and passwords.</p> </li>
-/// <li> <p> If you provide any incorrect values for any parameters, the <code>Response</code> field is empty. </p> </li>
-/// <li> <p> If you provide a server ID for a server that uses service-managed users, you get an error: </p> <p> <code> An error occurred (InvalidRequestException) when calling the TestIdentityProvider operation: s-<i>server-ID</i> not configured for external auth </code> </p> </li>
-/// <li> <p> If you enter a Server ID for the <code>--server-id</code> parameter that does not identify an actual Transfer server, you receive the following error: </p> <p> <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider operation: Unknown server</code>. </p> <p>It is possible your sever is in a different region. You can specify a region by adding the following: <code>--region region-code</code>, such as <code>--region us-east-2</code> to specify a server in <b>US East (Ohio)</b>.</p> </li>
+/// <li><p>You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code> of your server is <code>SERVICE_MANAGED</code>.</p></li>
+/// <li><p><code>TestIdentityProvider</code> does not work with keys: it only accepts passwords.</p></li>
+/// <li><p><code>TestIdentityProvider</code> can test the password operation for a custom Identity Provider that handles keys and passwords.</p></li>
+/// <li><p>If you provide any incorrect values for any parameters, the <code>Response</code> field is empty.</p></li>
+/// <li><p>If you provide a server ID for a server that uses service-managed users, you get an error:</p> <p><code> An error occurred (InvalidRequestException) when calling the TestIdentityProvider operation: s-<i>server-ID</i> not configured for external auth </code></p></li>
+/// <li><p>If you enter a Server ID for the <code>--server-id</code> parameter that does not identify an actual Transfer server, you receive the following error:</p> <p><code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider operation: Unknown server</code>.</p> <p>It is possible your sever is in a different region. You can specify a region by adding the following: <code>--region region-code</code>, such as <code>--region us-east-2</code> to specify a server in <b>US East (Ohio)</b>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestIdentityProviderFluentBuilder {
@@ -135,10 +135,10 @@ impl TestIdentityProviderFluentBuilder {
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
-    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// <li><p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p></li>
+    /// <li><p>File Transfer Protocol Secure (FTPS)</p></li>
+    /// <li><p>File Transfer Protocol (FTP)</p></li>
+    /// <li><p>Applicability Statement 2 (AS2)</p></li>
     /// </ul>
     pub fn server_protocol(mut self, input: crate::types::Protocol) -> Self {
         self.inner = self.inner.server_protocol(input);
@@ -147,10 +147,10 @@ impl TestIdentityProviderFluentBuilder {
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
-    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// <li><p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p></li>
+    /// <li><p>File Transfer Protocol Secure (FTPS)</p></li>
+    /// <li><p>File Transfer Protocol (FTP)</p></li>
+    /// <li><p>Applicability Statement 2 (AS2)</p></li>
     /// </ul>
     pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.inner = self.inner.set_server_protocol(input);
@@ -159,10 +159,10 @@ impl TestIdentityProviderFluentBuilder {
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
-    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// <li><p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p></li>
+    /// <li><p>File Transfer Protocol Secure (FTPS)</p></li>
+    /// <li><p>File Transfer Protocol (FTP)</p></li>
+    /// <li><p>Applicability Statement 2 (AS2)</p></li>
     /// </ul>
     pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         self.inner.get_server_protocol()

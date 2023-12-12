@@ -22,7 +22,7 @@ impl GetEvidenceByEvidenceFolderInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEvidenceByEvidenceFolder`.
 ///
-/// <p> Gets all evidence from a specified evidence folder in Audit Manager. </p>
+/// <p>Gets all evidence from a specified evidence folder in Audit Manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvidenceByEvidenceFolderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator {
         crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator::new(self.handle, self.inner)
     }
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }
-    /// <p> The identifier for the control set. </p>
+    /// <p>The identifier for the control set.</p>
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
-    /// <p> The identifier for the control set. </p>
+    /// <p>The identifier for the control set.</p>
     pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
-    /// <p> The identifier for the control set. </p>
+    /// <p>The identifier for the control set.</p>
     pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_control_set_id()
     }
-    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_folder_id(input.into());
         self
     }
-    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
     }
-    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_evidence_folder_id()
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

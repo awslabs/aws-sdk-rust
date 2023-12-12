@@ -23,7 +23,7 @@ pub struct DescribeProvisioningTemplateOutput {
     pub provisioning_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Gets information about a pre-provisioned hook.</p>
     pub pre_provisioning_hook: ::std::option::Option<crate::types::ProvisioningHook>,
-    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub r#type: ::std::option::Option<crate::types::TemplateType>,
     _request_id: Option<String>,
 }
@@ -68,7 +68,7 @@ impl DescribeProvisioningTemplateOutput {
     pub fn pre_provisioning_hook(&self) -> ::std::option::Option<&crate::types::ProvisioningHook> {
         self.pre_provisioning_hook.as_ref()
     }
-    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
         self.r#type.as_ref()
     }
@@ -243,17 +243,17 @@ impl DescribeProvisioningTemplateOutputBuilder {
     pub fn get_pre_provisioning_hook(&self) -> &::std::option::Option<crate::types::ProvisioningHook> {
         &self.pre_provisioning_hook
     }
-    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub fn r#type(mut self, input: crate::types::TemplateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
         &self.r#type
     }

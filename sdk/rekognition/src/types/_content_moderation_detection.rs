@@ -10,9 +10,9 @@ pub struct ContentModerationDetection {
     pub moderation_label: ::std::option::Option<crate::types::ModerationLabel>,
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected moderation label.</p>
     pub start_timestamp_millis: ::std::option::Option<i64>,
-    /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
+    /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label.</p>
     pub end_timestamp_millis: ::std::option::Option<i64>,
-    /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
+    /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
     pub duration_millis: ::std::option::Option<i64>,
 }
 impl ContentModerationDetection {
@@ -28,11 +28,11 @@ impl ContentModerationDetection {
     pub fn start_timestamp_millis(&self) -> ::std::option::Option<i64> {
         self.start_timestamp_millis
     }
-    /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
+    /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label.</p>
     pub fn end_timestamp_millis(&self) -> ::std::option::Option<i64> {
         self.end_timestamp_millis
     }
-    /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
+    /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
     pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
@@ -97,31 +97,31 @@ impl ContentModerationDetectionBuilder {
     pub fn get_start_timestamp_millis(&self) -> &::std::option::Option<i64> {
         &self.start_timestamp_millis
     }
-    /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
+    /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label.</p>
     pub fn end_timestamp_millis(mut self, input: i64) -> Self {
         self.end_timestamp_millis = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
+    /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label.</p>
     pub fn set_end_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_timestamp_millis = input;
         self
     }
-    /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
+    /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label.</p>
     pub fn get_end_timestamp_millis(&self) -> &::std::option::Option<i64> {
         &self.end_timestamp_millis
     }
-    /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
+    /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
         self.duration_millis = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
+    /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
     }
-    /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
+    /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
     pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
         &self.duration_millis
     }

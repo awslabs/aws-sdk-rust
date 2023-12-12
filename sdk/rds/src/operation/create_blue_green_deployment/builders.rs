@@ -114,7 +114,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     /// <p>The name of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+    /// <li><p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn blue_green_deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blue_green_deployment_name(input.into());
@@ -123,7 +123,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     /// <p>The name of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+    /// <li><p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn set_blue_green_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blue_green_deployment_name(input);
@@ -132,7 +132,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     /// <p>The name of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+    /// <li><p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn get_blue_green_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_blue_green_deployment_name()

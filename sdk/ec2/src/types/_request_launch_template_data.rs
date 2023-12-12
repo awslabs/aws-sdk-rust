@@ -21,11 +21,11 @@ pub struct RequestLaunchTemplateData {
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
     /// <ul>
-    /// <li> <p> <code>ami-17characters00000</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// <li><p><code>ami-17characters00000</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:version-number</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:label</code></p></li>
+    /// <li><p><code>resolve:ssm:public-parameter</code></p></li>
     /// </ul> <note>
     /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
     /// </note>
@@ -49,7 +49,7 @@ pub struct RequestLaunchTemplateData {
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
     pub disable_api_termination: ::std::option::Option<bool>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive"> MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
@@ -57,11 +57,11 @@ pub struct RequestLaunchTemplateData {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p> <note>
     /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
@@ -100,8 +100,8 @@ pub struct RequestLaunchTemplateData {
     /// <p>When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.</p>
     /// <p>To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request:</p>
     /// <ul>
-    /// <li> <p> <code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p> </li>
-    /// <li> <p> <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p> </li>
+    /// <li><p><code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p></li>
+    /// <li><p><code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p></li>
     /// </ul> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// <p>Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.</p>
@@ -145,11 +145,11 @@ impl RequestLaunchTemplateData {
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
     /// <ul>
-    /// <li> <p> <code>ami-17characters00000</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// <li><p><code>ami-17characters00000</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:version-number</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:label</code></p></li>
+    /// <li><p><code>resolve:ssm:public-parameter</code></p></li>
     /// </ul> <note>
     /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
     /// </note>
@@ -187,7 +187,7 @@ impl RequestLaunchTemplateData {
         self.disable_api_termination
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<&crate::types::ShutdownBehavior> {
         self.instance_initiated_shutdown_behavior.as_ref()
     }
@@ -199,11 +199,11 @@ impl RequestLaunchTemplateData {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p> <note>
     /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
@@ -280,8 +280,8 @@ impl RequestLaunchTemplateData {
     /// <p>When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.</p>
     /// <p>To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request:</p>
     /// <ul>
-    /// <li> <p> <code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p> </li>
-    /// <li> <p> <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p> </li>
+    /// <li><p><code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p></li>
+    /// <li><p><code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p></li>
     /// </ul> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// <p>Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.</p>
@@ -486,11 +486,11 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
     /// <ul>
-    /// <li> <p> <code>ami-17characters00000</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// <li><p><code>ami-17characters00000</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:version-number</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:label</code></p></li>
+    /// <li><p><code>resolve:ssm:public-parameter</code></p></li>
     /// </ul> <note>
     /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
     /// </note>
@@ -502,11 +502,11 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
     /// <ul>
-    /// <li> <p> <code>ami-17characters00000</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// <li><p><code>ami-17characters00000</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:version-number</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:label</code></p></li>
+    /// <li><p><code>resolve:ssm:public-parameter</code></p></li>
     /// </ul> <note>
     /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
     /// </note>
@@ -518,11 +518,11 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
     /// <ul>
-    /// <li> <p> <code>ami-17characters00000</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// <li><p><code>ami-17characters00000</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:version-number</code></p></li>
+    /// <li><p><code>resolve:ssm:parameter-name:label</code></p></li>
+    /// <li><p><code>resolve:ssm:public-parameter</code></p></li>
     /// </ul> <note>
     /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
     /// </note>
@@ -630,19 +630,19 @@ impl RequestLaunchTemplateDataBuilder {
         &self.disable_api_termination
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub fn instance_initiated_shutdown_behavior(mut self, input: crate::types::ShutdownBehavior) -> Self {
         self.instance_initiated_shutdown_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::ShutdownBehavior>) -> Self {
         self.instance_initiated_shutdown_behavior = input;
         self
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
         &self.instance_initiated_shutdown_behavior
     }
@@ -670,11 +670,11 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p> <note>
     /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
@@ -688,11 +688,11 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p> <note>
     /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
@@ -707,11 +707,11 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p> <note>
     /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
@@ -947,8 +947,8 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.</p>
     /// <p>To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request:</p>
     /// <ul>
-    /// <li> <p> <code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p> </li>
-    /// <li> <p> <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p> </li>
+    /// <li><p><code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p></li>
+    /// <li><p><code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p></li>
     /// </ul> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// <p>Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.</p>
@@ -963,8 +963,8 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.</p>
     /// <p>To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request:</p>
     /// <ul>
-    /// <li> <p> <code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p> </li>
-    /// <li> <p> <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p> </li>
+    /// <li><p><code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p></li>
+    /// <li><p><code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p></li>
     /// </ul> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// <p>Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.</p>
@@ -979,8 +979,8 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.</p>
     /// <p>To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request:</p>
     /// <ul>
-    /// <li> <p> <code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p> </li>
-    /// <li> <p> <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p> </li>
+    /// <li><p><code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p></li>
+    /// <li><p><code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p></li>
     /// </ul> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// <p>Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.</p>

@@ -22,7 +22,7 @@ impl RollbackApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `RollbackApplication`.
 ///
-/// <p>Reverts the application to the previous running version. You can roll back an application if you suspect it is stuck in a transient status. </p>
+/// <p>Reverts the application to the previous running version. You can roll back an application if you suspect it is stuck in a transient status.</p>
 /// <p>You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code> status.</p>
 /// <p>When you rollback an application, it loads state data from the last successful snapshot. If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.</p>
 /// <p>This action is not supported for Kinesis Data Analytics for SQL applications.</p>

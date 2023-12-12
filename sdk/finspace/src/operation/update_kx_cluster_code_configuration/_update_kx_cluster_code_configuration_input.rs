@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKxClusterCodeConfigurationInput {
-    /// <p> A unique identifier of the kdb environment. </p>
+    /// <p>A unique identifier of the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
@@ -17,11 +17,11 @@ pub struct UpdateKxClusterCodeConfigurationInput {
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub command_line_arguments: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>,
-    /// <p> The configuration that allows you to choose how you want to update the code on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration>,
 }
 impl UpdateKxClusterCodeConfigurationInput {
-    /// <p> A unique identifier of the kdb environment. </p>
+    /// <p>A unique identifier of the kdb environment.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -49,7 +49,7 @@ impl UpdateKxClusterCodeConfigurationInput {
     pub fn command_line_arguments(&self) -> &[crate::types::KxCommandLineArgument] {
         self.command_line_arguments.as_deref().unwrap_or_default()
     }
-    /// <p> The configuration that allows you to choose how you want to update the code on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::KxClusterCodeDeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
@@ -74,18 +74,18 @@ pub struct UpdateKxClusterCodeConfigurationInputBuilder {
     pub(crate) deployment_configuration: ::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration>,
 }
 impl UpdateKxClusterCodeConfigurationInputBuilder {
-    /// <p> A unique identifier of the kdb environment. </p>
+    /// <p>A unique identifier of the kdb environment.</p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A unique identifier of the kdb environment. </p>
+    /// <p>A unique identifier of the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p> A unique identifier of the kdb environment. </p>
+    /// <p>A unique identifier of the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
@@ -173,17 +173,17 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
     pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
         &self.command_line_arguments
     }
-    /// <p> The configuration that allows you to choose how you want to update the code on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
     pub fn deployment_configuration(mut self, input: crate::types::KxClusterCodeDeploymentConfiguration) -> Self {
         self.deployment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The configuration that allows you to choose how you want to update the code on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration>) -> Self {
         self.deployment_configuration = input;
         self
     }
-    /// <p> The configuration that allows you to choose how you want to update the code on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration> {
         &self.deployment_configuration
     }

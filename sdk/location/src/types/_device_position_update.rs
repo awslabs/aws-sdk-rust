@@ -6,14 +6,14 @@
 pub struct DevicePositionUpdate {
     /// <p>The device associated to the position update.</p>
     pub device_id: ::std::string::String,
-    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub sample_time: ::aws_smithy_types::DateTime,
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
     pub position: ::std::vec::Vec<f64>,
     /// <p>The accuracy of the device position.</p>
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     pub position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DevicePositionUpdate {
@@ -22,7 +22,7 @@ impl DevicePositionUpdate {
         use std::ops::Deref;
         self.device_id.deref()
     }
-    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub fn sample_time(&self) -> &::aws_smithy_types::DateTime {
         &self.sample_time
     }
@@ -36,7 +36,7 @@ impl DevicePositionUpdate {
         self.accuracy.as_ref()
     }
     /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     pub fn position_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.position_properties.as_ref()
     }
@@ -85,18 +85,18 @@ impl DevicePositionUpdateBuilder {
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_id
     }
-    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     /// This field is required.
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub fn set_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sample_time = input;
         self
     }
-    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.sample_time
     }
@@ -139,7 +139,7 @@ impl DevicePositionUpdateBuilder {
     /// To override the contents of this collection use [`set_position_properties`](Self::set_position_properties).
     ///
     /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     pub fn position_properties(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -151,7 +151,7 @@ impl DevicePositionUpdateBuilder {
         self
     }
     /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     pub fn set_position_properties(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -160,7 +160,7 @@ impl DevicePositionUpdateBuilder {
         self
     }
     /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     pub fn get_position_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.position_properties
     }

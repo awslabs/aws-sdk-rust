@@ -5,7 +5,7 @@
 pub struct GetIntentsOutput {
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
     pub intents: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>,
-    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
+    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl GetIntentsOutput {
     pub fn intents(&self) -> &[crate::types::IntentMetadata] {
         self.intents.as_deref().unwrap_or_default()
     }
-    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
+    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl GetIntentsOutputBuilder {
     pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>> {
         &self.intents
     }
-    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
+    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
+    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
+    /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

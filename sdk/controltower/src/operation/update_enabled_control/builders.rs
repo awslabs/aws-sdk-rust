@@ -22,10 +22,10 @@ impl UpdateEnabledControlInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateEnabledControl`.
 ///
-/// <p> Updates the configuration of an already enabled control.</p>
+/// <p>Updates the configuration of an already enabled control.</p>
 /// <p>If the enabled control shows an <code>EnablementStatus</code> of SUCCEEDED, supply parameters that are different from the currently configured parameters. Otherwise, Amazon Web Services Control Tower will not accept the request.</p>
 /// <p>If the enabled control shows an <code>EnablementStatus</code> of FAILED, Amazon Web Services Control Tower will update the control to match any valid parameters that you supply.</p>
-/// <p>If the <code>DriftSummary</code> status for the control shows as DRIFTED, you cannot call this API. Instead, you can update the control by calling <code>DisableControl</code> and again calling <code>EnableControl</code>, or you can run an extending governance operation. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a> </p>
+/// <p>If the <code>DriftSummary</code> status for the control shows as DRIFTED, you cannot call this API. Instead, you can update the control by calling <code>DisableControl</code> and again calling <code>EnableControl</code>, or you can run an extending governance operation. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnabledControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -129,17 +129,17 @@ impl UpdateEnabledControlFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>> {
         self.inner.get_parameters()
     }
-    /// <p> The ARN of the enabled control that will be updated. </p>
+    /// <p>The ARN of the enabled control that will be updated.</p>
     pub fn enabled_control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.enabled_control_identifier(input.into());
         self
     }
-    /// <p> The ARN of the enabled control that will be updated. </p>
+    /// <p>The ARN of the enabled control that will be updated.</p>
     pub fn set_enabled_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_enabled_control_identifier(input);
         self
     }
-    /// <p> The ARN of the enabled control that will be updated. </p>
+    /// <p>The ARN of the enabled control that will be updated.</p>
     pub fn get_enabled_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_enabled_control_identifier()
     }

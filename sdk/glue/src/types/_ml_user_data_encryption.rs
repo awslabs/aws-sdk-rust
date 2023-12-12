@@ -6,8 +6,8 @@
 pub struct MlUserDataEncryption {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
     /// <ul>
-    /// <li> <p>DISABLED: encryption is disabled</p> </li>
-    /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
+    /// <li><p>DISABLED: encryption is disabled</p></li>
+    /// <li><p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p></li>
     /// </ul>
     pub ml_user_data_encryption_mode: crate::types::MlUserDataEncryptionModeString,
     /// <p>The ID for the customer-provided KMS key.</p>
@@ -16,8 +16,8 @@ pub struct MlUserDataEncryption {
 impl MlUserDataEncryption {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
     /// <ul>
-    /// <li> <p>DISABLED: encryption is disabled</p> </li>
-    /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
+    /// <li><p>DISABLED: encryption is disabled</p></li>
+    /// <li><p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p></li>
     /// </ul>
     pub fn ml_user_data_encryption_mode(&self) -> &crate::types::MlUserDataEncryptionModeString {
         &self.ml_user_data_encryption_mode
@@ -44,8 +44,8 @@ pub struct MlUserDataEncryptionBuilder {
 impl MlUserDataEncryptionBuilder {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
     /// <ul>
-    /// <li> <p>DISABLED: encryption is disabled</p> </li>
-    /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
+    /// <li><p>DISABLED: encryption is disabled</p></li>
+    /// <li><p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p></li>
     /// </ul>
     /// This field is required.
     pub fn ml_user_data_encryption_mode(mut self, input: crate::types::MlUserDataEncryptionModeString) -> Self {
@@ -54,8 +54,8 @@ impl MlUserDataEncryptionBuilder {
     }
     /// <p>The encryption mode applied to user data. Valid values are:</p>
     /// <ul>
-    /// <li> <p>DISABLED: encryption is disabled</p> </li>
-    /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
+    /// <li><p>DISABLED: encryption is disabled</p></li>
+    /// <li><p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p></li>
     /// </ul>
     pub fn set_ml_user_data_encryption_mode(mut self, input: ::std::option::Option<crate::types::MlUserDataEncryptionModeString>) -> Self {
         self.ml_user_data_encryption_mode = input;
@@ -63,8 +63,8 @@ impl MlUserDataEncryptionBuilder {
     }
     /// <p>The encryption mode applied to user data. Valid values are:</p>
     /// <ul>
-    /// <li> <p>DISABLED: encryption is disabled</p> </li>
-    /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
+    /// <li><p>DISABLED: encryption is disabled</p></li>
+    /// <li><p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p></li>
     /// </ul>
     pub fn get_ml_user_data_encryption_mode(&self) -> &::std::option::Option<crate::types::MlUserDataEncryptionModeString> {
         &self.ml_user_data_encryption_mode

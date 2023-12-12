@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPeeringOutput {
-    /// <p>Returns information about a transit gateway peering. </p>
+    /// <p>Returns information about a transit gateway peering.</p>
     pub transit_gateway_peering: ::std::option::Option<crate::types::TransitGatewayPeering>,
     _request_id: Option<String>,
 }
 impl GetTransitGatewayPeeringOutput {
-    /// <p>Returns information about a transit gateway peering. </p>
+    /// <p>Returns information about a transit gateway peering.</p>
     pub fn transit_gateway_peering(&self) -> ::std::option::Option<&crate::types::TransitGatewayPeering> {
         self.transit_gateway_peering.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetTransitGatewayPeeringOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetTransitGatewayPeeringOutputBuilder {
-    /// <p>Returns information about a transit gateway peering. </p>
+    /// <p>Returns information about a transit gateway peering.</p>
     pub fn transit_gateway_peering(mut self, input: crate::types::TransitGatewayPeering) -> Self {
         self.transit_gateway_peering = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns information about a transit gateway peering. </p>
+    /// <p>Returns information about a transit gateway peering.</p>
     pub fn set_transit_gateway_peering(mut self, input: ::std::option::Option<crate::types::TransitGatewayPeering>) -> Self {
         self.transit_gateway_peering = input;
         self
     }
-    /// <p>Returns information about a transit gateway peering. </p>
+    /// <p>Returns information about a transit gateway peering.</p>
     pub fn get_transit_gateway_peering(&self) -> &::std::option::Option<crate::types::TransitGatewayPeering> {
         &self.transit_gateway_peering
     }

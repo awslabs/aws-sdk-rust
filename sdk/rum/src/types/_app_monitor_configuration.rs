@@ -9,7 +9,7 @@ pub struct AppMonitorConfiguration {
     /// <p>A list of URLs in your website or application to exclude from RUM data collection.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
     pub excluded_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages. </p>
+    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
     pub included_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM console.</p>
@@ -24,12 +24,12 @@ pub struct AppMonitorConfiguration {
     pub allow_cookies: ::std::option::Option<bool>,
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li> <p> <code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p> </li>
-    /// <li> <p> <code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p> </li>
-    /// <li> <p> <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p> </li>
+    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     pub telemetries: ::std::option::Option<::std::vec::Vec<crate::types::Telemetry>>,
-    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
+    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub enable_x_ray: ::std::option::Option<bool>,
 }
 impl AppMonitorConfiguration {
@@ -44,7 +44,7 @@ impl AppMonitorConfiguration {
     pub fn excluded_pages(&self) -> &[::std::string::String] {
         self.excluded_pages.as_deref().unwrap_or_default()
     }
-    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages. </p>
+    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_pages.is_none()`.
@@ -73,16 +73,16 @@ impl AppMonitorConfiguration {
     }
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li> <p> <code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p> </li>
-    /// <li> <p> <code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p> </li>
-    /// <li> <p> <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p> </li>
+    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetries.is_none()`.
     pub fn telemetries(&self) -> &[crate::types::Telemetry] {
         self.telemetries.as_deref().unwrap_or_default()
     }
-    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
+    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub fn enable_x_ray(&self) -> ::std::option::Option<bool> {
         self.enable_x_ray
     }
@@ -150,7 +150,7 @@ impl AppMonitorConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_included_pages`](Self::set_included_pages).
     ///
-    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages. </p>
+    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
     pub fn included_pages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.included_pages.unwrap_or_default();
@@ -158,13 +158,13 @@ impl AppMonitorConfigurationBuilder {
         self.included_pages = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages. </p>
+    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
     pub fn set_included_pages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.included_pages = input;
         self
     }
-    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages. </p>
+    /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
     pub fn get_included_pages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.included_pages
@@ -243,9 +243,9 @@ impl AppMonitorConfigurationBuilder {
     ///
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li> <p> <code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p> </li>
-    /// <li> <p> <code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p> </li>
-    /// <li> <p> <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p> </li>
+    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     pub fn telemetries(mut self, input: crate::types::Telemetry) -> Self {
         let mut v = self.telemetries.unwrap_or_default();
@@ -255,9 +255,9 @@ impl AppMonitorConfigurationBuilder {
     }
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li> <p> <code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p> </li>
-    /// <li> <p> <code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p> </li>
-    /// <li> <p> <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p> </li>
+    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     pub fn set_telemetries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Telemetry>>) -> Self {
         self.telemetries = input;
@@ -265,24 +265,24 @@ impl AppMonitorConfigurationBuilder {
     }
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li> <p> <code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p> </li>
-    /// <li> <p> <code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p> </li>
-    /// <li> <p> <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p> </li>
+    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     pub fn get_telemetries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Telemetry>> {
         &self.telemetries
     }
-    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
+    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub fn enable_x_ray(mut self, input: bool) -> Self {
         self.enable_x_ray = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
+    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub fn set_enable_x_ray(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_x_ray = input;
         self
     }
-    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
+    /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub fn get_enable_x_ray(&self) -> &::std::option::Option<bool> {
         &self.enable_x_ray
     }

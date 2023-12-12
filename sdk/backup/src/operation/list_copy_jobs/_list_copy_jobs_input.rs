@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCopyJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
+    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub by_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns only copy jobs that are in the specified state.</p>
     pub by_state: ::std::option::Option<crate::types::CopyJobState>,
@@ -17,25 +17,25 @@ pub struct ListCopyJobsInput {
     pub by_created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub by_resource_type: ::std::option::Option<::std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub by_destination_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     pub by_account_id: ::std::option::Option<::std::string::String>,
@@ -49,11 +49,11 @@ pub struct ListCopyJobsInput {
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
     /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub by_message_category: ::std::option::Option<::std::string::String>,
 }
 impl ListCopyJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,7 +61,7 @@ impl ListCopyJobsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
+    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn by_resource_arn(&self) -> ::std::option::Option<&str> {
         self.by_resource_arn.as_deref()
     }
@@ -79,27 +79,27 @@ impl ListCopyJobsInput {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
         self.by_resource_type.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn by_destination_vault_arn(&self) -> ::std::option::Option<&str> {
         self.by_destination_vault_arn.as_deref()
     }
@@ -123,7 +123,7 @@ impl ListCopyJobsInput {
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
     /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn by_message_category(&self) -> ::std::option::Option<&str> {
         self.by_message_category.as_deref()
     }
@@ -154,17 +154,17 @@ pub struct ListCopyJobsInputBuilder {
     pub(crate) by_message_category: ::std::option::Option<::std::string::String>,
 }
 impl ListCopyJobsInputBuilder {
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -182,17 +182,17 @@ impl ListCopyJobsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
+    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn by_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
+    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn set_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_arn = input;
         self
     }
-    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
+    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn get_by_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_resource_arn
     }
@@ -240,22 +240,22 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_type = ::std::option::Option::Some(input.into());
@@ -263,22 +263,22 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_type = input;
@@ -286,37 +286,37 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_resource_type
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn by_destination_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_destination_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn set_by_destination_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_destination_vault_arn = input;
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn get_by_destination_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_destination_vault_arn
     }
@@ -380,7 +380,7 @@ impl ListCopyJobsInputBuilder {
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
     /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn by_message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_message_category = ::std::option::Option::Some(input.into());
         self
@@ -389,7 +389,7 @@ impl ListCopyJobsInputBuilder {
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
     /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_by_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_message_category = input;
         self
@@ -398,7 +398,7 @@ impl ListCopyJobsInputBuilder {
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
     /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn get_by_message_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_message_category
     }

@@ -4,10 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvOutput {
-    /// <p>Indicates whether to use quotation marks around output fields. </p>
+    /// <p>Indicates whether to use quotation marks around output fields.</p>
     /// <ul>
-    /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
-    /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
+    /// <li><p><code>ALWAYS</code>: Always use quotation marks for output fields.</p></li>
+    /// <li><p><code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p></li>
     /// </ul>
     pub quote_fields: ::std::option::Option<crate::types::QuoteFields>,
     /// <p>The single character used for escaping the quote character inside an already escaped value.</p>
@@ -20,10 +20,10 @@ pub struct CsvOutput {
     pub quote_character: ::std::option::Option<::std::string::String>,
 }
 impl CsvOutput {
-    /// <p>Indicates whether to use quotation marks around output fields. </p>
+    /// <p>Indicates whether to use quotation marks around output fields.</p>
     /// <ul>
-    /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
-    /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
+    /// <li><p><code>ALWAYS</code>: Always use quotation marks for output fields.</p></li>
+    /// <li><p><code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p></li>
     /// </ul>
     pub fn quote_fields(&self) -> ::std::option::Option<&crate::types::QuoteFields> {
         self.quote_fields.as_ref()
@@ -63,28 +63,28 @@ pub struct CsvOutputBuilder {
     pub(crate) quote_character: ::std::option::Option<::std::string::String>,
 }
 impl CsvOutputBuilder {
-    /// <p>Indicates whether to use quotation marks around output fields. </p>
+    /// <p>Indicates whether to use quotation marks around output fields.</p>
     /// <ul>
-    /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
-    /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
+    /// <li><p><code>ALWAYS</code>: Always use quotation marks for output fields.</p></li>
+    /// <li><p><code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p></li>
     /// </ul>
     pub fn quote_fields(mut self, input: crate::types::QuoteFields) -> Self {
         self.quote_fields = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to use quotation marks around output fields. </p>
+    /// <p>Indicates whether to use quotation marks around output fields.</p>
     /// <ul>
-    /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
-    /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
+    /// <li><p><code>ALWAYS</code>: Always use quotation marks for output fields.</p></li>
+    /// <li><p><code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p></li>
     /// </ul>
     pub fn set_quote_fields(mut self, input: ::std::option::Option<crate::types::QuoteFields>) -> Self {
         self.quote_fields = input;
         self
     }
-    /// <p>Indicates whether to use quotation marks around output fields. </p>
+    /// <p>Indicates whether to use quotation marks around output fields.</p>
     /// <ul>
-    /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
-    /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
+    /// <li><p><code>ALWAYS</code>: Always use quotation marks for output fields.</p></li>
+    /// <li><p><code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p></li>
     /// </ul>
     pub fn get_quote_fields(&self) -> &::std::option::Option<crate::types::QuoteFields> {
         &self.quote_fields

@@ -22,15 +22,15 @@ impl RollbackInstanceRefreshInputBuilder {
 }
 /// Fluent builder constructing a request to `RollbackInstanceRefresh`.
 ///
-/// <p>Cancels an instance refresh that is in progress and rolls back any changes that it made. Amazon EC2 Auto Scaling replaces any instances that were replaced during the instance refresh. This restores your Auto Scaling group to the configuration that it was using before the start of the instance refresh. </p>
+/// <p>Cancels an instance refresh that is in progress and rolls back any changes that it made. Amazon EC2 Auto Scaling replaces any instances that were replaced during the instance refresh. This restores your Auto Scaling group to the configuration that it was using before the start of the instance refresh.</p>
 /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you make configuration changes.</p>
-/// <p>A rollback is not supported in the following situations: </p>
+/// <p>A rollback is not supported in the following situations:</p>
 /// <ul>
-/// <li> <p>There is no desired configuration specified for the instance refresh.</p> </li>
-/// <li> <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p> </li>
-/// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
+/// <li><p>There is no desired configuration specified for the instance refresh.</p></li>
+/// <li><p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
+/// <li><p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
 /// </ul>
-/// <p>When you receive a successful response from this operation, Amazon EC2 Auto Scaling immediately begins replacing instances. You can check the status of this operation through the <code>DescribeInstanceRefreshes</code> API operation. </p>
+/// <p>When you receive a successful response from this operation, Amazon EC2 Auto Scaling immediately begins replacing instances. You can check the status of this operation through the <code>DescribeInstanceRefreshes</code> API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RollbackInstanceRefreshFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,19 +6,19 @@ pub struct CreateCanaryInput {
     /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included.</p>
     pub code: ::std::option::Option<crate::types::CanaryCodeInput>,
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
     pub artifact_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <li><p><code>s3:PutObject</code></p></li>
+    /// <li><p><code>s3:GetBucketLocation</code></p></li>
+    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li><p><code>logs:CreateLogGroup</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
+    /// <li><p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
@@ -47,7 +47,7 @@ impl CreateCanaryInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included.</p>
     pub fn code(&self) -> ::std::option::Option<&crate::types::CanaryCodeInput> {
         self.code.as_ref()
     }
@@ -57,13 +57,13 @@ impl CreateCanaryInput {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <li><p><code>s3:PutObject</code></p></li>
+    /// <li><p><code>s3:GetBucketLocation</code></p></li>
+    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li><p><code>logs:CreateLogGroup</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
+    /// <li><p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
@@ -147,18 +147,18 @@ impl CreateCanaryInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included.</p>
     /// This field is required.
     pub fn code(mut self, input: crate::types::CanaryCodeInput) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::CanaryCodeInput>) -> Self {
         self.code = input;
         self
     }
-    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::CanaryCodeInput> {
         &self.code
     }
@@ -179,13 +179,13 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <li><p><code>s3:PutObject</code></p></li>
+    /// <li><p><code>s3:GetBucketLocation</code></p></li>
+    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li><p><code>logs:CreateLogGroup</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
+    /// <li><p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,13 +194,13 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <li><p><code>s3:PutObject</code></p></li>
+    /// <li><p><code>s3:GetBucketLocation</code></p></li>
+    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li><p><code>logs:CreateLogGroup</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
+    /// <li><p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
@@ -208,13 +208,13 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <li><p><code>s3:PutObject</code></p></li>
+    /// <li><p><code>s3:GetBucketLocation</code></p></li>
+    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li><p><code>logs:CreateLogGroup</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
+    /// <li><p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn

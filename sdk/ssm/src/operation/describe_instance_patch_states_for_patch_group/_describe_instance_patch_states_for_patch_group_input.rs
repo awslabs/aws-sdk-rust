@@ -7,9 +7,9 @@ pub struct DescribeInstancePatchStatesForPatchGroupInput {
     pub patch_group: ::std::option::Option<::std::string::String>,
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <li><p>Key (string between 1 and 200 characters)</p></li>
+    /// <li><p>Values (array containing a single string)</p></li>
+    /// <li><p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -24,9 +24,9 @@ impl DescribeInstancePatchStatesForPatchGroupInput {
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <li><p>Key (string between 1 and 200 characters)</p></li>
+    /// <li><p>Values (array containing a single string)</p></li>
+    /// <li><p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -81,9 +81,9 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     ///
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <li><p>Key (string between 1 and 200 characters)</p></li>
+    /// <li><p>Values (array containing a single string)</p></li>
+    /// <li><p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::InstancePatchStateFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -93,9 +93,9 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <li><p>Key (string between 1 and 200 characters)</p></li>
+    /// <li><p>Values (array containing a single string)</p></li>
+    /// <li><p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>) -> Self {
         self.filters = input;
@@ -103,9 +103,9 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <li><p>Key (string between 1 and 200 characters)</p></li>
+    /// <li><p>Values (array containing a single string)</p></li>
+    /// <li><p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>> {
         &self.filters

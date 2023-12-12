@@ -8,7 +8,7 @@ pub struct SavingsPlansCoverage {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
     pub coverage: ::std::option::Option<crate::types::SavingsPlansCoverageData>,
-    /// <p>The time period of the request. </p>
+    /// <p>The time period of the request.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
 }
 impl SavingsPlansCoverage {
@@ -20,7 +20,7 @@ impl SavingsPlansCoverage {
     pub fn coverage(&self) -> ::std::option::Option<&crate::types::SavingsPlansCoverageData> {
         self.coverage.as_ref()
     }
-    /// <p>The time period of the request. </p>
+    /// <p>The time period of the request.</p>
     pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
         self.time_period.as_ref()
     }
@@ -75,17 +75,17 @@ impl SavingsPlansCoverageBuilder {
     pub fn get_coverage(&self) -> &::std::option::Option<crate::types::SavingsPlansCoverageData> {
         &self.coverage
     }
-    /// <p>The time period of the request. </p>
+    /// <p>The time period of the request.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time period of the request. </p>
+    /// <p>The time period of the request.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
-    /// <p>The time period of the request. </p>
+    /// <p>The time period of the request.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         &self.time_period
     }

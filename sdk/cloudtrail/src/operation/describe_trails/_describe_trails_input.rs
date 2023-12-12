@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrailsInput {
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>If an empty list is specified, information for the trail in the current Region is returned.</p>
     /// <ul>
-    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p> </li>
-    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p> </li>
+    /// <li><p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p></li>
+    /// <li><p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p></li>
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
@@ -19,11 +19,11 @@ pub struct DescribeTrailsInput {
 }
 impl DescribeTrailsInput {
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>If an empty list is specified, information for the trail in the current Region is returned.</p>
     /// <ul>
-    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p> </li>
-    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p> </li>
+    /// <li><p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p></li>
+    /// <li><p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p></li>
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
@@ -57,11 +57,11 @@ impl DescribeTrailsInputBuilder {
     /// To override the contents of this collection use [`set_trail_name_list`](Self::set_trail_name_list).
     ///
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>If an empty list is specified, information for the trail in the current Region is returned.</p>
     /// <ul>
-    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p> </li>
-    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p> </li>
+    /// <li><p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p></li>
+    /// <li><p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p></li>
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
@@ -72,11 +72,11 @@ impl DescribeTrailsInputBuilder {
         self
     }
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>If an empty list is specified, information for the trail in the current Region is returned.</p>
     /// <ul>
-    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p> </li>
-    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p> </li>
+    /// <li><p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p></li>
+    /// <li><p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p></li>
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
@@ -85,11 +85,11 @@ impl DescribeTrailsInputBuilder {
         self
     }
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>If an empty list is specified, information for the trail in the current Region is returned.</p>
     /// <ul>
-    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p> </li>
-    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p> </li>
+    /// <li><p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p></li>
+    /// <li><p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p></li>
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>

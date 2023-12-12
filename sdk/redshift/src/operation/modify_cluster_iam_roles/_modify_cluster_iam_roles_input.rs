@@ -6,9 +6,9 @@
 pub struct ModifyClusterIamRolesInput {
     /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format.</p>
     pub add_iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster.</p>
     pub remove_iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
@@ -18,13 +18,13 @@ impl ModifyClusterIamRolesInput {
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_iam_roles.is_none()`.
     pub fn add_iam_roles(&self) -> &[::std::string::String] {
         self.add_iam_roles.as_deref().unwrap_or_default()
     }
-    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_iam_roles.is_none()`.
     pub fn remove_iam_roles(&self) -> &[::std::string::String] {
@@ -71,19 +71,19 @@ impl ModifyClusterIamRolesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_add_iam_roles`](Self::set_add_iam_roles).
     ///
-    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format.</p>
     pub fn add_iam_roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_iam_roles.unwrap_or_default();
         v.push(input.into());
         self.add_iam_roles = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format.</p>
     pub fn set_add_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_iam_roles = input;
         self
     }
-    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format.</p>
     pub fn get_add_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_iam_roles
     }
@@ -91,19 +91,19 @@ impl ModifyClusterIamRolesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_iam_roles`](Self::set_remove_iam_roles).
     ///
-    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster.</p>
     pub fn remove_iam_roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_iam_roles.unwrap_or_default();
         v.push(input.into());
         self.remove_iam_roles = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster.</p>
     pub fn set_remove_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_iam_roles = input;
         self
     }
-    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster.</p>
     pub fn get_remove_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_iam_roles
     }

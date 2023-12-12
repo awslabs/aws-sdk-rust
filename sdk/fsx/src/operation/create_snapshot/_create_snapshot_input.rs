@@ -5,7 +5,7 @@
 pub struct CreateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the snapshot. </p>
+    /// <p>The name of the snapshot.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that you are taking a snapshot of.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl CreateSnapshotInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The name of the snapshot. </p>
+    /// <p>The name of the snapshot.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -63,18 +63,18 @@ impl CreateSnapshotInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
-    /// <p>The name of the snapshot. </p>
+    /// <p>The name of the snapshot.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the snapshot. </p>
+    /// <p>The name of the snapshot.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the snapshot. </p>
+    /// <p>The name of the snapshot.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

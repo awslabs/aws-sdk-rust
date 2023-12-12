@@ -8,7 +8,7 @@ pub struct SecurityDetails {
     pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The security groups to attach to the elastic network interfaces.</p>
     pub security_group_ids: ::std::vec::Vec<::std::string::String>,
-    /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    /// <p>ARN to a role needed for connecting streams to your instances.</p>
     pub role_arn: ::std::string::String,
 }
 impl SecurityDetails {
@@ -22,7 +22,7 @@ impl SecurityDetails {
         use std::ops::Deref;
         self.security_group_ids.deref()
     }
-    /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    /// <p>ARN to a role needed for connecting streams to your instances.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -84,18 +84,18 @@ impl SecurityDetailsBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
-    /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    /// <p>ARN to a role needed for connecting streams to your instances.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    /// <p>ARN to a role needed for connecting streams to your instances.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    /// <p>ARN to a role needed for connecting streams to your instances.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

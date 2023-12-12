@@ -152,8 +152,8 @@ impl SendVoiceMessageFluentBuilder {
     }
     /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
     /// <ul>
-    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
-    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
+    /// <li><p>TEXT: This is the default value. When used the maximum character limit is 3000.</p></li>
+    /// <li><p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p></li>
     /// </ul>
     pub fn message_body_text_type(mut self, input: crate::types::VoiceMessageBodyTextType) -> Self {
         self.inner = self.inner.message_body_text_type(input);
@@ -161,8 +161,8 @@ impl SendVoiceMessageFluentBuilder {
     }
     /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
     /// <ul>
-    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
-    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
+    /// <li><p>TEXT: This is the default value. When used the maximum character limit is 3000.</p></li>
+    /// <li><p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p></li>
     /// </ul>
     pub fn set_message_body_text_type(mut self, input: ::std::option::Option<crate::types::VoiceMessageBodyTextType>) -> Self {
         self.inner = self.inner.set_message_body_text_type(input);
@@ -170,8 +170,8 @@ impl SendVoiceMessageFluentBuilder {
     }
     /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
     /// <ul>
-    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
-    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
+    /// <li><p>TEXT: This is the default value. When used the maximum character limit is 3000.</p></li>
+    /// <li><p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p></li>
     /// </ul>
     pub fn get_message_body_text_type(&self) -> &::std::option::Option<crate::types::VoiceMessageBodyTextType> {
         self.inner.get_message_body_text_type()

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableLoggingOutput {
-    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub logging_enabled: ::std::option::Option<bool>,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct EnableLoggingOutput {
     _request_id: Option<String>,
 }
 impl EnableLoggingOutput {
-    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn logging_enabled(&self) -> ::std::option::Option<bool> {
         self.logging_enabled
     }
@@ -85,17 +85,17 @@ pub struct EnableLoggingOutputBuilder {
     _request_id: Option<String>,
 }
 impl EnableLoggingOutputBuilder {
-    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn logging_enabled(mut self, input: bool) -> Self {
         self.logging_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn set_logging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.logging_enabled = input;
         self
     }
-    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn get_logging_enabled(&self) -> &::std::option::Option<bool> {
         &self.logging_enabled
     }

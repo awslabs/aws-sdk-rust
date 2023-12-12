@@ -22,7 +22,7 @@ impl DeleteProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProject`.
 ///
-/// <p> Deletes a build project. When you delete a project, its builds are not deleted. </p>
+/// <p>Deletes a build project. When you delete a project, its builds are not deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

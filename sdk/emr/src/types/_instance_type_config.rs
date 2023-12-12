@@ -6,15 +6,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTypeConfig {
-    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
+    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
-    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
+    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified.</p>
     pub weighted_capacity: ::std::option::Option<i32>,
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub bid_price_as_percentage_of_on_demand_price: ::std::option::Option<f64>,
-    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
+    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
     pub ebs_configuration: ::std::option::Option<crate::types::EbsConfiguration>,
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
@@ -22,15 +22,15 @@ pub struct InstanceTypeConfig {
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceTypeConfig {
-    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
+    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
+    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified.</p>
     pub fn weighted_capacity(&self) -> ::std::option::Option<i32> {
         self.weighted_capacity
     }
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn bid_price(&self) -> ::std::option::Option<&str> {
         self.bid_price.as_deref()
     }
@@ -38,7 +38,7 @@ impl InstanceTypeConfig {
     pub fn bid_price_as_percentage_of_on_demand_price(&self) -> ::std::option::Option<f64> {
         self.bid_price_as_percentage_of_on_demand_price
     }
-    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
+    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
     pub fn ebs_configuration(&self) -> ::std::option::Option<&crate::types::EbsConfiguration> {
         self.ebs_configuration.as_ref()
     }
@@ -73,46 +73,46 @@ pub struct InstanceTypeConfigBuilder {
     pub(crate) custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceTypeConfigBuilder {
-    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
+    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>.</p>
     /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
+    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
+    /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
-    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
+    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified.</p>
     pub fn weighted_capacity(mut self, input: i32) -> Self {
         self.weighted_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
+    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified.</p>
     pub fn set_weighted_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weighted_capacity = input;
         self
     }
-    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
+    /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified.</p>
     pub fn get_weighted_capacity(&self) -> &::std::option::Option<i32> {
         &self.weighted_capacity
     }
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn bid_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bid_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn set_bid_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bid_price = input;
         self
     }
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn get_bid_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.bid_price
     }
@@ -130,17 +130,17 @@ impl InstanceTypeConfigBuilder {
     pub fn get_bid_price_as_percentage_of_on_demand_price(&self) -> &::std::option::Option<f64> {
         &self.bid_price_as_percentage_of_on_demand_price
     }
-    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
+    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
     pub fn ebs_configuration(mut self, input: crate::types::EbsConfiguration) -> Self {
         self.ebs_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
+    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
     pub fn set_ebs_configuration(mut self, input: ::std::option::Option<crate::types::EbsConfiguration>) -> Self {
         self.ebs_configuration = input;
         self
     }
-    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
+    /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
     pub fn get_ebs_configuration(&self) -> &::std::option::Option<crate::types::EbsConfiguration> {
         &self.ebs_configuration
     }

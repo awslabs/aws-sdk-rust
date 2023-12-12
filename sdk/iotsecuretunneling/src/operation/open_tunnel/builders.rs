@@ -109,17 +109,17 @@ impl OpenTunnelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A short text description of the tunnel. </p>
+    /// <p>A short text description of the tunnel.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A short text description of the tunnel. </p>
+    /// <p>A short text description of the tunnel.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A short text description of the tunnel. </p>
+    /// <p>A short text description of the tunnel.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

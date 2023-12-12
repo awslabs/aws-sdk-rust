@@ -129,19 +129,19 @@ impl DescribeServicesFluentBuilder {
         self.inner.get_service_code()
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code> </p>
+    /// <p>Valid values are: <code>aws_v1</code></p>
     pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format_version(input.into());
         self
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code> </p>
+    /// <p>Valid values are: <code>aws_v1</code></p>
     pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format_version(input);
         self
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code> </p>
+    /// <p>Valid values are: <code>aws_v1</code></p>
     pub fn get_format_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_format_version()
     }

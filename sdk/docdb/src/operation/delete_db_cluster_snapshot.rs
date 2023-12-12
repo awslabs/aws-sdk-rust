@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDBClust
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDBClusterSnapshotError {
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p><code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// <p>The provided value isn't a valid cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::types::error::InvalidDbClusterSnapshotStateFault),

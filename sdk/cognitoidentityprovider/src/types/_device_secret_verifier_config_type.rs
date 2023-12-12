@@ -6,7 +6,7 @@
 pub struct DeviceSecretVerifierConfigType {
     /// <p>The password verifier.</p>
     pub password_verifier: ::std::option::Option<::std::string::String>,
-    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
+    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
     pub salt: ::std::option::Option<::std::string::String>,
 }
 impl DeviceSecretVerifierConfigType {
@@ -14,7 +14,7 @@ impl DeviceSecretVerifierConfigType {
     pub fn password_verifier(&self) -> ::std::option::Option<&str> {
         self.password_verifier.as_deref()
     }
-    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
+    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
     pub fn salt(&self) -> ::std::option::Option<&str> {
         self.salt.as_deref()
     }
@@ -48,17 +48,17 @@ impl DeviceSecretVerifierConfigTypeBuilder {
     pub fn get_password_verifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.password_verifier
     }
-    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
+    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
     pub fn salt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.salt = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
+    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
     pub fn set_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.salt = input;
         self
     }
-    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
+    /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
     pub fn get_salt(&self) -> &::std::option::Option<::std::string::String> {
         &self.salt
     }

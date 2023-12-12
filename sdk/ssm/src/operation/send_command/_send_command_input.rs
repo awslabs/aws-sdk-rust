@@ -12,7 +12,7 @@ pub struct SendCommandInput {
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
+    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
@@ -20,7 +20,7 @@ pub struct SendCommandInput {
     /// <p>--document-version "\$LATEST"</p>
     /// <p>--document-version "3"</p>
     pub document_version: ::std::option::Option<::std::string::String>,
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub document_hash: ::std::option::Option<::std::string::String>,
@@ -72,7 +72,7 @@ impl SendCommandInput {
         self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
+    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     pub fn document_name(&self) -> ::std::option::Option<&str> {
         self.document_name.as_deref()
@@ -84,7 +84,7 @@ impl SendCommandInput {
     pub fn document_version(&self) -> ::std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn document_hash(&self) -> ::std::option::Option<&str> {
@@ -254,7 +254,7 @@ impl SendCommandInputBuilder {
         &self.targets
     }
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
+    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     /// This field is required.
     pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -262,14 +262,14 @@ impl SendCommandInputBuilder {
         self
     }
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
+    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
+    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_name
@@ -297,21 +297,21 @@ impl SendCommandInputBuilder {
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_version
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn document_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn set_document_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_hash = input;
         self
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn get_document_hash(&self) -> &::std::option::Option<::std::string::String> {

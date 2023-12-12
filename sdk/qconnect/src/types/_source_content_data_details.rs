@@ -8,7 +8,7 @@ pub struct SourceContentDataDetails {
     pub id: ::std::string::String,
     /// <p>The type of the source content.</p>
     pub r#type: crate::types::SourceContentType,
-    /// <p> Details about the source content text data.</p>
+    /// <p>Details about the source content text data.</p>
     pub text_data: ::std::option::Option<crate::types::TextData>,
     /// <p>Details about the source content ranking data.</p>
     pub ranking_data: ::std::option::Option<crate::types::RankingData>,
@@ -23,7 +23,7 @@ impl SourceContentDataDetails {
     pub fn r#type(&self) -> &crate::types::SourceContentType {
         &self.r#type
     }
-    /// <p> Details about the source content text data.</p>
+    /// <p>Details about the source content text data.</p>
     pub fn text_data(&self) -> ::std::option::Option<&crate::types::TextData> {
         self.text_data.as_ref()
     }
@@ -79,18 +79,18 @@ impl SourceContentDataDetailsBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceContentType> {
         &self.r#type
     }
-    /// <p> Details about the source content text data.</p>
+    /// <p>Details about the source content text data.</p>
     /// This field is required.
     pub fn text_data(mut self, input: crate::types::TextData) -> Self {
         self.text_data = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Details about the source content text data.</p>
+    /// <p>Details about the source content text data.</p>
     pub fn set_text_data(mut self, input: ::std::option::Option<crate::types::TextData>) -> Self {
         self.text_data = input;
         self
     }
-    /// <p> Details about the source content text data.</p>
+    /// <p>Details about the source content text data.</p>
     pub fn get_text_data(&self) -> &::std::option::Option<crate::types::TextData> {
         &self.text_data
     }

@@ -12,7 +12,7 @@ pub struct DataSource {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when the Amazon Q data source was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Unix timestamp when the Amazon Q data source was last updated. </p>
+    /// <p>The Unix timestamp when the Amazon Q data source was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the Amazon Q data source.</p>
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
@@ -34,7 +34,7 @@ impl DataSource {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix timestamp when the Amazon Q data source was last updated. </p>
+    /// <p>The Unix timestamp when the Amazon Q data source was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -118,17 +118,17 @@ impl DataSourceBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The Unix timestamp when the Amazon Q data source was last updated. </p>
+    /// <p>The Unix timestamp when the Amazon Q data source was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q data source was last updated. </p>
+    /// <p>The Unix timestamp when the Amazon Q data source was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q data source was last updated. </p>
+    /// <p>The Unix timestamp when the Amazon Q data source was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

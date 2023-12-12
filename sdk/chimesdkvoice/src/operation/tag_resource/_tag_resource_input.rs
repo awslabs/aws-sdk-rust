@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The ARN of the resource being tagged. </p>
+    /// <p>The ARN of the resource being tagged.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tags being added to the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The ARN of the resource being tagged. </p>
+    /// <p>The ARN of the resource being tagged.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -43,18 +43,18 @@ pub struct TagResourceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInputBuilder {
-    /// <p>The ARN of the resource being tagged. </p>
+    /// <p>The ARN of the resource being tagged.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource being tagged. </p>
+    /// <p>The ARN of the resource being tagged.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN of the resource being tagged. </p>
+    /// <p>The ARN of the resource being tagged.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

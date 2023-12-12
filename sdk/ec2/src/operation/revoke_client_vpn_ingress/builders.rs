@@ -22,7 +22,7 @@ impl RevokeClientVpnIngressInputBuilder {
 }
 /// Fluent builder constructing a request to `RevokeClientVpnIngress`.
 ///
-/// <p>Removes an ingress authorization rule from a Client VPN endpoint. </p>
+/// <p>Removes an ingress authorization rule from a Client VPN endpoint.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeClientVpnIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl RevokeClientVpnIngressFluentBuilder {
     pub fn get_target_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_network_cidr()
     }
-    /// <p>The ID of the Active Directory group for which to revoke access. </p>
+    /// <p>The ID of the Active Directory group for which to revoke access.</p>
     pub fn access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_group_id(input.into());
         self
     }
-    /// <p>The ID of the Active Directory group for which to revoke access. </p>
+    /// <p>The ID of the Active Directory group for which to revoke access.</p>
     pub fn set_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_group_id(input);
         self
     }
-    /// <p>The ID of the Active Directory group for which to revoke access. </p>
+    /// <p>The ID of the Active Directory group for which to revoke access.</p>
     pub fn get_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_group_id()
     }

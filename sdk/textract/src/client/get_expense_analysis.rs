@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput::next_token): <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
     ///   - [`expense_documents(Option<Vec::<ExpenseDocument>>)`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput::expense_documents): <p>The expenses detected by Amazon Textract.</p>
     ///   - [`warnings(Option<Vec::<Warning>>)`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput::warnings): <p>A list of warnings that occurred during the text-detection operation for the document.</p>
-    ///   - [`status_message(Option<String>)`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    ///   - [`status_message(Option<String>)`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     ///   - [`analyze_expense_model_version(Option<String>)`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput::analyze_expense_model_version): <p>The current model version of AnalyzeExpense.</p>
     /// - On failure, responds with [`SdkError<GetExpenseAnalysisError>`](crate::operation::get_expense_analysis::GetExpenseAnalysisError)
     pub fn get_expense_analysis(&self) -> crate::operation::get_expense_analysis::builders::GetExpenseAnalysisFluentBuilder {

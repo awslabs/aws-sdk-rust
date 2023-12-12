@@ -10,9 +10,9 @@ pub struct AwsEcrContainerImageDetails {
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the image. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>arm64</code> </p> </li>
-    /// <li> <p> <code>i386</code> </p> </li>
-    /// <li> <p> <code>x86_64</code> </p> </li>
+    /// <li><p><code>arm64</code></p></li>
+    /// <li><p><code>i386</code></p></li>
+    /// <li><p><code>x86_64</code></p></li>
     /// </ul>
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The sha256 digest of the image manifest.</p>
@@ -34,9 +34,9 @@ impl AwsEcrContainerImageDetails {
     }
     /// <p>The architecture of the image. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>arm64</code> </p> </li>
-    /// <li> <p> <code>i386</code> </p> </li>
-    /// <li> <p> <code>x86_64</code> </p> </li>
+    /// <li><p><code>arm64</code></p></li>
+    /// <li><p><code>i386</code></p></li>
+    /// <li><p><code>x86_64</code></p></li>
     /// </ul>
     pub fn architecture(&self) -> ::std::option::Option<&str> {
         self.architecture.as_deref()
@@ -106,9 +106,9 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The architecture of the image. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>arm64</code> </p> </li>
-    /// <li> <p> <code>i386</code> </p> </li>
-    /// <li> <p> <code>x86_64</code> </p> </li>
+    /// <li><p><code>arm64</code></p></li>
+    /// <li><p><code>i386</code></p></li>
+    /// <li><p><code>x86_64</code></p></li>
     /// </ul>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.architecture = ::std::option::Option::Some(input.into());
@@ -116,9 +116,9 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The architecture of the image. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>arm64</code> </p> </li>
-    /// <li> <p> <code>i386</code> </p> </li>
-    /// <li> <p> <code>x86_64</code> </p> </li>
+    /// <li><p><code>arm64</code></p></li>
+    /// <li><p><code>i386</code></p></li>
+    /// <li><p><code>x86_64</code></p></li>
     /// </ul>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.architecture = input;
@@ -126,9 +126,9 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The architecture of the image. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>arm64</code> </p> </li>
-    /// <li> <p> <code>i386</code> </p> </li>
-    /// <li> <p> <code>x86_64</code> </p> </li>
+    /// <li><p><code>arm64</code></p></li>
+    /// <li><p><code>i386</code></p></li>
+    /// <li><p><code>x86_64</code></p></li>
     /// </ul>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
         &self.architecture

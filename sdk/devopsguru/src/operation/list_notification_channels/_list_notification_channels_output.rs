@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationChannelsOutput {
-    /// <p> An array that contains the requested notification channels. </p>
+    /// <p>An array that contains the requested notification channels.</p>
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListNotificationChannelsOutput {
-    /// <p> An array that contains the requested notification channels. </p>
+    /// <p>An array that contains the requested notification channels.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
     pub fn channels(&self) -> &[crate::types::NotificationChannel] {
@@ -46,19 +46,19 @@ impl ListNotificationChannelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
     ///
-    /// <p> An array that contains the requested notification channels. </p>
+    /// <p>An array that contains the requested notification channels.</p>
     pub fn channels(mut self, input: crate::types::NotificationChannel) -> Self {
         let mut v = self.channels.unwrap_or_default();
         v.push(input);
         self.channels = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array that contains the requested notification channels. </p>
+    /// <p>An array that contains the requested notification channels.</p>
     pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>) -> Self {
         self.channels = input;
         self
     }
-    /// <p> An array that contains the requested notification channels. </p>
+    /// <p>An array that contains the requested notification channels.</p>
     pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>> {
         &self.channels
     }

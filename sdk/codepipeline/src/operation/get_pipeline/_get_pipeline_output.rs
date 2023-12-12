@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineOutput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     pub metadata: ::std::option::Option<crate::types::PipelineMetadata>,
     _request_id: Option<String>,
 }
 impl GetPipelineOutput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn pipeline(&self) -> ::std::option::Option<&crate::types::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct GetPipelineOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPipelineOutputBuilder {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
         self.pipeline = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.pipeline = input;
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
         &self.pipeline
     }

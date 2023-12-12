@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetInput {
-    /// <p> The ID of the fleet to delete. </p>
+    /// <p>The ID of the fleet to delete.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetInput {
-    /// <p> The ID of the fleet to delete. </p>
+    /// <p>The ID of the fleet to delete.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteFleetInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetInputBuilder {
-    /// <p> The ID of the fleet to delete. </p>
+    /// <p>The ID of the fleet to delete.</p>
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the fleet to delete. </p>
+    /// <p>The ID of the fleet to delete.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p> The ID of the fleet to delete. </p>
+    /// <p>The ID of the fleet to delete.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }

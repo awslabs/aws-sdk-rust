@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangeLogsOutput {
-    /// <p>The list of user activity for the control. </p>
+    /// <p>The list of user activity for the control.</p>
     pub change_logs: ::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>>,
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetChangeLogsOutput {
-    /// <p>The list of user activity for the control. </p>
+    /// <p>The list of user activity for the control.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_logs.is_none()`.
     pub fn change_logs(&self) -> &[crate::types::ChangeLog] {
         self.change_logs.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl GetChangeLogsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_change_logs`](Self::set_change_logs).
     ///
-    /// <p>The list of user activity for the control. </p>
+    /// <p>The list of user activity for the control.</p>
     pub fn change_logs(mut self, input: crate::types::ChangeLog) -> Self {
         let mut v = self.change_logs.unwrap_or_default();
         v.push(input);
         self.change_logs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of user activity for the control. </p>
+    /// <p>The list of user activity for the control.</p>
     pub fn set_change_logs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>>) -> Self {
         self.change_logs = input;
         self
     }
-    /// <p>The list of user activity for the control. </p>
+    /// <p>The list of user activity for the control.</p>
     pub fn get_change_logs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>> {
         &self.change_logs
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

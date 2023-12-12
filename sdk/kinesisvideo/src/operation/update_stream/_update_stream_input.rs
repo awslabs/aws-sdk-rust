@@ -10,8 +10,8 @@ pub struct UpdateStreamInput {
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the stream whose metadata you want to update.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the device that is writing to the stream. </p> <note>
-    /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
+    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
@@ -32,8 +32,8 @@ impl UpdateStreamInput {
     pub fn current_version(&self) -> ::std::option::Option<&str> {
         self.current_version.as_deref()
     }
-    /// <p>The name of the device that is writing to the stream. </p> <note>
-    /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
+    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
@@ -108,22 +108,22 @@ impl UpdateStreamInputBuilder {
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_version
     }
-    /// <p>The name of the device that is writing to the stream. </p> <note>
-    /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
+    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the device that is writing to the stream. </p> <note>
-    /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
+    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
-    /// <p>The name of the device that is writing to the stream. </p> <note>
-    /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
+    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name

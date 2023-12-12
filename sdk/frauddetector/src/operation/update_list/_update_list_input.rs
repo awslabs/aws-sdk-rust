@@ -3,51 +3,51 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateListInput {
-    /// <p> The name of the list to update. </p>
+    /// <p>The name of the list to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
+    /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
     pub elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The new description. </p>
+    /// <p>The new description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p> The update mode (type). </p>
+    /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li>
-    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
-    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
+    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub update_mode: ::std::option::Option<crate::types::ListUpdateMode>,
-    /// <p> The variable type you want to assign to the list. </p> <note>
+    /// <p>The variable type you want to assign to the list.</p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub variable_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateListInput {
-    /// <p> The name of the list to update. </p>
+    /// <p>The name of the list to update.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
+    /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
     pub fn elements(&self) -> &[::std::string::String] {
         self.elements.as_deref().unwrap_or_default()
     }
-    /// <p> The new description. </p>
+    /// <p>The new description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The update mode (type). </p>
+    /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li>
-    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
-    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
+    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn update_mode(&self) -> ::std::option::Option<&crate::types::ListUpdateMode> {
         self.update_mode.as_ref()
     }
-    /// <p> The variable type you want to assign to the list. </p> <note>
+    /// <p>The variable type you want to assign to the list.</p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn variable_type(&self) -> ::std::option::Option<&str> {
@@ -72,18 +72,18 @@ pub struct UpdateListInputBuilder {
     pub(crate) variable_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateListInputBuilder {
-    /// <p> The name of the list to update. </p>
+    /// <p>The name of the list to update.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the list to update. </p>
+    /// <p>The name of the list to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the list to update. </p>
+    /// <p>The name of the list to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -91,7 +91,7 @@ impl UpdateListInputBuilder {
     ///
     /// To override the contents of this collection use [`set_elements`](Self::set_elements).
     ///
-    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
+    /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
     pub fn elements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.elements.unwrap_or_default();
@@ -99,75 +99,75 @@ impl UpdateListInputBuilder {
         self.elements = ::std::option::Option::Some(v);
         self
     }
-    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
+    /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
     pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.elements = input;
         self
     }
-    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
+    /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
     pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.elements
     }
-    /// <p> The new description. </p>
+    /// <p>The new description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The new description. </p>
+    /// <p>The new description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> The new description. </p>
+    /// <p>The new description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p> The update mode (type). </p>
+    /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li>
-    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
-    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
+    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn update_mode(mut self, input: crate::types::ListUpdateMode) -> Self {
         self.update_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The update mode (type). </p>
+    /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li>
-    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
-    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
+    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn set_update_mode(mut self, input: ::std::option::Option<crate::types::ListUpdateMode>) -> Self {
         self.update_mode = input;
         self
     }
-    /// <p> The update mode (type). </p>
+    /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li>
-    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
-    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
+    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn get_update_mode(&self) -> &::std::option::Option<crate::types::ListUpdateMode> {
         &self.update_mode
     }
-    /// <p> The variable type you want to assign to the list. </p> <note>
+    /// <p>The variable type you want to assign to the list.</p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn variable_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The variable type you want to assign to the list. </p> <note>
+    /// <p>The variable type you want to assign to the list.</p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variable_type = input;
         self
     }
-    /// <p> The variable type you want to assign to the list. </p> <note>
+    /// <p>The variable type you want to assign to the list.</p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {

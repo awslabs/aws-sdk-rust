@@ -7,26 +7,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreStatus {
     /// <p>Specifies whether the object is currently being restored. If the object restoration is in progress, the header returns the value <code>TRUE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code></p>
     /// <p>If the object restoration has completed, the header returns the value <code>FALSE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     /// <p>If the object hasn't been restored, there is no header response.</p>
     pub is_restore_in_progress: ::std::option::Option<bool>,
     /// <p>Indicates when the restored copy will expire. This value is populated only if the object has already been restored. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     pub restore_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RestoreStatus {
     /// <p>Specifies whether the object is currently being restored. If the object restoration is in progress, the header returns the value <code>TRUE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code></p>
     /// <p>If the object restoration has completed, the header returns the value <code>FALSE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     /// <p>If the object hasn't been restored, there is no header response.</p>
     pub fn is_restore_in_progress(&self) -> ::std::option::Option<bool> {
         self.is_restore_in_progress
     }
     /// <p>Indicates when the restored copy will expire. This value is populated only if the object has already been restored. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     pub fn restore_expiry_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.restore_expiry_date.as_ref()
     }
@@ -47,45 +47,45 @@ pub struct RestoreStatusBuilder {
 }
 impl RestoreStatusBuilder {
     /// <p>Specifies whether the object is currently being restored. If the object restoration is in progress, the header returns the value <code>TRUE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code></p>
     /// <p>If the object restoration has completed, the header returns the value <code>FALSE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     /// <p>If the object hasn't been restored, there is no header response.</p>
     pub fn is_restore_in_progress(mut self, input: bool) -> Self {
         self.is_restore_in_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the object is currently being restored. If the object restoration is in progress, the header returns the value <code>TRUE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code></p>
     /// <p>If the object restoration has completed, the header returns the value <code>FALSE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     /// <p>If the object hasn't been restored, there is no header response.</p>
     pub fn set_is_restore_in_progress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_restore_in_progress = input;
         self
     }
     /// <p>Specifies whether the object is currently being restored. If the object restoration is in progress, the header returns the value <code>TRUE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code></p>
     /// <p>If the object restoration has completed, the header returns the value <code>FALSE</code>. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     /// <p>If the object hasn't been restored, there is no header response.</p>
     pub fn get_is_restore_in_progress(&self) -> &::std::option::Option<bool> {
         &self.is_restore_in_progress
     }
     /// <p>Indicates when the restored copy will expire. This value is populated only if the object has already been restored. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     pub fn restore_expiry_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.restore_expiry_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates when the restored copy will expire. This value is populated only if the object has already been restored. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     pub fn set_restore_expiry_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_expiry_date = input;
         self
     }
     /// <p>Indicates when the restored copy will expire. This value is populated only if the object has already been restored. For example:</p>
-    /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
+    /// <p><code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code></p>
     pub fn get_restore_expiry_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.restore_expiry_date
     }

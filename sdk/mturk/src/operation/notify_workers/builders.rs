@@ -22,7 +22,7 @@ impl NotifyWorkersInputBuilder {
 }
 /// Fluent builder constructing a request to `NotifyWorkers`.
 ///
-/// <p> The <code>NotifyWorkers</code> operation sends an email to one or more Workers that you specify with the Worker ID. You can specify up to 100 Worker IDs to send the same message with a single call to the NotifyWorkers operation. The NotifyWorkers operation will send a notification email to a Worker only if you have previously approved or rejected work from the Worker. </p>
+/// <p>The <code>NotifyWorkers</code> operation sends an email to one or more Workers that you specify with the Worker ID. You can specify up to 100 Worker IDs to send the same message with a single call to the NotifyWorkers operation. The NotifyWorkers operation will send a notification email to a Worker only if you have previously approved or rejected work from the Worker.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyWorkersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

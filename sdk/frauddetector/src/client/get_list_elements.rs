@@ -4,12 +4,12 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::set_name):<br>required: **true**<br><p> The name of the list. </p><br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::set_next_token):<br>required: **false**<br><p> The next token for the subsequent request. </p><br>
-    ///   - [`max_results(i32)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::set_max_results):<br>required: **false**<br><p> The maximum number of objects to return for the request. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::set_name):<br>required: **true**<br><p>The name of the list.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token for the subsequent request.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
     /// - On success, responds with [`GetListElementsOutput`](crate::operation::get_list_elements::GetListElementsOutput) with field(s):
-    ///   - [`elements(Option<Vec::<String>>)`](crate::operation::get_list_elements::GetListElementsOutput::elements): <p> The list elements. </p>
-    ///   - [`next_token(Option<String>)`](crate::operation::get_list_elements::GetListElementsOutput::next_token): <p> The next page token. </p>
+    ///   - [`elements(Option<Vec::<String>>)`](crate::operation::get_list_elements::GetListElementsOutput::elements): <p>The list elements.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::get_list_elements::GetListElementsOutput::next_token): <p>The next page token.</p>
     /// - On failure, responds with [`SdkError<GetListElementsError>`](crate::operation::get_list_elements::GetListElementsError)
     pub fn get_list_elements(&self) -> crate::operation::get_list_elements::builders::GetListElementsFluentBuilder {
         crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::new(self.handle.clone())

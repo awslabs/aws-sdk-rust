@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationsInput {
-    /// <p>A valid configuration identified by Application Discovery Service. </p>
+    /// <p>A valid configuration identified by Application Discovery Service.</p>
     pub configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The total number of items to return. The maximum value is 100.</p>
@@ -17,12 +17,12 @@ pub struct ListConfigurationsInput {
     pub order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>>,
 }
 impl ListConfigurationsInput {
-    /// <p>A valid configuration identified by Application Discovery Service. </p>
+    /// <p>A valid configuration identified by Application Discovery Service.</p>
     pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::ConfigurationItemType> {
         self.configuration_type.as_ref()
     }
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -62,18 +62,18 @@ pub struct ListConfigurationsInputBuilder {
     pub(crate) order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>>,
 }
 impl ListConfigurationsInputBuilder {
-    /// <p>A valid configuration identified by Application Discovery Service. </p>
+    /// <p>A valid configuration identified by Application Discovery Service.</p>
     /// This field is required.
     pub fn configuration_type(mut self, input: crate::types::ConfigurationItemType) -> Self {
         self.configuration_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A valid configuration identified by Application Discovery Service. </p>
+    /// <p>A valid configuration identified by Application Discovery Service.</p>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationItemType>) -> Self {
         self.configuration_type = input;
         self
     }
-    /// <p>A valid configuration identified by Application Discovery Service. </p>
+    /// <p>A valid configuration identified by Application Discovery Service.</p>
     pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationItemType> {
         &self.configuration_type
     }
@@ -81,8 +81,8 @@ impl ListConfigurationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -90,15 +90,15 @@ impl ListConfigurationsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

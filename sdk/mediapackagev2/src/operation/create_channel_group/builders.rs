@@ -22,7 +22,7 @@ impl CreateChannelGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateChannelGroup`.
 ///
-/// <p>Create a channel group to group your channels and origin endpoints. A channel group is the top-level resource that consists of channels and origin endpoints that are associated with it and that provides predictable URLs for stream delivery. All channels and origin endpoints within the channel group are guaranteed to share the DNS. You can create only one channel group with each request. </p>
+/// <p>Create a channel group to group your channels and origin endpoints. A channel group is the top-level resource that consists of channels and origin endpoints that are associated with it and that provides predictable URLs for stream delivery. All channels and origin endpoints within the channel group are guaranteed to share the DNS. You can create only one channel group with each request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateChannelGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -155,22 +155,22 @@ impl CreateChannelGroupFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
-    /// <p> <code>"Key1": "Value1",</code> </p>
-    /// <p> <code>"Key2": "Value2"</code> </p>
+    /// <p><code>"Key1": "Value1",</code></p>
+    /// <p><code>"Key2": "Value2"</code></p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
-    /// <p> <code>"Key1": "Value1",</code> </p>
-    /// <p> <code>"Key2": "Value2"</code> </p>
+    /// <p><code>"Key1": "Value1",</code></p>
+    /// <p><code>"Key2": "Value2"</code></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
-    /// <p> <code>"Key1": "Value1",</code> </p>
-    /// <p> <code>"Key2": "Value2"</code> </p>
+    /// <p><code>"Key1": "Value1",</code></p>
+    /// <p><code>"Key2": "Value2"</code></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

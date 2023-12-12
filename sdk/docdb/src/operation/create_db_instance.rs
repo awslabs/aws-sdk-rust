@@ -245,17 +245,17 @@ pub enum CreateDBInstanceError {
     /// <p>The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified security group.</p>
     /// <p>Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>You already have a instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
+    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>Subnets in the subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The request would cause you to exceed the allowed number of instances.</p>
     InstanceQuotaExceededFault(crate::types::error::InstanceQuotaExceededFault),
@@ -271,7 +271,7 @@ pub enum CreateDBInstanceError {
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
-    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance. </p>
+    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

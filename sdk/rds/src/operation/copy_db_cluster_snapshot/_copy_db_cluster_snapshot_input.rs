@@ -8,20 +8,20 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p> </li>
-    /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p></li>
+    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub source_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub target_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster snapshot. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
@@ -33,9 +33,9 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
-    /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
-    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
+    /// <li><p><code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p></li>
+    /// <li><p><code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p></li>
+    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p></li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
@@ -43,7 +43,7 @@ pub struct CopyDbClusterSnapshotInput {
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub copy_tags: ::std::option::Option<bool>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyDbClusterSnapshotInput {
@@ -51,22 +51,22 @@ impl CopyDbClusterSnapshotInput {
     /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p> </li>
-    /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p></li>
+    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn source_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.source_db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn target_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.target_db_cluster_snapshot_identifier.as_deref()
     }
@@ -82,9 +82,9 @@ impl CopyDbClusterSnapshotInput {
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
-    /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
-    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
+    /// <li><p><code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p></li>
+    /// <li><p><code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p></li>
+    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p></li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
@@ -96,7 +96,7 @@ impl CopyDbClusterSnapshotInput {
     pub fn copy_tags(&self) -> ::std::option::Option<bool> {
         self.copy_tags
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -126,11 +126,11 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p> </li>
-    /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p></li>
+    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     /// This field is required.
     pub fn source_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -140,11 +140,11 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p> </li>
-    /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p></li>
+    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_cluster_snapshot_identifier = input;
         self
@@ -153,22 +153,22 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p> </li>
-    /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p></li>
+    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn get_source_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_snapshot_identifier
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     /// This field is required.
     pub fn target_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -177,11 +177,11 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn set_target_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_db_cluster_snapshot_identifier = input;
         self
@@ -189,11 +189,11 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn get_target_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_cluster_snapshot_identifier
     }
@@ -227,9 +227,9 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
-    /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
-    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
+    /// <li><p><code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p></li>
+    /// <li><p><code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p></li>
+    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p></li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
@@ -242,9 +242,9 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
-    /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
-    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
+    /// <li><p><code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p></li>
+    /// <li><p><code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p></li>
+    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p></li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
@@ -257,9 +257,9 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
-    /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
-    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
+    /// <li><p><code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p></li>
+    /// <li><p><code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p></li>
+    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p></li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
@@ -285,19 +285,19 @@ impl CopyDbClusterSnapshotInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

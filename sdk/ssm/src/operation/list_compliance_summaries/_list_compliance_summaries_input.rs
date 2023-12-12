@@ -5,7 +5,7 @@
 pub struct ListComplianceSummariesInput {
     /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListComplianceSummariesInput {
     pub fn filters(&self) -> &[crate::types::ComplianceStringFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListComplianceSummariesInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
         &self.filters
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

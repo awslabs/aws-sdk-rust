@@ -24,7 +24,7 @@ impl UpdateEventDataStoreInputBuilder {
 ///
 /// <p>Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 7 and 3653 if the <code>BillingMode</code> is set to <code>EXTENDABLE_RETENTION_PRICING</code>, or between 7 and 2557 if <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>. By default, <code>TerminationProtection</code> is enabled.</p>
 /// <p>For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management, data, or Insights events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.</p>
-/// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, <code>AdvancedEventSelectors</code> includes events of that type in your event data store.</p>
+/// <p>For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, <code>AdvancedEventSelectors</code> includes events of that type in your event data store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventDataStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -233,10 +233,10 @@ impl UpdateEventDataStoreFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
-    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
-    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li><p><code>alias/MyAliasName</code></p></li>
+    /// <li><p><code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code></p></li>
+    /// <li><p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li><p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -248,10 +248,10 @@ impl UpdateEventDataStoreFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
-    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
-    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li><p><code>alias/MyAliasName</code></p></li>
+    /// <li><p><code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code></p></li>
+    /// <li><p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li><p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -263,10 +263,10 @@ impl UpdateEventDataStoreFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
-    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
-    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li><p><code>alias/MyAliasName</code></p></li>
+    /// <li><p><code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code></p></li>
+    /// <li><p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li><p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
@@ -277,8 +277,8 @@ impl UpdateEventDataStoreFluentBuilder {
     /// <p>The billing mode for the event data store determines the cost for ingesting events and the default and maximum retention period for the event data store.</p>
     /// <p>The following are the possible values:</p>
     /// <ul>
-    /// <li> <p> <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366 days.</p> </li>
-    /// <li> <p> <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention period for this billing mode is 2557 days.</p> </li>
+    /// <li><p><code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366 days.</p></li>
+    /// <li><p><code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention period for this billing mode is 2557 days.</p></li>
     /// </ul>
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
     pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
@@ -291,8 +291,8 @@ impl UpdateEventDataStoreFluentBuilder {
     /// <p>The billing mode for the event data store determines the cost for ingesting events and the default and maximum retention period for the event data store.</p>
     /// <p>The following are the possible values:</p>
     /// <ul>
-    /// <li> <p> <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366 days.</p> </li>
-    /// <li> <p> <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention period for this billing mode is 2557 days.</p> </li>
+    /// <li><p><code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366 days.</p></li>
+    /// <li><p><code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention period for this billing mode is 2557 days.</p></li>
     /// </ul>
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
     pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
@@ -305,8 +305,8 @@ impl UpdateEventDataStoreFluentBuilder {
     /// <p>The billing mode for the event data store determines the cost for ingesting events and the default and maximum retention period for the event data store.</p>
     /// <p>The following are the possible values:</p>
     /// <ul>
-    /// <li> <p> <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366 days.</p> </li>
-    /// <li> <p> <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention period for this billing mode is 2557 days.</p> </li>
+    /// <li><p><code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366 days.</p></li>
+    /// <li><p><code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention period for this billing mode is 2557 days.</p></li>
     /// </ul>
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
     pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {

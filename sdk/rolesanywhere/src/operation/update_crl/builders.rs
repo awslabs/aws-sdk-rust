@@ -23,7 +23,7 @@ impl UpdateCrlInputBuilder {
 /// Fluent builder constructing a request to `UpdateCrl`.
 ///
 /// <p>Updates the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates against the CRL before issuing credentials.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

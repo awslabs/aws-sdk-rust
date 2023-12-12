@@ -8,11 +8,11 @@ pub struct Domain {
     /// <p>The name of the domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-    /// <p class="title"> <b>Lifecycle types</b> </p>
+    /// <p class="title"><b>Lifecycle types</b></p>
     /// <ul>
-    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p> </li>
-    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
-    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
+    /// <li><p><code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p></li>
+    /// <li><p><code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p></li>
+    /// <li><p><code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p></li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::LifecycleManagementStrategy>,
 }
@@ -22,11 +22,11 @@ impl Domain {
         self.name.as_deref()
     }
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-    /// <p class="title"> <b>Lifecycle types</b> </p>
+    /// <p class="title"><b>Lifecycle types</b></p>
     /// <ul>
-    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p> </li>
-    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
-    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
+    /// <li><p><code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p></li>
+    /// <li><p><code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p></li>
+    /// <li><p><code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p></li>
     /// </ul>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::LifecycleManagementStrategy> {
         self.lifecycle.as_ref()
@@ -62,33 +62,33 @@ impl DomainBuilder {
         &self.name
     }
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-    /// <p class="title"> <b>Lifecycle types</b> </p>
+    /// <p class="title"><b>Lifecycle types</b></p>
     /// <ul>
-    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p> </li>
-    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
-    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
+    /// <li><p><code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p></li>
+    /// <li><p><code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p></li>
+    /// <li><p><code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p></li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::LifecycleManagementStrategy) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-    /// <p class="title"> <b>Lifecycle types</b> </p>
+    /// <p class="title"><b>Lifecycle types</b></p>
     /// <ul>
-    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p> </li>
-    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
-    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
+    /// <li><p><code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p></li>
+    /// <li><p><code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p></li>
+    /// <li><p><code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::LifecycleManagementStrategy>) -> Self {
         self.lifecycle = input;
         self
     }
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-    /// <p class="title"> <b>Lifecycle types</b> </p>
+    /// <p class="title"><b>Lifecycle types</b></p>
     /// <ul>
-    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p> </li>
-    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
-    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
+    /// <li><p><code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.</p></li>
+    /// <li><p><code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p></li>
+    /// <li><p><code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p></li>
     /// </ul>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::LifecycleManagementStrategy> {
         &self.lifecycle

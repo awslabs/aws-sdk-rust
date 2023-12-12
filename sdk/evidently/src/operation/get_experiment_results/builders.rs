@@ -221,10 +221,10 @@ impl GetExperimentResultsFluentBuilder {
     ///
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
-    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
-    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
-    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
-    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
+    /// <li><p><code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p></li>
+    /// <li><p><code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval.</p></li>
+    /// <li><p><code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation.</p></li>
+    /// <li><p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
     pub fn result_stats(mut self, input: crate::types::ExperimentResultRequestType) -> Self {
         self.inner = self.inner.result_stats(input);
@@ -232,10 +232,10 @@ impl GetExperimentResultsFluentBuilder {
     }
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
-    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
-    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
-    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
-    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
+    /// <li><p><code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p></li>
+    /// <li><p><code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval.</p></li>
+    /// <li><p><code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation.</p></li>
+    /// <li><p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
     pub fn set_result_stats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>) -> Self {
         self.inner = self.inner.set_result_stats(input);
@@ -243,10 +243,10 @@ impl GetExperimentResultsFluentBuilder {
     }
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
-    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
-    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
-    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
-    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
+    /// <li><p><code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p></li>
+    /// <li><p><code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval.</p></li>
+    /// <li><p><code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation.</p></li>
+    /// <li><p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
     pub fn get_result_stats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>> {
         self.inner.get_result_stats()
@@ -269,17 +269,17 @@ impl GetExperimentResultsFluentBuilder {
     pub fn get_report_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>> {
         self.inner.get_report_names()
     }
-    /// <p>In seconds, the amount of time to aggregate results together. </p>
+    /// <p>In seconds, the amount of time to aggregate results together.</p>
     pub fn period(mut self, input: i64) -> Self {
         self.inner = self.inner.period(input);
         self
     }
-    /// <p>In seconds, the amount of time to aggregate results together. </p>
+    /// <p>In seconds, the amount of time to aggregate results together.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }
-    /// <p>In seconds, the amount of time to aggregate results together. </p>
+    /// <p>In seconds, the amount of time to aggregate results together.</p>
     pub fn get_period(&self) -> &::std::option::Option<i64> {
         self.inner.get_period()
     }

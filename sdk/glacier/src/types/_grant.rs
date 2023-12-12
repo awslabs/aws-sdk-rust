@@ -6,7 +6,7 @@
 pub struct Grant {
     /// <p>The grantee.</p>
     pub grantee: ::std::option::Option<crate::types::Grantee>,
-    /// <p>Specifies the permission given to the grantee. </p>
+    /// <p>Specifies the permission given to the grantee.</p>
     pub permission: ::std::option::Option<crate::types::Permission>,
 }
 impl Grant {
@@ -14,7 +14,7 @@ impl Grant {
     pub fn grantee(&self) -> ::std::option::Option<&crate::types::Grantee> {
         self.grantee.as_ref()
     }
-    /// <p>Specifies the permission given to the grantee. </p>
+    /// <p>Specifies the permission given to the grantee.</p>
     pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
         self.permission.as_ref()
     }
@@ -48,17 +48,17 @@ impl GrantBuilder {
     pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
         &self.grantee
     }
-    /// <p>Specifies the permission given to the grantee. </p>
+    /// <p>Specifies the permission given to the grantee.</p>
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
         self.permission = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the permission given to the grantee. </p>
+    /// <p>Specifies the permission given to the grantee.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
         self.permission = input;
         self
     }
-    /// <p>Specifies the permission given to the grantee. </p>
+    /// <p>Specifies the permission given to the grantee.</p>
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
         &self.permission
     }

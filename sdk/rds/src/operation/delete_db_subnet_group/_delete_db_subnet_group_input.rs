@@ -8,7 +8,7 @@ pub struct DeleteDbSubnetGroupInput {
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInput {
@@ -16,7 +16,7 @@ impl DeleteDbSubnetGroupInput {
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -39,7 +39,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     /// This field is required.
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
@@ -49,7 +49,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
@@ -58,7 +58,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_subnet_group_name
     }

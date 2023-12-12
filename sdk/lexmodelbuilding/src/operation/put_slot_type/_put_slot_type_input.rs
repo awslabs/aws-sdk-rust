@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSlotTypeInput {
-    /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
+    /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the slot type.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
+    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
-    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
+    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
     pub enumeration_values: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
@@ -19,8 +19,8 @@ pub struct PutSlotTypeInput {
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
+    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub value_selection_strategy: ::std::option::Option<crate::types::SlotValueSelectionStrategy>,
@@ -33,7 +33,7 @@ pub struct PutSlotTypeInput {
     pub slot_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
 }
 impl PutSlotTypeInput {
-    /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
+    /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -43,9 +43,9 @@ impl PutSlotTypeInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
+    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
-    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
+    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enumeration_values.is_none()`.
     pub fn enumeration_values(&self) -> &[crate::types::EnumerationValue] {
@@ -59,8 +59,8 @@ impl PutSlotTypeInput {
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
+    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn value_selection_strategy(&self) -> ::std::option::Option<&crate::types::SlotValueSelectionStrategy> {
@@ -103,7 +103,7 @@ pub struct PutSlotTypeInputBuilder {
     pub(crate) slot_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
 }
 impl PutSlotTypeInputBuilder {
-    /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
+    /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
     /// This field is required.
@@ -111,14 +111,14 @@ impl PutSlotTypeInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
+    /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
+    /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,25 +142,25 @@ impl PutSlotTypeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_enumeration_values`](Self::set_enumeration_values).
     ///
-    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
+    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
-    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
+    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
     pub fn enumeration_values(mut self, input: crate::types::EnumerationValue) -> Self {
         let mut v = self.enumeration_values.unwrap_or_default();
         v.push(input);
         self.enumeration_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
+    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
-    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
+    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
     pub fn set_enumeration_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>) -> Self {
         self.enumeration_values = input;
         self
     }
-    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
+    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
-    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
+    /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
     pub fn get_enumeration_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>> {
         &self.enumeration_values
     }
@@ -186,8 +186,8 @@ impl PutSlotTypeInputBuilder {
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
+    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn value_selection_strategy(mut self, input: crate::types::SlotValueSelectionStrategy) -> Self {
@@ -196,8 +196,8 @@ impl PutSlotTypeInputBuilder {
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
+    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn set_value_selection_strategy(mut self, input: ::std::option::Option<crate::types::SlotValueSelectionStrategy>) -> Self {
@@ -206,8 +206,8 @@ impl PutSlotTypeInputBuilder {
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
+    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn get_value_selection_strategy(&self) -> &::std::option::Option<crate::types::SlotValueSelectionStrategy> {

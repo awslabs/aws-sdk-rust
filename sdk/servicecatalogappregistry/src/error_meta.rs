@@ -9,9 +9,9 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> The maximum number of resources per account has been reached.</p>
+    /// <p>The maximum number of resources per account has been reached.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p> The maximum number of API requests has been exceeded. </p>
+    /// <p>The maximum number of API requests has been exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has invalid or missing parameters.</p>
     ValidationException(crate::types::error::ValidationException),

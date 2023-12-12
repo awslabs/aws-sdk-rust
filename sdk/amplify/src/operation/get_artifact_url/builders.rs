@@ -22,7 +22,7 @@ impl GetArtifactUrlInputBuilder {
 }
 /// Fluent builder constructing a request to `GetArtifactUrl`.
 ///
-/// <p>Returns the artifact info that corresponds to an artifact id. </p>
+/// <p>Returns the artifact info that corresponds to an artifact id.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetArtifactUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetArtifactUrlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID for an artifact. </p>
+    /// <p>The unique ID for an artifact.</p>
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.artifact_id(input.into());
         self
     }
-    /// <p>The unique ID for an artifact. </p>
+    /// <p>The unique ID for an artifact.</p>
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_artifact_id(input);
         self
     }
-    /// <p>The unique ID for an artifact. </p>
+    /// <p>The unique ID for an artifact.</p>
     pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_artifact_id()
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbortMultipartReadSetUploadInput {
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
 }
 impl AbortMultipartReadSetUploadInput {
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
         self.sequence_store_id.as_deref()
     }
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     pub fn upload_id(&self) -> ::std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct AbortMultipartReadSetUploadInputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
 }
 impl AbortMultipartReadSetUploadInputBuilder {
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_store_id
     }
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
     }
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }

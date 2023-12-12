@@ -26,14 +26,14 @@ impl CreateWorkloadInputBuilder {
 /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p> <important>
 /// <p>Either <code>AwsRegions</code>, <code>NonAwsRegions</code>, or both must be specified when creating a workload.</p>
-/// <p>You also must specify <code>ReviewOwner</code>, even though the parameter is listed as not being required in the following section. </p>
+/// <p>You also must specify <code>ReviewOwner</code>, even though the parameter is listed as not being required in the following section.</p>
 /// </important>
 /// <p>When creating a workload using a review template, you must have the following IAM permissions:</p>
 /// <ul>
-/// <li> <p> <code>wellarchitected:GetReviewTemplate</code> </p> </li>
-/// <li> <p> <code>wellarchitected:GetReviewTemplateAnswer</code> </p> </li>
-/// <li> <p> <code>wellarchitected:ListReviewTemplateAnswers</code> </p> </li>
-/// <li> <p> <code>wellarchitected:GetReviewTemplateLensReview</code> </p> </li>
+/// <li><p><code>wellarchitected:GetReviewTemplate</code></p></li>
+/// <li><p><code>wellarchitected:GetReviewTemplateAnswer</code></p></li>
+/// <li><p><code>wellarchitected:ListReviewTemplateAnswers</code></p></li>
+/// <li><p><code>wellarchitected:GetReviewTemplateLensReview</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkloadFluentBuilder {
@@ -205,17 +205,17 @@ impl CreateWorkloadFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
     ///
-    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn non_aws_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.non_aws_regions(input.into());
         self
     }
-    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_non_aws_regions(input);
         self
     }
-    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_non_aws_regions()
     }
@@ -268,33 +268,33 @@ impl CreateWorkloadFluentBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>Agriculture</code> </p> </li>
-    /// <li> <p> <code>Automobile</code> </p> </li>
-    /// <li> <p> <code>Defense</code> </p> </li>
-    /// <li> <p> <code>Design and Engineering</code> </p> </li>
-    /// <li> <p> <code>Digital Advertising</code> </p> </li>
-    /// <li> <p> <code>Education</code> </p> </li>
-    /// <li> <p> <code>Environmental Protection</code> </p> </li>
-    /// <li> <p> <code>Financial Services</code> </p> </li>
-    /// <li> <p> <code>Gaming</code> </p> </li>
-    /// <li> <p> <code>General Public Services</code> </p> </li>
-    /// <li> <p> <code>Healthcare</code> </p> </li>
-    /// <li> <p> <code>Hospitality</code> </p> </li>
-    /// <li> <p> <code>InfoTech</code> </p> </li>
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
-    /// <li> <p> <code>Life Sciences</code> </p> </li>
-    /// <li> <p> <code>Manufacturing</code> </p> </li>
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
-    /// <li> <p> <code>Professional Services</code> </p> </li>
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
-    /// <li> <p> <code>Social Protection</code> </p> </li>
-    /// <li> <p> <code>Telecommunications</code> </p> </li>
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
-    /// <li> <p> <code>Other</code> </p> </li>
+    /// <li><p><code>Agriculture</code></p></li>
+    /// <li><p><code>Automobile</code></p></li>
+    /// <li><p><code>Defense</code></p></li>
+    /// <li><p><code>Design and Engineering</code></p></li>
+    /// <li><p><code>Digital Advertising</code></p></li>
+    /// <li><p><code>Education</code></p></li>
+    /// <li><p><code>Environmental Protection</code></p></li>
+    /// <li><p><code>Financial Services</code></p></li>
+    /// <li><p><code>Gaming</code></p></li>
+    /// <li><p><code>General Public Services</code></p></li>
+    /// <li><p><code>Healthcare</code></p></li>
+    /// <li><p><code>Hospitality</code></p></li>
+    /// <li><p><code>InfoTech</code></p></li>
+    /// <li><p><code>Justice and Public Safety</code></p></li>
+    /// <li><p><code>Life Sciences</code></p></li>
+    /// <li><p><code>Manufacturing</code></p></li>
+    /// <li><p><code>Media &amp; Entertainment</code></p></li>
+    /// <li><p><code>Mining &amp; Resources</code></p></li>
+    /// <li><p><code>Oil &amp; Gas</code></p></li>
+    /// <li><p><code>Power &amp; Utilities</code></p></li>
+    /// <li><p><code>Professional Services</code></p></li>
+    /// <li><p><code>Real Estate &amp; Construction</code></p></li>
+    /// <li><p><code>Retail &amp; Wholesale</code></p></li>
+    /// <li><p><code>Social Protection</code></p></li>
+    /// <li><p><code>Telecommunications</code></p></li>
+    /// <li><p><code>Travel, Transportation &amp; Logistics</code></p></li>
+    /// <li><p><code>Other</code></p></li>
     /// </ul>
     pub fn industry_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.industry_type(input.into());
@@ -303,33 +303,33 @@ impl CreateWorkloadFluentBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>Agriculture</code> </p> </li>
-    /// <li> <p> <code>Automobile</code> </p> </li>
-    /// <li> <p> <code>Defense</code> </p> </li>
-    /// <li> <p> <code>Design and Engineering</code> </p> </li>
-    /// <li> <p> <code>Digital Advertising</code> </p> </li>
-    /// <li> <p> <code>Education</code> </p> </li>
-    /// <li> <p> <code>Environmental Protection</code> </p> </li>
-    /// <li> <p> <code>Financial Services</code> </p> </li>
-    /// <li> <p> <code>Gaming</code> </p> </li>
-    /// <li> <p> <code>General Public Services</code> </p> </li>
-    /// <li> <p> <code>Healthcare</code> </p> </li>
-    /// <li> <p> <code>Hospitality</code> </p> </li>
-    /// <li> <p> <code>InfoTech</code> </p> </li>
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
-    /// <li> <p> <code>Life Sciences</code> </p> </li>
-    /// <li> <p> <code>Manufacturing</code> </p> </li>
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
-    /// <li> <p> <code>Professional Services</code> </p> </li>
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
-    /// <li> <p> <code>Social Protection</code> </p> </li>
-    /// <li> <p> <code>Telecommunications</code> </p> </li>
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
-    /// <li> <p> <code>Other</code> </p> </li>
+    /// <li><p><code>Agriculture</code></p></li>
+    /// <li><p><code>Automobile</code></p></li>
+    /// <li><p><code>Defense</code></p></li>
+    /// <li><p><code>Design and Engineering</code></p></li>
+    /// <li><p><code>Digital Advertising</code></p></li>
+    /// <li><p><code>Education</code></p></li>
+    /// <li><p><code>Environmental Protection</code></p></li>
+    /// <li><p><code>Financial Services</code></p></li>
+    /// <li><p><code>Gaming</code></p></li>
+    /// <li><p><code>General Public Services</code></p></li>
+    /// <li><p><code>Healthcare</code></p></li>
+    /// <li><p><code>Hospitality</code></p></li>
+    /// <li><p><code>InfoTech</code></p></li>
+    /// <li><p><code>Justice and Public Safety</code></p></li>
+    /// <li><p><code>Life Sciences</code></p></li>
+    /// <li><p><code>Manufacturing</code></p></li>
+    /// <li><p><code>Media &amp; Entertainment</code></p></li>
+    /// <li><p><code>Mining &amp; Resources</code></p></li>
+    /// <li><p><code>Oil &amp; Gas</code></p></li>
+    /// <li><p><code>Power &amp; Utilities</code></p></li>
+    /// <li><p><code>Professional Services</code></p></li>
+    /// <li><p><code>Real Estate &amp; Construction</code></p></li>
+    /// <li><p><code>Retail &amp; Wholesale</code></p></li>
+    /// <li><p><code>Social Protection</code></p></li>
+    /// <li><p><code>Telecommunications</code></p></li>
+    /// <li><p><code>Travel, Transportation &amp; Logistics</code></p></li>
+    /// <li><p><code>Other</code></p></li>
     /// </ul>
     pub fn set_industry_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_industry_type(input);
@@ -338,33 +338,33 @@ impl CreateWorkloadFluentBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>Agriculture</code> </p> </li>
-    /// <li> <p> <code>Automobile</code> </p> </li>
-    /// <li> <p> <code>Defense</code> </p> </li>
-    /// <li> <p> <code>Design and Engineering</code> </p> </li>
-    /// <li> <p> <code>Digital Advertising</code> </p> </li>
-    /// <li> <p> <code>Education</code> </p> </li>
-    /// <li> <p> <code>Environmental Protection</code> </p> </li>
-    /// <li> <p> <code>Financial Services</code> </p> </li>
-    /// <li> <p> <code>Gaming</code> </p> </li>
-    /// <li> <p> <code>General Public Services</code> </p> </li>
-    /// <li> <p> <code>Healthcare</code> </p> </li>
-    /// <li> <p> <code>Hospitality</code> </p> </li>
-    /// <li> <p> <code>InfoTech</code> </p> </li>
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
-    /// <li> <p> <code>Life Sciences</code> </p> </li>
-    /// <li> <p> <code>Manufacturing</code> </p> </li>
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
-    /// <li> <p> <code>Professional Services</code> </p> </li>
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
-    /// <li> <p> <code>Social Protection</code> </p> </li>
-    /// <li> <p> <code>Telecommunications</code> </p> </li>
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
-    /// <li> <p> <code>Other</code> </p> </li>
+    /// <li><p><code>Agriculture</code></p></li>
+    /// <li><p><code>Automobile</code></p></li>
+    /// <li><p><code>Defense</code></p></li>
+    /// <li><p><code>Design and Engineering</code></p></li>
+    /// <li><p><code>Digital Advertising</code></p></li>
+    /// <li><p><code>Education</code></p></li>
+    /// <li><p><code>Environmental Protection</code></p></li>
+    /// <li><p><code>Financial Services</code></p></li>
+    /// <li><p><code>Gaming</code></p></li>
+    /// <li><p><code>General Public Services</code></p></li>
+    /// <li><p><code>Healthcare</code></p></li>
+    /// <li><p><code>Hospitality</code></p></li>
+    /// <li><p><code>InfoTech</code></p></li>
+    /// <li><p><code>Justice and Public Safety</code></p></li>
+    /// <li><p><code>Life Sciences</code></p></li>
+    /// <li><p><code>Manufacturing</code></p></li>
+    /// <li><p><code>Media &amp; Entertainment</code></p></li>
+    /// <li><p><code>Mining &amp; Resources</code></p></li>
+    /// <li><p><code>Oil &amp; Gas</code></p></li>
+    /// <li><p><code>Power &amp; Utilities</code></p></li>
+    /// <li><p><code>Professional Services</code></p></li>
+    /// <li><p><code>Real Estate &amp; Construction</code></p></li>
+    /// <li><p><code>Retail &amp; Wholesale</code></p></li>
+    /// <li><p><code>Social Protection</code></p></li>
+    /// <li><p><code>Telecommunications</code></p></li>
+    /// <li><p><code>Travel, Transportation &amp; Logistics</code></p></li>
+    /// <li><p><code>Other</code></p></li>
     /// </ul>
     pub fn get_industry_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_industry_type()

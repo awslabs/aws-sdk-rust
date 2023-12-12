@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReplicationSetsInput {
-    /// <p>The maximum number of results per page. </p>
+    /// <p>The maximum number of results per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListReplicationSetsInput {
-    /// <p>The maximum number of results per page. </p>
+    /// <p>The maximum number of results per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -33,17 +33,17 @@ pub struct ListReplicationSetsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListReplicationSetsInputBuilder {
-    /// <p>The maximum number of results per page. </p>
+    /// <p>The maximum number of results per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results per page. </p>
+    /// <p>The maximum number of results per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results per page. </p>
+    /// <p>The maximum number of results per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -2,11 +2,11 @@
 
 /// <p>A description of the data repository task.</p>
 /// <ul>
-/// <li> <p>You use import and export data repository tasks to perform bulk transfer operations between an Amazon FSx for Lustre file system and a linked data repository.</p> </li>
-/// <li> <p>You use release data repository tasks to release files that have been exported to a linked S3 bucket from your Amazon FSx for Lustre file system.</p> </li>
-/// <li> <p>An Amazon File Cache resource uses a task to automatically release files from the cache.</p> </li>
+/// <li><p>You use import and export data repository tasks to perform bulk transfer operations between an Amazon FSx for Lustre file system and a linked data repository.</p></li>
+/// <li><p>You use release data repository tasks to release files that have been exported to a linked S3 bucket from your Amazon FSx for Lustre file system.</p></li>
+/// <li><p>An Amazon File Cache resource uses a task to automatically release files from the cache.</p></li>
 /// </ul>
-/// <p>To learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>. </p>
+/// <p>To learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataRepositoryTask {
@@ -14,22 +14,22 @@ pub struct DataRepositoryTask {
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
+    /// <li><p><code>PENDING</code> - The task has not started.</p></li>
+    /// <li><p><code>EXECUTING</code> - The task is in process.</p></li>
+    /// <li><p><code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - The task has completed successfully.</p></li>
+    /// <li><p><code>CANCELED</code> - The task was canceled and it did not complete.</p></li>
+    /// <li><p><code>CANCELING</code> - The task is in process of being canceled.</p></li>
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
     pub lifecycle: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
     /// <p>The type of data repository task.</p>
     /// <ul>
-    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
-    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
-    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// <li><p><code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p></li>
+    /// <li><p><code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p></li>
+    /// <li><p><code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p></li>
+    /// <li><p><code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::DataRepositoryTaskType>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
@@ -67,12 +67,12 @@ impl DataRepositoryTask {
     }
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
+    /// <li><p><code>PENDING</code> - The task has not started.</p></li>
+    /// <li><p><code>EXECUTING</code> - The task is in process.</p></li>
+    /// <li><p><code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - The task has completed successfully.</p></li>
+    /// <li><p><code>CANCELED</code> - The task was canceled and it did not complete.</p></li>
+    /// <li><p><code>CANCELING</code> - The task is in process of being canceled.</p></li>
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
@@ -81,10 +81,10 @@ impl DataRepositoryTask {
     }
     /// <p>The type of data repository task.</p>
     /// <ul>
-    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
-    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
-    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// <li><p><code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p></li>
+    /// <li><p><code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p></li>
+    /// <li><p><code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p></li>
+    /// <li><p><code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataRepositoryTaskType> {
         self.r#type.as_ref()
@@ -193,12 +193,12 @@ impl DataRepositoryTaskBuilder {
     }
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
+    /// <li><p><code>PENDING</code> - The task has not started.</p></li>
+    /// <li><p><code>EXECUTING</code> - The task is in process.</p></li>
+    /// <li><p><code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - The task has completed successfully.</p></li>
+    /// <li><p><code>CANCELED</code> - The task was canceled and it did not complete.</p></li>
+    /// <li><p><code>CANCELING</code> - The task is in process of being canceled.</p></li>
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
@@ -209,12 +209,12 @@ impl DataRepositoryTaskBuilder {
     }
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
+    /// <li><p><code>PENDING</code> - The task has not started.</p></li>
+    /// <li><p><code>EXECUTING</code> - The task is in process.</p></li>
+    /// <li><p><code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - The task has completed successfully.</p></li>
+    /// <li><p><code>CANCELED</code> - The task was canceled and it did not complete.</p></li>
+    /// <li><p><code>CANCELING</code> - The task is in process of being canceled.</p></li>
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
@@ -224,12 +224,12 @@ impl DataRepositoryTaskBuilder {
     }
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
+    /// <li><p><code>PENDING</code> - The task has not started.</p></li>
+    /// <li><p><code>EXECUTING</code> - The task is in process.</p></li>
+    /// <li><p><code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - The task has completed successfully.</p></li>
+    /// <li><p><code>CANCELED</code> - The task was canceled and it did not complete.</p></li>
+    /// <li><p><code>CANCELING</code> - The task is in process of being canceled.</p></li>
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
@@ -238,10 +238,10 @@ impl DataRepositoryTaskBuilder {
     }
     /// <p>The type of data repository task.</p>
     /// <ul>
-    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
-    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
-    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// <li><p><code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p></li>
+    /// <li><p><code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p></li>
+    /// <li><p><code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p></li>
+    /// <li><p><code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataRepositoryTaskType) -> Self {
@@ -250,10 +250,10 @@ impl DataRepositoryTaskBuilder {
     }
     /// <p>The type of data repository task.</p>
     /// <ul>
-    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
-    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
-    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// <li><p><code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p></li>
+    /// <li><p><code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p></li>
+    /// <li><p><code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p></li>
+    /// <li><p><code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskType>) -> Self {
         self.r#type = input;
@@ -261,10 +261,10 @@ impl DataRepositoryTaskBuilder {
     }
     /// <p>The type of data repository task.</p>
     /// <ul>
-    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
-    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
-    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
-    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// <li><p><code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p></li>
+    /// <li><p><code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p></li>
+    /// <li><p><code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p></li>
+    /// <li><p><code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskType> {
         &self.r#type

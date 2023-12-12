@@ -112,17 +112,17 @@ impl PutPermissionsBoundaryToPermissionSetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_arn()
     }

@@ -69,7 +69,7 @@ pub enum Error {
     CommitIdsLimitExceededException(crate::types::error::CommitIdsLimitExceededException),
     /// <p>A list of commit IDs is required, but was either not specified or the list was empty.</p>
     CommitIdsListRequiredException(crate::types::error::CommitIdsListRequiredException),
-    /// <p>The commit message is too long. Provide a shorter string. </p>
+    /// <p>The commit message is too long. Provide a shorter string.</p>
     CommitMessageLengthExceededException(crate::types::error::CommitMessageLengthExceededException),
     /// <p>A commit was not specified.</p>
     CommitRequiredException(crate::types::error::CommitRequiredException),
@@ -125,7 +125,7 @@ pub enum Error {
     InvalidApprovalRuleTemplateDescriptionException(crate::types::error::InvalidApprovalRuleTemplateDescriptionException),
     /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateNameException(crate::types::error::InvalidApprovalRuleTemplateNameException),
-    /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE. </p>
+    /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE.</p>
     InvalidApprovalStateException(crate::types::error::InvalidApprovalStateException),
     /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the author of the pull request, and then try again.</p>
     InvalidAuthorArnException(crate::types::error::InvalidAuthorArnException),
@@ -153,13 +153,13 @@ pub enum Error {
     InvalidDeletionParameterException(crate::types::error::InvalidDeletionParameterException),
     /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
     InvalidDescriptionException(crate::types::error::InvalidDescriptionException),
-    /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID. </p>
+    /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.</p>
     InvalidDestinationCommitSpecifierException(crate::types::error::InvalidDestinationCommitSpecifierException),
     /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::types::error::InvalidEmailException),
     /// <p>The location of the file is not valid. Make sure that you include the file name and extension.</p>
     InvalidFileLocationException(crate::types::error::InvalidFileLocationException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>.</p>
     InvalidFileModeException(crate::types::error::InvalidFileModeException),
     /// <p>The position is not valid. Make sure that the line number exists in the version of the file you want to comment on.</p>
     InvalidFilePositionException(crate::types::error::InvalidFilePositionException),
@@ -179,7 +179,7 @@ pub enum Error {
     InvalidParentCommitIdException(crate::types::error::InvalidParentCommitIdException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::types::error::InvalidPathException),
-    /// <p>The pull request event type is not valid. </p>
+    /// <p>The pull request event type is not valid.</p>
     InvalidPullRequestEventTypeException(crate::types::error::InvalidPullRequestEventTypeException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::types::error::InvalidPullRequestIdException),
@@ -195,7 +195,7 @@ pub enum Error {
     InvalidReferenceNameException(crate::types::error::InvalidReferenceNameException),
     /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
     InvalidRelativeFileVersionEnumException(crate::types::error::InvalidRelativeFileVersionEnumException),
-    /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing. </p>
+    /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing.</p>
     InvalidReplacementContentException(crate::types::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::types::error::InvalidReplacementTypeException),
@@ -269,11 +269,11 @@ pub enum Error {
     MultipleConflictResolutionEntriesException(crate::types::error::MultipleConflictResolutionEntriesException),
     /// <p>You cannot include more than one repository in a pull request. Make sure you have specified only one repository name in your request, and then try again.</p>
     MultipleRepositoriesInPullRequestException(crate::types::error::MultipleRepositoriesInPullRequestException),
-    /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
+    /// <p>The user name is not valid because it has exceeded the character limit for author names.</p>
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The commit cannot be created because no changes will be made to the repository as a result of this commit. A commit must contain at least one change.</p>
     NoChangeException(crate::types::error::NoChangeException),
-    /// <p>The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region. </p>
+    /// <p>The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region.</p>
     NumberOfRuleTemplatesExceededException(crate::types::error::NumberOfRuleTemplatesExceededException),
     /// <p>The approval rule cannot be added. The pull request has the maximum number of approval rules associated with it.</p>
     NumberOfRulesExceededException(crate::types::error::NumberOfRulesExceededException),
@@ -307,13 +307,13 @@ pub enum Error {
     PutFileEntryConflictException(crate::types::error::PutFileEntryConflictException),
     /// <p>The number of reactions has been exceeded. Reactions are limited to one reaction per user for each individual comment ID.</p>
     ReactionLimitExceededException(crate::types::error::ReactionLimitExceededException),
-    /// <p>A reaction value is required. </p>
+    /// <p>A reaction value is required.</p>
     ReactionValueRequiredException(crate::types::error::ReactionValueRequiredException),
     /// <p>The specified reference does not exist. You must provide a full commit ID.</p>
     ReferenceDoesNotExistException(crate::types::error::ReferenceDoesNotExistException),
     /// <p>A reference name is required, but none was provided.</p>
     ReferenceNameRequiredException(crate::types::error::ReferenceNameRequiredException),
-    /// <p>The specified reference is not a supported type. </p>
+    /// <p>The specified reference is not a supported type.</p>
     ReferenceTypeNotSupportedException(crate::types::error::ReferenceTypeNotSupportedException),
     /// <p>USE_NEW_CONTENT was specified, but no replacement content has been provided.</p>
     ReplacementContentRequiredException(crate::types::error::ReplacementContentRequiredException),

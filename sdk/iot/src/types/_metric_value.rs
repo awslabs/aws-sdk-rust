@@ -10,11 +10,11 @@ pub struct MetricValue {
     pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub ports: ::std::option::Option<::std::vec::Vec<i32>>,
-    /// <p> The numeral value of a metric. </p>
+    /// <p>The numeral value of a metric.</p>
     pub number: ::std::option::Option<f64>,
-    /// <p> The numeral values of a metric. </p>
+    /// <p>The numeral values of a metric.</p>
     pub numbers: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p> The string values of a metric. </p>
+    /// <p>The string values of a metric.</p>
     pub strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricValue {
@@ -34,17 +34,17 @@ impl MetricValue {
     pub fn ports(&self) -> &[i32] {
         self.ports.as_deref().unwrap_or_default()
     }
-    /// <p> The numeral value of a metric. </p>
+    /// <p>The numeral value of a metric.</p>
     pub fn number(&self) -> ::std::option::Option<f64> {
         self.number
     }
-    /// <p> The numeral values of a metric. </p>
+    /// <p>The numeral values of a metric.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.numbers.is_none()`.
     pub fn numbers(&self) -> &[f64] {
         self.numbers.as_deref().unwrap_or_default()
     }
-    /// <p> The string values of a metric. </p>
+    /// <p>The string values of a metric.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.strings.is_none()`.
     pub fn strings(&self) -> &[::std::string::String] {
@@ -124,17 +124,17 @@ impl MetricValueBuilder {
     pub fn get_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.ports
     }
-    /// <p> The numeral value of a metric. </p>
+    /// <p>The numeral value of a metric.</p>
     pub fn number(mut self, input: f64) -> Self {
         self.number = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The numeral value of a metric. </p>
+    /// <p>The numeral value of a metric.</p>
     pub fn set_number(mut self, input: ::std::option::Option<f64>) -> Self {
         self.number = input;
         self
     }
-    /// <p> The numeral value of a metric. </p>
+    /// <p>The numeral value of a metric.</p>
     pub fn get_number(&self) -> &::std::option::Option<f64> {
         &self.number
     }
@@ -142,19 +142,19 @@ impl MetricValueBuilder {
     ///
     /// To override the contents of this collection use [`set_numbers`](Self::set_numbers).
     ///
-    /// <p> The numeral values of a metric. </p>
+    /// <p>The numeral values of a metric.</p>
     pub fn numbers(mut self, input: f64) -> Self {
         let mut v = self.numbers.unwrap_or_default();
         v.push(input);
         self.numbers = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The numeral values of a metric. </p>
+    /// <p>The numeral values of a metric.</p>
     pub fn set_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.numbers = input;
         self
     }
-    /// <p> The numeral values of a metric. </p>
+    /// <p>The numeral values of a metric.</p>
     pub fn get_numbers(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.numbers
     }
@@ -162,19 +162,19 @@ impl MetricValueBuilder {
     ///
     /// To override the contents of this collection use [`set_strings`](Self::set_strings).
     ///
-    /// <p> The string values of a metric. </p>
+    /// <p>The string values of a metric.</p>
     pub fn strings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.strings.unwrap_or_default();
         v.push(input.into());
         self.strings = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The string values of a metric. </p>
+    /// <p>The string values of a metric.</p>
     pub fn set_strings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.strings = input;
         self
     }
-    /// <p> The string values of a metric. </p>
+    /// <p>The string values of a metric.</p>
     pub fn get_strings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.strings
     }

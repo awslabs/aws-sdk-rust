@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHitTypeOutput {
-    /// <p> The ID of the newly registered HIT type.</p>
+    /// <p>The ID of the newly registered HIT type.</p>
     pub hit_type_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHitTypeOutput {
-    /// <p> The ID of the newly registered HIT type.</p>
+    /// <p>The ID of the newly registered HIT type.</p>
     pub fn hit_type_id(&self) -> ::std::option::Option<&str> {
         self.hit_type_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateHitTypeOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateHitTypeOutputBuilder {
-    /// <p> The ID of the newly registered HIT type.</p>
+    /// <p>The ID of the newly registered HIT type.</p>
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_type_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the newly registered HIT type.</p>
+    /// <p>The ID of the newly registered HIT type.</p>
     pub fn set_hit_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hit_type_id = input;
         self
     }
-    /// <p> The ID of the newly registered HIT type.</p>
+    /// <p>The ID of the newly registered HIT type.</p>
     pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hit_type_id
     }

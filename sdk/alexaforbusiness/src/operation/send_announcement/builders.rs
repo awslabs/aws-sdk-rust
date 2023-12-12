@@ -22,7 +22,7 @@ impl SendAnnouncementInputBuilder {
 }
 /// Fluent builder constructing a request to `SendAnnouncement`.
 ///
-/// <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter. </p>
+/// <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendAnnouncementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

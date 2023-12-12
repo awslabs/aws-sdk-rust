@@ -22,7 +22,7 @@ impl UpdateCustomLineItemInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCustomLineItem`.
 ///
-/// <p> Update an existing custom line item in the current or previous billing period. </p>
+/// <p>Update an existing custom line item in the current or previous billing period.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateCustomLineItemFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ARN of the custom line item to be updated. </p>
+    /// <p>The ARN of the custom line item to be updated.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p> The ARN of the custom line item to be updated. </p>
+    /// <p>The ARN of the custom line item to be updated.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p> The ARN of the custom line item to be updated. </p>
+    /// <p>The ARN of the custom line item to be updated.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p> The new name for the custom line item. </p>
+    /// <p>The new name for the custom line item.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The new name for the custom line item. </p>
+    /// <p>The new name for the custom line item.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The new name for the custom line item. </p>
+    /// <p>The new name for the custom line item.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> The new line item description of the custom line item. </p>
+    /// <p>The new line item description of the custom line item.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The new line item description of the custom line item. </p>
+    /// <p>The new line item description of the custom line item.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> The new line item description of the custom line item. </p>
+    /// <p>The new line item description of the custom line item.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
+    /// <p>A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item.</p>
     pub fn charge_details(mut self, input: crate::types::UpdateCustomLineItemChargeDetails) -> Self {
         self.inner = self.inner.charge_details(input);
         self
     }
-    /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
+    /// <p>A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item.</p>
     pub fn set_charge_details(mut self, input: ::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails>) -> Self {
         self.inner = self.inner.set_charge_details(input);
         self
     }
-    /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
+    /// <p>A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item.</p>
     pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails> {
         self.inner.get_charge_details()
     }

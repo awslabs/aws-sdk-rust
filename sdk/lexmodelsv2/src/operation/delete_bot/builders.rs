@@ -104,17 +104,17 @@ impl DeleteBotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the bot to delete. </p>
+    /// <p>The identifier of the bot to delete.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
         self
     }
-    /// <p>The identifier of the bot to delete. </p>
+    /// <p>The identifier of the bot to delete.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
     }
-    /// <p>The identifier of the bot to delete. </p>
+    /// <p>The identifier of the bot to delete.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bot_id()
     }

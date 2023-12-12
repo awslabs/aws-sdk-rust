@@ -9,7 +9,7 @@ pub struct GetManagedResourceOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
     pub applied_weights: ::std::collections::HashMap<::std::string::String, f32>,
-    /// <p>The zonal shifts that are currently active for a resource. </p>
+    /// <p>The zonal shifts that are currently active for a resource.</p>
     pub zonal_shifts: ::std::vec::Vec<crate::types::ZonalShiftInResource>,
     /// <p>An array of the autoshifts that are active for the resource.</p>
     pub autoshifts: ::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>>,
@@ -32,7 +32,7 @@ impl GetManagedResourceOutput {
     pub fn applied_weights(&self) -> &::std::collections::HashMap<::std::string::String, f32> {
         &self.applied_weights
     }
-    /// <p>The zonal shifts that are currently active for a resource. </p>
+    /// <p>The zonal shifts that are currently active for a resource.</p>
     pub fn zonal_shifts(&self) -> &[crate::types::ZonalShiftInResource] {
         use std::ops::Deref;
         self.zonal_shifts.deref()
@@ -130,19 +130,19 @@ impl GetManagedResourceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_zonal_shifts`](Self::set_zonal_shifts).
     ///
-    /// <p>The zonal shifts that are currently active for a resource. </p>
+    /// <p>The zonal shifts that are currently active for a resource.</p>
     pub fn zonal_shifts(mut self, input: crate::types::ZonalShiftInResource) -> Self {
         let mut v = self.zonal_shifts.unwrap_or_default();
         v.push(input);
         self.zonal_shifts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The zonal shifts that are currently active for a resource. </p>
+    /// <p>The zonal shifts that are currently active for a resource.</p>
     pub fn set_zonal_shifts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>>) -> Self {
         self.zonal_shifts = input;
         self
     }
-    /// <p>The zonal shifts that are currently active for a resource. </p>
+    /// <p>The zonal shifts that are currently active for a resource.</p>
     pub fn get_zonal_shifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>> {
         &self.zonal_shifts
     }

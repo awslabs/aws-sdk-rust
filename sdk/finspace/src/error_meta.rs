@@ -17,7 +17,7 @@ pub enum Error {
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

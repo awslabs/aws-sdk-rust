@@ -29,9 +29,9 @@ pub struct RegisterWorkflowTypeInput {
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub default_child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>The default IAM role attached to this workflow type.</p> <note>
@@ -82,9 +82,9 @@ impl RegisterWorkflowTypeInput {
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn default_child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
         self.default_child_policy.as_ref()
@@ -258,9 +258,9 @@ impl RegisterWorkflowTypeInputBuilder {
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn default_child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
         self.default_child_policy = ::std::option::Option::Some(input);
@@ -269,9 +269,9 @@ impl RegisterWorkflowTypeInputBuilder {
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn set_default_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.default_child_policy = input;
@@ -280,9 +280,9 @@ impl RegisterWorkflowTypeInputBuilder {
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn get_default_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
         &self.default_child_policy

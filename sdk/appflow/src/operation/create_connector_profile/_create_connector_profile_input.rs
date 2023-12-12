@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectorProfileInput {
-    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account.</p>
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
     pub kms_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub connector_label: ::std::option::Option<::std::string::String>,
-    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    /// <p>Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet.</p>
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
-    /// <p> Defines the connector-specific configuration and credentials. </p>
+    /// <p>Defines the connector-specific configuration and credentials.</p>
     pub connector_profile_config: ::std::option::Option<crate::types::ConnectorProfileConfig>,
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
@@ -21,15 +21,15 @@ pub struct CreateConnectorProfileInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectorProfileInput {
-    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account.</p>
     pub fn connector_profile_name(&self) -> ::std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
     pub fn kms_arn(&self) -> ::std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
-    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
     pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
@@ -37,11 +37,11 @@ impl CreateConnectorProfileInput {
     pub fn connector_label(&self) -> ::std::option::Option<&str> {
         self.connector_label.as_deref()
     }
-    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    /// <p>Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet.</p>
     pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
         self.connection_mode.as_ref()
     }
-    /// <p> Defines the connector-specific configuration and credentials. </p>
+    /// <p>Defines the connector-specific configuration and credentials.</p>
     pub fn connector_profile_config(&self) -> ::std::option::Option<&crate::types::ConnectorProfileConfig> {
         self.connector_profile_config.as_ref()
     }
@@ -72,47 +72,47 @@ pub struct CreateConnectorProfileInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectorProfileInputBuilder {
-    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account.</p>
     /// This field is required.
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account.</p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }
-    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account.</p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_profile_name
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
     pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_arn = input;
         self
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
     pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_arn
     }
-    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
     /// This field is required.
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
-    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
         &self.connector_type
     }
@@ -130,33 +130,33 @@ impl CreateConnectorProfileInputBuilder {
     pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_label
     }
-    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    /// <p>Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet.</p>
     /// This field is required.
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    /// <p>Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet.</p>
     pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.connection_mode = input;
         self
     }
-    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    /// <p>Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet.</p>
     pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
         &self.connection_mode
     }
-    /// <p> Defines the connector-specific configuration and credentials. </p>
+    /// <p>Defines the connector-specific configuration and credentials.</p>
     /// This field is required.
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
         self.connector_profile_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Defines the connector-specific configuration and credentials. </p>
+    /// <p>Defines the connector-specific configuration and credentials.</p>
     pub fn set_connector_profile_config(mut self, input: ::std::option::Option<crate::types::ConnectorProfileConfig>) -> Self {
         self.connector_profile_config = input;
         self
     }
-    /// <p> Defines the connector-specific configuration and credentials. </p>
+    /// <p>Defines the connector-specific configuration and credentials.</p>
     pub fn get_connector_profile_config(&self) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
         &self.connector_profile_config
     }

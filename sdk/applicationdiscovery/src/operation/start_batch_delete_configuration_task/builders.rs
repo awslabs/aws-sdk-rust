@@ -22,7 +22,7 @@ impl StartBatchDeleteConfigurationTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `StartBatchDeleteConfigurationTask`.
 ///
-/// <p> Takes a list of configurationId as input and starts an asynchronous deletion task to remove the configurationItems. Returns a unique deletion task identifier. </p>
+/// <p>Takes a list of configurationId as input and starts an asynchronous deletion task to remove the configurationItems. Returns a unique deletion task identifier.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartBatchDeleteConfigurationTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StartBatchDeleteConfigurationTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub fn configuration_type(mut self, input: crate::types::DeletionConfigurationItemType) -> Self {
         self.inner = self.inner.configuration_type(input);
         self
     }
-    /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::DeletionConfigurationItemType>) -> Self {
         self.inner = self.inner.set_configuration_type(input);
         self
     }
-    /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::DeletionConfigurationItemType> {
         self.inner.get_configuration_type()
     }
@@ -126,17 +126,17 @@ impl StartBatchDeleteConfigurationTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
     ///
-    /// <p> The list of configuration IDs that will be deleted by the task. </p>
+    /// <p>The list of configuration IDs that will be deleted by the task.</p>
     pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_ids(input.into());
         self
     }
-    /// <p> The list of configuration IDs that will be deleted by the task. </p>
+    /// <p>The list of configuration IDs that will be deleted by the task.</p>
     pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_ids(input);
         self
     }
-    /// <p> The list of configuration IDs that will be deleted by the task. </p>
+    /// <p>The list of configuration IDs that will be deleted by the task.</p>
     pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_ids()
     }

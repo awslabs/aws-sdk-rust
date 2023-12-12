@@ -22,7 +22,7 @@ impl CreateReplicationSetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateReplicationSet`.
 ///
-/// <p>A replication set replicates and encrypts your data to the provided Regions with the provided KMS key. </p>
+/// <p>A replication set replicates and encrypts your data to the provided Regions with the provided KMS key.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReplicationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

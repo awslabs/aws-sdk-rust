@@ -245,15 +245,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateBlueGre
 pub enum CreateBlueGreenDeploymentError {
     /// <p>A blue/green deployment with the specified name already exists.</p>
     BlueGreenDeploymentAlreadyExistsFault(crate::types::error::BlueGreenDeploymentAlreadyExistsFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
+    /// <p><code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
+    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::types::error::InstanceQuotaExceededFault),

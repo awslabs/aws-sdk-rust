@@ -24,8 +24,8 @@ impl CreateDistributionWithTagsInputBuilder {
 ///
 /// <p>Create a new distribution with tags. This API operation requires the following IAM permissions:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDistributionWithTagsFluentBuilder {

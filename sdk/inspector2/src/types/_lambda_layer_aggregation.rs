@@ -8,7 +8,7 @@ pub struct LambdaLayerAggregation {
     pub function_names: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The resource IDs for the AWS Lambda function layers.</p>
     pub resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
     pub layer_arns: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The order to use for sorting the results.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -28,7 +28,7 @@ impl LambdaLayerAggregation {
     pub fn resource_ids(&self) -> &[crate::types::StringFilter] {
         self.resource_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_arns.is_none()`.
     pub fn layer_arns(&self) -> &[crate::types::StringFilter] {
@@ -105,19 +105,19 @@ impl LambdaLayerAggregationBuilder {
     ///
     /// To override the contents of this collection use [`set_layer_arns`](Self::set_layer_arns).
     ///
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
     pub fn layer_arns(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.layer_arns.unwrap_or_default();
         v.push(input);
         self.layer_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
     pub fn set_layer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.layer_arns = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
     pub fn get_layer_arns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.layer_arns
     }

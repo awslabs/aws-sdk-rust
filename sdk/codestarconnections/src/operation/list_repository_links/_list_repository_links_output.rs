@@ -5,7 +5,7 @@
 pub struct ListRepositoryLinksOutput {
     /// <p>Lists the repository links called by the list repository links operation.</p>
     pub repository_links: ::std::vec::Vec<crate::types::RepositoryLinkInfo>,
-    /// <p>An enumeration token that allows the operation to batch the results of the operation. </p>
+    /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListRepositoryLinksOutput {
         use std::ops::Deref;
         self.repository_links.deref()
     }
-    /// <p>An enumeration token that allows the operation to batch the results of the operation. </p>
+    /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListRepositoryLinksOutputBuilder {
     pub fn get_repository_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryLinkInfo>> {
         &self.repository_links
     }
-    /// <p>An enumeration token that allows the operation to batch the results of the operation. </p>
+    /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An enumeration token that allows the operation to batch the results of the operation. </p>
+    /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An enumeration token that allows the operation to batch the results of the operation. </p>
+    /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

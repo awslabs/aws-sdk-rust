@@ -11,7 +11,7 @@ pub struct ListStreamingSessionsInput {
     pub owned_by: ::std::option::Option<::std::string::String>,
     /// <p>Filters the request to only the provided session IDs.</p>
     pub session_ids: ::std::option::Option<::std::string::String>,
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl ListStreamingSessionsInput {
@@ -31,7 +31,7 @@ impl ListStreamingSessionsInput {
     pub fn session_ids(&self) -> ::std::option::Option<&str> {
         self.session_ids.as_deref()
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -110,18 +110,18 @@ impl ListStreamingSessionsInputBuilder {
     pub fn get_session_ids(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_ids
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

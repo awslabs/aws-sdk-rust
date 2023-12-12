@@ -6,7 +6,7 @@
 pub struct FieldLevelEncryptionProfileList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub max_items: i32,
     /// <p>The number of field-level encryption profiles.</p>
     pub quantity: i32,
@@ -18,7 +18,7 @@ impl FieldLevelEncryptionProfileList {
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub fn max_items(&self) -> i32 {
         self.max_items
     }
@@ -64,18 +64,18 @@ impl FieldLevelEncryptionProfileListBuilder {
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
-    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }
-    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }

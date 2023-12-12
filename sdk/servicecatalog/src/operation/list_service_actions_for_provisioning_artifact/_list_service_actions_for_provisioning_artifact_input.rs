@@ -13,8 +13,8 @@ pub struct ListServiceActionsForProvisioningArtifactInput {
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
 }
@@ -37,8 +37,8 @@ impl ListServiceActionsForProvisioningArtifactInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -123,8 +123,8 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -132,8 +132,8 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -141,8 +141,8 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language

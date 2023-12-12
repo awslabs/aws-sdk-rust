@@ -22,7 +22,7 @@ impl PutOutcomeInputBuilder {
 }
 /// Fluent builder constructing a request to `PutOutcome`.
 ///
-/// <p>Creates or updates an outcome. </p>
+/// <p>Creates or updates an outcome.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutOutcomeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

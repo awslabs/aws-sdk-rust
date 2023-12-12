@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeatureGroupOutput {
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>he name of the <code>FeatureGroup</code>.</p>
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
     pub record_identifier_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
-    /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
+    /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
     pub event_time_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
     pub feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
@@ -22,25 +22,25 @@ pub struct DescribeFeatureGroupOutput {
     pub online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li> <p>Amazon S3 location of the offline store.</p> </li>
-    /// <li> <p>Configuration of the Glue data catalog.</p> </li>
-    /// <li> <p>Table format of the offline store.</p> </li>
-    /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
-    /// <li> <p>Encryption configuration.</p> </li>
+    /// <li><p>Amazon S3 location of the offline store.</p></li>
+    /// <li><p>Configuration of the Glue data catalog.</p></li>
+    /// <li><p>Table format of the offline store.</p></li>
+    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li><p>Encryption configuration.</p></li>
     /// </ul>
     pub offline_store_config: ::std::option::Option<crate::types::OfflineStoreConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the feature group.</p>
     pub feature_group_status: ::std::option::Option<crate::types::FeatureGroupStatus>,
-    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
+    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code></p>
     pub offline_store_status: ::std::option::Option<crate::types::OfflineStoreStatus>,
     /// <p>A value indicating whether the update made to the feature group was successful.</p>
     pub last_update_status: ::std::option::Option<crate::types::LastUpdateStatus>,
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
-    /// <li> <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p> </li>
+    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A free form description of the feature group.</p>
@@ -52,7 +52,7 @@ pub struct DescribeFeatureGroupOutput {
     _request_id: Option<String>,
 }
 impl DescribeFeatureGroupOutput {
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
     pub fn feature_group_arn(&self) -> ::std::option::Option<&str> {
         self.feature_group_arn.as_deref()
     }
@@ -65,7 +65,7 @@ impl DescribeFeatureGroupOutput {
         self.record_identifier_feature_name.as_deref()
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
-    /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
+    /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
     pub fn event_time_feature_name(&self) -> ::std::option::Option<&str> {
         self.event_time_feature_name.as_deref()
     }
@@ -89,11 +89,11 @@ impl DescribeFeatureGroupOutput {
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li> <p>Amazon S3 location of the offline store.</p> </li>
-    /// <li> <p>Configuration of the Glue data catalog.</p> </li>
-    /// <li> <p>Table format of the offline store.</p> </li>
-    /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
-    /// <li> <p>Encryption configuration.</p> </li>
+    /// <li><p>Amazon S3 location of the offline store.</p></li>
+    /// <li><p>Configuration of the Glue data catalog.</p></li>
+    /// <li><p>Table format of the offline store.</p></li>
+    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li><p>Encryption configuration.</p></li>
     /// </ul>
     pub fn offline_store_config(&self) -> ::std::option::Option<&crate::types::OfflineStoreConfig> {
         self.offline_store_config.as_ref()
@@ -106,7 +106,7 @@ impl DescribeFeatureGroupOutput {
     pub fn feature_group_status(&self) -> ::std::option::Option<&crate::types::FeatureGroupStatus> {
         self.feature_group_status.as_ref()
     }
-    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
+    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code></p>
     pub fn offline_store_status(&self) -> ::std::option::Option<&crate::types::OfflineStoreStatus> {
         self.offline_store_status.as_ref()
     }
@@ -116,8 +116,8 @@ impl DescribeFeatureGroupOutput {
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
-    /// <li> <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p> </li>
+    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
@@ -171,18 +171,18 @@ pub struct DescribeFeatureGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFeatureGroupOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
     /// This field is required.
     pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
     pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
     pub fn get_feature_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_group_arn
     }
@@ -217,20 +217,20 @@ impl DescribeFeatureGroupOutputBuilder {
         &self.record_identifier_feature_name
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
-    /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
+    /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
     /// This field is required.
     pub fn event_time_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_time_feature_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
-    /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
+    /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
     pub fn set_event_time_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_time_feature_name = input;
         self
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
-    /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
+    /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
     pub fn get_event_time_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_time_feature_name
     }
@@ -299,11 +299,11 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li> <p>Amazon S3 location of the offline store.</p> </li>
-    /// <li> <p>Configuration of the Glue data catalog.</p> </li>
-    /// <li> <p>Table format of the offline store.</p> </li>
-    /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
-    /// <li> <p>Encryption configuration.</p> </li>
+    /// <li><p>Amazon S3 location of the offline store.</p></li>
+    /// <li><p>Configuration of the Glue data catalog.</p></li>
+    /// <li><p>Table format of the offline store.</p></li>
+    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li><p>Encryption configuration.</p></li>
     /// </ul>
     pub fn offline_store_config(mut self, input: crate::types::OfflineStoreConfig) -> Self {
         self.offline_store_config = ::std::option::Option::Some(input);
@@ -311,11 +311,11 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li> <p>Amazon S3 location of the offline store.</p> </li>
-    /// <li> <p>Configuration of the Glue data catalog.</p> </li>
-    /// <li> <p>Table format of the offline store.</p> </li>
-    /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
-    /// <li> <p>Encryption configuration.</p> </li>
+    /// <li><p>Amazon S3 location of the offline store.</p></li>
+    /// <li><p>Configuration of the Glue data catalog.</p></li>
+    /// <li><p>Table format of the offline store.</p></li>
+    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li><p>Encryption configuration.</p></li>
     /// </ul>
     pub fn set_offline_store_config(mut self, input: ::std::option::Option<crate::types::OfflineStoreConfig>) -> Self {
         self.offline_store_config = input;
@@ -323,11 +323,11 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li> <p>Amazon S3 location of the offline store.</p> </li>
-    /// <li> <p>Configuration of the Glue data catalog.</p> </li>
-    /// <li> <p>Table format of the offline store.</p> </li>
-    /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
-    /// <li> <p>Encryption configuration.</p> </li>
+    /// <li><p>Amazon S3 location of the offline store.</p></li>
+    /// <li><p>Configuration of the Glue data catalog.</p></li>
+    /// <li><p>Table format of the offline store.</p></li>
+    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li><p>Encryption configuration.</p></li>
     /// </ul>
     pub fn get_offline_store_config(&self) -> &::std::option::Option<crate::types::OfflineStoreConfig> {
         &self.offline_store_config
@@ -360,17 +360,17 @@ impl DescribeFeatureGroupOutputBuilder {
     pub fn get_feature_group_status(&self) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
         &self.feature_group_status
     }
-    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
+    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code></p>
     pub fn offline_store_status(mut self, input: crate::types::OfflineStoreStatus) -> Self {
         self.offline_store_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
+    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code></p>
     pub fn set_offline_store_status(mut self, input: ::std::option::Option<crate::types::OfflineStoreStatus>) -> Self {
         self.offline_store_status = input;
         self
     }
-    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
+    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code></p>
     pub fn get_offline_store_status(&self) -> &::std::option::Option<crate::types::OfflineStoreStatus> {
         &self.offline_store_status
     }
@@ -390,8 +390,8 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
-    /// <li> <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p> </li>
+    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
@@ -399,8 +399,8 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
-    /// <li> <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p> </li>
+    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
@@ -408,8 +408,8 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
-    /// <li> <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p> </li>
+    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason

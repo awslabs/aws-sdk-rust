@@ -9,7 +9,7 @@ pub struct ImageDiskContainer {
     /// <p>The block device mapping for the disk.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
+    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code></p>
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl ImageDiskContainer {
         self.device_name.as_deref()
     }
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
+    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code></p>
     pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
@@ -105,19 +105,19 @@ impl ImageDiskContainerBuilder {
         &self.device_name
     }
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
+    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code></p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
+    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code></p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
+    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code></p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.format
     }

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRepositoriesOutput {
-    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
+    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects.</p>
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
-    /// <p> If there are additional results, this is the token for the next set of results. </p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRepositoriesOutput {
-    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
+    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
     pub fn repositories(&self) -> &[crate::types::RepositorySummary] {
         self.repositories.as_deref().unwrap_or_default()
     }
-    /// <p> If there are additional results, this is the token for the next set of results. </p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListRepositoriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
     ///
-    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
+    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects.</p>
     pub fn repositories(mut self, input: crate::types::RepositorySummary) -> Self {
         let mut v = self.repositories.unwrap_or_default();
         v.push(input);
         self.repositories = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
+    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects.</p>
     pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>) -> Self {
         self.repositories = input;
         self
     }
-    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
+    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects.</p>
     pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
         &self.repositories
     }
-    /// <p> If there are additional results, this is the token for the next set of results. </p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> If there are additional results, this is the token for the next set of results. </p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> If there are additional results, this is the token for the next set of results. </p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

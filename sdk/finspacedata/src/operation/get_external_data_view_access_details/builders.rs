@@ -24,8 +24,8 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
 ///
 /// <p>Returns the credentials to access the external Dataview from an S3 location. To call this API:</p>
 /// <ul>
-/// <li> <p>You must retrieve the programmatic credentials.</p> </li>
-/// <li> <p>You must be a member of a FinSpace user group, where the dataset that you want to access has <code>Read Dataset Data</code> permissions.</p> </li>
+/// <li><p>You must retrieve the programmatic credentials.</p></li>
+/// <li><p>You must be a member of a FinSpace user group, where the dataset that you want to access has <code>Read Dataset Data</code> permissions.</p></li>
 /// </ul>
 #[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

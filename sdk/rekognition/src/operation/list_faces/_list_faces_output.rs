@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFacesOutput {
-    /// <p>An array of <code>Face</code> objects. </p>
+    /// <p>An array of <code>Face</code> objects.</p>
     pub faces: ::std::option::Option<::std::vec::Vec<crate::types::Face>>,
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListFacesOutput {
     _request_id: Option<String>,
 }
 impl ListFacesOutput {
-    /// <p>An array of <code>Face</code> objects. </p>
+    /// <p>An array of <code>Face</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.faces.is_none()`.
     pub fn faces(&self) -> &[crate::types::Face] {
@@ -53,19 +53,19 @@ impl ListFacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_faces`](Self::set_faces).
     ///
-    /// <p>An array of <code>Face</code> objects. </p>
+    /// <p>An array of <code>Face</code> objects.</p>
     pub fn faces(mut self, input: crate::types::Face) -> Self {
         let mut v = self.faces.unwrap_or_default();
         v.push(input);
         self.faces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>Face</code> objects. </p>
+    /// <p>An array of <code>Face</code> objects.</p>
     pub fn set_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Face>>) -> Self {
         self.faces = input;
         self
     }
-    /// <p>An array of <code>Face</code> objects. </p>
+    /// <p>An array of <code>Face</code> objects.</p>
     pub fn get_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Face>> {
         &self.faces
     }

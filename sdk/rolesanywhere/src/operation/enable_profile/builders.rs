@@ -22,8 +22,8 @@ impl EnableProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableProfile`.
 ///
-/// <p>Enables temporary credential requests for a profile. </p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:EnableProfile</code>. </p>
+/// <p>Enables temporary credential requests for a profile.</p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:EnableProfile</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

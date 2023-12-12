@@ -7,7 +7,7 @@ pub struct AssociateEntityToThingInput {
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: ::std::option::Option<i64>,
@@ -19,7 +19,7 @@ impl AssociateEntityToThingInput {
     }
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -61,7 +61,7 @@ impl AssociateEntityToThingInputBuilder {
     }
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -69,14 +69,14 @@ impl AssociateEntityToThingInputBuilder {
     }
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
     }
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_id
     }

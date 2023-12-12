@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkersWithQualificationTypeOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
+    /// <p>The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub num_results: ::std::option::Option<i32>,
-    /// <p> The list of Qualification elements returned by this call. </p>
+    /// <p>The list of Qualification elements returned by this call.</p>
     pub qualifications: ::std::option::Option<::std::vec::Vec<crate::types::Qualification>>,
     _request_id: Option<String>,
 }
 impl ListWorkersWithQualificationTypeOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
+    /// <p>The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub fn num_results(&self) -> ::std::option::Option<i32> {
         self.num_results
     }
-    /// <p> The list of Qualification elements returned by this call. </p>
+    /// <p>The list of Qualification elements returned by this call.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualifications.is_none()`.
     pub fn qualifications(&self) -> &[crate::types::Qualification] {
@@ -49,31 +49,31 @@ pub struct ListWorkersWithQualificationTypeOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListWorkersWithQualificationTypeOutputBuilder {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
+    /// <p>The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub fn num_results(mut self, input: i32) -> Self {
         self.num_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
+    /// <p>The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub fn set_num_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_results = input;
         self
     }
-    /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
+    /// <p>The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub fn get_num_results(&self) -> &::std::option::Option<i32> {
         &self.num_results
     }
@@ -81,19 +81,19 @@ impl ListWorkersWithQualificationTypeOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_qualifications`](Self::set_qualifications).
     ///
-    /// <p> The list of Qualification elements returned by this call. </p>
+    /// <p>The list of Qualification elements returned by this call.</p>
     pub fn qualifications(mut self, input: crate::types::Qualification) -> Self {
         let mut v = self.qualifications.unwrap_or_default();
         v.push(input);
         self.qualifications = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of Qualification elements returned by this call. </p>
+    /// <p>The list of Qualification elements returned by this call.</p>
     pub fn set_qualifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Qualification>>) -> Self {
         self.qualifications = input;
         self
     }
-    /// <p> The list of Qualification elements returned by this call. </p>
+    /// <p>The list of Qualification elements returned by this call.</p>
     pub fn get_qualifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Qualification>> {
         &self.qualifications
     }

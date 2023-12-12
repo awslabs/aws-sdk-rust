@@ -165,17 +165,17 @@ impl CreateRoomFluentBuilder {
     pub fn get_provider_calendar_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider_calendar_id()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }

@@ -6,7 +6,7 @@
 pub struct HttpInstanceSummary {
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p> <code></code> <code></code> <code></code> </p>
+    /// <p><code></code> <code></code> <code></code></p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that you specified when you registered the instance.</p>
@@ -21,7 +21,7 @@ impl HttpInstanceSummary {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p> <code></code> <code></code> <code></code> </p>
+    /// <p><code></code> <code></code> <code></code></p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn namespace_name(&self) -> ::std::option::Option<&str> {
         self.namespace_name.as_deref()
@@ -71,19 +71,19 @@ impl HttpInstanceSummaryBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p> <code></code> <code></code> <code></code> </p>
+    /// <p><code></code> <code></code> <code></code></p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <code></code> <code></code> <code></code> </p>
+    /// <p><code></code> <code></code> <code></code></p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
-    /// <p> <code></code> <code></code> <code></code> </p>
+    /// <p><code></code> <code></code> <code></code></p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace_name

@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRepositoryInput {
-    /// <p> The name of the domain associated with the repository to update. </p>
+    /// <p>The name of the domain associated with the repository to update.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the repository to update. </p>
+    /// <p>The name of the repository to update.</p>
     pub repository: ::std::option::Option<::std::string::String>,
-    /// <p> An updated repository description. </p>
+    /// <p>An updated repository description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     pub upstreams: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>,
 }
 impl UpdateRepositoryInput {
-    /// <p> The name of the domain associated with the repository to update. </p>
+    /// <p>The name of the domain associated with the repository to update.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p> The name of the repository to update. </p>
+    /// <p>The name of the repository to update.</p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> An updated repository description. </p>
+    /// <p>An updated repository description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upstreams.is_none()`.
     pub fn upstreams(&self) -> &[crate::types::UpstreamRepository] {
@@ -56,61 +56,61 @@ pub struct UpdateRepositoryInputBuilder {
     pub(crate) upstreams: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>,
 }
 impl UpdateRepositoryInputBuilder {
-    /// <p> The name of the domain associated with the repository to update. </p>
+    /// <p>The name of the domain associated with the repository to update.</p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the domain associated with the repository to update. </p>
+    /// <p>The name of the domain associated with the repository to update.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p> The name of the domain associated with the repository to update. </p>
+    /// <p>The name of the domain associated with the repository to update.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p> The name of the repository to update. </p>
+    /// <p>The name of the repository to update.</p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the repository to update. </p>
+    /// <p>The name of the repository to update.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p> The name of the repository to update. </p>
+    /// <p>The name of the repository to update.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }
-    /// <p> An updated repository description. </p>
+    /// <p>An updated repository description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An updated repository description. </p>
+    /// <p>An updated repository description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> An updated repository description. </p>
+    /// <p>An updated repository description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -118,19 +118,19 @@ impl UpdateRepositoryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_upstreams`](Self::set_upstreams).
     ///
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     pub fn upstreams(mut self, input: crate::types::UpstreamRepository) -> Self {
         let mut v = self.upstreams.unwrap_or_default();
         v.push(input);
         self.upstreams = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     pub fn set_upstreams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>) -> Self {
         self.upstreams = input;
         self
     }
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     pub fn get_upstreams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
         &self.upstreams
     }

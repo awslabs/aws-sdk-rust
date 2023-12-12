@@ -23,7 +23,7 @@ impl RebootNodeInputBuilder {
 /// Fluent builder constructing a request to `RebootNode`.
 ///
 /// <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.</p> <note>
-/// <p> <code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache. </p>
+/// <p><code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RebootNodeFluentBuilder {

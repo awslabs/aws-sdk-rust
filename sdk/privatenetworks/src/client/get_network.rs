@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`network_arn(impl Into<String>)`](crate::operation::get_network::builders::GetNetworkFluentBuilder::network_arn) / [`set_network_arn(Option<String>)`](crate::operation::get_network::builders::GetNetworkFluentBuilder::set_network_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the network.</p><br>
     /// - On success, responds with [`GetNetworkOutput`](crate::operation::get_network::GetNetworkOutput) with field(s):
     ///   - [`network(Option<Network>)`](crate::operation::get_network::GetNetworkOutput::network): <p>Information about the network.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_network::GetNetworkOutput::tags): <p> The network tags. </p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_network::GetNetworkOutput::tags): <p>The network tags.</p>
     /// - On failure, responds with [`SdkError<GetNetworkError>`](crate::operation::get_network::GetNetworkError)
     pub fn get_network(&self) -> crate::operation::get_network::builders::GetNetworkFluentBuilder {
         crate::operation::get_network::builders::GetNetworkFluentBuilder::new(self.handle.clone())

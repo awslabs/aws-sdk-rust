@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFunctionConfigurationInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
@@ -41,7 +41,7 @@ pub struct UpdateFunctionConfigurationInput {
     pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Connection settings for an Amazon EFS file system.</p>
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
-    /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
@@ -52,11 +52,11 @@ pub struct UpdateFunctionConfigurationInput {
 }
 impl UpdateFunctionConfigurationInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> ::std::option::Option<&str> {
@@ -123,7 +123,7 @@ impl UpdateFunctionConfigurationInput {
     pub fn file_system_configs(&self) -> &[crate::types::FileSystemConfig] {
         self.file_system_configs.as_deref().unwrap_or_default()
     }
-    /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
         self.image_config.as_ref()
     }
@@ -173,11 +173,11 @@ pub struct UpdateFunctionConfigurationInputBuilder {
 }
 impl UpdateFunctionConfigurationInputBuilder {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     /// This field is required.
@@ -186,11 +186,11 @@ impl UpdateFunctionConfigurationInputBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -198,11 +198,11 @@ impl UpdateFunctionConfigurationInputBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -419,17 +419,17 @@ impl UpdateFunctionConfigurationInputBuilder {
     pub fn get_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
         &self.file_system_configs
     }
-    /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn image_config(mut self, input: crate::types::ImageConfig) -> Self {
         self.image_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn set_image_config(mut self, input: ::std::option::Option<crate::types::ImageConfig>) -> Self {
         self.image_config = input;
         self
     }
-    /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
         &self.image_config
     }

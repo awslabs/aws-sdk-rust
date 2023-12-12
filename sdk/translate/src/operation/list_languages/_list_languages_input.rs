@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLanguagesInput {
-    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default.</p>
     pub display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,
-    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    /// <p>Include the NextToken value to fetch the next group of supported languages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in each response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListLanguagesInput {
-    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default.</p>
     pub fn display_language_code(&self) -> ::std::option::Option<&crate::types::DisplayLanguageCode> {
         self.display_language_code.as_ref()
     }
-    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    /// <p>Include the NextToken value to fetch the next group of supported languages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct ListLanguagesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListLanguagesInputBuilder {
-    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default.</p>
     pub fn display_language_code(mut self, input: crate::types::DisplayLanguageCode) -> Self {
         self.display_language_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default.</p>
     pub fn set_display_language_code(mut self, input: ::std::option::Option<crate::types::DisplayLanguageCode>) -> Self {
         self.display_language_code = input;
         self
     }
-    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default.</p>
     pub fn get_display_language_code(&self) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
         &self.display_language_code
     }
-    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    /// <p>Include the NextToken value to fetch the next group of supported languages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    /// <p>Include the NextToken value to fetch the next group of supported languages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    /// <p>Include the NextToken value to fetch the next group of supported languages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

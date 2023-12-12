@@ -7,15 +7,15 @@ pub struct ImageVersion {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
-    /// <li> <p>Version ARNs have only the first three nodes: <major>
+    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li><p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </major></p></li>
+    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -36,9 +36,9 @@ pub struct ImageVersion {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p><b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
@@ -51,9 +51,9 @@ pub struct ImageVersion {
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub build_type: ::std::option::Option<crate::types::BuildType>,
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
@@ -63,15 +63,15 @@ impl ImageVersion {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
-    /// <li> <p>Version ARNs have only the first three nodes: <major>
+    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li><p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </major></p></li>
+    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -98,9 +98,9 @@ impl ImageVersion {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p><b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
@@ -123,9 +123,9 @@ impl ImageVersion {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::BuildType> {
         self.build_type.as_ref()
@@ -161,15 +161,15 @@ impl ImageVersionBuilder {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
-    /// <li> <p>Version ARNs have only the first three nodes: <major>
+    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li><p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </major></p></li>
+    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,15 +179,15 @@ impl ImageVersionBuilder {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
-    /// <li> <p>Version ARNs have only the first three nodes: <major>
+    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li><p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </major></p></li>
+    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -197,15 +197,15 @@ impl ImageVersionBuilder {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
-    /// <li> <p>Version ARNs have only the first three nodes: <major>
+    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li><p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </major></p></li>
+    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,9 +252,9 @@ impl ImageVersionBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p><b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -273,9 +273,9 @@ impl ImageVersionBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p><b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
@@ -294,9 +294,9 @@ impl ImageVersionBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p><b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
@@ -359,9 +359,9 @@ impl ImageVersionBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn build_type(mut self, input: crate::types::BuildType) -> Self {
         self.build_type = ::std::option::Option::Some(input);
@@ -369,9 +369,9 @@ impl ImageVersionBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::BuildType>) -> Self {
         self.build_type = input;
@@ -379,9 +379,9 @@ impl ImageVersionBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::BuildType> {
         &self.build_type

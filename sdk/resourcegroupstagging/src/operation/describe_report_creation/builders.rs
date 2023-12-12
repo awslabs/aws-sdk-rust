@@ -22,7 +22,7 @@ impl DescribeReportCreationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeReportCreation`.
 ///
-/// <p>Describes the status of the <code>StartReportCreation</code> operation. </p>
+/// <p>Describes the status of the <code>StartReportCreation</code> operation.</p>
 /// <p>You can call this operation only from the organization's management account and from the us-east-1 Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReportCreationFluentBuilder {

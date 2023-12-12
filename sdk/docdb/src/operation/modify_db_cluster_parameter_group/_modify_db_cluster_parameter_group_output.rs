@@ -7,9 +7,9 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be from 1 to 255 letters or numbers.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -20,9 +20,9 @@ impl ModifyDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be from 1 to 255 letters or numbers.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -53,9 +53,9 @@ impl ModifyDbClusterParameterGroupOutputBuilder {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be from 1 to 255 letters or numbers.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -66,9 +66,9 @@ impl ModifyDbClusterParameterGroupOutputBuilder {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be from 1 to 255 letters or numbers.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -79,9 +79,9 @@ impl ModifyDbClusterParameterGroupOutputBuilder {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be from 1 to 255 letters or numbers.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>

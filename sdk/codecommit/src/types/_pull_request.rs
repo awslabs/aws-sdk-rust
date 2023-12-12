@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullRequest {
-    /// <p>The system-generated ID of the pull request. </p>
+    /// <p>The system-generated ID of the pull request.</p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
     pub title: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct PullRequest {
     pub approval_rules: ::std::option::Option<::std::vec::Vec<crate::types::ApprovalRule>>,
 }
 impl PullRequest {
-    /// <p>The system-generated ID of the pull request. </p>
+    /// <p>The system-generated ID of the pull request.</p>
     pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
@@ -101,17 +101,17 @@ pub struct PullRequestBuilder {
     pub(crate) approval_rules: ::std::option::Option<::std::vec::Vec<crate::types::ApprovalRule>>,
 }
 impl PullRequestBuilder {
-    /// <p>The system-generated ID of the pull request. </p>
+    /// <p>The system-generated ID of the pull request.</p>
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated ID of the pull request. </p>
+    /// <p>The system-generated ID of the pull request.</p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
-    /// <p>The system-generated ID of the pull request. </p>
+    /// <p>The system-generated ID of the pull request.</p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pull_request_id
     }

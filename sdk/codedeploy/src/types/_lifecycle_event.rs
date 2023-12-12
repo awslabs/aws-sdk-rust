@@ -14,12 +14,12 @@ pub struct LifecycleEvent {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
-    /// <li> <p>Pending: The deployment lifecycle event is pending.</p> </li>
-    /// <li> <p>InProgress: The deployment lifecycle event is in progress.</p> </li>
-    /// <li> <p>Succeeded: The deployment lifecycle event ran successfully.</p> </li>
-    /// <li> <p>Failed: The deployment lifecycle event has failed.</p> </li>
-    /// <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li>
-    /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
+    /// <li><p>Pending: The deployment lifecycle event is pending.</p></li>
+    /// <li><p>InProgress: The deployment lifecycle event is in progress.</p></li>
+    /// <li><p>Succeeded: The deployment lifecycle event ran successfully.</p></li>
+    /// <li><p>Failed: The deployment lifecycle event has failed.</p></li>
+    /// <li><p>Skipped: The deployment lifecycle event has been skipped.</p></li>
+    /// <li><p>Unknown: The deployment lifecycle event is unknown.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::LifecycleEventStatus>,
 }
@@ -42,12 +42,12 @@ impl LifecycleEvent {
     }
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
-    /// <li> <p>Pending: The deployment lifecycle event is pending.</p> </li>
-    /// <li> <p>InProgress: The deployment lifecycle event is in progress.</p> </li>
-    /// <li> <p>Succeeded: The deployment lifecycle event ran successfully.</p> </li>
-    /// <li> <p>Failed: The deployment lifecycle event has failed.</p> </li>
-    /// <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li>
-    /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
+    /// <li><p>Pending: The deployment lifecycle event is pending.</p></li>
+    /// <li><p>InProgress: The deployment lifecycle event is in progress.</p></li>
+    /// <li><p>Succeeded: The deployment lifecycle event ran successfully.</p></li>
+    /// <li><p>Failed: The deployment lifecycle event has failed.</p></li>
+    /// <li><p>Skipped: The deployment lifecycle event has been skipped.</p></li>
+    /// <li><p>Unknown: The deployment lifecycle event is unknown.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::LifecycleEventStatus> {
         self.status.as_ref()
@@ -129,12 +129,12 @@ impl LifecycleEventBuilder {
     }
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
-    /// <li> <p>Pending: The deployment lifecycle event is pending.</p> </li>
-    /// <li> <p>InProgress: The deployment lifecycle event is in progress.</p> </li>
-    /// <li> <p>Succeeded: The deployment lifecycle event ran successfully.</p> </li>
-    /// <li> <p>Failed: The deployment lifecycle event has failed.</p> </li>
-    /// <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li>
-    /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
+    /// <li><p>Pending: The deployment lifecycle event is pending.</p></li>
+    /// <li><p>InProgress: The deployment lifecycle event is in progress.</p></li>
+    /// <li><p>Succeeded: The deployment lifecycle event ran successfully.</p></li>
+    /// <li><p>Failed: The deployment lifecycle event has failed.</p></li>
+    /// <li><p>Skipped: The deployment lifecycle event has been skipped.</p></li>
+    /// <li><p>Unknown: The deployment lifecycle event is unknown.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::LifecycleEventStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -142,12 +142,12 @@ impl LifecycleEventBuilder {
     }
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
-    /// <li> <p>Pending: The deployment lifecycle event is pending.</p> </li>
-    /// <li> <p>InProgress: The deployment lifecycle event is in progress.</p> </li>
-    /// <li> <p>Succeeded: The deployment lifecycle event ran successfully.</p> </li>
-    /// <li> <p>Failed: The deployment lifecycle event has failed.</p> </li>
-    /// <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li>
-    /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
+    /// <li><p>Pending: The deployment lifecycle event is pending.</p></li>
+    /// <li><p>InProgress: The deployment lifecycle event is in progress.</p></li>
+    /// <li><p>Succeeded: The deployment lifecycle event ran successfully.</p></li>
+    /// <li><p>Failed: The deployment lifecycle event has failed.</p></li>
+    /// <li><p>Skipped: The deployment lifecycle event has been skipped.</p></li>
+    /// <li><p>Unknown: The deployment lifecycle event is unknown.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecycleEventStatus>) -> Self {
         self.status = input;
@@ -155,12 +155,12 @@ impl LifecycleEventBuilder {
     }
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
-    /// <li> <p>Pending: The deployment lifecycle event is pending.</p> </li>
-    /// <li> <p>InProgress: The deployment lifecycle event is in progress.</p> </li>
-    /// <li> <p>Succeeded: The deployment lifecycle event ran successfully.</p> </li>
-    /// <li> <p>Failed: The deployment lifecycle event has failed.</p> </li>
-    /// <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li>
-    /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
+    /// <li><p>Pending: The deployment lifecycle event is pending.</p></li>
+    /// <li><p>InProgress: The deployment lifecycle event is in progress.</p></li>
+    /// <li><p>Succeeded: The deployment lifecycle event ran successfully.</p></li>
+    /// <li><p>Failed: The deployment lifecycle event has failed.</p></li>
+    /// <li><p>Skipped: The deployment lifecycle event has been skipped.</p></li>
+    /// <li><p>Unknown: The deployment lifecycle event is unknown.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecycleEventStatus> {
         &self.status

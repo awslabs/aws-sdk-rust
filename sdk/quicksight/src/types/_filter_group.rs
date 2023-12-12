@@ -16,8 +16,8 @@ pub struct FilterGroup {
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
-    /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
+    /// <li><p><code>ALL_DATASETS</code></p></li>
+    /// <li><p><code>SINGLE_DATASET</code></p></li>
     /// </ul>
     pub cross_dataset: crate::types::CrossDatasetTypes,
 }
@@ -43,8 +43,8 @@ impl FilterGroup {
     }
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
-    /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
+    /// <li><p><code>ALL_DATASETS</code></p></li>
+    /// <li><p><code>SINGLE_DATASET</code></p></li>
     /// </ul>
     pub fn cross_dataset(&self) -> &crate::types::CrossDatasetTypes {
         &self.cross_dataset
@@ -137,8 +137,8 @@ impl FilterGroupBuilder {
     }
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
-    /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
+    /// <li><p><code>ALL_DATASETS</code></p></li>
+    /// <li><p><code>SINGLE_DATASET</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn cross_dataset(mut self, input: crate::types::CrossDatasetTypes) -> Self {
@@ -147,8 +147,8 @@ impl FilterGroupBuilder {
     }
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
-    /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
+    /// <li><p><code>ALL_DATASETS</code></p></li>
+    /// <li><p><code>SINGLE_DATASET</code></p></li>
     /// </ul>
     pub fn set_cross_dataset(mut self, input: ::std::option::Option<crate::types::CrossDatasetTypes>) -> Self {
         self.cross_dataset = input;
@@ -156,8 +156,8 @@ impl FilterGroupBuilder {
     }
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
-    /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
+    /// <li><p><code>ALL_DATASETS</code></p></li>
+    /// <li><p><code>SINGLE_DATASET</code></p></li>
     /// </ul>
     pub fn get_cross_dataset(&self) -> &::std::option::Option<crate::types::CrossDatasetTypes> {
         &self.cross_dataset

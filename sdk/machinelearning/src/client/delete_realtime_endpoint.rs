@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`ml_model_id(impl Into<String>)`](crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder::ml_model_id) / [`set_ml_model_id(Option<String>)`](crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder::set_ml_model_id):<br>required: **true**<br><p>The ID assigned to the <code>MLModel</code> during creation.</p><br>
     /// - On success, responds with [`DeleteRealtimeEndpointOutput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput) with field(s):
     ///   - [`ml_model_id(Option<String>)`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
-    ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code> </p>
+    ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code></p>
     /// - On failure, responds with [`SdkError<DeleteRealtimeEndpointError>`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError)
     pub fn delete_realtime_endpoint(&self) -> crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder {
         crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder::new(self.handle.clone())

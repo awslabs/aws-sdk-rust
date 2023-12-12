@@ -259,9 +259,9 @@ impl CreateRemoteAccessSessionFluentBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
-    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
-    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
+    /// <li><p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
+    /// <li><p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
+    /// <li><p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub fn interaction_mode(mut self, input: crate::types::InteractionMode) -> Self {
         self.inner = self.inner.interaction_mode(input);
@@ -269,9 +269,9 @@ impl CreateRemoteAccessSessionFluentBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
-    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
-    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
+    /// <li><p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
+    /// <li><p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
+    /// <li><p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
         self.inner = self.inner.set_interaction_mode(input);
@@ -279,27 +279,27 @@ impl CreateRemoteAccessSessionFluentBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
-    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
-    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
+    /// <li><p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
+    /// <li><p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
+    /// <li><p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub fn get_interaction_mode(&self) -> &::std::option::Option<crate::types::InteractionMode> {
         self.inner.get_interaction_mode()
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
+    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a></p>
     pub fn skip_app_resign(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_app_resign(input);
         self
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
+    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a></p>
     pub fn set_skip_app_resign(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_app_resign(input);
         self
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
+    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a></p>
     pub fn get_skip_app_resign(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_app_resign()
     }

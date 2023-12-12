@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPortfolioSummaryOutput {
-    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
+    /// <p>An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns.</p>
     pub assessment_summary: ::std::option::Option<crate::types::AssessmentSummary>,
     _request_id: Option<String>,
 }
 impl GetPortfolioSummaryOutput {
-    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
+    /// <p>An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns.</p>
     pub fn assessment_summary(&self) -> ::std::option::Option<&crate::types::AssessmentSummary> {
         self.assessment_summary.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetPortfolioSummaryOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPortfolioSummaryOutputBuilder {
-    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
+    /// <p>An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns.</p>
     pub fn assessment_summary(mut self, input: crate::types::AssessmentSummary) -> Self {
         self.assessment_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
+    /// <p>An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns.</p>
     pub fn set_assessment_summary(mut self, input: ::std::option::Option<crate::types::AssessmentSummary>) -> Self {
         self.assessment_summary = input;
         self
     }
-    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
+    /// <p>An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns.</p>
     pub fn get_assessment_summary(&self) -> &::std::option::Option<crate::types::AssessmentSummary> {
         &self.assessment_summary
     }

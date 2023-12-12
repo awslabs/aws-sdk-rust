@@ -7,7 +7,7 @@ pub struct GetMediaInput {
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    /// <p>Identifies the starting chunk to get from the specified stream.</p>
     pub start_selector: ::std::option::Option<crate::types::StartSelector>,
 }
 impl GetMediaInput {
@@ -19,7 +19,7 @@ impl GetMediaInput {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
-    /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    /// <p>Identifies the starting chunk to get from the specified stream.</p>
     pub fn start_selector(&self) -> ::std::option::Option<&crate::types::StartSelector> {
         self.start_selector.as_ref()
     }
@@ -68,18 +68,18 @@ impl GetMediaInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
-    /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    /// <p>Identifies the starting chunk to get from the specified stream.</p>
     /// This field is required.
     pub fn start_selector(mut self, input: crate::types::StartSelector) -> Self {
         self.start_selector = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    /// <p>Identifies the starting chunk to get from the specified stream.</p>
     pub fn set_start_selector(mut self, input: ::std::option::Option<crate::types::StartSelector>) -> Self {
         self.start_selector = input;
         self
     }
-    /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    /// <p>Identifies the starting chunk to get from the specified stream.</p>
     pub fn get_start_selector(&self) -> &::std::option::Option<crate::types::StartSelector> {
         &self.start_selector
     }

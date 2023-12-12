@@ -247,9 +247,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutEventSelec
 #[derive(::std::fmt::Debug)]
 pub enum PutEventSelectorsError {
     /// <p>This exception is thrown when an operation is called with an ARN that is not valid.</p>
-    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
-    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
+    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -258,30 +258,30 @@ pub enum PutEventSelectorsError {
     /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
     /// <p>You can:</p>
     /// <ul>
-    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
-    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
-    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
-    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
+    /// <li><p>Specify a valid number of event selectors (1 to 5) for a trail.</p></li>
+    /// <li><p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p></li>
+    /// <li><p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p></li>
+    /// <li><p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p></li>
     /// </ul>
     InvalidEventSelectorsException(crate::types::error::InvalidEventSelectorsException),
     /// <p>This exception is thrown when an operation is called on a trail from a Region other than the Region in which the trail was created.</p>
     InvalidHomeRegionException(crate::types::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
-    /// <li> <p>Be between 3 and 128 characters</p> </li>
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li><p>Be between 3 and 128 characters</p></li>
+    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     InvalidTrailNameException(crate::types::error::InvalidTrailNameException),
-    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::types::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p> This exception is thrown when the request rate exceeds the limit. </p>
+    /// <p>This exception is thrown when the request rate exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>This exception is thrown when the trail with the given name is not found.</p>
     TrailNotFoundException(crate::types::error::TrailNotFoundException),

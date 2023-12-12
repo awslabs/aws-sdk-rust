@@ -15,15 +15,15 @@ pub struct CreateNetworkProfileInput {
     pub eap_method: ::std::option::Option<crate::types::NetworkEapMethod>,
     /// <p>The current password of the Wi-Fi network.</p>
     pub current_password: ::std::option::Option<::std::string::String>,
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub next_password: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub trust_anchors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateNetworkProfileInput {
@@ -51,15 +51,15 @@ impl CreateNetworkProfileInput {
     pub fn current_password(&self) -> ::std::option::Option<&str> {
         self.current_password.as_deref()
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn next_password(&self) -> ::std::option::Option<&str> {
         self.next_password.as_deref()
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_anchors.is_none()`.
     pub fn trust_anchors(&self) -> &[::std::string::String] {
@@ -69,7 +69,7 @@ impl CreateNetworkProfileInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -204,31 +204,31 @@ impl CreateNetworkProfileInputBuilder {
     pub fn get_current_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_password
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn next_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn set_next_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_password = input;
         self
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn get_next_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_password
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_arn
     }
@@ -236,19 +236,19 @@ impl CreateNetworkProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
     ///
-    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub fn trust_anchors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trust_anchors.unwrap_or_default();
         v.push(input.into());
         self.trust_anchors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub fn set_trust_anchors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trust_anchors = input;
         self
     }
-    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub fn get_trust_anchors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trust_anchors
     }
@@ -271,19 +271,19 @@ impl CreateNetworkProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

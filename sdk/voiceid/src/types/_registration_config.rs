@@ -8,7 +8,7 @@ pub struct RegistrationConfig {
     pub duplicate_registration_action: ::std::option::Option<crate::types::DuplicateRegistrationAction>,
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     pub fraudster_similarity_threshold: ::std::option::Option<i32>,
-    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
+    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist.</p>
     pub watchlist_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegistrationConfig {
@@ -20,7 +20,7 @@ impl RegistrationConfig {
     pub fn fraudster_similarity_threshold(&self) -> ::std::option::Option<i32> {
         self.fraudster_similarity_threshold
     }
-    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
+    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.watchlist_ids.is_none()`.
     pub fn watchlist_ids(&self) -> &[::std::string::String] {
@@ -75,19 +75,19 @@ impl RegistrationConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_watchlist_ids`](Self::set_watchlist_ids).
     ///
-    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
+    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist.</p>
     pub fn watchlist_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.watchlist_ids.unwrap_or_default();
         v.push(input.into());
         self.watchlist_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
+    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist.</p>
     pub fn set_watchlist_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.watchlist_ids = input;
         self
     }
-    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
+    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist.</p>
     pub fn get_watchlist_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.watchlist_ids
     }

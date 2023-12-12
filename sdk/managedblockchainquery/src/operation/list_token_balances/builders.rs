@@ -24,9 +24,9 @@ impl ListTokenBalancesInputBuilder {
 ///
 /// <p>This action returns the following for a given blockchain network:</p>
 /// <ul>
-/// <li> <p>Lists all token balances owned by an address (either a contract address or a wallet address).</p> </li>
-/// <li> <p>Lists all token balances for all tokens created by a contract.</p> </li>
-/// <li> <p>Lists all token balances for a given token.</p> </li>
+/// <li><p>Lists all token balances owned by an address (either a contract address or a wallet address).</p></li>
+/// <li><p>Lists all token balances for all tokens created by a contract.</p></li>
+/// <li><p>Lists all token balances for a given token.</p></li>
 /// </ul> <note>
 /// <p>You must always specify the network property of the <code>tokenFilter</code> when using this operation.</p>
 /// </note>

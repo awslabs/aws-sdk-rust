@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterSnapshotScheduleInput {
-    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ModifyClusterSnapshotScheduleInput {
     pub disassociate_schedule: ::std::option::Option<bool>,
 }
 impl ModifyClusterSnapshotScheduleInput {
-    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ModifyClusterSnapshotScheduleInputBuilder {
     pub(crate) disassociate_schedule: ::std::option::Option<bool>,
 }
 impl ModifyClusterSnapshotScheduleInputBuilder {
-    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
     /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
-    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }

@@ -22,7 +22,7 @@ impl ListBuiltInIntentsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListBuiltInIntents`.
 ///
-/// <p>Gets a list of built-in intents provided by Amazon Lex that you can use in your bot. </p>
+/// <p>Gets a list of built-in intents provided by Amazon Lex that you can use in your bot.</p>
 /// <p>To use a built-in intent as a the base for your own intent, include the built-in intent signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code> operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBuiltInIntentsFluentBuilder {

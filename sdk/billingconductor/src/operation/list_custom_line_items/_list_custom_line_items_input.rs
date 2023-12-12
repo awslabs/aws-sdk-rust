@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsInput {
-    /// <p> The preferred billing period to get custom line items (FFLIs). </p>
+    /// <p>The preferred billing period to get custom line items (FFLIs).</p>
     pub billing_period: ::std::option::Option<::std::string::String>,
-    /// <p> The maximum number of billing groups to retrieve. </p>
+    /// <p>The maximum number of billing groups to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
     pub filters: ::std::option::Option<crate::types::ListCustomLineItemsFilter>,
 }
 impl ListCustomLineItemsInput {
-    /// <p> The preferred billing period to get custom line items (FFLIs). </p>
+    /// <p>The preferred billing period to get custom line items (FFLIs).</p>
     pub fn billing_period(&self) -> ::std::option::Option<&str> {
         self.billing_period.as_deref()
     }
-    /// <p> The maximum number of billing groups to retrieve. </p>
+    /// <p>The maximum number of billing groups to retrieve.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,45 +47,45 @@ pub struct ListCustomLineItemsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListCustomLineItemsFilter>,
 }
 impl ListCustomLineItemsInputBuilder {
-    /// <p> The preferred billing period to get custom line items (FFLIs). </p>
+    /// <p>The preferred billing period to get custom line items (FFLIs).</p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The preferred billing period to get custom line items (FFLIs). </p>
+    /// <p>The preferred billing period to get custom line items (FFLIs).</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
-    /// <p> The preferred billing period to get custom line items (FFLIs). </p>
+    /// <p>The preferred billing period to get custom line items (FFLIs).</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.billing_period
     }
-    /// <p> The maximum number of billing groups to retrieve. </p>
+    /// <p>The maximum number of billing groups to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The maximum number of billing groups to retrieve. </p>
+    /// <p>The maximum number of billing groups to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> The maximum number of billing groups to retrieve. </p>
+    /// <p>The maximum number of billing groups to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
+    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

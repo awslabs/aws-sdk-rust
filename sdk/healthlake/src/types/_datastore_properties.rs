@@ -12,13 +12,13 @@ pub struct DatastoreProperties {
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the data store.</p>
     pub datastore_status: crate::types::DatastoreStatus,
-    /// <p>The time that a data store was created. </p>
+    /// <p>The time that a data store was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The FHIR version. Only R4 version data is supported.</p>
     pub datastore_type_version: crate::types::FhirVersion,
     /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
     pub datastore_endpoint: ::std::string::String,
-    /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
+    /// <p>The server-side encryption key configuration for a customer provided encryption key (CMK).</p>
     pub sse_configuration: ::std::option::Option<crate::types::SseConfiguration>,
     /// <p>The preloaded data configuration for the data store. Only data preloaded from Synthea is supported.</p>
     pub preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
@@ -44,7 +44,7 @@ impl DatastoreProperties {
     pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
         &self.datastore_status
     }
-    /// <p>The time that a data store was created. </p>
+    /// <p>The time that a data store was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -57,7 +57,7 @@ impl DatastoreProperties {
         use std::ops::Deref;
         self.datastore_endpoint.deref()
     }
-    /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
+    /// <p>The server-side encryption key configuration for a customer provided encryption key (CMK).</p>
     pub fn sse_configuration(&self) -> ::std::option::Option<&crate::types::SseConfiguration> {
         self.sse_configuration.as_ref()
     }
@@ -152,17 +152,17 @@ impl DatastorePropertiesBuilder {
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
         &self.datastore_status
     }
-    /// <p>The time that a data store was created. </p>
+    /// <p>The time that a data store was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that a data store was created. </p>
+    /// <p>The time that a data store was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The time that a data store was created. </p>
+    /// <p>The time that a data store was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
@@ -196,17 +196,17 @@ impl DatastorePropertiesBuilder {
     pub fn get_datastore_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_endpoint
     }
-    /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
+    /// <p>The server-side encryption key configuration for a customer provided encryption key (CMK).</p>
     pub fn sse_configuration(mut self, input: crate::types::SseConfiguration) -> Self {
         self.sse_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
+    /// <p>The server-side encryption key configuration for a customer provided encryption key (CMK).</p>
     pub fn set_sse_configuration(mut self, input: ::std::option::Option<crate::types::SseConfiguration>) -> Self {
         self.sse_configuration = input;
         self
     }
-    /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
+    /// <p>The server-side encryption key configuration for a customer provided encryption key (CMK).</p>
     pub fn get_sse_configuration(&self) -> &::std::option::Option<crate::types::SseConfiguration> {
         &self.sse_configuration
     }

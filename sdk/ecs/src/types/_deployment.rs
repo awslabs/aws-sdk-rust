@@ -50,8 +50,8 @@ pub struct Deployment {
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
-    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
-    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
     pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -142,8 +142,8 @@ impl Deployment {
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
         self.platform_version.as_deref()
     }
-    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
-    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
     pub fn platform_family(&self) -> ::std::option::Option<&str> {
         self.platform_family.as_deref()
     }
@@ -449,20 +449,20 @@ impl DeploymentBuilder {
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_version
     }
-    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
-    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
     pub fn platform_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_family = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
-    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
     pub fn set_platform_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_family = input;
         self
     }
-    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
-    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
     pub fn get_platform_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_family
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInventoryOutput {
-    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
+    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
     pub deletion_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inventory data type specified in the request.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteInventoryOutput {
     _request_id: Option<String>,
 }
 impl DeleteInventoryOutput {
-    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
+    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
     pub fn deletion_id(&self) -> ::std::option::Option<&str> {
         self.deletion_id.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct DeleteInventoryOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteInventoryOutputBuilder {
-    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
+    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
     pub fn deletion_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deletion_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
+    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
     pub fn set_deletion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deletion_id = input;
         self
     }
-    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
+    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
     pub fn get_deletion_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deletion_id
     }

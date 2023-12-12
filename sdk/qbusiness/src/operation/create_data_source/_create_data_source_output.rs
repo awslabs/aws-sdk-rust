@@ -5,7 +5,7 @@
 pub struct CreateDataSourceOutput {
     /// <p>The identifier of the data source connector.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application. </p>
+    /// <p>The Amazon Resource Name (ARN) of a data source in an Amazon Q application.</p>
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl CreateDataSourceOutput {
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application. </p>
+    /// <p>The Amazon Resource Name (ARN) of a data source in an Amazon Q application.</p>
     pub fn data_source_arn(&self) -> ::std::option::Option<&str> {
         self.data_source_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl CreateDataSourceOutputBuilder {
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
-    /// <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application. </p>
+    /// <p>The Amazon Resource Name (ARN) of a data source in an Amazon Q application.</p>
     pub fn data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application. </p>
+    /// <p>The Amazon Resource Name (ARN) of a data source in an Amazon Q application.</p>
     pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application. </p>
+    /// <p>The Amazon Resource Name (ARN) of a data source in an Amazon Q application.</p>
     pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_arn
     }

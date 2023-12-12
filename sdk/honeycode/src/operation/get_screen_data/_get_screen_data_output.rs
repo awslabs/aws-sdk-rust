@@ -5,9 +5,9 @@
 pub struct GetScreenDataOutput {
     /// <p>A map of all the rows on the screen keyed by block name.</p>
     pub results: ::std::collections::HashMap<::std::string::String, crate::types::ResultSet>,
-    /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub workbook_cursor: i64,
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,11 +16,11 @@ impl GetScreenDataOutput {
     pub fn results(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::ResultSet> {
         &self.results
     }
-    /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn workbook_cursor(&self) -> i64 {
         self.workbook_cursor
     }
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -67,32 +67,32 @@ impl GetScreenDataOutputBuilder {
     pub fn get_results(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResultSet>> {
         &self.results
     }
-    /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     /// This field is required.
     pub fn workbook_cursor(mut self, input: i64) -> Self {
         self.workbook_cursor = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn set_workbook_cursor(mut self, input: ::std::option::Option<i64>) -> Self {
         self.workbook_cursor = input;
         self
     }
-    /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn get_workbook_cursor(&self) -> &::std::option::Option<i64> {
         &self.workbook_cursor
     }
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

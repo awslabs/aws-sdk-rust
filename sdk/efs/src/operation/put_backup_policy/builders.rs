@@ -22,7 +22,7 @@ impl PutBackupPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutBackupPolicy`.
 ///
-/// <p>Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system. </p>
+/// <p>Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBackupPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

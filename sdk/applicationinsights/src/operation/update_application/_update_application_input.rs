@@ -5,15 +5,15 @@
 pub struct UpdateApplicationInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub ops_center_enabled: ::std::option::Option<bool>,
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub cwe_monitor_enabled: ::std::option::Option<bool>,
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
-    /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub remove_sns_topic: ::std::option::Option<bool>,
-    /// <p> Turns auto-configuration on or off. </p>
+    /// <p>Turns auto-configuration on or off.</p>
     pub auto_config_enabled: ::std::option::Option<bool>,
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
     pub attach_missing_permission: ::std::option::Option<bool>,
@@ -23,23 +23,23 @@ impl UpdateApplicationInput {
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn ops_center_enabled(&self) -> ::std::option::Option<bool> {
         self.ops_center_enabled
     }
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn cwe_monitor_enabled(&self) -> ::std::option::Option<bool> {
         self.cwe_monitor_enabled
     }
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
-    /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn remove_sns_topic(&self) -> ::std::option::Option<bool> {
         self.remove_sns_topic
     }
-    /// <p> Turns auto-configuration on or off. </p>
+    /// <p>Turns auto-configuration on or off.</p>
     pub fn auto_config_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_config_enabled
     }
@@ -83,73 +83,73 @@ impl UpdateApplicationInputBuilder {
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
     }
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn ops_center_enabled(mut self, input: bool) -> Self {
         self.ops_center_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn set_ops_center_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ops_center_enabled = input;
         self
     }
-    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn get_ops_center_enabled(&self) -> &::std::option::Option<bool> {
         &self.ops_center_enabled
     }
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
         self.cwe_monitor_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn set_cwe_monitor_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cwe_monitor_enabled = input;
         self
     }
-    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn get_cwe_monitor_enabled(&self) -> &::std::option::Option<bool> {
         &self.cwe_monitor_enabled
     }
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn ops_item_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = input;
         self
     }
-    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
+    /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_sns_topic_arn
     }
-    /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn remove_sns_topic(mut self, input: bool) -> Self {
         self.remove_sns_topic = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn set_remove_sns_topic(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remove_sns_topic = input;
         self
     }
-    /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn get_remove_sns_topic(&self) -> &::std::option::Option<bool> {
         &self.remove_sns_topic
     }
-    /// <p> Turns auto-configuration on or off. </p>
+    /// <p>Turns auto-configuration on or off.</p>
     pub fn auto_config_enabled(mut self, input: bool) -> Self {
         self.auto_config_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Turns auto-configuration on or off. </p>
+    /// <p>Turns auto-configuration on or off.</p>
     pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_config_enabled = input;
         self
     }
-    /// <p> Turns auto-configuration on or off. </p>
+    /// <p>Turns auto-configuration on or off.</p>
     pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
         &self.auto_config_enabled
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastDeploymentInfo {
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the most recent deployment.</p>
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
@@ -14,7 +14,7 @@ pub struct LastDeploymentInfo {
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LastDeploymentInfo {
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -48,17 +48,17 @@ pub struct LastDeploymentInfoBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LastDeploymentInfoBuilder {
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }

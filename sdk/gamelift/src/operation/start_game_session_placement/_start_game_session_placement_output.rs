@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartGameSessionPlacementOutput {
-    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
+    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
     pub game_session_placement: ::std::option::Option<crate::types::GameSessionPlacement>,
     _request_id: Option<String>,
 }
 impl StartGameSessionPlacementOutput {
-    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
+    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
     pub fn game_session_placement(&self) -> ::std::option::Option<&crate::types::GameSessionPlacement> {
         self.game_session_placement.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct StartGameSessionPlacementOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartGameSessionPlacementOutputBuilder {
-    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
+    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
     pub fn game_session_placement(mut self, input: crate::types::GameSessionPlacement) -> Self {
         self.game_session_placement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
+    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
     pub fn set_game_session_placement(mut self, input: ::std::option::Option<crate::types::GameSessionPlacement>) -> Self {
         self.game_session_placement = input;
         self
     }
-    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
+    /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
     pub fn get_game_session_placement(&self) -> &::std::option::Option<crate::types::GameSessionPlacement> {
         &self.game_session_placement
     }

@@ -8,7 +8,7 @@ pub struct CreateStreamInput {
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p>
     pub shard_count: ::std::option::Option<i32>,
-    /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
 }
 impl CreateStreamInput {
@@ -20,7 +20,7 @@ impl CreateStreamInput {
     pub fn shard_count(&self) -> ::std::option::Option<i32> {
         self.shard_count
     }
-    /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn stream_mode_details(&self) -> ::std::option::Option<&crate::types::StreamModeDetails> {
         self.stream_mode_details.as_ref()
     }
@@ -70,17 +70,17 @@ impl CreateStreamInputBuilder {
     pub fn get_shard_count(&self) -> &::std::option::Option<i32> {
         &self.shard_count
     }
-    /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn stream_mode_details(mut self, input: crate::types::StreamModeDetails) -> Self {
         self.stream_mode_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn set_stream_mode_details(mut self, input: ::std::option::Option<crate::types::StreamModeDetails>) -> Self {
         self.stream_mode_details = input;
         self
     }
-    /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         &self.stream_mode_details
     }

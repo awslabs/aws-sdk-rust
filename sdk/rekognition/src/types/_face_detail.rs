@@ -2,11 +2,11 @@
 
 /// <p>Structure containing attributes of the face that the algorithm detected.</p>
 /// <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p>
-/// <p> <code>GetFaceDetection</code> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <code>StartFaceDetection</code>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter:</p>
+/// <p><code>GetFaceDetection</code> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <code>StartFaceDetection</code>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter:</p>
 /// <ul>
-/// <li> <p>GetCelebrityRecognition</p> </li>
-/// <li> <p>GetPersonTracking</p> </li>
-/// <li> <p>GetFaceSearch</p> </li>
+/// <li><p>GetCelebrityRecognition</p></li>
+/// <li><p>GetPersonTracking</p></li>
+/// <li><p>GetFaceSearch</p></li>
 /// </ul>
 /// <p>The Amazon Rekognition Image <code>DetectFaces</code> and <code>IndexFaces</code> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>
 #[non_exhaustive]
@@ -22,7 +22,7 @@ pub struct FaceDetail {
     pub eyeglasses: ::std::option::Option<crate::types::Eyeglasses>,
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
     pub sunglasses: ::std::option::Option<crate::types::Sunglasses>,
-    /// <p>The predicted gender of a detected face. </p>
+    /// <p>The predicted gender of a detected face.</p>
     pub gender: ::std::option::Option<crate::types::Gender>,
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
     pub beard: ::std::option::Option<crate::types::Beard>,
@@ -42,7 +42,7 @@ pub struct FaceDetail {
     pub quality: ::std::option::Option<crate::types::ImageQuality>,
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
     pub confidence: ::std::option::Option<f32>,
-    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    /// <p><code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub face_occluded: ::std::option::Option<crate::types::FaceOccluded>,
     /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
     pub eye_direction: ::std::option::Option<crate::types::EyeDirection>,
@@ -68,7 +68,7 @@ impl FaceDetail {
     pub fn sunglasses(&self) -> ::std::option::Option<&crate::types::Sunglasses> {
         self.sunglasses.as_ref()
     }
-    /// <p>The predicted gender of a detected face. </p>
+    /// <p>The predicted gender of a detected face.</p>
     pub fn gender(&self) -> ::std::option::Option<&crate::types::Gender> {
         self.gender.as_ref()
     }
@@ -112,7 +112,7 @@ impl FaceDetail {
     pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
-    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    /// <p><code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub fn face_occluded(&self) -> ::std::option::Option<&crate::types::FaceOccluded> {
         self.face_occluded.as_ref()
     }
@@ -221,17 +221,17 @@ impl FaceDetailBuilder {
     pub fn get_sunglasses(&self) -> &::std::option::Option<crate::types::Sunglasses> {
         &self.sunglasses
     }
-    /// <p>The predicted gender of a detected face. </p>
+    /// <p>The predicted gender of a detected face.</p>
     pub fn gender(mut self, input: crate::types::Gender) -> Self {
         self.gender = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The predicted gender of a detected face. </p>
+    /// <p>The predicted gender of a detected face.</p>
     pub fn set_gender(mut self, input: ::std::option::Option<crate::types::Gender>) -> Self {
         self.gender = input;
         self
     }
-    /// <p>The predicted gender of a detected face. </p>
+    /// <p>The predicted gender of a detected face.</p>
     pub fn get_gender(&self) -> &::std::option::Option<crate::types::Gender> {
         &self.gender
     }
@@ -373,17 +373,17 @@ impl FaceDetailBuilder {
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
         &self.confidence
     }
-    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    /// <p><code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub fn face_occluded(mut self, input: crate::types::FaceOccluded) -> Self {
         self.face_occluded = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    /// <p><code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub fn set_face_occluded(mut self, input: ::std::option::Option<crate::types::FaceOccluded>) -> Self {
         self.face_occluded = input;
         self
     }
-    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    /// <p><code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub fn get_face_occluded(&self) -> &::std::option::Option<crate::types::FaceOccluded> {
         &self.face_occluded
     }

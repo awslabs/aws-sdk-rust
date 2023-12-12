@@ -6,12 +6,12 @@
 pub struct StreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
     pub stream_enabled: bool,
-    /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
+    /// <p>When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul>
     pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
 }
@@ -20,12 +20,12 @@ impl StreamSpecification {
     pub fn stream_enabled(&self) -> bool {
         self.stream_enabled
     }
-    /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
+    /// <p>When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul>
     pub fn stream_view_type(&self) -> ::std::option::Option<&crate::types::StreamViewType> {
         self.stream_view_type.as_ref()
@@ -61,34 +61,34 @@ impl StreamSpecificationBuilder {
     pub fn get_stream_enabled(&self) -> &::std::option::Option<bool> {
         &self.stream_enabled
     }
-    /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
+    /// <p>When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul>
     pub fn stream_view_type(mut self, input: crate::types::StreamViewType) -> Self {
         self.stream_view_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
+    /// <p>When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul>
     pub fn set_stream_view_type(mut self, input: ::std::option::Option<crate::types::StreamViewType>) -> Self {
         self.stream_view_type = input;
         self
     }
-    /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
+    /// <p>When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
-    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul>
     pub fn get_stream_view_type(&self) -> &::std::option::Option<crate::types::StreamViewType> {
         &self.stream_view_type

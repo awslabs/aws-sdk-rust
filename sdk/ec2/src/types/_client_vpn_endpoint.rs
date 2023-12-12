@@ -18,7 +18,7 @@ pub struct ClientVpnEndpoint {
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
     pub client_cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the DNS servers to be used for DNS resolution. </p>
+    /// <p>Information about the DNS servers to be used for DNS resolution.</p>
     pub dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
@@ -51,8 +51,8 @@ pub struct ClientVpnEndpoint {
     /// <p>The options for managing connection authorization for new client connections.</p>
     pub client_connect_options: ::std::option::Option<crate::types::ClientConnectResponseOptions>,
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
-    /// <p>Default value: <code>24</code> </p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
+    /// <p>Default value: <code>24</code></p>
     pub session_timeout_hours: ::std::option::Option<i32>,
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerResponseOptions>,
@@ -86,7 +86,7 @@ impl ClientVpnEndpoint {
     pub fn client_cidr_block(&self) -> ::std::option::Option<&str> {
         self.client_cidr_block.as_deref()
     }
-    /// <p>Information about the DNS servers to be used for DNS resolution. </p>
+    /// <p>Information about the DNS servers to be used for DNS resolution.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_servers.is_none()`.
     pub fn dns_servers(&self) -> &[::std::string::String] {
@@ -157,8 +157,8 @@ impl ClientVpnEndpoint {
         self.client_connect_options.as_ref()
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
-    /// <p>Default value: <code>24</code> </p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
+    /// <p>Default value: <code>24</code></p>
     pub fn session_timeout_hours(&self) -> ::std::option::Option<i32> {
         self.session_timeout_hours
     }
@@ -305,19 +305,19 @@ impl ClientVpnEndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_dns_servers`](Self::set_dns_servers).
     ///
-    /// <p>Information about the DNS servers to be used for DNS resolution. </p>
+    /// <p>Information about the DNS servers to be used for DNS resolution.</p>
     pub fn dns_servers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_servers.unwrap_or_default();
         v.push(input.into());
         self.dns_servers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the DNS servers to be used for DNS resolution. </p>
+    /// <p>Information about the DNS servers to be used for DNS resolution.</p>
     pub fn set_dns_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_servers = input;
         self
     }
-    /// <p>Information about the DNS servers to be used for DNS resolution. </p>
+    /// <p>Information about the DNS servers to be used for DNS resolution.</p>
     pub fn get_dns_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_servers
     }
@@ -540,22 +540,22 @@ impl ClientVpnEndpointBuilder {
         &self.client_connect_options
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
-    /// <p>Default value: <code>24</code> </p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
+    /// <p>Default value: <code>24</code></p>
     pub fn session_timeout_hours(mut self, input: i32) -> Self {
         self.session_timeout_hours = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
-    /// <p>Default value: <code>24</code> </p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
+    /// <p>Default value: <code>24</code></p>
     pub fn set_session_timeout_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout_hours = input;
         self
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
-    /// <p>Default value: <code>24</code> </p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
+    /// <p>Default value: <code>24</code></p>
     pub fn get_session_timeout_hours(&self) -> &::std::option::Option<i32> {
         &self.session_timeout_hours
     }

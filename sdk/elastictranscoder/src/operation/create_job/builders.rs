@@ -149,17 +149,17 @@ impl CreateJobFluentBuilder {
     pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobInput>> {
         self.inner.get_inputs()
     }
-    /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    /// <p>A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.</p>
     pub fn output(mut self, input: crate::types::CreateJobOutput) -> Self {
         self.inner = self.inner.output(input);
         self
     }
-    /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    /// <p>A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::CreateJobOutput>) -> Self {
         self.inner = self.inner.set_output(input);
         self
     }
-    /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    /// <p>A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::CreateJobOutput> {
         self.inner.get_output()
     }
@@ -167,17 +167,17 @@ impl CreateJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    /// <p>A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.</p>
     pub fn outputs(mut self, input: crate::types::CreateJobOutput) -> Self {
         self.inner = self.inner.outputs(input);
         self
     }
-    /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    /// <p>A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateJobOutput>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
-    /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    /// <p>A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateJobOutput>> {
         self.inner.get_outputs()
     }

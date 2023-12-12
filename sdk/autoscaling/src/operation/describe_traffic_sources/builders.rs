@@ -24,7 +24,7 @@ impl DescribeTrafficSourcesInputBuilder {
 ///
 /// <p>Gets information about the traffic sources for the specified Auto Scaling group.</p>
 /// <p>You can optionally provide a traffic source type. If you provide a traffic source type, then the results only include that traffic source type.</p>
-/// <p>If you do not provide a traffic source type, then the results include all the traffic sources for the specified Auto Scaling group. </p>
+/// <p>If you do not provide a traffic source type, then the results include all the traffic sources for the specified Auto Scaling group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrafficSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -133,9 +133,9 @@ impl DescribeTrafficSourcesFluentBuilder {
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li>
-    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
-    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
+    /// <li><p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
+    /// <li><p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
+    /// <li><p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
     /// </ul>
     pub fn traffic_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_source_type(input.into());
@@ -144,9 +144,9 @@ impl DescribeTrafficSourcesFluentBuilder {
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li>
-    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
-    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
+    /// <li><p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
+    /// <li><p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
+    /// <li><p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
     /// </ul>
     pub fn set_traffic_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_source_type(input);
@@ -155,9 +155,9 @@ impl DescribeTrafficSourcesFluentBuilder {
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li>
-    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
-    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
+    /// <li><p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
+    /// <li><p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
+    /// <li><p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
     /// </ul>
     pub fn get_traffic_source_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_traffic_source_type()

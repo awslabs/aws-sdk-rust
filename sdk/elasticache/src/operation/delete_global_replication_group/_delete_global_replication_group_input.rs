@@ -5,7 +5,7 @@
 pub struct DeleteGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The primary replication group is retained as a standalone replication group. </p>
+    /// <p>The primary replication group is retained as a standalone replication group.</p>
     pub retain_primary_replication_group: ::std::option::Option<bool>,
 }
 impl DeleteGlobalReplicationGroupInput {
@@ -13,7 +13,7 @@ impl DeleteGlobalReplicationGroupInput {
     pub fn global_replication_group_id(&self) -> ::std::option::Option<&str> {
         self.global_replication_group_id.as_deref()
     }
-    /// <p>The primary replication group is retained as a standalone replication group. </p>
+    /// <p>The primary replication group is retained as a standalone replication group.</p>
     pub fn retain_primary_replication_group(&self) -> ::std::option::Option<bool> {
         self.retain_primary_replication_group
     }
@@ -48,18 +48,18 @@ impl DeleteGlobalReplicationGroupInputBuilder {
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_replication_group_id
     }
-    /// <p>The primary replication group is retained as a standalone replication group. </p>
+    /// <p>The primary replication group is retained as a standalone replication group.</p>
     /// This field is required.
     pub fn retain_primary_replication_group(mut self, input: bool) -> Self {
         self.retain_primary_replication_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The primary replication group is retained as a standalone replication group. </p>
+    /// <p>The primary replication group is retained as a standalone replication group.</p>
     pub fn set_retain_primary_replication_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain_primary_replication_group = input;
         self
     }
-    /// <p>The primary replication group is retained as a standalone replication group. </p>
+    /// <p>The primary replication group is retained as a standalone replication group.</p>
     pub fn get_retain_primary_replication_group(&self) -> &::std::option::Option<bool> {
         &self.retain_primary_replication_group
     }

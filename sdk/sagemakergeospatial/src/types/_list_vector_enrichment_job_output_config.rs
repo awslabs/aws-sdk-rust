@@ -14,7 +14,7 @@ pub struct ListVectorEnrichmentJobOutputConfig {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The duration of the session, in seconds.</p>
     pub duration_in_seconds: i32,
-    /// <p>The status of the Vector Enrichment jobs list. </p>
+    /// <p>The status of the Vector Enrichment jobs list.</p>
     pub status: crate::types::VectorEnrichmentJobStatus,
     /// <p>Each tag consists of a key and a value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -42,7 +42,7 @@ impl ListVectorEnrichmentJobOutputConfig {
     pub fn duration_in_seconds(&self) -> i32 {
         self.duration_in_seconds
     }
-    /// <p>The status of the Vector Enrichment jobs list. </p>
+    /// <p>The status of the Vector Enrichment jobs list.</p>
     pub fn status(&self) -> &crate::types::VectorEnrichmentJobStatus {
         &self.status
     }
@@ -146,18 +146,18 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_in_seconds
     }
-    /// <p>The status of the Vector Enrichment jobs list. </p>
+    /// <p>The status of the Vector Enrichment jobs list.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::VectorEnrichmentJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the Vector Enrichment jobs list. </p>
+    /// <p>The status of the Vector Enrichment jobs list.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the Vector Enrichment jobs list. </p>
+    /// <p>The status of the Vector Enrichment jobs list.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobStatus> {
         &self.status
     }

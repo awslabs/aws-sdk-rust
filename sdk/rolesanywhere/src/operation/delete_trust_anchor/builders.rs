@@ -23,7 +23,7 @@ impl DeleteTrustAnchorInputBuilder {
 /// Fluent builder constructing a request to `DeleteTrustAnchor`.
 ///
 /// <p>Deletes a trust anchor.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteTrustAnchor</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:DeleteTrustAnchor</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrustAnchorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

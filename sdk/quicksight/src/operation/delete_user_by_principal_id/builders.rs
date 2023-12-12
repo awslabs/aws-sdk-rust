@@ -22,7 +22,7 @@ impl DeleteUserByPrincipalIdInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteUserByPrincipalId`.
 ///
-/// <p>Deletes a user identified by its principal ID. </p>
+/// <p>Deletes a user identified by its principal ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserByPrincipalIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

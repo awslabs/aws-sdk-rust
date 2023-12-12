@@ -28,9 +28,9 @@ pub struct ElasticsearchDomainConfig {
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptionsStatus>,
     /// <p>Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.</p>
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
-    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
-    /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain.</p>
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
     /// <p>Specifies change details of the domain configuration change.</p>
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
@@ -84,11 +84,11 @@ impl ElasticsearchDomainConfig {
     pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptionsStatus> {
         self.domain_endpoint_options.as_ref()
     }
-    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.</p>
     pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsStatus> {
         self.advanced_security_options.as_ref()
     }
-    /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain.</p>
     pub fn auto_tune_options(&self) -> ::std::option::Option<&crate::types::AutoTuneOptionsStatus> {
         self.auto_tune_options.as_ref()
     }
@@ -293,31 +293,31 @@ impl ElasticsearchDomainConfigBuilder {
     pub fn get_domain_endpoint_options(&self) -> &::std::option::Option<crate::types::DomainEndpointOptionsStatus> {
         &self.domain_endpoint_options
     }
-    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.</p>
     pub fn advanced_security_options(mut self, input: crate::types::AdvancedSecurityOptionsStatus) -> Self {
         self.advanced_security_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.</p>
     pub fn set_advanced_security_options(mut self, input: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>) -> Self {
         self.advanced_security_options = input;
         self
     }
-    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.</p>
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsStatus> {
         &self.advanced_security_options
     }
-    /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain.</p>
     pub fn auto_tune_options(mut self, input: crate::types::AutoTuneOptionsStatus) -> Self {
         self.auto_tune_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain.</p>
     pub fn set_auto_tune_options(mut self, input: ::std::option::Option<crate::types::AutoTuneOptionsStatus>) -> Self {
         self.auto_tune_options = input;
         self
     }
-    /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain.</p>
     pub fn get_auto_tune_options(&self) -> &::std::option::Option<crate::types::AutoTuneOptionsStatus> {
         &self.auto_tune_options
     }

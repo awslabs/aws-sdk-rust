@@ -25,17 +25,17 @@ impl ListClosedWorkflowExecutionsInputBuilder {
 /// <p>Returns a list of closed workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
 /// </note>
-/// <p> <b>Access Control</b> </p>
+/// <p><b>Access Control</b></p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
 /// <ul>
-/// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
-/// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
-/// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
+/// <li><p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
+/// <li><p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
+/// <li><p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
 /// <ul>
-/// <li> <p> <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</p> </li>
-/// <li> <p> <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</p> </li>
-/// <li> <p> <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</p> </li>
-/// </ul> </li>
+/// <li><p><code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</p></li>
+/// <li><p><code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</p></li>
+/// <li><p><code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</p></li>
+/// </ul></li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -144,153 +144,153 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
         self.inner.get_domain()
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn start_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
         self.inner = self.inner.start_time_filter(input);
         self
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         self.inner.get_start_time_filter()
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn close_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
         self.inner = self.inner.close_time_filter(input);
         self
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn set_close_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.inner = self.inner.set_close_time_filter(input);
         self
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn get_close_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         self.inner.get_close_time_filter()
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(mut self, input: crate::types::WorkflowExecutionFilter) -> Self {
         self.inner = self.inner.execution_filter(input);
         self
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
         self.inner.get_execution_filter()
     }
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn close_status_filter(mut self, input: crate::types::CloseStatusFilter) -> Self {
         self.inner = self.inner.close_status_filter(input);
         self
     }
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_close_status_filter(mut self, input: ::std::option::Option<crate::types::CloseStatusFilter>) -> Self {
         self.inner = self.inner.set_close_status_filter(input);
         self
     }
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_close_status_filter(&self) -> &::std::option::Option<crate::types::CloseStatusFilter> {
         self.inner.get_close_status_filter()
     }
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(mut self, input: crate::types::WorkflowTypeFilter) -> Self {
         self.inner = self.inner.type_filter(input);
         self
     }
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.inner = self.inner.set_type_filter(input);
         self
     }
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_type_filter(&self) -> &::std::option::Option<crate::types::WorkflowTypeFilter> {
         self.inner.get_type_filter()
     }
     /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(mut self, input: crate::types::TagFilter) -> Self {
         self.inner = self.inner.tag_filter(input);
         self
     }
     /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
         self.inner = self.inner.set_tag_filter(input);
         self
     }
     /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
         self.inner.get_tag_filter()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_page_token()
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
     pub fn maximum_page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_page_size(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
     pub fn set_maximum_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_page_size(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
     pub fn get_maximum_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_maximum_page_size()
     }

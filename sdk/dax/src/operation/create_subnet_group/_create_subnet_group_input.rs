@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubnetGroupInput {
-    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
+    /// <p>A name for the subnet group. This value is stored as a lowercase string.</p>
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the subnet group</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct CreateSubnetGroupInput {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateSubnetGroupInput {
-    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
+    /// <p>A name for the subnet group. This value is stored as a lowercase string.</p>
     pub fn subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.subnet_group_name.as_deref()
     }
@@ -42,18 +42,18 @@ pub struct CreateSubnetGroupInputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateSubnetGroupInputBuilder {
-    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
+    /// <p>A name for the subnet group. This value is stored as a lowercase string.</p>
     /// This field is required.
     pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
+    /// <p>A name for the subnet group. This value is stored as a lowercase string.</p>
     pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_name = input;
         self
     }
-    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
+    /// <p>A name for the subnet group. This value is stored as a lowercase string.</p>
     pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_group_name
     }

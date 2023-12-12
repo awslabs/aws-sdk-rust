@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchedFace {
-    /// <p> Unique identifier assigned to the face.</p>
+    /// <p>Unique identifier assigned to the face.</p>
     pub face_id: ::std::option::Option<::std::string::String>,
 }
 impl SearchedFace {
-    /// <p> Unique identifier assigned to the face.</p>
+    /// <p>Unique identifier assigned to the face.</p>
     pub fn face_id(&self) -> ::std::option::Option<&str> {
         self.face_id.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct SearchedFaceBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
 }
 impl SearchedFaceBuilder {
-    /// <p> Unique identifier assigned to the face.</p>
+    /// <p>Unique identifier assigned to the face.</p>
     pub fn face_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Unique identifier assigned to the face.</p>
+    /// <p>Unique identifier assigned to the face.</p>
     pub fn set_face_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.face_id = input;
         self
     }
-    /// <p> Unique identifier assigned to the face.</p>
+    /// <p>Unique identifier assigned to the face.</p>
     pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.face_id
     }

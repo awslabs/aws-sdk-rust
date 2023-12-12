@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutDetector`](crate::operation::put_detector::builders::PutDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::set_detector_id):<br>required: **true**<br><p>The detector ID. </p><br>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::set_detector_id):<br>required: **true**<br><p>The detector ID.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::set_description):<br>required: **false**<br><p>The description of the detector.</p><br>
     ///   - [`event_type_name(impl Into<String>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::event_type_name) / [`set_event_type_name(Option<String>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::set_event_type_name):<br>required: **true**<br><p>The name of the event type.</p><br>
     ///   - [`tags(Tag)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::set_tags):<br>required: **false**<br><p>A collection of key and value pairs.</p><br>

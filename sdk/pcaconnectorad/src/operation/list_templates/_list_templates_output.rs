@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplatesOutput {
-    /// <p>Custom configuration templates used when issuing a certificate. </p>
+    /// <p>Custom configuration templates used when issuing a certificate.</p>
     pub templates: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTemplatesOutput {
-    /// <p>Custom configuration templates used when issuing a certificate. </p>
+    /// <p>Custom configuration templates used when issuing a certificate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.templates.is_none()`.
     pub fn templates(&self) -> &[crate::types::TemplateSummary] {
@@ -46,19 +46,19 @@ impl ListTemplatesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_templates`](Self::set_templates).
     ///
-    /// <p>Custom configuration templates used when issuing a certificate. </p>
+    /// <p>Custom configuration templates used when issuing a certificate.</p>
     pub fn templates(mut self, input: crate::types::TemplateSummary) -> Self {
         let mut v = self.templates.unwrap_or_default();
         v.push(input);
         self.templates = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Custom configuration templates used when issuing a certificate. </p>
+    /// <p>Custom configuration templates used when issuing a certificate.</p>
     pub fn set_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
         self.templates = input;
         self
     }
-    /// <p>Custom configuration templates used when issuing a certificate. </p>
+    /// <p>Custom configuration templates used when issuing a certificate.</p>
     pub fn get_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
         &self.templates
     }

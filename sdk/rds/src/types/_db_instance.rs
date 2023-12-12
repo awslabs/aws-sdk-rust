@@ -12,7 +12,7 @@ pub struct DbInstance {
     /// <p>The database engine used for this DB instance.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this database.</p>
-    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i></p>
     pub db_instance_status: ::std::option::Option<::std::string::String>,
     /// <p>The time when a stopped DB instance is restarted automatically.</p>
     pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -131,14 +131,14 @@ pub struct DbInstance {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i></p>
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
@@ -150,7 +150,7 @@ pub struct DbInstance {
     pub listener_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     pub max_allocated_storage: ::std::option::Option<i32>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The list of replicated automated backups associated with the DB instance.</p>
     pub db_instance_automated_backups_replications: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
@@ -177,9 +177,9 @@ pub struct DbInstance {
     pub resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
@@ -187,8 +187,8 @@ pub struct DbInstance {
     pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the policy state of the activity stream.</p>
     pub activity_stream_policy_status: ::std::option::Option<crate::types::ActivityStreamPolicyStatus>,
@@ -198,7 +198,7 @@ pub struct DbInstance {
     /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is only valid for RDS Custom DB instances.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     pub master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
     /// <p>The details of the DB instance's server certificate.</p>
     pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
@@ -227,7 +227,7 @@ impl DbInstance {
         self.engine.as_deref()
     }
     /// <p>The current state of this database.</p>
-    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn db_instance_status(&self) -> ::std::option::Option<&str> {
         self.db_instance_status.as_deref()
     }
@@ -464,16 +464,16 @@ impl DbInstance {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
         self.performance_insights_retention_period
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
     pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
@@ -503,7 +503,7 @@ impl DbInstance {
     pub fn max_allocated_storage(&self) -> ::std::option::Option<i32> {
         self.max_allocated_storage
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
     pub fn tag_list(&self) -> &[crate::types::Tag] {
@@ -556,9 +556,9 @@ impl DbInstance {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
@@ -570,8 +570,8 @@ impl DbInstance {
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
@@ -589,7 +589,7 @@ impl DbInstance {
         self.db_system_id.as_deref()
     }
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn master_user_secret(&self) -> ::std::option::Option<&crate::types::MasterUserSecret> {
         self.master_user_secret.as_ref()
     }
@@ -760,19 +760,19 @@ impl DbInstanceBuilder {
         &self.engine
     }
     /// <p>The current state of this database.</p>
-    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn db_instance_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current state of this database.</p>
-    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_db_instance_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_status = input;
         self
     }
     /// <p>The current state of this database.</p>
-    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_db_instance_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_status
     }
@@ -1569,9 +1569,9 @@ impl DbInstanceBuilder {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
@@ -1581,9 +1581,9 @@ impl DbInstanceBuilder {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -1593,9 +1593,9 @@ impl DbInstanceBuilder {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
@@ -1606,7 +1606,7 @@ impl DbInstanceBuilder {
     /// To override the contents of this collection use [`set_enabled_cloudwatch_logs_exports`](Self::set_enabled_cloudwatch_logs_exports).
     ///
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn enabled_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
@@ -1614,13 +1614,13 @@ impl DbInstanceBuilder {
         self
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_enabled_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enabled_cloudwatch_logs_exports = input;
         self
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log files</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_enabled_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enabled_cloudwatch_logs_exports
     }
@@ -1710,19 +1710,19 @@ impl DbInstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
         self.tag_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
@@ -1888,9 +1888,9 @@ impl DbInstanceBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1899,9 +1899,9 @@ impl DbInstanceBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1910,9 +1910,9 @@ impl DbInstanceBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
@@ -1934,24 +1934,24 @@ impl DbInstanceBuilder {
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
         self
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
@@ -2001,19 +2001,19 @@ impl DbInstanceBuilder {
         &self.db_system_id
     }
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn master_user_secret(mut self, input: crate::types::MasterUserSecret) -> Self {
         self.master_user_secret = ::std::option::Option::Some(input);
         self
     }
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_master_user_secret(mut self, input: ::std::option::Option<crate::types::MasterUserSecret>) -> Self {
         self.master_user_secret = input;
         self
     }
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_master_user_secret(&self) -> &::std::option::Option<crate::types::MasterUserSecret> {
         &self.master_user_secret
     }

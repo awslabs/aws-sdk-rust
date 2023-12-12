@@ -25,8 +25,8 @@ impl UpdateConnectionInputBuilder {
 /// <p>Updates the Direct Connect dedicated connection configuration.</p>
 /// <p>You can update the following parameters for a connection:</p>
 /// <ul>
-/// <li> <p>The connection name</p> </li>
-/// <li> <p>The connection's MAC Security (MACsec) encryption mode.</p> </li>
+/// <li><p>The connection name</p></li>
+/// <li><p>The connection's MAC Security (MACsec) encryption mode.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectionFluentBuilder {

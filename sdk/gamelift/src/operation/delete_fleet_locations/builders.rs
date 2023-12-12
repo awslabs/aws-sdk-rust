@@ -22,11 +22,11 @@ impl DeleteFleetLocationsInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFleetLocations`.
 ///
-/// <p>Removes locations from a multi-location fleet. When deleting a location, all game server process and all instances that are still active in the location are shut down. </p>
-/// <p>To delete fleet locations, identify the fleet ID and provide a list of the locations to be deleted. </p>
+/// <p>Removes locations from a multi-location fleet. When deleting a location, all game server process and all instances that are still active in the location are shut down.</p>
+/// <p>To delete fleet locations, identify the fleet ID and provide a list of the locations to be deleted.</p>
 /// <p>If successful, GameLift sets the location status to <code>DELETING</code>, and begins to shut down existing server processes and terminate instances in each location being deleted. When completed, the location status changes to <code>TERMINATED</code>.</p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFleetLocationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

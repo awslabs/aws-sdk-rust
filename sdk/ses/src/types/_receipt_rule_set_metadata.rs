@@ -8,9 +8,9 @@
 pub struct ReceiptRuleSetMetadata {
     /// <p>The name of the receipt rule set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the receipt rule set was created.</p>
@@ -19,9 +19,9 @@ pub struct ReceiptRuleSetMetadata {
 impl ReceiptRuleSetMetadata {
     /// <p>The name of the receipt rule set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -48,9 +48,9 @@ pub struct ReceiptRuleSetMetadataBuilder {
 impl ReceiptRuleSetMetadataBuilder {
     /// <p>The name of the receipt rule set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -58,9 +58,9 @@ impl ReceiptRuleSetMetadataBuilder {
     }
     /// <p>The name of the receipt rule set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -68,9 +68,9 @@ impl ReceiptRuleSetMetadataBuilder {
     }
     /// <p>The name of the receipt rule set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

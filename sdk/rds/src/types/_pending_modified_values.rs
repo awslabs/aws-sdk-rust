@@ -19,7 +19,7 @@ pub struct PendingModifiedValues {
     /// <p>The database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Provisioned IOPS value for the DB instance.</p>
     pub iops: ::std::option::Option<i32>,
@@ -48,7 +48,7 @@ pub struct PendingModifiedValues {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub multi_tenant: ::std::option::Option<bool>,
 }
 impl PendingModifiedValues {
@@ -81,7 +81,7 @@ impl PendingModifiedValues {
         self.engine_version.as_deref()
     }
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
@@ -140,7 +140,7 @@ impl PendingModifiedValues {
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
     }
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
     }
@@ -279,19 +279,19 @@ impl PendingModifiedValuesBuilder {
         &self.engine_version
     }
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
     }
@@ -486,17 +486,17 @@ impl PendingModifiedValuesBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub fn multi_tenant(mut self, input: bool) -> Self {
         self.multi_tenant = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_tenant = input;
         self
     }
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
     }

@@ -14,7 +14,7 @@ pub struct Voice {
     pub language_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language.</p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     pub additional_language_codes: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     /// <p>Specifies which engines (<code>standard</code>, <code>neural</code> or <code>long-form</code>) are supported by a given voice.</p>
@@ -41,7 +41,7 @@ impl Voice {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language.</p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_language_codes.is_none()`.
@@ -149,7 +149,7 @@ impl VoiceBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_language_codes`](Self::set_additional_language_codes).
     ///
-    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language.</p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     pub fn additional_language_codes(mut self, input: crate::types::LanguageCode) -> Self {
         let mut v = self.additional_language_codes.unwrap_or_default();
@@ -157,13 +157,13 @@ impl VoiceBuilder {
         self.additional_language_codes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language.</p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     pub fn set_additional_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>) -> Self {
         self.additional_language_codes = input;
         self
     }
-    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language.</p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     pub fn get_additional_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
         &self.additional_language_codes

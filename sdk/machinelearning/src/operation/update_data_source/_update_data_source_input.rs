@@ -5,7 +5,7 @@
 pub struct UpdateDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
     pub data_source_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDataSourceInput {
@@ -13,7 +13,7 @@ impl UpdateDataSourceInput {
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
     pub fn data_source_name(&self) -> ::std::option::Option<&str> {
         self.data_source_name.as_deref()
     }
@@ -48,18 +48,18 @@ impl UpdateDataSourceInputBuilder {
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
-    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
     /// This field is required.
     pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
     pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_name = input;
         self
     }
-    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
     pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_name
     }

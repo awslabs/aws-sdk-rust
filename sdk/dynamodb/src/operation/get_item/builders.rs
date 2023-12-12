@@ -23,7 +23,7 @@ impl GetItemInputBuilder {
 /// Fluent builder constructing a request to `GetItem`.
 ///
 /// <p>The <code>GetItem</code> operation returns a set of attributes for the item with the given primary key. If there is no matching item, <code>GetItem</code> does not return any data and there will be no <code>Item</code> element in the response.</p>
-/// <p> <code>GetItem</code> provides an eventually consistent read by default. If your application requires a strongly consistent read, set <code>ConsistentRead</code> to <code>true</code>. Although a strongly consistent read might take more time than an eventually consistent read, it always returns the last updated value.</p>
+/// <p><code>GetItem</code> provides an eventually consistent read by default. If your application requires a strongly consistent read, set <code>ConsistentRead</code> to <code>true</code>. Although a strongly consistent read might take more time than an eventually consistent read, it always returns the last updated value.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -169,9 +169,9 @@ impl GetItemFluentBuilder {
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
-    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
-    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
+    /// <li><p><code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p></li>
+    /// <li><p><code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p></li>
+    /// <li><p><code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p></li>
     /// </ul>
     pub fn return_consumed_capacity(mut self, input: crate::types::ReturnConsumedCapacity) -> Self {
         self.inner = self.inner.return_consumed_capacity(input);
@@ -179,9 +179,9 @@ impl GetItemFluentBuilder {
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
-    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
-    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
+    /// <li><p><code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p></li>
+    /// <li><p><code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p></li>
+    /// <li><p><code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p></li>
     /// </ul>
     pub fn set_return_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
@@ -189,9 +189,9 @@ impl GetItemFluentBuilder {
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
-    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
-    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
+    /// <li><p><code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p></li>
+    /// <li><p><code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p></li>
+    /// <li><p><code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p></li>
     /// </ul>
     pub fn get_return_consumed_capacity(&self) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
         self.inner.get_return_consumed_capacity()
@@ -222,21 +222,21 @@ impl GetItemFluentBuilder {
     ///
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
-    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
-    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
+    /// <li><p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p></li>
+    /// <li><p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p></li>
+    /// <li><p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p></li>
     /// </ul>
     /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li> <p> <code>Percentile</code> </p> </li>
+    /// <li><p><code>Percentile</code></p></li>
     /// </ul>
     /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
+    /// <li><p><code>{"#P":"Percentile"}</code></p></li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// <li><p><code>#P = :val</code></p></li>
     /// </ul> <note>
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
@@ -251,21 +251,21 @@ impl GetItemFluentBuilder {
     }
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
-    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
-    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
+    /// <li><p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p></li>
+    /// <li><p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p></li>
+    /// <li><p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p></li>
     /// </ul>
     /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li> <p> <code>Percentile</code> </p> </li>
+    /// <li><p><code>Percentile</code></p></li>
     /// </ul>
     /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
+    /// <li><p><code>{"#P":"Percentile"}</code></p></li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// <li><p><code>#P = :val</code></p></li>
     /// </ul> <note>
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
@@ -279,21 +279,21 @@ impl GetItemFluentBuilder {
     }
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
-    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
-    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
+    /// <li><p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p></li>
+    /// <li><p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p></li>
+    /// <li><p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p></li>
     /// </ul>
     /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li> <p> <code>Percentile</code> </p> </li>
+    /// <li><p><code>Percentile</code></p></li>
     /// </ul>
     /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
+    /// <li><p><code>{"#P":"Percentile"}</code></p></li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// <li><p><code>#P = :val</code></p></li>
     /// </ul> <note>
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>

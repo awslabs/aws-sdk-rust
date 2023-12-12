@@ -5,9 +5,9 @@
 pub struct GetCaseInput {
     /// <p>A unique identifier of the case.</p>
     pub case_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of unique field identifiers. </p>
+    /// <p>A list of unique field identifiers.</p>
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,11 +17,11 @@ impl GetCaseInput {
     pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>A list of unique field identifiers. </p>
+    /// <p>A list of unique field identifiers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
     pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
@@ -64,18 +64,18 @@ impl GetCaseInputBuilder {
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
@@ -83,19 +83,19 @@ impl GetCaseInputBuilder {
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
-    /// <p>A list of unique field identifiers. </p>
+    /// <p>A list of unique field identifiers.</p>
     pub fn fields(mut self, input: crate::types::FieldIdentifier) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input);
         self.fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of unique field identifiers. </p>
+    /// <p>A list of unique field identifiers.</p>
     pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
         self.fields = input;
         self
     }
-    /// <p>A list of unique field identifiers. </p>
+    /// <p>A list of unique field identifiers.</p>
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
         &self.fields
     }

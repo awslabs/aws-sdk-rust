@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum KeyUsageProperty {
-    /// <p>You can specify key usage for encryption, key agreement, and signature. You can use property flags or property type but not both. </p>
+    /// <p>You can specify key usage for encryption, key agreement, and signature. You can use property flags or property type but not both.</p>
     PropertyFlags(crate::types::KeyUsagePropertyFlags),
-    /// <p>You can specify all key usages using property type ALL. You can use property type or property flags but not both. </p>
+    /// <p>You can specify all key usages using property type ALL. You can use property type or property flags but not both.</p>
     PropertyType(crate::types::KeyUsagePropertyType),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

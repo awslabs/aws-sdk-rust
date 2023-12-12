@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchOutputConfig {
     /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
-    /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
+    /// <p><code>aws/ssm/<i>SystemsManagerDocumentName</i> </code></p>
     pub cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
     pub cloud_watch_output_enabled: bool,
 }
 impl CloudWatchOutputConfig {
     /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
-    /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
+    /// <p><code>aws/ssm/<i>SystemsManagerDocumentName</i> </code></p>
     pub fn cloud_watch_log_group_name(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_log_group_name.as_deref()
     }
@@ -37,19 +37,19 @@ pub struct CloudWatchOutputConfigBuilder {
 }
 impl CloudWatchOutputConfigBuilder {
     /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
-    /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
+    /// <p><code>aws/ssm/<i>SystemsManagerDocumentName</i> </code></p>
     pub fn cloud_watch_log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
-    /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
+    /// <p><code>aws/ssm/<i>SystemsManagerDocumentName</i> </code></p>
     pub fn set_cloud_watch_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_name = input;
         self
     }
     /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
-    /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
+    /// <p><code>aws/ssm/<i>SystemsManagerDocumentName</i> </code></p>
     pub fn get_cloud_watch_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_log_group_name
     }

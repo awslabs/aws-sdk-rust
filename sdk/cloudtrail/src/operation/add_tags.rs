@@ -244,9 +244,9 @@ pub enum AddTagsError {
     /// <p>This exception is thrown when CloudTrail cannot find the specified channel.</p>
     ChannelNotFoundException(crate::types::error::ChannelNotFoundException),
     /// <p>This exception is thrown when an operation is called with an ARN that is not valid.</p>
-    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
-    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
+    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -260,14 +260,14 @@ pub enum AddTagsError {
     InvalidTagParameterException(crate::types::error::InvalidTagParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
-    /// <li> <p>Be between 3 and 128 characters</p> </li>
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li><p>Be between 3 and 128 characters</p></li>
+    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     InvalidTrailNameException(crate::types::error::InvalidTrailNameException),
-    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::types::error::NotOrganizationMasterAccountException),

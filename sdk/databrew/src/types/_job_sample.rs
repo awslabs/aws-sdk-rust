@@ -6,8 +6,8 @@
 pub struct JobSample {
     /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
     /// <ul>
-    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+    /// <li><p>FULL_DATASET - The profile job is run on the entire dataset.</p></li>
+    /// <li><p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p></li>
     /// </ul>
     pub mode: ::std::option::Option<crate::types::SampleMode>,
     /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
@@ -17,8 +17,8 @@ pub struct JobSample {
 impl JobSample {
     /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
     /// <ul>
-    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+    /// <li><p>FULL_DATASET - The profile job is run on the entire dataset.</p></li>
+    /// <li><p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p></li>
     /// </ul>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::SampleMode> {
         self.mode.as_ref()
@@ -46,8 +46,8 @@ pub struct JobSampleBuilder {
 impl JobSampleBuilder {
     /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
     /// <ul>
-    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+    /// <li><p>FULL_DATASET - The profile job is run on the entire dataset.</p></li>
+    /// <li><p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p></li>
     /// </ul>
     pub fn mode(mut self, input: crate::types::SampleMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -55,8 +55,8 @@ impl JobSampleBuilder {
     }
     /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
     /// <ul>
-    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+    /// <li><p>FULL_DATASET - The profile job is run on the entire dataset.</p></li>
+    /// <li><p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::SampleMode>) -> Self {
         self.mode = input;
@@ -64,8 +64,8 @@ impl JobSampleBuilder {
     }
     /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
     /// <ul>
-    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+    /// <li><p>FULL_DATASET - The profile job is run on the entire dataset.</p></li>
+    /// <li><p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p></li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::SampleMode> {
         &self.mode

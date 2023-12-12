@@ -114,31 +114,31 @@ impl ListElasticsearchVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator {
         crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
+    /// <p>Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
+    /// <p>Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
+    /// <p>Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
+    /// <p>Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
+    /// <p>Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
+    /// <p>Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

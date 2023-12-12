@@ -8,7 +8,7 @@ pub struct DeviceEvent {
     pub r#type: ::std::option::Option<crate::types::DeviceEventType>,
     /// <p>The value of the event.</p>
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p>The time (in epoch) when the event occurred. </p>
+    /// <p>The time (in epoch) when the event occurred.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceEvent {
@@ -20,7 +20,7 @@ impl DeviceEvent {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The time (in epoch) when the event occurred. </p>
+    /// <p>The time (in epoch) when the event occurred.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
@@ -69,17 +69,17 @@ impl DeviceEventBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p>The time (in epoch) when the event occurred. </p>
+    /// <p>The time (in epoch) when the event occurred.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time (in epoch) when the event occurred. </p>
+    /// <p>The time (in epoch) when the event occurred.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p>The time (in epoch) when the event occurred. </p>
+    /// <p>The time (in epoch) when the event occurred.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }

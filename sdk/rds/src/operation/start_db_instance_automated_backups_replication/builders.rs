@@ -24,7 +24,7 @@ impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
 ///
 /// <p>Enables replication of automated backups to a different Amazon Web Services Region.</p>
 /// <p>This command doesn't apply to RDS Custom.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i> </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

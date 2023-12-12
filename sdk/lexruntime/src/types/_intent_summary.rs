@@ -6,31 +6,31 @@
 pub struct IntentSummary {
     /// <p>The name of the intent.</p>
     pub intent_name: ::std::option::Option<::std::string::String>,
-    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.</p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
     pub checkpoint_label: ::std::option::Option<::std::string::String>,
-    /// <p>Map of the slots that have been gathered and their values. </p>
+    /// <p>Map of the slots that have been gathered and their values.</p>
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
-    /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
-    /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
+    /// <li><p><code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p></li>
+    /// <li><p><code>Denied</code> - The user has responded "No" to the confirmation prompt.</p></li>
+    /// <li><p><code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p></li>
     /// </ul>
     pub confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+    /// <li><p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <li><p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <li><p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+    /// <li><p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     pub dialog_action_type: crate::types::DialogActionType,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
-    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
+    /// <li><p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+    /// <li><p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
     /// </ul>
     pub fulfillment_state: ::std::option::Option<crate::types::FulfillmentState>,
     /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
@@ -41,39 +41,39 @@ impl IntentSummary {
     pub fn intent_name(&self) -> ::std::option::Option<&str> {
         self.intent_name.as_deref()
     }
-    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.</p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
     pub fn checkpoint_label(&self) -> ::std::option::Option<&str> {
         self.checkpoint_label.as_deref()
     }
-    /// <p>Map of the slots that have been gathered and their values. </p>
+    /// <p>Map of the slots that have been gathered and their values.</p>
     pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.slots.as_ref()
     }
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
-    /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
-    /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
+    /// <li><p><code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p></li>
+    /// <li><p><code>Denied</code> - The user has responded "No" to the confirmation prompt.</p></li>
+    /// <li><p><code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p></li>
     /// </ul>
     pub fn confirmation_status(&self) -> ::std::option::Option<&crate::types::ConfirmationStatus> {
         self.confirmation_status.as_ref()
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+    /// <li><p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <li><p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <li><p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+    /// <li><p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     pub fn dialog_action_type(&self) -> &crate::types::DialogActionType {
         &self.dialog_action_type
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
-    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
+    /// <li><p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+    /// <li><p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
     /// </ul>
     pub fn fulfillment_state(&self) -> ::std::option::Option<&crate::types::FulfillmentState> {
         self.fulfillment_state.as_ref()
@@ -130,19 +130,19 @@ impl IntentSummaryBuilder {
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.intent_name
     }
-    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.</p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
     pub fn checkpoint_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checkpoint_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.</p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
     pub fn set_checkpoint_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checkpoint_label = input;
         self
     }
-    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.</p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
     pub fn get_checkpoint_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.checkpoint_label
@@ -151,27 +151,27 @@ impl IntentSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
-    /// <p>Map of the slots that have been gathered and their values. </p>
+    /// <p>Map of the slots that have been gathered and their values.</p>
     pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.slots = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Map of the slots that have been gathered and their values. </p>
+    /// <p>Map of the slots that have been gathered and their values.</p>
     pub fn set_slots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.slots = input;
         self
     }
-    /// <p>Map of the slots that have been gathered and their values. </p>
+    /// <p>Map of the slots that have been gathered and their values.</p>
     pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.slots
     }
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
-    /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
-    /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
+    /// <li><p><code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p></li>
+    /// <li><p><code>Denied</code> - The user has responded "No" to the confirmation prompt.</p></li>
+    /// <li><p><code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p></li>
     /// </ul>
     pub fn confirmation_status(mut self, input: crate::types::ConfirmationStatus) -> Self {
         self.confirmation_status = ::std::option::Option::Some(input);
@@ -179,9 +179,9 @@ impl IntentSummaryBuilder {
     }
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
-    /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
-    /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
+    /// <li><p><code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p></li>
+    /// <li><p><code>Denied</code> - The user has responded "No" to the confirmation prompt.</p></li>
+    /// <li><p><code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p></li>
     /// </ul>
     pub fn set_confirmation_status(mut self, input: ::std::option::Option<crate::types::ConfirmationStatus>) -> Self {
         self.confirmation_status = input;
@@ -189,19 +189,19 @@ impl IntentSummaryBuilder {
     }
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
-    /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
-    /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
+    /// <li><p><code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p></li>
+    /// <li><p><code>Denied</code> - The user has responded "No" to the confirmation prompt.</p></li>
+    /// <li><p><code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p></li>
     /// </ul>
     pub fn get_confirmation_status(&self) -> &::std::option::Option<crate::types::ConfirmationStatus> {
         &self.confirmation_status
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+    /// <li><p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <li><p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <li><p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+    /// <li><p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     /// This field is required.
     pub fn dialog_action_type(mut self, input: crate::types::DialogActionType) -> Self {
@@ -210,10 +210,10 @@ impl IntentSummaryBuilder {
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+    /// <li><p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <li><p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <li><p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+    /// <li><p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     pub fn set_dialog_action_type(mut self, input: ::std::option::Option<crate::types::DialogActionType>) -> Self {
         self.dialog_action_type = input;
@@ -221,19 +221,19 @@ impl IntentSummaryBuilder {
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+    /// <li><p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <li><p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <li><p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+    /// <li><p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     pub fn get_dialog_action_type(&self) -> &::std::option::Option<crate::types::DialogActionType> {
         &self.dialog_action_type
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
-    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
+    /// <li><p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+    /// <li><p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
     /// </ul>
     pub fn fulfillment_state(mut self, input: crate::types::FulfillmentState) -> Self {
         self.fulfillment_state = ::std::option::Option::Some(input);
@@ -241,9 +241,9 @@ impl IntentSummaryBuilder {
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
-    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
+    /// <li><p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+    /// <li><p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
     /// </ul>
     pub fn set_fulfillment_state(mut self, input: ::std::option::Option<crate::types::FulfillmentState>) -> Self {
         self.fulfillment_state = input;
@@ -251,9 +251,9 @@ impl IntentSummaryBuilder {
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
-    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
+    /// <li><p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+    /// <li><p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
     /// </ul>
     pub fn get_fulfillment_state(&self) -> &::std::option::Option<crate::types::FulfillmentState> {
         &self.fulfillment_state

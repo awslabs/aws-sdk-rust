@@ -118,7 +118,7 @@ impl ListRestoreJobSummariesFluentBuilder {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
@@ -126,7 +126,7 @@ impl ListRestoreJobSummariesFluentBuilder {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
@@ -134,33 +134,33 @@ impl ListRestoreJobSummariesFluentBuilder {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub fn state(mut self, input: crate::types::RestoreJobState) -> Self {
         self.inner = self.inner.state(input);
         self
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RestoreJobState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RestoreJobState> {
         self.inner.get_state()
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
@@ -168,7 +168,7 @@ impl ListRestoreJobSummariesFluentBuilder {
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
@@ -176,7 +176,7 @@ impl ListRestoreJobSummariesFluentBuilder {
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
@@ -184,9 +184,9 @@ impl ListRestoreJobSummariesFluentBuilder {
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <p>Acceptable values include</p>
     /// <ul>
-    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
-    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
-    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
+    /// <li><p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <li><p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <li><p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn aggregation_period(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.inner = self.inner.aggregation_period(input);
@@ -195,9 +195,9 @@ impl ListRestoreJobSummariesFluentBuilder {
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <p>Acceptable values include</p>
     /// <ul>
-    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
-    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
-    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
+    /// <li><p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <li><p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <li><p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.inner = self.inner.set_aggregation_period(input);
@@ -206,9 +206,9 @@ impl ListRestoreJobSummariesFluentBuilder {
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <p>Acceptable values include</p>
     /// <ul>
-    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
-    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
-    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
+    /// <li><p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <li><p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <li><p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         self.inner.get_aggregation_period()

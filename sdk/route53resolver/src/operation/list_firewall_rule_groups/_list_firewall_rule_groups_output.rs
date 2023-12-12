@@ -6,7 +6,7 @@ pub struct ListFirewallRuleGroupsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of your firewall rule groups.</p>
-    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
+    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
     pub firewall_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListFirewallRuleGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of your firewall rule groups.</p>
-    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
+    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_rule_groups.is_none()`.
     pub fn firewall_rule_groups(&self) -> &[crate::types::FirewallRuleGroupMetadata] {
@@ -63,7 +63,7 @@ impl ListFirewallRuleGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_firewall_rule_groups`](Self::set_firewall_rule_groups).
     ///
     /// <p>A list of your firewall rule groups.</p>
-    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
+    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
     pub fn firewall_rule_groups(mut self, input: crate::types::FirewallRuleGroupMetadata) -> Self {
         let mut v = self.firewall_rule_groups.unwrap_or_default();
         v.push(input);
@@ -71,13 +71,13 @@ impl ListFirewallRuleGroupsOutputBuilder {
         self
     }
     /// <p>A list of your firewall rule groups.</p>
-    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
+    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
     pub fn set_firewall_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>) -> Self {
         self.firewall_rule_groups = input;
         self
     }
     /// <p>A list of your firewall rule groups.</p>
-    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
+    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
     pub fn get_firewall_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>> {
         &self.firewall_rule_groups
     }

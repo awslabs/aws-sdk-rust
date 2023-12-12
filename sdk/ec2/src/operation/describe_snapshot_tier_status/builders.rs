@@ -120,9 +120,9 @@ impl DescribeSnapshotTierStatusFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
-    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
+    /// <li><p><code>snapshot-id</code> - The snapshot ID.</p></li>
+    /// <li><p><code>volume-id</code> - The ID of the volume the snapshot is for.</p></li>
+    /// <li><p><code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -130,9 +130,9 @@ impl DescribeSnapshotTierStatusFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
-    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
+    /// <li><p><code>snapshot-id</code> - The snapshot ID.</p></li>
+    /// <li><p><code>volume-id</code> - The ID of the volume the snapshot is for.</p></li>
+    /// <li><p><code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -140,9 +140,9 @@ impl DescribeSnapshotTierStatusFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
-    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
+    /// <li><p><code>snapshot-id</code> - The snapshot ID.</p></li>
+    /// <li><p><code>volume-id</code> - The ID of the volume the snapshot is for.</p></li>
+    /// <li><p><code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

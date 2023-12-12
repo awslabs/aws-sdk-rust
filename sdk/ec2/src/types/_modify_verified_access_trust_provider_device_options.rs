@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessTrustProviderDeviceOptions {
-    /// <p> The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens. </p>
+    /// <p>The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.</p>
     pub public_signing_key_url: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVerifiedAccessTrustProviderDeviceOptions {
-    /// <p> The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens. </p>
+    /// <p>The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.</p>
     pub fn public_signing_key_url(&self) -> ::std::option::Option<&str> {
         self.public_signing_key_url.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct ModifyVerifiedAccessTrustProviderDeviceOptionsBuilder {
     pub(crate) public_signing_key_url: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVerifiedAccessTrustProviderDeviceOptionsBuilder {
-    /// <p> The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens. </p>
+    /// <p>The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.</p>
     pub fn public_signing_key_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_signing_key_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens. </p>
+    /// <p>The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.</p>
     pub fn set_public_signing_key_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_signing_key_url = input;
         self
     }
-    /// <p> The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens. </p>
+    /// <p>The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.</p>
     pub fn get_public_signing_key_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_signing_key_url
     }

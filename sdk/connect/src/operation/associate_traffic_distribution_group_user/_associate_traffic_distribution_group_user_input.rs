@@ -5,7 +5,7 @@
 pub struct AssociateTrafficDistributionGroupUserInput {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub traffic_distribution_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the user account. This can be the ID or the ARN of the user. </p>
+    /// <p>The identifier of the user account. This can be the ID or the ARN of the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl AssociateTrafficDistributionGroupUserInput {
     pub fn traffic_distribution_group_id(&self) -> ::std::option::Option<&str> {
         self.traffic_distribution_group_id.as_deref()
     }
-    /// <p>The identifier of the user account. This can be the ID or the ARN of the user. </p>
+    /// <p>The identifier of the user account. This can be the ID or the ARN of the user.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -55,18 +55,18 @@ impl AssociateTrafficDistributionGroupUserInputBuilder {
     pub fn get_traffic_distribution_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_distribution_group_id
     }
-    /// <p>The identifier of the user account. This can be the ID or the ARN of the user. </p>
+    /// <p>The identifier of the user account. This can be the ID or the ARN of the user.</p>
     /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the user account. This can be the ID or the ARN of the user. </p>
+    /// <p>The identifier of the user account. This can be the ID or the ARN of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The identifier of the user account. This can be the ID or the ARN of the user. </p>
+    /// <p>The identifier of the user account. This can be the ID or the ARN of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

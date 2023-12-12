@@ -6,10 +6,10 @@ pub struct UntagResourceInput {
     /// <p>The ID of the resource to remove a tag from.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
-    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
-    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
-    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
+    /// <li><p>Amazon Web Services account – specify the account ID number.</p></li>
+    /// <li><p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
+    /// <li><p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
+    /// <li><p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
     /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of keys for tags to remove from the specified resource.</p>
@@ -19,10 +19,10 @@ impl UntagResourceInput {
     /// <p>The ID of the resource to remove a tag from.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
-    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
-    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
-    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
+    /// <li><p>Amazon Web Services account – specify the account ID number.</p></li>
+    /// <li><p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
+    /// <li><p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
+    /// <li><p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
     /// </ul>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
@@ -52,10 +52,10 @@ impl UntagResourceInputBuilder {
     /// <p>The ID of the resource to remove a tag from.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
-    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
-    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
-    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
+    /// <li><p>Amazon Web Services account – specify the account ID number.</p></li>
+    /// <li><p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
+    /// <li><p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
+    /// <li><p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,10 +65,10 @@ impl UntagResourceInputBuilder {
     /// <p>The ID of the resource to remove a tag from.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
-    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
-    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
-    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
+    /// <li><p>Amazon Web Services account – specify the account ID number.</p></li>
+    /// <li><p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
+    /// <li><p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
+    /// <li><p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
@@ -77,10 +77,10 @@ impl UntagResourceInputBuilder {
     /// <p>The ID of the resource to remove a tag from.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
-    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
-    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
-    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
+    /// <li><p>Amazon Web Services account – specify the account ID number.</p></li>
+    /// <li><p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
+    /// <li><p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
+    /// <li><p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id

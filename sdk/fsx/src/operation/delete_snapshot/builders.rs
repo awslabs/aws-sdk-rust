@@ -22,7 +22,7 @@ impl DeleteSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSnapshot`.
 ///
-/// <p>Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system backup. </p>
+/// <p>Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system backup.</p>
 /// <p>The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears with the lifecycle status of <code>DELETING</code> until the deletion is complete.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSnapshotFluentBuilder {

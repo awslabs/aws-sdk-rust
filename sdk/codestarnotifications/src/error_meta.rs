@@ -9,13 +9,13 @@ pub enum Error {
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
     ConfigurationException(crate::types::error::ConfigurationException),
-    /// <p>The value for the enumeration token used in the request to return the next batch of the results is not valid. </p>
+    /// <p>The value for the enumeration token used in the request to return the next batch of the results is not valid.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your Amazon Web Services account.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
+    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::types::error::ValidationException),

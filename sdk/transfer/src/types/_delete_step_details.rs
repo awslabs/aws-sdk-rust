@@ -8,8 +8,8 @@ pub struct DeleteStepDetails {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <li><p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p></li>
+    /// <li><p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
     pub source_file_location: ::std::option::Option<::std::string::String>,
 }
@@ -20,8 +20,8 @@ impl DeleteStepDetails {
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <li><p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p></li>
+    /// <li><p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
     pub fn source_file_location(&self) -> ::std::option::Option<&str> {
         self.source_file_location.as_deref()
@@ -58,8 +58,8 @@ impl DeleteStepDetailsBuilder {
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <li><p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p></li>
+    /// <li><p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
     pub fn source_file_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_location = ::std::option::Option::Some(input.into());
@@ -67,8 +67,8 @@ impl DeleteStepDetailsBuilder {
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <li><p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p></li>
+    /// <li><p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
     pub fn set_source_file_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_file_location = input;
@@ -76,8 +76,8 @@ impl DeleteStepDetailsBuilder {
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <li><p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p></li>
+    /// <li><p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
     pub fn get_source_file_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_file_location

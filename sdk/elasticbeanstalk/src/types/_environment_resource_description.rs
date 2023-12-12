@@ -6,7 +6,7 @@
 pub struct EnvironmentResourceDescription {
     /// <p>The name of the environment.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
-    /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
+    /// <p>The <code>AutoScalingGroups</code> used by this environment.</p>
     pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     /// <p>The Amazon EC2 instances used by this environment.</p>
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
@@ -16,7 +16,7 @@ pub struct EnvironmentResourceDescription {
     pub launch_templates: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>>,
     /// <p>The LoadBalancers in use by this environment.</p>
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
-    /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
+    /// <p>The <code>AutoScaling</code> triggers in use by this environment.</p>
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     /// <p>The queues used by this environment.</p>
     pub queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
@@ -26,7 +26,7 @@ impl EnvironmentResourceDescription {
     pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
+    /// <p>The <code>AutoScalingGroups</code> used by this environment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
     pub fn auto_scaling_groups(&self) -> &[crate::types::AutoScalingGroup] {
@@ -56,7 +56,7 @@ impl EnvironmentResourceDescription {
     pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
         self.load_balancers.as_deref().unwrap_or_default()
     }
-    /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
+    /// <p>The <code>AutoScaling</code> triggers in use by this environment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
     pub fn triggers(&self) -> &[crate::types::Trigger] {
@@ -108,19 +108,19 @@ impl EnvironmentResourceDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
     ///
-    /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
+    /// <p>The <code>AutoScalingGroups</code> used by this environment.</p>
     pub fn auto_scaling_groups(mut self, input: crate::types::AutoScalingGroup) -> Self {
         let mut v = self.auto_scaling_groups.unwrap_or_default();
         v.push(input);
         self.auto_scaling_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
+    /// <p>The <code>AutoScalingGroups</code> used by this environment.</p>
     pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>) -> Self {
         self.auto_scaling_groups = input;
         self
     }
-    /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
+    /// <p>The <code>AutoScalingGroups</code> used by this environment.</p>
     pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
         &self.auto_scaling_groups
     }
@@ -208,19 +208,19 @@ impl EnvironmentResourceDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
     ///
-    /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
+    /// <p>The <code>AutoScaling</code> triggers in use by this environment.</p>
     pub fn triggers(mut self, input: crate::types::Trigger) -> Self {
         let mut v = self.triggers.unwrap_or_default();
         v.push(input);
         self.triggers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
+    /// <p>The <code>AutoScaling</code> triggers in use by this environment.</p>
     pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>) -> Self {
         self.triggers = input;
         self
     }
-    /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
+    /// <p>The <code>AutoScaling</code> triggers in use by this environment.</p>
     pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
         &self.triggers
     }

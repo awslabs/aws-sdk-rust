@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkOutput {
-    /// <p> The name of the framework. </p>
+    /// <p>The name of the framework.</p>
     pub framework: ::std::option::Option<crate::types::Framework>,
     _request_id: Option<String>,
 }
 impl UpdateAssessmentFrameworkOutput {
-    /// <p> The name of the framework. </p>
+    /// <p>The name of the framework.</p>
     pub fn framework(&self) -> ::std::option::Option<&crate::types::Framework> {
         self.framework.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAssessmentFrameworkOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAssessmentFrameworkOutputBuilder {
-    /// <p> The name of the framework. </p>
+    /// <p>The name of the framework.</p>
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
         self.framework = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The name of the framework. </p>
+    /// <p>The name of the framework.</p>
     pub fn set_framework(mut self, input: ::std::option::Option<crate::types::Framework>) -> Self {
         self.framework = input;
         self
     }
-    /// <p> The name of the framework. </p>
+    /// <p>The name of the framework.</p>
     pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
         &self.framework
     }

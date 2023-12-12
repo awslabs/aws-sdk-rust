@@ -23,7 +23,7 @@ impl DeleteProfileInputBuilder {
 /// Fluent builder constructing a request to `DeleteProfile`.
 ///
 /// <p>Deletes a profile.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteProfile</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:DeleteProfile</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -247,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExecuteStatem
 pub enum ExecuteStatementError {
     /// <p>A condition specified in the operation could not be evaluated.</p>
     ConditionalCheckFailedException(crate::types::error::ConditionalCheckFailedException),
-    /// <p> There was an attempt to insert an item with the same primary key as an item that already exists in the DynamoDB table.</p>
+    /// <p>There was an attempt to insert an item with the same primary key as an item that already exists in the DynamoDB table.</p>
     DuplicateItemException(crate::types::error::DuplicateItemException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),

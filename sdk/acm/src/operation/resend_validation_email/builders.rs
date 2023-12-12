@@ -22,7 +22,7 @@ impl ResendValidationEmailInputBuilder {
 }
 /// Fluent builder constructing a request to `ResendValidationEmail`.
 ///
-/// <p>Resends the email that requests domain ownership validation. The domain owner or an authorized representative must approve the ACM certificate before it can be issued. The certificate can be approved by clicking a link in the mail to navigate to the Amazon certificate approval website and then clicking <b>I Approve</b>. However, the validation email can be blocked by spam filters. Therefore, if you do not receive the original mail, you can request that the mail be resent within 72 hours of requesting the ACM certificate. If more than 72 hours have elapsed since your original request or since your last attempt to resend validation mail, you must request a new certificate. For more information about setting up your contact email addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>. </p>
+/// <p>Resends the email that requests domain ownership validation. The domain owner or an authorized representative must approve the ACM certificate before it can be issued. The certificate can be approved by clicking a link in the mail to navigate to the Amazon certificate approval website and then clicking <b>I Approve</b>. However, the validation email can be blocked by spam filters. Therefore, if you do not receive the original mail, you can request that the mail be resent within 72 hours of requesting the ACM certificate. If more than 72 hours have elapsed since your original request or since your last attempt to resend validation mail, you must request a new certificate. For more information about setting up your contact email addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResendValidationEmailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,20 +108,20 @@ impl ResendValidationEmailFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
-    /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:</p>
+    /// <p><code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
-    /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
-    /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:</p>
+    /// <p><code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
-    /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
-    /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:</p>
+    /// <p><code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_arn()
     }
@@ -141,11 +141,11 @@ impl ResendValidationEmailFluentBuilder {
     }
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
-    /// <li> <p>admin@subdomain.example.com</p> </li>
-    /// <li> <p>administrator@subdomain.example.com</p> </li>
-    /// <li> <p>hostmaster@subdomain.example.com</p> </li>
-    /// <li> <p>postmaster@subdomain.example.com</p> </li>
-    /// <li> <p>webmaster@subdomain.example.com</p> </li>
+    /// <li><p>admin@subdomain.example.com</p></li>
+    /// <li><p>administrator@subdomain.example.com</p></li>
+    /// <li><p>hostmaster@subdomain.example.com</p></li>
+    /// <li><p>postmaster@subdomain.example.com</p></li>
+    /// <li><p>webmaster@subdomain.example.com</p></li>
     /// </ul>
     pub fn validation_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.validation_domain(input.into());
@@ -153,11 +153,11 @@ impl ResendValidationEmailFluentBuilder {
     }
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
-    /// <li> <p>admin@subdomain.example.com</p> </li>
-    /// <li> <p>administrator@subdomain.example.com</p> </li>
-    /// <li> <p>hostmaster@subdomain.example.com</p> </li>
-    /// <li> <p>postmaster@subdomain.example.com</p> </li>
-    /// <li> <p>webmaster@subdomain.example.com</p> </li>
+    /// <li><p>admin@subdomain.example.com</p></li>
+    /// <li><p>administrator@subdomain.example.com</p></li>
+    /// <li><p>hostmaster@subdomain.example.com</p></li>
+    /// <li><p>postmaster@subdomain.example.com</p></li>
+    /// <li><p>webmaster@subdomain.example.com</p></li>
     /// </ul>
     pub fn set_validation_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_validation_domain(input);
@@ -165,11 +165,11 @@ impl ResendValidationEmailFluentBuilder {
     }
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
-    /// <li> <p>admin@subdomain.example.com</p> </li>
-    /// <li> <p>administrator@subdomain.example.com</p> </li>
-    /// <li> <p>hostmaster@subdomain.example.com</p> </li>
-    /// <li> <p>postmaster@subdomain.example.com</p> </li>
-    /// <li> <p>webmaster@subdomain.example.com</p> </li>
+    /// <li><p>admin@subdomain.example.com</p></li>
+    /// <li><p>administrator@subdomain.example.com</p></li>
+    /// <li><p>hostmaster@subdomain.example.com</p></li>
+    /// <li><p>postmaster@subdomain.example.com</p></li>
+    /// <li><p>webmaster@subdomain.example.com</p></li>
     /// </ul>
     pub fn get_validation_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_validation_domain()

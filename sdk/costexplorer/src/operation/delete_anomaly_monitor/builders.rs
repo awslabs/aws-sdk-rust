@@ -22,7 +22,7 @@ impl DeleteAnomalyMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAnomalyMonitor`.
 ///
-/// <p>Deletes a cost anomaly monitor. </p>
+/// <p>Deletes a cost anomaly monitor.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAnomalyMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteAnomalyMonitorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete.</p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_arn(input.into());
         self
     }
-    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_arn(input);
         self
     }
-    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_arn()
     }

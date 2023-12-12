@@ -134,11 +134,11 @@ impl ListImagesFluentBuilder {
     ///
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>osVersion</code></p></li>
+    /// <li><p><code>platform</code></p></li>
+    /// <li><p><code>type</code></p></li>
+    /// <li><p><code>version</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -146,11 +146,11 @@ impl ListImagesFluentBuilder {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>osVersion</code></p></li>
+    /// <li><p><code>platform</code></p></li>
+    /// <li><p><code>type</code></p></li>
+    /// <li><p><code>version</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -158,11 +158,11 @@ impl ListImagesFluentBuilder {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>osVersion</code></p></li>
+    /// <li><p><code>platform</code></p></li>
+    /// <li><p><code>type</code></p></li>
+    /// <li><p><code>version</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

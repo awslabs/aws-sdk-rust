@@ -32,8 +32,8 @@ pub struct StartSnapshotInput {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li> <p>No blocks are written to the snapshot.</p> </li>
-    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
+    /// <li><p>No blocks are written to the snapshot.</p></li>
+    /// <li><p>The snapshot is not completed after writing the last block of data.</p></li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub timeout: ::std::option::Option<i32>,
@@ -84,8 +84,8 @@ impl StartSnapshotInput {
     }
     /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li> <p>No blocks are written to the snapshot.</p> </li>
-    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
+    /// <li><p>No blocks are written to the snapshot.</p></li>
+    /// <li><p>The snapshot is not completed after writing the last block of data.</p></li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub fn timeout(&self) -> ::std::option::Option<i32> {
@@ -273,8 +273,8 @@ impl StartSnapshotInputBuilder {
     }
     /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li> <p>No blocks are written to the snapshot.</p> </li>
-    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
+    /// <li><p>No blocks are written to the snapshot.</p></li>
+    /// <li><p>The snapshot is not completed after writing the last block of data.</p></li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -283,8 +283,8 @@ impl StartSnapshotInputBuilder {
     }
     /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li> <p>No blocks are written to the snapshot.</p> </li>
-    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
+    /// <li><p>No blocks are written to the snapshot.</p></li>
+    /// <li><p>The snapshot is not completed after writing the last block of data.</p></li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -293,8 +293,8 @@ impl StartSnapshotInputBuilder {
     }
     /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li> <p>No blocks are written to the snapshot.</p> </li>
-    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
+    /// <li><p>No blocks are written to the snapshot.</p></li>
+    /// <li><p>The snapshot is not completed after writing the last block of data.</p></li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {

@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PostgreSqlSettings {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
-    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code> </p>
+    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
     pub after_connect_script: ::std::option::Option<::std::string::String>,
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
     pub capture_ddls: ::std::option::Option<bool>,
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
-    /// <p>Example: <code>maxFileSize=512</code> </p>
+    /// <p>Example: <code>maxFileSize=512</code></p>
     pub max_file_size: ::std::option::Option<i32>,
     /// <p>Database name for the endpoint.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
-    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
+    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub ddl_artifacts_schema: ::std::option::Option<::std::string::String>,
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
-    /// <p>Example: <code>executeTimeout=100;</code> </p>
+    /// <p>Example: <code>executeTimeout=100;</code></p>
     pub execute_timeout: ::std::option::Option<i32>,
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
@@ -34,13 +34,13 @@ pub struct PostgreSqlSettings {
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint TCP port. The default is 5432.</p>
     pub port: ::std::option::Option<i32>,
-    /// <p>The host name of the endpoint database. </p>
+    /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint connection user name.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
+    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance.</p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub slot_name: ::std::option::Option<::std::string::String>,
@@ -67,7 +67,7 @@ pub struct PostgreSqlSettings {
 }
 impl PostgreSqlSettings {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
-    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code> </p>
+    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
     pub fn after_connect_script(&self) -> ::std::option::Option<&str> {
         self.after_connect_script.as_deref()
     }
@@ -77,7 +77,7 @@ impl PostgreSqlSettings {
         self.capture_ddls
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
-    /// <p>Example: <code>maxFileSize=512</code> </p>
+    /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn max_file_size(&self) -> ::std::option::Option<i32> {
         self.max_file_size
     }
@@ -86,12 +86,12 @@ impl PostgreSqlSettings {
         self.database_name.as_deref()
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
-    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
+    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn ddl_artifacts_schema(&self) -> ::std::option::Option<&str> {
         self.ddl_artifacts_schema.as_deref()
     }
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
-    /// <p>Example: <code>executeTimeout=100;</code> </p>
+    /// <p>Example: <code>executeTimeout=100;</code></p>
     pub fn execute_timeout(&self) -> ::std::option::Option<i32> {
         self.execute_timeout
     }
@@ -120,7 +120,7 @@ impl PostgreSqlSettings {
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
-    /// <p>The host name of the endpoint database. </p>
+    /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn server_name(&self) -> ::std::option::Option<&str> {
@@ -130,7 +130,7 @@ impl PostgreSqlSettings {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
+    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance.</p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub fn slot_name(&self) -> ::std::option::Option<&str> {
@@ -243,19 +243,19 @@ pub struct PostgreSqlSettingsBuilder {
 }
 impl PostgreSqlSettingsBuilder {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
-    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code> </p>
+    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
     pub fn after_connect_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_connect_script = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
-    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code> </p>
+    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
     pub fn set_after_connect_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_connect_script = input;
         self
     }
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
-    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code> </p>
+    /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
     pub fn get_after_connect_script(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_connect_script
     }
@@ -277,19 +277,19 @@ impl PostgreSqlSettingsBuilder {
         &self.capture_ddls
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
-    /// <p>Example: <code>maxFileSize=512</code> </p>
+    /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn max_file_size(mut self, input: i32) -> Self {
         self.max_file_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
-    /// <p>Example: <code>maxFileSize=512</code> </p>
+    /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn set_max_file_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_file_size = input;
         self
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
-    /// <p>Example: <code>maxFileSize=512</code> </p>
+    /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn get_max_file_size(&self) -> &::std::option::Option<i32> {
         &self.max_file_size
     }
@@ -308,36 +308,36 @@ impl PostgreSqlSettingsBuilder {
         &self.database_name
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
-    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
+    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn ddl_artifacts_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ddl_artifacts_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
-    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
+    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn set_ddl_artifacts_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ddl_artifacts_schema = input;
         self
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
-    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
+    /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn get_ddl_artifacts_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.ddl_artifacts_schema
     }
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
-    /// <p>Example: <code>executeTimeout=100;</code> </p>
+    /// <p>Example: <code>executeTimeout=100;</code></p>
     pub fn execute_timeout(mut self, input: i32) -> Self {
         self.execute_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
-    /// <p>Example: <code>executeTimeout=100;</code> </p>
+    /// <p>Example: <code>executeTimeout=100;</code></p>
     pub fn set_execute_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execute_timeout = input;
         self
     }
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
-    /// <p>Example: <code>executeTimeout=100;</code> </p>
+    /// <p>Example: <code>executeTimeout=100;</code></p>
     pub fn get_execute_timeout(&self) -> &::std::option::Option<i32> {
         &self.execute_timeout
     }
@@ -428,21 +428,21 @@ impl PostgreSqlSettingsBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
-    /// <p>The host name of the endpoint database. </p>
+    /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The host name of the endpoint database. </p>
+    /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
-    /// <p>The host name of the endpoint database. </p>
+    /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -462,21 +462,21 @@ impl PostgreSqlSettingsBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
+    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance.</p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
+    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance.</p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_name = input;
         self
     }
-    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
+    /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance.</p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {

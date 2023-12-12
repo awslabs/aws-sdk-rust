@@ -22,7 +22,7 @@ impl GetOrganizationRecommendationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetOrganizationRecommendation`.
 ///
-/// <p>Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized recommendations. </p>
+/// <p>Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized recommendations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOrganizationRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

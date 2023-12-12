@@ -3,10 +3,10 @@
 /// <p>The Lustre configuration for the file system being created.</p> <note>
 /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
 /// <ul>
-/// <li> <p> <code>AutoImportPolicy</code> </p> </li>
-/// <li> <p> <code>ExportPath</code> </p> </li>
-/// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
-/// <li> <p> <code>ImportPath</code> </p> </li>
+/// <li><p><code>AutoImportPolicy</code></p></li>
+/// <li><p><code>ExportPath</code></p></li>
+/// <li><p><code>ImportedFileChunkSize</code></p></li>
+/// <li><p><code>ImportPath</code></p></li>
 /// </ul>
 /// </note>
 #[non_exhaustive]
@@ -33,29 +33,29 @@ pub struct CreateFileSystemLustreConfiguration {
     /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub deployment_type: ::std::option::Option<crate::types::LustreDeploymentType>,
-    /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+    /// <p>(Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p> </li>
-    /// <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system. </p> </li>
-    /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
-    /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p></li>
+    /// <li><p><code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system.</p></li>
+    /// <li><p><code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p></li>
+    /// <li><p><code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
     /// </note>
     pub auto_import_policy: ::std::option::Option<crate::types::AutoImportPolicyType>,
-    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision. </p>
+    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p> </li>
+    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p></li>
     /// </ul>
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
@@ -68,8 +68,8 @@ pub struct CreateFileSystemLustreConfiguration {
     pub drive_cache_type: ::std::option::Option<crate::types::DriveCacheType>,
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p></li>
+    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     pub data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
@@ -108,17 +108,17 @@ impl CreateFileSystemLustreConfiguration {
     /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::LustreDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+    /// <p>(Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p> </li>
-    /// <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system. </p> </li>
-    /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
-    /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p></li>
+    /// <li><p><code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system.</p></li>
+    /// <li><p><code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p></li>
+    /// <li><p><code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
@@ -126,17 +126,17 @@ impl CreateFileSystemLustreConfiguration {
     pub fn auto_import_policy(&self) -> ::std::option::Option<&crate::types::AutoImportPolicyType> {
         self.auto_import_policy.as_ref()
     }
-    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision. </p>
+    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p> </li>
+    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p></li>
     /// </ul>
     pub fn per_unit_storage_throughput(&self) -> ::std::option::Option<i32> {
         self.per_unit_storage_throughput
     }
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
@@ -157,8 +157,8 @@ impl CreateFileSystemLustreConfiguration {
     }
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p></li>
+    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::DataCompressionType> {
@@ -285,7 +285,7 @@ impl CreateFileSystemLustreConfigurationBuilder {
     /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub fn deployment_type(mut self, input: crate::types::LustreDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -296,7 +296,7 @@ impl CreateFileSystemLustreConfigurationBuilder {
     /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::LustreDeploymentType>) -> Self {
         self.deployment_type = input;
@@ -307,17 +307,17 @@ impl CreateFileSystemLustreConfigurationBuilder {
     /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::LustreDeploymentType> {
         &self.deployment_type
     }
-    /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+    /// <p>(Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p> </li>
-    /// <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system. </p> </li>
-    /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
-    /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p></li>
+    /// <li><p><code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system.</p></li>
+    /// <li><p><code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p></li>
+    /// <li><p><code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
@@ -326,12 +326,12 @@ impl CreateFileSystemLustreConfigurationBuilder {
         self.auto_import_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+    /// <p>(Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p> </li>
-    /// <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system. </p> </li>
-    /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
-    /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p></li>
+    /// <li><p><code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system.</p></li>
+    /// <li><p><code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p></li>
+    /// <li><p><code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
@@ -340,12 +340,12 @@ impl CreateFileSystemLustreConfigurationBuilder {
         self.auto_import_policy = input;
         self
     }
-    /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+    /// <p>(Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p> </li>
-    /// <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system. </p> </li>
-    /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
-    /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and directory listings from the linked S3 bucket when the file system is created. FSx does not update file and directory listings for any new or changed objects after choosing this option.</p></li>
+    /// <li><p><code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings of any new objects added to the linked S3 bucket that do not currently exist in the FSx file system.</p></li>
+    /// <li><p><code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p></li>
+    /// <li><p><code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
@@ -353,49 +353,49 @@ impl CreateFileSystemLustreConfigurationBuilder {
     pub fn get_auto_import_policy(&self) -> &::std::option::Option<crate::types::AutoImportPolicyType> {
         &self.auto_import_policy
     }
-    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision. </p>
+    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p> </li>
+    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p></li>
     /// </ul>
     pub fn per_unit_storage_throughput(mut self, input: i32) -> Self {
         self.per_unit_storage_throughput = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision. </p>
+    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p> </li>
+    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p></li>
     /// </ul>
     pub fn set_per_unit_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.per_unit_storage_throughput = input;
         self
     }
-    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision. </p>
+    /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p> </li>
-    /// <li> <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p> </li>
+    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p></li>
+    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p></li>
     /// </ul>
     pub fn get_per_unit_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.per_unit_storage_throughput
     }
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub fn daily_automatic_backup_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.daily_automatic_backup_start_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub fn set_daily_automatic_backup_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.daily_automatic_backup_start_time = input;
         self
     }
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_automatic_backup_start_time
     }
@@ -452,8 +452,8 @@ impl CreateFileSystemLustreConfigurationBuilder {
     }
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p></li>
+    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     pub fn data_compression_type(mut self, input: crate::types::DataCompressionType) -> Self {
@@ -462,8 +462,8 @@ impl CreateFileSystemLustreConfigurationBuilder {
     }
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p></li>
+    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     pub fn set_data_compression_type(mut self, input: ::std::option::Option<crate::types::DataCompressionType>) -> Self {
@@ -472,8 +472,8 @@ impl CreateFileSystemLustreConfigurationBuilder {
     }
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p> </li>
+    /// <li><p><code>NONE</code> - (Default) Data compression is turned off when the file system is created.</p></li>
+    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     pub fn get_data_compression_type(&self) -> &::std::option::Option<crate::types::DataCompressionType> {

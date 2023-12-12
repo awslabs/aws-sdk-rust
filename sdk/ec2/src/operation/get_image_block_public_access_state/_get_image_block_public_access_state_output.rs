@@ -6,8 +6,8 @@ pub struct GetImageBlockPublicAccessStateOutput {
     /// <p>The current state of block public access for AMIs at the account level in the specified Amazon Web Services Region.</p>
     /// <p>Possible values:</p>
     /// <ul>
-    /// <li> <p> <code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p> </li>
-    /// <li> <p> <code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p> </li>
+    /// <li><p><code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p></li>
+    /// <li><p><code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p></li>
     /// </ul>
     pub image_block_public_access_state: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -16,8 +16,8 @@ impl GetImageBlockPublicAccessStateOutput {
     /// <p>The current state of block public access for AMIs at the account level in the specified Amazon Web Services Region.</p>
     /// <p>Possible values:</p>
     /// <ul>
-    /// <li> <p> <code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p> </li>
-    /// <li> <p> <code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p> </li>
+    /// <li><p><code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p></li>
+    /// <li><p><code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p></li>
     /// </ul>
     pub fn image_block_public_access_state(&self) -> ::std::option::Option<&str> {
         self.image_block_public_access_state.as_deref()
@@ -46,8 +46,8 @@ impl GetImageBlockPublicAccessStateOutputBuilder {
     /// <p>The current state of block public access for AMIs at the account level in the specified Amazon Web Services Region.</p>
     /// <p>Possible values:</p>
     /// <ul>
-    /// <li> <p> <code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p> </li>
-    /// <li> <p> <code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p> </li>
+    /// <li><p><code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p></li>
+    /// <li><p><code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p></li>
     /// </ul>
     pub fn image_block_public_access_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_block_public_access_state = ::std::option::Option::Some(input.into());
@@ -56,8 +56,8 @@ impl GetImageBlockPublicAccessStateOutputBuilder {
     /// <p>The current state of block public access for AMIs at the account level in the specified Amazon Web Services Region.</p>
     /// <p>Possible values:</p>
     /// <ul>
-    /// <li> <p> <code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p> </li>
-    /// <li> <p> <code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p> </li>
+    /// <li><p><code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p></li>
+    /// <li><p><code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p></li>
     /// </ul>
     pub fn set_image_block_public_access_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_block_public_access_state = input;
@@ -66,8 +66,8 @@ impl GetImageBlockPublicAccessStateOutputBuilder {
     /// <p>The current state of block public access for AMIs at the account level in the specified Amazon Web Services Region.</p>
     /// <p>Possible values:</p>
     /// <ul>
-    /// <li> <p> <code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p> </li>
-    /// <li> <p> <code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p> </li>
+    /// <li><p><code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified Region is blocked.</p></li>
+    /// <li><p><code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p></li>
     /// </ul>
     pub fn get_image_block_public_access_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_block_public_access_state

@@ -10,7 +10,7 @@ pub struct EksEmptyDir {
     /// ""
     /// </dt>
     /// <dd>
-    /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+    /// <p><b>(Default)</b> Use the disk storage of the node.</p>
     /// </dd>
     /// <dt>
     /// "Memory"
@@ -30,7 +30,7 @@ impl EksEmptyDir {
     /// ""
     /// </dt>
     /// <dd>
-    /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+    /// <p><b>(Default)</b> Use the disk storage of the node.</p>
     /// </dd>
     /// <dt>
     /// "Memory"
@@ -68,7 +68,7 @@ impl EksEmptyDirBuilder {
     /// ""
     /// </dt>
     /// <dd>
-    /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+    /// <p><b>(Default)</b> Use the disk storage of the node.</p>
     /// </dd>
     /// <dt>
     /// "Memory"
@@ -87,7 +87,7 @@ impl EksEmptyDirBuilder {
     /// ""
     /// </dt>
     /// <dd>
-    /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+    /// <p><b>(Default)</b> Use the disk storage of the node.</p>
     /// </dd>
     /// <dt>
     /// "Memory"
@@ -106,7 +106,7 @@ impl EksEmptyDirBuilder {
     /// ""
     /// </dt>
     /// <dd>
-    /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+    /// <p><b>(Default)</b> Use the disk storage of the node.</p>
     /// </dd>
     /// <dt>
     /// "Memory"

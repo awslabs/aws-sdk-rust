@@ -8,7 +8,7 @@ pub struct ProjectMetadata {
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
-    /// <p>The unix timestamp for the date and time that the project was created. </p>
+    /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProjectMetadata {
@@ -20,7 +20,7 @@ impl ProjectMetadata {
     pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The unix timestamp for the date and time that the project was created. </p>
+    /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
@@ -69,17 +69,17 @@ impl ProjectMetadataBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
-    /// <p>The unix timestamp for the date and time that the project was created. </p>
+    /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The unix timestamp for the date and time that the project was created. </p>
+    /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
-    /// <p>The unix timestamp for the date and time that the project was created. </p>
+    /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_timestamp
     }

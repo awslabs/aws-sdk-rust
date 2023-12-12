@@ -19,7 +19,7 @@ pub struct DescribeTestSetGenerationOutput {
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p>The data source of the test set used for the test set generation.</p>
     pub generation_data_source: ::std::option::Option<crate::types::TestSetGenerationDataSource>,
-    /// <p> The roleARN of the test set used for the test set generation.</p>
+    /// <p>The roleARN of the test set used for the test set generation.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time for the test set generation.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -62,7 +62,7 @@ impl DescribeTestSetGenerationOutput {
     pub fn generation_data_source(&self) -> ::std::option::Option<&crate::types::TestSetGenerationDataSource> {
         self.generation_data_source.as_ref()
     }
-    /// <p> The roleARN of the test set used for the test set generation.</p>
+    /// <p>The roleARN of the test set used for the test set generation.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -223,17 +223,17 @@ impl DescribeTestSetGenerationOutputBuilder {
     pub fn get_generation_data_source(&self) -> &::std::option::Option<crate::types::TestSetGenerationDataSource> {
         &self.generation_data_source
     }
-    /// <p> The roleARN of the test set used for the test set generation.</p>
+    /// <p>The roleARN of the test set used for the test set generation.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The roleARN of the test set used for the test set generation.</p>
+    /// <p>The roleARN of the test set used for the test set generation.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p> The roleARN of the test set used for the test set generation.</p>
+    /// <p>The roleARN of the test set used for the test set generation.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

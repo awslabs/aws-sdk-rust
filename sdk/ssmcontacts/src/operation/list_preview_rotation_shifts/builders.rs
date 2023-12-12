@@ -130,17 +130,17 @@ impl ListPreviewRotationShiftsFluentBuilder {
     pub fn get_rotation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_rotation_start_time()
     }
-    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
@@ -176,17 +176,17 @@ impl ListPreviewRotationShiftsFluentBuilder {
     pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_members()
     }
-    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.time_zone_id(input.into());
         self
     }
-    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_time_zone_id(input);
         self
     }
-    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
     pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_time_zone_id()
     }

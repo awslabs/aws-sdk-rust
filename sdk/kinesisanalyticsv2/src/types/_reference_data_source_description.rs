@@ -8,7 +8,7 @@ pub struct ReferenceDataSourceDescription {
     pub reference_id: ::std::string::String,
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
     pub table_name: ::std::string::String,
-    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
+    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data.</p>
     pub s3_reference_data_source_description: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub reference_schema: ::std::option::Option<crate::types::SourceSchema>,
@@ -24,7 +24,7 @@ impl ReferenceDataSourceDescription {
         use std::ops::Deref;
         self.table_name.deref()
     }
-    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
+    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data.</p>
     pub fn s3_reference_data_source_description(&self) -> ::std::option::Option<&crate::types::S3ReferenceDataSourceDescription> {
         self.s3_reference_data_source_description.as_ref()
     }
@@ -80,18 +80,18 @@ impl ReferenceDataSourceDescriptionBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
-    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
+    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data.</p>
     /// This field is required.
     pub fn s3_reference_data_source_description(mut self, input: crate::types::S3ReferenceDataSourceDescription) -> Self {
         self.s3_reference_data_source_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
+    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data.</p>
     pub fn set_s3_reference_data_source_description(mut self, input: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>) -> Self {
         self.s3_reference_data_source_description = input;
         self
     }
-    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
+    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data.</p>
     pub fn get_s3_reference_data_source_description(&self) -> &::std::option::Option<crate::types::S3ReferenceDataSourceDescription> {
         &self.s3_reference_data_source_description
     }

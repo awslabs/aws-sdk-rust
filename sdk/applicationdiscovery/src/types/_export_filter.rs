@@ -8,7 +8,7 @@ pub struct ExportFilter {
     pub name: ::std::string::String,
     /// <p>A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.</p>
     pub values: ::std::vec::Vec<::std::string::String>,
-    /// <p>Supported condition: <code>EQUALS</code> </p>
+    /// <p>Supported condition: <code>EQUALS</code></p>
     pub condition: ::std::string::String,
 }
 impl ExportFilter {
@@ -22,7 +22,7 @@ impl ExportFilter {
         use std::ops::Deref;
         self.values.deref()
     }
-    /// <p>Supported condition: <code>EQUALS</code> </p>
+    /// <p>Supported condition: <code>EQUALS</code></p>
     pub fn condition(&self) -> &str {
         use std::ops::Deref;
         self.condition.deref()
@@ -79,18 +79,18 @@ impl ExportFilterBuilder {
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }
-    /// <p>Supported condition: <code>EQUALS</code> </p>
+    /// <p>Supported condition: <code>EQUALS</code></p>
     /// This field is required.
     pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Supported condition: <code>EQUALS</code> </p>
+    /// <p>Supported condition: <code>EQUALS</code></p>
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
     }
-    /// <p>Supported condition: <code>EQUALS</code> </p>
+    /// <p>Supported condition: <code>EQUALS</code></p>
     pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
         &self.condition
     }

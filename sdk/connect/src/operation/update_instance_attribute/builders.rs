@@ -143,17 +143,17 @@ impl UpdateInstanceAttributeFluentBuilder {
     pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
         self.inner.get_attribute_type()
     }
-    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// <p>The value for the attribute. Maximum character limit is 100.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
         self
     }
-    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// <p>The value for the attribute. Maximum character limit is 100.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
     }
-    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// <p>The value for the attribute. Maximum character limit is 100.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_value()
     }

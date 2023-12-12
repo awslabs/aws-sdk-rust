@@ -12,7 +12,7 @@ pub struct InstanceMetadataOptions {
     /// <p>Default: 1</p>
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
-    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
+    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata.</p>
     /// </note>
     pub http_endpoint: ::std::option::Option<crate::types::InstanceMetadataEndpointState>,
 }
@@ -29,7 +29,7 @@ impl InstanceMetadataOptions {
         self.http_put_response_hop_limit
     }
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
-    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
+    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata.</p>
     /// </note>
     pub fn http_endpoint(&self) -> ::std::option::Option<&crate::types::InstanceMetadataEndpointState> {
         self.http_endpoint.as_ref()
@@ -89,21 +89,21 @@ impl InstanceMetadataOptionsBuilder {
         &self.http_put_response_hop_limit
     }
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
-    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
+    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata.</p>
     /// </note>
     pub fn http_endpoint(mut self, input: crate::types::InstanceMetadataEndpointState) -> Self {
         self.http_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
-    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
+    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata.</p>
     /// </note>
     pub fn set_http_endpoint(mut self, input: ::std::option::Option<crate::types::InstanceMetadataEndpointState>) -> Self {
         self.http_endpoint = input;
         self
     }
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
-    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
+    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata.</p>
     /// </note>
     pub fn get_http_endpoint(&self) -> &::std::option::Option<crate::types::InstanceMetadataEndpointState> {
         &self.http_endpoint

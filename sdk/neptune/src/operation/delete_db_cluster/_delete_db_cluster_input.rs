@@ -6,22 +6,22 @@ pub struct DeleteDbClusterInput {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
+    /// <li><p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
+    /// <p>Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub skip_final_snapshot: ::std::option::Option<bool>,
-    /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
-    /// <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
+    /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
+    /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -29,26 +29,26 @@ impl DeleteDbClusterInput {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
+    /// <li><p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
-    /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
+    /// <p>Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn skip_final_snapshot(&self) -> ::std::option::Option<bool> {
         self.skip_final_snapshot
     }
-    /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
-    /// <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
+    /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
+    /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.final_db_snapshot_identifier.as_deref()
@@ -73,7 +73,7 @@ impl DeleteDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
+    /// <li><p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,7 +83,7 @@ impl DeleteDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
+    /// <li><p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
@@ -92,68 +92,68 @@ impl DeleteDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
+    /// <li><p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
     }
-    /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
+    /// <p>Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn skip_final_snapshot(mut self, input: bool) -> Self {
         self.skip_final_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
+    /// <p>Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_final_snapshot = input;
         self
     }
-    /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
+    /// <p>Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
         &self.skip_final_snapshot
     }
-    /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
-    /// <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
+    /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
+    /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
-    /// <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
+    /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
+    /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = input;
         self
     }
-    /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
-    /// <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
+    /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
+    /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_db_snapshot_identifier

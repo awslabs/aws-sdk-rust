@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_name):<br>required: **true**<br><p>The name of the job.</p><br>
-    ///   - [`max_results(i32)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request. </p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput) with field(s):
     ///   - [`job_runs(Vec::<JobRun>)`](crate::operation::list_job_runs::ListJobRunsOutput::job_runs): <p>A list of job runs that have occurred for the specified job.</p>

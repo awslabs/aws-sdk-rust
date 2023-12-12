@@ -22,7 +22,7 @@ pub struct OtaUpdateInfo {
     pub aws_job_executions_rollout_config: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
     /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
     pub aws_job_presigned_url_config: ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
-    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group.</p>
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
     /// <p>A list of files associated with the OTA update.</p>
     pub ota_update_files: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>,
@@ -78,7 +78,7 @@ impl OtaUpdateInfo {
     pub fn aws_job_presigned_url_config(&self) -> ::std::option::Option<&crate::types::AwsJobPresignedUrlConfig> {
         self.aws_job_presigned_url_config.as_ref()
     }
-    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group.</p>
     pub fn target_selection(&self) -> ::std::option::Option<&crate::types::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -276,17 +276,17 @@ impl OtaUpdateInfoBuilder {
     pub fn get_aws_job_presigned_url_config(&self) -> &::std::option::Option<crate::types::AwsJobPresignedUrlConfig> {
         &self.aws_job_presigned_url_config
     }
-    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group.</p>
     pub fn target_selection(mut self, input: crate::types::TargetSelection) -> Self {
         self.target_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group.</p>
     pub fn set_target_selection(mut self, input: ::std::option::Option<crate::types::TargetSelection>) -> Self {
         self.target_selection = input;
         self
     }
-    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group.</p>
     pub fn get_target_selection(&self) -> &::std::option::Option<crate::types::TargetSelection> {
         &self.target_selection
     }

@@ -5,7 +5,7 @@
 pub struct RunTaskInput {
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -26,7 +26,7 @@ pub struct RunTaskInput {
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The network configuration for the task. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -51,13 +51,13 @@ pub struct RunTaskInput {
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
@@ -73,7 +73,7 @@ pub struct RunTaskInput {
 impl RunTaskInput {
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
@@ -108,7 +108,7 @@ impl RunTaskInput {
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
@@ -155,13 +155,13 @@ impl RunTaskInput {
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -219,7 +219,7 @@ impl RunTaskInputBuilder {
     ///
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
@@ -229,7 +229,7 @@ impl RunTaskInputBuilder {
     }
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
@@ -240,7 +240,7 @@ impl RunTaskInputBuilder {
     }
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
@@ -325,7 +325,7 @@ impl RunTaskInputBuilder {
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     pub fn launch_type(mut self, input: crate::types::LaunchType) -> Self {
         self.launch_type = ::std::option::Option::Some(input);
         self
@@ -337,7 +337,7 @@ impl RunTaskInputBuilder {
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.launch_type = input;
         self
@@ -349,7 +349,7 @@ impl RunTaskInputBuilder {
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
         &self.launch_type
     }
@@ -496,13 +496,13 @@ impl RunTaskInputBuilder {
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -513,13 +513,13 @@ impl RunTaskInputBuilder {
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -528,13 +528,13 @@ impl RunTaskInputBuilder {
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

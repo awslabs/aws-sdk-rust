@@ -8,11 +8,11 @@ pub struct S3Location {
     /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the zip file that contains the build files or script files. </p>
+    /// <p>The name of the zip file that contains the build files or script files.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved.</p>
     pub object_version: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {
@@ -22,7 +22,7 @@ impl S3Location {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The name of the zip file that contains the build files or script files. </p>
+    /// <p>The name of the zip file that contains the build files or script files.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -30,7 +30,7 @@ impl S3Location {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved.</p>
     pub fn object_version(&self) -> ::std::option::Option<&str> {
         self.object_version.as_deref()
     }
@@ -72,17 +72,17 @@ impl S3LocationBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>The name of the zip file that contains the build files or script files. </p>
+    /// <p>The name of the zip file that contains the build files or script files.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the zip file that contains the build files or script files. </p>
+    /// <p>The name of the zip file that contains the build files or script files.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The name of the zip file that contains the build files or script files. </p>
+    /// <p>The name of the zip file that contains the build files or script files.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
@@ -100,17 +100,17 @@ impl S3LocationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved.</p>
     pub fn object_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved.</p>
     pub fn set_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_version = input;
         self
     }
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved.</p>
     pub fn get_object_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_version
     }

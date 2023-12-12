@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsOutput {
-    /// <p>An array of labels for the real-world objects detected. </p>
+    /// <p>An array of labels for the real-world objects detected.</p>
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
     pub orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     pub label_model_version: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct DetectLabelsOutput {
     _request_id: Option<String>,
 }
 impl DetectLabelsOutput {
-    /// <p>An array of labels for the real-world objects detected. </p>
+    /// <p>An array of labels for the real-world objects detected.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
     pub fn labels(&self) -> &[crate::types::Label] {
@@ -24,7 +24,7 @@ impl DetectLabelsOutput {
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
     pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
@@ -64,39 +64,39 @@ impl DetectLabelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
-    /// <p>An array of labels for the real-world objects detected. </p>
+    /// <p>An array of labels for the real-world objects detected.</p>
     pub fn labels(mut self, input: crate::types::Label) -> Self {
         let mut v = self.labels.unwrap_or_default();
         v.push(input);
         self.labels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of labels for the real-world objects detected. </p>
+    /// <p>An array of labels for the real-world objects detected.</p>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>) -> Self {
         self.labels = input;
         self
     }
-    /// <p>An array of labels for the real-world objects detected. </p>
+    /// <p>An array of labels for the real-world objects detected.</p>
     pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Label>> {
         &self.labels
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
     pub fn orientation_correction(mut self, input: crate::types::OrientationCorrection) -> Self {
         self.orientation_correction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
     pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
         self.orientation_correction = input;
         self
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
     pub fn get_orientation_correction(&self) -> &::std::option::Option<crate::types::OrientationCorrection> {
         &self.orientation_correction
     }

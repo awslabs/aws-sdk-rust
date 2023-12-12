@@ -24,19 +24,19 @@ impl UpdateGeoMatchSetInputBuilder {
 ///
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
+/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
 /// </note>
-/// <p>Inserts or deletes <code>GeoMatchConstraint</code> objects in an <code>GeoMatchSet</code>. For each <code>GeoMatchConstraint</code> object, you specify the following values: </p>
+/// <p>Inserts or deletes <code>GeoMatchConstraint</code> objects in an <code>GeoMatchSet</code>. For each <code>GeoMatchConstraint</code> object, you specify the following values:</p>
 /// <ul>
-/// <li> <p>Whether to insert or delete the object from the array. If you want to change an <code>GeoMatchConstraint</code> object, you delete the existing object and add a new one.</p> </li>
-/// <li> <p>The <code>Type</code>. The only valid value for <code>Type</code> is <code>Country</code>.</p> </li>
-/// <li> <p>The <code>Value</code>, which is a two character code for the country to add to the <code>GeoMatchConstraint</code> object. Valid codes are listed in <code>GeoMatchConstraint$Value</code>.</p> </li>
+/// <li><p>Whether to insert or delete the object from the array. If you want to change an <code>GeoMatchConstraint</code> object, you delete the existing object and add a new one.</p></li>
+/// <li><p>The <code>Type</code>. The only valid value for <code>Type</code> is <code>Country</code>.</p></li>
+/// <li><p>The <code>Value</code>, which is a two character code for the country to add to the <code>GeoMatchConstraint</code> object. Valid codes are listed in <code>GeoMatchConstraint$Value</code>.</p></li>
 /// </ul>
 /// <p>To create and configure an <code>GeoMatchSet</code>, perform the following steps:</p>
 /// <ol>
-/// <li> <p>Submit a <code>CreateGeoMatchSet</code> request.</p> </li>
-/// <li> <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateGeoMatchSet</code> request.</p> </li>
-/// <li> <p>Submit an <code>UpdateGeoMatchSet</code> request to specify the country that you want AWS WAF to watch for.</p> </li>
+/// <li><p>Submit a <code>CreateGeoMatchSet</code> request.</p></li>
+/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateGeoMatchSet</code> request.</p></li>
+/// <li><p>Submit an <code>UpdateGeoMatchSet</code> request to specify the country that you want AWS WAF to watch for.</p></li>
 /// </ol>
 /// <p>When you update an <code>GeoMatchSet</code>, you specify the country that you want to add and/or the country that you want to delete. If you want to change a country, you delete the existing country and add the new one.</p>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
@@ -159,8 +159,8 @@ impl UpdateGeoMatchSetFluentBuilder {
     ///
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
-    /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
+    /// <li><p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
+    /// <li><p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::GeoMatchSetUpdate) -> Self {
         self.inner = self.inner.updates(input);
@@ -168,8 +168,8 @@ impl UpdateGeoMatchSetFluentBuilder {
     }
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
-    /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
+    /// <li><p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
+    /// <li><p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
@@ -177,8 +177,8 @@ impl UpdateGeoMatchSetFluentBuilder {
     }
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
-    /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
+    /// <li><p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
+    /// <li><p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>> {
         self.inner.get_updates()

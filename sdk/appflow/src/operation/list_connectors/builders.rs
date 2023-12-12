@@ -22,7 +22,7 @@ impl ListConnectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListConnectors`.
 ///
-/// <p>Returns the list of all registered custom connectors in your Amazon Web Services account. This API lists only custom connectors registered in this account, not the Amazon Web Services authored connectors. </p>
+/// <p>Returns the list of all registered custom connectors in your Amazon Web Services account. This API lists only custom connectors registered in this account, not the Amazon Web Services authored connectors.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConnectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

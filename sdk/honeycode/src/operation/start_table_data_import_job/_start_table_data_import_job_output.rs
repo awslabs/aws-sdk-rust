@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTableDataImportJobOutput {
-    /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
+    /// <p>The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request.</p>
     pub job_id: ::std::string::String,
-    /// <p> The status of the import job immediately after submitting the request. </p>
+    /// <p>The status of the import job immediately after submitting the request.</p>
     pub job_status: crate::types::TableDataImportJobStatus,
     _request_id: Option<String>,
 }
 impl StartTableDataImportJobOutput {
-    /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
+    /// <p>The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request.</p>
     pub fn job_id(&self) -> &str {
         use std::ops::Deref;
         self.job_id.deref()
     }
-    /// <p> The status of the import job immediately after submitting the request. </p>
+    /// <p>The status of the import job immediately after submitting the request.</p>
     pub fn job_status(&self) -> &crate::types::TableDataImportJobStatus {
         &self.job_status
     }
@@ -41,33 +41,33 @@ pub struct StartTableDataImportJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartTableDataImportJobOutputBuilder {
-    /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
+    /// <p>The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request.</p>
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
+    /// <p>The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
+    /// <p>The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p> The status of the import job immediately after submitting the request. </p>
+    /// <p>The status of the import job immediately after submitting the request.</p>
     /// This field is required.
     pub fn job_status(mut self, input: crate::types::TableDataImportJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of the import job immediately after submitting the request. </p>
+    /// <p>The status of the import job immediately after submitting the request.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::TableDataImportJobStatus>) -> Self {
         self.job_status = input;
         self
     }
-    /// <p> The status of the import job immediately after submitting the request. </p>
+    /// <p>The status of the import job immediately after submitting the request.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::TableDataImportJobStatus> {
         &self.job_status
     }

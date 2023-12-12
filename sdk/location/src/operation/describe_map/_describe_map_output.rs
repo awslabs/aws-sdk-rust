@@ -7,7 +7,7 @@ pub struct DescribeMapOutput {
     pub map_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code></p></li>
     /// </ul>
     pub map_arn: ::std::string::String,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
@@ -35,7 +35,7 @@ impl DescribeMapOutput {
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code></p></li>
     /// </ul>
     pub fn map_arn(&self) -> &str {
         use std::ops::Deref;
@@ -118,7 +118,7 @@ impl DescribeMapOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn map_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,7 +127,7 @@ impl DescribeMapOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code></p></li>
     /// </ul>
     pub fn set_map_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_arn = input;
@@ -135,7 +135,7 @@ impl DescribeMapOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code></p></li>
     /// </ul>
     pub fn get_map_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.map_arn

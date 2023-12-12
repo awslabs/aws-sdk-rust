@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`rule_group_id(impl Into<String>)`](crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::rule_group_id) / [`set_rule_group_id(Option<String>)`](crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::set_rule_group_id):<br>required: **true**<br><p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p><br>
     /// - On success, responds with [`GetRuleGroupOutput`](crate::operation::get_rule_group::GetRuleGroupOutput) with field(s):
-    ///   - [`rule_group(Option<RuleGroup>)`](crate::operation::get_rule_group::GetRuleGroupOutput::rule_group): <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
+    ///   - [`rule_group(Option<RuleGroup>)`](crate::operation::get_rule_group::GetRuleGroupOutput::rule_group): <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request.</p>
     /// - On failure, responds with [`SdkError<GetRuleGroupError>`](crate::operation::get_rule_group::GetRuleGroupError)
     pub fn get_rule_group(&self) -> crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder {
         crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::new(self.handle.clone())

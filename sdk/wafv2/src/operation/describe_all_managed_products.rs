@@ -248,9 +248,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeAllMa
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeAllManagedProductsError {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request.</p>
     WafInternalErrorException(crate::types::error::WafInternalErrorException),
-    /// <p>The operation isn't valid. </p>
+    /// <p>The operation isn't valid.</p>
     WafInvalidOperationException(crate::types::error::WafInvalidOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

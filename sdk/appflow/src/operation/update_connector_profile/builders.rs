@@ -22,7 +22,7 @@ impl UpdateConnectorProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConnectorProfile`.
 ///
-/// <p> Updates a given connector profile associated with your account. </p>
+/// <p>Updates a given connector profile associated with your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateConnectorProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p>The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p>The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p>The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_profile_name()
     }
-    /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// <p>Indicates the connection mode and if it is public or private.</p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.inner = self.inner.connection_mode(input);
         self
     }
-    /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// <p>Indicates the connection mode and if it is public or private.</p>
     pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.inner = self.inner.set_connection_mode(input);
         self
     }
-    /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// <p>Indicates the connection mode and if it is public or private.</p>
     pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
         self.inner.get_connection_mode()
     }
-    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// <p>Defines the connector-specific profile configuration and credentials.</p>
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
         self.inner = self.inner.connector_profile_config(input);
         self
     }
-    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// <p>Defines the connector-specific profile configuration and credentials.</p>
     pub fn set_connector_profile_config(mut self, input: ::std::option::Option<crate::types::ConnectorProfileConfig>) -> Self {
         self.inner = self.inner.set_connector_profile_config(input);
         self
     }
-    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// <p>Defines the connector-specific profile configuration and credentials.</p>
     pub fn get_connector_profile_config(&self) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
         self.inner.get_connector_profile_config()
     }

@@ -4,38 +4,38 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeRegexConfiguration {
-    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
     /// <ul>
-    /// <li> <p>A-Z, a-z</p> </li>
-    /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li><p>A-Z, a-z</p></li>
+    /// <li><p>0-9</p></li>
+    /// <li><p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li>
+    /// </unicode></p></li>
     /// </ul>
     /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
     /// <p>The following regular expression operators are not supported:</p>
     /// <ul>
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-    /// <li> <p>Wild card (.)</p> </li>
+    /// <li><p>Infinite repeaters: *, +, or {x,} with no upper bound.</p></li>
+    /// <li><p>Wild card (.)</p></li>
     /// </ul>
     pub pattern: ::std::string::String,
 }
 impl SlotTypeRegexConfiguration {
-    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
     /// <ul>
-    /// <li> <p>A-Z, a-z</p> </li>
-    /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li><p>A-Z, a-z</p></li>
+    /// <li><p>0-9</p></li>
+    /// <li><p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li>
+    /// </unicode></p></li>
     /// </ul>
     /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
     /// <p>The following regular expression operators are not supported:</p>
     /// <ul>
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-    /// <li> <p>Wild card (.)</p> </li>
+    /// <li><p>Infinite repeaters: *, +, or {x,} with no upper bound.</p></li>
+    /// <li><p>Wild card (.)</p></li>
     /// </ul>
     pub fn pattern(&self) -> &str {
         use std::ops::Deref;
@@ -56,59 +56,59 @@ pub struct SlotTypeRegexConfigurationBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
 }
 impl SlotTypeRegexConfigurationBuilder {
-    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
     /// <ul>
-    /// <li> <p>A-Z, a-z</p> </li>
-    /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li><p>A-Z, a-z</p></li>
+    /// <li><p>0-9</p></li>
+    /// <li><p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li>
+    /// </unicode></p></li>
     /// </ul>
     /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
     /// <p>The following regular expression operators are not supported:</p>
     /// <ul>
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-    /// <li> <p>Wild card (.)</p> </li>
+    /// <li><p>Infinite repeaters: *, +, or {x,} with no upper bound.</p></li>
+    /// <li><p>Wild card (.)</p></li>
     /// </ul>
     /// This field is required.
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
     /// <ul>
-    /// <li> <p>A-Z, a-z</p> </li>
-    /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li><p>A-Z, a-z</p></li>
+    /// <li><p>0-9</p></li>
+    /// <li><p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li>
+    /// </unicode></p></li>
     /// </ul>
     /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
     /// <p>The following regular expression operators are not supported:</p>
     /// <ul>
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-    /// <li> <p>Wild card (.)</p> </li>
+    /// <li><p>Infinite repeaters: *, +, or {x,} with no upper bound.</p></li>
+    /// <li><p>Wild card (.)</p></li>
     /// </ul>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern = input;
         self
     }
-    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
     /// <ul>
-    /// <li> <p>A-Z, a-z</p> </li>
-    /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li><p>A-Z, a-z</p></li>
+    /// <li><p>0-9</p></li>
+    /// <li><p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li>
+    /// </unicode></p></li>
     /// </ul>
     /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
     /// <p>The following regular expression operators are not supported:</p>
     /// <ul>
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-    /// <li> <p>Wild card (.)</p> </li>
+    /// <li><p>Infinite repeaters: *, +, or {x,} with no upper bound.</p></li>
+    /// <li><p>Wild card (.)</p></li>
     /// </ul>
     pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
         &self.pattern

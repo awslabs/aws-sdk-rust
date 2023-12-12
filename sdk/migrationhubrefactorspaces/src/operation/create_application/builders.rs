@@ -23,7 +23,7 @@ impl CreateApplicationInputBuilder {
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
 /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the applications created inside the environment, regardless of the account that creates the application. Refactor Spaces provisions an Amazon API Gateway, API Gateway VPC link, and Network Load Balancer for the application proxy inside your account.</p>
-/// <p>In environments created with a <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a> of <code>NONE</code> you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html"> VPC to VPC connectivity</a> between your service VPC and the application proxy VPC to route traffic through the application proxy to a service with a private URL endpoint. For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-application.html"> Create an application</a> in the <i>Refactor Spaces User Guide</i>. </p>
+/// <p>In environments created with a <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a> of <code>NONE</code> you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html"> VPC to VPC connectivity</a> between your service VPC and the application proxy VPC to route traffic through the application proxy to a service with a private URL endpoint. For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-application.html"> Create an application</a> in the <i>Refactor Spaces User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl CreateApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name to use for the application. </p>
+    /// <p>The name to use for the application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name to use for the application. </p>
+    /// <p>The name to use for the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name to use for the application. </p>
+    /// <p>The name to use for the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -151,31 +151,31 @@ impl CreateApplicationFluentBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
-    /// <p>The proxy type of the proxy created within the application. </p>
+    /// <p>The proxy type of the proxy created within the application.</p>
     pub fn proxy_type(mut self, input: crate::types::ProxyType) -> Self {
         self.inner = self.inner.proxy_type(input);
         self
     }
-    /// <p>The proxy type of the proxy created within the application. </p>
+    /// <p>The proxy type of the proxy created within the application.</p>
     pub fn set_proxy_type(mut self, input: ::std::option::Option<crate::types::ProxyType>) -> Self {
         self.inner = self.inner.set_proxy_type(input);
         self
     }
-    /// <p>The proxy type of the proxy created within the application. </p>
+    /// <p>The proxy type of the proxy created within the application.</p>
     pub fn get_proxy_type(&self) -> &::std::option::Option<crate::types::ProxyType> {
         self.inner.get_proxy_type()
     }
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy.</p>
     pub fn api_gateway_proxy(mut self, input: crate::types::ApiGatewayProxyInput) -> Self {
         self.inner = self.inner.api_gateway_proxy(input);
         self
     }
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy.</p>
     pub fn set_api_gateway_proxy(mut self, input: ::std::option::Option<crate::types::ApiGatewayProxyInput>) -> Self {
         self.inner = self.inner.set_api_gateway_proxy(input);
         self
     }
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy.</p>
     pub fn get_api_gateway_proxy(&self) -> &::std::option::Option<crate::types::ApiGatewayProxyInput> {
         self.inner.get_api_gateway_proxy()
     }

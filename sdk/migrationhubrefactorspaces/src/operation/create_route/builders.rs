@@ -26,10 +26,10 @@ impl CreateRouteInputBuilder {
 /// <p>When created, the default route defaults to an active state so state is not a required input. However, like all other state values the state of the default route can be updated after creation, but only when all other routes are also inactive. Conversely, no route can be active without the default route also being active.</p>
 /// <p>When you create a route, Refactor Spaces configures the Amazon API Gateway to send traffic to the target service as follows:</p>
 /// <ul>
-/// <li> <p> <b>URL Endpoints</b> </p> <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces routes traffic using the API Gateway VPC link. If a service endpoint resolves to a public IP address, Refactor Spaces routes traffic over the public internet. Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates are supported. Private Certificate Authorities (CAs) are permitted only if the CA's domain is also publicly resolvable. </p> <p>Refactor Spaces automatically resolves the public Domain Name System (DNS) names that are set in <code>CreateService:UrlEndpoint </code>when you create a service. The DNS names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds. This periodic DNS resolution ensures that the route configuration remains up-to-date. </p> <p></p> <p> <b>One-time health check</b> </p> <p>A one-time health check is performed on the service when either the route is updated from inactive to active, or when it is created with an active state. If the health check fails, the route transitions the route state to <code>FAILED</code>, an error code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic is sent to the service.</p> <p>For private URLs, a target group is created on the Network Load Balancer and the load balancer target group runs default target health checks. By default, the health check is run against the service endpoint URL. Optionally, the health check can be performed against a different protocol, port, and/or path using the <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateService.html#migrationhubrefactorspaces-CreateService-request-UrlEndpoint">CreateService:UrlEndpoint</a> parameter. All other health check settings for the load balancer use the default values described in the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks for your target groups</a> in the <i>Elastic Load Balancing guide</i>. The health check is considered successful if at least one target within the target group transitions to a healthy state.</p> <p></p> </li>
-/// <li> <p> <b>Lambda function endpoints</b> </p> <p>If the service has an Lambda function endpoint, then Refactor Spaces configures the Lambda function's resource policy to allow the application's API Gateway to invoke the function.</p> <p>The Lambda function state is checked. If the function is not active, the function configuration is updated so that Lambda resources are provisioned. If the Lambda state is <code>Failed</code>, then the route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>A check is performed to determine that a Lambda function with the specified ARN exists. If it does not exist, the health check fails. For public URLs, a connection is opened to the public endpoint. If the URL is not reachable, the health check fails. </p> </li>
+/// <li><p><b>URL Endpoints</b></p> <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces routes traffic using the API Gateway VPC link. If a service endpoint resolves to a public IP address, Refactor Spaces routes traffic over the public internet. Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates are supported. Private Certificate Authorities (CAs) are permitted only if the CA's domain is also publicly resolvable.</p> <p>Refactor Spaces automatically resolves the public Domain Name System (DNS) names that are set in <code>CreateService:UrlEndpoint </code>when you create a service. The DNS names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds. This periodic DNS resolution ensures that the route configuration remains up-to-date.</p> <p></p> <p><b>One-time health check</b></p> <p>A one-time health check is performed on the service when either the route is updated from inactive to active, or when it is created with an active state. If the health check fails, the route transitions the route state to <code>FAILED</code>, an error code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic is sent to the service.</p> <p>For private URLs, a target group is created on the Network Load Balancer and the load balancer target group runs default target health checks. By default, the health check is run against the service endpoint URL. Optionally, the health check can be performed against a different protocol, port, and/or path using the <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateService.html#migrationhubrefactorspaces-CreateService-request-UrlEndpoint">CreateService:UrlEndpoint</a> parameter. All other health check settings for the load balancer use the default values described in the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks for your target groups</a> in the <i>Elastic Load Balancing guide</i>. The health check is considered successful if at least one target within the target group transitions to a healthy state.</p> <p></p></li>
+/// <li><p><b>Lambda function endpoints</b></p> <p>If the service has an Lambda function endpoint, then Refactor Spaces configures the Lambda function's resource policy to allow the application's API Gateway to invoke the function.</p> <p>The Lambda function state is checked. If the function is not active, the function configuration is updated so that Lambda resources are provisioned. If the Lambda state is <code>Failed</code>, then the route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>A check is performed to determine that a Lambda function with the specified ARN exists. If it does not exist, the health check fails. For public URLs, a connection is opened to the public endpoint. If the URL is not reachable, the health check fails.</p></li>
 /// </ul>
-/// <p> <b>Environments without a network bridge</b> </p>
+/// <p><b>Environments without a network bridge</b></p>
 /// <p>When you create environments without a network bridge (<a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a> is <code>NONE)</code> and you use your own networking infrastructure, you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC to VPC connectivity</a> between your network and the application proxy VPC. Route creation from the application proxy to service endpoints will fail if your network is not configured to connect to the application proxy VPC. For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-role.html"> Create a route</a> in the <i>Refactor Spaces User Guide</i>.</p>
 /// <p></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -173,31 +173,31 @@ impl CreateRouteFluentBuilder {
     pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
         self.inner.get_route_type()
     }
-    /// <p> Configuration for the default route type. </p>
+    /// <p>Configuration for the default route type.</p>
     pub fn default_route(mut self, input: crate::types::DefaultRouteInput) -> Self {
         self.inner = self.inner.default_route(input);
         self
     }
-    /// <p> Configuration for the default route type. </p>
+    /// <p>Configuration for the default route type.</p>
     pub fn set_default_route(mut self, input: ::std::option::Option<crate::types::DefaultRouteInput>) -> Self {
         self.inner = self.inner.set_default_route(input);
         self
     }
-    /// <p> Configuration for the default route type. </p>
+    /// <p>Configuration for the default route type.</p>
     pub fn get_default_route(&self) -> &::std::option::Option<crate::types::DefaultRouteInput> {
         self.inner.get_default_route()
     }
-    /// <p>The configuration for the URI path route type. </p>
+    /// <p>The configuration for the URI path route type.</p>
     pub fn uri_path_route(mut self, input: crate::types::UriPathRouteInput) -> Self {
         self.inner = self.inner.uri_path_route(input);
         self
     }
-    /// <p>The configuration for the URI path route type. </p>
+    /// <p>The configuration for the URI path route type.</p>
     pub fn set_uri_path_route(mut self, input: ::std::option::Option<crate::types::UriPathRouteInput>) -> Self {
         self.inner = self.inner.set_uri_path_route(input);
         self
     }
-    /// <p>The configuration for the URI path route type. </p>
+    /// <p>The configuration for the URI path route type.</p>
     pub fn get_uri_path_route(&self) -> &::std::option::Option<crate::types::UriPathRouteInput> {
         self.inner.get_uri_path_route()
     }
@@ -205,17 +205,17 @@ impl CreateRouteFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

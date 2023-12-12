@@ -6,9 +6,9 @@
 pub struct EbsOptions {
     /// <p>Specifies whether EBS-based storage is enabled.</p>
     pub ebs_enabled: ::std::option::Option<bool>,
-    /// <p> Specifies the volume type for EBS-based storage.</p>
+    /// <p>Specifies the volume type for EBS-based storage.</p>
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
-    /// <p> Integer to specify the size of an EBS volume.</p>
+    /// <p>Integer to specify the size of an EBS volume.</p>
     pub volume_size: ::std::option::Option<i32>,
     /// <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
     pub iops: ::std::option::Option<i32>,
@@ -20,11 +20,11 @@ impl EbsOptions {
     pub fn ebs_enabled(&self) -> ::std::option::Option<bool> {
         self.ebs_enabled
     }
-    /// <p> Specifies the volume type for EBS-based storage.</p>
+    /// <p>Specifies the volume type for EBS-based storage.</p>
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
-    /// <p> Integer to specify the size of an EBS volume.</p>
+    /// <p>Integer to specify the size of an EBS volume.</p>
     pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
@@ -69,31 +69,31 @@ impl EbsOptionsBuilder {
     pub fn get_ebs_enabled(&self) -> &::std::option::Option<bool> {
         &self.ebs_enabled
     }
-    /// <p> Specifies the volume type for EBS-based storage.</p>
+    /// <p>Specifies the volume type for EBS-based storage.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
         self.volume_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies the volume type for EBS-based storage.</p>
+    /// <p>Specifies the volume type for EBS-based storage.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }
-    /// <p> Specifies the volume type for EBS-based storage.</p>
+    /// <p>Specifies the volume type for EBS-based storage.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
         &self.volume_type
     }
-    /// <p> Integer to specify the size of an EBS volume.</p>
+    /// <p>Integer to specify the size of an EBS volume.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Integer to specify the size of an EBS volume.</p>
+    /// <p>Integer to specify the size of an EBS volume.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
     }
-    /// <p> Integer to specify the size of an EBS volume.</p>
+    /// <p>Integer to specify the size of an EBS volume.</p>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
         &self.volume_size
     }

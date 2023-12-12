@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWarmPoolOutput {
-    /// <p>The warm pool configuration details. </p>
+    /// <p>The warm pool configuration details.</p>
     pub warm_pool_configuration: ::std::option::Option<crate::types::WarmPoolConfiguration>,
     /// <p>The instances that are currently in the warm pool.</p>
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
@@ -12,7 +12,7 @@ pub struct DescribeWarmPoolOutput {
     _request_id: Option<String>,
 }
 impl DescribeWarmPoolOutput {
-    /// <p>The warm pool configuration details. </p>
+    /// <p>The warm pool configuration details.</p>
     pub fn warm_pool_configuration(&self) -> ::std::option::Option<&crate::types::WarmPoolConfiguration> {
         self.warm_pool_configuration.as_ref()
     }
@@ -49,17 +49,17 @@ pub struct DescribeWarmPoolOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeWarmPoolOutputBuilder {
-    /// <p>The warm pool configuration details. </p>
+    /// <p>The warm pool configuration details.</p>
     pub fn warm_pool_configuration(mut self, input: crate::types::WarmPoolConfiguration) -> Self {
         self.warm_pool_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The warm pool configuration details. </p>
+    /// <p>The warm pool configuration details.</p>
     pub fn set_warm_pool_configuration(mut self, input: ::std::option::Option<crate::types::WarmPoolConfiguration>) -> Self {
         self.warm_pool_configuration = input;
         self
     }
-    /// <p>The warm pool configuration details. </p>
+    /// <p>The warm pool configuration details.</p>
     pub fn get_warm_pool_configuration(&self) -> &::std::option::Option<crate::types::WarmPoolConfiguration> {
         &self.warm_pool_configuration
     }

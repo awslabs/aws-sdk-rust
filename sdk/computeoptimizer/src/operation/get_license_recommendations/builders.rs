@@ -113,54 +113,54 @@ impl GetLicenseRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p> The ARN that identifies the Amazon EC2 instance. </p>
-    /// <p> The following is the format of the ARN: </p>
-    /// <p> <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> </p>
+    /// <p>The ARN that identifies the Amazon EC2 instance.</p>
+    /// <p>The following is the format of the ARN:</p>
+    /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
-    /// <p> The ARN that identifies the Amazon EC2 instance. </p>
-    /// <p> The following is the format of the ARN: </p>
-    /// <p> <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> </p>
+    /// <p>The ARN that identifies the Amazon EC2 instance.</p>
+    /// <p>The following is the format of the ARN:</p>
+    /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
-    /// <p> The ARN that identifies the Amazon EC2 instance. </p>
-    /// <p> The following is the format of the ARN: </p>
-    /// <p> <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> </p>
+    /// <p>The ARN that identifies the Amazon EC2 instance.</p>
+    /// <p>The following is the format of the ARN:</p>
+    /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
-    /// <p> The token to advance to the next page of license recommendations. </p>
+    /// <p>The token to advance to the next page of license recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The token to advance to the next page of license recommendations. </p>
+    /// <p>The token to advance to the next page of license recommendations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The token to advance to the next page of license recommendations. </p>
+    /// <p>The token to advance to the next page of license recommendations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of license recommendations to return with a single request. </p>
-    /// <p> To retrieve the remaining results, make another request with the returned <code>nextToken</code> value. </p>
+    /// <p>The maximum number of license recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of license recommendations to return with a single request. </p>
-    /// <p> To retrieve the remaining results, make another request with the returned <code>nextToken</code> value. </p>
+    /// <p>The maximum number of license recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of license recommendations to return with a single request. </p>
-    /// <p> To retrieve the remaining results, make another request with the returned <code>nextToken</code> value. </p>
+    /// <p>The maximum number of license recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -168,17 +168,17 @@ impl GetLicenseRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> An array of objects to specify a filter that returns a more specific list of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
     pub fn filters(mut self, input: crate::types::LicenseRecommendationFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> An array of objects to specify a filter that returns a more specific list of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p> An array of objects to specify a filter that returns a more specific list of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>> {
         self.inner.get_filters()
     }

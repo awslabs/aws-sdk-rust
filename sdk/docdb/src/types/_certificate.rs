@@ -5,31 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The unique key that identifies a certificate.</p>
-    /// <p>Example: <code>rds-ca-2019</code> </p>
+    /// <p>Example: <code>rds-ca-2019</code></p>
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the certificate.</p>
-    /// <p>Example: <code>CA</code> </p>
+    /// <p>Example: <code>CA</code></p>
     pub certificate_type: ::std::option::Option<::std::string::String>,
     /// <p>The thumbprint of the certificate.</p>
     pub thumbprint: ::std::option::Option<::std::string::String>,
     /// <p>The starting date-time from which the certificate is valid.</p>
-    /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2019-07-31T17:57:09Z</code></p>
     pub valid_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date-time after which the certificate is no longer valid.</p>
-    /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2024-07-31T17:57:09Z</code></p>
     pub valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
+    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code></p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl Certificate {
     /// <p>The unique key that identifies a certificate.</p>
-    /// <p>Example: <code>rds-ca-2019</code> </p>
+    /// <p>Example: <code>rds-ca-2019</code></p>
     pub fn certificate_identifier(&self) -> ::std::option::Option<&str> {
         self.certificate_identifier.as_deref()
     }
     /// <p>The type of the certificate.</p>
-    /// <p>Example: <code>CA</code> </p>
+    /// <p>Example: <code>CA</code></p>
     pub fn certificate_type(&self) -> ::std::option::Option<&str> {
         self.certificate_type.as_deref()
     }
@@ -38,17 +38,17 @@ impl Certificate {
         self.thumbprint.as_deref()
     }
     /// <p>The starting date-time from which the certificate is valid.</p>
-    /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2019-07-31T17:57:09Z</code></p>
     pub fn valid_from(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_from.as_ref()
     }
     /// <p>The date-time after which the certificate is no longer valid.</p>
-    /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2024-07-31T17:57:09Z</code></p>
     pub fn valid_till(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_till.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
+    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code></p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -73,36 +73,36 @@ pub struct CertificateBuilder {
 }
 impl CertificateBuilder {
     /// <p>The unique key that identifies a certificate.</p>
-    /// <p>Example: <code>rds-ca-2019</code> </p>
+    /// <p>Example: <code>rds-ca-2019</code></p>
     pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique key that identifies a certificate.</p>
-    /// <p>Example: <code>rds-ca-2019</code> </p>
+    /// <p>Example: <code>rds-ca-2019</code></p>
     pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_identifier = input;
         self
     }
     /// <p>The unique key that identifies a certificate.</p>
-    /// <p>Example: <code>rds-ca-2019</code> </p>
+    /// <p>Example: <code>rds-ca-2019</code></p>
     pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_identifier
     }
     /// <p>The type of the certificate.</p>
-    /// <p>Example: <code>CA</code> </p>
+    /// <p>Example: <code>CA</code></p>
     pub fn certificate_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the certificate.</p>
-    /// <p>Example: <code>CA</code> </p>
+    /// <p>Example: <code>CA</code></p>
     pub fn set_certificate_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_type = input;
         self
     }
     /// <p>The type of the certificate.</p>
-    /// <p>Example: <code>CA</code> </p>
+    /// <p>Example: <code>CA</code></p>
     pub fn get_certificate_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_type
     }
@@ -121,53 +121,53 @@ impl CertificateBuilder {
         &self.thumbprint
     }
     /// <p>The starting date-time from which the certificate is valid.</p>
-    /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2019-07-31T17:57:09Z</code></p>
     pub fn valid_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_from = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting date-time from which the certificate is valid.</p>
-    /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2019-07-31T17:57:09Z</code></p>
     pub fn set_valid_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_from = input;
         self
     }
     /// <p>The starting date-time from which the certificate is valid.</p>
-    /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2019-07-31T17:57:09Z</code></p>
     pub fn get_valid_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.valid_from
     }
     /// <p>The date-time after which the certificate is no longer valid.</p>
-    /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2024-07-31T17:57:09Z</code></p>
     pub fn valid_till(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_till = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date-time after which the certificate is no longer valid.</p>
-    /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2024-07-31T17:57:09Z</code></p>
     pub fn set_valid_till(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_till = input;
         self
     }
     /// <p>The date-time after which the certificate is no longer valid.</p>
-    /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
+    /// <p>Example: <code>2024-07-31T17:57:09Z</code></p>
     pub fn get_valid_till(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.valid_till
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
+    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code></p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
+    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code></p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
+    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code></p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }

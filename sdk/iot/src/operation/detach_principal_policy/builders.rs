@@ -23,7 +23,7 @@ impl DetachPrincipalPolicyInputBuilder {
 /// Fluent builder constructing a request to `DetachPrincipalPolicy`.
 ///
 /// <p>Removes the specified policy from the specified certificate.</p>
-/// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>DetachPolicy</code> instead.</p>
+/// <p><b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>DetachPolicy</code> instead.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a> action.</p>
 #[deprecated]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

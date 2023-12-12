@@ -7,7 +7,7 @@ pub struct UpdateChannelMessageInput {
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID string of the message being updated.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
-    /// <p>The content of the channel message. </p>
+    /// <p>The content of the channel message.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the message being updated.</p>
     pub metadata: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl UpdateChannelMessageInput {
     pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
-    /// <p>The content of the channel message. </p>
+    /// <p>The content of the channel message.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -115,18 +115,18 @@ impl UpdateChannelMessageInputBuilder {
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }
-    /// <p>The content of the channel message. </p>
+    /// <p>The content of the channel message.</p>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content of the channel message. </p>
+    /// <p>The content of the channel message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The content of the channel message. </p>
+    /// <p>The content of the channel message.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }

@@ -12,7 +12,7 @@ pub struct AuditCheckDetails {
     pub total_resources_count: ::std::option::Option<i64>,
     /// <p>The number of resources that were found noncompliant during the check.</p>
     pub non_compliant_resources_count: ::std::option::Option<i64>,
-    /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
+    /// <p>Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.</p>
     pub suppressed_non_compliant_resources_count: ::std::option::Option<i64>,
     /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
     pub error_code: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl AuditCheckDetails {
     pub fn non_compliant_resources_count(&self) -> ::std::option::Option<i64> {
         self.non_compliant_resources_count
     }
-    /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
+    /// <p>Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.</p>
     pub fn suppressed_non_compliant_resources_count(&self) -> ::std::option::Option<i64> {
         self.suppressed_non_compliant_resources_count
     }
@@ -125,17 +125,17 @@ impl AuditCheckDetailsBuilder {
     pub fn get_non_compliant_resources_count(&self) -> &::std::option::Option<i64> {
         &self.non_compliant_resources_count
     }
-    /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
+    /// <p>Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.</p>
     pub fn suppressed_non_compliant_resources_count(mut self, input: i64) -> Self {
         self.suppressed_non_compliant_resources_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
+    /// <p>Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.</p>
     pub fn set_suppressed_non_compliant_resources_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.suppressed_non_compliant_resources_count = input;
         self
     }
-    /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
+    /// <p>Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.</p>
     pub fn get_suppressed_non_compliant_resources_count(&self) -> &::std::option::Option<i64> {
         &self.suppressed_non_compliant_resources_count
     }

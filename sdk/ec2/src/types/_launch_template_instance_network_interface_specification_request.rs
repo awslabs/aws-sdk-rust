@@ -19,7 +19,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub interface_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
     pub ipv6_address_count: ::std::option::Option<i32>,
@@ -82,7 +82,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     }
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn interface_type(&self) -> ::std::option::Option<&str> {
         self.interface_type.as_deref()
     }
@@ -285,21 +285,21 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     }
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn interface_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn set_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_type = input;
         self
     }
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn get_interface_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.interface_type
     }

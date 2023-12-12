@@ -7,9 +7,9 @@ pub struct CreateUserProfileInput {
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
     pub user_profile_name: ::std::option::Option<::std::string::String>,
-    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub single_sign_on_user_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub single_sign_on_user_value: ::std::option::Option<::std::string::String>,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
@@ -26,11 +26,11 @@ impl CreateUserProfileInput {
     pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
-    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub fn single_sign_on_user_identifier(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_user_identifier.as_deref()
     }
-    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub fn single_sign_on_user_value(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_user_value.as_deref()
     }
@@ -95,31 +95,31 @@ impl CreateUserProfileInputBuilder {
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_profile_name
     }
-    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub fn single_sign_on_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_user_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub fn set_single_sign_on_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_user_identifier = input;
         self
     }
-    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub fn get_single_sign_on_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_user_identifier
     }
-    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub fn single_sign_on_user_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_user_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub fn set_single_sign_on_user_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_user_value = input;
         self
     }
-    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified.</p>
     pub fn get_single_sign_on_user_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_user_value
     }

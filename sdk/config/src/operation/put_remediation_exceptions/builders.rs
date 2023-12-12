@@ -22,7 +22,7 @@ impl PutRemediationExceptionsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutRemediationExceptions`.
 ///
-/// <p>A remediation exception is when a specified resource is no longer considered for auto-remediation. This API adds a new exception or updates an existing exception for a specified resource with a specified Config rule. </p> <note>
+/// <p>A remediation exception is when a specified resource is no longer considered for auto-remediation. This API adds a new exception or updates an existing exception for a specified resource with a specified Config rule.</p> <note>
 /// <p>Config generates a remediation exception when a problem occurs running a remediation action for a specified resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
 /// </note> <note>
 /// <p>When placing an exception on an Amazon Web Services resource, it is recommended that remediation is set as manual remediation until the given Config rule for the specified resource evaluates the resource as <code>NON_COMPLIANT</code>. Once the resource has been evaluated as <code>NON_COMPLIANT</code>, you can add remediation exceptions and change the remediation type back from Manual to Auto if you want to use auto-remediation. Otherwise, using auto-remediation before a <code>NON_COMPLIANT</code> evaluation result can delete resources before the exception is applied.</p>
@@ -132,17 +132,17 @@ impl PutRemediationExceptionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
     ///
-    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
     pub fn resource_keys(mut self, input: crate::types::RemediationExceptionResourceKey) -> Self {
         self.inner = self.inner.resource_keys(input);
         self
     }
-    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
     pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
-    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
     pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>> {
         self.inner.get_resource_keys()
     }

@@ -108,45 +108,45 @@ impl ListFeatureGroupsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
-    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
-    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_contains()
     }
-    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p>
     pub fn feature_group_status_equals(mut self, input: crate::types::FeatureGroupStatus) -> Self {
         self.inner = self.inner.feature_group_status_equals(input);
         self
     }
-    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p>
     pub fn set_feature_group_status_equals(mut self, input: ::std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
         self.inner = self.inner.set_feature_group_status_equals(input);
         self
     }
-    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p>
     pub fn get_feature_group_status_equals(&self) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
         self.inner.get_feature_group_status_equals()
     }
-    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p>
     pub fn offline_store_status_equals(mut self, input: crate::types::OfflineStoreStatusValue) -> Self {
         self.inner = self.inner.offline_store_status_equals(input);
         self
     }
-    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p>
     pub fn set_offline_store_status_equals(mut self, input: ::std::option::Option<crate::types::OfflineStoreStatusValue>) -> Self {
         self.inner = self.inner.set_offline_store_status_equals(input);
         self
     }
-    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p>
     pub fn get_offline_store_status_equals(&self) -> &::std::option::Option<crate::types::OfflineStoreStatusValue> {
         self.inner.get_offline_store_status_equals()
     }

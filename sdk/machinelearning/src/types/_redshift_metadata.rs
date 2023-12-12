@@ -8,7 +8,7 @@ pub struct RedshiftMetadata {
     pub redshift_database: ::std::option::Option<crate::types::RedshiftDatabase>,
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub database_user_name: ::std::option::Option<::std::string::String>,
-    /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
+    /// <p>The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput.</p>
     pub select_sql_query: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftMetadata {
@@ -20,7 +20,7 @@ impl RedshiftMetadata {
     pub fn database_user_name(&self) -> ::std::option::Option<&str> {
         self.database_user_name.as_deref()
     }
-    /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
+    /// <p>The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput.</p>
     pub fn select_sql_query(&self) -> ::std::option::Option<&str> {
         self.select_sql_query.as_deref()
     }
@@ -69,17 +69,17 @@ impl RedshiftMetadataBuilder {
     pub fn get_database_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_user_name
     }
-    /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
+    /// <p>The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput.</p>
     pub fn select_sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.select_sql_query = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
+    /// <p>The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput.</p>
     pub fn set_select_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.select_sql_query = input;
         self
     }
-    /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
+    /// <p>The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput.</p>
     pub fn get_select_sql_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.select_sql_query
     }

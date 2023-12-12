@@ -27,7 +27,7 @@ pub struct AppBlock {
     /// <p>The packaging type of the app block.</p>
     pub packaging_type: ::std::option::Option<crate::types::PackagingType>,
     /// <p>The state of the app block.</p>
-    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>.</p>
     /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
     pub state: ::std::option::Option<crate::types::AppBlockState>,
     /// <p>The errors of the app block.</p>
@@ -73,7 +73,7 @@ impl AppBlock {
         self.packaging_type.as_ref()
     }
     /// <p>The state of the app block.</p>
-    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>.</p>
     /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::AppBlockState> {
         self.state.as_ref()
@@ -244,21 +244,21 @@ impl AppBlockBuilder {
         &self.packaging_type
     }
     /// <p>The state of the app block.</p>
-    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>.</p>
     /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
     pub fn state(mut self, input: crate::types::AppBlockState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the app block.</p>
-    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>.</p>
     /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AppBlockState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the app block.</p>
-    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>.</p>
     /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AppBlockState> {
         &self.state

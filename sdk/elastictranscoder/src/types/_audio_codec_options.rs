@@ -7,10 +7,10 @@ pub struct AudioCodecOptions {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
     /// <p>Specify the AAC profile for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li> <p> <code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p> </li>
-    /// <li> <p> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p> </li>
-    /// <li> <p> <code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p> </li>
-    /// <li> <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p> </li>
+    /// <li><p><code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p></li>
+    /// <li><p><code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p></li>
+    /// <li><p><code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p></li>
+    /// <li><p><code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p></li>
     /// </ul>
     /// <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note>
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>
@@ -34,10 +34,10 @@ impl AudioCodecOptions {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
     /// <p>Specify the AAC profile for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li> <p> <code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p> </li>
-    /// <li> <p> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p> </li>
-    /// <li> <p> <code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p> </li>
-    /// <li> <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p> </li>
+    /// <li><p><code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p></li>
+    /// <li><p><code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p></li>
+    /// <li><p><code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p></li>
+    /// <li><p><code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p></li>
     /// </ul>
     /// <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note>
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>
@@ -85,10 +85,10 @@ impl AudioCodecOptionsBuilder {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
     /// <p>Specify the AAC profile for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li> <p> <code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p> </li>
-    /// <li> <p> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p> </li>
-    /// <li> <p> <code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p> </li>
-    /// <li> <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p> </li>
+    /// <li><p><code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p></li>
+    /// <li><p><code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p></li>
+    /// <li><p><code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p></li>
+    /// <li><p><code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p></li>
     /// </ul>
     /// <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note>
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>
@@ -100,10 +100,10 @@ impl AudioCodecOptionsBuilder {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
     /// <p>Specify the AAC profile for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li> <p> <code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p> </li>
-    /// <li> <p> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p> </li>
-    /// <li> <p> <code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p> </li>
-    /// <li> <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p> </li>
+    /// <li><p><code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p></li>
+    /// <li><p><code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p></li>
+    /// <li><p><code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p></li>
+    /// <li><p><code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p></li>
     /// </ul>
     /// <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note>
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>
@@ -115,10 +115,10 @@ impl AudioCodecOptionsBuilder {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
     /// <p>Specify the AAC profile for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li> <p> <code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p> </li>
-    /// <li> <p> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p> </li>
-    /// <li> <p> <code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p> </li>
-    /// <li> <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p> </li>
+    /// <li><p><code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the profile based on the bit rate selected for the output file.</p></li>
+    /// <li><p><code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</p></li>
+    /// <li><p><code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</p></li>
+    /// <li><p><code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</p></li>
     /// </ul>
     /// <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note>
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>

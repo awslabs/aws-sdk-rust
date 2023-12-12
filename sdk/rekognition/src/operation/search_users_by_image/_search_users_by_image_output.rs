@@ -9,7 +9,7 @@ pub struct SearchUsersByImageOutput {
     pub face_model_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of FaceDetail objects containing the BoundingBox for the largest face in image, as well as the confidence in the bounding box, that was searched for matches. If no valid face is detected in the image the response will contain no SearchedFace object.</p>
     pub searched_face: ::std::option::Option<crate::types::SearchedFaceDetails>,
-    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
+    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search.</p>
     pub unsearched_faces: ::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFace>>,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl SearchUsersByImageOutput {
     pub fn searched_face(&self) -> ::std::option::Option<&crate::types::SearchedFaceDetails> {
         self.searched_face.as_ref()
     }
-    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
+    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsearched_faces.is_none()`.
     pub fn unsearched_faces(&self) -> &[crate::types::UnsearchedFace] {
@@ -110,19 +110,19 @@ impl SearchUsersByImageOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unsearched_faces`](Self::set_unsearched_faces).
     ///
-    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
+    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search.</p>
     pub fn unsearched_faces(mut self, input: crate::types::UnsearchedFace) -> Self {
         let mut v = self.unsearched_faces.unwrap_or_default();
         v.push(input);
         self.unsearched_faces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
+    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search.</p>
     pub fn set_unsearched_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFace>>) -> Self {
         self.unsearched_faces = input;
         self
     }
-    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
+    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search.</p>
     pub fn get_unsearched_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFace>> {
         &self.unsearched_faces
     }

@@ -14,11 +14,11 @@ pub struct Application {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the application.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p> A key-value pair that identifies an associated resource. </p>
+    /// <p>A key-value pair that identifies an associated resource.</p>
     pub application_tag: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Application {
@@ -42,7 +42,7 @@ impl Application {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
@@ -50,7 +50,7 @@ impl Application {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p> A key-value pair that identifies an associated resource. </p>
+    /// <p>A key-value pair that identifies an associated resource.</p>
     pub fn application_tag(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.application_tag.as_ref()
     }
@@ -146,17 +146,17 @@ impl ApplicationBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
-    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_time
     }
@@ -184,7 +184,7 @@ impl ApplicationBuilder {
     ///
     /// To override the contents of this collection use [`set_application_tag`](Self::set_application_tag).
     ///
-    /// <p> A key-value pair that identifies an associated resource. </p>
+    /// <p>A key-value pair that identifies an associated resource.</p>
     pub fn application_tag(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -195,7 +195,7 @@ impl ApplicationBuilder {
         self.application_tag = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> A key-value pair that identifies an associated resource. </p>
+    /// <p>A key-value pair that identifies an associated resource.</p>
     pub fn set_application_tag(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -203,7 +203,7 @@ impl ApplicationBuilder {
         self.application_tag = input;
         self
     }
-    /// <p> A key-value pair that identifies an associated resource. </p>
+    /// <p>A key-value pair that identifies an associated resource.</p>
     pub fn get_application_tag(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.application_tag
     }

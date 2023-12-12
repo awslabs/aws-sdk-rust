@@ -22,7 +22,7 @@ impl GetEc2DeepInspectionConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEc2DeepInspectionConfiguration`.
 ///
-/// <p>Retrieves the activation status of Amazon Inspector deep inspection and custom paths associated with your account. </p>
+/// <p>Retrieves the activation status of Amazon Inspector deep inspection and custom paths associated with your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEc2DeepInspectionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

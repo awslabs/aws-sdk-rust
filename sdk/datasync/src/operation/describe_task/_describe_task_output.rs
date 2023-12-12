@@ -33,7 +33,7 @@ pub struct DescribeTaskOutput {
     pub schedule: ::std::option::Option<crate::types::TaskSchedule>,
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
     pub error_detail: ::std::option::Option<::std::string::String>,
     /// <p>The time that the task was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -105,7 +105,7 @@ impl DescribeTaskOutput {
     pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
     pub fn error_detail(&self) -> ::std::option::Option<&str> {
         self.error_detail.as_deref()
     }
@@ -369,17 +369,17 @@ impl DescribeTaskOutputBuilder {
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_code
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
     pub fn error_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_detail = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
     pub fn set_error_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_detail = input;
         self
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
     pub fn get_error_detail(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_detail
     }

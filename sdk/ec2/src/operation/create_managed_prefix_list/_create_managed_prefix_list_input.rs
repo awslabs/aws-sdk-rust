@@ -15,7 +15,7 @@ pub struct CreateManagedPrefixListInput {
     /// <p>The tags to apply to the prefix list during creation.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The IP address type.</p>
-    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code></p>
     pub address_family: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     /// <p>Constraints: Up to 255 UTF-8 characters in length.</p>
@@ -48,7 +48,7 @@ impl CreateManagedPrefixListInput {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type.</p>
-    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code></p>
     pub fn address_family(&self) -> ::std::option::Option<&str> {
         self.address_family.as_deref()
     }
@@ -166,20 +166,20 @@ impl CreateManagedPrefixListInputBuilder {
         &self.tag_specifications
     }
     /// <p>The IP address type.</p>
-    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code></p>
     /// This field is required.
     pub fn address_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address type.</p>
-    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code></p>
     pub fn set_address_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_family = input;
         self
     }
     /// <p>The IP address type.</p>
-    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code></p>
     pub fn get_address_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.address_family
     }

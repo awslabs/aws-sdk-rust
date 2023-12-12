@@ -33,7 +33,7 @@ pub struct DescribeSimulationJobOutput {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -176,7 +176,7 @@ impl DescribeSimulationJobOutput {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -453,7 +453,7 @@ impl DescribeSimulationJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -544,7 +544,7 @@ impl DescribeSimulationJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -635,7 +635,7 @@ impl DescribeSimulationJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication

@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_name(impl Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_job_name):<br>required: **false**<br><p>The name of the job that these schedules apply to.</p><br>
-    ///   - [`max_results(i32)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request. </p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput) with field(s):
     ///   - [`schedules(Vec::<Schedule>)`](crate::operation::list_schedules::ListSchedulesOutput::schedules): <p>A list of schedules that are defined.</p>

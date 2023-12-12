@@ -22,7 +22,7 @@ impl GetBucketsAggregationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetBucketsAggregation`.
 ///
-/// <p>Aggregates on indexed data with search queries pertaining to particular fields. </p>
+/// <p>Aggregates on indexed data with search queries pertaining to particular fields.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBucketsAggregation</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBucketsAggregationFluentBuilder {
@@ -165,17 +165,17 @@ impl GetBucketsAggregationFluentBuilder {
     pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_version()
     }
-    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform.</p>
     pub fn buckets_aggregation_type(mut self, input: crate::types::BucketsAggregationType) -> Self {
         self.inner = self.inner.buckets_aggregation_type(input);
         self
     }
-    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform.</p>
     pub fn set_buckets_aggregation_type(mut self, input: ::std::option::Option<crate::types::BucketsAggregationType>) -> Self {
         self.inner = self.inner.set_buckets_aggregation_type(input);
         self
     }
-    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform.</p>
     pub fn get_buckets_aggregation_type(&self) -> &::std::option::Option<crate::types::BucketsAggregationType> {
         self.inner.get_buckets_aggregation_type()
     }

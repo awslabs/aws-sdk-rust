@@ -12,7 +12,7 @@ pub struct LambdaFunctionAggregationResponse {
     pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The tags included in the aggregation results.</p>
     pub lambda_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+    /// <p>The ID of the AWS account that owns the AWS Lambda function.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
@@ -37,7 +37,7 @@ impl LambdaFunctionAggregationResponse {
     pub fn lambda_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.lambda_tags.as_ref()
     }
-    /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+    /// <p>The ID of the AWS account that owns the AWS Lambda function.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -136,17 +136,17 @@ impl LambdaFunctionAggregationResponseBuilder {
     pub fn get_lambda_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.lambda_tags
     }
-    /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+    /// <p>The ID of the AWS account that owns the AWS Lambda function.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+    /// <p>The ID of the AWS account that owns the AWS Lambda function.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+    /// <p>The ID of the AWS account that owns the AWS Lambda function.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

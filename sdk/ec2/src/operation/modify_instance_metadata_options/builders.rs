@@ -124,30 +124,30 @@ impl ModifyInstanceMetadataOptionsFluentBuilder {
     }
     /// <p>IMDSv2 uses token-backed sessions. Set the use of HTTP tokens to <code>optional</code> (in other words, set the use of IMDSv2 to <code>optional</code>) or <code>required</code> (in other words, set the use of IMDSv2 to <code>required</code>).</p>
     /// <ul>
-    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
-    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// <li><p><code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p></li>
+    /// <li><p><code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: <code>optional</code> </p>
+    /// <p>Default: <code>optional</code></p>
     pub fn http_tokens(mut self, input: crate::types::HttpTokensState) -> Self {
         self.inner = self.inner.http_tokens(input);
         self
     }
     /// <p>IMDSv2 uses token-backed sessions. Set the use of HTTP tokens to <code>optional</code> (in other words, set the use of IMDSv2 to <code>optional</code>) or <code>required</code> (in other words, set the use of IMDSv2 to <code>required</code>).</p>
     /// <ul>
-    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
-    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// <li><p><code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p></li>
+    /// <li><p><code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: <code>optional</code> </p>
+    /// <p>Default: <code>optional</code></p>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::HttpTokensState>) -> Self {
         self.inner = self.inner.set_http_tokens(input);
         self
     }
     /// <p>IMDSv2 uses token-backed sessions. Set the use of HTTP tokens to <code>optional</code> (in other words, set the use of IMDSv2 to <code>optional</code>) or <code>required</code> (in other words, set the use of IMDSv2 to <code>required</code>).</p>
     /// <ul>
-    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
-    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// <li><p><code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p></li>
+    /// <li><p><code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: <code>optional</code> </p>
+    /// <p>Default: <code>optional</code></p>
     pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::HttpTokensState> {
         self.inner.get_http_tokens()
     }
@@ -214,19 +214,19 @@ impl ModifyInstanceMetadataOptionsFluentBuilder {
         self.inner.get_http_protocol_ipv6()
     }
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
-    /// <p>Default: <code>disabled</code> </p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn instance_metadata_tags(mut self, input: crate::types::InstanceMetadataTagsState) -> Self {
         self.inner = self.inner.instance_metadata_tags(input);
         self
     }
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
-    /// <p>Default: <code>disabled</code> </p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<crate::types::InstanceMetadataTagsState>) -> Self {
         self.inner = self.inner.set_instance_metadata_tags(input);
         self
     }
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
-    /// <p>Default: <code>disabled</code> </p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn get_instance_metadata_tags(&self) -> &::std::option::Option<crate::types::InstanceMetadataTagsState> {
         self.inner.get_instance_metadata_tags()
     }

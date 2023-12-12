@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePolicyOutput {
-    /// <p> The resource policy for the resource identified by the input ARN parameter. </p>
+    /// <p>The resource policy for the resource identified by the input ARN parameter.</p>
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourcePolicyOutput {
-    /// <p> The resource policy for the resource identified by the input ARN parameter. </p>
+    /// <p>The resource policy for the resource identified by the input ARN parameter.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GetResourcePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetResourcePolicyOutputBuilder {
-    /// <p> The resource policy for the resource identified by the input ARN parameter. </p>
+    /// <p>The resource policy for the resource identified by the input ARN parameter.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The resource policy for the resource identified by the input ARN parameter. </p>
+    /// <p>The resource policy for the resource identified by the input ARN parameter.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p> The resource policy for the resource identified by the input ARN parameter. </p>
+    /// <p>The resource policy for the resource identified by the input ARN parameter.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

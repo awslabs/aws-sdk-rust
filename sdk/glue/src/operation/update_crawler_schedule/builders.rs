@@ -22,7 +22,7 @@ impl UpdateCrawlerScheduleInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCrawlerSchedule`.
 ///
-/// <p>Updates the schedule of a crawler using a <code>cron</code> expression. </p>
+/// <p>Updates the schedule of a crawler using a <code>cron</code> expression.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCrawlerScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

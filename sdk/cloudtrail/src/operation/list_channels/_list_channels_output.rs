@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChannelsOutput {
-    /// <p> The list of channels in the account. </p>
+    /// <p>The list of channels in the account.</p>
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListChannelsOutput {
-    /// <p> The list of channels in the account. </p>
+    /// <p>The list of channels in the account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
     pub fn channels(&self) -> &[crate::types::Channel] {
@@ -46,19 +46,19 @@ impl ListChannelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
     ///
-    /// <p> The list of channels in the account. </p>
+    /// <p>The list of channels in the account.</p>
     pub fn channels(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.channels.unwrap_or_default();
         v.push(input);
         self.channels = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of channels in the account. </p>
+    /// <p>The list of channels in the account.</p>
     pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
         self.channels = input;
         self
     }
-    /// <p> The list of channels in the account. </p>
+    /// <p>The list of channels in the account.</p>
     pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
         &self.channels
     }

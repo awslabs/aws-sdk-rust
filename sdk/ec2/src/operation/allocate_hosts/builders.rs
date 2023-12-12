@@ -109,19 +109,19 @@ impl AllocateHostsFluentBuilder {
         self
     }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code> </p>
+    /// <p>Default: <code>on</code></p>
     pub fn auto_placement(mut self, input: crate::types::AutoPlacement) -> Self {
         self.inner = self.inner.auto_placement(input);
         self
     }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code> </p>
+    /// <p>Default: <code>on</code></p>
     pub fn set_auto_placement(mut self, input: ::std::option::Option<crate::types::AutoPlacement>) -> Self {
         self.inner = self.inner.set_auto_placement(input);
         self
     }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code> </p>
+    /// <p>Default: <code>on</code></p>
     pub fn get_auto_placement(&self) -> &::std::option::Option<crate::types::AutoPlacement> {
         self.inner.get_auto_placement()
     }
@@ -220,19 +220,19 @@ impl AllocateHostsFluentBuilder {
         self.inner.get_tag_specifications()
     }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>off</code> </p>
+    /// <p>Default: <code>off</code></p>
     pub fn host_recovery(mut self, input: crate::types::HostRecovery) -> Self {
         self.inner = self.inner.host_recovery(input);
         self
     }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>off</code> </p>
+    /// <p>Default: <code>off</code></p>
     pub fn set_host_recovery(mut self, input: ::std::option::Option<crate::types::HostRecovery>) -> Self {
         self.inner = self.inner.set_host_recovery(input);
         self
     }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>off</code> </p>
+    /// <p>Default: <code>off</code></p>
     pub fn get_host_recovery(&self) -> &::std::option::Option<crate::types::HostRecovery> {
         self.inner.get_host_recovery()
     }
@@ -273,8 +273,8 @@ impl AllocateHostsFluentBuilder {
     ///
     /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
     /// <ul>
-    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
-    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// <li><p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p></li>
+    /// <li><p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p></li>
     /// </ul>
     pub fn asset_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_ids(input.into());
@@ -282,8 +282,8 @@ impl AllocateHostsFluentBuilder {
     }
     /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
     /// <ul>
-    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
-    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// <li><p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p></li>
+    /// <li><p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p></li>
     /// </ul>
     pub fn set_asset_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_asset_ids(input);
@@ -291,8 +291,8 @@ impl AllocateHostsFluentBuilder {
     }
     /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
     /// <ul>
-    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
-    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// <li><p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p></li>
+    /// <li><p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p></li>
     /// </ul>
     pub fn get_asset_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_asset_ids()

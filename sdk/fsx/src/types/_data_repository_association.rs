@@ -2,9 +2,9 @@
 
 /// <p>The configuration of a data repository association that links an Amazon FSx for Lustre file system to an Amazon S3 bucket or an Amazon File Cache resource to an Amazon S3 bucket or an NFS file system. The data repository association configuration object is returned in the response of the following operations:</p>
 /// <ul>
-/// <li> <p> <code>CreateDataRepositoryAssociation</code> </p> </li>
-/// <li> <p> <code>UpdateDataRepositoryAssociation</code> </p> </li>
-/// <li> <p> <code>DescribeDataRepositoryAssociations</code> </p> </li>
+/// <li><p><code>CreateDataRepositoryAssociation</code></p></li>
+/// <li><p><code>UpdateDataRepositoryAssociation</code></p></li>
+/// <li><p><code>DescribeDataRepositoryAssociations</code></p></li>
 /// </ul>
 /// <p>Data repository associations are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and 2.15 file systems, excluding <code>scratch_1</code> deployment type.</p>
 #[non_exhaustive]
@@ -18,12 +18,12 @@ pub struct DataRepositoryAssociation {
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
+    /// <li><p><code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The data repository association is available for use.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p></li>
+    /// <li><p><code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p></li>
+    /// <li><p><code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p></li>
+    /// <li><p><code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p></li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
@@ -35,17 +35,17 @@ pub struct DataRepositoryAssociation {
     pub file_system_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the data repository that will be linked to the cache or file system.</p>
     /// <ul>
-    /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+    /// <li><p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
-    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
-    /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// </ul></li>
+    /// <li><p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li><p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub data_repository_path: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
-    /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+    /// <p><code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
     /// </note>
     pub batch_import_meta_data_on_create: ::std::option::Option<bool>,
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
@@ -85,12 +85,12 @@ impl DataRepositoryAssociation {
     }
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
+    /// <li><p><code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The data repository association is available for use.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p></li>
+    /// <li><p><code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p></li>
+    /// <li><p><code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p></li>
+    /// <li><p><code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p></li>
     /// </ul>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::DataRepositoryLifecycle> {
         self.lifecycle.as_ref()
@@ -108,19 +108,19 @@ impl DataRepositoryAssociation {
     }
     /// <p>The path to the data repository that will be linked to the cache or file system.</p>
     /// <ul>
-    /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+    /// <li><p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
-    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
-    /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// </ul></li>
+    /// <li><p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li><p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub fn data_repository_path(&self) -> ::std::option::Option<&str> {
         self.data_repository_path.as_deref()
     }
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
-    /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+    /// <p><code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
     /// </note>
     pub fn batch_import_meta_data_on_create(&self) -> ::std::option::Option<bool> {
         self.batch_import_meta_data_on_create
@@ -240,12 +240,12 @@ impl DataRepositoryAssociationBuilder {
     }
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
+    /// <li><p><code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The data repository association is available for use.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p></li>
+    /// <li><p><code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p></li>
+    /// <li><p><code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p></li>
+    /// <li><p><code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p></li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::DataRepositoryLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -253,12 +253,12 @@ impl DataRepositoryAssociationBuilder {
     }
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
+    /// <li><p><code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The data repository association is available for use.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p></li>
+    /// <li><p><code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p></li>
+    /// <li><p><code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p></li>
+    /// <li><p><code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::DataRepositoryLifecycle>) -> Self {
         self.lifecycle = input;
@@ -266,12 +266,12 @@ impl DataRepositoryAssociationBuilder {
     }
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
+    /// <li><p><code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The data repository association is available for use.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p></li>
+    /// <li><p><code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p></li>
+    /// <li><p><code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p></li>
+    /// <li><p><code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p></li>
     /// </ul>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::DataRepositoryLifecycle> {
         &self.lifecycle
@@ -315,13 +315,13 @@ impl DataRepositoryAssociationBuilder {
     }
     /// <p>The path to the data repository that will be linked to the cache or file system.</p>
     /// <ul>
-    /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+    /// <li><p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
-    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
-    /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// </ul></li>
+    /// <li><p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li><p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub fn data_repository_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_repository_path = ::std::option::Option::Some(input.into());
@@ -329,13 +329,13 @@ impl DataRepositoryAssociationBuilder {
     }
     /// <p>The path to the data repository that will be linked to the cache or file system.</p>
     /// <ul>
-    /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+    /// <li><p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
-    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
-    /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// </ul></li>
+    /// <li><p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li><p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub fn set_data_repository_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_repository_path = input;
@@ -343,33 +343,33 @@ impl DataRepositoryAssociationBuilder {
     }
     /// <p>The path to the data repository that will be linked to the cache or file system.</p>
     /// <ul>
-    /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+    /// <li><p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
-    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
-    /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// </ul></li>
+    /// <li><p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li><p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub fn get_data_repository_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_repository_path
     }
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
-    /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+    /// <p><code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
     /// </note>
     pub fn batch_import_meta_data_on_create(mut self, input: bool) -> Self {
         self.batch_import_meta_data_on_create = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
-    /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+    /// <p><code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
     /// </note>
     pub fn set_batch_import_meta_data_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
         self.batch_import_meta_data_on_create = input;
         self
     }
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
-    /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+    /// <p><code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
     /// </note>
     pub fn get_batch_import_meta_data_on_create(&self) -> &::std::option::Option<bool> {
         &self.batch_import_meta_data_on_create

@@ -248,7 +248,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeOutbo
 pub enum DescribeOutboundCrossClusterSearchConnectionsError {
     /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
-    /// <p>The request processing has failed because of invalid pagination token provided by customer. Returns an HTTP status code of 400. </p>
+    /// <p>The request processing has failed because of invalid pagination token provided by customer. Returns an HTTP status code of 400.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

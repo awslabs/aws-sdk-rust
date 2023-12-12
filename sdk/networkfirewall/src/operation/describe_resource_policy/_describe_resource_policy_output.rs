@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourcePolicyOutput {
-    /// <p>The IAM policy for the resource. </p>
+    /// <p>The IAM policy for the resource.</p>
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeResourcePolicyOutput {
-    /// <p>The IAM policy for the resource. </p>
+    /// <p>The IAM policy for the resource.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeResourcePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeResourcePolicyOutputBuilder {
-    /// <p>The IAM policy for the resource. </p>
+    /// <p>The IAM policy for the resource.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM policy for the resource. </p>
+    /// <p>The IAM policy for the resource.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The IAM policy for the resource. </p>
+    /// <p>The IAM policy for the resource.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

@@ -14,8 +14,8 @@ pub struct LaunchTemplateSpotMarketOptionsRequest {
     pub block_duration_minutes: ::std::option::Option<i32>,
     /// <p>The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
-    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
+    /// <li><p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
+    /// <li><p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
     /// </ul>
     /// <p>Default: 7 days from the current date</p>
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -39,8 +39,8 @@ impl LaunchTemplateSpotMarketOptionsRequest {
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
-    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
+    /// <li><p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
+    /// <li><p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
     /// </ul>
     /// <p>Default: 7 days from the current date</p>
     pub fn valid_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -119,8 +119,8 @@ impl LaunchTemplateSpotMarketOptionsRequestBuilder {
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
-    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
+    /// <li><p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
+    /// <li><p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
     /// </ul>
     /// <p>Default: 7 days from the current date</p>
     pub fn valid_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,8 +129,8 @@ impl LaunchTemplateSpotMarketOptionsRequestBuilder {
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
-    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
+    /// <li><p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
+    /// <li><p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
     /// </ul>
     /// <p>Default: 7 days from the current date</p>
     pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
@@ -139,8 +139,8 @@ impl LaunchTemplateSpotMarketOptionsRequestBuilder {
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
-    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
+    /// <li><p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
+    /// <li><p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
     /// </ul>
     /// <p>Default: 7 days from the current date</p>
     pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {

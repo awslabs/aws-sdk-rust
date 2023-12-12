@@ -11,39 +11,39 @@ pub struct DescribeInferenceExperimentOutput {
     pub r#type: ::std::option::Option<crate::types::InferenceExperimentType>,
     /// <p>The duration for which the inference experiment ran or will run.</p>
     pub schedule: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
-    /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+    /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
-    /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
-    /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
-    /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
-    /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
-    /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
-    /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
-    /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::InferenceExperimentStatus>,
-    /// <p> The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment. </p>
+    /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The description of the inference experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which you created the inference experiment.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The timestamp at which the inference experiment was completed. </p>
+    /// <p>The timestamp at which the inference experiment was completed.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which you last modified the inference experiment.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    /// <p>The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
     pub endpoint_metadata: ::std::option::Option<crate::types::EndpointMetadata>,
-    /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+    /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
     pub model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfigSummary>>,
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
-    /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+    /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
     pub shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
-    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,21 +64,21 @@ impl DescribeInferenceExperimentOutput {
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::InferenceExperimentSchedule> {
         self.schedule.as_ref()
     }
-    /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+    /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
-    /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
-    /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
-    /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
-    /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
-    /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
-    /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
-    /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InferenceExperimentStatus> {
         self.status.as_ref()
     }
-    /// <p> The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment. </p>
+    /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -90,7 +90,7 @@ impl DescribeInferenceExperimentOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p> The timestamp at which the inference experiment was completed. </p>
+    /// <p>The timestamp at which the inference experiment was completed.</p>
     pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
@@ -98,7 +98,7 @@ impl DescribeInferenceExperimentOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    /// <p>The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -106,7 +106,7 @@ impl DescribeInferenceExperimentOutput {
     pub fn endpoint_metadata(&self) -> ::std::option::Option<&crate::types::EndpointMetadata> {
         self.endpoint_metadata.as_ref()
     }
-    /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+    /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_variants.is_none()`.
     pub fn model_variants(&self) -> &[crate::types::ModelVariantConfigSummary] {
@@ -116,11 +116,11 @@ impl DescribeInferenceExperimentOutput {
     pub fn data_storage_config(&self) -> ::std::option::Option<&crate::types::InferenceExperimentDataStorageConfig> {
         self.data_storage_config.as_ref()
     }
-    /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+    /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
     pub fn shadow_mode_config(&self) -> ::std::option::Option<&crate::types::ShadowModeConfig> {
         self.shadow_mode_config.as_ref()
     }
-    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -219,62 +219,62 @@ impl DescribeInferenceExperimentOutputBuilder {
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
         &self.schedule
     }
-    /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+    /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
-    /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
-    /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
-    /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
-    /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
-    /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
-    /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
-    /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::InferenceExperimentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+    /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
-    /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
-    /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
-    /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
-    /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
-    /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
-    /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
-    /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p> The status of the inference experiment. The following are the possible statuses for an inference experiment: </p>
+    /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li> <p> <code>Creating</code> - Amazon SageMaker is creating your experiment. </p> </li>
-    /// <li> <p> <code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time. </p> </li>
-    /// <li> <p> <code>Updating</code> - When you make changes to your experiment, your experiment shows as updating. </p> </li>
-    /// <li> <p> <code>Starting</code> - Amazon SageMaker is beginning your experiment. </p> </li>
-    /// <li> <p> <code>Running</code> - Your experiment is in progress. </p> </li>
-    /// <li> <p> <code>Stopping</code> - Amazon SageMaker is stopping your experiment. </p> </li>
-    /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
-    /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
+    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceExperimentStatus> {
         &self.status
     }
-    /// <p> The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment. </p>
+    /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
     pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment. </p>
+    /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p> The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment. </p>
+    /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
@@ -306,17 +306,17 @@ impl DescribeInferenceExperimentOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p> The timestamp at which the inference experiment was completed. </p>
+    /// <p>The timestamp at which the inference experiment was completed.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The timestamp at which the inference experiment was completed. </p>
+    /// <p>The timestamp at which the inference experiment was completed.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
-    /// <p> The timestamp at which the inference experiment was completed. </p>
+    /// <p>The timestamp at which the inference experiment was completed.</p>
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completion_time
     }
@@ -334,17 +334,17 @@ impl DescribeInferenceExperimentOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    /// <p>The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    /// <p>The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    /// <p>The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -367,19 +367,19 @@ impl DescribeInferenceExperimentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_model_variants`](Self::set_model_variants).
     ///
-    /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+    /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
     pub fn model_variants(mut self, input: crate::types::ModelVariantConfigSummary) -> Self {
         let mut v = self.model_variants.unwrap_or_default();
         v.push(input);
         self.model_variants = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+    /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
     pub fn set_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfigSummary>>) -> Self {
         self.model_variants = input;
         self
     }
-    /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
+    /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
     pub fn get_model_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfigSummary>> {
         &self.model_variants
     }
@@ -397,31 +397,31 @@ impl DescribeInferenceExperimentOutputBuilder {
     pub fn get_data_storage_config(&self) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
         &self.data_storage_config
     }
-    /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+    /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
     pub fn shadow_mode_config(mut self, input: crate::types::ShadowModeConfig) -> Self {
         self.shadow_mode_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+    /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
     pub fn set_shadow_mode_config(mut self, input: ::std::option::Option<crate::types::ShadowModeConfig>) -> Self {
         self.shadow_mode_config = input;
         self
     }
-    /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
+    /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
     pub fn get_shadow_mode_config(&self) -> &::std::option::Option<crate::types::ShadowModeConfig> {
         &self.shadow_mode_config
     }
-    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }
-    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }

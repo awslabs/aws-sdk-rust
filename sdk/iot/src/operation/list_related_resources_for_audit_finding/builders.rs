@@ -24,15 +24,15 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
 ///
 /// <p>The related resources of an Audit finding. The following resources can be returned from calling this API:</p>
 /// <ul>
-/// <li> <p>DEVICE_CERTIFICATE</p> </li>
-/// <li> <p>CA_CERTIFICATE</p> </li>
-/// <li> <p>IOT_POLICY</p> </li>
-/// <li> <p>COGNITO_IDENTITY_POOL</p> </li>
-/// <li> <p>CLIENT_ID</p> </li>
-/// <li> <p>ACCOUNT_SETTINGS</p> </li>
-/// <li> <p>ROLE_ALIAS</p> </li>
-/// <li> <p>IAM_ROLE</p> </li>
-/// <li> <p>ISSUER_CERTIFICATE</p> </li>
+/// <li><p>DEVICE_CERTIFICATE</p></li>
+/// <li><p>CA_CERTIFICATE</p></li>
+/// <li><p>IOT_POLICY</p></li>
+/// <li><p>COGNITO_IDENTITY_POOL</p></li>
+/// <li><p>CLIENT_ID</p></li>
+/// <li><p>ACCOUNT_SETTINGS</p></li>
+/// <li><p>ROLE_ALIAS</p></li>
+/// <li><p>IAM_ROLE</p></li>
+/// <li><p>ISSUER_CERTIFICATE</p></li>
 /// </ul> <note>
 /// <p>This API is similar to DescribeAuditFinding's <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but provides pagination and is not limited to 10 resources. When calling <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a> for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.</p>
 /// </note>

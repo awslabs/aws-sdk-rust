@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateReposit
 pub enum CreateRepositoryLinkError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Exception thrown as a result of concurrent modification to an application. For example, two individuals attempting to edit the same application at the same time. </p>
+    /// <p>Exception thrown as a result of concurrent modification to an application. For example, two individuals attempting to edit the same application at the same time.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>Received an internal server exception. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),

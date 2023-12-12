@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct User {
-    /// <p> A provided ID for the User. Unique within the collection.</p>
+    /// <p>A provided ID for the User. Unique within the collection.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
+    /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
 }
 impl User {
-    /// <p> A provided ID for the User. Unique within the collection.</p>
+    /// <p>A provided ID for the User. Unique within the collection.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
+    /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
     pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatus> {
         self.user_status.as_ref()
     }
@@ -34,31 +34,31 @@ pub struct UserBuilder {
     pub(crate) user_status: ::std::option::Option<crate::types::UserStatus>,
 }
 impl UserBuilder {
-    /// <p> A provided ID for the User. Unique within the collection.</p>
+    /// <p>A provided ID for the User. Unique within the collection.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A provided ID for the User. Unique within the collection.</p>
+    /// <p>A provided ID for the User. Unique within the collection.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p> A provided ID for the User. Unique within the collection.</p>
+    /// <p>A provided ID for the User. Unique within the collection.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
-    /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
+    /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
     pub fn user_status(mut self, input: crate::types::UserStatus) -> Self {
         self.user_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
+    /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
     pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
         self.user_status = input;
         self
     }
-    /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
+    /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
     pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
         &self.user_status
     }

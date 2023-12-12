@@ -6,7 +6,7 @@
 pub struct UpdateServiceAccessPoliciesInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    /// <p>The access rules you want to configure. These rules replace any existing rules.</p>
     pub access_policies: ::std::option::Option<::std::string::String>,
 }
 impl UpdateServiceAccessPoliciesInput {
@@ -14,7 +14,7 @@ impl UpdateServiceAccessPoliciesInput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    /// <p>The access rules you want to configure. These rules replace any existing rules.</p>
     pub fn access_policies(&self) -> ::std::option::Option<&str> {
         self.access_policies.as_deref()
     }
@@ -49,18 +49,18 @@ impl UpdateServiceAccessPoliciesInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    /// <p>The access rules you want to configure. These rules replace any existing rules.</p>
     /// This field is required.
     pub fn access_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policies = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    /// <p>The access rules you want to configure. These rules replace any existing rules.</p>
     pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policies = input;
         self
     }
-    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    /// <p>The access rules you want to configure. These rules replace any existing rules.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_policies
     }

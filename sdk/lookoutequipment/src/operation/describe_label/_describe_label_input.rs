@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelInput {
-    /// <p> Returns the name of the group containing the label. </p>
+    /// <p>Returns the name of the group containing the label.</p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> Returns the ID of the label. </p>
+    /// <p>Returns the ID of the label.</p>
     pub label_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLabelInput {
-    /// <p> Returns the name of the group containing the label. </p>
+    /// <p>Returns the name of the group containing the label.</p>
     pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p> Returns the ID of the label. </p>
+    /// <p>Returns the ID of the label.</p>
     pub fn label_id(&self) -> ::std::option::Option<&str> {
         self.label_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DescribeLabelInputBuilder {
     pub(crate) label_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLabelInputBuilder {
-    /// <p> Returns the name of the group containing the label. </p>
+    /// <p>Returns the name of the group containing the label.</p>
     /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Returns the name of the group containing the label. </p>
+    /// <p>Returns the name of the group containing the label.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
-    /// <p> Returns the name of the group containing the label. </p>
+    /// <p>Returns the name of the group containing the label.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }
-    /// <p> Returns the ID of the label. </p>
+    /// <p>Returns the ID of the label.</p>
     /// This field is required.
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Returns the ID of the label. </p>
+    /// <p>Returns the ID of the label.</p>
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_id = input;
         self
     }
-    /// <p> Returns the ID of the label. </p>
+    /// <p>Returns the ID of the label.</p>
     pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_id
     }

@@ -22,7 +22,7 @@ impl InferSnomedctInputBuilder {
 }
 /// Fluent builder constructing a request to `InferSNOMEDCT`.
 ///
-/// <p> InferSNOMEDCT detects possible medical concepts as entities and links them to codes from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology</p>
+/// <p>InferSNOMEDCT detects possible medical concepts as entities and links them to codes from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InferSNOMEDCTFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

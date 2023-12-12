@@ -23,10 +23,10 @@ impl DeleteBuildInputBuilder {
 /// Fluent builder constructing a request to `DeleteBuild`.
 ///
 /// <p>Deletes a build. This operation permanently deletes the build resource and any uploaded build files. Deleting a build does not affect the status of any active fleets using the build, but you can no longer create new fleets with the deleted build.</p>
-/// <p>To delete a build, specify the build ID. </p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p>To delete a build, specify the build ID.</p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBuildFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl DeleteBuildFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value.</p>
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.build_id(input.into());
         self
     }
-    /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value.</p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_build_id(input);
         self
     }
-    /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value.</p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_build_id()
     }

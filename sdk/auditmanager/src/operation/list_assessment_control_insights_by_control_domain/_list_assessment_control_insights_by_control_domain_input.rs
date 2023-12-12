@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentControlInsightsByControlDomainInput {
-    /// <p>The unique identifier for the control domain. </p>
+    /// <p>The unique identifier for the control domain.</p>
     pub control_domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the active assessment. </p>
+    /// <p>The unique identifier for the active assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAssessmentControlInsightsByControlDomainInput {
-    /// <p>The unique identifier for the control domain. </p>
+    /// <p>The unique identifier for the control domain.</p>
     pub fn control_domain_id(&self) -> ::std::option::Option<&str> {
         self.control_domain_id.as_deref()
     }
-    /// <p>The unique identifier for the active assessment. </p>
+    /// <p>The unique identifier for the active assessment.</p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -49,61 +49,61 @@ pub struct ListAssessmentControlInsightsByControlDomainInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListAssessmentControlInsightsByControlDomainInputBuilder {
-    /// <p>The unique identifier for the control domain. </p>
+    /// <p>The unique identifier for the control domain.</p>
     /// This field is required.
     pub fn control_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the control domain. </p>
+    /// <p>The unique identifier for the control domain.</p>
     pub fn set_control_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_domain_id = input;
         self
     }
-    /// <p>The unique identifier for the control domain. </p>
+    /// <p>The unique identifier for the control domain.</p>
     pub fn get_control_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_domain_id
     }
-    /// <p>The unique identifier for the active assessment. </p>
+    /// <p>The unique identifier for the active assessment.</p>
     /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the active assessment. </p>
+    /// <p>The unique identifier for the active assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
-    /// <p>The unique identifier for the active assessment. </p>
+    /// <p>The unique identifier for the active assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

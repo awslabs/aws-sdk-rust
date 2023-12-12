@@ -246,17 +246,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetTrailStatu
 #[derive(::std::fmt::Debug)]
 pub enum GetTrailStatusError {
     /// <p>This exception is thrown when an operation is called with an ARN that is not valid.</p>
-    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
-    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
+    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
-    /// <li> <p>Be between 3 and 128 characters</p> </li>
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li><p>Be between 3 and 128 characters</p></li>
+    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     InvalidTrailNameException(crate::types::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>

@@ -25,52 +25,52 @@ impl ImportKeyInputBuilder {
 /// <p>Imports symmetric keys and public key certificates in PEM format (base64 encoded) into Amazon Web Services Payment Cryptography.</p>
 /// <p>Amazon Web Services Payment Cryptography simplifies key exchange by replacing the existing paper-based approach with a modern electronic approach. With <code>ImportKey</code> you can import symmetric keys using either symmetric and asymmetric key exchange mechanisms.</p>
 /// <p>For symmetric key exchange, Amazon Web Services Payment Cryptography uses the ANSI X9 TR-31 norm in accordance with PCI PIN guidelines. And for asymmetric key exchange, Amazon Web Services Payment Cryptography supports ANSI X9 TR-34 norm . Asymmetric key exchange methods are typically used to establish bi-directional trust between the two parties exhanging keys and are used for initial key exchange such as Key Encryption Key (KEK) or Zone Master Key (ZMK). After which you can import working keys using symmetric method to perform various cryptographic operations within Amazon Web Services Payment Cryptography.</p>
-/// <p>The TR-34 norm is intended for exchanging 3DES keys only and keys are imported in a WrappedKeyBlock format. Key attributes (such as KeyUsage, KeyAlgorithm, KeyModesOfUse, Exportability) are contained within the key block. </p>
+/// <p>The TR-34 norm is intended for exchanging 3DES keys only and keys are imported in a WrappedKeyBlock format. Key attributes (such as KeyUsage, KeyAlgorithm, KeyModesOfUse, Exportability) are contained within the key block.</p>
 /// <p>You can also import a <i>root public key certificate</i>, used to sign other public key certificates, or a <i>trusted public key certificate</i> under an already established root public key certificate.</p>
-/// <p> <b>To import a public root key certificate</b> </p>
+/// <p><b>To import a public root key certificate</b></p>
 /// <p>You can also import a <i>root public key certificate</i>, used to sign other public key certificates, or a <i>trusted public key certificate</i> under an already established root public key certificate.</p>
-/// <p> <b>To import a public root key certificate</b> </p>
+/// <p><b>To import a public root key certificate</b></p>
 /// <p>Using this operation, you can import the public component (in PEM cerificate format) of your private root key. You can use the imported public root key certificate for digital signatures, for example signing wrapping key or signing key in TR-34, within your Amazon Web Services Payment Cryptography account.</p>
 /// <p>Set the following parameters:</p>
 /// <ul>
-/// <li> <p> <code>KeyMaterial</code>: <code>RootCertificatePublicKey</code> </p> </li>
-/// <li> <p> <code>KeyClass</code>: <code>PUBLIC_KEY</code> </p> </li>
-/// <li> <p> <code>KeyModesOfUse</code>: <code>Verify</code> </p> </li>
-/// <li> <p> <code>KeyUsage</code>: <code>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</code> </p> </li>
-/// <li> <p> <code>PublicKeyCertificate</code>: The public key certificate in PEM format (base64 encoded) of the private root key under import.</p> </li>
+/// <li><p><code>KeyMaterial</code>: <code>RootCertificatePublicKey</code></p></li>
+/// <li><p><code>KeyClass</code>: <code>PUBLIC_KEY</code></p></li>
+/// <li><p><code>KeyModesOfUse</code>: <code>Verify</code></p></li>
+/// <li><p><code>KeyUsage</code>: <code>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</code></p></li>
+/// <li><p><code>PublicKeyCertificate</code>: The public key certificate in PEM format (base64 encoded) of the private root key under import.</p></li>
 /// </ul>
-/// <p> <b>To import a trusted public key certificate</b> </p>
+/// <p><b>To import a trusted public key certificate</b></p>
 /// <p>The root public key certificate must be in place and operational before you import a trusted public key certificate. Set the following parameters:</p>
 /// <ul>
-/// <li> <p> <code>KeyMaterial</code>: <code>TrustedCertificatePublicKey</code> </p> </li>
-/// <li> <p> <code>CertificateAuthorityPublicKeyIdentifier</code>: <code>KeyArn</code> of the <code>RootCertificatePublicKey</code>.</p> </li>
-/// <li> <p> <code>KeyModesOfUse</code> and <code>KeyUsage</code>: Corresponding to the cryptographic operations such as wrap, sign, or encrypt that you will allow the trusted public key certificate to perform.</p> </li>
-/// <li> <p> <code>PublicKeyCertificate</code>: The trusted public key certificate in PEM format (base64 encoded) under import.</p> </li>
+/// <li><p><code>KeyMaterial</code>: <code>TrustedCertificatePublicKey</code></p></li>
+/// <li><p><code>CertificateAuthorityPublicKeyIdentifier</code>: <code>KeyArn</code> of the <code>RootCertificatePublicKey</code>.</p></li>
+/// <li><p><code>KeyModesOfUse</code> and <code>KeyUsage</code>: Corresponding to the cryptographic operations such as wrap, sign, or encrypt that you will allow the trusted public key certificate to perform.</p></li>
+/// <li><p><code>PublicKeyCertificate</code>: The trusted public key certificate in PEM format (base64 encoded) under import.</p></li>
 /// </ul>
-/// <p> <b>To import KEK or ZMK using TR-34</b> </p>
+/// <p><b>To import KEK or ZMK using TR-34</b></p>
 /// <p>Using this operation, you can import initial key using TR-34 asymmetric key exchange. In TR-34 terminology, the sending party of the key is called Key Distribution Host (KDH) and the receiving party of the key is called Key Receiving Device (KRD). During the key import process, KDH is the user who initiates the key import and KRD is Amazon Web Services Payment Cryptography who receives the key.</p>
 /// <p>To initiate TR-34 key import, the KDH must obtain an import token by calling <code>GetParametersForImport</code>. This operation generates an encryption keypair for the purpose of key import, signs the key and returns back the wrapping key certificate (also known as KRD wrapping certificate) and the root certificate chain. The KDH must trust and install the KRD wrapping certificate on its HSM and use it to encrypt (wrap) the KDH key during TR-34 WrappedKeyBlock generation. The import token and associated KRD wrapping certificate expires after 7 days.</p>
 /// <p>Next the KDH generates a key pair for the purpose of signing the encrypted KDH key and provides the public certificate of the signing key to Amazon Web Services Payment Cryptography. The KDH will also need to import the root certificate chain of the KDH signing certificate by calling <code>ImportKey</code> for <code>RootCertificatePublicKey</code>. For more information on TR-34 key import, see section <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-import.html">Importing symmetric keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p>Set the following parameters:</p>
 /// <ul>
-/// <li> <p> <code>KeyMaterial</code>: Use <code>Tr34KeyBlock</code> parameters.</p> </li>
-/// <li> <p> <code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of the certificate chain that signed the KDH signing key certificate.</p> </li>
-/// <li> <p> <code>ImportToken</code>: Obtained from KRD by calling <code>GetParametersForImport</code>.</p> </li>
-/// <li> <p> <code>WrappedKeyBlock</code>: The TR-34 wrapped key material from KDH. It contains the KDH key under import, wrapped with KRD wrapping certificate and signed by KDH signing private key. This TR-34 key block is typically generated by the KDH Hardware Security Module (HSM) outside of Amazon Web Services Payment Cryptography.</p> </li>
-/// <li> <p> <code>SigningKeyCertificate</code>: The public key certificate in PEM format (base64 encoded) of the KDH signing key generated under the root certificate (CertificateAuthorityPublicKeyIdentifier) imported in Amazon Web Services Payment Cryptography.</p> </li>
+/// <li><p><code>KeyMaterial</code>: Use <code>Tr34KeyBlock</code> parameters.</p></li>
+/// <li><p><code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of the certificate chain that signed the KDH signing key certificate.</p></li>
+/// <li><p><code>ImportToken</code>: Obtained from KRD by calling <code>GetParametersForImport</code>.</p></li>
+/// <li><p><code>WrappedKeyBlock</code>: The TR-34 wrapped key material from KDH. It contains the KDH key under import, wrapped with KRD wrapping certificate and signed by KDH signing private key. This TR-34 key block is typically generated by the KDH Hardware Security Module (HSM) outside of Amazon Web Services Payment Cryptography.</p></li>
+/// <li><p><code>SigningKeyCertificate</code>: The public key certificate in PEM format (base64 encoded) of the KDH signing key generated under the root certificate (CertificateAuthorityPublicKeyIdentifier) imported in Amazon Web Services Payment Cryptography.</p></li>
 /// </ul>
-/// <p> <b>To import WK (Working Key) using TR-31</b> </p>
+/// <p><b>To import WK (Working Key) using TR-31</b></p>
 /// <p>Amazon Web Services Payment Cryptography uses TR-31 symmetric key exchange norm to import working keys. A KEK must be established within Amazon Web Services Payment Cryptography by using TR-34 key import or by using <code>CreateKey</code>. To initiate a TR-31 key import, set the following parameters:</p>
 /// <ul>
-/// <li> <p> <code>KeyMaterial</code>: Use <code>Tr31KeyBlock</code> parameters.</p> </li>
-/// <li> <p> <code>WrappedKeyBlock</code>: The TR-31 wrapped key material. It contains the key under import, encrypted using KEK. The TR-31 key block is typically generated by a HSM outside of Amazon Web Services Payment Cryptography. </p> </li>
-/// <li> <p> <code>WrappingKeyIdentifier</code>: The <code>KeyArn</code> of the KEK that Amazon Web Services Payment Cryptography uses to decrypt or unwrap the key under import.</p> </li>
+/// <li><p><code>KeyMaterial</code>: Use <code>Tr31KeyBlock</code> parameters.</p></li>
+/// <li><p><code>WrappedKeyBlock</code>: The TR-31 wrapped key material. It contains the key under import, encrypted using KEK. The TR-31 key block is typically generated by a HSM outside of Amazon Web Services Payment Cryptography.</p></li>
+/// <li><p><code>WrappingKeyIdentifier</code>: The <code>KeyArn</code> of the KEK that Amazon Web Services Payment Cryptography uses to decrypt or unwrap the key under import.</p></li>
 /// </ul>
-/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>ExportKey</code> </p> </li>
-/// <li> <p> <code>GetParametersForImport</code> </p> </li>
+/// <li><p><code>ExportKey</code></p></li>
+/// <li><p><code>GetParametersForImport</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportKeyFluentBuilder {

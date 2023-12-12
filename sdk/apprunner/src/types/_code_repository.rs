@@ -9,7 +9,7 @@ pub struct CodeRepository {
     /// <p>The version that should be used within the source code repository.</p>
     pub source_code_version: ::std::option::Option<crate::types::SourceCodeVersion>,
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
-    /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+    /// <p><code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
     pub code_configuration: ::std::option::Option<crate::types::CodeConfiguration>,
     /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
@@ -26,7 +26,7 @@ impl CodeRepository {
         self.source_code_version.as_ref()
     }
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
-    /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+    /// <p><code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
     pub fn code_configuration(&self) -> ::std::option::Option<&crate::types::CodeConfiguration> {
         self.code_configuration.as_ref()
@@ -84,21 +84,21 @@ impl CodeRepositoryBuilder {
         &self.source_code_version
     }
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
-    /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+    /// <p><code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
     pub fn code_configuration(mut self, input: crate::types::CodeConfiguration) -> Self {
         self.code_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
-    /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+    /// <p><code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
     pub fn set_code_configuration(mut self, input: ::std::option::Option<crate::types::CodeConfiguration>) -> Self {
         self.code_configuration = input;
         self
     }
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
-    /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
+    /// <p><code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
     pub fn get_code_configuration(&self) -> &::std::option::Option<crate::types::CodeConfiguration> {
         &self.code_configuration

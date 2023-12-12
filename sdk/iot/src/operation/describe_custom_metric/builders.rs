@@ -22,7 +22,7 @@ impl DescribeCustomMetricInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCustomMetric`.
 ///
-/// <p> Gets information about a Device Defender detect custom metric. </p>
+/// <p>Gets information about a Device Defender detect custom metric.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomMetricFluentBuilder {
@@ -109,17 +109,17 @@ impl DescribeCustomMetricFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
         self
     }
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_metric_name()
     }

@@ -9,13 +9,13 @@ pub struct GetScreenDataInput {
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the screen.</p>
     pub screen_id: ::std::option::Option<::std::string::String>,
-    /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
+    /// <p>Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen.</p>
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
-    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
-    /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
+    /// <p>The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100.</p>
+    /// <p>This parameter is optional. If you don't specify this parameter, the default page size is 100.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetScreenDataInput {
@@ -31,17 +31,17 @@ impl GetScreenDataInput {
     pub fn screen_id(&self) -> ::std::option::Option<&str> {
         self.screen_id.as_deref()
     }
-    /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
+    /// <p>Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen.</p>
     pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         self.variables.as_ref()
     }
-    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
-    /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
+    /// <p>The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100.</p>
+    /// <p>This parameter is optional. If you don't specify this parameter, the default page size is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -126,14 +126,14 @@ impl GetScreenDataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
-    /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
+    /// <p>Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen.</p>
     pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VariableValue) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.variables = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
+    /// <p>Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen.</p>
     pub fn set_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
@@ -141,41 +141,41 @@ impl GetScreenDataInputBuilder {
         self.variables = input;
         self
     }
-    /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
+    /// <p>Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         &self.variables
     }
-    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
-    /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
+    /// <p>The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100.</p>
+    /// <p>This parameter is optional. If you don't specify this parameter, the default page size is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
-    /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
+    /// <p>The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100.</p>
+    /// <p>This parameter is optional. If you don't specify this parameter, the default page size is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
-    /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
+    /// <p>The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100.</p>
+    /// <p>This parameter is optional. If you don't specify this parameter, the default page size is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

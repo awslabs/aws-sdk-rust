@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagResource
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UntagResourceError {
-    /// <p> The requested data store was not found.</p>
+    /// <p>The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::types::error::ValidationException),

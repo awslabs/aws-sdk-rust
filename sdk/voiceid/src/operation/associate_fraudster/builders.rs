@@ -22,7 +22,7 @@ impl AssociateFraudsterInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateFraudster`.
 ///
-/// <p>Associates the fraudsters with the watchlist specified in the same domain. </p>
+/// <p>Associates the fraudsters with the watchlist specified in the same domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateFraudsterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

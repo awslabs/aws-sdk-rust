@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetConfigurationPolicyAssociationsOutput {
-    /// <p> Describes associations for the target accounts, OUs, or the root. </p>
+    /// <p>Describes associations for the target accounts, OUs, or the root.</p>
     pub configuration_policy_associations: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociationSummary>>,
-    /// <p> An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error. </p>
+    /// <p>An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error.</p>
     pub unprocessed_configuration_policy_associations:
         ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedConfigurationPolicyAssociation>>,
     _request_id: Option<String>,
 }
 impl BatchGetConfigurationPolicyAssociationsOutput {
-    /// <p> Describes associations for the target accounts, OUs, or the root. </p>
+    /// <p>Describes associations for the target accounts, OUs, or the root.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_policy_associations.is_none()`.
     pub fn configuration_policy_associations(&self) -> &[crate::types::ConfigurationPolicyAssociationSummary] {
         self.configuration_policy_associations.as_deref().unwrap_or_default()
     }
-    /// <p> An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error. </p>
+    /// <p>An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_configuration_policy_associations.is_none()`.
     pub fn unprocessed_configuration_policy_associations(&self) -> &[crate::types::UnprocessedConfigurationPolicyAssociation] {
@@ -51,14 +51,14 @@ impl BatchGetConfigurationPolicyAssociationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_policy_associations`](Self::set_configuration_policy_associations).
     ///
-    /// <p> Describes associations for the target accounts, OUs, or the root. </p>
+    /// <p>Describes associations for the target accounts, OUs, or the root.</p>
     pub fn configuration_policy_associations(mut self, input: crate::types::ConfigurationPolicyAssociationSummary) -> Self {
         let mut v = self.configuration_policy_associations.unwrap_or_default();
         v.push(input);
         self.configuration_policy_associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Describes associations for the target accounts, OUs, or the root. </p>
+    /// <p>Describes associations for the target accounts, OUs, or the root.</p>
     pub fn set_configuration_policy_associations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociationSummary>>,
@@ -66,7 +66,7 @@ impl BatchGetConfigurationPolicyAssociationsOutputBuilder {
         self.configuration_policy_associations = input;
         self
     }
-    /// <p> Describes associations for the target accounts, OUs, or the root. </p>
+    /// <p>Describes associations for the target accounts, OUs, or the root.</p>
     pub fn get_configuration_policy_associations(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociationSummary>> {
@@ -76,14 +76,14 @@ impl BatchGetConfigurationPolicyAssociationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unprocessed_configuration_policy_associations`](Self::set_unprocessed_configuration_policy_associations).
     ///
-    /// <p> An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error. </p>
+    /// <p>An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error.</p>
     pub fn unprocessed_configuration_policy_associations(mut self, input: crate::types::UnprocessedConfigurationPolicyAssociation) -> Self {
         let mut v = self.unprocessed_configuration_policy_associations.unwrap_or_default();
         v.push(input);
         self.unprocessed_configuration_policy_associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error. </p>
+    /// <p>An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error.</p>
     pub fn set_unprocessed_configuration_policy_associations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedConfigurationPolicyAssociation>>,
@@ -91,7 +91,7 @@ impl BatchGetConfigurationPolicyAssociationsOutputBuilder {
         self.unprocessed_configuration_policy_associations = input;
         self
     }
-    /// <p> An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error. </p>
+    /// <p>An array of configuration policy associations, one for each configuration policy association identifier, that was specified in the request but couldn’t be processed due to an error.</p>
     pub fn get_unprocessed_configuration_policy_associations(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedConfigurationPolicyAssociation>> {

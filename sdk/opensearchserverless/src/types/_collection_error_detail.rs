@@ -8,7 +8,7 @@ pub struct CollectionErrorDetail {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
+    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code></p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl CollectionErrorDetail {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
+    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code></p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -76,17 +76,17 @@ impl CollectionErrorDetailBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
+    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code></p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
+    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code></p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
-    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
+    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code></p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }

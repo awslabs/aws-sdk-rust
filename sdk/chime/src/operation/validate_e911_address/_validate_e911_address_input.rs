@@ -13,7 +13,7 @@ pub struct ValidateE911AddressInput {
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The address state, such as <code>ME</code>.</p>
     pub state: ::std::option::Option<::std::string::String>,
-    /// <p>The address country, such as <code>US</code>. </p>
+    /// <p>The address country, such as <code>US</code>.</p>
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The address postal code, such as <code>04352</code>.</p>
     pub postal_code: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ impl ValidateE911AddressInput {
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>The address country, such as <code>US</code>. </p>
+    /// <p>The address country, such as <code>US</code>.</p>
     pub fn country(&self) -> ::std::option::Option<&str> {
         self.country.as_deref()
     }
@@ -156,18 +156,18 @@ impl ValidateE911AddressInputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state
     }
-    /// <p>The address country, such as <code>US</code>. </p>
+    /// <p>The address country, such as <code>US</code>.</p>
     /// This field is required.
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The address country, such as <code>US</code>. </p>
+    /// <p>The address country, such as <code>US</code>.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
     }
-    /// <p>The address country, such as <code>US</code>. </p>
+    /// <p>The address country, such as <code>US</code>.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         &self.country
     }

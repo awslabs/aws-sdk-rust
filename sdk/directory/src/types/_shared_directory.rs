@@ -6,7 +6,7 @@
 pub struct SharedDirectory {
     /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>Identifier of the directory in the directory owner account. </p>
+    /// <p>Identifier of the directory in the directory owner account.</p>
     pub owner_directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
     pub share_method: ::std::option::Option<crate::types::ShareMethod>,
@@ -28,7 +28,7 @@ impl SharedDirectory {
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
-    /// <p>Identifier of the directory in the directory owner account. </p>
+    /// <p>Identifier of the directory in the directory owner account.</p>
     pub fn owner_directory_id(&self) -> ::std::option::Option<&str> {
         self.owner_directory_id.as_deref()
     }
@@ -112,17 +112,17 @@ impl SharedDirectoryBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
-    /// <p>Identifier of the directory in the directory owner account. </p>
+    /// <p>Identifier of the directory in the directory owner account.</p>
     pub fn owner_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_directory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the directory in the directory owner account. </p>
+    /// <p>Identifier of the directory in the directory owner account.</p>
     pub fn set_owner_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_directory_id = input;
         self
     }
-    /// <p>Identifier of the directory in the directory owner account. </p>
+    /// <p>Identifier of the directory in the directory owner account.</p>
     pub fn get_owner_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_directory_id
     }

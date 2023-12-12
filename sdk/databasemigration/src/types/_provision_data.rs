@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionData {
-    /// <p>The current provisioning state </p>
+    /// <p>The current provisioning state</p>
     pub provision_state: ::std::option::Option<::std::string::String>,
     /// <p>The number of capacity units the replication is using.</p>
     pub provisioned_capacity_units: i32,
@@ -18,7 +18,7 @@ pub struct ProvisionData {
     pub reason_for_new_provisioning_data: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionData {
-    /// <p>The current provisioning state </p>
+    /// <p>The current provisioning state</p>
     pub fn provision_state(&self) -> ::std::option::Option<&str> {
         self.provision_state.as_deref()
     }
@@ -62,17 +62,17 @@ pub struct ProvisionDataBuilder {
     pub(crate) reason_for_new_provisioning_data: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionDataBuilder {
-    /// <p>The current provisioning state </p>
+    /// <p>The current provisioning state</p>
     pub fn provision_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provision_state = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current provisioning state </p>
+    /// <p>The current provisioning state</p>
     pub fn set_provision_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provision_state = input;
         self
     }
-    /// <p>The current provisioning state </p>
+    /// <p>The current provisioning state</p>
     pub fn get_provision_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.provision_state
     }

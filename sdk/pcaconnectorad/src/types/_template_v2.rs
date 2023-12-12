@@ -10,7 +10,7 @@ pub struct TemplateV2 {
     pub superseded_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Private key attributes allow you to specify the minimal key length, key spec, and cryptographic providers for the private key of a certificate for v2 templates. V2 templates allow you to use Legacy Cryptographic Service Providers.</p>
     pub private_key_attributes: ::std::option::Option<crate::types::PrivateKeyAttributesV2>,
-    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key. </p>
+    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key.</p>
     pub private_key_flags: ::std::option::Option<crate::types::PrivateKeyFlagsV2>,
     /// <p>Enrollment flags describe the enrollment settings for certificates such as using the existing private key and deleting expired or revoked certificates.</p>
     pub enrollment_flags: ::std::option::Option<crate::types::EnrollmentFlagsV2>,
@@ -36,7 +36,7 @@ impl TemplateV2 {
     pub fn private_key_attributes(&self) -> ::std::option::Option<&crate::types::PrivateKeyAttributesV2> {
         self.private_key_attributes.as_ref()
     }
-    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key. </p>
+    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key.</p>
     pub fn private_key_flags(&self) -> ::std::option::Option<&crate::types::PrivateKeyFlagsV2> {
         self.private_key_flags.as_ref()
     }
@@ -128,18 +128,18 @@ impl TemplateV2Builder {
     pub fn get_private_key_attributes(&self) -> &::std::option::Option<crate::types::PrivateKeyAttributesV2> {
         &self.private_key_attributes
     }
-    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key. </p>
+    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key.</p>
     /// This field is required.
     pub fn private_key_flags(mut self, input: crate::types::PrivateKeyFlagsV2) -> Self {
         self.private_key_flags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key. </p>
+    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key.</p>
     pub fn set_private_key_flags(mut self, input: ::std::option::Option<crate::types::PrivateKeyFlagsV2>) -> Self {
         self.private_key_flags = input;
         self
     }
-    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key. </p>
+    /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key.</p>
     pub fn get_private_key_flags(&self) -> &::std::option::Option<crate::types::PrivateKeyFlagsV2> {
         &self.private_key_flags
     }

@@ -24,7 +24,7 @@ pub struct DbClusterAutomatedBackup {
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted clusters.</p> </li>
+    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
@@ -47,7 +47,7 @@ pub struct DbClusterAutomatedBackup {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     pub port: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -100,7 +100,7 @@ impl DbClusterAutomatedBackup {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted clusters.</p> </li>
+    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -145,7 +145,7 @@ impl DbClusterAutomatedBackup {
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
@@ -334,7 +334,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted clusters.</p> </li>
+    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -342,7 +342,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted clusters.</p> </li>
+    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -350,7 +350,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted clusters.</p> </li>
+    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -489,21 +489,21 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }

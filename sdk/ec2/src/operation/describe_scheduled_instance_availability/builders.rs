@@ -144,9 +144,9 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
-    /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p></li>
+    /// <li><p><code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p></li>
+    /// <li><p><code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -154,9 +154,9 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
-    /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p></li>
+    /// <li><p><code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p></li>
+    /// <li><p><code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -164,9 +164,9 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
-    /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p></li>
+    /// <li><p><code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p></li>
+    /// <li><p><code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

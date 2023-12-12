@@ -108,17 +108,17 @@ impl DeletePricingPlanFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

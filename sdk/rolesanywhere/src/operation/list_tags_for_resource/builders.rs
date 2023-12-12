@@ -23,7 +23,7 @@ impl ListTagsForResourceInputBuilder {
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
 /// <p>Lists the tags attached to the resource.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:ListTagsForResource</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:ListTagsForResource</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

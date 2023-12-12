@@ -20,7 +20,7 @@ pub struct CreateCachediScsiVolumeInput {
     /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub kms_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
@@ -61,7 +61,7 @@ impl CreateCachediScsiVolumeInput {
         self.client_token.as_deref()
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn kms_encrypted(&self) -> ::std::option::Option<bool> {
         self.kms_encrypted
     }
@@ -211,19 +211,19 @@ impl CreateCachediScsiVolumeInputBuilder {
         &self.client_token
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn kms_encrypted(mut self, input: bool) -> Self {
         self.kms_encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_kms_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.kms_encrypted = input;
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
         &self.kms_encrypted
     }

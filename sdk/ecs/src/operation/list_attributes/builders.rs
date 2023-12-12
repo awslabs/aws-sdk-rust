@@ -22,7 +22,7 @@ impl ListAttributesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAttributes`.
 ///
-/// <p>Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute on each resource. You can filter the list of results to a single attribute name to only return results that have that name. You can also filter the results by attribute name and value. You can do this, for example, to see which container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>). </p>
+/// <p>Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute on each resource. You can filter the list of results to a single attribute name to only return results that have that name. You can also filter the results by attribute name and value. You can do this, for example, to see which container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -142,17 +142,17 @@ impl ListAttributesFluentBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
         self.inner.get_target_type()
     }
-    /// <p>The name of the attribute to filter the results with. </p>
+    /// <p>The name of the attribute to filter the results with.</p>
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
-    /// <p>The name of the attribute to filter the results with. </p>
+    /// <p>The name of the attribute to filter the results with.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
-    /// <p>The name of the attribute to filter the results with. </p>
+    /// <p>The name of the attribute to filter the results with.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attribute_name()
     }

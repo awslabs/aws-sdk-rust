@@ -22,7 +22,7 @@ impl DisassociateVpcCidrBlockInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateVpcCidrBlock`.
 ///
-/// <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you must specify its association ID. You can get the association ID by using <code>DescribeVpcs</code>. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it. </p>
+/// <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you must specify its association ID. You can get the association ID by using <code>DescribeVpcs</code>. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it.</p>
 /// <p>You cannot disassociate the CIDR block with which you originally created the VPC (the primary CIDR block).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateVpcCidrBlockFluentBuilder {

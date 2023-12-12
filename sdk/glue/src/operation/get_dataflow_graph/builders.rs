@@ -22,7 +22,7 @@ impl GetDataflowGraphInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDataflowGraph`.
 ///
-/// <p>Transforms a Python script into a directed acyclic graph (DAG). </p>
+/// <p>Transforms a Python script into a directed acyclic graph (DAG).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataflowGraphFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

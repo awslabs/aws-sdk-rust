@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSiteAddressInput {
-    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
     pub site_id: ::std::option::Option<::std::string::String>,
-    /// <p> The type of the address. </p>
+    /// <p>The type of the address.</p>
     pub address_type: ::std::option::Option<crate::types::AddressType>,
-    /// <p> The address for the site. </p>
+    /// <p>The address for the site.</p>
     pub address: ::std::option::Option<crate::types::Address>,
 }
 impl UpdateSiteAddressInput {
-    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
     pub fn site_id(&self) -> ::std::option::Option<&str> {
         self.site_id.as_deref()
     }
-    /// <p> The type of the address. </p>
+    /// <p>The type of the address.</p>
     pub fn address_type(&self) -> ::std::option::Option<&crate::types::AddressType> {
         self.address_type.as_ref()
     }
-    /// <p> The address for the site. </p>
+    /// <p>The address for the site.</p>
     pub fn address(&self) -> ::std::option::Option<&crate::types::Address> {
         self.address.as_ref()
     }
@@ -40,48 +40,48 @@ pub struct UpdateSiteAddressInputBuilder {
     pub(crate) address: ::std::option::Option<crate::types::Address>,
 }
 impl UpdateSiteAddressInputBuilder {
-    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
     /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
     }
-    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.site_id
     }
-    /// <p> The type of the address. </p>
+    /// <p>The type of the address.</p>
     /// This field is required.
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
         self.address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of the address. </p>
+    /// <p>The type of the address.</p>
     pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
         self.address_type = input;
         self
     }
-    /// <p> The type of the address. </p>
+    /// <p>The type of the address.</p>
     pub fn get_address_type(&self) -> &::std::option::Option<crate::types::AddressType> {
         &self.address_type
     }
-    /// <p> The address for the site. </p>
+    /// <p>The address for the site.</p>
     /// This field is required.
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The address for the site. </p>
+    /// <p>The address for the site.</p>
     pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.address = input;
         self
     }
-    /// <p> The address for the site. </p>
+    /// <p>The address for the site.</p>
     pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
         &self.address
     }

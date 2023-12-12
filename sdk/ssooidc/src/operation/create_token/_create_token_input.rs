@@ -8,8 +8,8 @@ pub struct CreateTokenInput {
     /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
-    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code> </p>
-    /// <p>* Refresh Token - <code>refresh_token</code> </p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub grant_type: ::std::option::Option<::std::string::String>,
     /// <p>Used only when calling this API for the Device Code grant type. This short-term code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
@@ -34,8 +34,8 @@ impl CreateTokenInput {
         self.client_secret.as_deref()
     }
     /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
-    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code> </p>
-    /// <p>* Refresh Token - <code>refresh_token</code> </p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub fn grant_type(&self) -> ::std::option::Option<&str> {
         self.grant_type.as_deref()
@@ -130,8 +130,8 @@ impl CreateTokenInputBuilder {
         &self.client_secret
     }
     /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
-    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code> </p>
-    /// <p>* Refresh Token - <code>refresh_token</code> </p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     /// This field is required.
     pub fn grant_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,16 +139,16 @@ impl CreateTokenInputBuilder {
         self
     }
     /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
-    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code> </p>
-    /// <p>* Refresh Token - <code>refresh_token</code> </p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub fn set_grant_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_type = input;
         self
     }
     /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
-    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code> </p>
-    /// <p>* Refresh Token - <code>refresh_token</code> </p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub fn get_grant_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_type

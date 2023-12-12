@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsServiceDiscovery {
-    /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+    /// <p>Specifies the DNS service discovery hostname for the virtual node.</p>
     pub hostname: ::std::string::String,
     /// <p>Specifies the DNS response type for the virtual node.</p>
     pub response_type: ::std::option::Option<crate::types::DnsResponseType>,
@@ -12,7 +12,7 @@ pub struct DnsServiceDiscovery {
     pub ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl DnsServiceDiscovery {
-    /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+    /// <p>Specifies the DNS service discovery hostname for the virtual node.</p>
     pub fn hostname(&self) -> &str {
         use std::ops::Deref;
         self.hostname.deref()
@@ -42,18 +42,18 @@ pub struct DnsServiceDiscoveryBuilder {
     pub(crate) ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl DnsServiceDiscoveryBuilder {
-    /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+    /// <p>Specifies the DNS service discovery hostname for the virtual node.</p>
     /// This field is required.
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+    /// <p>Specifies the DNS service discovery hostname for the virtual node.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
-    /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+    /// <p>Specifies the DNS service discovery hostname for the virtual node.</p>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.hostname
     }

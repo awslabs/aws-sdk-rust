@@ -5,7 +5,7 @@
 pub struct DescribeModelOutput {
     /// <p>Name of the SageMaker model.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
+    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production.</p>
     pub primary_container: ::std::option::Option<crate::types::ContainerDefinition>,
     /// <p>The containers in the inference pipeline.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
@@ -13,7 +13,7 @@ pub struct DescribeModelOutput {
     pub inference_execution_config: ::std::option::Option<crate::types::InferenceExecutionConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a></p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>A timestamp that shows when the model was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,7 +30,7 @@ impl DescribeModelOutput {
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
-    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
+    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production.</p>
     pub fn primary_container(&self) -> ::std::option::Option<&crate::types::ContainerDefinition> {
         self.primary_container.as_ref()
     }
@@ -48,7 +48,7 @@ impl DescribeModelOutput {
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a></p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -113,17 +113,17 @@ impl DescribeModelOutputBuilder {
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
-    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
+    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production.</p>
     pub fn primary_container(mut self, input: crate::types::ContainerDefinition) -> Self {
         self.primary_container = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
+    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production.</p>
     pub fn set_primary_container(mut self, input: ::std::option::Option<crate::types::ContainerDefinition>) -> Self {
         self.primary_container = input;
         self
     }
-    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
+    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production.</p>
     pub fn get_primary_container(&self) -> &::std::option::Option<crate::types::ContainerDefinition> {
         &self.primary_container
     }
@@ -175,17 +175,17 @@ impl DescribeModelOutputBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a></p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a></p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
-    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a></p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }

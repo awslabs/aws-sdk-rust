@@ -22,9 +22,9 @@ pub struct AutoScalingGroupRecommendationOption {
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
-    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
     pub instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
-    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
     pub savings_opportunity_after_discounts: ::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts>,
 }
 impl AutoScalingGroupRecommendationOption {
@@ -60,11 +60,11 @@ impl AutoScalingGroupRecommendationOption {
     pub fn migration_effort(&self) -> ::std::option::Option<&crate::types::MigrationEffort> {
         self.migration_effort.as_ref()
     }
-    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
     pub fn instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
         self.instance_gpu_info.as_ref()
     }
-    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
     pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts> {
         self.savings_opportunity_after_discounts.as_ref()
     }
@@ -198,26 +198,26 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     pub fn get_migration_effort(&self) -> &::std::option::Option<crate::types::MigrationEffort> {
         &self.migration_effort
     }
-    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
     pub fn instance_gpu_info(mut self, input: crate::types::GpuInfo) -> Self {
         self.instance_gpu_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
     pub fn set_instance_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
         self.instance_gpu_info = input;
         self
     }
-    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
     pub fn get_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
         &self.instance_gpu_info
     }
-    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
     pub fn savings_opportunity_after_discounts(mut self, input: crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts) -> Self {
         self.savings_opportunity_after_discounts = ::std::option::Option::Some(input);
         self
     }
-    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
     pub fn set_savings_opportunity_after_discounts(
         mut self,
         input: ::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts>,
@@ -225,7 +225,7 @@ impl AutoScalingGroupRecommendationOptionBuilder {
         self.savings_opportunity_after_discounts = input;
         self
     }
-    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
     pub fn get_savings_opportunity_after_discounts(&self) -> &::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts> {
         &self.savings_opportunity_after_discounts
     }

@@ -8,7 +8,7 @@ pub struct SubmitFeedbackInput {
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
     pub anomaly_instance_id: ::std::option::Option<::std::string::String>,
-    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// <p>The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.</p>
     pub r#type: ::std::option::Option<crate::types::FeedbackType>,
     /// <p>Optional feedback about this anomaly.</p>
     pub comment: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl SubmitFeedbackInput {
     pub fn anomaly_instance_id(&self) -> ::std::option::Option<&str> {
         self.anomaly_instance_id.as_deref()
     }
-    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// <p>The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::FeedbackType> {
         self.r#type.as_ref()
     }
@@ -78,18 +78,18 @@ impl SubmitFeedbackInputBuilder {
     pub fn get_anomaly_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.anomaly_instance_id
     }
-    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// <p>The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::FeedbackType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// <p>The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FeedbackType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// <p>The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FeedbackType> {
         &self.r#type
     }

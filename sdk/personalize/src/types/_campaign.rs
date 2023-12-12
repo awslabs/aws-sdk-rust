@@ -6,7 +6,7 @@
 pub struct Campaign {
     /// <p>The name of the campaign.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub campaign_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
@@ -17,8 +17,8 @@ pub struct Campaign {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If a campaign fails, the reason behind the failure.</p>
@@ -35,7 +35,7 @@ impl Campaign {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn campaign_arn(&self) -> ::std::option::Option<&str> {
         self.campaign_arn.as_deref()
     }
@@ -54,8 +54,8 @@ impl Campaign {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -114,17 +114,17 @@ impl CampaignBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn set_campaign_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.campaign_arn
     }
@@ -173,8 +173,8 @@ impl CampaignBuilder {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -183,8 +183,8 @@ impl CampaignBuilder {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -193,8 +193,8 @@ impl CampaignBuilder {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsOutput {
-    /// <p> The ID of the insight containing the log groups. </p>
+    /// <p>The ID of the insight containing the log groups.</p>
     pub insight_id: ::std::string::String,
-    /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
     pub anomalous_log_groups: ::std::vec::Vec<crate::types::AnomalousLogGroup>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAnomalousLogGroupsOutput {
-    /// <p> The ID of the insight containing the log groups. </p>
+    /// <p>The ID of the insight containing the log groups.</p>
     pub fn insight_id(&self) -> &str {
         use std::ops::Deref;
         self.insight_id.deref()
     }
-    /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
     pub fn anomalous_log_groups(&self) -> &[crate::types::AnomalousLogGroup] {
         use std::ops::Deref;
         self.anomalous_log_groups.deref()
@@ -49,18 +49,18 @@ pub struct ListAnomalousLogGroupsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListAnomalousLogGroupsOutputBuilder {
-    /// <p> The ID of the insight containing the log groups. </p>
+    /// <p>The ID of the insight containing the log groups.</p>
     /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the insight containing the log groups. </p>
+    /// <p>The ID of the insight containing the log groups.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
-    /// <p> The ID of the insight containing the log groups. </p>
+    /// <p>The ID of the insight containing the log groups.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.insight_id
     }
@@ -68,19 +68,19 @@ impl ListAnomalousLogGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_anomalous_log_groups`](Self::set_anomalous_log_groups).
     ///
-    /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
     pub fn anomalous_log_groups(mut self, input: crate::types::AnomalousLogGroup) -> Self {
         let mut v = self.anomalous_log_groups.unwrap_or_default();
         v.push(input);
         self.anomalous_log_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
     pub fn set_anomalous_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>) -> Self {
         self.anomalous_log_groups = input;
         self
     }
-    /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
     pub fn get_anomalous_log_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>> {
         &self.anomalous_log_groups
     }

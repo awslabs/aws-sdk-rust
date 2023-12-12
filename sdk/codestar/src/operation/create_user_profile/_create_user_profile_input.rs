@@ -5,7 +5,7 @@
 pub struct CreateUserProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl CreateUserProfileInput {
     pub fn user_arn(&self) -> ::std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -72,18 +72,18 @@ impl CreateUserProfileInputBuilder {
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
-    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

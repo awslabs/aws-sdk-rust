@@ -122,17 +122,17 @@ impl DeletePrivacyBudgetTemplateFluentBuilder {
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_membership_identifier()
     }
-    /// <p>A unique identifier for your privacy budget template. </p>
+    /// <p>A unique identifier for your privacy budget template.</p>
     pub fn privacy_budget_template_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.privacy_budget_template_identifier(input.into());
         self
     }
-    /// <p>A unique identifier for your privacy budget template. </p>
+    /// <p>A unique identifier for your privacy budget template.</p>
     pub fn set_privacy_budget_template_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_privacy_budget_template_identifier(input);
         self
     }
-    /// <p>A unique identifier for your privacy budget template. </p>
+    /// <p>A unique identifier for your privacy budget template.</p>
     pub fn get_privacy_budget_template_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_privacy_budget_template_identifier()
     }

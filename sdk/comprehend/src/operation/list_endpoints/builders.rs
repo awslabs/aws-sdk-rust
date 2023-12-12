@@ -114,17 +114,17 @@ impl ListEndpointsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_endpoints::paginator::ListEndpointsPaginator {
         crate::operation::list_endpoints::paginator::ListEndpointsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p>
     pub fn filter(mut self, input: crate::types::EndpointFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EndpointFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EndpointFilter> {
         self.inner.get_filter()
     }

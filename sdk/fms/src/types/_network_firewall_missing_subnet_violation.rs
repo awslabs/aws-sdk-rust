@@ -8,9 +8,9 @@ pub struct NetworkFirewallMissingSubnetViolation {
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
     pub vpc: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>The reason the resource has this violation, if one is available. </p>
+    /// <p>The reason the resource has this violation, if one is available.</p>
     pub target_violation_reason: ::std::option::Option<::std::string::String>,
 }
 impl NetworkFirewallMissingSubnetViolation {
@@ -22,11 +22,11 @@ impl NetworkFirewallMissingSubnetViolation {
     pub fn vpc(&self) -> ::std::option::Option<&str> {
         self.vpc.as_deref()
     }
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The reason the resource has this violation, if one is available. </p>
+    /// <p>The reason the resource has this violation, if one is available.</p>
     pub fn target_violation_reason(&self) -> ::std::option::Option<&str> {
         self.target_violation_reason.as_deref()
     }
@@ -76,31 +76,31 @@ impl NetworkFirewallMissingSubnetViolationBuilder {
     pub fn get_vpc(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc
     }
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The Availability Zone of a violating subnet. </p>
+    /// <p>The Availability Zone of a violating subnet.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>The reason the resource has this violation, if one is available. </p>
+    /// <p>The reason the resource has this violation, if one is available.</p>
     pub fn target_violation_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_violation_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason the resource has this violation, if one is available. </p>
+    /// <p>The reason the resource has this violation, if one is available.</p>
     pub fn set_target_violation_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_violation_reason = input;
         self
     }
-    /// <p>The reason the resource has this violation, if one is available. </p>
+    /// <p>The reason the resource has this violation, if one is available.</p>
     pub fn get_target_violation_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_violation_reason
     }

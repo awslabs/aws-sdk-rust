@@ -27,7 +27,7 @@ impl StartApplicationInputBuilder {
 /// </note>
 /// <p>Starts the specified Amazon Kinesis Analytics application. After creating an application, you must exclusively call this operation to start your application.</p>
 /// <p>After the application starts, it begins consuming the input data, processes it, and writes the output to the configured destination.</p>
-/// <p> The application status must be <code>READY</code> for you to start an application. You can get the application status in the console or using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+/// <p>The application status must be <code>READY</code> for you to start an application. You can get the application status in the console or using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
 /// <p>After you start the application, you can stop the application from processing the input by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html">StopApplication</a> operation.</p>
 /// <p>This operation requires permissions to perform the <code>kinesisanalytics:StartApplication</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

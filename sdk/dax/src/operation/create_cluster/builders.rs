@@ -109,33 +109,33 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    /// <p> <b>Constraints:</b> </p>
+    /// <p><b>Constraints:</b></p>
     /// <ul>
-    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    /// <p> <b>Constraints:</b> </p>
+    /// <p><b>Constraints:</b></p>
     /// <ul>
-    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    /// <p> <b>Constraints:</b> </p>
+    /// <p><b>Constraints:</b></p>
     /// <ul>
-    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
@@ -249,15 +249,15 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code></p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -266,15 +266,15 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code></p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -283,15 +283,15 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code></p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,17 +349,17 @@ impl CreateClusterFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A set of tags to associate with the DAX cluster. </p>
+    /// <p>A set of tags to associate with the DAX cluster.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A set of tags to associate with the DAX cluster. </p>
+    /// <p>A set of tags to associate with the DAX cluster.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A set of tags to associate with the DAX cluster. </p>
+    /// <p>A set of tags to associate with the DAX cluster.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
@@ -379,8 +379,8 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
-    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <li><p><code>NONE</code> for no encryption</p></li>
+    /// <li><p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub fn cluster_endpoint_encryption_type(mut self, input: crate::types::ClusterEndpointEncryptionType) -> Self {
         self.inner = self.inner.cluster_endpoint_encryption_type(input);
@@ -388,8 +388,8 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
-    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <li><p><code>NONE</code> for no encryption</p></li>
+    /// <li><p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub fn set_cluster_endpoint_encryption_type(mut self, input: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>) -> Self {
         self.inner = self.inner.set_cluster_endpoint_encryption_type(input);
@@ -397,8 +397,8 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
-    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <li><p><code>NONE</code> for no encryption</p></li>
+    /// <li><p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub fn get_cluster_endpoint_encryption_type(&self) -> &::std::option::Option<crate::types::ClusterEndpointEncryptionType> {
         self.inner.get_cluster_endpoint_encryption_type()

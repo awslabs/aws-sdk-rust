@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingModifiedValues {
-    /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
-    /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
     pub master_user_password: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct PendingModifiedValues {
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.</p>
     pub iops: ::std::option::Option<i32>,
-    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
@@ -34,11 +34,11 @@ pub struct PendingModifiedValues {
     pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
 }
 impl PendingModifiedValues {
-    /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
         self.db_instance_class.as_deref()
     }
-    /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
@@ -70,7 +70,7 @@ impl PendingModifiedValues {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
-    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -118,31 +118,31 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
 }
 impl PendingModifiedValuesBuilder {
-    /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
-    /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_class
     }
-    /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
     }
-    /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
@@ -244,17 +244,17 @@ impl PendingModifiedValuesBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
-    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
-    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
+    /// <p>Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }

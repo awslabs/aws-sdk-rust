@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHealthServiceStatusForOrganizationOutput {
     /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
-    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>.</p>
     pub health_service_access_status_for_organization: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeHealthServiceStatusForOrganizationOutput {
     /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
-    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>.</p>
     pub fn health_service_access_status_for_organization(&self) -> ::std::option::Option<&str> {
         self.health_service_access_status_for_organization.as_deref()
     }
@@ -38,19 +38,19 @@ pub struct DescribeHealthServiceStatusForOrganizationOutputBuilder {
 }
 impl DescribeHealthServiceStatusForOrganizationOutputBuilder {
     /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
-    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>.</p>
     pub fn health_service_access_status_for_organization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_service_access_status_for_organization = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
-    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>.</p>
     pub fn set_health_service_access_status_for_organization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_service_access_status_for_organization = input;
         self
     }
     /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
-    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>.</p>
     pub fn get_health_service_access_status_for_organization(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_service_access_status_for_organization
     }

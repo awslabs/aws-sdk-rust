@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPriceListFileUrlOutput {
-    /// <p>The URL to download your Price List file from. </p>
+    /// <p>The URL to download your Price List file from.</p>
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPriceListFileUrlOutput {
-    /// <p>The URL to download your Price List file from. </p>
+    /// <p>The URL to download your Price List file from.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GetPriceListFileUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPriceListFileUrlOutputBuilder {
-    /// <p>The URL to download your Price List file from. </p>
+    /// <p>The URL to download your Price List file from.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL to download your Price List file from. </p>
+    /// <p>The URL to download your Price List file from.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL to download your Price List file from. </p>
+    /// <p>The URL to download your Price List file from.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

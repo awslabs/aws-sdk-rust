@@ -116,17 +116,17 @@ impl DeleteAppFluentBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_arn()
     }
-    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
         self
     }
-    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self
     }
-    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         self.inner.get_force_delete()
     }

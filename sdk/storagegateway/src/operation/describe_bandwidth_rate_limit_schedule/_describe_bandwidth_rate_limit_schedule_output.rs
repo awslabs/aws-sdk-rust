@@ -5,7 +5,7 @@
 pub struct DescribeBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
-    /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
     pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl DescribeBandwidthRateLimitScheduleOutput {
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
-    /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bandwidth_rate_limit_intervals.is_none()`.
     pub fn bandwidth_rate_limit_intervals(&self) -> &[crate::types::BandwidthRateLimitInterval] {
@@ -60,14 +60,14 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
     ///
-    /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
     pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
         v.push(input);
         self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
     pub fn set_bandwidth_rate_limit_intervals(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
@@ -75,7 +75,7 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
         self.bandwidth_rate_limit_intervals = input;
         self
     }
-    /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
     pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
         &self.bandwidth_rate_limit_intervals
     }

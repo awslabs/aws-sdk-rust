@@ -138,8 +138,8 @@ impl CreateSubnetCidrReservationFluentBuilder {
     }
     /// <p>The type of reservation. The reservation type determines how the reserved IP addresses are assigned to resources.</p>
     /// <ul>
-    /// <li> <p> <code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p> </li>
-    /// <li> <p> <code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p> </li>
+    /// <li><p><code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p></li>
+    /// <li><p><code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p></li>
     /// </ul>
     pub fn reservation_type(mut self, input: crate::types::SubnetCidrReservationType) -> Self {
         self.inner = self.inner.reservation_type(input);
@@ -147,8 +147,8 @@ impl CreateSubnetCidrReservationFluentBuilder {
     }
     /// <p>The type of reservation. The reservation type determines how the reserved IP addresses are assigned to resources.</p>
     /// <ul>
-    /// <li> <p> <code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p> </li>
-    /// <li> <p> <code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p> </li>
+    /// <li><p><code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p></li>
+    /// <li><p><code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p></li>
     /// </ul>
     pub fn set_reservation_type(mut self, input: ::std::option::Option<crate::types::SubnetCidrReservationType>) -> Self {
         self.inner = self.inner.set_reservation_type(input);
@@ -156,8 +156,8 @@ impl CreateSubnetCidrReservationFluentBuilder {
     }
     /// <p>The type of reservation. The reservation type determines how the reserved IP addresses are assigned to resources.</p>
     /// <ul>
-    /// <li> <p> <code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p> </li>
-    /// <li> <p> <code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p> </li>
+    /// <li><p><code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p></li>
+    /// <li><p><code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p></li>
     /// </ul>
     pub fn get_reservation_type(&self) -> &::std::option::Option<crate::types::SubnetCidrReservationType> {
         self.inner.get_reservation_type()

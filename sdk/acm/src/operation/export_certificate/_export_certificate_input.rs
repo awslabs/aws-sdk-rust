@@ -4,26 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExportCertificateInput {
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code></p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+    /// <p>Passphrase to associate with the encrypted exported private key.</p> <note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
-    /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+    /// <p><code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code></p>
     pub passphrase: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ExportCertificateInput {
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code></p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+    /// <p>Passphrase to associate with the encrypted exported private key.</p> <note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
-    /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+    /// <p><code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code></p>
     pub fn passphrase(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.passphrase.as_ref()
     }
@@ -52,47 +52,47 @@ pub struct ExportCertificateInputBuilder {
 }
 impl ExportCertificateInputBuilder {
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code></p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code></p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
-    /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+    /// <p>Passphrase to associate with the encrypted exported private key.</p> <note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
-    /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+    /// <p><code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code></p>
     /// This field is required.
     pub fn passphrase(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.passphrase = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+    /// <p>Passphrase to associate with the encrypted exported private key.</p> <note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
-    /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+    /// <p><code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code></p>
     pub fn set_passphrase(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.passphrase = input;
         self
     }
-    /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+    /// <p>Passphrase to associate with the encrypted exported private key.</p> <note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
-    /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+    /// <p><code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code></p>
     pub fn get_passphrase(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.passphrase
     }

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSnomedctInferenceJobInput {
-    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.</p>
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The output properties for a detection job.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    /// <p>The user generated name the asynchronous InferSNOMEDCT job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
-    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    /// <p>An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
-    /// <p> The language of the input documents. All documents must be in the same language. </p>
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl StartSnomedctInferenceJobInput {
-    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.</p>
     pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
@@ -27,23 +27,23 @@ impl StartSnomedctInferenceJobInput {
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    /// <p>The user generated name the asynchronous InferSNOMEDCT job.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    /// <p>An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p> The language of the input documents. All documents must be in the same language. </p>
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -68,18 +68,18 @@ pub struct StartSnomedctInferenceJobInputBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl StartSnomedctInferenceJobInputBuilder {
-    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.</p>
     /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.</p>
     pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
-    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.</p>
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
         &self.input_data_config
     }
@@ -98,75 +98,75 @@ impl StartSnomedctInferenceJobInputBuilder {
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         &self.output_data_config
     }
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data.</p>
     /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }
-    /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    /// <p>The user generated name the asynchronous InferSNOMEDCT job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    /// <p>The user generated name the asynchronous InferSNOMEDCT job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
-    /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    /// <p>The user generated name the asynchronous InferSNOMEDCT job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
-    /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    /// <p>An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    /// <p>An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }
-    /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    /// <p>An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }
-    /// <p> The language of the input documents. All documents must be in the same language. </p>
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
     /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The language of the input documents. All documents must be in the same language. </p>
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// <p> The language of the input documents. All documents must be in the same language. </p>
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }

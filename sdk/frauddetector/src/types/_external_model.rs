@@ -8,7 +8,7 @@ pub struct ExternalModel {
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The source of the model.</p>
     pub model_source: ::std::option::Option<crate::types::ModelSource>,
-    /// <p>The role used to invoke the model. </p>
+    /// <p>The role used to invoke the model.</p>
     pub invoke_model_endpoint_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The input configuration.</p>
     pub input_configuration: ::std::option::Option<crate::types::ModelInputConfiguration>,
@@ -32,7 +32,7 @@ impl ExternalModel {
     pub fn model_source(&self) -> ::std::option::Option<&crate::types::ModelSource> {
         self.model_source.as_ref()
     }
-    /// <p>The role used to invoke the model. </p>
+    /// <p>The role used to invoke the model.</p>
     pub fn invoke_model_endpoint_role_arn(&self) -> ::std::option::Option<&str> {
         self.invoke_model_endpoint_role_arn.as_deref()
     }
@@ -111,17 +111,17 @@ impl ExternalModelBuilder {
     pub fn get_model_source(&self) -> &::std::option::Option<crate::types::ModelSource> {
         &self.model_source
     }
-    /// <p>The role used to invoke the model. </p>
+    /// <p>The role used to invoke the model.</p>
     pub fn invoke_model_endpoint_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invoke_model_endpoint_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The role used to invoke the model. </p>
+    /// <p>The role used to invoke the model.</p>
     pub fn set_invoke_model_endpoint_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invoke_model_endpoint_role_arn = input;
         self
     }
-    /// <p>The role used to invoke the model. </p>
+    /// <p>The role used to invoke the model.</p>
     pub fn get_invoke_model_endpoint_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.invoke_model_endpoint_role_arn
     }

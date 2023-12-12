@@ -14,7 +14,7 @@ pub struct RecommendationSummary {
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     pub current_performance_risk_ratings: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
-    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types. </p>
+    /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
     pub inferred_workload_savings: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
 }
 impl RecommendationSummary {
@@ -40,7 +40,7 @@ impl RecommendationSummary {
     pub fn current_performance_risk_ratings(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRiskRatings> {
         self.current_performance_risk_ratings.as_ref()
     }
-    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types. </p>
+    /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_savings.is_none()`.
     pub fn inferred_workload_savings(&self) -> &[crate::types::InferredWorkloadSaving] {
@@ -146,19 +146,19 @@ impl RecommendationSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_inferred_workload_savings`](Self::set_inferred_workload_savings).
     ///
-    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types. </p>
+    /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
     pub fn inferred_workload_savings(mut self, input: crate::types::InferredWorkloadSaving) -> Self {
         let mut v = self.inferred_workload_savings.unwrap_or_default();
         v.push(input);
         self.inferred_workload_savings = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types. </p>
+    /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
     pub fn set_inferred_workload_savings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>) -> Self {
         self.inferred_workload_savings = input;
         self
     }
-    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types. </p>
+    /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
     pub fn get_inferred_workload_savings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>> {
         &self.inferred_workload_savings
     }

@@ -24,7 +24,7 @@ impl DeleteModelVersionInputBuilder {
 ///
 /// <p>Deletes a model version.</p>
 /// <p>You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version.</p>
-/// <p> When you delete a model version, Amazon Fraud Detector permanently deletes that model version and the data is no longer stored in Amazon Fraud Detector.</p>
+/// <p>When you delete a model version, Amazon Fraud Detector permanently deletes that model version and the data is no longer stored in Amazon Fraud Detector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteModelVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

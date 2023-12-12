@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-    /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
-    /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-    /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p>TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p>TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p>PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub client_broker: ::std::option::Option<crate::types::ClientBroker>,
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
@@ -16,9 +16,9 @@ pub struct EncryptionInTransit {
 }
 impl EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-    /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
-    /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-    /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p>TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p>TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p>PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub fn client_broker(&self) -> ::std::option::Option<&crate::types::ClientBroker> {
         self.client_broker.as_ref()
@@ -45,27 +45,27 @@ pub struct EncryptionInTransitBuilder {
 }
 impl EncryptionInTransitBuilder {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-    /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
-    /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-    /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p>TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p>TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p>PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub fn client_broker(mut self, input: crate::types::ClientBroker) -> Self {
         self.client_broker = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-    /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
-    /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-    /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p>TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p>TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p>PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub fn set_client_broker(mut self, input: ::std::option::Option<crate::types::ClientBroker>) -> Self {
         self.client_broker = input;
         self
     }
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-    /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
-    /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-    /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p>TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p>TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p>PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub fn get_client_broker(&self) -> &::std::option::Option<crate::types::ClientBroker> {
         &self.client_broker

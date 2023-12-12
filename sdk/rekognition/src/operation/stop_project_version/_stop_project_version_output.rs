@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopProjectVersionOutput {
-    /// <p>The current status of the stop operation. </p>
+    /// <p>The current status of the stop operation.</p>
     pub status: ::std::option::Option<crate::types::ProjectVersionStatus>,
     _request_id: Option<String>,
 }
 impl StopProjectVersionOutput {
-    /// <p>The current status of the stop operation. </p>
+    /// <p>The current status of the stop operation.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
         self.status.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct StopProjectVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopProjectVersionOutputBuilder {
-    /// <p>The current status of the stop operation. </p>
+    /// <p>The current status of the stop operation.</p>
     pub fn status(mut self, input: crate::types::ProjectVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the stop operation. </p>
+    /// <p>The current status of the stop operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectVersionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the stop operation. </p>
+    /// <p>The current status of the stop operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProjectVersionStatus> {
         &self.status
     }

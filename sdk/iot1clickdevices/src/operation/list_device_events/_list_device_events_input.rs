@@ -5,13 +5,13 @@
 pub struct ListDeviceEventsInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
-    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub from_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub to_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListDeviceEventsInput {
@@ -19,7 +19,7 @@ impl ListDeviceEventsInput {
     pub fn device_id(&self) -> ::std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn from_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.from_time_stamp.as_ref()
     }
@@ -31,7 +31,7 @@ impl ListDeviceEventsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn to_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.to_time_stamp.as_ref()
     }
@@ -69,18 +69,18 @@ impl ListDeviceEventsInputBuilder {
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_id
     }
-    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     /// This field is required.
     pub fn from_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_time_stamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn set_from_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from_time_stamp = input;
         self
     }
-    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn get_from_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.from_time_stamp
     }
@@ -112,18 +112,18 @@ impl ListDeviceEventsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     /// This field is required.
     pub fn to_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_time_stamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn set_to_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to_time_stamp = input;
         self
     }
-    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn get_to_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.to_time_stamp
     }

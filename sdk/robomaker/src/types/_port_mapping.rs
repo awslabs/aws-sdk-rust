@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortMapping {
-    /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
+    /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     pub job_port: i32,
     /// <p>The port number on the application.</p>
     pub application_port: i32,
@@ -12,7 +12,7 @@ pub struct PortMapping {
     pub enable_on_public_ip: bool,
 }
 impl PortMapping {
-    /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
+    /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     pub fn job_port(&self) -> i32 {
         self.job_port
     }
@@ -41,18 +41,18 @@ pub struct PortMappingBuilder {
     pub(crate) enable_on_public_ip: ::std::option::Option<bool>,
 }
 impl PortMappingBuilder {
-    /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
+    /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     /// This field is required.
     pub fn job_port(mut self, input: i32) -> Self {
         self.job_port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
+    /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     pub fn set_job_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.job_port = input;
         self
     }
-    /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
+    /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     pub fn get_job_port(&self) -> &::std::option::Option<i32> {
         &self.job_port
     }

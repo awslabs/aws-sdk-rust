@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTransactionInput {
-    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
     pub transaction_type: ::std::option::Option<crate::types::TransactionType>,
 }
 impl StartTransactionInput {
-    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
     pub fn transaction_type(&self) -> ::std::option::Option<&crate::types::TransactionType> {
         self.transaction_type.as_ref()
     }
@@ -26,17 +26,17 @@ pub struct StartTransactionInputBuilder {
     pub(crate) transaction_type: ::std::option::Option<crate::types::TransactionType>,
 }
 impl StartTransactionInputBuilder {
-    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
     pub fn transaction_type(mut self, input: crate::types::TransactionType) -> Self {
         self.transaction_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
     pub fn set_transaction_type(mut self, input: ::std::option::Option<crate::types::TransactionType>) -> Self {
         self.transaction_type = input;
         self
     }
-    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
     pub fn get_transaction_type(&self) -> &::std::option::Option<crate::types::TransactionType> {
         &self.transaction_type
     }

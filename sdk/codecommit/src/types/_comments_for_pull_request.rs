@@ -10,7 +10,7 @@ pub struct CommentsForPullRequest {
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
     pub before_commit_id: ::std::option::Option<::std::string::String>,
-    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
+    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made.</p>
     pub after_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
     pub before_blob_id: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl CommentsForPullRequest {
     pub fn before_commit_id(&self) -> ::std::option::Option<&str> {
         self.before_commit_id.as_deref()
     }
-    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
+    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made.</p>
     pub fn after_commit_id(&self) -> ::std::option::Option<&str> {
         self.after_commit_id.as_deref()
     }
@@ -120,17 +120,17 @@ impl CommentsForPullRequestBuilder {
     pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.before_commit_id
     }
-    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
+    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made.</p>
     pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
+    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made.</p>
     pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }
-    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
+    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made.</p>
     pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_commit_id
     }

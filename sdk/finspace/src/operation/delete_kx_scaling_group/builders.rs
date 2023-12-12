@@ -22,7 +22,7 @@ impl DeleteKxScalingGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteKxScalingGroup`.
 ///
-/// <p> Deletes the specified scaling group. This action is irreversible. You cannot delete a scaling group until all the clusters running on it have been deleted.</p>
+/// <p>Deletes the specified scaling group. This action is irreversible. You cannot delete a scaling group until all the clusters running on it have been deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKxScalingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteKxScalingGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview. </p>
+    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview. </p>
+    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview. </p>
+    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>A unique identifier for the kdb scaling group. </p>
+    /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scaling_group_name(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb scaling group. </p>
+    /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scaling_group_name(input);
         self
     }
-    /// <p>A unique identifier for the kdb scaling group. </p>
+    /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scaling_group_name()
     }

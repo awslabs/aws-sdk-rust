@@ -10,10 +10,10 @@ pub struct ReplicationRuleFilter {
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A container for a key-value name pair.</p>
     pub tag: ::std::option::Option<crate::types::S3Tag>,
-    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example: </p>
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example:</p>
     /// <ul>
-    /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p> </li>
-    /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p> </li>
+    /// <li><p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p></li>
+    /// <li><p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p></li>
     /// </ul>
     pub and: ::std::option::Option<crate::types::ReplicationRuleAndOperator>,
 }
@@ -28,10 +28,10 @@ impl ReplicationRuleFilter {
     pub fn tag(&self) -> ::std::option::Option<&crate::types::S3Tag> {
         self.tag.as_ref()
     }
-    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example: </p>
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example:</p>
     /// <ul>
-    /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p> </li>
-    /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p> </li>
+    /// <li><p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p></li>
+    /// <li><p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p></li>
     /// </ul>
     pub fn and(&self) -> ::std::option::Option<&crate::types::ReplicationRuleAndOperator> {
         self.and.as_ref()
@@ -87,28 +87,28 @@ impl ReplicationRuleFilterBuilder {
     pub fn get_tag(&self) -> &::std::option::Option<crate::types::S3Tag> {
         &self.tag
     }
-    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example: </p>
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example:</p>
     /// <ul>
-    /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p> </li>
-    /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p> </li>
+    /// <li><p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p></li>
+    /// <li><p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p></li>
     /// </ul>
     pub fn and(mut self, input: crate::types::ReplicationRuleAndOperator) -> Self {
         self.and = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example: </p>
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example:</p>
     /// <ul>
-    /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p> </li>
-    /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p> </li>
+    /// <li><p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p></li>
+    /// <li><p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p></li>
     /// </ul>
     pub fn set_and(mut self, input: ::std::option::Option<crate::types::ReplicationRuleAndOperator>) -> Self {
         self.and = input;
         self
     }
-    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example: </p>
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example:</p>
     /// <ul>
-    /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p> </li>
-    /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p> </li>
+    /// <li><p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> element.</p></li>
+    /// <li><p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p></li>
     /// </ul>
     pub fn get_and(&self) -> &::std::option::Option<crate::types::ReplicationRuleAndOperator> {
         &self.and

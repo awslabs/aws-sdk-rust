@@ -114,17 +114,17 @@ impl ListTestGridSessionArtifactsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_test_grid_session_artifacts::paginator::ListTestGridSessionArtifactsPaginator {
         crate::operation::list_test_grid_session_artifacts::paginator::ListTestGridSessionArtifactsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ARN of a <code>TestGridSession</code>. </p>
+    /// <p>The ARN of a <code>TestGridSession</code>.</p>
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_arn(input.into());
         self
     }
-    /// <p>The ARN of a <code>TestGridSession</code>. </p>
+    /// <p>The ARN of a <code>TestGridSession</code>.</p>
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_arn(input);
         self
     }
-    /// <p>The ARN of a <code>TestGridSession</code>. </p>
+    /// <p>The ARN of a <code>TestGridSession</code>.</p>
     pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_arn()
     }

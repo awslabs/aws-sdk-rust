@@ -108,31 +108,31 @@ impl GetDeploymentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the application that includes the deployment you want to get. </p>
+    /// <p>The ID of the application that includes the deployment you want to get.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The ID of the application that includes the deployment you want to get. </p>
+    /// <p>The ID of the application that includes the deployment you want to get.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The ID of the application that includes the deployment you want to get. </p>
+    /// <p>The ID of the application that includes the deployment you want to get.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The ID of the environment that includes the deployment you want to get. </p>
+    /// <p>The ID of the environment that includes the deployment you want to get.</p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>The ID of the environment that includes the deployment you want to get. </p>
+    /// <p>The ID of the environment that includes the deployment you want to get.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>The ID of the environment that includes the deployment you want to get. </p>
+    /// <p>The ID of the environment that includes the deployment you want to get.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }

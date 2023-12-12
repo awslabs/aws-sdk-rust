@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectorProfileOutput {
-    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    /// <p>The Amazon Resource Name (ARN) of the connector profile.</p>
     pub connector_profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateConnectorProfileOutput {
-    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    /// <p>The Amazon Resource Name (ARN) of the connector profile.</p>
     pub fn connector_profile_arn(&self) -> ::std::option::Option<&str> {
         self.connector_profile_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateConnectorProfileOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateConnectorProfileOutputBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    /// <p>The Amazon Resource Name (ARN) of the connector profile.</p>
     pub fn connector_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    /// <p>The Amazon Resource Name (ARN) of the connector profile.</p>
     pub fn set_connector_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    /// <p>The Amazon Resource Name (ARN) of the connector profile.</p>
     pub fn get_connector_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_profile_arn
     }

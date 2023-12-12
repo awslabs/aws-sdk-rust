@@ -138,9 +138,9 @@ impl DescribeTransitGatewayConnectPeersFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>state</code> - The state of the Connect peer (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.</p> </li>
+    /// <li><p><code>state</code> - The state of the Connect peer (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li><p><code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -148,9 +148,9 @@ impl DescribeTransitGatewayConnectPeersFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>state</code> - The state of the Connect peer (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.</p> </li>
+    /// <li><p><code>state</code> - The state of the Connect peer (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li><p><code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -158,9 +158,9 @@ impl DescribeTransitGatewayConnectPeersFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>state</code> - The state of the Connect peer (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.</p> </li>
+    /// <li><p><code>state</code> - The state of the Connect peer (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li><p><code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

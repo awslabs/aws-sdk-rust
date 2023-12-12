@@ -22,12 +22,12 @@ impl ImportFirewallDomainsInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportFirewallDomains`.
 ///
-/// <p>Imports domain names from a file into a domain list, for use in a DNS firewall rule group. </p>
-/// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
+/// <p>Imports domain names from a file into a domain list, for use in a DNS firewall rule group.</p>
+/// <p>Each domain specification in your domain list must satisfy the following requirements:</p>
 /// <ul>
-/// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
-/// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
-/// <li> <p>It must be from 1-255 characters in length. </p> </li>
+/// <li><p>It can optionally start with <code>*</code> (asterisk).</p></li>
+/// <li><p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p></li>
+/// <li><p>It must be from 1-255 characters in length.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportFirewallDomainsFluentBuilder {
@@ -128,17 +128,17 @@ impl ImportFirewallDomainsFluentBuilder {
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_domain_list_id()
     }
-    /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
+    /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file.</p>
     pub fn operation(mut self, input: crate::types::FirewallDomainImportOperation) -> Self {
         self.inner = self.inner.operation(input);
         self
     }
-    /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
+    /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::FirewallDomainImportOperation>) -> Self {
         self.inner = self.inner.set_operation(input);
         self
     }
-    /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
+    /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file.</p>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::FirewallDomainImportOperation> {
         self.inner.get_operation()
     }

@@ -6,7 +6,7 @@
 pub struct AnchorDateConfiguration {
     /// <p>The options for the date configuration. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>NOW</code> </p> </li>
+    /// <li><p><code>NOW</code></p></li>
     /// </ul>
     pub anchor_option: ::std::option::Option<crate::types::AnchorOption>,
     /// <p>The name of the parameter that is used for the anchor date configuration.</p>
@@ -15,7 +15,7 @@ pub struct AnchorDateConfiguration {
 impl AnchorDateConfiguration {
     /// <p>The options for the date configuration. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>NOW</code> </p> </li>
+    /// <li><p><code>NOW</code></p></li>
     /// </ul>
     pub fn anchor_option(&self) -> ::std::option::Option<&crate::types::AnchorOption> {
         self.anchor_option.as_ref()
@@ -42,7 +42,7 @@ pub struct AnchorDateConfigurationBuilder {
 impl AnchorDateConfigurationBuilder {
     /// <p>The options for the date configuration. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>NOW</code> </p> </li>
+    /// <li><p><code>NOW</code></p></li>
     /// </ul>
     pub fn anchor_option(mut self, input: crate::types::AnchorOption) -> Self {
         self.anchor_option = ::std::option::Option::Some(input);
@@ -50,7 +50,7 @@ impl AnchorDateConfigurationBuilder {
     }
     /// <p>The options for the date configuration. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>NOW</code> </p> </li>
+    /// <li><p><code>NOW</code></p></li>
     /// </ul>
     pub fn set_anchor_option(mut self, input: ::std::option::Option<crate::types::AnchorOption>) -> Self {
         self.anchor_option = input;
@@ -58,7 +58,7 @@ impl AnchorDateConfigurationBuilder {
     }
     /// <p>The options for the date configuration. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>NOW</code> </p> </li>
+    /// <li><p><code>NOW</code></p></li>
     /// </ul>
     pub fn get_anchor_option(&self) -> &::std::option::Option<crate::types::AnchorOption> {
         &self.anchor_option

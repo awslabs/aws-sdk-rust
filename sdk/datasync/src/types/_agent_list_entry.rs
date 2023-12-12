@@ -10,8 +10,8 @@ pub struct AgentListEntry {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of an agent.</p>
     /// <ul>
-    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
-    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// <li><p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p></li>
+    /// <li><p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a></p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::AgentStatus>,
     /// <p>The platform-related details about the agent, such as the version number.</p>
@@ -28,8 +28,8 @@ impl AgentListEntry {
     }
     /// <p>The status of an agent.</p>
     /// <ul>
-    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
-    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// <li><p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p></li>
+    /// <li><p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AgentStatus> {
         self.status.as_ref()
@@ -86,8 +86,8 @@ impl AgentListEntryBuilder {
     }
     /// <p>The status of an agent.</p>
     /// <ul>
-    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
-    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// <li><p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p></li>
+    /// <li><p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a></p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -95,8 +95,8 @@ impl AgentListEntryBuilder {
     }
     /// <p>The status of an agent.</p>
     /// <ul>
-    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
-    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// <li><p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p></li>
+    /// <li><p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.status = input;
@@ -104,8 +104,8 @@ impl AgentListEntryBuilder {
     }
     /// <p>The status of an agent.</p>
     /// <ul>
-    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
-    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// <li><p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p></li>
+    /// <li><p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
         &self.status

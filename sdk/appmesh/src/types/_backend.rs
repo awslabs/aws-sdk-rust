@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Backend {
-    /// <p>Specifies a virtual service to use as a backend. </p>
+    /// <p>Specifies a virtual service to use as a backend.</p>
     VirtualService(crate::types::VirtualServiceBackend),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

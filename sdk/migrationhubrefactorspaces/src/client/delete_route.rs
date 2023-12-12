@@ -11,8 +11,8 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::delete_route::DeleteRouteOutput::arn): <p>The Amazon Resource Name (ARN) of the route.</p>
     ///   - [`service_id(Option<String>)`](crate::operation::delete_route::DeleteRouteOutput::service_id): <p>The ID of the service that the route belongs to.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::delete_route::DeleteRouteOutput::application_id): <p>The ID of the application that the route belongs to.</p>
-    ///   - [`state(Option<RouteState>)`](crate::operation::delete_route::DeleteRouteOutput::state): <p>The current state of the route. </p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::delete_route::DeleteRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
+    ///   - [`state(Option<RouteState>)`](crate::operation::delete_route::DeleteRouteOutput::state): <p>The current state of the route.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::delete_route::DeleteRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated.</p>
     /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::operation::delete_route::DeleteRouteError)
     pub fn delete_route(&self) -> crate::operation::delete_route::builders::DeleteRouteFluentBuilder {
         crate::operation::delete_route::builders::DeleteRouteFluentBuilder::new(self.handle.clone())

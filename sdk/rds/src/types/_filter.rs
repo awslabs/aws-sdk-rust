@@ -5,11 +5,11 @@
 /// </note>
 /// <p>The following actions can be filtered:</p>
 /// <ul>
-/// <li> <p> <code>DescribeDBClusterBacktracks</code> </p> </li>
-/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li>
-/// <li> <p> <code>DescribeDBClusters</code> </p> </li>
-/// <li> <p> <code>DescribeDBInstances</code> </p> </li>
-/// <li> <p> <code>DescribePendingMaintenanceActions</code> </p> </li>
+/// <li><p><code>DescribeDBClusterBacktracks</code></p></li>
+/// <li><p><code>DescribeDBClusterEndpoints</code></p></li>
+/// <li><p><code>DescribeDBClusters</code></p></li>
+/// <li><p><code>DescribeDBInstances</code></p></li>
+/// <li><p><code>DescribePendingMaintenanceActions</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

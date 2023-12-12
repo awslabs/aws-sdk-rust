@@ -166,8 +166,8 @@ impl UpdateQuickResponseFluentBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -175,8 +175,8 @@ impl UpdateQuickResponseFluentBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
@@ -184,8 +184,8 @@ impl UpdateQuickResponseFluentBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content_type()
@@ -274,17 +274,17 @@ impl UpdateQuickResponseFluentBuilder {
     pub fn get_remove_shortcut_key(&self) -> &::std::option::Option<bool> {
         self.inner.get_remove_shortcut_key()
     }
-    /// <p>Whether the quick response is active. </p>
+    /// <p>Whether the quick response is active.</p>
     pub fn is_active(mut self, input: bool) -> Self {
         self.inner = self.inner.is_active(input);
         self
     }
-    /// <p>Whether the quick response is active. </p>
+    /// <p>Whether the quick response is active.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_active(input);
         self
     }
-    /// <p>Whether the quick response is active. </p>
+    /// <p>Whether the quick response is active.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
         self.inner.get_is_active()
     }
@@ -306,17 +306,17 @@ impl UpdateQuickResponseFluentBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_channels()
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.language(input.into());
         self
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language(input);
         self
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_language()
     }

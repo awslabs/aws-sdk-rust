@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesInput {
-    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
     pub filters: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListMonitoredResourcesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMonitoredResourcesInput {
-    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::ListMonitoredResourcesFilters> {
         self.filters.as_ref()
     }
@@ -40,17 +40,17 @@ pub struct ListMonitoredResourcesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMonitoredResourcesInputBuilder {
-    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
     pub fn filters(mut self, input: crate::types::ListMonitoredResourcesFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>) -> Self {
         self.filters = input;
         self
     }
-    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListMonitoredResourcesFilters> {
         &self.filters
     }

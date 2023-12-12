@@ -8,7 +8,7 @@ pub struct ApplicationSettingsResponse {
     pub enabled: ::std::option::Option<bool>,
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
     pub settings_group: ::std::option::Option<::std::string::String>,
-    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
+    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationSettingsResponse {
@@ -20,7 +20,7 @@ impl ApplicationSettingsResponse {
     pub fn settings_group(&self) -> ::std::option::Option<&str> {
         self.settings_group.as_deref()
     }
-    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
+    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.</p>
     pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -69,17 +69,17 @@ impl ApplicationSettingsResponseBuilder {
     pub fn get_settings_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.settings_group
     }
-    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
+    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.</p>
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
+    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
-    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
+    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_name
     }

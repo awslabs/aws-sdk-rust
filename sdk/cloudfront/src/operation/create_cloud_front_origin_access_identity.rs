@@ -258,7 +258,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCloudFr
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateCloudFrontOriginAccessIdentityError {
-    /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
+    /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.</p>
     CloudFrontOriginAccessIdentityAlreadyExists(crate::types::error::CloudFrontOriginAccessIdentityAlreadyExists),
     /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
     InconsistentQuantities(crate::types::error::InconsistentQuantities),

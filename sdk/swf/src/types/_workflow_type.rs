@@ -4,24 +4,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowType {
-    /// <p> The name of the workflow type.</p> <note>
+    /// <p>The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     pub name: ::std::string::String,
-    /// <p> The version of the workflow type.</p> <note>
+    /// <p>The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     pub version: ::std::string::String,
 }
 impl WorkflowType {
-    /// <p> The name of the workflow type.</p> <note>
+    /// <p>The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p> The version of the workflow type.</p> <note>
+    /// <p>The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     pub fn version(&self) -> &str {
@@ -44,7 +44,7 @@ pub struct WorkflowTypeBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowTypeBuilder {
-    /// <p> The name of the workflow type.</p> <note>
+    /// <p>The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     /// This field is required.
@@ -52,20 +52,20 @@ impl WorkflowTypeBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the workflow type.</p> <note>
+    /// <p>The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the workflow type.</p> <note>
+    /// <p>The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> The version of the workflow type.</p> <note>
+    /// <p>The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     /// This field is required.
@@ -73,14 +73,14 @@ impl WorkflowTypeBuilder {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The version of the workflow type.</p> <note>
+    /// <p>The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p> The version of the workflow type.</p> <note>
+    /// <p>The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {

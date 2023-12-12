@@ -36,9 +36,9 @@ pub struct OrganizationRecommendation {
     pub description: ::std::string::String,
     /// <p>The creator, if created by AWS Trusted Advisor Priority</p>
     pub created_by: ::std::option::Option<::std::string::String>,
-    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub updated_on_behalf_of: ::std::option::Option<::std::string::String>,
-    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub updated_on_behalf_of_job_title: ::std::option::Option<::std::string::String>,
     /// <p>Reason for the lifecycle stage change</p>
     pub update_reason: ::std::option::Option<::std::string::String>,
@@ -119,11 +119,11 @@ impl OrganizationRecommendation {
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn updated_on_behalf_of(&self) -> ::std::option::Option<&str> {
         self.updated_on_behalf_of.as_deref()
     }
-    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn updated_on_behalf_of_job_title(&self) -> ::std::option::Option<&str> {
         self.updated_on_behalf_of_job_title.as_deref()
     }
@@ -445,31 +445,31 @@ impl OrganizationRecommendationBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
-    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn updated_on_behalf_of(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_on_behalf_of = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn set_updated_on_behalf_of(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_on_behalf_of = input;
         self
     }
-    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn get_updated_on_behalf_of(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_on_behalf_of
     }
-    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn updated_on_behalf_of_job_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_on_behalf_of_job_title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn set_updated_on_behalf_of_job_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_on_behalf_of_job_title = input;
         self
     }
-    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
+    /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn get_updated_on_behalf_of_job_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_on_behalf_of_job_title
     }

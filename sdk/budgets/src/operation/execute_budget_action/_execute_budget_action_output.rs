@@ -5,11 +5,11 @@
 pub struct ExecuteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: ::std::string::String,
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub budget_name: ::std::string::String,
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub action_id: ::std::string::String,
-    /// <p> The type of execution. </p>
+    /// <p>The type of execution.</p>
     pub execution_type: crate::types::ExecutionType,
     _request_id: Option<String>,
 }
@@ -19,17 +19,17 @@ impl ExecuteBudgetActionOutput {
         use std::ops::Deref;
         self.account_id.deref()
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(&self) -> &str {
         use std::ops::Deref;
         self.budget_name.deref()
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn action_id(&self) -> &str {
         use std::ops::Deref;
         self.action_id.deref()
     }
-    /// <p> The type of execution. </p>
+    /// <p>The type of execution.</p>
     pub fn execution_type(&self) -> &crate::types::ExecutionType {
         &self.execution_type
     }
@@ -72,48 +72,48 @@ impl ExecuteBudgetActionOutputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_id
     }
-    /// <p> The type of execution. </p>
+    /// <p>The type of execution.</p>
     /// This field is required.
     pub fn execution_type(mut self, input: crate::types::ExecutionType) -> Self {
         self.execution_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of execution. </p>
+    /// <p>The type of execution.</p>
     pub fn set_execution_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
         self.execution_type = input;
         self
     }
-    /// <p> The type of execution. </p>
+    /// <p>The type of execution.</p>
     pub fn get_execution_type(&self) -> &::std::option::Option<crate::types::ExecutionType> {
         &self.execution_type
     }

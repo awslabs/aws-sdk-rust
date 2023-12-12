@@ -29,11 +29,11 @@ pub struct CreateStudioInput {
     pub idp_relay_state_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>
+    /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub trusted_identity_propagation_enabled: ::std::option::Option<bool>,
-    /// <p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
     pub idc_user_assignment: ::std::option::Option<crate::types::IdcUserAssignment>,
-    /// <p> The ARN of the IAM Identity Center instance to create the Studio application. </p>
+    /// <p>The ARN of the IAM Identity Center instance to create the Studio application.</p>
     pub idc_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
@@ -95,15 +95,15 @@ impl CreateStudioInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>
+    /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub fn trusted_identity_propagation_enabled(&self) -> ::std::option::Option<bool> {
         self.trusted_identity_propagation_enabled
     }
-    /// <p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
     pub fn idc_user_assignment(&self) -> ::std::option::Option<&crate::types::IdcUserAssignment> {
         self.idc_user_assignment.as_ref()
     }
-    /// <p> The ARN of the IAM Identity Center instance to create the Studio application. </p>
+    /// <p>The ARN of the IAM Identity Center instance to create the Studio application.</p>
     pub fn idc_instance_arn(&self) -> ::std::option::Option<&str> {
         self.idc_instance_arn.as_deref()
     }
@@ -343,45 +343,45 @@ impl CreateStudioInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>
+    /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub fn trusted_identity_propagation_enabled(mut self, input: bool) -> Self {
         self.trusted_identity_propagation_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>
+    /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub fn set_trusted_identity_propagation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.trusted_identity_propagation_enabled = input;
         self
     }
-    /// <p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>
+    /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub fn get_trusted_identity_propagation_enabled(&self) -> &::std::option::Option<bool> {
         &self.trusted_identity_propagation_enabled
     }
-    /// <p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
     pub fn idc_user_assignment(mut self, input: crate::types::IdcUserAssignment) -> Self {
         self.idc_user_assignment = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
     pub fn set_idc_user_assignment(mut self, input: ::std::option::Option<crate::types::IdcUserAssignment>) -> Self {
         self.idc_user_assignment = input;
         self
     }
-    /// <p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
     pub fn get_idc_user_assignment(&self) -> &::std::option::Option<crate::types::IdcUserAssignment> {
         &self.idc_user_assignment
     }
-    /// <p> The ARN of the IAM Identity Center instance to create the Studio application. </p>
+    /// <p>The ARN of the IAM Identity Center instance to create the Studio application.</p>
     pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idc_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the IAM Identity Center instance to create the Studio application. </p>
+    /// <p>The ARN of the IAM Identity Center instance to create the Studio application.</p>
     pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idc_instance_arn = input;
         self
     }
-    /// <p> The ARN of the IAM Identity Center instance to create the Studio application. </p>
+    /// <p>The ARN of the IAM Identity Center instance to create the Studio application.</p>
     pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.idc_instance_arn
     }

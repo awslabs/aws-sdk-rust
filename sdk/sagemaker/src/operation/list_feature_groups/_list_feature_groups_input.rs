@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFeatureGroupsInput {
-    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
-    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p>
     pub feature_group_status_equals: ::std::option::Option<crate::types::FeatureGroupStatus>,
-    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p>
     pub offline_store_status_equals: ::std::option::Option<crate::types::OfflineStoreStatusValue>,
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -23,15 +23,15 @@ pub struct ListFeatureGroupsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListFeatureGroupsInput {
-    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub fn name_contains(&self) -> ::std::option::Option<&str> {
         self.name_contains.as_deref()
     }
-    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p>
     pub fn feature_group_status_equals(&self) -> ::std::option::Option<&crate::types::FeatureGroupStatus> {
         self.feature_group_status_equals.as_ref()
     }
-    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p>
     pub fn offline_store_status_equals(&self) -> ::std::option::Option<&crate::types::OfflineStoreStatusValue> {
         self.offline_store_status_equals.as_ref()
     }
@@ -82,45 +82,45 @@ pub struct ListFeatureGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListFeatureGroupsInputBuilder {
-    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
-    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_contains
     }
-    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p>
     pub fn feature_group_status_equals(mut self, input: crate::types::FeatureGroupStatus) -> Self {
         self.feature_group_status_equals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p>
     pub fn set_feature_group_status_equals(mut self, input: ::std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
         self.feature_group_status_equals = input;
         self
     }
-    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p>
     pub fn get_feature_group_status_equals(&self) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
         &self.feature_group_status_equals
     }
-    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p>
     pub fn offline_store_status_equals(mut self, input: crate::types::OfflineStoreStatusValue) -> Self {
         self.offline_store_status_equals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p>
     pub fn set_offline_store_status_equals(mut self, input: ::std::option::Option<crate::types::OfflineStoreStatusValue>) -> Self {
         self.offline_store_status_equals = input;
         self
     }
-    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p>
     pub fn get_offline_store_status_equals(&self) -> &::std::option::Option<crate::types::OfflineStoreStatusValue> {
         &self.offline_store_status_equals
     }

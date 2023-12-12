@@ -22,7 +22,7 @@ impl TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource. </p>
+/// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

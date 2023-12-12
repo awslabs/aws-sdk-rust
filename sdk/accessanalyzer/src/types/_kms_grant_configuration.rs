@@ -12,7 +12,7 @@ pub struct KmsGrantConfiguration {
     pub retiring_principal: ::std::option::Option<::std::string::String>,
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
     pub constraints: ::std::option::Option<crate::types::KmsGrantConstraints>,
-    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    /// <p>The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     pub issuing_account: ::std::string::String,
 }
 impl KmsGrantConfiguration {
@@ -34,7 +34,7 @@ impl KmsGrantConfiguration {
     pub fn constraints(&self) -> ::std::option::Option<&crate::types::KmsGrantConstraints> {
         self.constraints.as_ref()
     }
-    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    /// <p>The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     pub fn issuing_account(&self) -> &str {
         use std::ops::Deref;
         self.issuing_account.deref()
@@ -121,18 +121,18 @@ impl KmsGrantConfigurationBuilder {
     pub fn get_constraints(&self) -> &::std::option::Option<crate::types::KmsGrantConstraints> {
         &self.constraints
     }
-    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    /// <p>The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     /// This field is required.
     pub fn issuing_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuing_account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    /// <p>The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     pub fn set_issuing_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuing_account = input;
         self
     }
-    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    /// <p>The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     pub fn get_issuing_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.issuing_account
     }

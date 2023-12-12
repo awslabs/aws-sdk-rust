@@ -8,10 +8,10 @@ pub struct OperationSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p> </li>
-    /// <li> <p> <b>PENDING</b>: Cloud Map is performing the operation.</p> </li>
-    /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-    /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
+    /// <li><p><b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p></li>
+    /// <li><p><b>PENDING</b>: Cloud Map is performing the operation.</p></li>
+    /// <li><p><b>SUCCESS</b>: The operation succeeded.</p></li>
+    /// <li><p><b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::OperationStatus>,
 }
@@ -22,10 +22,10 @@ impl OperationSummary {
     }
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p> </li>
-    /// <li> <p> <b>PENDING</b>: Cloud Map is performing the operation.</p> </li>
-    /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-    /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
+    /// <li><p><b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p></li>
+    /// <li><p><b>PENDING</b>: Cloud Map is performing the operation.</p></li>
+    /// <li><p><b>SUCCESS</b>: The operation succeeded.</p></li>
+    /// <li><p><b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
         self.status.as_ref()
@@ -62,10 +62,10 @@ impl OperationSummaryBuilder {
     }
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p> </li>
-    /// <li> <p> <b>PENDING</b>: Cloud Map is performing the operation.</p> </li>
-    /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-    /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
+    /// <li><p><b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p></li>
+    /// <li><p><b>PENDING</b>: Cloud Map is performing the operation.</p></li>
+    /// <li><p><b>SUCCESS</b>: The operation succeeded.</p></li>
+    /// <li><p><b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -73,10 +73,10 @@ impl OperationSummaryBuilder {
     }
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p> </li>
-    /// <li> <p> <b>PENDING</b>: Cloud Map is performing the operation.</p> </li>
-    /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-    /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
+    /// <li><p><b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p></li>
+    /// <li><p><b>PENDING</b>: Cloud Map is performing the operation.</p></li>
+    /// <li><p><b>SUCCESS</b>: The operation succeeded.</p></li>
+    /// <li><p><b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.status = input;
@@ -84,10 +84,10 @@ impl OperationSummaryBuilder {
     }
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p> </li>
-    /// <li> <p> <b>PENDING</b>: Cloud Map is performing the operation.</p> </li>
-    /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-    /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
+    /// <li><p><b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p></li>
+    /// <li><p><b>PENDING</b>: Cloud Map is performing the operation.</p></li>
+    /// <li><p><b>SUCCESS</b>: The operation succeeded.</p></li>
+    /// <li><p><b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
         &self.status

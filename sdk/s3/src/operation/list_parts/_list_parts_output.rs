@@ -24,18 +24,18 @@ pub struct ListPartsOutput {
     pub next_part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of parts that were allowed in the response.</p>
     pub max_parts: ::std::option::Option<i32>,
-    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::Part>>,
     /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
     pub initiator: ::std::option::Option<crate::types::Initiator>,
     /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The class of storage used to store the uploaded object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
@@ -85,7 +85,7 @@ impl ListPartsOutput {
     pub fn max_parts(&self) -> ::std::option::Option<i32> {
         self.max_parts
     }
-    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
@@ -100,13 +100,13 @@ impl ListPartsOutput {
         self.initiator.as_ref()
     }
     /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
         self.owner.as_ref()
     }
     /// <p>The class of storage used to store the uploaded object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
         self.storage_class.as_ref()
@@ -289,17 +289,17 @@ impl ListPartsOutputBuilder {
     pub fn get_max_parts(&self) -> &::std::option::Option<i32> {
         &self.max_parts
     }
-    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
-    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
         &self.is_truncated
     }
@@ -338,41 +338,41 @@ impl ListPartsOutputBuilder {
         &self.initiator
     }
     /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
     }
     /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
         &self.owner
     }
     /// <p>The class of storage used to store the uploaded object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>The class of storage used to store the uploaded object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
     /// <p>The class of storage used to store the uploaded object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
         &self.storage_class

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDevEnvironmentOutput {
-    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub id: ::std::string::String,
     /// <p>The name of the space.</p>
     pub space_name: ::std::string::String,
@@ -13,16 +13,16 @@ pub struct UpdateDevEnvironmentOutput {
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     pub inactivity_timeout_minutes: i32,
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDevEnvironmentOutput {
-    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -47,11 +47,11 @@ impl UpdateDevEnvironmentOutput {
     pub fn ides(&self) -> &[crate::types::IdeConfiguration] {
         self.ides.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     pub fn inactivity_timeout_minutes(&self) -> i32 {
         self.inactivity_timeout_minutes
     }
@@ -87,18 +87,18 @@ pub struct UpdateDevEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateDevEnvironmentOutputBuilder {
-    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -166,31 +166,31 @@ impl UpdateDevEnvironmentOutputBuilder {
     pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         &self.ides
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
         self.inactivity_timeout_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     pub fn set_inactivity_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inactivity_timeout_minutes = input;
         self
     }
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {
         &self.inactivity_timeout_minutes
     }

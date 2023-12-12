@@ -22,7 +22,7 @@ impl DescribeBatchDeleteConfigurationTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBatchDeleteConfigurationTask`.
 ///
-/// <p> Takes a unique deletion task identifier as input and returns metadata about a configuration deletion task.</p>
+/// <p>Takes a unique deletion task identifier as input and returns metadata about a configuration deletion task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBatchDeleteConfigurationTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl DescribeBatchDeleteConfigurationTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the task to delete. </p>
+    /// <p>The ID of the task to delete.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// <p> The ID of the task to delete. </p>
+    /// <p>The ID of the task to delete.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// <p> The ID of the task to delete. </p>
+    /// <p>The ID of the task to delete.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }

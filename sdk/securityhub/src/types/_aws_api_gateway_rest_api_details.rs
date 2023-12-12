@@ -22,8 +22,8 @@ pub struct AwsApiGatewayRestApiDetails {
     /// <p>If 0, then all payloads are compressed.</p>
     pub minimum_compression_size: ::std::option::Option<i32>,
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
-    /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p><code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
+    /// <p><code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub api_key_source: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint configuration of the REST API.</p>
     pub endpoint_configuration: ::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
@@ -63,8 +63,8 @@ impl AwsApiGatewayRestApiDetails {
         self.minimum_compression_size
     }
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
-    /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p><code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
+    /// <p><code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(&self) -> ::std::option::Option<&str> {
         self.api_key_source.as_deref()
     }
@@ -209,22 +209,22 @@ impl AwsApiGatewayRestApiDetailsBuilder {
         &self.minimum_compression_size
     }
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
-    /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p><code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
+    /// <p><code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
-    /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p><code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
+    /// <p><code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn set_api_key_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_source = input;
         self
     }
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
-    /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p><code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
+    /// <p><code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn get_api_key_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_source
     }

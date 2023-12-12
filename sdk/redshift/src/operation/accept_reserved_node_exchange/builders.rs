@@ -22,7 +22,7 @@ impl AcceptReservedNodeExchangeInputBuilder {
 }
 /// Fluent builder constructing a request to `AcceptReservedNodeExchange`.
 ///
-/// <p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs. </p>
+/// <p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptReservedNodeExchangeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl AcceptReservedNodeExchangeFluentBuilder {
     pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reserved_node_id()
     }
-    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code></p>
     pub fn target_reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_reserved_node_offering_id(input.into());
         self
     }
-    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code></p>
     pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_reserved_node_offering_id(input);
         self
     }
-    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code></p>
     pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_reserved_node_offering_id()
     }

@@ -2,55 +2,55 @@
 
 /// <p>Contains fields describing a condition by which to filter the utterances. The expression may be understood as <code>name</code> <code>operator</code> <code>values</code>. For example:</p>
 /// <ul>
-/// <li> <p> <code>LocaleId EQ Book</code> – The locale is the string "en".</p> </li>
-/// <li> <p> <code>UtteranceText CO help</code> – The text of the utterance contains the string "help".</p> </li>
+/// <li><p><code>LocaleId EQ Book</code> – The locale is the string "en".</p></li>
+/// <li><p><code>UtteranceText CO help</code> – The text of the utterance contains the string "help".</p></li>
 /// </ul>
 /// <p>The operators that each filter supports are listed below:</p>
 /// <ul>
-/// <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li>
-/// <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li>
-/// <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li>
-/// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
-/// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
-/// <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li>
-/// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
-/// <li> <p> <code>UtteranceState</code> – <code>EQ</code>.</p> </li>
-/// <li> <p> <code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
+/// <li><p><code>BotAlias</code> – <code>EQ</code>.</p></li>
+/// <li><p><code>BotVersion</code> – <code>EQ</code>.</p></li>
+/// <li><p><code>LocaleId</code> – <code>EQ</code>.</p></li>
+/// <li><p><code>Modality</code> – <code>EQ</code>.</p></li>
+/// <li><p><code>Channel</code> – <code>EQ</code>.</p></li>
+/// <li><p><code>SessionId</code> – <code>EQ</code>.</p></li>
+/// <li><p><code>OriginatingRequestId</code> – <code>EQ</code>.</p></li>
+/// <li><p><code>UtteranceState</code> – <code>EQ</code>.</p></li>
+/// <li><p><code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceFilter {
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – The name of the bot alias.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – The version of the bot.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – The locale of the bot.</p> </li>
-    /// <li> <p> <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p> </li>
-    /// <li> <p> <code>Channel</code> – The channel that the bot is integrated with.</p> </li>
-    /// <li> <p> <code>SessionId</code> – The identifier of the session with the bot.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – The state of the utterance.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – The text in the utterance.</p> </li>
+    /// <li><p><code>BotAlias</code> – The name of the bot alias.</p></li>
+    /// <li><p><code>BotVersion</code> – The version of the bot.</p></li>
+    /// <li><p><code>LocaleId</code> – The locale of the bot.</p></li>
+    /// <li><p><code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p></li>
+    /// <li><p><code>Channel</code> – The channel that the bot is integrated with.</p></li>
+    /// <li><p><code>SessionId</code> – The identifier of the session with the bot.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – The identifier of the first request in a session.</p></li>
+    /// <li><p><code>UtteranceState</code> – The state of the utterance.</p></li>
+    /// <li><p><code>UtteranceText</code> – The text in the utterance.</p></li>
     /// </ul>
     pub name: crate::types::AnalyticsUtteranceFilterName,
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
-    /// <li> <p> <code>CO</code> – Contains</p> </li>
-    /// <li> <p> <code>EQ</code> – Equals</p> </li>
-    /// <li> <p> <code>GT</code> – Greater than</p> </li>
-    /// <li> <p> <code>LT</code> – Less than</p> </li>
+    /// <li><p><code>CO</code> – Contains</p></li>
+    /// <li><p><code>EQ</code> – Equals</p></li>
+    /// <li><p><code>GT</code> – Greater than</p></li>
+    /// <li><p><code>LT</code> – Less than</p></li>
     /// </ul>
     /// <p>The operators that each filter supports are listed below:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
+    /// <li><p><code>BotAlias</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>BotVersion</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>LocaleId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Modality</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Channel</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>SessionId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceState</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
     pub operator: crate::types::AnalyticsFilterOperator,
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
@@ -59,37 +59,37 @@ pub struct AnalyticsUtteranceFilter {
 impl AnalyticsUtteranceFilter {
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – The name of the bot alias.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – The version of the bot.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – The locale of the bot.</p> </li>
-    /// <li> <p> <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p> </li>
-    /// <li> <p> <code>Channel</code> – The channel that the bot is integrated with.</p> </li>
-    /// <li> <p> <code>SessionId</code> – The identifier of the session with the bot.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – The state of the utterance.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – The text in the utterance.</p> </li>
+    /// <li><p><code>BotAlias</code> – The name of the bot alias.</p></li>
+    /// <li><p><code>BotVersion</code> – The version of the bot.</p></li>
+    /// <li><p><code>LocaleId</code> – The locale of the bot.</p></li>
+    /// <li><p><code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p></li>
+    /// <li><p><code>Channel</code> – The channel that the bot is integrated with.</p></li>
+    /// <li><p><code>SessionId</code> – The identifier of the session with the bot.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – The identifier of the first request in a session.</p></li>
+    /// <li><p><code>UtteranceState</code> – The state of the utterance.</p></li>
+    /// <li><p><code>UtteranceText</code> – The text in the utterance.</p></li>
     /// </ul>
     pub fn name(&self) -> &crate::types::AnalyticsUtteranceFilterName {
         &self.name
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
-    /// <li> <p> <code>CO</code> – Contains</p> </li>
-    /// <li> <p> <code>EQ</code> – Equals</p> </li>
-    /// <li> <p> <code>GT</code> – Greater than</p> </li>
-    /// <li> <p> <code>LT</code> – Less than</p> </li>
+    /// <li><p><code>CO</code> – Contains</p></li>
+    /// <li><p><code>EQ</code> – Equals</p></li>
+    /// <li><p><code>GT</code> – Greater than</p></li>
+    /// <li><p><code>LT</code> – Less than</p></li>
     /// </ul>
     /// <p>The operators that each filter supports are listed below:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
+    /// <li><p><code>BotAlias</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>BotVersion</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>LocaleId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Modality</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Channel</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>SessionId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceState</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
     pub fn operator(&self) -> &crate::types::AnalyticsFilterOperator {
         &self.operator
@@ -118,15 +118,15 @@ pub struct AnalyticsUtteranceFilterBuilder {
 impl AnalyticsUtteranceFilterBuilder {
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – The name of the bot alias.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – The version of the bot.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – The locale of the bot.</p> </li>
-    /// <li> <p> <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p> </li>
-    /// <li> <p> <code>Channel</code> – The channel that the bot is integrated with.</p> </li>
-    /// <li> <p> <code>SessionId</code> – The identifier of the session with the bot.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – The state of the utterance.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – The text in the utterance.</p> </li>
+    /// <li><p><code>BotAlias</code> – The name of the bot alias.</p></li>
+    /// <li><p><code>BotVersion</code> – The version of the bot.</p></li>
+    /// <li><p><code>LocaleId</code> – The locale of the bot.</p></li>
+    /// <li><p><code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p></li>
+    /// <li><p><code>Channel</code> – The channel that the bot is integrated with.</p></li>
+    /// <li><p><code>SessionId</code> – The identifier of the session with the bot.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – The identifier of the first request in a session.</p></li>
+    /// <li><p><code>UtteranceState</code> – The state of the utterance.</p></li>
+    /// <li><p><code>UtteranceText</code> – The text in the utterance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsUtteranceFilterName) -> Self {
@@ -135,15 +135,15 @@ impl AnalyticsUtteranceFilterBuilder {
     }
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – The name of the bot alias.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – The version of the bot.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – The locale of the bot.</p> </li>
-    /// <li> <p> <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p> </li>
-    /// <li> <p> <code>Channel</code> – The channel that the bot is integrated with.</p> </li>
-    /// <li> <p> <code>SessionId</code> – The identifier of the session with the bot.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – The state of the utterance.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – The text in the utterance.</p> </li>
+    /// <li><p><code>BotAlias</code> – The name of the bot alias.</p></li>
+    /// <li><p><code>BotVersion</code> – The version of the bot.</p></li>
+    /// <li><p><code>LocaleId</code> – The locale of the bot.</p></li>
+    /// <li><p><code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p></li>
+    /// <li><p><code>Channel</code> – The channel that the bot is integrated with.</p></li>
+    /// <li><p><code>SessionId</code> – The identifier of the session with the bot.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – The identifier of the first request in a session.</p></li>
+    /// <li><p><code>UtteranceState</code> – The state of the utterance.</p></li>
+    /// <li><p><code>UtteranceText</code> – The text in the utterance.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceFilterName>) -> Self {
         self.name = input;
@@ -151,37 +151,37 @@ impl AnalyticsUtteranceFilterBuilder {
     }
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – The name of the bot alias.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – The version of the bot.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – The locale of the bot.</p> </li>
-    /// <li> <p> <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p> </li>
-    /// <li> <p> <code>Channel</code> – The channel that the bot is integrated with.</p> </li>
-    /// <li> <p> <code>SessionId</code> – The identifier of the session with the bot.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – The state of the utterance.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – The text in the utterance.</p> </li>
+    /// <li><p><code>BotAlias</code> – The name of the bot alias.</p></li>
+    /// <li><p><code>BotVersion</code> – The version of the bot.</p></li>
+    /// <li><p><code>LocaleId</code> – The locale of the bot.</p></li>
+    /// <li><p><code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p></li>
+    /// <li><p><code>Channel</code> – The channel that the bot is integrated with.</p></li>
+    /// <li><p><code>SessionId</code> – The identifier of the session with the bot.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – The identifier of the first request in a session.</p></li>
+    /// <li><p><code>UtteranceState</code> – The state of the utterance.</p></li>
+    /// <li><p><code>UtteranceText</code> – The text in the utterance.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceFilterName> {
         &self.name
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
-    /// <li> <p> <code>CO</code> – Contains</p> </li>
-    /// <li> <p> <code>EQ</code> – Equals</p> </li>
-    /// <li> <p> <code>GT</code> – Greater than</p> </li>
-    /// <li> <p> <code>LT</code> – Less than</p> </li>
+    /// <li><p><code>CO</code> – Contains</p></li>
+    /// <li><p><code>EQ</code> – Equals</p></li>
+    /// <li><p><code>GT</code> – Greater than</p></li>
+    /// <li><p><code>LT</code> – Less than</p></li>
     /// </ul>
     /// <p>The operators that each filter supports are listed below:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
+    /// <li><p><code>BotAlias</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>BotVersion</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>LocaleId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Modality</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Channel</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>SessionId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceState</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn operator(mut self, input: crate::types::AnalyticsFilterOperator) -> Self {
@@ -190,22 +190,22 @@ impl AnalyticsUtteranceFilterBuilder {
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
-    /// <li> <p> <code>CO</code> – Contains</p> </li>
-    /// <li> <p> <code>EQ</code> – Equals</p> </li>
-    /// <li> <p> <code>GT</code> – Greater than</p> </li>
-    /// <li> <p> <code>LT</code> – Less than</p> </li>
+    /// <li><p><code>CO</code> – Contains</p></li>
+    /// <li><p><code>EQ</code> – Equals</p></li>
+    /// <li><p><code>GT</code> – Greater than</p></li>
+    /// <li><p><code>LT</code> – Less than</p></li>
     /// </ul>
     /// <p>The operators that each filter supports are listed below:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
+    /// <li><p><code>BotAlias</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>BotVersion</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>LocaleId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Modality</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Channel</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>SessionId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceState</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::AnalyticsFilterOperator>) -> Self {
         self.operator = input;
@@ -213,22 +213,22 @@ impl AnalyticsUtteranceFilterBuilder {
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
-    /// <li> <p> <code>CO</code> – Contains</p> </li>
-    /// <li> <p> <code>EQ</code> – Equals</p> </li>
-    /// <li> <p> <code>GT</code> – Greater than</p> </li>
-    /// <li> <p> <code>LT</code> – Less than</p> </li>
+    /// <li><p><code>CO</code> – Contains</p></li>
+    /// <li><p><code>EQ</code> – Equals</p></li>
+    /// <li><p><code>GT</code> – Greater than</p></li>
+    /// <li><p><code>LT</code> – Less than</p></li>
     /// </ul>
     /// <p>The operators that each filter supports are listed below:</p>
     /// <ul>
-    /// <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceState</code> – <code>EQ</code>.</p> </li>
-    /// <li> <p> <code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
+    /// <li><p><code>BotAlias</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>BotVersion</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>LocaleId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Modality</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>Channel</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>SessionId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>OriginatingRequestId</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceState</code> – <code>EQ</code>.</p></li>
+    /// <li><p><code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::AnalyticsFilterOperator> {
         &self.operator

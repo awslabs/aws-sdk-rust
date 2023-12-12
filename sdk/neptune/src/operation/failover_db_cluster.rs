@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for FailoverDBClu
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum FailoverDBClusterError {
-    /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
+    /// <p><i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The DB cluster is not in a valid state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),

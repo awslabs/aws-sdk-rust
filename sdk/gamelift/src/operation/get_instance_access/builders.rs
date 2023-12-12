@@ -23,17 +23,17 @@ impl GetInstanceAccessInputBuilder {
 /// Fluent builder constructing a request to `GetInstanceAccess`.
 ///
 /// <p>Requests authorization to remotely connect to an instance in an Amazon GameLift managed fleet. Use this operation to connect to instances with game servers that use Amazon GameLift server SDK 4.x or earlier. To connect to instances with game servers that use server SDK 5.x or later, call <code>GetComputeAccess</code>.</p>
-/// <p>To request access to an instance, specify IDs for the instance and the fleet it belongs to. You can retrieve instance IDs for a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html">DescribeInstances</a> with the fleet ID. </p>
-/// <p>If successful, this operation returns an IP address and credentials. The returned credentials match the operating system of the instance, as follows: </p>
+/// <p>To request access to an instance, specify IDs for the instance and the fleet it belongs to. You can retrieve instance IDs for a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html">DescribeInstances</a> with the fleet ID.</p>
+/// <p>If successful, this operation returns an IP address and credentials. The returned credentials match the operating system of the instance, as follows:</p>
 /// <ul>
-/// <li> <p>For a Windows instance: returns a user name and secret (password) for use with a Windows Remote Desktop client. </p> </li>
-/// <li> <p>For a Linux instance: returns a user name and secret (RSA private key) for use with an SSH client. You must save the secret to a <code>.pem</code> file. If you're using the CLI, see the example <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html#API_GetInstanceAccess_Examples"> Get credentials for a Linux instance</a> for tips on automatically saving the secret to a <code>.pem</code> file. </p> </li>
+/// <li><p>For a Windows instance: returns a user name and secret (password) for use with a Windows Remote Desktop client.</p></li>
+/// <li><p>For a Linux instance: returns a user name and secret (RSA private key) for use with an SSH client. You must save the secret to a <code>.pem</code> file. If you're using the CLI, see the example <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html#API_GetInstanceAccess_Examples"> Get credentials for a Linux instance</a> for tips on automatically saving the secret to a <code>.pem</code> file.</p></li>
 /// </ul>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely connect to fleet instances</a> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug fleet issues</a> </p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely connect to fleet instances</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug fleet issues</a></p>
+/// <p><b>Related actions</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInstanceAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -119,21 +119,21 @@ impl GetInstanceAccessFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value. </p> <note>
+    /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value.</p> <note>
     /// <p>You can access fleets in <code>ERROR</code> status for a short period of time before Amazon GameLift deletes them.</p>
     /// </note>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value. </p> <note>
+    /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value.</p> <note>
     /// <p>You can access fleets in <code>ERROR</code> status for a short period of time before Amazon GameLift deletes them.</p>
     /// </note>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value. </p> <note>
+    /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value.</p> <note>
     /// <p>You can access fleets in <code>ERROR</code> status for a short period of time before Amazon GameLift deletes them.</p>
     /// </note>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {

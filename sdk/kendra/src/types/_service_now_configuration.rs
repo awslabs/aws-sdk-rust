@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowConfiguration {
-    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
+    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i></p>
     pub host_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
     pub secret_arn: ::std::string::String,
@@ -19,7 +19,7 @@ pub struct ServiceNowConfiguration {
     pub authentication_type: ::std::option::Option<crate::types::ServiceNowAuthenticationType>,
 }
 impl ServiceNowConfiguration {
-    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
+    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i></p>
     pub fn host_url(&self) -> &str {
         use std::ops::Deref;
         self.host_url.deref()
@@ -66,18 +66,18 @@ pub struct ServiceNowConfigurationBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::ServiceNowAuthenticationType>,
 }
 impl ServiceNowConfigurationBuilder {
-    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
+    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i></p>
     /// This field is required.
     pub fn host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
+    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i></p>
     pub fn set_host_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_url = input;
         self
     }
-    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
+    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i></p>
     pub fn get_host_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_url
     }

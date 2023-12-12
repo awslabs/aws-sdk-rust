@@ -7,8 +7,8 @@ pub struct Ec2Config {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
-    /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
@@ -20,8 +20,8 @@ impl Ec2Config {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
-    /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
@@ -53,8 +53,8 @@ impl Ec2ConfigBuilder {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
-    /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
@@ -66,8 +66,8 @@ impl Ec2ConfigBuilder {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
-    /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
@@ -78,8 +78,8 @@ impl Ec2ConfigBuilder {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
-    /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>

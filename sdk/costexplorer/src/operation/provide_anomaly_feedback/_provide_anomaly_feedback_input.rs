@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackInput {
-    /// <p>A cost anomaly ID. </p>
+    /// <p>A cost anomaly ID.</p>
     pub anomaly_id: ::std::option::Option<::std::string::String>,
-    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
 }
 impl ProvideAnomalyFeedbackInput {
-    /// <p>A cost anomaly ID. </p>
+    /// <p>A cost anomaly ID.</p>
     pub fn anomaly_id(&self) -> ::std::option::Option<&str> {
         self.anomaly_id.as_deref()
     }
-    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub fn feedback(&self) -> ::std::option::Option<&crate::types::AnomalyFeedbackType> {
         self.feedback.as_ref()
     }
@@ -33,33 +33,33 @@ pub struct ProvideAnomalyFeedbackInputBuilder {
     pub(crate) feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
 }
 impl ProvideAnomalyFeedbackInputBuilder {
-    /// <p>A cost anomaly ID. </p>
+    /// <p>A cost anomaly ID.</p>
     /// This field is required.
     pub fn anomaly_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A cost anomaly ID. </p>
+    /// <p>A cost anomaly ID.</p>
     pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_id = input;
         self
     }
-    /// <p>A cost anomaly ID. </p>
+    /// <p>A cost anomaly ID.</p>
     pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.anomaly_id
     }
-    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     /// This field is required.
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
         self.feedback = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
         self.feedback = input;
         self
     }
-    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
         &self.feedback
     }

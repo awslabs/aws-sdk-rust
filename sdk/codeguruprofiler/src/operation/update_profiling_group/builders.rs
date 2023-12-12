@@ -122,17 +122,17 @@ impl UpdateProfilingGroupFluentBuilder {
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profiling_group_name()
     }
-    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// <p>Specifies whether profiling is enabled or disabled for a profiling group.</p>
     pub fn agent_orchestration_config(mut self, input: crate::types::AgentOrchestrationConfig) -> Self {
         self.inner = self.inner.agent_orchestration_config(input);
         self
     }
-    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// <p>Specifies whether profiling is enabled or disabled for a profiling group.</p>
     pub fn set_agent_orchestration_config(mut self, input: ::std::option::Option<crate::types::AgentOrchestrationConfig>) -> Self {
         self.inner = self.inner.set_agent_orchestration_config(input);
         self
     }
-    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// <p>Specifies whether profiling is enabled or disabled for a profiling group.</p>
     pub fn get_agent_orchestration_config(&self) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
         self.inner.get_agent_orchestration_config()
     }

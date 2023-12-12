@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDiscoveryJobInput {
-    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopDiscoveryJobInput {
-    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     pub fn discovery_job_arn(&self) -> ::std::option::Option<&str> {
         self.discovery_job_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct StopDiscoveryJobInputBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopDiscoveryJobInputBuilder {
-    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     /// This field is required.
     pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_job_arn = input;
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.discovery_job_arn
     }

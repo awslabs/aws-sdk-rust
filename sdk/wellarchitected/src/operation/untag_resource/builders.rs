@@ -26,7 +26,7 @@ impl UntagResourceInputBuilder {
 /// <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.</p>
 /// </note>
 /// <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p>
-/// <p> <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p>
+/// <p><code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

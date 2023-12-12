@@ -8,7 +8,7 @@ pub struct ServiceCatalogProvisioningDetails {
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the provisioning artifact.</p>
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
-    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
     pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
     pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
@@ -22,7 +22,7 @@ impl ServiceCatalogProvisioningDetails {
     pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
-    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
     pub fn path_id(&self) -> ::std::option::Option<&str> {
         self.path_id.as_deref()
     }
@@ -79,17 +79,17 @@ impl ServiceCatalogProvisioningDetailsBuilder {
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioning_artifact_id
     }
-    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
     pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
     pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_id = input;
         self
     }
-    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
     pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.path_id
     }

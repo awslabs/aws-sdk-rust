@@ -8,7 +8,7 @@ pub struct VariantImportItemDetail {
     pub source: ::std::string::String,
     /// <p>The item's job status.</p>
     pub job_status: crate::types::JobStatus,
-    /// <p> A message that provides additional context about a job </p>
+    /// <p>A message that provides additional context about a job</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl VariantImportItemDetail {
@@ -21,7 +21,7 @@ impl VariantImportItemDetail {
     pub fn job_status(&self) -> &crate::types::JobStatus {
         &self.job_status
     }
-    /// <p> A message that provides additional context about a job </p>
+    /// <p>A message that provides additional context about a job</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
@@ -72,17 +72,17 @@ impl VariantImportItemDetailBuilder {
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
-    /// <p> A message that provides additional context about a job </p>
+    /// <p>A message that provides additional context about a job</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A message that provides additional context about a job </p>
+    /// <p>A message that provides additional context about a job</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p> A message that provides additional context about a job </p>
+    /// <p>A message that provides additional context about a job</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }

@@ -23,14 +23,14 @@ impl CreateWhatIfForecastExportInputBuilder {
 /// Fluent builder constructing a request to `CreateWhatIfForecastExport`.
 ///
 /// <p>Exports a forecast created by the <code>CreateWhatIfForecast</code> operation to your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:</p>
-/// <p> <code>≈
+/// <p><code>≈
 /// <forecastexportjobname>
 /// _
 /// <exporttimestamp>
 /// _
 /// <partnumber></partnumber>
 /// </exporttimestamp>
-/// </forecastexportjobname></code> </p>
+/// </forecastexportjobname></code></p>
 /// <p>The <exporttimestamp>
 /// component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
 /// </exporttimestamp></p>

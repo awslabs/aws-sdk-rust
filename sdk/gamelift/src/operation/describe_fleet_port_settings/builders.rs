@@ -23,14 +23,14 @@ impl DescribeFleetPortSettingsInputBuilder {
 /// Fluent builder constructing a request to `DescribeFleetPortSettings`.
 ///
 /// <p>Retrieves a fleet's inbound connection permissions. Connection permissions specify the range of IP addresses and port settings that incoming traffic can use to access server processes in the fleet. Game sessions that are running on instances in the fleet must use connections that fall in this range.</p>
-/// <p>This operation can be used in the following ways: </p>
+/// <p>This operation can be used in the following ways:</p>
 /// <ul>
-/// <li> <p>To retrieve the inbound connection permissions for a fleet, identify the fleet's unique identifier. </p> </li>
-/// <li> <p>To check the status of recent updates to a fleet remote location, specify the fleet ID and a location. Port setting updates can take time to propagate across all locations. </p> </li>
+/// <li><p>To retrieve the inbound connection permissions for a fleet, identify the fleet's unique identifier.</p></li>
+/// <li><p>To check the status of recent updates to a fleet remote location, specify the fleet ID and a location. Port setting updates can take time to propagate across all locations.</p></li>
 /// </ul>
 /// <p>If successful, a set of <code>IpPermission</code> objects is returned for the requested fleet ID. When a location is specified, a pending status is included. If the requested fleet has been deleted, the result set is empty.</p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,7 +6,7 @@
 pub struct CustomLineItemVersionListElement {
     /// <p>The name of the custom line item.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> A representation of the charge details of a custom line item. </p>
+    /// <p>A representation of the charge details of a custom line item.</p>
     pub charge_details: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>,
     /// <p>The charge value currency of the custom line item.</p>
     pub currency_code: ::std::option::Option<crate::types::CurrencyCode>,
@@ -26,9 +26,9 @@ pub struct CustomLineItemVersionListElement {
     pub start_billing_period: ::std::option::Option<::std::string::String>,
     /// <p>The end billing period of the custom line item version.</p>
     pub end_billing_period: ::std::option::Option<::std::string::String>,
-    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    /// <p>A list of custom line item Amazon Resource Names (ARNs) to retrieve information.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p> The inclusive start time. </p>
+    /// <p>The inclusive start time.</p>
     pub start_time: i64,
     /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl CustomLineItemVersionListElement {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> A representation of the charge details of a custom line item. </p>
+    /// <p>A representation of the charge details of a custom line item.</p>
     pub fn charge_details(&self) -> ::std::option::Option<&crate::types::ListCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
@@ -78,11 +78,11 @@ impl CustomLineItemVersionListElement {
     pub fn end_billing_period(&self) -> ::std::option::Option<&str> {
         self.end_billing_period.as_deref()
     }
-    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    /// <p>A list of custom line item Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p> The inclusive start time. </p>
+    /// <p>The inclusive start time.</p>
     pub fn start_time(&self) -> i64 {
         self.start_time
     }
@@ -152,17 +152,17 @@ impl CustomLineItemVersionListElementBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> A representation of the charge details of a custom line item. </p>
+    /// <p>A representation of the charge details of a custom line item.</p>
     pub fn charge_details(mut self, input: crate::types::ListCustomLineItemChargeDetails) -> Self {
         self.charge_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A representation of the charge details of a custom line item. </p>
+    /// <p>A representation of the charge details of a custom line item.</p>
     pub fn set_charge_details(mut self, input: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>) -> Self {
         self.charge_details = input;
         self
     }
-    /// <p> A representation of the charge details of a custom line item. </p>
+    /// <p>A representation of the charge details of a custom line item.</p>
     pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::ListCustomLineItemChargeDetails> {
         &self.charge_details
     }
@@ -292,31 +292,31 @@ impl CustomLineItemVersionListElementBuilder {
     pub fn get_end_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_billing_period
     }
-    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    /// <p>A list of custom line item Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    /// <p>A list of custom line item Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    /// <p>A list of custom line item Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p> The inclusive start time. </p>
+    /// <p>The inclusive start time.</p>
     pub fn start_time(mut self, input: i64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The inclusive start time. </p>
+    /// <p>The inclusive start time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p> The inclusive start time. </p>
+    /// <p>The inclusive start time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         &self.start_time
     }

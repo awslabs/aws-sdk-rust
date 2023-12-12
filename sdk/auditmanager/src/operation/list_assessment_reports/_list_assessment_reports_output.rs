@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentReportsOutput {
-    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
+    /// <p>The list of assessment reports that the <code>ListAssessmentReports</code> API returned.</p>
     pub assessment_reports: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>,
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssessmentReportsOutput {
-    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
+    /// <p>The list of assessment reports that the <code>ListAssessmentReports</code> API returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_reports.is_none()`.
     pub fn assessment_reports(&self) -> &[crate::types::AssessmentReportMetadata] {
         self.assessment_reports.as_deref().unwrap_or_default()
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListAssessmentReportsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_assessment_reports`](Self::set_assessment_reports).
     ///
-    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
+    /// <p>The list of assessment reports that the <code>ListAssessmentReports</code> API returned.</p>
     pub fn assessment_reports(mut self, input: crate::types::AssessmentReportMetadata) -> Self {
         let mut v = self.assessment_reports.unwrap_or_default();
         v.push(input);
         self.assessment_reports = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
+    /// <p>The list of assessment reports that the <code>ListAssessmentReports</code> API returned.</p>
     pub fn set_assessment_reports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>) -> Self {
         self.assessment_reports = input;
         self
     }
-    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
+    /// <p>The list of assessment reports that the <code>ListAssessmentReports</code> API returned.</p>
     pub fn get_assessment_reports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>> {
         &self.assessment_reports
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

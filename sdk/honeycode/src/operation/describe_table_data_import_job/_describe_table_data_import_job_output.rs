@@ -3,31 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableDataImportJobOutput {
-    /// <p> The current status of the import job. </p>
+    /// <p>The current status of the import job.</p>
     pub job_status: crate::types::TableDataImportJobStatus,
-    /// <p> A message providing more details about the current status of the import job. </p>
+    /// <p>A message providing more details about the current status of the import job.</p>
     pub message: ::std::string::String,
-    /// <p> The metadata about the job that was submitted for import. </p>
+    /// <p>The metadata about the job that was submitted for import.</p>
     pub job_metadata: ::std::option::Option<crate::types::TableDataImportJobMetadata>,
-    /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    /// <p>If job status is failed, error code to understand reason for the failure.</p>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     _request_id: Option<String>,
 }
 impl DescribeTableDataImportJobOutput {
-    /// <p> The current status of the import job. </p>
+    /// <p>The current status of the import job.</p>
     pub fn job_status(&self) -> &crate::types::TableDataImportJobStatus {
         &self.job_status
     }
-    /// <p> A message providing more details about the current status of the import job. </p>
+    /// <p>A message providing more details about the current status of the import job.</p>
     pub fn message(&self) -> &str {
         use std::ops::Deref;
         self.message.deref()
     }
-    /// <p> The metadata about the job that was submitted for import. </p>
+    /// <p>The metadata about the job that was submitted for import.</p>
     pub fn job_metadata(&self) -> ::std::option::Option<&crate::types::TableDataImportJobMetadata> {
         self.job_metadata.as_ref()
     }
-    /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    /// <p>If job status is failed, error code to understand reason for the failure.</p>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
@@ -55,62 +55,62 @@ pub struct DescribeTableDataImportJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeTableDataImportJobOutputBuilder {
-    /// <p> The current status of the import job. </p>
+    /// <p>The current status of the import job.</p>
     /// This field is required.
     pub fn job_status(mut self, input: crate::types::TableDataImportJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The current status of the import job. </p>
+    /// <p>The current status of the import job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::TableDataImportJobStatus>) -> Self {
         self.job_status = input;
         self
     }
-    /// <p> The current status of the import job. </p>
+    /// <p>The current status of the import job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::TableDataImportJobStatus> {
         &self.job_status
     }
-    /// <p> A message providing more details about the current status of the import job. </p>
+    /// <p>A message providing more details about the current status of the import job.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A message providing more details about the current status of the import job. </p>
+    /// <p>A message providing more details about the current status of the import job.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p> A message providing more details about the current status of the import job. </p>
+    /// <p>A message providing more details about the current status of the import job.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p> The metadata about the job that was submitted for import. </p>
+    /// <p>The metadata about the job that was submitted for import.</p>
     /// This field is required.
     pub fn job_metadata(mut self, input: crate::types::TableDataImportJobMetadata) -> Self {
         self.job_metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The metadata about the job that was submitted for import. </p>
+    /// <p>The metadata about the job that was submitted for import.</p>
     pub fn set_job_metadata(mut self, input: ::std::option::Option<crate::types::TableDataImportJobMetadata>) -> Self {
         self.job_metadata = input;
         self
     }
-    /// <p> The metadata about the job that was submitted for import. </p>
+    /// <p>The metadata about the job that was submitted for import.</p>
     pub fn get_job_metadata(&self) -> &::std::option::Option<crate::types::TableDataImportJobMetadata> {
         &self.job_metadata
     }
-    /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    /// <p>If job status is failed, error code to understand reason for the failure.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    /// <p>If job status is failed, error code to understand reason for the failure.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    /// <p>If job status is failed, error code to understand reason for the failure.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
         &self.error_code
     }

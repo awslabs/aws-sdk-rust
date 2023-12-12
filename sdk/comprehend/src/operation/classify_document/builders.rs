@@ -24,11 +24,11 @@ impl ClassifyDocumentInputBuilder {
 ///
 /// <p>Creates a classification request to analyze a single document in real-time. <code>ClassifyDocument</code> supports the following model types:</p>
 /// <ul>
-/// <li> <p>Custom classifier - a custom model that you have created and trained. For input, you can provide plain text, a single-page document (PDF, Word, or image), or Amazon Textract API output. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Custom classification</a> in the <i>Amazon Comprehend Developer Guide</i>.</p> </li>
-/// <li> <p>Prompt safety classifier - Amazon Comprehend provides a pre-trained model for classifying input prompts for generative AI applications. For input, you provide English plain text input. For prompt safety classification, the response includes only the <code>Classes</code> field. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt safety classification</a> in the <i>Amazon Comprehend Developer Guide</i>.</p> </li>
+/// <li><p>Custom classifier - a custom model that you have created and trained. For input, you can provide plain text, a single-page document (PDF, Word, or image), or Amazon Textract API output. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Custom classification</a> in the <i>Amazon Comprehend Developer Guide</i>.</p></li>
+/// <li><p>Prompt safety classifier - Amazon Comprehend provides a pre-trained model for classifying input prompts for generative AI applications. For input, you provide English plain text input. For prompt safety classification, the response includes only the <code>Classes</code> field. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt safety classification</a> in the <i>Amazon Comprehend Developer Guide</i>.</p></li>
 /// </ul>
 /// <p>If the system detects errors while processing a page in the input document, the API response includes an <code>Errors</code> field that describes the errors.</p>
-/// <p>If the system detects a document-level error in your input document, the API returns an <code>InvalidRequestException</code> error response. For details about this exception, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html"> Errors in semi-structured documents</a> in the Comprehend Developer Guide. </p>
+/// <p>If the system detects a document-level error in your input document, the API returns an <code>InvalidRequestException</code> error response. For details about this exception, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html"> Errors in semi-structured documents</a> in the Comprehend Developer Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ClassifyDocumentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,22 +128,22 @@ impl ClassifyDocumentFluentBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_text()
     }
-    /// <p>The Amazon Resource Number (ARN) of the endpoint. </p>
-    /// <p>For prompt safety classification, Amazon Comprehend provides the endpoint ARN. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+    /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    /// <p>For prompt safety classification, Amazon Comprehend provides the endpoint ARN. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt safety classification</a> in the <i>Amazon Comprehend Developer Guide</i></p>
     /// <p>For custom classification, you create an endpoint for your custom model. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using Amazon Comprehend endpoints</a>.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the endpoint. </p>
-    /// <p>For prompt safety classification, Amazon Comprehend provides the endpoint ARN. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+    /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    /// <p>For prompt safety classification, Amazon Comprehend provides the endpoint ARN. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt safety classification</a> in the <i>Amazon Comprehend Developer Guide</i></p>
     /// <p>For custom classification, you create an endpoint for your custom model. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using Amazon Comprehend endpoints</a>.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_arn(input);
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the endpoint. </p>
-    /// <p>For prompt safety classification, Amazon Comprehend provides the endpoint ARN. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+    /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    /// <p>For prompt safety classification, Amazon Comprehend provides the endpoint ARN. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt safety classification</a> in the <i>Amazon Comprehend Developer Guide</i></p>
     /// <p>For custom classification, you create an endpoint for your custom model. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using Amazon Comprehend endpoints</a>.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_arn()
@@ -151,8 +151,8 @@ impl ClassifyDocumentFluentBuilder {
     /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file.</p>
     /// <p>When you classify a document using a custom model, you can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
     /// <p>To classify a document using the prompt safety classifier, use the <code>Text</code> parameter for input.</p>
-    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
-    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you.</p>
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide.</p>
     /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
     pub fn bytes(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.bytes(input);
@@ -161,8 +161,8 @@ impl ClassifyDocumentFluentBuilder {
     /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file.</p>
     /// <p>When you classify a document using a custom model, you can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
     /// <p>To classify a document using the prompt safety classifier, use the <code>Text</code> parameter for input.</p>
-    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
-    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you.</p>
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide.</p>
     /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
     pub fn set_bytes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_bytes(input);
@@ -171,8 +171,8 @@ impl ClassifyDocumentFluentBuilder {
     /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file.</p>
     /// <p>When you classify a document using a custom model, you can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
     /// <p>To classify a document using the prompt safety classifier, use the <code>Text</code> parameter for input.</p>
-    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
-    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you.</p>
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide.</p>
     /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
     pub fn get_bytes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_bytes()

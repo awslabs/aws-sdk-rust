@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSharesOutput {
-    /// <p> The shares available and their meta details. </p>
+    /// <p>The shares available and their meta details.</p>
     pub shares: ::std::vec::Vec<crate::types::ShareDetails>,
-    /// <p> Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSharesOutput {
-    /// <p> The shares available and their meta details. </p>
+    /// <p>The shares available and their meta details.</p>
     pub fn shares(&self) -> &[crate::types::ShareDetails] {
         use std::ops::Deref;
         self.shares.deref()
     }
-    /// <p> Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListSharesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_shares`](Self::set_shares).
     ///
-    /// <p> The shares available and their meta details. </p>
+    /// <p>The shares available and their meta details.</p>
     pub fn shares(mut self, input: crate::types::ShareDetails) -> Self {
         let mut v = self.shares.unwrap_or_default();
         v.push(input);
         self.shares = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The shares available and their meta details. </p>
+    /// <p>The shares available and their meta details.</p>
     pub fn set_shares(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>>) -> Self {
         self.shares = input;
         self
     }
-    /// <p> The shares available and their meta details. </p>
+    /// <p>The shares available and their meta details.</p>
     pub fn get_shares(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>> {
         &self.shares
     }
-    /// <p> Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

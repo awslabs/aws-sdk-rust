@@ -22,7 +22,7 @@ impl ListUseCasesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListUseCases`.
 ///
-/// <p>Lists the use cases for the integration association. </p>
+/// <p>Lists the use cases for the integration association.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUseCasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

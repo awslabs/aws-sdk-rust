@@ -22,7 +22,7 @@ impl ListLandingZonesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLandingZones`.
 ///
-/// <p>Returns the landing zone ARN for the landing zone deployed in your managed account. This API also creates an ARN for existing accounts that do not yet have a landing zone ARN. </p>
+/// <p>Returns the landing zone ARN for the landing zone deployed in your managed account. This API also creates an ARN for existing accounts that do not yet have a landing zone ARN.</p>
 /// <p>Returns one landing zone ARN.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLandingZonesFluentBuilder {

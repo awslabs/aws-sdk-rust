@@ -22,9 +22,9 @@ impl AssociateQualificationWithWorkerInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateQualificationWithWorker`.
 ///
-/// <p> The <code>AssociateQualificationWithWorker</code> operation gives a Worker a Qualification. <code>AssociateQualificationWithWorker</code> does not require that the Worker submit a Qualification request. It gives the Qualification directly to the Worker. </p>
-/// <p> You can only assign a Qualification of a Qualification type that you created (using the <code>CreateQualificationType</code> operation). </p> <note>
-/// <p> Note: <code>AssociateQualificationWithWorker</code> does not affect any pending Qualification requests for the Qualification by the Worker. If you assign a Qualification to a Worker, then later grant a Qualification request made by the Worker, the granting of the request may modify the Qualification score. To resolve a pending Qualification request without affecting the Qualification the Worker already has, reject the request with the <code>RejectQualificationRequest</code> operation. </p>
+/// <p>The <code>AssociateQualificationWithWorker</code> operation gives a Worker a Qualification. <code>AssociateQualificationWithWorker</code> does not require that the Worker submit a Qualification request. It gives the Qualification directly to the Worker.</p>
+/// <p>You can only assign a Qualification of a Qualification type that you created (using the <code>CreateQualificationType</code> operation).</p> <note>
+/// <p>Note: <code>AssociateQualificationWithWorker</code> does not affect any pending Qualification requests for the Qualification by the Worker. If you assign a Qualification to a Worker, then later grant a Qualification request made by the Worker, the granting of the request may modify the Qualification score. To resolve a pending Qualification request without affecting the Qualification the Worker already has, reject the request with the <code>RejectQualificationRequest</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateQualificationWithWorkerFluentBuilder {
@@ -125,17 +125,17 @@ impl AssociateQualificationWithWorkerFluentBuilder {
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualification_type_id()
     }
-    /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
+    /// <p>The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.</p>
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_id(input.into());
         self
     }
-    /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
+    /// <p>The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.</p>
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_id(input);
         self
     }
-    /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
+    /// <p>The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.</p>
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_worker_id()
     }
@@ -153,17 +153,17 @@ impl AssociateQualificationWithWorkerFluentBuilder {
     pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
         self.inner.get_integer_value()
     }
-    /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
+    /// <p>Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default.</p>
     pub fn send_notification(mut self, input: bool) -> Self {
         self.inner = self.inner.send_notification(input);
         self
     }
-    /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
+    /// <p>Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default.</p>
     pub fn set_send_notification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_send_notification(input);
         self
     }
-    /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
+    /// <p>Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default.</p>
     pub fn get_send_notification(&self) -> &::std::option::Option<bool> {
         self.inner.get_send_notification()
     }

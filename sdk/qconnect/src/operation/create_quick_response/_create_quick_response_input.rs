@@ -11,21 +11,21 @@ pub struct CreateQuickResponseInput {
     pub content: ::std::option::Option<crate::types::QuickResponseDataProvider>,
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p></li>
     /// </ul>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The configuration information of the user groups that the quick response is accessible to.</p>
     pub grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
     /// <p>The description of the quick response.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base. </p>
+    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub shortcut_key: ::std::option::Option<::std::string::String>,
     /// <p>Whether the quick response is active.</p>
     pub is_active: ::std::option::Option<bool>,
     /// <p>The Amazon Connect channels this quick response applies to.</p>
     pub channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -47,8 +47,8 @@ impl CreateQuickResponseInput {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p></li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
@@ -61,7 +61,7 @@ impl CreateQuickResponseInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base. </p>
+    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub fn shortcut_key(&self) -> ::std::option::Option<&str> {
         self.shortcut_key.as_deref()
     }
@@ -75,7 +75,7 @@ impl CreateQuickResponseInput {
     pub fn channels(&self) -> &[::std::string::String] {
         self.channels.as_deref().unwrap_or_default()
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -160,8 +160,8 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p></li>
     /// </ul>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -169,8 +169,8 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
@@ -178,8 +178,8 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for a quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
@@ -212,17 +212,17 @@ impl CreateQuickResponseInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base. </p>
+    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub fn shortcut_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shortcut_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base. </p>
+    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub fn set_shortcut_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shortcut_key = input;
         self
     }
-    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base. </p>
+    /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub fn get_shortcut_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.shortcut_key
     }
@@ -260,17 +260,17 @@ impl CreateQuickResponseInputBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.channels
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }

@@ -23,7 +23,7 @@ impl ListContactReferencesInputBuilder {
 /// Fluent builder constructing a request to `ListContactReferences`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-/// <p>For the specified <code>referenceTypes</code>, returns a list of references associated with the contact. </p>
+/// <p>For the specified <code>referenceTypes</code>, returns a list of references associated with the contact.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContactReferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

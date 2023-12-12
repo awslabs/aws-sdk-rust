@@ -253,15 +253,15 @@ pub enum RestoreDBClusterFromSnapshotError {
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
     /// <p>The cluster can't be created because you have reached the maximum allowed quota of clusters.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p><code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
+    /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The cluster doesn't have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::types::error::InsufficientDbClusterCapacityFault),
-    /// <p>There is not enough storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available. </p>
+    /// <p>There is not enough storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::types::error::InsufficientStorageClusterCapacityFault),
     /// <p>The provided value isn't a valid cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::types::error::InvalidDbClusterSnapshotStateFault),

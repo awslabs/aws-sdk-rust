@@ -22,7 +22,7 @@ impl ListSharedReportGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSharedReportGroups`.
 ///
-/// <p> Gets a list of report groups that are shared with other Amazon Web Services accounts or users. </p>
+/// <p>Gets a list of report groups that are shared with other Amazon Web Services accounts or users.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSharedReportGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,8 +116,8 @@ impl ListSharedReportGroupsFluentBuilder {
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -125,8 +125,8 @@ impl ListSharedReportGroupsFluentBuilder {
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
@@ -134,63 +134,63 @@ impl ListSharedReportGroupsFluentBuilder {
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         self.inner.get_sort_order()
     }
-    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
+    /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
+    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn sort_by(mut self, input: crate::types::SharedResourceSortByType) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
+    /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
+    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
+    /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
+    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SharedResourceSortByType> {
         self.inner.get_sort_by()
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

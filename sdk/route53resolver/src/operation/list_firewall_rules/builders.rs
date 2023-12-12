@@ -22,8 +22,8 @@ impl ListFirewallRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFirewallRules`.
 ///
-/// <p>Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for a VPC. </p>
-/// <p>A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>. </p>
+/// <p>Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for a VPC.</p>
+/// <p>A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl ListFirewallRulesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_firewall_rules::paginator::ListFirewallRulesPaginator {
         crate::operation::list_firewall_rules::paginator::ListFirewallRulesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for.</p>
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for.</p>
     pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for.</p>
     pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_rule_group_id()
     }
@@ -149,9 +149,9 @@ impl ListFirewallRulesFluentBuilder {
     /// <p>Optional additional filter for the rules to retrieve.</p>
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
-    /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
-    /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
-    /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
+    /// <li><p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <li><p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
+    /// <li><p><code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting.</p></li>
     /// </ul>
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.inner = self.inner.action(input);
@@ -160,9 +160,9 @@ impl ListFirewallRulesFluentBuilder {
     /// <p>Optional additional filter for the rules to retrieve.</p>
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
-    /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
-    /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
-    /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
+    /// <li><p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <li><p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
+    /// <li><p><code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.inner = self.inner.set_action(input);
@@ -171,27 +171,27 @@ impl ListFirewallRulesFluentBuilder {
     /// <p>Optional additional filter for the rules to retrieve.</p>
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
-    /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
-    /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
-    /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
+    /// <li><p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <li><p><code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p></li>
+    /// <li><p><code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting.</p></li>
     /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
         self.inner.get_action()
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

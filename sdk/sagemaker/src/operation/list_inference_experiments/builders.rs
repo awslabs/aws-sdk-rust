@@ -128,31 +128,31 @@ impl ListInferenceExperimentsFluentBuilder {
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_contains()
     }
-    /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
+    /// <p>Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn r#type(mut self, input: crate::types::InferenceExperimentType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
+    /// <p>Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InferenceExperimentType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
+    /// <p>Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InferenceExperimentType> {
         self.inner.get_type()
     }
-    /// <p> Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>. </p>
+    /// <p>Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.</p>
     pub fn status_equals(mut self, input: crate::types::InferenceExperimentStatus) -> Self {
         self.inner = self.inner.status_equals(input);
         self
     }
-    /// <p> Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>. </p>
+    /// <p>Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
-    /// <p> Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>. </p>
+    /// <p>Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::InferenceExperimentStatus> {
         self.inner.get_status_equals()
     }
@@ -240,17 +240,17 @@ impl ListInferenceExperimentsFluentBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }
-    /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

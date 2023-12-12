@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateStandardsControlAssociationsOutput {
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated.</p>
     pub unprocessed_association_updates: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateStandardsControlAssociationsOutput {
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_association_updates.is_none()`.
     pub fn unprocessed_association_updates(&self) -> &[crate::types::UnprocessedStandardsControlAssociationUpdate] {
@@ -40,14 +40,14 @@ impl BatchUpdateStandardsControlAssociationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unprocessed_association_updates`](Self::set_unprocessed_association_updates).
     ///
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated.</p>
     pub fn unprocessed_association_updates(mut self, input: crate::types::UnprocessedStandardsControlAssociationUpdate) -> Self {
         let mut v = self.unprocessed_association_updates.unwrap_or_default();
         v.push(input);
         self.unprocessed_association_updates = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated.</p>
     pub fn set_unprocessed_association_updates(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>>,
@@ -55,7 +55,7 @@ impl BatchUpdateStandardsControlAssociationsOutputBuilder {
         self.unprocessed_association_updates = input;
         self
     }
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated.</p>
     pub fn get_unprocessed_association_updates(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>> {

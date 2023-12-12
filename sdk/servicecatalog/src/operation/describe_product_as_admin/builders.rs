@@ -110,8 +110,8 @@ impl DescribeProductAsAdminFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -119,8 +119,8 @@ impl DescribeProductAsAdminFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -128,8 +128,8 @@ impl DescribeProductAsAdminFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()
@@ -163,19 +163,19 @@ impl DescribeProductAsAdminFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
-    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
+    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned.</p>
     pub fn source_portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_portfolio_id(input.into());
         self
     }
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
-    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
+    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned.</p>
     pub fn set_source_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_portfolio_id(input);
         self
     }
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
-    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
+    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned.</p>
     pub fn get_source_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_portfolio_id()
     }

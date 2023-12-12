@@ -8,7 +8,7 @@
 pub struct LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     pub quantity: i32,
-    /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
 }
 impl LambdaFunctionAssociations {
@@ -16,7 +16,7 @@ impl LambdaFunctionAssociations {
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
-    /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::LambdaFunctionAssociation] {
@@ -57,19 +57,19 @@ impl LambdaFunctionAssociationsBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub fn items(mut self, input: crate::types::LambdaFunctionAssociation) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>) -> Self {
         self.items = input;
         self
     }
-    /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>> {
         &self.items
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutFieldOptionsOutput {
-    /// <p>A list of field errors. </p>
+    /// <p>A list of field errors.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>>,
     _request_id: Option<String>,
 }
 impl BatchPutFieldOptionsOutput {
-    /// <p>A list of field errors. </p>
+    /// <p>A list of field errors.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::FieldOptionError] {
@@ -39,19 +39,19 @@ impl BatchPutFieldOptionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of field errors. </p>
+    /// <p>A list of field errors.</p>
     pub fn errors(mut self, input: crate::types::FieldOptionError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of field errors. </p>
+    /// <p>A list of field errors.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of field errors. </p>
+    /// <p>A list of field errors.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>> {
         &self.errors
     }

@@ -7,16 +7,16 @@ impl super::Client {
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::name): <p>The name of the environment.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) of the environment.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::description): <p>The description of the environment. </p>
-    ///   - [`environment_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::environment_id): <p>The unique identifier of the environment. </p>
-    ///   - [`network_fabric_type(Option<NetworkFabricType>)`](crate::operation::get_environment::GetEnvironmentOutput::network_fabric_type): <p>The network fabric type of the environment. </p>
+    ///   - [`description(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::description): <p>The description of the environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::environment_id): <p>The unique identifier of the environment.</p>
+    ///   - [`network_fabric_type(Option<NetworkFabricType>)`](crate::operation::get_environment::GetEnvironmentOutput::network_fabric_type): <p>The network fabric type of the environment.</p>
     ///   - [`owner_account_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::owner_account_id): <p>The Amazon Web Services account ID of the environment owner.</p>
     ///   - [`transit_gateway_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::transit_gateway_id): <p>The ID of the Transit Gateway set up by the environment, if applicable.</p>
-    ///   - [`state(Option<EnvironmentState>)`](crate::operation::get_environment::GetEnvironmentOutput::state): <p>The current state of the environment. </p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_environment::GetEnvironmentOutput::tags): <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    ///   - [`error(Option<ErrorResponse>)`](crate::operation::get_environment::GetEnvironmentOutput::error): <p>Any error associated with the environment resource. </p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_environment::GetEnvironmentOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated. </p>
-    ///   - [`created_time(Option<DateTime>)`](crate::operation::get_environment::GetEnvironmentOutput::created_time): <p>A timestamp that indicates when the environment is created. </p>
+    ///   - [`state(Option<EnvironmentState>)`](crate::operation::get_environment::GetEnvironmentOutput::state): <p>The current state of the environment.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_environment::GetEnvironmentOutput::tags): <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
+    ///   - [`error(Option<ErrorResponse>)`](crate::operation::get_environment::GetEnvironmentOutput::error): <p>Any error associated with the environment resource.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_environment::GetEnvironmentOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::operation::get_environment::GetEnvironmentOutput::created_time): <p>A timestamp that indicates when the environment is created.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::operation::get_environment::GetEnvironmentError)
     pub fn get_environment(&self) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
         crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(self.handle.clone())

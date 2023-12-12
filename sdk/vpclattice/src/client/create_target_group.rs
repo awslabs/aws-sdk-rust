@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_target_group::CreateTargetGroupOutput::name): <p>The name of the target group.</p>
     ///   - [`r#type(Option<TargetGroupType>)`](crate::operation::create_target_group::CreateTargetGroupOutput::type): <p>The type of target group.</p>
     ///   - [`config(Option<TargetGroupConfig>)`](crate::operation::create_target_group::CreateTargetGroupOutput::config): <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
-    ///   - [`status(Option<TargetGroupStatus>)`](crate::operation::create_target_group::CreateTargetGroupOutput::status): <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status. </p>
+    ///   - [`status(Option<TargetGroupStatus>)`](crate::operation::create_target_group::CreateTargetGroupOutput::status): <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
     /// - On failure, responds with [`SdkError<CreateTargetGroupError>`](crate::operation::create_target_group::CreateTargetGroupError)
     pub fn create_target_group(&self) -> crate::operation::create_target_group::builders::CreateTargetGroupFluentBuilder {
         crate::operation::create_target_group::builders::CreateTargetGroupFluentBuilder::new(self.handle.clone())

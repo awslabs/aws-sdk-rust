@@ -20,7 +20,7 @@ pub struct SkillDetails {
     pub new_in_this_version_bullet_points: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of skills.</p>
     pub skill_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> <i>This member has been deprecated.</i> </p>
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub reviews: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The details about the developer that published the skill.</p>
@@ -67,7 +67,7 @@ impl SkillDetails {
     pub fn skill_types(&self) -> &[::std::string::String] {
         self.skill_types.as_deref().unwrap_or_default()
     }
-    /// <p> <i>This member has been deprecated.</i> </p>
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub fn reviews(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.reviews.as_ref()
@@ -240,7 +240,7 @@ impl SkillDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_reviews`](Self::set_reviews).
     ///
-    /// <p> <i>This member has been deprecated.</i> </p>
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub fn reviews(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.reviews.unwrap_or_default();
@@ -248,13 +248,13 @@ impl SkillDetailsBuilder {
         self.reviews = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> <i>This member has been deprecated.</i> </p>
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub fn set_reviews(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.reviews = input;
         self
     }
-    /// <p> <i>This member has been deprecated.</i> </p>
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub fn get_reviews(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.reviews

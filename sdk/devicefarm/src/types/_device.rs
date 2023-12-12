@@ -17,15 +17,15 @@ pub struct Device {
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PHONE</p> </li>
-    /// <li> <p>TABLET</p> </li>
+    /// <li><p>PHONE</p></li>
+    /// <li><p>TABLET</p></li>
     /// </ul>
     pub form_factor: ::std::option::Option<crate::types::DeviceFormFactor>,
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>ANDROID</p> </li>
-    /// <li> <p>IOS</p> </li>
+    /// <li><p>ANDROID</p></li>
+    /// <li><p>IOS</p></li>
     /// </ul>
     pub platform: ::std::option::Option<crate::types::DevicePlatform>,
     /// <p>The device's operating system type.</p>
@@ -82,8 +82,8 @@ impl Device {
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PHONE</p> </li>
-    /// <li> <p>TABLET</p> </li>
+    /// <li><p>PHONE</p></li>
+    /// <li><p>TABLET</p></li>
     /// </ul>
     pub fn form_factor(&self) -> ::std::option::Option<&crate::types::DeviceFormFactor> {
         self.form_factor.as_ref()
@@ -91,8 +91,8 @@ impl Device {
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>ANDROID</p> </li>
-    /// <li> <p>IOS</p> </li>
+    /// <li><p>ANDROID</p></li>
+    /// <li><p>IOS</p></li>
     /// </ul>
     pub fn platform(&self) -> ::std::option::Option<&crate::types::DevicePlatform> {
         self.platform.as_ref()
@@ -264,8 +264,8 @@ impl DeviceBuilder {
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PHONE</p> </li>
-    /// <li> <p>TABLET</p> </li>
+    /// <li><p>PHONE</p></li>
+    /// <li><p>TABLET</p></li>
     /// </ul>
     pub fn form_factor(mut self, input: crate::types::DeviceFormFactor) -> Self {
         self.form_factor = ::std::option::Option::Some(input);
@@ -274,8 +274,8 @@ impl DeviceBuilder {
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PHONE</p> </li>
-    /// <li> <p>TABLET</p> </li>
+    /// <li><p>PHONE</p></li>
+    /// <li><p>TABLET</p></li>
     /// </ul>
     pub fn set_form_factor(mut self, input: ::std::option::Option<crate::types::DeviceFormFactor>) -> Self {
         self.form_factor = input;
@@ -284,8 +284,8 @@ impl DeviceBuilder {
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PHONE</p> </li>
-    /// <li> <p>TABLET</p> </li>
+    /// <li><p>PHONE</p></li>
+    /// <li><p>TABLET</p></li>
     /// </ul>
     pub fn get_form_factor(&self) -> &::std::option::Option<crate::types::DeviceFormFactor> {
         &self.form_factor
@@ -293,8 +293,8 @@ impl DeviceBuilder {
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>ANDROID</p> </li>
-    /// <li> <p>IOS</p> </li>
+    /// <li><p>ANDROID</p></li>
+    /// <li><p>IOS</p></li>
     /// </ul>
     pub fn platform(mut self, input: crate::types::DevicePlatform) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -303,8 +303,8 @@ impl DeviceBuilder {
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>ANDROID</p> </li>
-    /// <li> <p>IOS</p> </li>
+    /// <li><p>ANDROID</p></li>
+    /// <li><p>IOS</p></li>
     /// </ul>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::DevicePlatform>) -> Self {
         self.platform = input;
@@ -313,8 +313,8 @@ impl DeviceBuilder {
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>ANDROID</p> </li>
-    /// <li> <p>IOS</p> </li>
+    /// <li><p>ANDROID</p></li>
+    /// <li><p>IOS</p></li>
     /// </ul>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::DevicePlatform> {
         &self.platform

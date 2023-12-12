@@ -9,7 +9,7 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 1 to 35</p> </li>
+    /// <li><p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>A value that indicates that the restored DB cluster should be associated with the specified CharacterSet.</p>
@@ -19,49 +19,49 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1</code> </p>
+    /// <p>Example: <code>my-cluster1</code></p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with the restored DB cluster.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this DB cluster.</p>
     /// <p>Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><b>Aurora MySQL</b></p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
-    /// <p>Default: <code>3306</code> </p>
+    /// <p>Default: <code>3306</code></p>
     pub port: ::std::option::Option<i32>,
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li><p>Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>
@@ -71,19 +71,19 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
@@ -95,11 +95,11 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub source_engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
-    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code></p>
     pub source_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket that contains the data used to create the Amazon Aurora DB cluster.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -113,11 +113,11 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub backtrack_window: ::std::option::Option<i64>,
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -136,17 +136,17 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
@@ -156,8 +156,8 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
-    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
+    /// <p>Default: <code>aurora</code></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
 }
@@ -172,7 +172,7 @@ impl RestoreDbClusterFromS3Input {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 1 to 35</p> </li>
+    /// <li><p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
@@ -188,18 +188,18 @@ impl RestoreDbClusterFromS3Input {
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1</code> </p>
+    /// <p>Example: <code>my-cluster1</code></p>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
@@ -212,7 +212,7 @@ impl RestoreDbClusterFromS3Input {
     }
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -223,23 +223,23 @@ impl RestoreDbClusterFromS3Input {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><b>Aurora MySQL</b></p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
-    /// <p>Default: <code>3306</code> </p>
+    /// <p>Default: <code>3306</code></p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
@@ -247,8 +247,8 @@ impl RestoreDbClusterFromS3Input {
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li><p>Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -262,23 +262,23 @@ impl RestoreDbClusterFromS3Input {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -300,13 +300,13 @@ impl RestoreDbClusterFromS3Input {
         self.enable_iam_database_authentication
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn source_engine(&self) -> ::std::option::Option<&str> {
         self.source_engine.as_deref()
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
-    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code></p>
     pub fn source_engine_version(&self) -> ::std::option::Option<&str> {
         self.source_engine_version.as_deref()
     }
@@ -328,13 +328,13 @@ impl RestoreDbClusterFromS3Input {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn backtrack_window(&self) -> ::std::option::Option<i64> {
         self.backtrack_window
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///
@@ -367,19 +367,19 @@ impl RestoreDbClusterFromS3Input {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
         self.manage_master_user_password
@@ -393,8 +393,8 @@ impl RestoreDbClusterFromS3Input {
         self.master_user_secret_kms_key_id.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
-    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
+    /// <p>Default: <code>aurora</code></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -473,7 +473,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 1 to 35</p> </li>
+    /// <li><p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -483,7 +483,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 1 to 35</p> </li>
+    /// <li><p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
@@ -493,7 +493,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 1 to 35</p> </li>
+    /// <li><p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
@@ -529,11 +529,11 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1</code> </p>
+    /// <p>Example: <code>my-cluster1</code></p>
     /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -542,11 +542,11 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1</code> </p>
+    /// <p>Example: <code>my-cluster1</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
@@ -554,18 +554,18 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1</code> </p>
+    /// <p>Example: <code>my-cluster1</code></p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
     }
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -574,7 +574,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
@@ -583,7 +583,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
@@ -610,21 +610,21 @@ impl RestoreDbClusterFromS3InputBuilder {
     }
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_subnet_group_name
     }
@@ -648,53 +648,53 @@ impl RestoreDbClusterFromS3InputBuilder {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><b>Aurora MySQL</b></p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><b>Aurora MySQL</b></p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><b>Aurora MySQL</b></p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
-    /// <p>Default: <code>3306</code> </p>
+    /// <p>Default: <code>3306</code></p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
-    /// <p>Default: <code>3306</code> </p>
+    /// <p>Default: <code>3306</code></p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
-    /// <p>Default: <code>3306</code> </p>
+    /// <p>Default: <code>3306</code></p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     /// This field is required.
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -704,9 +704,9 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
@@ -715,9 +715,9 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
@@ -725,8 +725,8 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li><p>Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
@@ -735,8 +735,8 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li><p>Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
@@ -745,8 +745,8 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li><p>Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
@@ -772,10 +772,10 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
@@ -785,10 +785,10 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
@@ -798,16 +798,16 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
@@ -816,7 +816,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
@@ -825,7 +825,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
@@ -836,19 +836,19 @@ impl RestoreDbClusterFromS3InputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
@@ -904,26 +904,26 @@ impl RestoreDbClusterFromS3InputBuilder {
         &self.enable_iam_database_authentication
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     /// This field is required.
     pub fn source_engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn set_source_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_engine = input;
         self
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid Values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code></p>
     pub fn get_source_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_engine
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
-    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code></p>
     /// This field is required.
     pub fn source_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_engine_version = ::std::option::Option::Some(input.into());
@@ -931,14 +931,14 @@ impl RestoreDbClusterFromS3InputBuilder {
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
-    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code></p>
     pub fn set_source_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_engine_version = input;
         self
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
-    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code></p>
     pub fn get_source_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_engine_version
     }
@@ -992,7 +992,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn backtrack_window(mut self, input: i64) -> Self {
         self.backtrack_window = ::std::option::Option::Some(input);
@@ -1004,7 +1004,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
         self.backtrack_window = input;
@@ -1016,7 +1016,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn get_backtrack_window(&self) -> &::std::option::Option<i64> {
         &self.backtrack_window
@@ -1026,7 +1026,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1036,7 +1036,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -1044,7 +1044,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -1129,11 +1129,11 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
         self
@@ -1141,11 +1141,11 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
         self
@@ -1153,39 +1153,39 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.manage_master_user_password = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manage_master_user_password = input;
         self
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         &self.manage_master_user_password
@@ -1217,24 +1217,24 @@ impl RestoreDbClusterFromS3InputBuilder {
         &self.master_user_secret_kms_key_id
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
-    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
+    /// <p>Default: <code>aurora</code></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
-    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
+    /// <p>Default: <code>aurora</code></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
-    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
+    /// <p>Default: <code>aurora</code></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type

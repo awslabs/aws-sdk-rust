@@ -56,7 +56,7 @@ pub struct BackupJob {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub message_category: ::std::option::Option<::std::string::String>,
 }
 impl BackupJob {
@@ -160,7 +160,7 @@ impl BackupJob {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn message_category(&self) -> ::std::option::Option<&str> {
         self.message_category.as_deref()
     }
@@ -558,7 +558,7 @@ impl BackupJobBuilder {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_category = ::std::option::Option::Some(input.into());
         self
@@ -566,7 +566,7 @@ impl BackupJobBuilder {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_category = input;
         self
@@ -574,7 +574,7 @@ impl BackupJobBuilder {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_category
     }

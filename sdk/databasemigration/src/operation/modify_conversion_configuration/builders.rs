@@ -22,7 +22,7 @@ impl ModifyConversionConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyConversionConfiguration`.
 ///
-/// <p>Modifies the specified schema conversion configuration using the provided parameters. </p>
+/// <p>Modifies the specified schema conversion configuration using the provided parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyConversionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

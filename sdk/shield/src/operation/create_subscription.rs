@@ -244,7 +244,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateSubscri
 pub enum CreateSubscriptionError {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
-    /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -14,8 +14,8 @@ pub struct FilterDateTimePickerControl {
     pub display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
     /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li>
-    /// <li> <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p> </li>
+    /// <li><p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <li><p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
 }
@@ -41,8 +41,8 @@ impl FilterDateTimePickerControl {
     }
     /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li>
-    /// <li> <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p> </li>
+    /// <li><p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <li><p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlDateTimePickerType> {
         self.r#type.as_ref()
@@ -127,8 +127,8 @@ impl FilterDateTimePickerControlBuilder {
     }
     /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li>
-    /// <li> <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p> </li>
+    /// <li><p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <li><p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SheetControlDateTimePickerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -136,8 +136,8 @@ impl FilterDateTimePickerControlBuilder {
     }
     /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li>
-    /// <li> <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p> </li>
+    /// <li><p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <li><p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SheetControlDateTimePickerType>) -> Self {
         self.r#type = input;
@@ -145,8 +145,8 @@ impl FilterDateTimePickerControlBuilder {
     }
     /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li>
-    /// <li> <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p> </li>
+    /// <li><p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <li><p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlDateTimePickerType> {
         &self.r#type

@@ -22,7 +22,7 @@ impl DeleteCertificateInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCertificate`.
 ///
-/// <p>Deletes the specified certificate. </p>
+/// <p>Deletes the specified certificate.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

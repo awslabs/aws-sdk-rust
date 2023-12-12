@@ -157,15 +157,15 @@ impl UpdateClusterFluentBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.maintenance_window(input.into());
         self
@@ -173,15 +173,15 @@ impl UpdateClusterFluentBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_maintenance_window(input);
         self
@@ -189,15 +189,15 @@ impl UpdateClusterFluentBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_maintenance_window()
     }

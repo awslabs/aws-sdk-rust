@@ -108,17 +108,17 @@ impl DescribeFeatureGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.</p>
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.</p>
     pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.</p>
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feature_group_name()
     }

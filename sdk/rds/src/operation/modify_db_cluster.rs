@@ -244,15 +244,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBClust
 pub enum ModifyDBClusterError {
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
+    /// <p><code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
+    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
+    /// <p><code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),

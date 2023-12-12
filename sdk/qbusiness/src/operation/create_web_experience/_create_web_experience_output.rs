@@ -5,7 +5,7 @@
 pub struct CreateWebExperienceOutput {
     /// <p>The identifier of the Amazon Q web experience.</p>
     pub web_experience_id: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
     pub web_experience_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl CreateWebExperienceOutput {
     pub fn web_experience_id(&self) -> ::std::option::Option<&str> {
         self.web_experience_id.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
     pub fn web_experience_arn(&self) -> ::std::option::Option<&str> {
         self.web_experience_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl CreateWebExperienceOutputBuilder {
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_experience_id
     }
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
     pub fn web_experience_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_experience_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
     pub fn set_web_experience_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_experience_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q web experience.</p>
     pub fn get_web_experience_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_experience_arn
     }

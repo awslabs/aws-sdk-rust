@@ -7,7 +7,7 @@ pub struct CreateUploadUrlOutput {
     pub s3_url: ::std::string::String,
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
     pub request_headers: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    /// <p>The identifier for the uploaded code resource. </p>
+    /// <p>The identifier for the uploaded code resource.</p>
     pub code_artifact_id: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -21,7 +21,7 @@ impl CreateUploadUrlOutput {
     pub fn request_headers(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
         &self.request_headers
     }
-    /// <p>The identifier for the uploaded code resource. </p>
+    /// <p>The identifier for the uploaded code resource.</p>
     pub fn code_artifact_id(&self) -> &str {
         use std::ops::Deref;
         self.code_artifact_id.deref()
@@ -101,18 +101,18 @@ impl CreateUploadUrlOutputBuilder {
     pub fn get_request_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_headers
     }
-    /// <p>The identifier for the uploaded code resource. </p>
+    /// <p>The identifier for the uploaded code resource.</p>
     /// This field is required.
     pub fn code_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the uploaded code resource. </p>
+    /// <p>The identifier for the uploaded code resource.</p>
     pub fn set_code_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_artifact_id = input;
         self
     }
-    /// <p>The identifier for the uploaded code resource. </p>
+    /// <p>The identifier for the uploaded code resource.</p>
     pub fn get_code_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_artifact_id
     }

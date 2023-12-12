@@ -23,8 +23,8 @@ impl CreateDataSourceFromRdsInputBuilder {
 /// Fluent builder constructing a request to `CreateDataSourceFromRDS`.
 ///
 /// <p>Creates a <code>DataSource</code> object from an <a href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a> (Amazon RDS). A <code>DataSource</code> references data that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.</p>
-/// <p> <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code> state can be used only to perform <code>&gt;CreateMLModel</code>&gt;, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations. </p>
-/// <p> If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <code>GetDataSource</code> operation response. </p>
+/// <p><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code> state can be used only to perform <code>&gt;CreateMLModel</code>&gt;, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.</p>
+/// <p>If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <code>GetDataSource</code> operation response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromRDSFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -140,20 +140,20 @@ impl CreateDataSourceFromRDSFluentBuilder {
     }
     /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
     /// <ul>
-    /// <li> <p>DatabaseInformation -</p>
+    /// <li><p>DatabaseInformation -</p>
     /// <ul>
-    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
-    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
-    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
-    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
-    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    /// <li><p><code>DatabaseName</code> - The name of the Amazon RDS database.</p></li>
+    /// <li><p><code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p></li>
+    /// </ul></li>
+    /// <li><p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p></li>
+    /// <li><p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
+    /// <li><p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
+    /// <li><p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p></li>
+    /// <li><p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
+    /// <li><p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p></li>
+    /// <li><p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn rds_data(mut self, input: crate::types::RdsDataSpec) -> Self {
         self.inner = self.inner.rds_data(input);
@@ -161,20 +161,20 @@ impl CreateDataSourceFromRDSFluentBuilder {
     }
     /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
     /// <ul>
-    /// <li> <p>DatabaseInformation -</p>
+    /// <li><p>DatabaseInformation -</p>
     /// <ul>
-    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
-    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
-    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
-    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
-    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    /// <li><p><code>DatabaseName</code> - The name of the Amazon RDS database.</p></li>
+    /// <li><p><code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p></li>
+    /// </ul></li>
+    /// <li><p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p></li>
+    /// <li><p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
+    /// <li><p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
+    /// <li><p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p></li>
+    /// <li><p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
+    /// <li><p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p></li>
+    /// <li><p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn set_rds_data(mut self, input: ::std::option::Option<crate::types::RdsDataSpec>) -> Self {
         self.inner = self.inner.set_rds_data(input);
@@ -182,20 +182,20 @@ impl CreateDataSourceFromRDSFluentBuilder {
     }
     /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
     /// <ul>
-    /// <li> <p>DatabaseInformation -</p>
+    /// <li><p>DatabaseInformation -</p>
     /// <ul>
-    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
-    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
-    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
-    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
-    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
-    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
-    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
-    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
-    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    /// <li><p><code>DatabaseName</code> - The name of the Amazon RDS database.</p></li>
+    /// <li><p><code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p></li>
+    /// </ul></li>
+    /// <li><p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p></li>
+    /// <li><p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
+    /// <li><p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
+    /// <li><p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p></li>
+    /// <li><p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
+    /// <li><p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p></li>
+    /// <li><p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn get_rds_data(&self) -> &::std::option::Option<crate::types::RdsDataSpec> {
         self.inner.get_rds_data()
@@ -217,17 +217,17 @@ impl CreateDataSourceFromRDSFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub fn compute_statistics(mut self, input: bool) -> Self {
         self.inner = self.inner.compute_statistics(input);
         self
     }
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub fn set_compute_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_compute_statistics(input);
         self
     }
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub fn get_compute_statistics(&self) -> &::std::option::Option<bool> {
         self.inner.get_compute_statistics()
     }

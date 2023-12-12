@@ -139,40 +139,40 @@ impl CreateUploadFluentBuilder {
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li> <p>ANDROID_APP</p> </li>
-    /// <li> <p>IOS_APP</p> </li>
-    /// <li> <p>WEB_APP</p> </li>
-    /// <li> <p>EXTERNAL_DATA</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
-    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
-    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
-    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
-    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
-    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
-    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
-    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
-    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
+    /// <li><p>ANDROID_APP</p></li>
+    /// <li><p>IOS_APP</p></li>
+    /// <li><p>WEB_APP</p></li>
+    /// <li><p>EXTERNAL_DATA</p></li>
+    /// <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_NODE_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_RUBY_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
+    /// <li><p>CALABASH_TEST_PACKAGE</p></li>
+    /// <li><p>INSTRUMENTATION_TEST_PACKAGE</p></li>
+    /// <li><p>UIAUTOMATION_TEST_PACKAGE</p></li>
+    /// <li><p>UIAUTOMATOR_TEST_PACKAGE</p></li>
+    /// <li><p>XCTEST_TEST_PACKAGE</p></li>
+    /// <li><p>XCTEST_UI_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_PYTHON_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_NODE_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_RUBY_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
+    /// <li><p>INSTRUMENTATION_TEST_SPEC</p></li>
+    /// <li><p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
-    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
+    /// <p>If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
     pub fn r#type(mut self, input: crate::types::UploadType) -> Self {
         self.inner = self.inner.r#type(input);
         self
@@ -180,40 +180,40 @@ impl CreateUploadFluentBuilder {
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li> <p>ANDROID_APP</p> </li>
-    /// <li> <p>IOS_APP</p> </li>
-    /// <li> <p>WEB_APP</p> </li>
-    /// <li> <p>EXTERNAL_DATA</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
-    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
-    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
-    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
-    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
-    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
-    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
-    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
-    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
+    /// <li><p>ANDROID_APP</p></li>
+    /// <li><p>IOS_APP</p></li>
+    /// <li><p>WEB_APP</p></li>
+    /// <li><p>EXTERNAL_DATA</p></li>
+    /// <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_NODE_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_RUBY_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
+    /// <li><p>CALABASH_TEST_PACKAGE</p></li>
+    /// <li><p>INSTRUMENTATION_TEST_PACKAGE</p></li>
+    /// <li><p>UIAUTOMATION_TEST_PACKAGE</p></li>
+    /// <li><p>UIAUTOMATOR_TEST_PACKAGE</p></li>
+    /// <li><p>XCTEST_TEST_PACKAGE</p></li>
+    /// <li><p>XCTEST_UI_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_PYTHON_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_NODE_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_RUBY_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
+    /// <li><p>INSTRUMENTATION_TEST_SPEC</p></li>
+    /// <li><p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
-    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
+    /// <p>If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UploadType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
@@ -221,40 +221,40 @@ impl CreateUploadFluentBuilder {
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li> <p>ANDROID_APP</p> </li>
-    /// <li> <p>IOS_APP</p> </li>
-    /// <li> <p>WEB_APP</p> </li>
-    /// <li> <p>EXTERNAL_DATA</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
-    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
-    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
-    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
-    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
-    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
-    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
-    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
-    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
+    /// <li><p>ANDROID_APP</p></li>
+    /// <li><p>IOS_APP</p></li>
+    /// <li><p>WEB_APP</p></li>
+    /// <li><p>EXTERNAL_DATA</p></li>
+    /// <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_NODE_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_RUBY_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
+    /// <li><p>CALABASH_TEST_PACKAGE</p></li>
+    /// <li><p>INSTRUMENTATION_TEST_PACKAGE</p></li>
+    /// <li><p>UIAUTOMATION_TEST_PACKAGE</p></li>
+    /// <li><p>UIAUTOMATOR_TEST_PACKAGE</p></li>
+    /// <li><p>XCTEST_TEST_PACKAGE</p></li>
+    /// <li><p>XCTEST_UI_TEST_PACKAGE</p></li>
+    /// <li><p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_PYTHON_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_NODE_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_RUBY_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
+    /// <li><p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
+    /// <li><p>INSTRUMENTATION_TEST_SPEC</p></li>
+    /// <li><p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
-    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
+    /// <p>If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UploadType> {
         self.inner.get_type()
     }

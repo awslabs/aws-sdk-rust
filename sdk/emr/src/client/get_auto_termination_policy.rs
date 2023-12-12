@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`cluster_id(impl Into<String>)`](crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyFluentBuilder::set_cluster_id):<br>required: **true**<br><p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p><br>
     /// - On success, responds with [`GetAutoTerminationPolicyOutput`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput) with field(s):
-    ///   - [`auto_termination_policy(Option<AutoTerminationPolicy>)`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput::auto_termination_policy): <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    ///   - [`auto_termination_policy(Option<AutoTerminationPolicy>)`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput::auto_termination_policy): <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     /// - On failure, responds with [`SdkError<GetAutoTerminationPolicyError>`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError)
     pub fn get_auto_termination_policy(&self) -> crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyFluentBuilder {
         crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyFluentBuilder::new(self.handle.clone())

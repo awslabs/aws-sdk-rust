@@ -22,7 +22,7 @@ impl DescribeModelVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeModelVersions`.
 ///
-/// <p>Gets all of the model versions for the specified model type or for the specified model type and model ID. You can also get details for a single, specified model version. </p>
+/// <p>Gets all of the model versions for the specified model type or for the specified model type and model ID. You can also get details for a single, specified model version.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeModelVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -18,7 +18,7 @@ pub struct Instance {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The state of the instance.</p>
     pub instance_status: ::std::option::Option<crate::types::InstanceStatus>,
-    /// <p>Relevant details why the instance was not successfully created. </p>
+    /// <p>Relevant details why the instance was not successfully created.</p>
     pub status_reason: ::std::option::Option<crate::types::InstanceStatusReason>,
     /// <p>Whether inbound calls are enabled.</p>
     pub inbound_calls_enabled: ::std::option::Option<bool>,
@@ -58,7 +58,7 @@ impl Instance {
     pub fn instance_status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
         self.instance_status.as_ref()
     }
-    /// <p>Relevant details why the instance was not successfully created. </p>
+    /// <p>Relevant details why the instance was not successfully created.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::InstanceStatusReason> {
         self.status_reason.as_ref()
     }
@@ -220,17 +220,17 @@ impl InstanceBuilder {
     pub fn get_instance_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
         &self.instance_status
     }
-    /// <p>Relevant details why the instance was not successfully created. </p>
+    /// <p>Relevant details why the instance was not successfully created.</p>
     pub fn status_reason(mut self, input: crate::types::InstanceStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Relevant details why the instance was not successfully created. </p>
+    /// <p>Relevant details why the instance was not successfully created.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::InstanceStatusReason>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p>Relevant details why the instance was not successfully created. </p>
+    /// <p>Relevant details why the instance was not successfully created.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::InstanceStatusReason> {
         &self.status_reason
     }

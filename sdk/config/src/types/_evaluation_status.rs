@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationStatus {
-    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
     pub status: crate::types::ResourceEvaluationStatus,
     /// <p>An explanation for failed execution status.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationStatus {
-    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
     pub fn status(&self) -> &crate::types::ResourceEvaluationStatus {
         &self.status
     }
@@ -34,18 +34,18 @@ pub struct EvaluationStatusBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationStatusBuilder {
-    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ResourceEvaluationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceEvaluationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceEvaluationStatus> {
         &self.status
     }

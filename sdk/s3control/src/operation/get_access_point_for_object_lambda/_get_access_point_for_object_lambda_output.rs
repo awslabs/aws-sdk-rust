@@ -5,7 +5,7 @@
 pub struct GetAccessPointForObjectLambdaOutput {
     /// <p>The name of the Object Lambda Access Point.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    /// <p>Configuration to block all public access. This setting is turned on and can not be edited.</p>
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +18,7 @@ impl GetAccessPointForObjectLambdaOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    /// <p>Configuration to block all public access. This setting is turned on and can not be edited.</p>
     pub fn public_access_block_configuration(&self) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
@@ -68,17 +68,17 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    /// <p>Configuration to block all public access. This setting is turned on and can not be edited.</p>
     pub fn public_access_block_configuration(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.public_access_block_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    /// <p>Configuration to block all public access. This setting is turned on and can not be edited.</p>
     pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
         self.public_access_block_configuration = input;
         self
     }
-    /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    /// <p>Configuration to block all public access. This setting is turned on and can not be edited.</p>
     pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         &self.public_access_block_configuration
     }

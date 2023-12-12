@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentReportUrlInput {
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub assessment_report_id: ::std::option::Option<::std::string::String>,
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentReportUrlInput {
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn assessment_report_id(&self) -> ::std::option::Option<&str> {
         self.assessment_report_id.as_deref()
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetAssessmentReportUrlInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentReportUrlInputBuilder {
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     /// This field is required.
     pub fn assessment_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_report_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn set_assessment_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_report_id = input;
         self
     }
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn get_assessment_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_report_id
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }

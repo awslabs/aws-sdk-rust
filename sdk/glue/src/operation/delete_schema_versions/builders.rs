@@ -127,8 +127,8 @@ impl DeleteSchemaVersionsFluentBuilder {
     }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li> <p>a single version number, 5</p> </li>
-    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
+    /// <li><p>a single version number, 5</p></li>
+    /// <li><p>a range, 5-8 : deletes versions 5, 6, 7, 8</p></li>
     /// </ul>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.versions(input.into());
@@ -136,8 +136,8 @@ impl DeleteSchemaVersionsFluentBuilder {
     }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li> <p>a single version number, 5</p> </li>
-    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
+    /// <li><p>a single version number, 5</p></li>
+    /// <li><p>a range, 5-8 : deletes versions 5, 6, 7, 8</p></li>
     /// </ul>
     pub fn set_versions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_versions(input);
@@ -145,8 +145,8 @@ impl DeleteSchemaVersionsFluentBuilder {
     }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li> <p>a single version number, 5</p> </li>
-    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
+    /// <li><p>a single version number, 5</p></li>
+    /// <li><p>a range, 5-8 : deletes versions 5, 6, 7, 8</p></li>
     /// </ul>
     pub fn get_versions(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_versions()

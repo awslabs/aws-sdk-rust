@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`description(impl Into<String>)`](crate::operation::update_network_site::builders::UpdateNetworkSiteFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_network_site::builders::UpdateNetworkSiteFluentBuilder::set_description):<br>required: **false**<br><p>The description.</p><br>
     /// - On success, responds with [`UpdateNetworkSiteOutput`](crate::operation::update_network_site::UpdateNetworkSiteOutput) with field(s):
     ///   - [`network_site(Option<NetworkSite>)`](crate::operation::update_network_site::UpdateNetworkSiteOutput::network_site): <p>Information about the network site.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_network_site::UpdateNetworkSiteOutput::tags): <p> The network site tags. </p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_network_site::UpdateNetworkSiteOutput::tags): <p>The network site tags.</p>
     /// - On failure, responds with [`SdkError<UpdateNetworkSiteError>`](crate::operation::update_network_site::UpdateNetworkSiteError)
     pub fn update_network_site(&self) -> crate::operation::update_network_site::builders::UpdateNetworkSiteFluentBuilder {
         crate::operation::update_network_site::builders::UpdateNetworkSiteFluentBuilder::new(self.handle.clone())

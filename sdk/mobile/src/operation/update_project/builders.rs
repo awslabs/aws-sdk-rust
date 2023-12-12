@@ -22,7 +22,7 @@ impl UpdateProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateProject`.
 ///
-/// <p> Update an existing project. </p>
+/// <p>Update an existing project.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateProjectFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    /// <p>ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.</p>
     pub fn contents(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.contents(input);
         self
     }
-    /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    /// <p>ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.</p>
     pub fn set_contents(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_contents(input);
         self
     }
-    /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    /// <p>ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.</p>
     pub fn get_contents(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_contents()
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_id(input.into());
         self
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_id(input);
         self
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_id()
     }

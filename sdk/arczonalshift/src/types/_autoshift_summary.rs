@@ -12,7 +12,7 @@ pub struct AutoshiftSummary {
     pub end_time: ::aws_smithy_types::DateTime,
     /// <p>The time (in UTC) when the autoshift started.</p>
     pub start_time: ::aws_smithy_types::DateTime,
-    /// <p>The status for an autoshift. </p>
+    /// <p>The status for an autoshift.</p>
     pub status: crate::types::AutoshiftExecutionStatus,
 }
 impl AutoshiftSummary {
@@ -29,7 +29,7 @@ impl AutoshiftSummary {
     pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.start_time
     }
-    /// <p>The status for an autoshift. </p>
+    /// <p>The status for an autoshift.</p>
     pub fn status(&self) -> &crate::types::AutoshiftExecutionStatus {
         &self.status
     }
@@ -96,18 +96,18 @@ impl AutoshiftSummaryBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The status for an autoshift. </p>
+    /// <p>The status for an autoshift.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::AutoshiftExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status for an autoshift. </p>
+    /// <p>The status for an autoshift.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoshiftExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status for an autoshift. </p>
+    /// <p>The status for an autoshift.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoshiftExecutionStatus> {
         &self.status
     }

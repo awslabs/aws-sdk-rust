@@ -11,7 +11,7 @@ pub struct CreateDomainInput {
     pub single_sign_on: ::std::option::Option<crate::types::SingleSignOn>,
     /// <p>The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the Amazon Web Services account that houses the Amazon DataZone domain.</p>
     pub domain_execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags specified for the Amazon DataZone domain.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -35,7 +35,7 @@ impl CreateDomainInput {
     pub fn domain_execution_role(&self) -> ::std::option::Option<&str> {
         self.domain_execution_role.as_deref()
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
     }
@@ -126,17 +126,17 @@ impl CreateDomainInputBuilder {
     pub fn get_domain_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_execution_role
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_identifier = input;
         self
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }

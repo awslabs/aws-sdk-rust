@@ -255,7 +255,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutSecretValu
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutSecretValueError {
-    /// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
+    /// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key.</p>
     DecryptionFailure(crate::types::error::DecryptionFailure),
     /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
     EncryptionFailure(crate::types::error::EncryptionFailure),
@@ -266,9 +266,9 @@ pub enum PutSecretValueError {
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li> <p>The secret is scheduled for deletion.</p> </li>
-    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
-    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
+    /// <li><p>The secret is scheduled for deletion.</p></li>
+    /// <li><p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call.</p></li>
+    /// <li><p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p></li>
     /// </ul>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>

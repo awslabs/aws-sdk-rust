@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_configuration::CreateConfigurationOutput::creation_time): <p>The time when the configuration was created.</p>
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::operation::create_configuration::CreateConfigurationOutput::latest_revision): <p>Latest revision of the configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_configuration::CreateConfigurationOutput::name): <p>The name of the configuration.</p>
-    ///   - [`state(Option<ConfigurationState>)`](crate::operation::create_configuration::CreateConfigurationOutput::state): <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    ///   - [`state(Option<ConfigurationState>)`](crate::operation::create_configuration::CreateConfigurationOutput::state): <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.</p>
     /// - On failure, responds with [`SdkError<CreateConfigurationError>`](crate::operation::create_configuration::CreateConfigurationError)
     pub fn create_configuration(&self) -> crate::operation::create_configuration::builders::CreateConfigurationFluentBuilder {
         crate::operation::create_configuration::builders::CreateConfigurationFluentBuilder::new(self.handle.clone())

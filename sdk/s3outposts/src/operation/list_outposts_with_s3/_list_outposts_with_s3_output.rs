@@ -5,9 +5,9 @@
 pub struct ListOutpostsWithS3Output {
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
-    /// <li> <p>outposts that have S3 provisioned</p> </li>
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
+    /// <li><p>outposts that have S3 provisioned</p></li>
+    /// <li><p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p></li>
+    /// <li><p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
     pub outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
@@ -17,9 +17,9 @@ pub struct ListOutpostsWithS3Output {
 impl ListOutpostsWithS3Output {
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
-    /// <li> <p>outposts that have S3 provisioned</p> </li>
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
+    /// <li><p>outposts that have S3 provisioned</p></li>
+    /// <li><p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p></li>
+    /// <li><p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outposts.is_none()`.
@@ -58,9 +58,9 @@ impl ListOutpostsWithS3OutputBuilder {
     ///
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
-    /// <li> <p>outposts that have S3 provisioned</p> </li>
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
+    /// <li><p>outposts that have S3 provisioned</p></li>
+    /// <li><p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p></li>
+    /// <li><p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
     pub fn outposts(mut self, input: crate::types::Outpost) -> Self {
         let mut v = self.outposts.unwrap_or_default();
@@ -70,9 +70,9 @@ impl ListOutpostsWithS3OutputBuilder {
     }
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
-    /// <li> <p>outposts that have S3 provisioned</p> </li>
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
+    /// <li><p>outposts that have S3 provisioned</p></li>
+    /// <li><p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p></li>
+    /// <li><p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
     pub fn set_outposts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>) -> Self {
         self.outposts = input;
@@ -80,9 +80,9 @@ impl ListOutpostsWithS3OutputBuilder {
     }
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
-    /// <li> <p>outposts that have S3 provisioned</p> </li>
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
+    /// <li><p>outposts that have S3 provisioned</p></li>
+    /// <li><p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p></li>
+    /// <li><p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
     pub fn get_outposts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Outpost>> {
         &self.outposts

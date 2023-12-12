@@ -3,7 +3,7 @@
 /// <p>An object containing Message Insights filters.</p>
 /// <p>If you specify multiple filters, the filters are joined by AND.</p>
 /// <p>If you specify multiple values for a filter, the values are joined by OR. Filter values are case-sensitive.</p>
-/// <p> <code>FromEmailAddress</code>, <code>Destination</code>, and <code>Subject</code> filters support partial match. A partial match is performed by using the <code>*</code> wildcard character placed at the beginning (suffix match), the end (prefix match) or both ends of the string (contains match). In order to match the literal characters <code>*</code> or <code>\</code>, they must be escaped using the <code>\</code> character. If no wildcard character is present, an exact match is performed. </p>
+/// <p><code>FromEmailAddress</code>, <code>Destination</code>, and <code>Subject</code> filters support partial match. A partial match is performed by using the <code>*</code> wildcard character placed at the beginning (suffix match), the end (prefix match) or both ends of the string (contains match). In order to match the literal characters <code>*</code> or <code>\</code>, they must be escaped using the <code>\</code> character. If no wildcard character is present, an exact match is performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageInsightsFilters {
@@ -15,10 +15,10 @@ pub struct MessageInsightsFilters {
     pub subject: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
     pub isp: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>. </p>
+    /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
     pub last_delivery_event: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>>,
-    /// <p> The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>. </p>
-    /// <p> Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled. </p>
+    /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
+    /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
     pub last_engagement_event: ::std::option::Option<::std::vec::Vec<crate::types::EngagementEventType>>,
 }
 impl MessageInsightsFilters {
@@ -46,14 +46,14 @@ impl MessageInsightsFilters {
     pub fn isp(&self) -> &[::std::string::String] {
         self.isp.as_deref().unwrap_or_default()
     }
-    /// <p> The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>. </p>
+    /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_delivery_event.is_none()`.
     pub fn last_delivery_event(&self) -> &[crate::types::DeliveryEventType] {
         self.last_delivery_event.as_deref().unwrap_or_default()
     }
-    /// <p> The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>. </p>
-    /// <p> Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled. </p>
+    /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
+    /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_engagement_event.is_none()`.
     pub fn last_engagement_event(&self) -> &[crate::types::EngagementEventType] {
@@ -163,19 +163,19 @@ impl MessageInsightsFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_last_delivery_event`](Self::set_last_delivery_event).
     ///
-    /// <p> The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>. </p>
+    /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
     pub fn last_delivery_event(mut self, input: crate::types::DeliveryEventType) -> Self {
         let mut v = self.last_delivery_event.unwrap_or_default();
         v.push(input);
         self.last_delivery_event = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>. </p>
+    /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
     pub fn set_last_delivery_event(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>>) -> Self {
         self.last_delivery_event = input;
         self
     }
-    /// <p> The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>. </p>
+    /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
     pub fn get_last_delivery_event(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>> {
         &self.last_delivery_event
     }
@@ -183,22 +183,22 @@ impl MessageInsightsFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_last_engagement_event`](Self::set_last_engagement_event).
     ///
-    /// <p> The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>. </p>
-    /// <p> Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled. </p>
+    /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
+    /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
     pub fn last_engagement_event(mut self, input: crate::types::EngagementEventType) -> Self {
         let mut v = self.last_engagement_event.unwrap_or_default();
         v.push(input);
         self.last_engagement_event = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>. </p>
-    /// <p> Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled. </p>
+    /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
+    /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
     pub fn set_last_engagement_event(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngagementEventType>>) -> Self {
         self.last_engagement_event = input;
         self
     }
-    /// <p> The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>. </p>
-    /// <p> Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled. </p>
+    /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
+    /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
     pub fn get_last_engagement_event(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementEventType>> {
         &self.last_engagement_event
     }

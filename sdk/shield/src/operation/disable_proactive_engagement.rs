@@ -249,11 +249,11 @@ pub enum DisableProactiveEngagementError {
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),
-    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::types::error::OptimisticLockException),
-    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -12,7 +12,7 @@ pub struct UpdateEnvironmentOutput {
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The application version deployed in this environment.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    /// <p>The name of the <code>SolutionStack</code> deployed with this environment.</p>
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
@@ -30,25 +30,25 @@ pub struct UpdateEnvironmentOutput {
     pub date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
     /// <ul>
-    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+    /// <li><p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li><p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
+    /// <li><p><code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p></li>
+    /// <li><p><code>Terminating</code>: Environment is in the shut-down process.</p></li>
+    /// <li><p><code>Terminated</code>: Environment is not running.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-    /// <p> <code>true:</code> There is an update in progress. </p>
-    /// <p> <code>false:</code> There are no updates currently in progress. </p>
+    /// <p><code>true:</code> There is an update in progress.</p>
+    /// <p><code>false:</code> There are no updates currently in progress.</p>
     pub abortable_operation_in_progress: ::std::option::Option<bool>,
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
+    /// <li><p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Green</code>: Indicates the environment is healthy and fully functional.</p></li>
+    /// <li><p><code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p></li>
     /// </ul>
-    /// <p> Default: <code>Grey</code> </p>
+    /// <p>Default: <code>Grey</code></p>
     pub health: ::std::option::Option<crate::types::EnvironmentHealth>,
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub health_status: ::std::option::Option<crate::types::EnvironmentHealthStatus>,
@@ -81,7 +81,7 @@ impl UpdateEnvironmentOutput {
     pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
-    /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    /// <p>The name of the <code>SolutionStack</code> deployed with this environment.</p>
     pub fn solution_stack_name(&self) -> ::std::option::Option<&str> {
         self.solution_stack_name.as_deref()
     }
@@ -115,29 +115,29 @@ impl UpdateEnvironmentOutput {
     }
     /// <p>The current operational status of the environment:</p>
     /// <ul>
-    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+    /// <li><p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li><p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
+    /// <li><p><code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p></li>
+    /// <li><p><code>Terminating</code>: Environment is in the shut-down process.</p></li>
+    /// <li><p><code>Terminated</code>: Environment is not running.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-    /// <p> <code>true:</code> There is an update in progress. </p>
-    /// <p> <code>false:</code> There are no updates currently in progress. </p>
+    /// <p><code>true:</code> There is an update in progress.</p>
+    /// <p><code>false:</code> There are no updates currently in progress.</p>
     pub fn abortable_operation_in_progress(&self) -> ::std::option::Option<bool> {
         self.abortable_operation_in_progress
     }
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
+    /// <li><p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Green</code>: Indicates the environment is healthy and fully functional.</p></li>
+    /// <li><p><code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p></li>
     /// </ul>
-    /// <p> Default: <code>Grey</code> </p>
+    /// <p>Default: <code>Grey</code></p>
     pub fn health(&self) -> ::std::option::Option<&crate::types::EnvironmentHealth> {
         self.health.as_ref()
     }
@@ -264,17 +264,17 @@ impl UpdateEnvironmentOutputBuilder {
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_label
     }
-    /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    /// <p>The name of the <code>SolutionStack</code> deployed with this environment.</p>
     pub fn solution_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    /// <p>The name of the <code>SolutionStack</code> deployed with this environment.</p>
     pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_stack_name = input;
         self
     }
-    /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    /// <p>The name of the <code>SolutionStack</code> deployed with this environment.</p>
     pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.solution_stack_name
     }
@@ -378,11 +378,11 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The current operational status of the environment:</p>
     /// <ul>
-    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+    /// <li><p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li><p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
+    /// <li><p><code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p></li>
+    /// <li><p><code>Terminating</code>: Environment is in the shut-down process.</p></li>
+    /// <li><p><code>Terminated</code>: Environment is not running.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -390,11 +390,11 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The current operational status of the environment:</p>
     /// <ul>
-    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+    /// <li><p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li><p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
+    /// <li><p><code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p></li>
+    /// <li><p><code>Terminating</code>: Environment is in the shut-down process.</p></li>
+    /// <li><p><code>Terminated</code>: Environment is not running.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
         self.status = input;
@@ -402,67 +402,67 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The current operational status of the environment:</p>
     /// <ul>
-    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+    /// <li><p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li><p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
+    /// <li><p><code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p></li>
+    /// <li><p><code>Terminating</code>: Environment is in the shut-down process.</p></li>
+    /// <li><p><code>Terminated</code>: Environment is not running.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
         &self.status
     }
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-    /// <p> <code>true:</code> There is an update in progress. </p>
-    /// <p> <code>false:</code> There are no updates currently in progress. </p>
+    /// <p><code>true:</code> There is an update in progress.</p>
+    /// <p><code>false:</code> There are no updates currently in progress.</p>
     pub fn abortable_operation_in_progress(mut self, input: bool) -> Self {
         self.abortable_operation_in_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-    /// <p> <code>true:</code> There is an update in progress. </p>
-    /// <p> <code>false:</code> There are no updates currently in progress. </p>
+    /// <p><code>true:</code> There is an update in progress.</p>
+    /// <p><code>false:</code> There are no updates currently in progress.</p>
     pub fn set_abortable_operation_in_progress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.abortable_operation_in_progress = input;
         self
     }
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-    /// <p> <code>true:</code> There is an update in progress. </p>
-    /// <p> <code>false:</code> There are no updates currently in progress. </p>
+    /// <p><code>true:</code> There is an update in progress.</p>
+    /// <p><code>false:</code> There are no updates currently in progress.</p>
     pub fn get_abortable_operation_in_progress(&self) -> &::std::option::Option<bool> {
         &self.abortable_operation_in_progress
     }
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
+    /// <li><p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Green</code>: Indicates the environment is healthy and fully functional.</p></li>
+    /// <li><p><code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p></li>
     /// </ul>
-    /// <p> Default: <code>Grey</code> </p>
+    /// <p>Default: <code>Grey</code></p>
     pub fn health(mut self, input: crate::types::EnvironmentHealth) -> Self {
         self.health = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
+    /// <li><p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Green</code>: Indicates the environment is healthy and fully functional.</p></li>
+    /// <li><p><code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p></li>
     /// </ul>
-    /// <p> Default: <code>Grey</code> </p>
+    /// <p>Default: <code>Grey</code></p>
     pub fn set_health(mut self, input: ::std::option::Option<crate::types::EnvironmentHealth>) -> Self {
         self.health = input;
         self
     }
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
+    /// <li><p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p></li>
+    /// <li><p><code>Green</code>: Indicates the environment is healthy and fully functional.</p></li>
+    /// <li><p><code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p></li>
     /// </ul>
-    /// <p> Default: <code>Grey</code> </p>
+    /// <p>Default: <code>Grey</code></p>
     pub fn get_health(&self) -> &::std::option::Option<crate::types::EnvironmentHealth> {
         &self.health
     }

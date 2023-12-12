@@ -114,7 +114,7 @@ impl DeleteDBClusterFluentBuilder {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
+    /// <li><p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -123,7 +123,7 @@ impl DeleteDBClusterFluentBuilder {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
+    /// <li><p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
@@ -132,7 +132,7 @@ impl DeleteDBClusterFluentBuilder {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
+    /// <li><p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
@@ -162,9 +162,9 @@ impl DeleteDBClusterFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_db_snapshot_identifier(input.into());
@@ -175,9 +175,9 @@ impl DeleteDBClusterFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_db_snapshot_identifier(input);
@@ -188,9 +188,9 @@ impl DeleteDBClusterFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_db_snapshot_identifier()

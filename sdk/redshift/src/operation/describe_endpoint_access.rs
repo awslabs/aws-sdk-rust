@@ -243,11 +243,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeEndpo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeEndpointAccessError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The endpoint name doesn't refer to an existing endpoint.</p>
     EndpointNotFoundFault(crate::types::error::EndpointNotFoundFault),
-    /// <p>The specified cluster is not in the <code>available</code> state. </p>
+    /// <p>The specified cluster is not in the <code>available</code> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

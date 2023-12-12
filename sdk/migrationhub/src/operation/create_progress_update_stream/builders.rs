@@ -108,17 +108,17 @@ impl CreateProgressUpdateStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn progress_update_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream_name(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn set_progress_update_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream_name(input);
         self
     }
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn get_progress_update_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_progress_update_stream_name()
     }

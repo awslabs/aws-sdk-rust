@@ -175,12 +175,12 @@ impl CreateSipMediaApplicationCallFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_arguments_map`](Self::set_arguments_map).
     ///
-    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
     pub fn arguments_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arguments_map(k.into(), v.into());
         self
     }
-    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
     pub fn set_arguments_map(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -188,7 +188,7 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self.inner = self.inner.set_arguments_map(input);
         self
     }
-    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
     pub fn get_arguments_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_arguments_map()
     }

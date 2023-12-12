@@ -22,7 +22,7 @@ impl DisassociateDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateDomain`.
 ///
-/// <p>Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon WorkLink. </p>
+/// <p>Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon WorkLink.</p>
 #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateDomainFluentBuilder {

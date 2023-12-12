@@ -19,7 +19,7 @@ pub struct MqttHeaders {
     pub response_topic: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
-    /// <p> This binary data must be based64-encoded. </p>
+    /// <p>This binary data must be based64-encoded.</p>
     /// </note>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
     pub correlation_data: ::std::option::Option<::std::string::String>,
@@ -51,7 +51,7 @@ impl MqttHeaders {
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
-    /// <p> This binary data must be based64-encoded. </p>
+    /// <p>This binary data must be based64-encoded.</p>
     /// </note>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
     pub fn correlation_data(&self) -> ::std::option::Option<&str> {
@@ -153,7 +153,7 @@ impl MqttHeadersBuilder {
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
-    /// <p> This binary data must be based64-encoded. </p>
+    /// <p>This binary data must be based64-encoded.</p>
     /// </note>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
     pub fn correlation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,7 +162,7 @@ impl MqttHeadersBuilder {
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
-    /// <p> This binary data must be based64-encoded. </p>
+    /// <p>This binary data must be based64-encoded.</p>
     /// </note>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
     pub fn set_correlation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -171,7 +171,7 @@ impl MqttHeadersBuilder {
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
-    /// <p> This binary data must be based64-encoded. </p>
+    /// <p>This binary data must be based64-encoded.</p>
     /// </note>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
     pub fn get_correlation_data(&self) -> &::std::option::Option<::std::string::String> {

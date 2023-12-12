@@ -23,7 +23,7 @@ impl UpdateAssociationStatusInputBuilder {
 /// Fluent builder constructing a request to `UpdateAssociationStatus`.
 ///
 /// <p>Updates the status of the Amazon Web Services Systems Manager document (SSM document) associated with the specified managed node.</p>
-/// <p> <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web Services Systems Manager Agent (SSM Agent) to report status updates about your associations and is only used for associations created with the <code>InstanceId</code> legacy parameter.</p>
+/// <p><code>UpdateAssociationStatus</code> is primarily used by the Amazon Web Services Systems Manager Agent (SSM Agent) to report status updates about your associations and is only used for associations created with the <code>InstanceId</code> legacy parameter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssociationStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -99,17 +99,17 @@ impl ListTagsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

@@ -22,7 +22,7 @@ impl GetResolverRuleAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetResolverRuleAssociation`.
 ///
-/// <p>Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>. </p>
+/// <p>Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResolverRuleAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

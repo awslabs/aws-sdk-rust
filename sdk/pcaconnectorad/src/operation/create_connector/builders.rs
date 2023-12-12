@@ -122,17 +122,17 @@ impl CreateConnectorFluentBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
-    /// <p> The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_authority_arn()
     }

@@ -6,9 +6,9 @@
 pub struct ComparisonConfiguration {
     /// <p>The method of the comparison. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// <li><p><code>DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT_DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT</code></p></li>
     /// </ul>
     pub comparison_method: ::std::option::Option<crate::types::ComparisonMethod>,
     /// <p>The format of the comparison.</p>
@@ -17,9 +17,9 @@ pub struct ComparisonConfiguration {
 impl ComparisonConfiguration {
     /// <p>The method of the comparison. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// <li><p><code>DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT_DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT</code></p></li>
     /// </ul>
     pub fn comparison_method(&self) -> ::std::option::Option<&crate::types::ComparisonMethod> {
         self.comparison_method.as_ref()
@@ -46,9 +46,9 @@ pub struct ComparisonConfigurationBuilder {
 impl ComparisonConfigurationBuilder {
     /// <p>The method of the comparison. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// <li><p><code>DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT_DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT</code></p></li>
     /// </ul>
     pub fn comparison_method(mut self, input: crate::types::ComparisonMethod) -> Self {
         self.comparison_method = ::std::option::Option::Some(input);
@@ -56,9 +56,9 @@ impl ComparisonConfigurationBuilder {
     }
     /// <p>The method of the comparison. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// <li><p><code>DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT_DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT</code></p></li>
     /// </ul>
     pub fn set_comparison_method(mut self, input: ::std::option::Option<crate::types::ComparisonMethod>) -> Self {
         self.comparison_method = input;
@@ -66,9 +66,9 @@ impl ComparisonConfigurationBuilder {
     }
     /// <p>The method of the comparison. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// <li><p><code>DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT_DIFFERENCE</code></p></li>
+    /// <li><p><code>PERCENT</code></p></li>
     /// </ul>
     pub fn get_comparison_method(&self) -> &::std::option::Option<crate::types::ComparisonMethod> {
         &self.comparison_method

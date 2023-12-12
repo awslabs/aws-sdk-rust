@@ -22,8 +22,8 @@ impl ListAssociatedResourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAssociatedResources`.
 ///
-/// <p> Lists all of the resources that are associated with the specified application. Results are paginated. </p> <note>
-/// <p> If you share an application, and a consumer account associates a tag query to the application, all of the users who can access the application can also view the tag values in all accounts that are associated with it using this API. </p>
+/// <p>Lists all of the resources that are associated with the specified application. Results are paginated.</p> <note>
+/// <p>If you share an application, and a consumer account associates a tag query to the application, all of the users who can access the application can also view the tag values in all accounts that are associated with it using this API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssociatedResourcesFluentBuilder {
@@ -116,31 +116,31 @@ impl ListAssociatedResourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_associated_resources::paginator::ListAssociatedResourcesPaginator {
         crate::operation::list_associated_resources::paginator::ListAssociatedResourcesPaginator::new(self.handle, self.inner)
     }
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self
     }
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application()
     }
-    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

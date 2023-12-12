@@ -10,8 +10,8 @@ pub struct SftpConnectorConfig {
     /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter the <code>&lt;comment&gt;</code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li><p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p></li>
+    /// <li><p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p></li>
     /// </ul>
     pub trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -24,8 +24,8 @@ impl SftpConnectorConfig {
     /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter the <code>&lt;comment&gt;</code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li><p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p></li>
+    /// <li><p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trusted_host_keys.is_none()`.
@@ -70,8 +70,8 @@ impl SftpConnectorConfigBuilder {
     /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter the <code>&lt;comment&gt;</code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li><p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p></li>
+    /// <li><p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p></li>
     /// </ul>
     pub fn trusted_host_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trusted_host_keys.unwrap_or_default();
@@ -83,8 +83,8 @@ impl SftpConnectorConfigBuilder {
     /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter the <code>&lt;comment&gt;</code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li><p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p></li>
+    /// <li><p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p></li>
     /// </ul>
     pub fn set_trusted_host_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trusted_host_keys = input;
@@ -94,8 +94,8 @@ impl SftpConnectorConfigBuilder {
     /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter the <code>&lt;comment&gt;</code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li><p>For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p></li>
+    /// <li><p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p></li>
     /// </ul>
     pub fn get_trusted_host_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trusted_host_keys

@@ -8,25 +8,25 @@ pub struct GlobalSecondaryIndexDescription {
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li> <p> <code>HASH</code> - partition key</p> </li>
-    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// <li><p><code>HASH</code> - partition key</p></li>
+    /// <li><p><code>RANGE</code> - sort key</p></li>
     /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
-    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub projection: ::std::option::Option<crate::types::Projection>,
     /// <p>The current state of the global secondary index:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The index is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The index is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The index is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The index is ready for use.</p></li>
     /// </ul>
     pub index_status: ::std::option::Option<crate::types::IndexStatus>,
     /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. </p> <note>
+    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.</p> <note>
     /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
     /// </note>
     pub backfilling: ::std::option::Option<bool>,
@@ -47,8 +47,8 @@ impl GlobalSecondaryIndexDescription {
     }
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li> <p> <code>HASH</code> - partition key</p> </li>
-    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// <li><p><code>HASH</code> - partition key</p></li>
+    /// <li><p><code>RANGE</code> - sort key</p></li>
     /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
@@ -58,22 +58,22 @@ impl GlobalSecondaryIndexDescription {
     pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
         self.key_schema.as_deref().unwrap_or_default()
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn projection(&self) -> ::std::option::Option<&crate::types::Projection> {
         self.projection.as_ref()
     }
     /// <p>The current state of the global secondary index:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The index is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The index is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The index is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The index is ready for use.</p></li>
     /// </ul>
     pub fn index_status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
         self.index_status.as_ref()
     }
     /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. </p> <note>
+    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.</p> <note>
     /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
     /// </note>
     pub fn backfilling(&self) -> ::std::option::Option<bool> {
@@ -139,8 +139,8 @@ impl GlobalSecondaryIndexDescriptionBuilder {
     ///
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li> <p> <code>HASH</code> - partition key</p> </li>
-    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// <li><p><code>HASH</code> - partition key</p></li>
+    /// <li><p><code>RANGE</code> - sort key</p></li>
     /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
@@ -153,8 +153,8 @@ impl GlobalSecondaryIndexDescriptionBuilder {
     }
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li> <p> <code>HASH</code> - partition key</p> </li>
-    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// <li><p><code>HASH</code> - partition key</p></li>
+    /// <li><p><code>RANGE</code> - sort key</p></li>
     /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
@@ -165,8 +165,8 @@ impl GlobalSecondaryIndexDescriptionBuilder {
     }
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li> <p> <code>HASH</code> - partition key</p> </li>
-    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// <li><p><code>HASH</code> - partition key</p></li>
+    /// <li><p><code>RANGE</code> - sort key</p></li>
     /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
@@ -174,26 +174,26 @@ impl GlobalSecondaryIndexDescriptionBuilder {
     pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
         &self.key_schema
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn projection(mut self, input: crate::types::Projection) -> Self {
         self.projection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn set_projection(mut self, input: ::std::option::Option<crate::types::Projection>) -> Self {
         self.projection = input;
         self
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn get_projection(&self) -> &::std::option::Option<crate::types::Projection> {
         &self.projection
     }
     /// <p>The current state of the global secondary index:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The index is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The index is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The index is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The index is ready for use.</p></li>
     /// </ul>
     pub fn index_status(mut self, input: crate::types::IndexStatus) -> Self {
         self.index_status = ::std::option::Option::Some(input);
@@ -201,10 +201,10 @@ impl GlobalSecondaryIndexDescriptionBuilder {
     }
     /// <p>The current state of the global secondary index:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The index is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The index is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The index is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The index is ready for use.</p></li>
     /// </ul>
     pub fn set_index_status(mut self, input: ::std::option::Option<crate::types::IndexStatus>) -> Self {
         self.index_status = input;
@@ -212,16 +212,16 @@ impl GlobalSecondaryIndexDescriptionBuilder {
     }
     /// <p>The current state of the global secondary index:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The index is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The index is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The index is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The index is ready for use.</p></li>
     /// </ul>
     pub fn get_index_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
         &self.index_status
     }
     /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. </p> <note>
+    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.</p> <note>
     /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
     /// </note>
     pub fn backfilling(mut self, input: bool) -> Self {
@@ -229,7 +229,7 @@ impl GlobalSecondaryIndexDescriptionBuilder {
         self
     }
     /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. </p> <note>
+    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.</p> <note>
     /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
     /// </note>
     pub fn set_backfilling(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -237,7 +237,7 @@ impl GlobalSecondaryIndexDescriptionBuilder {
         self
     }
     /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <code>Backfilling</code> is false.</p>
-    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. </p> <note>
+    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.</p> <note>
     /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
     /// </note>
     pub fn get_backfilling(&self) -> &::std::option::Option<bool> {

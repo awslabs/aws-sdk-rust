@@ -16,7 +16,7 @@ pub struct PortfolioShareDetail {
     pub accepted: bool,
     /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
     pub share_tag_options: bool,
-    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.</p>
     pub share_principals: bool,
 }
 impl PortfolioShareDetail {
@@ -40,7 +40,7 @@ impl PortfolioShareDetail {
     pub fn share_tag_options(&self) -> bool {
         self.share_tag_options
     }
-    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.</p>
     pub fn share_principals(&self) -> bool {
         self.share_principals
     }
@@ -131,17 +131,17 @@ impl PortfolioShareDetailBuilder {
     pub fn get_share_tag_options(&self) -> &::std::option::Option<bool> {
         &self.share_tag_options
     }
-    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.</p>
     pub fn share_principals(mut self, input: bool) -> Self {
         self.share_principals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.</p>
     pub fn set_share_principals(mut self, input: ::std::option::Option<bool>) -> Self {
         self.share_principals = input;
         self
     }
-    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.</p>
     pub fn get_share_principals(&self) -> &::std::option::Option<bool> {
         &self.share_principals
     }

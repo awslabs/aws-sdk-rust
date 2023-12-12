@@ -24,9 +24,9 @@ impl GetClusterCredentialsInputBuilder {
 ///
 /// <p>Returns a database user name and temporary password with temporary authorization to log on to an Amazon Redshift database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or more database user groups that the user will join at log on. By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.</p>
 /// <p>The Identity and Access Management (IAM) user or role that runs GetClusterCredentials must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.</p>
-/// <p>If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>. </p>
+/// <p>If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>.</p>
 /// <p>In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include the <code>redshift:CreateClusterUser</code> permission.</p>
-/// <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. </p>
+/// <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetClusterCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,42 +113,42 @@ impl GetClusterCredentialsFluentBuilder {
         self
     }
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
+    /// <li><p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_user(input.into());
         self
     }
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
+    /// <li><p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_user(input);
         self
     }
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
+    /// <li><p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_user()
@@ -156,11 +156,11 @@ impl GetClusterCredentialsFluentBuilder {
     /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens</p></li>
+    /// <li><p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_name(input.into());
@@ -169,11 +169,11 @@ impl GetClusterCredentialsFluentBuilder {
     /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens</p></li>
+    /// <li><p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_name(input);
@@ -182,11 +182,11 @@ impl GetClusterCredentialsFluentBuilder {
     /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens</p></li>
+    /// <li><p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_name()
@@ -246,11 +246,11 @@ impl GetClusterCredentialsFluentBuilder {
     /// <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>
     /// <p>Database group name constraints</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens</p></li>
+    /// <li><p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn db_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_groups(input.into());
@@ -259,11 +259,11 @@ impl GetClusterCredentialsFluentBuilder {
     /// <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>
     /// <p>Database group name constraints</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens</p></li>
+    /// <li><p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn set_db_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_db_groups(input);
@@ -272,11 +272,11 @@ impl GetClusterCredentialsFluentBuilder {
     /// <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>
     /// <p>Database group name constraints</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
-    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
+    /// <li><p>Must be 1 to 64 alphanumeric characters or hyphens</p></li>
+    /// <li><p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Must not contain a colon ( : ) or slash ( / ).</p></li>
+    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn get_db_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_db_groups()

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetConfigurationPolicyAssociationsInput {
-    /// <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for. </p>
+    /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
     pub configuration_policy_association_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociation>>,
 }
 impl BatchGetConfigurationPolicyAssociationsInput {
-    /// <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for. </p>
+    /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_policy_association_identifiers.is_none()`.
     pub fn configuration_policy_association_identifiers(&self) -> &[crate::types::ConfigurationPolicyAssociation] {
@@ -32,14 +32,14 @@ impl BatchGetConfigurationPolicyAssociationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_policy_association_identifiers`](Self::set_configuration_policy_association_identifiers).
     ///
-    /// <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for. </p>
+    /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
     pub fn configuration_policy_association_identifiers(mut self, input: crate::types::ConfigurationPolicyAssociation) -> Self {
         let mut v = self.configuration_policy_association_identifiers.unwrap_or_default();
         v.push(input);
         self.configuration_policy_association_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for. </p>
+    /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
     pub fn set_configuration_policy_association_identifiers(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociation>>,
@@ -47,7 +47,7 @@ impl BatchGetConfigurationPolicyAssociationsInputBuilder {
         self.configuration_policy_association_identifiers = input;
         self
     }
-    /// <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for. </p>
+    /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
     pub fn get_configuration_policy_association_identifiers(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociation>> {

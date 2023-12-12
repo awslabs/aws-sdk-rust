@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTemplatePermissionsOutput`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput::template_id): <p>The ID for the template.</p>
     ///   - [`template_arn(Option<String>)`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput::template_arn): <p>The Amazon Resource Name (ARN) of the template.</p>
-    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput::permissions): <p>A list of resource permissions to be set on the template. </p>
+    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput::permissions): <p>A list of resource permissions to be set on the template.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeTemplatePermissionsError>`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsError)

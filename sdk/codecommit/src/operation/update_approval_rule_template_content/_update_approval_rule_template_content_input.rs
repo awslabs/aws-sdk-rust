@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateContentInput {
-    /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    /// <p>The name of the approval rule template where you want to update the content of the rule.</p>
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
     pub new_rule_content: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct UpdateApprovalRuleTemplateContentInput {
     pub existing_rule_content_sha256: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApprovalRuleTemplateContentInput {
-    /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    /// <p>The name of the approval rule template where you want to update the content of the rule.</p>
     pub fn approval_rule_template_name(&self) -> ::std::option::Option<&str> {
         self.approval_rule_template_name.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct UpdateApprovalRuleTemplateContentInputBuilder {
     pub(crate) existing_rule_content_sha256: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApprovalRuleTemplateContentInputBuilder {
-    /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    /// <p>The name of the approval rule template where you want to update the content of the rule.</p>
     /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    /// <p>The name of the approval rule template where you want to update the content of the rule.</p>
     pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }
-    /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    /// <p>The name of the approval rule template where you want to update the content of the rule.</p>
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_name
     }

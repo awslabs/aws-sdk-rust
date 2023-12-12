@@ -26,7 +26,7 @@ pub struct EcsParameters {
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     /// <p>The task placement strategy for a task or service.</p>
     pub placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>The reference ID to use for the task.</p>
     pub reference_id: ::std::option::Option<::std::string::String>,
@@ -85,7 +85,7 @@ impl EcsParameters {
     pub fn placement_strategy(&self) -> &[crate::types::PlacementStrategy] {
         self.placement_strategy.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
@@ -303,17 +303,17 @@ impl EcsParametersBuilder {
     pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
         &self.placement_strategy
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
     pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
         self.propagate_tags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
         self.propagate_tags = input;
         self
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
         &self.propagate_tags
     }

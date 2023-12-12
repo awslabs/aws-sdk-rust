@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationHistoryOutput {
-    /// <p> The list of configuration events and their corresponding details. </p>
+    /// <p>The list of configuration events and their corresponding details.</p>
     pub event_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>,
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListConfigurationHistoryOutput {
-    /// <p> The list of configuration events and their corresponding details. </p>
+    /// <p>The list of configuration events and their corresponding details.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_list.is_none()`.
     pub fn event_list(&self) -> &[crate::types::ConfigurationEvent] {
@@ -46,19 +46,19 @@ impl ListConfigurationHistoryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_list`](Self::set_event_list).
     ///
-    /// <p> The list of configuration events and their corresponding details. </p>
+    /// <p>The list of configuration events and their corresponding details.</p>
     pub fn event_list(mut self, input: crate::types::ConfigurationEvent) -> Self {
         let mut v = self.event_list.unwrap_or_default();
         v.push(input);
         self.event_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of configuration events and their corresponding details. </p>
+    /// <p>The list of configuration events and their corresponding details.</p>
     pub fn set_event_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>) -> Self {
         self.event_list = input;
         self
     }
-    /// <p> The list of configuration events and their corresponding details. </p>
+    /// <p>The list of configuration events and their corresponding details.</p>
     pub fn get_event_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>> {
         &self.event_list
     }

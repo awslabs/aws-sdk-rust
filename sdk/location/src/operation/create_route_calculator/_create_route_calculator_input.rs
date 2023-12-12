@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRouteCalculatorInput {
-    /// <p>The name of the route calculator resource. </p>
+    /// <p>The name of the route calculator resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
-    /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique Route calculator resource name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     pub calculator_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data provider of traffic and road network data.</p> <note>
@@ -16,9 +16,9 @@ pub struct CreateRouteCalculatorInput {
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p> </li>
-    /// <li> <p> <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
-    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
+    /// <li><p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p></li>
+    /// <li><p><code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
+    /// <li><p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p></li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub data_source: ::std::option::Option<::std::string::String>,
@@ -29,27 +29,27 @@ pub struct CreateRouteCalculatorInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
-    /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
+    /// <li><p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p></li>
     /// </ul>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRouteCalculatorInput {
-    /// <p>The name of the route calculator resource. </p>
+    /// <p>The name of the route calculator resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
-    /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique Route calculator resource name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     pub fn calculator_name(&self) -> ::std::option::Option<&str> {
         self.calculator_name.as_deref()
@@ -59,9 +59,9 @@ impl CreateRouteCalculatorInput {
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p> </li>
-    /// <li> <p> <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
-    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
+    /// <li><p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p></li>
+    /// <li><p><code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
+    /// <li><p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p></li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn data_source(&self) -> ::std::option::Option<&str> {
@@ -78,17 +78,17 @@ impl CreateRouteCalculatorInput {
     }
     /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
-    /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
+    /// <li><p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p></li>
     /// </ul>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -112,35 +112,35 @@ pub struct CreateRouteCalculatorInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRouteCalculatorInputBuilder {
-    /// <p>The name of the route calculator resource. </p>
+    /// <p>The name of the route calculator resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
-    /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique Route calculator resource name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the route calculator resource. </p>
+    /// <p>The name of the route calculator resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
-    /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique Route calculator resource name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_name = input;
         self
     }
-    /// <p>The name of the route calculator resource. </p>
+    /// <p>The name of the route calculator resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
-    /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique Route calculator resource name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculator_name
@@ -150,9 +150,9 @@ impl CreateRouteCalculatorInputBuilder {
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p> </li>
-    /// <li> <p> <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
-    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
+    /// <li><p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p></li>
+    /// <li><p><code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
+    /// <li><p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p></li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     /// This field is required.
@@ -165,9 +165,9 @@ impl CreateRouteCalculatorInputBuilder {
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p> </li>
-    /// <li> <p> <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
-    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
+    /// <li><p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p></li>
+    /// <li><p><code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
+    /// <li><p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p></li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -179,9 +179,9 @@ impl CreateRouteCalculatorInputBuilder {
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p> </li>
-    /// <li> <p> <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
-    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
+    /// <li><p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p></li>
+    /// <li><p><code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
+    /// <li><p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p></li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,17 +224,17 @@ impl CreateRouteCalculatorInputBuilder {
     ///
     /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
-    /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
+    /// <li><p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p></li>
     /// </ul>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
@@ -244,17 +244,17 @@ impl CreateRouteCalculatorInputBuilder {
     }
     /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
-    /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
+    /// <li><p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p></li>
     /// </ul>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
@@ -262,17 +262,17 @@ impl CreateRouteCalculatorInputBuilder {
     }
     /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
-    /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
+    /// <li><p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p></li>
     /// </ul>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags

@@ -6,9 +6,9 @@
 pub struct EnvironmentMember {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>owner</code>: Owns the environment.</p></li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub permissions: crate::types::Permissions,
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
@@ -23,9 +23,9 @@ pub struct EnvironmentMember {
 impl EnvironmentMember {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>owner</code>: Owns the environment.</p></li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub fn permissions(&self) -> &crate::types::Permissions {
         &self.permissions
@@ -70,9 +70,9 @@ pub struct EnvironmentMemberBuilder {
 impl EnvironmentMemberBuilder {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>owner</code>: Owns the environment.</p></li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     /// This field is required.
     pub fn permissions(mut self, input: crate::types::Permissions) -> Self {
@@ -81,9 +81,9 @@ impl EnvironmentMemberBuilder {
     }
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>owner</code>: Owns the environment.</p></li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::Permissions>) -> Self {
         self.permissions = input;
@@ -91,9 +91,9 @@ impl EnvironmentMemberBuilder {
     }
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>owner</code>: Owns the environment.</p></li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub fn get_permissions(&self) -> &::std::option::Option<crate::types::Permissions> {
         &self.permissions

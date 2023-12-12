@@ -122,21 +122,21 @@ impl UpdateJobShipmentStateFluentBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
-    /// <p>The state of a device when it is being shipped. </p>
+    /// <p>The state of a device when it is being shipped.</p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     pub fn shipment_state(mut self, input: crate::types::ShipmentState) -> Self {
         self.inner = self.inner.shipment_state(input);
         self
     }
-    /// <p>The state of a device when it is being shipped. </p>
+    /// <p>The state of a device when it is being shipped.</p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     pub fn set_shipment_state(mut self, input: ::std::option::Option<crate::types::ShipmentState>) -> Self {
         self.inner = self.inner.set_shipment_state(input);
         self
     }
-    /// <p>The state of a device when it is being shipped. </p>
+    /// <p>The state of a device when it is being shipped.</p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     pub fn get_shipment_state(&self) -> &::std::option::Option<crate::types::ShipmentState> {

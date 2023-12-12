@@ -22,7 +22,7 @@ impl DeleteBudgetActionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBudgetAction`.
 ///
-/// <p> Deletes a budget action. </p>
+/// <p>Deletes a budget action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBudgetActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +122,31 @@ impl DeleteBudgetActionFluentBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_budget_name()
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_id(input.into());
         self
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_id(input);
         self
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_action_id()
     }

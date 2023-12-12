@@ -21,17 +21,17 @@ pub struct RepositoryAssociationSummary {
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
+    /// <li><p><b>Associated</b>: The repository association is complete.</p></li>
+    /// <li><p><b>Associating</b>: CodeGuru Reviewer is:</p>
     /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
+    /// <li><p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
     /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// </note></li>
+    /// <li><p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p></li>
+    /// </ul></li>
+    /// <li><p><b>Failed</b>: The repository failed to associate or disassociate.</p></li>
+    /// <li><p><b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p></li>
+    /// <li><p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::RepositoryAssociationState>,
 }
@@ -67,17 +67,17 @@ impl RepositoryAssociationSummary {
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
+    /// <li><p><b>Associated</b>: The repository association is complete.</p></li>
+    /// <li><p><b>Associating</b>: CodeGuru Reviewer is:</p>
     /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
+    /// <li><p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
     /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// </note></li>
+    /// <li><p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p></li>
+    /// </ul></li>
+    /// <li><p><b>Failed</b>: The repository failed to associate or disassociate.</p></li>
+    /// <li><p><b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p></li>
+    /// <li><p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::RepositoryAssociationState> {
         self.state.as_ref()
@@ -205,17 +205,17 @@ impl RepositoryAssociationSummaryBuilder {
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
+    /// <li><p><b>Associated</b>: The repository association is complete.</p></li>
+    /// <li><p><b>Associating</b>: CodeGuru Reviewer is:</p>
     /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
+    /// <li><p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
     /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// </note></li>
+    /// <li><p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p></li>
+    /// </ul></li>
+    /// <li><p><b>Failed</b>: The repository failed to associate or disassociate.</p></li>
+    /// <li><p><b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p></li>
+    /// <li><p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::RepositoryAssociationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -224,17 +224,17 @@ impl RepositoryAssociationSummaryBuilder {
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
+    /// <li><p><b>Associated</b>: The repository association is complete.</p></li>
+    /// <li><p><b>Associating</b>: CodeGuru Reviewer is:</p>
     /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
+    /// <li><p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
     /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// </note></li>
+    /// <li><p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p></li>
+    /// </ul></li>
+    /// <li><p><b>Failed</b>: The repository failed to associate or disassociate.</p></li>
+    /// <li><p><b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p></li>
+    /// <li><p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RepositoryAssociationState>) -> Self {
         self.state = input;
@@ -243,17 +243,17 @@ impl RepositoryAssociationSummaryBuilder {
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
+    /// <li><p><b>Associated</b>: The repository association is complete.</p></li>
+    /// <li><p><b>Associating</b>: CodeGuru Reviewer is:</p>
     /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
+    /// <li><p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
     /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// </note></li>
+    /// <li><p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p></li>
+    /// </ul></li>
+    /// <li><p><b>Failed</b>: The repository failed to associate or disassociate.</p></li>
+    /// <li><p><b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p></li>
+    /// <li><p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RepositoryAssociationState> {
         &self.state

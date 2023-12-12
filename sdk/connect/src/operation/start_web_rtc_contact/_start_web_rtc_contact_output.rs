@@ -5,7 +5,7 @@
 pub struct StartWebRtcContactOutput {
     /// <p>Information required for the client application (mobile application or website) to connect to the call.</p>
     pub connection_data: ::std::option::Option<crate::types::ConnectionData>,
-    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a contact participant. The <code>ParticipantId</code> for a contact participant is the same throughout the contact lifecycle.</p>
     pub participant_id: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl StartWebRtcContactOutput {
     pub fn connection_data(&self) -> ::std::option::Option<&crate::types::ConnectionData> {
         self.connection_data.as_ref()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
@@ -68,17 +68,17 @@ impl StartWebRtcContactOutputBuilder {
     pub fn get_connection_data(&self) -> &::std::option::Option<crate::types::ConnectionData> {
         &self.connection_data
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }

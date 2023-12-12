@@ -26,7 +26,7 @@ pub struct AwsSecurityFindingFilters {
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub created_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The native severity as defined by the security findings provider's solution that generated the finding.</p>
@@ -57,7 +57,7 @@ pub struct AwsSecurityFindingFilters {
     pub product_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the findings provider (company) that owns the solution (product) that generates findings.</p>
     pub company_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub user_defined_fields: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p>The name of the malware that was observed.</p>
     pub malware_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -178,22 +178,22 @@ pub struct AwsSecurityFindingFilters {
     pub workflow_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p> </li>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     pub workflow_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The updated record state for the finding.</p>
@@ -215,7 +215,7 @@ pub struct AwsSecurityFindingFilters {
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     pub finding_provider_fields_confidence: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
     pub finding_provider_fields_criticality: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The finding identifier of a related finding that is identified by the finding provider.</p>
     pub finding_provider_fields_related_findings_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -230,23 +230,23 @@ pub struct AwsSecurityFindingFilters {
     pub finding_provider_fields_types: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Indicates whether or not sample findings are included in the filter results.</p>
     pub sample: ::std::option::Option<::std::vec::Vec<crate::types::BooleanFilter>>,
-    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
     pub compliance_security_control_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
     pub compliance_associated_standards_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     pub vulnerabilities_exploit_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     pub vulnerabilities_fix_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> The name of a security control parameter. </p>
+    /// <p>The name of a security control parameter.</p>
     pub compliance_security_control_parameters_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> The current value of a security control parameter. </p>
+    /// <p>The current value of a security control parameter.</p>
     pub compliance_security_control_parameters_value: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the Amazon Web Services account in which a finding is generated.</p>
     pub aws_account_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> The name of the application that is related to a finding. </p>
+    /// <p>The name of the application that is related to a finding.</p>
     pub resource_application_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> The ARN of the application that is related to a finding. </p>
+    /// <p>The ARN of the application that is related to a finding.</p>
     pub resource_application_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AwsSecurityFindingFilters {
@@ -307,7 +307,7 @@ impl AwsSecurityFindingFilters {
     pub fn created_at(&self) -> &[crate::types::DateFilter] {
         self.created_at.as_deref().unwrap_or_default()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updated_at.is_none()`.
@@ -390,7 +390,7 @@ impl AwsSecurityFindingFilters {
     pub fn company_name(&self) -> &[crate::types::StringFilter] {
         self.company_name.as_deref().unwrap_or_default()
     }
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_defined_fields.is_none()`.
     pub fn user_defined_fields(&self) -> &[crate::types::MapFilter] {
@@ -739,22 +739,22 @@ impl AwsSecurityFindingFilters {
     }
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p> </li>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_status.is_none()`.
@@ -812,7 +812,7 @@ impl AwsSecurityFindingFilters {
         self.finding_provider_fields_confidence.as_deref().unwrap_or_default()
     }
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_provider_fields_criticality.is_none()`.
     pub fn finding_provider_fields_criticality(&self) -> &[crate::types::NumberFilter] {
@@ -855,37 +855,37 @@ impl AwsSecurityFindingFilters {
     pub fn sample(&self) -> &[crate::types::BooleanFilter] {
         self.sample.as_deref().unwrap_or_default()
     }
-    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_security_control_id.is_none()`.
     pub fn compliance_security_control_id(&self) -> &[crate::types::StringFilter] {
         self.compliance_security_control_id.as_deref().unwrap_or_default()
     }
-    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_associated_standards_id.is_none()`.
     pub fn compliance_associated_standards_id(&self) -> &[crate::types::StringFilter] {
         self.compliance_associated_standards_id.as_deref().unwrap_or_default()
     }
-    /// <p> Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerabilities_exploit_available.is_none()`.
     pub fn vulnerabilities_exploit_available(&self) -> &[crate::types::StringFilter] {
         self.vulnerabilities_exploit_available.as_deref().unwrap_or_default()
     }
-    /// <p> Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerabilities_fix_available.is_none()`.
     pub fn vulnerabilities_fix_available(&self) -> &[crate::types::StringFilter] {
         self.vulnerabilities_fix_available.as_deref().unwrap_or_default()
     }
-    /// <p> The name of a security control parameter. </p>
+    /// <p>The name of a security control parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_security_control_parameters_name.is_none()`.
     pub fn compliance_security_control_parameters_name(&self) -> &[crate::types::StringFilter] {
         self.compliance_security_control_parameters_name.as_deref().unwrap_or_default()
     }
-    /// <p> The current value of a security control parameter. </p>
+    /// <p>The current value of a security control parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_security_control_parameters_value.is_none()`.
     pub fn compliance_security_control_parameters_value(&self) -> &[crate::types::StringFilter] {
@@ -897,13 +897,13 @@ impl AwsSecurityFindingFilters {
     pub fn aws_account_name(&self) -> &[crate::types::StringFilter] {
         self.aws_account_name.as_deref().unwrap_or_default()
     }
-    /// <p> The name of the application that is related to a finding. </p>
+    /// <p>The name of the application that is related to a finding.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_application_name.is_none()`.
     pub fn resource_application_name(&self) -> &[crate::types::StringFilter] {
         self.resource_application_name.as_deref().unwrap_or_default()
     }
-    /// <p> The ARN of the application that is related to a finding. </p>
+    /// <p>The ARN of the application that is related to a finding.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_application_arn.is_none()`.
     pub fn resource_application_arn(&self) -> &[crate::types::StringFilter] {
@@ -1220,7 +1220,7 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_updated_at`](Self::set_updated_at).
     ///
-    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.updated_at.unwrap_or_default();
@@ -1228,13 +1228,13 @@ impl AwsSecurityFindingFiltersBuilder {
         self.updated_at = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.updated_at
@@ -1495,19 +1495,19 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
     ///
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn user_defined_fields(mut self, input: crate::types::MapFilter) -> Self {
         let mut v = self.user_defined_fields.unwrap_or_default();
         v.push(input);
         self.user_defined_fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn set_user_defined_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.user_defined_fields = input;
         self
     }
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.user_defined_fields
     }
@@ -2658,22 +2658,22 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p> </li>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     pub fn workflow_status(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.workflow_status.unwrap_or_default();
@@ -2683,22 +2683,22 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p> </li>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     pub fn set_workflow_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.workflow_status = input;
@@ -2706,22 +2706,22 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul></li>
+    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li> <p> <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li>
-    /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p> </li>
+    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     pub fn get_workflow_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.workflow_status
@@ -2897,7 +2897,7 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_finding_provider_fields_criticality`](Self::set_finding_provider_fields_criticality).
     ///
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
     pub fn finding_provider_fields_criticality(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.finding_provider_fields_criticality.unwrap_or_default();
         v.push(input);
@@ -2905,13 +2905,13 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
     pub fn set_finding_provider_fields_criticality(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.finding_provider_fields_criticality = input;
         self
     }
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
     pub fn get_finding_provider_fields_criticality(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.finding_provider_fields_criticality
     }
@@ -3051,19 +3051,19 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_compliance_security_control_id`](Self::set_compliance_security_control_id).
     ///
-    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
     pub fn compliance_security_control_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.compliance_security_control_id.unwrap_or_default();
         v.push(input);
         self.compliance_security_control_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
     pub fn set_compliance_security_control_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_security_control_id = input;
         self
     }
-    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
     pub fn get_compliance_security_control_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_security_control_id
     }
@@ -3071,19 +3071,19 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_compliance_associated_standards_id`](Self::set_compliance_associated_standards_id).
     ///
-    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
     pub fn compliance_associated_standards_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.compliance_associated_standards_id.unwrap_or_default();
         v.push(input);
         self.compliance_associated_standards_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
     pub fn set_compliance_associated_standards_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_associated_standards_id = input;
         self
     }
-    /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
     pub fn get_compliance_associated_standards_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_associated_standards_id
     }
@@ -3091,19 +3091,19 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_vulnerabilities_exploit_available`](Self::set_vulnerabilities_exploit_available).
     ///
-    /// <p> Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     pub fn vulnerabilities_exploit_available(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.vulnerabilities_exploit_available.unwrap_or_default();
         v.push(input);
         self.vulnerabilities_exploit_available = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     pub fn set_vulnerabilities_exploit_available(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.vulnerabilities_exploit_available = input;
         self
     }
-    /// <p> Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     pub fn get_vulnerabilities_exploit_available(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.vulnerabilities_exploit_available
     }
@@ -3111,19 +3111,19 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_vulnerabilities_fix_available`](Self::set_vulnerabilities_fix_available).
     ///
-    /// <p> Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     pub fn vulnerabilities_fix_available(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.vulnerabilities_fix_available.unwrap_or_default();
         v.push(input);
         self.vulnerabilities_fix_available = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     pub fn set_vulnerabilities_fix_available(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.vulnerabilities_fix_available = input;
         self
     }
-    /// <p> Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector. </p>
+    /// <p>Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter findings by this field only if you use Security Hub and Amazon Inspector.</p>
     pub fn get_vulnerabilities_fix_available(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.vulnerabilities_fix_available
     }
@@ -3131,14 +3131,14 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_compliance_security_control_parameters_name`](Self::set_compliance_security_control_parameters_name).
     ///
-    /// <p> The name of a security control parameter. </p>
+    /// <p>The name of a security control parameter.</p>
     pub fn compliance_security_control_parameters_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.compliance_security_control_parameters_name.unwrap_or_default();
         v.push(input);
         self.compliance_security_control_parameters_name = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The name of a security control parameter. </p>
+    /// <p>The name of a security control parameter.</p>
     pub fn set_compliance_security_control_parameters_name(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -3146,7 +3146,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self.compliance_security_control_parameters_name = input;
         self
     }
-    /// <p> The name of a security control parameter. </p>
+    /// <p>The name of a security control parameter.</p>
     pub fn get_compliance_security_control_parameters_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_security_control_parameters_name
     }
@@ -3154,14 +3154,14 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_compliance_security_control_parameters_value`](Self::set_compliance_security_control_parameters_value).
     ///
-    /// <p> The current value of a security control parameter. </p>
+    /// <p>The current value of a security control parameter.</p>
     pub fn compliance_security_control_parameters_value(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.compliance_security_control_parameters_value.unwrap_or_default();
         v.push(input);
         self.compliance_security_control_parameters_value = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The current value of a security control parameter. </p>
+    /// <p>The current value of a security control parameter.</p>
     pub fn set_compliance_security_control_parameters_value(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -3169,7 +3169,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self.compliance_security_control_parameters_value = input;
         self
     }
-    /// <p> The current value of a security control parameter. </p>
+    /// <p>The current value of a security control parameter.</p>
     pub fn get_compliance_security_control_parameters_value(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_security_control_parameters_value
     }
@@ -3197,19 +3197,19 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_application_name`](Self::set_resource_application_name).
     ///
-    /// <p> The name of the application that is related to a finding. </p>
+    /// <p>The name of the application that is related to a finding.</p>
     pub fn resource_application_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_application_name.unwrap_or_default();
         v.push(input);
         self.resource_application_name = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The name of the application that is related to a finding. </p>
+    /// <p>The name of the application that is related to a finding.</p>
     pub fn set_resource_application_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_application_name = input;
         self
     }
-    /// <p> The name of the application that is related to a finding. </p>
+    /// <p>The name of the application that is related to a finding.</p>
     pub fn get_resource_application_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_application_name
     }
@@ -3217,19 +3217,19 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_application_arn`](Self::set_resource_application_arn).
     ///
-    /// <p> The ARN of the application that is related to a finding. </p>
+    /// <p>The ARN of the application that is related to a finding.</p>
     pub fn resource_application_arn(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_application_arn.unwrap_or_default();
         v.push(input);
         self.resource_application_arn = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The ARN of the application that is related to a finding. </p>
+    /// <p>The ARN of the application that is related to a finding.</p>
     pub fn set_resource_application_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_application_arn = input;
         self
     }
-    /// <p> The ARN of the application that is related to a finding. </p>
+    /// <p>The ARN of the application that is related to a finding.</p>
     pub fn get_resource_application_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_application_arn
     }

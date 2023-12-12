@@ -6,7 +6,7 @@
 pub struct SystemInstanceFilter {
     /// <p>The name of the search filter field.</p>
     pub name: ::std::option::Option<crate::types::SystemInstanceFilterName>,
-    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SystemInstanceFilter {
@@ -14,7 +14,7 @@ impl SystemInstanceFilter {
     pub fn name(&self) -> ::std::option::Option<&crate::types::SystemInstanceFilterName> {
         self.name.as_ref()
     }
-    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value.is_none()`.
     pub fn value(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl SystemInstanceFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_value`](Self::set_value).
     ///
-    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
         v.push(input.into());
         self.value = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.value = input;
         self
     }
-    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.value
     }

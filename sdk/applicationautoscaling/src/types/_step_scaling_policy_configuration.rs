@@ -5,8 +5,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepScalingPolicyConfiguration {
-    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
-    /// <p> <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
+    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    /// <p><code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
     pub adjustment_type: ::std::option::Option<crate::types::AdjustmentType>,
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>At least one step adjustment is required if you are adding a new step scaling policy configuration.</p>
@@ -19,8 +19,8 @@ pub struct StepScalingPolicyConfiguration {
     pub metric_aggregation_type: ::std::option::Option<crate::types::MetricAggregationType>,
 }
 impl StepScalingPolicyConfiguration {
-    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
-    /// <p> <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
+    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    /// <p><code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
     pub fn adjustment_type(&self) -> ::std::option::Option<&crate::types::AdjustmentType> {
         self.adjustment_type.as_ref()
     }
@@ -62,20 +62,20 @@ pub struct StepScalingPolicyConfigurationBuilder {
     pub(crate) metric_aggregation_type: ::std::option::Option<crate::types::MetricAggregationType>,
 }
 impl StepScalingPolicyConfigurationBuilder {
-    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
-    /// <p> <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
+    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    /// <p><code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
     pub fn adjustment_type(mut self, input: crate::types::AdjustmentType) -> Self {
         self.adjustment_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
-    /// <p> <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
+    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    /// <p><code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
     pub fn set_adjustment_type(mut self, input: ::std::option::Option<crate::types::AdjustmentType>) -> Self {
         self.adjustment_type = input;
         self
     }
-    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
-    /// <p> <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
+    /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    /// <p><code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
     pub fn get_adjustment_type(&self) -> &::std::option::Option<crate::types::AdjustmentType> {
         &self.adjustment_type
     }

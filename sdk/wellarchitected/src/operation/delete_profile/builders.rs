@@ -23,7 +23,7 @@ impl DeleteProfileInputBuilder {
 /// Fluent builder constructing a request to `DeleteProfile`.
 ///
 /// <p>Delete a profile.</p> <note>
-/// <p> <b>Disclaimer</b> </p>
+/// <p><b>Disclaimer</b></p>
 /// <p>By sharing your profile with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your profile available to those other accounts. Those other accounts may continue to access and use your shared profile even if you delete the profile from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

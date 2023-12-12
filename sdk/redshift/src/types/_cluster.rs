@@ -8,44 +8,44 @@ pub struct Cluster {
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the nodes in the cluster.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
-    /// <p> The current state of the cluster. Possible values are the following:</p>
+    /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-    /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-    /// <li> <p> <code>cancelling-resize</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>final-snapshot</code> </p> </li>
-    /// <li> <p> <code>hardware-failure</code> </p> </li>
-    /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-    /// <li> <p> <code>incompatible-network</code> </p> </li>
-    /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-    /// <li> <p> <code>incompatible-restore</code> </p> </li>
-    /// <li> <p> <code>modifying</code> </p> </li>
-    /// <li> <p> <code>paused</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>renaming</code> </p> </li>
-    /// <li> <p> <code>resizing</code> </p> </li>
-    /// <li> <p> <code>rotating-keys</code> </p> </li>
-    /// <li> <p> <code>storage-full</code> </p> </li>
-    /// <li> <p> <code>updating-hsm</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>available, prep-for-resize</code></p></li>
+    /// <li><p><code>available, resize-cleanup</code></p></li>
+    /// <li><p><code>cancelling-resize</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>final-snapshot</code></p></li>
+    /// <li><p><code>hardware-failure</code></p></li>
+    /// <li><p><code>incompatible-hsm</code></p></li>
+    /// <li><p><code>incompatible-network</code></p></li>
+    /// <li><p><code>incompatible-parameters</code></p></li>
+    /// <li><p><code>incompatible-restore</code></p></li>
+    /// <li><p><code>modifying</code></p></li>
+    /// <li><p><code>paused</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>renaming</code></p></li>
+    /// <li><p><code>resizing</code></p></li>
+    /// <li><p><code>rotating-keys</code></p></li>
+    /// <li><p><code>storage-full</code></p></li>
+    /// <li><p><code>updating-hsm</code></p></li>
     /// </ul>
     pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>Available - The cluster is available for queries. </p> </li>
-    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+    /// <li><p>Available - The cluster is available for queries.</p></li>
+    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub cluster_availability_status: ::std::option::Option<::std::string::String>,
     /// <p>The status of a modify operation, if any, initiated for the cluster.</p>
     pub modify_status: ::std::option::Option<::std::string::String>,
-    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
+    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
+    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The connection endpoint.</p>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
@@ -56,8 +56,8 @@ pub struct Cluster {
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
-    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
-    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
+    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements.</p>
+    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter.</p>
     pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroupMembership>>,
     /// <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated with the cluster. This parameter is returned only if the cluster is in a VPC.</p>
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
@@ -75,7 +75,7 @@ pub struct Cluster {
     pub pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
     pub cluster_version: ::std::option::Option<::std::string::String>,
-    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
+    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
     pub allow_version_upgrade: ::std::option::Option<bool>,
     /// <p>The number of compute nodes in the cluster.</p>
     pub number_of_nodes: ::std::option::Option<i32>,
@@ -105,7 +105,7 @@ pub struct Cluster {
     /// <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
@@ -114,7 +114,7 @@ pub struct Cluster {
     pub pending_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the maintenance track for the cluster.</p>
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
+    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method.</p>
     pub elastic_resize_number_of_node_options: ::std::option::Option<::std::string::String>,
     /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
     pub deferred_maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::DeferredMaintenanceWindow>>,
@@ -122,27 +122,27 @@ pub struct Cluster {
     pub snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the cluster snapshot schedule.</p>
     pub snapshot_schedule_state: ::std::option::Option<crate::types::ScheduleState>,
-    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
+    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled.</p>
     pub expected_next_snapshot_schedule_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
+    /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub expected_next_snapshot_schedule_time_status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time in UTC when system maintenance can begin.</p>
     pub next_maintenance_window_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-    /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li><p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub resize_info: ::std::option::Option<crate::types::ResizeInfo>,
     /// <p>Describes the status of the Availability Zone relocation operation.</p>
     pub availability_zone_relocation_status: ::std::option::Option<::std::string::String>,
     /// <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
     pub cluster_namespace_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The total storage capacity of the cluster in megabytes. </p>
+    /// <p>The total storage capacity of the cluster in megabytes.</p>
     pub total_storage_capacity_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub aqua_configuration: ::std::option::Option<crate::types::AquaConfiguration>,
@@ -176,39 +176,39 @@ impl Cluster {
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
-    /// <p> The current state of the cluster. Possible values are the following:</p>
+    /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-    /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-    /// <li> <p> <code>cancelling-resize</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>final-snapshot</code> </p> </li>
-    /// <li> <p> <code>hardware-failure</code> </p> </li>
-    /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-    /// <li> <p> <code>incompatible-network</code> </p> </li>
-    /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-    /// <li> <p> <code>incompatible-restore</code> </p> </li>
-    /// <li> <p> <code>modifying</code> </p> </li>
-    /// <li> <p> <code>paused</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>renaming</code> </p> </li>
-    /// <li> <p> <code>resizing</code> </p> </li>
-    /// <li> <p> <code>rotating-keys</code> </p> </li>
-    /// <li> <p> <code>storage-full</code> </p> </li>
-    /// <li> <p> <code>updating-hsm</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>available, prep-for-resize</code></p></li>
+    /// <li><p><code>available, resize-cleanup</code></p></li>
+    /// <li><p><code>cancelling-resize</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>final-snapshot</code></p></li>
+    /// <li><p><code>hardware-failure</code></p></li>
+    /// <li><p><code>incompatible-hsm</code></p></li>
+    /// <li><p><code>incompatible-network</code></p></li>
+    /// <li><p><code>incompatible-parameters</code></p></li>
+    /// <li><p><code>incompatible-restore</code></p></li>
+    /// <li><p><code>modifying</code></p></li>
+    /// <li><p><code>paused</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>renaming</code></p></li>
+    /// <li><p><code>resizing</code></p></li>
+    /// <li><p><code>rotating-keys</code></p></li>
+    /// <li><p><code>storage-full</code></p></li>
+    /// <li><p><code>updating-hsm</code></p></li>
     /// </ul>
     pub fn cluster_status(&self) -> ::std::option::Option<&str> {
         self.cluster_status.as_deref()
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>Available - The cluster is available for queries. </p> </li>
-    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+    /// <li><p>Available - The cluster is available for queries.</p></li>
+    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn cluster_availability_status(&self) -> ::std::option::Option<&str> {
         self.cluster_availability_status.as_deref()
@@ -217,11 +217,11 @@ impl Cluster {
     pub fn modify_status(&self) -> ::std::option::Option<&str> {
         self.modify_status.as_deref()
     }
-    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
+    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter.</p>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
     }
-    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
+    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default.</p>
     pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
@@ -242,8 +242,8 @@ impl Cluster {
     pub fn manual_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.manual_snapshot_retention_period
     }
-    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
-    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
+    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements.</p>
+    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
     pub fn cluster_security_groups(&self) -> &[crate::types::ClusterSecurityGroupMembership] {
@@ -285,7 +285,7 @@ impl Cluster {
     pub fn cluster_version(&self) -> ::std::option::Option<&str> {
         self.cluster_version.as_deref()
     }
-    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
+    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
     pub fn allow_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_version_upgrade
     }
@@ -347,7 +347,7 @@ impl Cluster {
         self.kms_key_id.as_deref()
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(&self) -> ::std::option::Option<bool> {
         self.enhanced_vpc_routing
@@ -368,7 +368,7 @@ impl Cluster {
     pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
         self.maintenance_track_name.as_deref()
     }
-    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
+    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method.</p>
     pub fn elastic_resize_number_of_node_options(&self) -> ::std::option::Option<&str> {
         self.elastic_resize_number_of_node_options.as_deref()
     }
@@ -386,14 +386,14 @@ impl Cluster {
     pub fn snapshot_schedule_state(&self) -> ::std::option::Option<&crate::types::ScheduleState> {
         self.snapshot_schedule_state.as_ref()
     }
-    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
+    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled.</p>
     pub fn expected_next_snapshot_schedule_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expected_next_snapshot_schedule_time.as_ref()
     }
-    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
+    /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub fn expected_next_snapshot_schedule_time_status(&self) -> ::std::option::Option<&str> {
         self.expected_next_snapshot_schedule_time_status.as_deref()
@@ -404,8 +404,8 @@ impl Cluster {
     }
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-    /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li><p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub fn resize_info(&self) -> ::std::option::Option<&crate::types::ResizeInfo> {
         self.resize_info.as_ref()
@@ -418,7 +418,7 @@ impl Cluster {
     pub fn cluster_namespace_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_namespace_arn.as_deref()
     }
-    /// <p>The total storage capacity of the cluster in megabytes. </p>
+    /// <p>The total storage capacity of the cluster in megabytes.</p>
     pub fn total_storage_capacity_in_mega_bytes(&self) -> ::std::option::Option<i64> {
         self.total_storage_capacity_in_mega_bytes
     }
@@ -568,93 +568,93 @@ impl ClusterBuilder {
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
-    /// <p> The current state of the cluster. Possible values are the following:</p>
+    /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-    /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-    /// <li> <p> <code>cancelling-resize</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>final-snapshot</code> </p> </li>
-    /// <li> <p> <code>hardware-failure</code> </p> </li>
-    /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-    /// <li> <p> <code>incompatible-network</code> </p> </li>
-    /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-    /// <li> <p> <code>incompatible-restore</code> </p> </li>
-    /// <li> <p> <code>modifying</code> </p> </li>
-    /// <li> <p> <code>paused</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>renaming</code> </p> </li>
-    /// <li> <p> <code>resizing</code> </p> </li>
-    /// <li> <p> <code>rotating-keys</code> </p> </li>
-    /// <li> <p> <code>storage-full</code> </p> </li>
-    /// <li> <p> <code>updating-hsm</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>available, prep-for-resize</code></p></li>
+    /// <li><p><code>available, resize-cleanup</code></p></li>
+    /// <li><p><code>cancelling-resize</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>final-snapshot</code></p></li>
+    /// <li><p><code>hardware-failure</code></p></li>
+    /// <li><p><code>incompatible-hsm</code></p></li>
+    /// <li><p><code>incompatible-network</code></p></li>
+    /// <li><p><code>incompatible-parameters</code></p></li>
+    /// <li><p><code>incompatible-restore</code></p></li>
+    /// <li><p><code>modifying</code></p></li>
+    /// <li><p><code>paused</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>renaming</code></p></li>
+    /// <li><p><code>resizing</code></p></li>
+    /// <li><p><code>rotating-keys</code></p></li>
+    /// <li><p><code>storage-full</code></p></li>
+    /// <li><p><code>updating-hsm</code></p></li>
     /// </ul>
     pub fn cluster_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The current state of the cluster. Possible values are the following:</p>
+    /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-    /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-    /// <li> <p> <code>cancelling-resize</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>final-snapshot</code> </p> </li>
-    /// <li> <p> <code>hardware-failure</code> </p> </li>
-    /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-    /// <li> <p> <code>incompatible-network</code> </p> </li>
-    /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-    /// <li> <p> <code>incompatible-restore</code> </p> </li>
-    /// <li> <p> <code>modifying</code> </p> </li>
-    /// <li> <p> <code>paused</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>renaming</code> </p> </li>
-    /// <li> <p> <code>resizing</code> </p> </li>
-    /// <li> <p> <code>rotating-keys</code> </p> </li>
-    /// <li> <p> <code>storage-full</code> </p> </li>
-    /// <li> <p> <code>updating-hsm</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>available, prep-for-resize</code></p></li>
+    /// <li><p><code>available, resize-cleanup</code></p></li>
+    /// <li><p><code>cancelling-resize</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>final-snapshot</code></p></li>
+    /// <li><p><code>hardware-failure</code></p></li>
+    /// <li><p><code>incompatible-hsm</code></p></li>
+    /// <li><p><code>incompatible-network</code></p></li>
+    /// <li><p><code>incompatible-parameters</code></p></li>
+    /// <li><p><code>incompatible-restore</code></p></li>
+    /// <li><p><code>modifying</code></p></li>
+    /// <li><p><code>paused</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>renaming</code></p></li>
+    /// <li><p><code>resizing</code></p></li>
+    /// <li><p><code>rotating-keys</code></p></li>
+    /// <li><p><code>storage-full</code></p></li>
+    /// <li><p><code>updating-hsm</code></p></li>
     /// </ul>
     pub fn set_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_status = input;
         self
     }
-    /// <p> The current state of the cluster. Possible values are the following:</p>
+    /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-    /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-    /// <li> <p> <code>cancelling-resize</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>final-snapshot</code> </p> </li>
-    /// <li> <p> <code>hardware-failure</code> </p> </li>
-    /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-    /// <li> <p> <code>incompatible-network</code> </p> </li>
-    /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-    /// <li> <p> <code>incompatible-restore</code> </p> </li>
-    /// <li> <p> <code>modifying</code> </p> </li>
-    /// <li> <p> <code>paused</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>renaming</code> </p> </li>
-    /// <li> <p> <code>resizing</code> </p> </li>
-    /// <li> <p> <code>rotating-keys</code> </p> </li>
-    /// <li> <p> <code>storage-full</code> </p> </li>
-    /// <li> <p> <code>updating-hsm</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>available, prep-for-resize</code></p></li>
+    /// <li><p><code>available, resize-cleanup</code></p></li>
+    /// <li><p><code>cancelling-resize</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>final-snapshot</code></p></li>
+    /// <li><p><code>hardware-failure</code></p></li>
+    /// <li><p><code>incompatible-hsm</code></p></li>
+    /// <li><p><code>incompatible-network</code></p></li>
+    /// <li><p><code>incompatible-parameters</code></p></li>
+    /// <li><p><code>incompatible-restore</code></p></li>
+    /// <li><p><code>modifying</code></p></li>
+    /// <li><p><code>paused</code></p></li>
+    /// <li><p><code>rebooting</code></p></li>
+    /// <li><p><code>renaming</code></p></li>
+    /// <li><p><code>resizing</code></p></li>
+    /// <li><p><code>rotating-keys</code></p></li>
+    /// <li><p><code>storage-full</code></p></li>
+    /// <li><p><code>updating-hsm</code></p></li>
     /// </ul>
     pub fn get_cluster_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_status
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>Available - The cluster is available for queries. </p> </li>
-    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+    /// <li><p>Available - The cluster is available for queries.</p></li>
+    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn cluster_availability_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_availability_status = ::std::option::Option::Some(input.into());
@@ -662,11 +662,11 @@ impl ClusterBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>Available - The cluster is available for queries. </p> </li>
-    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+    /// <li><p>Available - The cluster is available for queries.</p></li>
+    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn set_cluster_availability_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_availability_status = input;
@@ -674,11 +674,11 @@ impl ClusterBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>Available - The cluster is available for queries. </p> </li>
-    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+    /// <li><p>Available - The cluster is available for queries.</p></li>
+    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn get_cluster_availability_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_availability_status
@@ -697,31 +697,31 @@ impl ClusterBuilder {
     pub fn get_modify_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.modify_status
     }
-    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
+    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter.</p>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
+    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter.</p>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
-    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
+    /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter.</p>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
     }
-    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
+    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
+    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
     }
-    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
+    /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_name
     }
@@ -788,16 +788,16 @@ impl ClusterBuilder {
     ///
     /// To override the contents of this collection use [`set_cluster_security_groups`](Self::set_cluster_security_groups).
     ///
-    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
-    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
+    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements.</p>
+    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter.</p>
     pub fn cluster_security_groups(mut self, input: crate::types::ClusterSecurityGroupMembership) -> Self {
         let mut v = self.cluster_security_groups.unwrap_or_default();
         v.push(input);
         self.cluster_security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
-    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
+    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements.</p>
+    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter.</p>
     pub fn set_cluster_security_groups(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroupMembership>>,
@@ -805,8 +805,8 @@ impl ClusterBuilder {
         self.cluster_security_groups = input;
         self
     }
-    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
-    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
+    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements.</p>
+    /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter.</p>
     pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroupMembership>> {
         &self.cluster_security_groups
     }
@@ -934,17 +934,17 @@ impl ClusterBuilder {
     pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_version
     }
-    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
+    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
     pub fn allow_version_upgrade(mut self, input: bool) -> Self {
         self.allow_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
+    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
     pub fn set_allow_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_version_upgrade = input;
         self
     }
-    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
+    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
     pub fn get_allow_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.allow_version_upgrade
     }
@@ -1146,21 +1146,21 @@ impl ClusterBuilder {
         &self.kms_key_id
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.enhanced_vpc_routing = ::std::option::Option::Some(input);
         self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
         &self.enhanced_vpc_routing
@@ -1219,17 +1219,17 @@ impl ClusterBuilder {
     pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_track_name
     }
-    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
+    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method.</p>
     pub fn elastic_resize_number_of_node_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_resize_number_of_node_options = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
+    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method.</p>
     pub fn set_elastic_resize_number_of_node_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_resize_number_of_node_options = input;
         self
     }
-    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
+    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method.</p>
     pub fn get_elastic_resize_number_of_node_options(&self) -> &::std::option::Option<::std::string::String> {
         &self.elastic_resize_number_of_node_options
     }
@@ -1284,42 +1284,42 @@ impl ClusterBuilder {
     pub fn get_snapshot_schedule_state(&self) -> &::std::option::Option<crate::types::ScheduleState> {
         &self.snapshot_schedule_state
     }
-    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
+    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled.</p>
     pub fn expected_next_snapshot_schedule_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expected_next_snapshot_schedule_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
+    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled.</p>
     pub fn set_expected_next_snapshot_schedule_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expected_next_snapshot_schedule_time = input;
         self
     }
-    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
+    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled.</p>
     pub fn get_expected_next_snapshot_schedule_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expected_next_snapshot_schedule_time
     }
-    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
+    /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub fn expected_next_snapshot_schedule_time_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
+    /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub fn set_expected_next_snapshot_schedule_time_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time_status = input;
         self
     }
-    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
+    /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub fn get_expected_next_snapshot_schedule_time_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_next_snapshot_schedule_time_status
@@ -1340,8 +1340,8 @@ impl ClusterBuilder {
     }
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-    /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li><p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub fn resize_info(mut self, input: crate::types::ResizeInfo) -> Self {
         self.resize_info = ::std::option::Option::Some(input);
@@ -1349,8 +1349,8 @@ impl ClusterBuilder {
     }
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-    /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li><p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub fn set_resize_info(mut self, input: ::std::option::Option<crate::types::ResizeInfo>) -> Self {
         self.resize_info = input;
@@ -1358,8 +1358,8 @@ impl ClusterBuilder {
     }
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-    /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li><p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub fn get_resize_info(&self) -> &::std::option::Option<crate::types::ResizeInfo> {
         &self.resize_info
@@ -1392,17 +1392,17 @@ impl ClusterBuilder {
     pub fn get_cluster_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_namespace_arn
     }
-    /// <p>The total storage capacity of the cluster in megabytes. </p>
+    /// <p>The total storage capacity of the cluster in megabytes.</p>
     pub fn total_storage_capacity_in_mega_bytes(mut self, input: i64) -> Self {
         self.total_storage_capacity_in_mega_bytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total storage capacity of the cluster in megabytes. </p>
+    /// <p>The total storage capacity of the cluster in megabytes.</p>
     pub fn set_total_storage_capacity_in_mega_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_storage_capacity_in_mega_bytes = input;
         self
     }
-    /// <p>The total storage capacity of the cluster in megabytes. </p>
+    /// <p>The total storage capacity of the cluster in megabytes.</p>
     pub fn get_total_storage_capacity_in_mega_bytes(&self) -> &::std::option::Option<i64> {
         &self.total_storage_capacity_in_mega_bytes
     }

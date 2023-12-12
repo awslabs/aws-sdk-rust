@@ -125,17 +125,17 @@ impl AssociateTrafficDistributionGroupUserFluentBuilder {
     pub fn get_traffic_distribution_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_traffic_distribution_group_id()
     }
-    /// <p>The identifier of the user account. This can be the ID or the ARN of the user. </p>
+    /// <p>The identifier of the user account. This can be the ID or the ARN of the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The identifier of the user account. This can be the ID or the ARN of the user. </p>
+    /// <p>The identifier of the user account. This can be the ID or the ARN of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>The identifier of the user account. This can be the ID or the ARN of the user. </p>
+    /// <p>The identifier of the user account. This can be the ID or the ARN of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

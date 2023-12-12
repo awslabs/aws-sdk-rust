@@ -22,7 +22,7 @@ impl DescribeConfigurationAggregatorsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeConfigurationAggregators`.
 ///
-/// <p>Returns the details of one or more configuration aggregators. If the configuration aggregator is not specified, this action returns the details for all the configuration aggregators associated with the account. </p>
+/// <p>Returns the details of one or more configuration aggregators. If the configuration aggregator is not specified, this action returns the details for all the configuration aggregators associated with the account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

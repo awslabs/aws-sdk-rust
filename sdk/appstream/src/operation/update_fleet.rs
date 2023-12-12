@@ -249,7 +249,7 @@ pub enum UpdateFleetError {
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The image can't be updated because it's not compatible for updates.</p>
     IncompatibleImageException(crate::types::error::IncompatibleImageException),
-    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>
+    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support.</p>
     InvalidAccountStatusException(crate::types::error::InvalidAccountStatusException),
     /// <p>Indicates an incorrect combination of parameters, or a missing parameter.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),

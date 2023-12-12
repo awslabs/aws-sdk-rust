@@ -7,7 +7,7 @@ pub struct StartTextTranslationJobInput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the format and location of the input documents for the translation job.</p>
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
-    /// <p>Specifies the S3 folder to which your job output will be saved. </p>
+    /// <p>Specifies the S3 folder to which your job output will be saved.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct StartTextTranslationJobInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
     pub terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
-    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.</p>
     /// <p>This parameter accepts only one parallel data resource.</p> <note>
     /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
@@ -34,9 +34,9 @@ pub struct StartTextTranslationJobInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li> <p>Brevity: not supported.</p> </li>
-    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
-    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// <li><p>Brevity: not supported.</p></li>
+    /// <li><p>Formality: sets the formality level of the output text.</p></li>
+    /// <li><p>Profanity: masks profane words and phrases in your translation output.</p></li>
     /// </ul>
     pub settings: ::std::option::Option<crate::types::TranslationSettings>,
 }
@@ -49,7 +49,7 @@ impl StartTextTranslationJobInput {
     pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>Specifies the S3 folder to which your job output will be saved. </p>
+    /// <p>Specifies the S3 folder to which your job output will be saved.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -79,7 +79,7 @@ impl StartTextTranslationJobInput {
         self.terminology_names.as_deref().unwrap_or_default()
     }
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
-    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.</p>
     /// <p>This parameter accepts only one parallel data resource.</p> <note>
     /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
@@ -96,9 +96,9 @@ impl StartTextTranslationJobInput {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li> <p>Brevity: not supported.</p> </li>
-    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
-    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// <li><p>Brevity: not supported.</p></li>
+    /// <li><p>Formality: sets the formality level of the output text.</p></li>
+    /// <li><p>Profanity: masks profane words and phrases in your translation output.</p></li>
     /// </ul>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
         self.settings.as_ref()
@@ -156,18 +156,18 @@ impl StartTextTranslationJobInputBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
         &self.input_data_config
     }
-    /// <p>Specifies the S3 folder to which your job output will be saved. </p>
+    /// <p>Specifies the S3 folder to which your job output will be saved.</p>
     /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the S3 folder to which your job output will be saved. </p>
+    /// <p>Specifies the S3 folder to which your job output will be saved.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
-    /// <p>Specifies the S3 folder to which your job output will be saved. </p>
+    /// <p>Specifies the S3 folder to which your job output will be saved.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         &self.output_data_config
     }
@@ -261,7 +261,7 @@ impl StartTextTranslationJobInputBuilder {
     /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).
     ///
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
-    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.</p>
     /// <p>This parameter accepts only one parallel data resource.</p> <note>
     /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
@@ -274,7 +274,7 @@ impl StartTextTranslationJobInputBuilder {
         self
     }
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
-    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.</p>
     /// <p>This parameter accepts only one parallel data resource.</p> <note>
     /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
@@ -285,7 +285,7 @@ impl StartTextTranslationJobInputBuilder {
         self
     }
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
-    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.</p>
     /// <p>This parameter accepts only one parallel data resource.</p> <note>
     /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
@@ -311,9 +311,9 @@ impl StartTextTranslationJobInputBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li> <p>Brevity: not supported.</p> </li>
-    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
-    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// <li><p>Brevity: not supported.</p></li>
+    /// <li><p>Formality: sets the formality level of the output text.</p></li>
+    /// <li><p>Profanity: masks profane words and phrases in your translation output.</p></li>
     /// </ul>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -321,9 +321,9 @@ impl StartTextTranslationJobInputBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li> <p>Brevity: not supported.</p> </li>
-    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
-    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// <li><p>Brevity: not supported.</p></li>
+    /// <li><p>Formality: sets the formality level of the output text.</p></li>
+    /// <li><p>Profanity: masks profane words and phrases in your translation output.</p></li>
     /// </ul>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.settings = input;
@@ -331,9 +331,9 @@ impl StartTextTranslationJobInputBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li> <p>Brevity: not supported.</p> </li>
-    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
-    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// <li><p>Brevity: not supported.</p></li>
+    /// <li><p>Formality: sets the formality level of the output text.</p></li>
+    /// <li><p>Profanity: masks profane words and phrases in your translation output.</p></li>
     /// </ul>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
         &self.settings

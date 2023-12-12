@@ -6,7 +6,7 @@ pub struct GetRelationalDatabaseEventsInput {
     /// <p>The name of the database from which to get events.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
-    /// <p>Default: <code>60</code> </p>
+    /// <p>Default: <code>60</code></p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
     pub duration_in_minutes: ::std::option::Option<i32>,
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -19,7 +19,7 @@ impl GetRelationalDatabaseEventsInput {
         self.relational_database_name.as_deref()
     }
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
-    /// <p>Default: <code>60</code> </p>
+    /// <p>Default: <code>60</code></p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
     pub fn duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.duration_in_minutes
@@ -62,21 +62,21 @@ impl GetRelationalDatabaseEventsInputBuilder {
         &self.relational_database_name
     }
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
-    /// <p>Default: <code>60</code> </p>
+    /// <p>Default: <code>60</code></p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
         self.duration_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
-    /// <p>Default: <code>60</code> </p>
+    /// <p>Default: <code>60</code></p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_minutes = input;
         self
     }
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
-    /// <p>Default: <code>60</code> </p>
+    /// <p>Default: <code>60</code></p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.duration_in_minutes

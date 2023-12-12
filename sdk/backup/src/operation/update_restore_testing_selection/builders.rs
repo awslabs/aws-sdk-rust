@@ -23,7 +23,7 @@ impl UpdateRestoreTestingSelectionInputBuilder {
 /// Fluent builder constructing a request to `UpdateRestoreTestingSelection`.
 ///
 /// <p>Most elements except the <code>RestoreTestingSelectionName</code> can be updated with this request.</p>
-/// <p> <code>RestoreTestingSelection</code> can use either protected resource ARNs or conditions, but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.</p>
+/// <p><code>RestoreTestingSelection</code> can use either protected resource ARNs or conditions, but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRestoreTestingSelectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

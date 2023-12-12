@@ -22,7 +22,7 @@ impl ListChannelsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChannels`.
 ///
-/// <p> Lists the channels in the current account, and their source names. </p>
+/// <p>Lists the channels in the current account, and their source names.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChannelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListChannelsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_channels::paginator::ListChannelsPaginator {
         crate::operation::list_channels::paginator::ListChannelsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
+    /// <p>The maximum number of CloudTrail channels to display on a single page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
+    /// <p>The maximum number of CloudTrail channels to display on a single page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
+    /// <p>The maximum number of CloudTrail channels to display on a single page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

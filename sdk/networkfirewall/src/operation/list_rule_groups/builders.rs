@@ -22,7 +22,7 @@ impl ListRuleGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRuleGroups`.
 ///
-/// <p>Retrieves the metadata for the rule groups that you have defined. Depending on your setting for max results and the number of rule groups, a single call might not return the full list. </p>
+/// <p>Retrieves the metadata for the rule groups that you have defined. Depending on your setting for max results and the number of rule groups, a single call might not return the full list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRuleGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

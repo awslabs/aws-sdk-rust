@@ -10,7 +10,7 @@ pub struct StreamInfo {
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>MediaType</code> of the stream. </p>
+    /// <p>The <code>MediaType</code> of the stream.</p>
     pub media_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl StreamInfo {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
-    /// <p>The <code>MediaType</code> of the stream. </p>
+    /// <p>The <code>MediaType</code> of the stream.</p>
     pub fn media_type(&self) -> ::std::option::Option<&str> {
         self.media_type.as_deref()
     }
@@ -125,17 +125,17 @@ impl StreamInfoBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
-    /// <p>The <code>MediaType</code> of the stream. </p>
+    /// <p>The <code>MediaType</code> of the stream.</p>
     pub fn media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>MediaType</code> of the stream. </p>
+    /// <p>The <code>MediaType</code> of the stream.</p>
     pub fn set_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_type = input;
         self
     }
-    /// <p>The <code>MediaType</code> of the stream. </p>
+    /// <p>The <code>MediaType</code> of the stream.</p>
     pub fn get_media_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.media_type
     }

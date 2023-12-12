@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBotAliasInput {
-    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// <p>The name of the alias to delete. The name is case sensitive.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot that the alias points to.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBotAliasInput {
-    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// <p>The name of the alias to delete. The name is case sensitive.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteBotAliasInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBotAliasInputBuilder {
-    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// <p>The name of the alias to delete. The name is case sensitive.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// <p>The name of the alias to delete. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// <p>The name of the alias to delete. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -5,7 +5,7 @@
 pub struct ListAssociatedAttributeGroupsOutput {
     /// <p>A list of attribute group IDs.</p>
     pub attribute_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListAssociatedAttributeGroupsOutput {
     pub fn attribute_groups(&self) -> &[::std::string::String] {
         self.attribute_groups.as_deref().unwrap_or_default()
     }
-    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListAssociatedAttributeGroupsOutputBuilder {
     pub fn get_attribute_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attribute_groups
     }
-    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

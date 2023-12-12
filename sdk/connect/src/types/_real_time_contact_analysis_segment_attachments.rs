@@ -10,7 +10,7 @@ pub struct RealTimeContactAnalysisSegmentAttachments {
     pub participant_id: ::std::string::String,
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
     pub participant_role: crate::types::ParticipantRole,
-    /// <p>The display name of the participant. Can be redacted. </p>
+    /// <p>The display name of the participant. Can be redacted.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>List of objects describing an individual attachment.</p>
     pub attachments: ::std::vec::Vec<crate::types::RealTimeContactAnalysisAttachment>,
@@ -32,7 +32,7 @@ impl RealTimeContactAnalysisSegmentAttachments {
     pub fn participant_role(&self) -> &crate::types::ParticipantRole {
         &self.participant_role
     }
-    /// <p>The display name of the participant. Can be redacted. </p>
+    /// <p>The display name of the participant. Can be redacted.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -110,17 +110,17 @@ impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
         &self.participant_role
     }
-    /// <p>The display name of the participant. Can be redacted. </p>
+    /// <p>The display name of the participant. Can be redacted.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name of the participant. Can be redacted. </p>
+    /// <p>The display name of the participant. Can be redacted.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The display name of the participant. Can be redacted. </p>
+    /// <p>The display name of the participant. Can be redacted.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

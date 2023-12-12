@@ -12,12 +12,12 @@ pub struct FeaturizationConfig {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li> <p>Minute - 1-59</p> </li>
-    /// <li> <p>Hour - 1-23</p> </li>
-    /// <li> <p>Day - 1-6</p> </li>
-    /// <li> <p>Week - 1-4</p> </li>
-    /// <li> <p>Month - 1-11</p> </li>
-    /// <li> <p>Year - 1</p> </li>
+    /// <li><p>Minute - 1-59</p></li>
+    /// <li><p>Hour - 1-23</p></li>
+    /// <li><p>Day - 1-6</p></li>
+    /// <li><p>Week - 1-4</p></li>
+    /// <li><p>Month - 1-11</p></li>
+    /// <li><p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -34,12 +34,12 @@ impl FeaturizationConfig {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li> <p>Minute - 1-59</p> </li>
-    /// <li> <p>Hour - 1-23</p> </li>
-    /// <li> <p>Day - 1-6</p> </li>
-    /// <li> <p>Week - 1-4</p> </li>
-    /// <li> <p>Month - 1-11</p> </li>
-    /// <li> <p>Year - 1</p> </li>
+    /// <li><p>Minute - 1-59</p></li>
+    /// <li><p>Hour - 1-23</p></li>
+    /// <li><p>Day - 1-6</p></li>
+    /// <li><p>Week - 1-4</p></li>
+    /// <li><p>Month - 1-11</p></li>
+    /// <li><p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -82,12 +82,12 @@ impl FeaturizationConfigBuilder {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li> <p>Minute - 1-59</p> </li>
-    /// <li> <p>Hour - 1-23</p> </li>
-    /// <li> <p>Day - 1-6</p> </li>
-    /// <li> <p>Week - 1-4</p> </li>
-    /// <li> <p>Month - 1-11</p> </li>
-    /// <li> <p>Year - 1</p> </li>
+    /// <li><p>Minute - 1-59</p></li>
+    /// <li><p>Hour - 1-23</p></li>
+    /// <li><p>Day - 1-6</p></li>
+    /// <li><p>Week - 1-4</p></li>
+    /// <li><p>Month - 1-11</p></li>
+    /// <li><p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -100,12 +100,12 @@ impl FeaturizationConfigBuilder {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li> <p>Minute - 1-59</p> </li>
-    /// <li> <p>Hour - 1-23</p> </li>
-    /// <li> <p>Day - 1-6</p> </li>
-    /// <li> <p>Week - 1-4</p> </li>
-    /// <li> <p>Month - 1-11</p> </li>
-    /// <li> <p>Year - 1</p> </li>
+    /// <li><p>Minute - 1-59</p></li>
+    /// <li><p>Hour - 1-23</p></li>
+    /// <li><p>Day - 1-6</p></li>
+    /// <li><p>Week - 1-4</p></li>
+    /// <li><p>Month - 1-11</p></li>
+    /// <li><p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -117,12 +117,12 @@ impl FeaturizationConfigBuilder {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li> <p>Minute - 1-59</p> </li>
-    /// <li> <p>Hour - 1-23</p> </li>
-    /// <li> <p>Day - 1-6</p> </li>
-    /// <li> <p>Week - 1-4</p> </li>
-    /// <li> <p>Month - 1-11</p> </li>
-    /// <li> <p>Year - 1</p> </li>
+    /// <li><p>Minute - 1-59</p></li>
+    /// <li><p>Hour - 1-23</p></li>
+    /// <li><p>Day - 1-6</p></li>
+    /// <li><p>Week - 1-4</p></li>
+    /// <li><p>Month - 1-11</p></li>
+    /// <li><p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>

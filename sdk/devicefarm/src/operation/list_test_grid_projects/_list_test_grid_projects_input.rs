@@ -5,7 +5,7 @@
 pub struct ListTestGridProjectsInput {
     /// <p>Return no more than this number of results.</p>
     pub max_result: ::std::option::Option<i32>,
-    /// <p>From a response, used to continue a paginated listing. </p>
+    /// <p>From a response, used to continue a paginated listing.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTestGridProjectsInput {
@@ -13,7 +13,7 @@ impl ListTestGridProjectsInput {
     pub fn max_result(&self) -> ::std::option::Option<i32> {
         self.max_result
     }
-    /// <p>From a response, used to continue a paginated listing. </p>
+    /// <p>From a response, used to continue a paginated listing.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,17 +47,17 @@ impl ListTestGridProjectsInputBuilder {
     pub fn get_max_result(&self) -> &::std::option::Option<i32> {
         &self.max_result
     }
-    /// <p>From a response, used to continue a paginated listing. </p>
+    /// <p>From a response, used to continue a paginated listing.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>From a response, used to continue a paginated listing. </p>
+    /// <p>From a response, used to continue a paginated listing.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>From a response, used to continue a paginated listing. </p>
+    /// <p>From a response, used to continue a paginated listing.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

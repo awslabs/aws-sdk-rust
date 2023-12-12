@@ -22,7 +22,7 @@ impl AssociateResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateResource`.
 ///
-/// <p>Associates a canary with a group. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group. </p>
+/// <p>Associates a canary with a group. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group.</p>
 /// <p>You must run this operation in the Region where the canary exists.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateResourceFluentBuilder {

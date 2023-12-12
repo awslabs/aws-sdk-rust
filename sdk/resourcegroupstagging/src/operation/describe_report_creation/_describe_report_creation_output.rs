@@ -6,15 +6,15 @@ pub struct DescribeReportCreationOutput {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
-    /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
+    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the report was stored on creation.</p>
     pub s3_location: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time that the report was started. </p>
+    /// <p>The date and time that the report was started.</p>
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>Details of the common errors that all operations return.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
@@ -24,10 +24,10 @@ impl DescribeReportCreationOutput {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
-    /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
+    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -36,7 +36,7 @@ impl DescribeReportCreationOutput {
     pub fn s3_location(&self) -> ::std::option::Option<&str> {
         self.s3_location.as_deref()
     }
-    /// <p>The date and time that the report was started. </p>
+    /// <p>The date and time that the report was started.</p>
     pub fn start_date(&self) -> ::std::option::Option<&str> {
         self.start_date.as_deref()
     }
@@ -71,10 +71,10 @@ impl DescribeReportCreationOutputBuilder {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
-    /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
+    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -83,10 +83,10 @@ impl DescribeReportCreationOutputBuilder {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
-    /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
+    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -95,10 +95,10 @@ impl DescribeReportCreationOutputBuilder {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
-    /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
+    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -117,17 +117,17 @@ impl DescribeReportCreationOutputBuilder {
     pub fn get_s3_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_location
     }
-    /// <p>The date and time that the report was started. </p>
+    /// <p>The date and time that the report was started.</p>
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time that the report was started. </p>
+    /// <p>The date and time that the report was started.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_date = input;
         self
     }
-    /// <p>The date and time that the report was started. </p>
+    /// <p>The date and time that the report was started.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_date
     }

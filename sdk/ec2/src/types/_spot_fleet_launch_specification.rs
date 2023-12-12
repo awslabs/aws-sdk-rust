@@ -11,7 +11,7 @@ pub struct SpotFleetLaunchSpecification {
     /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The IAM instance profile.</p>
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
@@ -26,7 +26,7 @@ pub struct SpotFleetLaunchSpecification {
     /// <p>Enable or disable monitoring for the instances.</p>
     pub monitoring: ::std::option::Option<crate::types::SpotFleetMonitoring>,
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
-    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The placement information.</p>
@@ -69,7 +69,7 @@ impl SpotFleetLaunchSpecification {
         self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
@@ -98,7 +98,7 @@ impl SpotFleetLaunchSpecification {
         self.monitoring.as_ref()
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
-    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
@@ -257,19 +257,19 @@ impl SpotFleetLaunchSpecificationBuilder {
         &self.block_device_mappings
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.ebs_optimized = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
         &self.ebs_optimized
     }
@@ -362,7 +362,7 @@ impl SpotFleetLaunchSpecificationBuilder {
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
-    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
@@ -371,7 +371,7 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
-    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     pub fn set_network_interfaces(
         mut self,
@@ -381,7 +381,7 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
-    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
         &self.network_interfaces

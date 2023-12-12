@@ -15,22 +15,22 @@ pub struct ScalingPolicy {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+    /// <li><p><b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p></li>
+    /// <li><p><b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li><p><b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ScalingStatusType>,
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
     pub scaling_adjustment: ::std::option::Option<i32>,
     /// <p>The type of adjustment to make to a fleet's instance count.</p>
     /// <ul>
-    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+    /// <li><p><b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p></li>
+    /// <li><p><b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p></li>
+    /// <li><p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p></li>
     /// </ul>
     pub scaling_adjustment_type: ::std::option::Option<crate::types::ScalingAdjustmentType>,
     /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
@@ -39,19 +39,19 @@ pub struct ScalingPolicy {
     pub threshold: ::std::option::Option<f64>,
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub evaluation_periods: ::std::option::Option<i32>,
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
     /// <ul>
-    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+    /// <li><p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
+    /// <li><p><b>ActiveGameSessions</b> -- Game sessions that are currently running.</p></li>
+    /// <li><p><b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p></li>
+    /// <li><p><b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p></li>
+    /// <li><p><b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p></li>
+    /// <li><p><b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player.</p></li>
+    /// <li><p><b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.</p></li>
+    /// <li><p><b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p></li>
+    /// <li><p><b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p></li>
+    /// <li><p><b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
+    /// <li><p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
     pub metric_name: ::std::option::Option<crate::types::MetricName>,
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
@@ -60,7 +60,7 @@ pub struct ScalingPolicy {
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub update_status: ::std::option::Option<crate::types::LocationUpdateStatus>,
-    /// <p> The fleet location. </p>
+    /// <p>The fleet location.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl ScalingPolicy {
@@ -81,13 +81,13 @@ impl ScalingPolicy {
     }
     /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+    /// <li><p><b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p></li>
+    /// <li><p><b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li><p><b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ScalingStatusType> {
         self.status.as_ref()
@@ -98,9 +98,9 @@ impl ScalingPolicy {
     }
     /// <p>The type of adjustment to make to a fleet's instance count.</p>
     /// <ul>
-    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+    /// <li><p><b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p></li>
+    /// <li><p><b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p></li>
+    /// <li><p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p></li>
     /// </ul>
     pub fn scaling_adjustment_type(&self) -> ::std::option::Option<&crate::types::ScalingAdjustmentType> {
         self.scaling_adjustment_type.as_ref()
@@ -117,19 +117,19 @@ impl ScalingPolicy {
     pub fn evaluation_periods(&self) -> ::std::option::Option<i32> {
         self.evaluation_periods
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
     /// <ul>
-    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+    /// <li><p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
+    /// <li><p><b>ActiveGameSessions</b> -- Game sessions that are currently running.</p></li>
+    /// <li><p><b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p></li>
+    /// <li><p><b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p></li>
+    /// <li><p><b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p></li>
+    /// <li><p><b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player.</p></li>
+    /// <li><p><b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.</p></li>
+    /// <li><p><b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p></li>
+    /// <li><p><b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p></li>
+    /// <li><p><b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
+    /// <li><p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
     pub fn metric_name(&self) -> ::std::option::Option<&crate::types::MetricName> {
         self.metric_name.as_ref()
@@ -146,7 +146,7 @@ impl ScalingPolicy {
     pub fn update_status(&self) -> ::std::option::Option<&crate::types::LocationUpdateStatus> {
         self.update_status.as_ref()
     }
-    /// <p> The fleet location. </p>
+    /// <p>The fleet location.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -231,13 +231,13 @@ impl ScalingPolicyBuilder {
     }
     /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+    /// <li><p><b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p></li>
+    /// <li><p><b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li><p><b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ScalingStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -245,13 +245,13 @@ impl ScalingPolicyBuilder {
     }
     /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+    /// <li><p><b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p></li>
+    /// <li><p><b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li><p><b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ScalingStatusType>) -> Self {
         self.status = input;
@@ -259,13 +259,13 @@ impl ScalingPolicyBuilder {
     }
     /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p> </li>
-    /// <li> <p> <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
-    /// <li> <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
-    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
-    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
-    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
+    /// <li><p><b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.</p></li>
+    /// <li><p><b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li><p><b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ScalingStatusType> {
         &self.status
@@ -286,9 +286,9 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The type of adjustment to make to a fleet's instance count.</p>
     /// <ul>
-    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+    /// <li><p><b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p></li>
+    /// <li><p><b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p></li>
+    /// <li><p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p></li>
     /// </ul>
     pub fn scaling_adjustment_type(mut self, input: crate::types::ScalingAdjustmentType) -> Self {
         self.scaling_adjustment_type = ::std::option::Option::Some(input);
@@ -296,9 +296,9 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The type of adjustment to make to a fleet's instance count.</p>
     /// <ul>
-    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+    /// <li><p><b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p></li>
+    /// <li><p><b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p></li>
+    /// <li><p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p></li>
     /// </ul>
     pub fn set_scaling_adjustment_type(mut self, input: ::std::option::Option<crate::types::ScalingAdjustmentType>) -> Self {
         self.scaling_adjustment_type = input;
@@ -306,9 +306,9 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The type of adjustment to make to a fleet's instance count.</p>
     /// <ul>
-    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
-    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
-    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p> </li>
+    /// <li><p><b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p></li>
+    /// <li><p><b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p></li>
+    /// <li><p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p></li>
     /// </ul>
     pub fn get_scaling_adjustment_type(&self) -> &::std::option::Option<crate::types::ScalingAdjustmentType> {
         &self.scaling_adjustment_type
@@ -355,55 +355,55 @@ impl ScalingPolicyBuilder {
     pub fn get_evaluation_periods(&self) -> &::std::option::Option<i32> {
         &self.evaluation_periods
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
     /// <ul>
-    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+    /// <li><p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
+    /// <li><p><b>ActiveGameSessions</b> -- Game sessions that are currently running.</p></li>
+    /// <li><p><b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p></li>
+    /// <li><p><b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p></li>
+    /// <li><p><b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p></li>
+    /// <li><p><b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player.</p></li>
+    /// <li><p><b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.</p></li>
+    /// <li><p><b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p></li>
+    /// <li><p><b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p></li>
+    /// <li><p><b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
+    /// <li><p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
     pub fn metric_name(mut self, input: crate::types::MetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
     /// <ul>
-    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+    /// <li><p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
+    /// <li><p><b>ActiveGameSessions</b> -- Game sessions that are currently running.</p></li>
+    /// <li><p><b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p></li>
+    /// <li><p><b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p></li>
+    /// <li><p><b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p></li>
+    /// <li><p><b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player.</p></li>
+    /// <li><p><b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.</p></li>
+    /// <li><p><b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p></li>
+    /// <li><p><b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p></li>
+    /// <li><p><b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
+    /// <li><p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
         self.metric_name = input;
         self
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
     /// <ul>
-    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
-    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
-    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
-    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
-    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
-    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
-    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
-    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
-    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
-    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
-    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
+    /// <li><p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
+    /// <li><p><b>ActiveGameSessions</b> -- Game sessions that are currently running.</p></li>
+    /// <li><p><b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p></li>
+    /// <li><p><b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p></li>
+    /// <li><p><b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p></li>
+    /// <li><p><b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player.</p></li>
+    /// <li><p><b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.</p></li>
+    /// <li><p><b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p></li>
+    /// <li><p><b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p></li>
+    /// <li><p><b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
+    /// <li><p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::MetricName> {
         &self.metric_name
@@ -450,17 +450,17 @@ impl ScalingPolicyBuilder {
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::LocationUpdateStatus> {
         &self.update_status
     }
-    /// <p> The fleet location. </p>
+    /// <p>The fleet location.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The fleet location. </p>
+    /// <p>The fleet location.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p> The fleet location. </p>
+    /// <p>The fleet location.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersOutput {
-    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub engine_defaults: ::std::option::Option<crate::types::EngineDefaults>,
     _request_id: Option<String>,
 }
 impl DescribeEngineDefaultParametersOutput {
-    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub fn engine_defaults(&self) -> ::std::option::Option<&crate::types::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeEngineDefaultParametersOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeEngineDefaultParametersOutputBuilder {
-    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub fn engine_defaults(mut self, input: crate::types::EngineDefaults) -> Self {
         self.engine_defaults = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub fn set_engine_defaults(mut self, input: ::std::option::Option<crate::types::EngineDefaults>) -> Self {
         self.engine_defaults = input;
         self
     }
-    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub fn get_engine_defaults(&self) -> &::std::option::Option<crate::types::EngineDefaults> {
         &self.engine_defaults
     }

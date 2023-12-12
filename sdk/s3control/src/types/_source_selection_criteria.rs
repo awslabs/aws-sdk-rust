@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceSelectionCriteria {
-    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p> <note>
+    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub sse_kms_encrypted_objects: ::std::option::Option<crate::types::SseKmsEncryptedObjects>,
@@ -15,7 +15,7 @@ pub struct SourceSelectionCriteria {
     pub replica_modifications: ::std::option::Option<crate::types::ReplicaModifications>,
 }
 impl SourceSelectionCriteria {
-    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p> <note>
+    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn sse_kms_encrypted_objects(&self) -> ::std::option::Option<&crate::types::SseKmsEncryptedObjects> {
@@ -44,21 +44,21 @@ pub struct SourceSelectionCriteriaBuilder {
     pub(crate) replica_modifications: ::std::option::Option<crate::types::ReplicaModifications>,
 }
 impl SourceSelectionCriteriaBuilder {
-    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p> <note>
+    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn sse_kms_encrypted_objects(mut self, input: crate::types::SseKmsEncryptedObjects) -> Self {
         self.sse_kms_encrypted_objects = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p> <note>
+    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn set_sse_kms_encrypted_objects(mut self, input: ::std::option::Option<crate::types::SseKmsEncryptedObjects>) -> Self {
         self.sse_kms_encrypted_objects = input;
         self
     }
-    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p> <note>
+    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn get_sse_kms_encrypted_objects(&self) -> &::std::option::Option<crate::types::SseKmsEncryptedObjects> {

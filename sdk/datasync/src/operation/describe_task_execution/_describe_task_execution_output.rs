@@ -4,10 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskExecutionOutput {
-    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
-    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
+    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
+    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the task execution. </p>
+    /// <p>The status of the task execution.</p>
     pub status: ::std::option::Option<crate::types::TaskExecutionStatus>,
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
@@ -18,7 +18,7 @@ pub struct DescribeTaskExecutionOutput {
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>The time when the task execution started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred. </p>
+    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
     pub estimated_files_to_transfer: i64,
     /// <p>The estimated physical number of bytes that will transfer over the network.</p>
     pub estimated_bytes_to_transfer: i64,
@@ -27,7 +27,7 @@ pub struct DescribeTaskExecutionOutput {
     pub files_transferred: i64,
     /// <p>The number of logical bytes written to the destination location.</p>
     pub bytes_written: i64,
-    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
+    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>.</p>
     pub bytes_transferred: i64,
     /// <p>The result of the task execution.</p>
     pub result: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
@@ -50,12 +50,12 @@ pub struct DescribeTaskExecutionOutput {
     _request_id: Option<String>,
 }
 impl DescribeTaskExecutionOutput {
-    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
-    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
+    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
+    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
     pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
-    /// <p>The status of the task execution. </p>
+    /// <p>The status of the task execution.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TaskExecutionStatus> {
         self.status.as_ref()
     }
@@ -80,7 +80,7 @@ impl DescribeTaskExecutionOutput {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred. </p>
+    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
     pub fn estimated_files_to_transfer(&self) -> i64 {
         self.estimated_files_to_transfer
     }
@@ -97,7 +97,7 @@ impl DescribeTaskExecutionOutput {
     pub fn bytes_written(&self) -> i64 {
         self.bytes_written
     }
-    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
+    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>.</p>
     pub fn bytes_transferred(&self) -> i64 {
         self.bytes_transferred
     }
@@ -174,34 +174,34 @@ pub struct DescribeTaskExecutionOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeTaskExecutionOutputBuilder {
-    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
-    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
+    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
+    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
     pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
-    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
+    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
+    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
     pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_execution_arn = input;
         self
     }
-    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
-    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
+    /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
+    /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
     pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_execution_arn
     }
-    /// <p>The status of the task execution. </p>
+    /// <p>The status of the task execution.</p>
     pub fn status(mut self, input: crate::types::TaskExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the task execution. </p>
+    /// <p>The status of the task execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the task execution. </p>
+    /// <p>The status of the task execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskExecutionStatus> {
         &self.status
     }
@@ -276,17 +276,17 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred. </p>
+    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
     pub fn estimated_files_to_transfer(mut self, input: i64) -> Self {
         self.estimated_files_to_transfer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred. </p>
+    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
     pub fn set_estimated_files_to_transfer(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_files_to_transfer = input;
         self
     }
-    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred. </p>
+    /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
     pub fn get_estimated_files_to_transfer(&self) -> &::std::option::Option<i64> {
         &self.estimated_files_to_transfer
     }
@@ -335,17 +335,17 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_bytes_written(&self) -> &::std::option::Option<i64> {
         &self.bytes_written
     }
-    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
+    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>.</p>
     pub fn bytes_transferred(mut self, input: i64) -> Self {
         self.bytes_transferred = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
+    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>.</p>
     pub fn set_bytes_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_transferred = input;
         self
     }
-    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
+    /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>.</p>
     pub fn get_bytes_transferred(&self) -> &::std::option::Option<i64> {
         &self.bytes_transferred
     }

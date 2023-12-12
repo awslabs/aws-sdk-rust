@@ -7,9 +7,9 @@ pub struct GetBotChannelAssociationsInput {
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub bot_alias: ::std::option::Option<::std::string::String>,
-    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of associations to return in the response. The default is 50. </p>
+    /// <p>The maximum number of associations to return in the response. The default is 50.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
@@ -23,11 +23,11 @@ impl GetBotChannelAssociationsInput {
     pub fn bot_alias(&self) -> ::std::option::Option<&str> {
         self.bot_alias.as_deref()
     }
-    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of associations to return in the response. The default is 50. </p>
+    /// <p>The maximum number of associations to return in the response. The default is 50.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -84,31 +84,31 @@ impl GetBotChannelAssociationsInputBuilder {
     pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_alias
     }
-    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of associations to return in the response. The default is 50. </p>
+    /// <p>The maximum number of associations to return in the response. The default is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of associations to return in the response. The default is 50. </p>
+    /// <p>The maximum number of associations to return in the response. The default is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of associations to return in the response. The default is 50. </p>
+    /// <p>The maximum number of associations to return in the response. The default is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

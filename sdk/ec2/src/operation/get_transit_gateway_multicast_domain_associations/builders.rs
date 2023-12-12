@@ -146,11 +146,11 @@ impl GetTransitGatewayMulticastDomainAssociationsFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
-    /// <li> <p> <code>resource-type</code> - The type of resource. The valid value is: <code>vpc</code>.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the subnet association. Valid values are <code>associated</code> | <code>associating</code> | <code>disassociated</code> | <code>disassociating</code>.</p> </li>
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li>
+    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li><p><code>resource-type</code> - The type of resource. The valid value is: <code>vpc</code>.</p></li>
+    /// <li><p><code>state</code> - The state of the subnet association. Valid values are <code>associated</code> | <code>associating</code> | <code>disassociated</code> | <code>disassociating</code>.</p></li>
+    /// <li><p><code>subnet-id</code> - The ID of the subnet.</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -158,11 +158,11 @@ impl GetTransitGatewayMulticastDomainAssociationsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
-    /// <li> <p> <code>resource-type</code> - The type of resource. The valid value is: <code>vpc</code>.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the subnet association. Valid values are <code>associated</code> | <code>associating</code> | <code>disassociated</code> | <code>disassociating</code>.</p> </li>
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li>
+    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li><p><code>resource-type</code> - The type of resource. The valid value is: <code>vpc</code>.</p></li>
+    /// <li><p><code>state</code> - The state of the subnet association. Valid values are <code>associated</code> | <code>associating</code> | <code>disassociated</code> | <code>disassociating</code>.</p></li>
+    /// <li><p><code>subnet-id</code> - The ID of the subnet.</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -170,11 +170,11 @@ impl GetTransitGatewayMulticastDomainAssociationsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
-    /// <li> <p> <code>resource-type</code> - The type of resource. The valid value is: <code>vpc</code>.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the subnet association. Valid values are <code>associated</code> | <code>associating</code> | <code>disassociated</code> | <code>disassociating</code>.</p> </li>
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li>
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li>
+    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li><p><code>resource-type</code> - The type of resource. The valid value is: <code>vpc</code>.</p></li>
+    /// <li><p><code>state</code> - The state of the subnet association. Valid values are <code>associated</code> | <code>associating</code> | <code>disassociated</code> | <code>disassociating</code>.</p></li>
+    /// <li><p><code>subnet-id</code> - The ID of the subnet.</p></li>
+    /// <li><p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

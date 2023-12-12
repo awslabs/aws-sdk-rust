@@ -9,8 +9,8 @@ pub struct CreateIntentInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza".</p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user..</p>
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
     /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
@@ -25,11 +25,11 @@ pub struct CreateIntentInput {
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p>For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.</p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
@@ -56,8 +56,8 @@ impl CreateIntentInput {
     pub fn parent_intent_signature(&self) -> ::std::option::Option<&str> {
         self.parent_intent_signature.as_deref()
     }
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza".</p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user..</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
     pub fn sample_utterances(&self) -> &[crate::types::SampleUtterance] {
@@ -84,7 +84,7 @@ impl CreateIntentInput {
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p>For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_contexts.is_none()`.
@@ -92,7 +92,7 @@ impl CreateIntentInput {
         self.input_contexts.as_deref().unwrap_or_default()
     }
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.</p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_contexts.is_none()`.
@@ -195,22 +195,22 @@ impl CreateIntentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
     ///
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza".</p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user..</p>
     pub fn sample_utterances(mut self, input: crate::types::SampleUtterance) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
         v.push(input);
         self.sample_utterances = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza".</p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user..</p>
     pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>) -> Self {
         self.sample_utterances = input;
         self
     }
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza".</p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user..</p>
     pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
         &self.sample_utterances
     }
@@ -283,7 +283,7 @@ impl CreateIntentInputBuilder {
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p>For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn input_contexts(mut self, input: crate::types::InputContext) -> Self {
         let mut v = self.input_contexts.unwrap_or_default();
@@ -294,7 +294,7 @@ impl CreateIntentInputBuilder {
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p>For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>) -> Self {
         self.input_contexts = input;
@@ -303,7 +303,7 @@ impl CreateIntentInputBuilder {
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p>For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
         &self.input_contexts
@@ -313,7 +313,7 @@ impl CreateIntentInputBuilder {
     /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
     ///
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.</p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn output_contexts(mut self, input: crate::types::OutputContext) -> Self {
         let mut v = self.output_contexts.unwrap_or_default();
@@ -322,14 +322,14 @@ impl CreateIntentInputBuilder {
         self
     }
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.</p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>) -> Self {
         self.output_contexts = input;
         self
     }
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.</p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
         &self.output_contexts

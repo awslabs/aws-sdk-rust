@@ -36,7 +36,7 @@ impl PutBucketLoggingInputBuilder {
 /// <dd>
 /// <p>You can specify the person (grantee) to whom you're assigning access rights (by using request elements) in the following ways:</p>
 /// <ul>
-/// <li> <p>By the person's ID:</p> <p> <code>
+/// <li><p>By the person's ID:</p> <p><code>
 /// <grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CanonicalUser">
 /// <id>
 /// &lt;&gt;ID&lt;&gt;
@@ -44,33 +44,33 @@ impl PutBucketLoggingInputBuilder {
 /// <displayname>
 /// &lt;&gt;GranteesEmail&lt;&gt;
 /// </displayname>
-/// </grantee></code> </p> <p> <code>DisplayName</code> is optional and ignored in the request.</p> </li>
-/// <li> <p>By Email address:</p> <p> <code>
+/// </grantee></code></p> <p><code>DisplayName</code> is optional and ignored in the request.</p></li>
+/// <li><p>By Email address:</p> <p><code>
 /// <grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail">
 /// <emailaddress>
 /// &lt;&gt;Grantees@email.com&lt;&gt;
 /// </emailaddress>
-/// </grantee></code> </p> <p>The grantee is resolved to the <code>CanonicalUser</code> and, in a response to a <code>GETObjectAcl</code> request, appears as the CanonicalUser.</p> </li>
-/// <li> <p>By URI:</p> <p> <code>
+/// </grantee></code></p> <p>The grantee is resolved to the <code>CanonicalUser</code> and, in a response to a <code>GETObjectAcl</code> request, appears as the CanonicalUser.</p></li>
+/// <li><p>By URI:</p> <p><code>
 /// <grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group">
 /// <uri>
 /// &lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;
 /// </uri>
-/// </grantee></code> </p> </li>
+/// </grantee></code></p></li>
 /// </ul>
 /// </dd>
 /// </dl>
 /// <p>To enable logging, you use <code>LoggingEnabled</code> and its children request elements. To disable logging, you use an empty <code>BucketLoggingStatus</code> request element:</p>
-/// <p> <code>
-/// <bucketloggingstatus xmlns="http://doc.s3.amazonaws.com/2006-03-01" /></code> </p>
-/// <p>For more information about server access logging, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html">Server Access Logging</a> in the <i>Amazon S3 User Guide</i>. </p>
+/// <p><code>
+/// <bucketloggingstatus xmlns="http://doc.s3.amazonaws.com/2006-03-01" /></code></p>
+/// <p>For more information about server access logging, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html">Server Access Logging</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <p>For more information about creating a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>. For more information about returning the logging status of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>.</p>
 /// <p>The following operations are related to <code>PutBucketLogging</code>:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketLoggingFluentBuilder {

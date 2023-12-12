@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`security_group_rule_ids(impl Into<String>)`](crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressFluentBuilder::security_group_rule_ids) / [`set_security_group_rule_ids(Option<Vec::<String>>)`](crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressFluentBuilder::set_security_group_rule_ids):<br>required: **false**<br><p>The IDs of the security group rules.</p><br>
     /// - On success, responds with [`RevokeSecurityGroupIngressOutput`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
-    ///   - [`unknown_ip_permissions(Option<Vec::<IpPermission>>)`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressOutput::unknown_ip_permissions): <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
+    ///   - [`unknown_ip_permissions(Option<Vec::<IpPermission>>)`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressOutput::unknown_ip_permissions): <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter.</p>
     /// - On failure, responds with [`SdkError<RevokeSecurityGroupIngressError>`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressError)
     pub fn revoke_security_group_ingress(
         &self,

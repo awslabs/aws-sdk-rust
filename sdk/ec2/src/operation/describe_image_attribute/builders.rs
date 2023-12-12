@@ -109,19 +109,19 @@ impl DescribeImageAttributeFluentBuilder {
         self
     }
     /// <p>The AMI attribute.</p>
-    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// <p><b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
     pub fn attribute(mut self, input: crate::types::ImageAttributeName) -> Self {
         self.inner = self.inner.attribute(input);
         self
     }
     /// <p>The AMI attribute.</p>
-    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// <p><b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ImageAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
     /// <p>The AMI attribute.</p>
-    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// <p><b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ImageAttributeName> {
         self.inner.get_attribute()
     }

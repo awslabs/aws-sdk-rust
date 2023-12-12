@@ -5,7 +5,7 @@
 pub struct ListPricesOutput {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
     pub prices: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>,
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     pub next_page_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -17,7 +17,7 @@ impl ListPricesOutput {
     pub fn prices(&self) -> &[crate::types::DomainPrice] {
         self.prices.as_deref().unwrap_or_default()
     }
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     pub fn next_page_marker(&self) -> ::std::option::Option<&str> {
         self.next_page_marker.as_deref()
@@ -64,19 +64,19 @@ impl ListPricesOutputBuilder {
     pub fn get_prices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>> {
         &self.prices
     }
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     pub fn next_page_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_marker = input;
         self
     }
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     pub fn get_next_page_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_marker

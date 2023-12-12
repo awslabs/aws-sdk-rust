@@ -11,7 +11,7 @@ pub struct ListImagesInput {
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only images modified on or before the specified time.</p>
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
+    /// <p>The maximum number of images to return in the response. The default value is 10.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter that returns only images whose name contains the specified string.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ impl ListImagesInput {
     pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
-    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
+    /// <p>The maximum number of images to return in the response. The default value is 10.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -138,17 +138,17 @@ impl ListImagesInputBuilder {
     pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
-    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
+    /// <p>The maximum number of images to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
+    /// <p>The maximum number of images to return in the response. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
+    /// <p>The maximum number of images to return in the response. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

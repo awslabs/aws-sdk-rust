@@ -22,7 +22,7 @@ impl PutGeofenceInputBuilder {
 }
 /// Fluent builder constructing a request to `PutGeofence`.
 ///
-/// <p>Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request. </p>
+/// <p>Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutGeofenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -161,7 +161,7 @@ impl PutGeofenceFluentBuilder {
     /// To override the contents of this collection use [`set_geofence_properties`](Self::set_geofence_properties).
     ///
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     pub fn geofence_properties(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -171,7 +171,7 @@ impl PutGeofenceFluentBuilder {
         self
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     pub fn set_geofence_properties(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -180,7 +180,7 @@ impl PutGeofenceFluentBuilder {
         self
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     pub fn get_geofence_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_geofence_properties()
     }

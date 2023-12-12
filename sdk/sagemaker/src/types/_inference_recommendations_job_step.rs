@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceRecommendationsJobStep {
     /// <p>The type of the subtask.</p>
-    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub step_type: ::std::option::Option<crate::types::RecommendationStepType>,
     /// <p>The name of the Inference Recommender job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct InferenceRecommendationsJobStep {
 }
 impl InferenceRecommendationsJobStep {
     /// <p>The type of the subtask.</p>
-    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn step_type(&self) -> ::std::option::Option<&crate::types::RecommendationStepType> {
         self.step_type.as_ref()
     }
@@ -51,20 +51,20 @@ pub struct InferenceRecommendationsJobStepBuilder {
 }
 impl InferenceRecommendationsJobStepBuilder {
     /// <p>The type of the subtask.</p>
-    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     /// This field is required.
     pub fn step_type(mut self, input: crate::types::RecommendationStepType) -> Self {
         self.step_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the subtask.</p>
-    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn set_step_type(mut self, input: ::std::option::Option<crate::types::RecommendationStepType>) -> Self {
         self.step_type = input;
         self
     }
     /// <p>The type of the subtask.</p>
-    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn get_step_type(&self) -> &::std::option::Option<crate::types::RecommendationStepType> {
         &self.step_type
     }

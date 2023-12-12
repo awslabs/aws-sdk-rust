@@ -114,31 +114,31 @@ impl ListSessionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_sessions::paginator::ListSessionsPaginator {
         crate::operation::list_sessions::paginator::ListSessionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    /// <p>The token for the next set of results, or null if there are no more result.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    /// <p>The token for the next set of results, or null if there are no more result.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    /// <p>The token for the next set of results, or null if there are no more result.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results. </p>
+    /// <p>The maximum number of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results. </p>
+    /// <p>The maximum number of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results. </p>
+    /// <p>The maximum number of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -146,31 +146,31 @@ impl ListSessionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags belonging to the session. </p>
+    /// <p>Tags belonging to the session.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Tags belonging to the session. </p>
+    /// <p>Tags belonging to the session.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Tags belonging to the session. </p>
+    /// <p>Tags belonging to the session.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The origin of the request. </p>
+    /// <p>The origin of the request.</p>
     pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_origin(input.into());
         self
     }
-    /// <p>The origin of the request. </p>
+    /// <p>The origin of the request.</p>
     pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_origin(input);
         self
     }
-    /// <p>The origin of the request. </p>
+    /// <p>The origin of the request.</p>
     pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_origin()
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct PutResourcePolicyInputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

@@ -10,13 +10,13 @@ pub struct ReplaceRootVolumeTask {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the task. The task can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - the replacement volume is being created.</p> </li>
-    /// <li> <p> <code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p> </li>
-    /// <li> <p> <code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p> </li>
-    /// <li> <p> <code>failing</code> - the replacement task is in the process of failing.</p> </li>
-    /// <li> <p> <code>failed</code> - the replacement task has failed but the original root volume is still attached.</p> </li>
-    /// <li> <p> <code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p> </li>
-    /// <li> <p> <code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p> </li>
+    /// <li><p><code>pending</code> - the replacement volume is being created.</p></li>
+    /// <li><p><code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p></li>
+    /// <li><p><code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p></li>
+    /// <li><p><code>failing</code> - the replacement task is in the process of failing.</p></li>
+    /// <li><p><code>failed</code> - the replacement task has failed but the original root volume is still attached.</p></li>
+    /// <li><p><code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p></li>
+    /// <li><p><code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p></li>
     /// </ul>
     pub task_state: ::std::option::Option<crate::types::ReplaceRootVolumeTaskState>,
     /// <p>The time the task was started.</p>
@@ -43,13 +43,13 @@ impl ReplaceRootVolumeTask {
     }
     /// <p>The state of the task. The task can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - the replacement volume is being created.</p> </li>
-    /// <li> <p> <code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p> </li>
-    /// <li> <p> <code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p> </li>
-    /// <li> <p> <code>failing</code> - the replacement task is in the process of failing.</p> </li>
-    /// <li> <p> <code>failed</code> - the replacement task has failed but the original root volume is still attached.</p> </li>
-    /// <li> <p> <code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p> </li>
-    /// <li> <p> <code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p> </li>
+    /// <li><p><code>pending</code> - the replacement volume is being created.</p></li>
+    /// <li><p><code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p></li>
+    /// <li><p><code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p></li>
+    /// <li><p><code>failing</code> - the replacement task is in the process of failing.</p></li>
+    /// <li><p><code>failed</code> - the replacement task has failed but the original root volume is still attached.</p></li>
+    /// <li><p><code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p></li>
+    /// <li><p><code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p></li>
     /// </ul>
     pub fn task_state(&self) -> ::std::option::Option<&crate::types::ReplaceRootVolumeTaskState> {
         self.task_state.as_ref()
@@ -133,13 +133,13 @@ impl ReplaceRootVolumeTaskBuilder {
     }
     /// <p>The state of the task. The task can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - the replacement volume is being created.</p> </li>
-    /// <li> <p> <code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p> </li>
-    /// <li> <p> <code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p> </li>
-    /// <li> <p> <code>failing</code> - the replacement task is in the process of failing.</p> </li>
-    /// <li> <p> <code>failed</code> - the replacement task has failed but the original root volume is still attached.</p> </li>
-    /// <li> <p> <code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p> </li>
-    /// <li> <p> <code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p> </li>
+    /// <li><p><code>pending</code> - the replacement volume is being created.</p></li>
+    /// <li><p><code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p></li>
+    /// <li><p><code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p></li>
+    /// <li><p><code>failing</code> - the replacement task is in the process of failing.</p></li>
+    /// <li><p><code>failed</code> - the replacement task has failed but the original root volume is still attached.</p></li>
+    /// <li><p><code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p></li>
+    /// <li><p><code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p></li>
     /// </ul>
     pub fn task_state(mut self, input: crate::types::ReplaceRootVolumeTaskState) -> Self {
         self.task_state = ::std::option::Option::Some(input);
@@ -147,13 +147,13 @@ impl ReplaceRootVolumeTaskBuilder {
     }
     /// <p>The state of the task. The task can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - the replacement volume is being created.</p> </li>
-    /// <li> <p> <code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p> </li>
-    /// <li> <p> <code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p> </li>
-    /// <li> <p> <code>failing</code> - the replacement task is in the process of failing.</p> </li>
-    /// <li> <p> <code>failed</code> - the replacement task has failed but the original root volume is still attached.</p> </li>
-    /// <li> <p> <code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p> </li>
-    /// <li> <p> <code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p> </li>
+    /// <li><p><code>pending</code> - the replacement volume is being created.</p></li>
+    /// <li><p><code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p></li>
+    /// <li><p><code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p></li>
+    /// <li><p><code>failing</code> - the replacement task is in the process of failing.</p></li>
+    /// <li><p><code>failed</code> - the replacement task has failed but the original root volume is still attached.</p></li>
+    /// <li><p><code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p></li>
+    /// <li><p><code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p></li>
     /// </ul>
     pub fn set_task_state(mut self, input: ::std::option::Option<crate::types::ReplaceRootVolumeTaskState>) -> Self {
         self.task_state = input;
@@ -161,13 +161,13 @@ impl ReplaceRootVolumeTaskBuilder {
     }
     /// <p>The state of the task. The task can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p> <code>pending</code> - the replacement volume is being created.</p> </li>
-    /// <li> <p> <code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p> </li>
-    /// <li> <p> <code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p> </li>
-    /// <li> <p> <code>failing</code> - the replacement task is in the process of failing.</p> </li>
-    /// <li> <p> <code>failed</code> - the replacement task has failed but the original root volume is still attached.</p> </li>
-    /// <li> <p> <code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p> </li>
-    /// <li> <p> <code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p> </li>
+    /// <li><p><code>pending</code> - the replacement volume is being created.</p></li>
+    /// <li><p><code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p></li>
+    /// <li><p><code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p></li>
+    /// <li><p><code>failing</code> - the replacement task is in the process of failing.</p></li>
+    /// <li><p><code>failed</code> - the replacement task has failed but the original root volume is still attached.</p></li>
+    /// <li><p><code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p></li>
+    /// <li><p><code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p></li>
     /// </ul>
     pub fn get_task_state(&self) -> &::std::option::Option<crate::types::ReplaceRootVolumeTaskState> {
         &self.task_state

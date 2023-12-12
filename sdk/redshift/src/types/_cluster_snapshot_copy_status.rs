@@ -8,7 +8,7 @@ pub struct ClusterSnapshotCopyStatus {
     pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
     pub retention_period: ::std::option::Option<i64>,
-    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The name of the snapshot copy grant.</p>
@@ -23,7 +23,7 @@ impl ClusterSnapshotCopyStatus {
     pub fn retention_period(&self) -> ::std::option::Option<i64> {
         self.retention_period
     }
-    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.manual_snapshot_retention_period
@@ -78,19 +78,19 @@ impl ClusterSnapshotCopyStatusBuilder {
     pub fn get_retention_period(&self) -> &::std::option::Option<i64> {
         &self.retention_period
     }
-    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.manual_snapshot_retention_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
-    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
         &self.manual_snapshot_retention_period

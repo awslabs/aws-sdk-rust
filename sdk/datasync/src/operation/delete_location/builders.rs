@@ -22,7 +22,7 @@ impl DeleteLocationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteLocation`.
 ///
-/// <p>Deletes the configuration of a location used by DataSync. </p>
+/// <p>Deletes the configuration of a location used by DataSync.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

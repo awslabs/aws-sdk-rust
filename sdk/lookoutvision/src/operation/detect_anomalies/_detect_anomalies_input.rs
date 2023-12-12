@@ -7,9 +7,9 @@ pub struct DetectAnomaliesInput {
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model that you want to use.</p>
     pub model_version: ::std::option::Option<::std::string::String>,
-    /// <p>The unencrypted image bytes that you want to analyze. </p>
+    /// <p>The unencrypted image bytes that you want to analyze.</p>
     pub body: ::aws_smithy_types::byte_stream::ByteStream,
-    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images).</p>
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl DetectAnomaliesInput {
@@ -21,11 +21,11 @@ impl DetectAnomaliesInput {
     pub fn model_version(&self) -> ::std::option::Option<&str> {
         self.model_version.as_deref()
     }
-    /// <p>The unencrypted image bytes that you want to analyze. </p>
+    /// <p>The unencrypted image bytes that you want to analyze.</p>
     pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images).</p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -77,33 +77,33 @@ impl DetectAnomaliesInputBuilder {
     pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_version
     }
-    /// <p>The unencrypted image bytes that you want to analyze. </p>
+    /// <p>The unencrypted image bytes that you want to analyze.</p>
     /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The unencrypted image bytes that you want to analyze. </p>
+    /// <p>The unencrypted image bytes that you want to analyze.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
-    /// <p>The unencrypted image bytes that you want to analyze. </p>
+    /// <p>The unencrypted image bytes that you want to analyze.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
-    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images).</p>
     /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images).</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images).</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }

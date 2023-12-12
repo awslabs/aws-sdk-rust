@@ -22,7 +22,7 @@ impl CreateSnapshotScheduleInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSnapshotSchedule`.
 ///
-/// <p>Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. </p>
+/// <p>Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSnapshotScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl CreateSnapshotScheduleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
     ///
-    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
     pub fn schedule_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_definitions(input.into());
         self
     }
-    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
     pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_schedule_definitions(input);
         self
     }
-    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
     pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_schedule_definitions()
     }

@@ -2,15 +2,15 @@
 
 /// <p>Settings to configure your translation output. You can configure the following options:</p>
 /// <ul>
-/// <li> <p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p> </li>
-/// <li> <p>Formality: sets the formality level of the translation output.</p> </li>
-/// <li> <p>Profanity: masks profane words and phrases in the translation output.</p> </li>
+/// <li><p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
+/// <li><p>Formality: sets the formality level of the translation output.</p></li>
+/// <li><p>Profanity: masks profane words and phrases in the translation output.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranslationSettings {
     /// <p>You can specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+    /// <p>If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
     /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
     pub formality: ::std::option::Option<crate::types::Formality>,
     /// <p>You can enable the profanity setting if you want to mask profane words and phrases in your translation output.</p>
@@ -25,7 +25,7 @@ pub struct TranslationSettings {
 }
 impl TranslationSettings {
     /// <p>You can specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+    /// <p>If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
     /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
     pub fn formality(&self) -> ::std::option::Option<&crate::types::Formality> {
         self.formality.as_ref()
@@ -61,21 +61,21 @@ pub struct TranslationSettingsBuilder {
 }
 impl TranslationSettingsBuilder {
     /// <p>You can specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+    /// <p>If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
     /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
     pub fn formality(mut self, input: crate::types::Formality) -> Self {
         self.formality = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+    /// <p>If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
     /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
     pub fn set_formality(mut self, input: ::std::option::Option<crate::types::Formality>) -> Self {
         self.formality = input;
         self
     }
     /// <p>You can specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+    /// <p>If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
     /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
     pub fn get_formality(&self) -> &::std::option::Option<crate::types::Formality> {
         &self.formality

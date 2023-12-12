@@ -9,11 +9,11 @@ pub struct EngineTranscribeSettings {
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     pub language_code: ::std::option::Option<crate::types::TranscribeLanguageCode>,
     /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-    /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
+    /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub vocabulary_filter_method: ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
-    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
+    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     pub vocabulary_filter_name: ::std::option::Option<::std::string::String>,
@@ -66,7 +66,7 @@ pub struct EngineTranscribeSettings {
     pub vocabulary_names: ::std::option::Option<::std::string::String>,
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
-    /// <p> If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
+    /// <p>If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     pub vocabulary_filter_names: ::std::option::Option<::std::string::String>,
 }
 impl EngineTranscribeSettings {
@@ -76,13 +76,13 @@ impl EngineTranscribeSettings {
         self.language_code.as_ref()
     }
     /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-    /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
+    /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::TranscribeVocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
-    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
+    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     pub fn vocabulary_filter_name(&self) -> ::std::option::Option<&str> {
@@ -161,7 +161,7 @@ impl EngineTranscribeSettings {
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
-    /// <p> If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
+    /// <p>If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     pub fn vocabulary_filter_names(&self) -> ::std::option::Option<&str> {
         self.vocabulary_filter_names.as_deref()
     }
@@ -213,7 +213,7 @@ impl EngineTranscribeSettingsBuilder {
         &self.language_code
     }
     /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-    /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
+    /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn vocabulary_filter_method(mut self, input: crate::types::TranscribeVocabularyFilterMethod) -> Self {
@@ -221,7 +221,7 @@ impl EngineTranscribeSettingsBuilder {
         self
     }
     /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-    /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
+    /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>) -> Self {
@@ -229,27 +229,27 @@ impl EngineTranscribeSettingsBuilder {
         self
     }
     /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-    /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
+    /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn get_vocabulary_filter_method(&self) -> &::std::option::Option<crate::types::TranscribeVocabularyFilterMethod> {
         &self.vocabulary_filter_method
     }
-    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
+    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
+    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_name = input;
         self
     }
-    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
+    /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     pub fn get_vocabulary_filter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -494,21 +494,21 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
-    /// <p> If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
+    /// <p>If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     pub fn vocabulary_filter_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_names = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
-    /// <p> If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
+    /// <p>If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     pub fn set_vocabulary_filter_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_names = input;
         self
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
-    /// <p> If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
+    /// <p>If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     pub fn get_vocabulary_filter_names(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_filter_names
     }

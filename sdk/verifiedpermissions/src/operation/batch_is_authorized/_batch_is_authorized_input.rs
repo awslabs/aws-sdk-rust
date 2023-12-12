@@ -5,7 +5,7 @@
 pub struct BatchIsAuthorizedInput {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make the authorization decisions for the input.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
     pub entities: ::std::option::Option<crate::types::EntitiesDefinition>,
@@ -17,7 +17,7 @@ impl BatchIsAuthorizedInput {
     pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
         self.policy_store_id.as_deref()
     }
-    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
     pub fn entities(&self) -> ::std::option::Option<&crate::types::EntitiesDefinition> {
@@ -61,21 +61,21 @@ impl BatchIsAuthorizedInputBuilder {
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }
-    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
     pub fn entities(mut self, input: crate::types::EntitiesDefinition) -> Self {
         self.entities = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
     pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
         self.entities = input;
         self
     }
-    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
     pub fn get_entities(&self) -> &::std::option::Option<crate::types::EntitiesDefinition> {

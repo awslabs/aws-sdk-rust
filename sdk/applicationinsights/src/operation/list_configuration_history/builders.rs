@@ -22,11 +22,11 @@ impl ListConfigurationHistoryInputBuilder {
 }
 /// Fluent builder constructing a request to `ListConfigurationHistory`.
 ///
-/// <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are: </p>
+/// <p>Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are:</p>
 /// <ul>
-/// <li> <p>INFO: creating a new alarm or updating an alarm threshold.</p> </li>
-/// <li> <p>WARN: alarm not created due to insufficient data points used to predict thresholds.</p> </li>
-/// <li> <p>ERROR: alarm not created due to permission errors or exceeding quotas. </p> </li>
+/// <li><p>INFO: creating a new alarm or updating an alarm threshold.</p></li>
+/// <li><p>WARN: alarm not created due to insufficient data points used to predict thresholds.</p></li>
+/// <li><p>ERROR: alarm not created due to permission errors or exceeding quotas.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConfigurationHistoryFluentBuilder {
@@ -119,31 +119,31 @@ impl ListConfigurationHistoryFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator {
         crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator::new(self.handle, self.inner)
     }
-    /// <p>Resource group to which the application belongs. </p>
+    /// <p>Resource group to which the application belongs.</p>
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
-    /// <p>Resource group to which the application belongs. </p>
+    /// <p>Resource group to which the application belongs.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
-    /// <p>Resource group to which the application belongs. </p>
+    /// <p>Resource group to which the application belongs.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_group_name()
     }
-    /// <p>The start time of the event. </p>
+    /// <p>The start time of the event.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The start time of the event. </p>
+    /// <p>The start time of the event.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The start time of the event. </p>
+    /// <p>The start time of the event.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
@@ -175,17 +175,17 @@ impl ListConfigurationHistoryFluentBuilder {
     pub fn get_event_status(&self) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
         self.inner.get_event_status()
     }
-    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
+    /// <p>The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
+    /// <p>The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
+    /// <p>The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

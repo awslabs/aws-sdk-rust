@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p><br>
     /// - On success, responds with [`ListMediaPipelinesOutput`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput) with field(s):
     ///   - [`media_pipelines(Option<Vec::<MediaPipelineSummary>>)`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput::media_pipelines): <p>The media pipeline objects in the list.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput::next_token): <p>The token used to retrieve the next page of results. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput::next_token): <p>The token used to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListMediaPipelinesError>`](crate::operation::list_media_pipelines::ListMediaPipelinesError)
     pub fn list_media_pipelines(&self) -> crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder {
         crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::new(self.handle.clone())

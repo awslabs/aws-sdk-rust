@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnomalySubscriptionInput {
-    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
     pub subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnomalySubscriptionInput {
-    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
     pub fn subscription_arn(&self) -> ::std::option::Option<&str> {
         self.subscription_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteAnomalySubscriptionInputBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnomalySubscriptionInputBuilder {
-    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
     /// This field is required.
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
     pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_arn = input;
         self
     }
-    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
     pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_arn
     }

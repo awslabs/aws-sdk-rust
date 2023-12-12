@@ -22,7 +22,7 @@ impl UpdateRetrainingSchedulerInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRetrainingScheduler`.
 ///
-/// <p>Updates a retraining scheduler. </p>
+/// <p>Updates a retraining scheduler.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRetrainingSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateRetrainingSchedulerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to update. </p>
+    /// <p>The name of the model whose retraining scheduler you want to update.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to update. </p>
+    /// <p>The name of the model whose retraining scheduler you want to update.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to update. </p>
+    /// <p>The name of the model whose retraining scheduler you want to update.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }
@@ -138,9 +138,9 @@ impl UpdateRetrainingSchedulerFluentBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li> <p>P3M15D – Every 3 months and 15 days</p> </li>
-    /// <li> <p>P2M – Every 2 months</p> </li>
-    /// <li> <p>P150D – Every 150 days</p> </li>
+    /// <li><p>P3M15D – Every 3 months and 15 days</p></li>
+    /// <li><p>P2M – Every 2 months</p></li>
+    /// <li><p>P150D – Every 150 days</p></li>
     /// </ul>
     pub fn retraining_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.retraining_frequency(input.into());
@@ -148,9 +148,9 @@ impl UpdateRetrainingSchedulerFluentBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li> <p>P3M15D – Every 3 months and 15 days</p> </li>
-    /// <li> <p>P2M – Every 2 months</p> </li>
-    /// <li> <p>P150D – Every 150 days</p> </li>
+    /// <li><p>P3M15D – Every 3 months and 15 days</p></li>
+    /// <li><p>P2M – Every 2 months</p></li>
+    /// <li><p>P150D – Every 150 days</p></li>
     /// </ul>
     pub fn set_retraining_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_retraining_frequency(input);
@@ -158,9 +158,9 @@ impl UpdateRetrainingSchedulerFluentBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li> <p>P3M15D – Every 3 months and 15 days</p> </li>
-    /// <li> <p>P2M – Every 2 months</p> </li>
-    /// <li> <p>P150D – Every 150 days</p> </li>
+    /// <li><p>P3M15D – Every 3 months and 15 days</p></li>
+    /// <li><p>P2M – Every 2 months</p></li>
+    /// <li><p>P150D – Every 150 days</p></li>
     /// </ul>
     pub fn get_retraining_frequency(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_retraining_frequency()

@@ -8,11 +8,11 @@ pub struct GetPerformanceAnalysisReportInput {
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
+    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code></p>
     pub analysis_report_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the text format in the report. The options are <code>PLAIN_TEXT</code> or <code>MARKDOWN</code>. The default value is <code>plain text</code>.</p>
     pub text_format: ::std::option::Option<crate::types::TextFormat>,
-    /// <p>The text language in the report. The default language is <code>EN_US</code> (English). </p>
+    /// <p>The text language in the report. The default language is <code>EN_US</code> (English).</p>
     pub accept_language: ::std::option::Option<crate::types::AcceptLanguage>,
 }
 impl GetPerformanceAnalysisReportInput {
@@ -25,7 +25,7 @@ impl GetPerformanceAnalysisReportInput {
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
+    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code></p>
     pub fn analysis_report_id(&self) -> ::std::option::Option<&str> {
         self.analysis_report_id.as_deref()
     }
@@ -33,7 +33,7 @@ impl GetPerformanceAnalysisReportInput {
     pub fn text_format(&self) -> ::std::option::Option<&crate::types::TextFormat> {
         self.text_format.as_ref()
     }
-    /// <p>The text language in the report. The default language is <code>EN_US</code> (English). </p>
+    /// <p>The text language in the report. The default language is <code>EN_US</code> (English).</p>
     pub fn accept_language(&self) -> ::std::option::Option<&crate::types::AcceptLanguage> {
         self.accept_language.as_ref()
     }
@@ -89,18 +89,18 @@ impl GetPerformanceAnalysisReportInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
+    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code></p>
     /// This field is required.
     pub fn analysis_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_report_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
+    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code></p>
     pub fn set_analysis_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_report_id = input;
         self
     }
-    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
+    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code></p>
     pub fn get_analysis_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_report_id
     }
@@ -118,17 +118,17 @@ impl GetPerformanceAnalysisReportInputBuilder {
     pub fn get_text_format(&self) -> &::std::option::Option<crate::types::TextFormat> {
         &self.text_format
     }
-    /// <p>The text language in the report. The default language is <code>EN_US</code> (English). </p>
+    /// <p>The text language in the report. The default language is <code>EN_US</code> (English).</p>
     pub fn accept_language(mut self, input: crate::types::AcceptLanguage) -> Self {
         self.accept_language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The text language in the report. The default language is <code>EN_US</code> (English). </p>
+    /// <p>The text language in the report. The default language is <code>EN_US</code> (English).</p>
     pub fn set_accept_language(mut self, input: ::std::option::Option<crate::types::AcceptLanguage>) -> Self {
         self.accept_language = input;
         self
     }
-    /// <p>The text language in the report. The default language is <code>EN_US</code> (English). </p>
+    /// <p>The text language in the report. The default language is <code>EN_US</code> (English).</p>
     pub fn get_accept_language(&self) -> &::std::option::Option<crate::types::AcceptLanguage> {
         &self.accept_language
     }

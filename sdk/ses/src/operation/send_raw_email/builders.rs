@@ -26,26 +26,26 @@ impl SendRawEmailInputBuilder {
 /// <p>This operation is more flexible than the <code>SendEmail</code> operation. When you use the <code>SendRawEmail</code> operation, you can specify the headers of the message as well as its content. This flexibility is useful, for example, when you need to send a multipart MIME email (such a message that contains both a text and an HTML version). You can also use this operation to send messages that include attachments.</p>
 /// <p>The <code>SendRawEmail</code> operation has the following requirements:</p>
 /// <ul>
-/// <li> <p>You can only send email from <a href="https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html">verified email addresses or domains</a>. If you try to send email from an address that isn't verified, the operation results in an "Email address not verified" error.</p> </li>
-/// <li> <p>If your account is still in the <a href="https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html">Amazon SES sandbox</a>, you can only send email to other verified addresses in your account, or to addresses that are associated with the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-an-email-from-console.html">Amazon SES mailbox simulator</a>.</p> </li>
-/// <li> <p>The maximum message size, including attachments, is 10 MB.</p> </li>
-/// <li> <p>Each message has to include at least one recipient address. A recipient address includes any address on the To:, CC:, or BCC: lines.</p> </li>
-/// <li> <p>If you send a single message to more than one recipient address, and one of the recipient addresses isn't in a valid format (that is, it's not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), Amazon SES rejects the entire message, even if the other addresses are valid.</p> </li>
-/// <li> <p>Each message can include up to 50 recipient addresses across the To:, CC:, or BCC: lines. If you need to send a single message to more than 50 recipients, you have to split the list of recipient addresses into groups of less than 50 recipients, and send separate messages to each group.</p> </li>
-/// <li> <p>Amazon SES allows you to specify 8-bit Content-Transfer-Encoding for MIME message parts. However, if Amazon SES has to modify the contents of your message (for example, if you use open and click tracking), 8-bit content isn't preserved. For this reason, we highly recommend that you encode all content that isn't 7-bit ASCII. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html#send-email-mime-encoding">MIME Encoding</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+/// <li><p>You can only send email from <a href="https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html">verified email addresses or domains</a>. If you try to send email from an address that isn't verified, the operation results in an "Email address not verified" error.</p></li>
+/// <li><p>If your account is still in the <a href="https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html">Amazon SES sandbox</a>, you can only send email to other verified addresses in your account, or to addresses that are associated with the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-an-email-from-console.html">Amazon SES mailbox simulator</a>.</p></li>
+/// <li><p>The maximum message size, including attachments, is 10 MB.</p></li>
+/// <li><p>Each message has to include at least one recipient address. A recipient address includes any address on the To:, CC:, or BCC: lines.</p></li>
+/// <li><p>If you send a single message to more than one recipient address, and one of the recipient addresses isn't in a valid format (that is, it's not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), Amazon SES rejects the entire message, even if the other addresses are valid.</p></li>
+/// <li><p>Each message can include up to 50 recipient addresses across the To:, CC:, or BCC: lines. If you need to send a single message to more than 50 recipients, you have to split the list of recipient addresses into groups of less than 50 recipients, and send separate messages to each group.</p></li>
+/// <li><p>Amazon SES allows you to specify 8-bit Content-Transfer-Encoding for MIME message parts. However, if Amazon SES has to modify the contents of your message (for example, if you use open and click tracking), 8-bit content isn't preserved. For this reason, we highly recommend that you encode all content that isn't 7-bit ASCII. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html#send-email-mime-encoding">MIME Encoding</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
 /// </ul>
 /// <p>Additionally, keep the following considerations in mind when using the <code>SendRawEmail</code> operation:</p>
 /// <ul>
-/// <li> <p>Although you can customize the message headers when using the <code>SendRawEmail</code> operation, Amazon SES automatically applies its own <code>Message-ID</code> and <code>Date</code> headers; if you passed these headers when creating the message, they are overwritten by the values that Amazon SES provides.</p> </li>
-/// <li> <p>If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code> enables you to specify the cross-account identity for the email's Source, From, and Return-Path parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code>, or you can include the following X-headers in the header of your raw email:</p>
+/// <li><p>Although you can customize the message headers when using the <code>SendRawEmail</code> operation, Amazon SES automatically applies its own <code>Message-ID</code> and <code>Date</code> headers; if you passed these headers when creating the message, they are overwritten by the values that Amazon SES provides.</p></li>
+/// <li><p>If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code> enables you to specify the cross-account identity for the email's Source, From, and Return-Path parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code>, or you can include the following X-headers in the header of your raw email:</p>
 /// <ul>
-/// <li> <p> <code>X-SES-SOURCE-ARN</code> </p> </li>
-/// <li> <p> <code>X-SES-FROM-ARN</code> </p> </li>
-/// <li> <p> <code>X-SES-RETURN-PATH-ARN</code> </p> </li>
+/// <li><p><code>X-SES-SOURCE-ARN</code></p></li>
+/// <li><p><code>X-SES-FROM-ARN</code></p></li>
+/// <li><p><code>X-SES-RETURN-PATH-ARN</code></p></li>
 /// </ul> <important>
 /// <p>Don't include these X-headers in the DKIM signature. Amazon SES removes these before it sends the email.</p>
-/// </important> <p>If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES sets the From and Return-Path addresses to the same identity that you specified.</p> <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Using Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i> </p> </li>
-/// <li> <p>For every message that you send, the total number of recipients (including each recipient in the To:, CC: and BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending quota</i>). For more information about sending quotas in Amazon SES, see <a href="https://docs.aws.amazon.com/ses/latest/dg/manage-sending-quotas.html">Managing Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> </p> </li>
+/// </important> <p>If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES sets the From and Return-Path addresses to the same identity that you specified.</p> <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Using Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i></p></li>
+/// <li><p>For every message that you send, the total number of recipients (including each recipient in the To:, CC: and BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending quota</i>). For more information about sending quotas in Amazon SES, see <a href="https://docs.aws.amazon.com/ses/latest/dg/manage-sending-quotas.html">Managing Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendRawEmailFluentBuilder {
@@ -175,15 +175,15 @@ impl SendRawEmailFluentBuilder {
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>The entire message must be base64-encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// <li><p>The message has to contain a header and a body, separated by a blank line.</p></li>
+    /// <li><p>All of the required header fields must be present in the message.</p></li>
+    /// <li><p>Each part of a multipart MIME message must be formatted properly.</p></li>
+    /// <li><p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>The entire message must be base64-encoded.</p></li>
+    /// <li><p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
     /// , must not exceed 1,000 characters.
-    /// </crlf></p> </li>
+    /// </crlf></p></li>
     /// </ul>
     pub fn raw_message(mut self, input: crate::types::RawMessage) -> Self {
         self.inner = self.inner.raw_message(input);
@@ -191,15 +191,15 @@ impl SendRawEmailFluentBuilder {
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>The entire message must be base64-encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// <li><p>The message has to contain a header and a body, separated by a blank line.</p></li>
+    /// <li><p>All of the required header fields must be present in the message.</p></li>
+    /// <li><p>Each part of a multipart MIME message must be formatted properly.</p></li>
+    /// <li><p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>The entire message must be base64-encoded.</p></li>
+    /// <li><p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
     /// , must not exceed 1,000 characters.
-    /// </crlf></p> </li>
+    /// </crlf></p></li>
     /// </ul>
     pub fn set_raw_message(mut self, input: ::std::option::Option<crate::types::RawMessage>) -> Self {
         self.inner = self.inner.set_raw_message(input);
@@ -207,15 +207,15 @@ impl SendRawEmailFluentBuilder {
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>The entire message must be base64-encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// <li><p>The message has to contain a header and a body, separated by a blank line.</p></li>
+    /// <li><p>All of the required header fields must be present in the message.</p></li>
+    /// <li><p>Each part of a multipart MIME message must be formatted properly.</p></li>
+    /// <li><p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>The entire message must be base64-encoded.</p></li>
+    /// <li><p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
     /// , must not exceed 1,000 characters.
-    /// </crlf></p> </li>
+    /// </crlf></p></li>
     /// </ul>
     pub fn get_raw_message(&self) -> &::std::option::Option<crate::types::RawMessage> {
         self.inner.get_raw_message()

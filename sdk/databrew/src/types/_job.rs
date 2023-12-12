@@ -12,20 +12,20 @@ pub struct Job {
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A dataset that the job is to process.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a></p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The unique name of the job.</p>
     pub name: ::std::string::String,
     /// <p>The job type of the job, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::JobType>,
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
@@ -78,14 +78,14 @@ impl Job {
     pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a></p>
     pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -97,8 +97,8 @@ impl Job {
     }
     /// <p>The job type of the job, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::JobType> {
         self.r#type.as_ref()
@@ -269,24 +269,24 @@ impl JobBuilder {
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_name
     }
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a></p>
     pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a></p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a></p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_arn
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input);
@@ -294,8 +294,8 @@ impl JobBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
@@ -303,8 +303,8 @@ impl JobBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         &self.encryption_mode
@@ -326,8 +326,8 @@ impl JobBuilder {
     }
     /// <p>The job type of the job, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::JobType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -335,8 +335,8 @@ impl JobBuilder {
     }
     /// <p>The job type of the job, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.r#type = input;
@@ -344,8 +344,8 @@ impl JobBuilder {
     }
     /// <p>The job type of the job, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::JobType> {
         &self.r#type

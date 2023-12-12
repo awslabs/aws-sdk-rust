@@ -22,7 +22,7 @@ impl DeleteBatchImportJobInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBatchImportJob`.
 ///
-/// <p>Deletes the specified batch import job ID record. This action does not delete the data that was batch imported. </p>
+/// <p>Deletes the specified batch import job ID record. This action does not delete the data that was batch imported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBatchImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteBatchImportJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the batch import job to delete. </p>
+    /// <p>The ID of the batch import job to delete.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The ID of the batch import job to delete. </p>
+    /// <p>The ID of the batch import job to delete.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The ID of the batch import job to delete. </p>
+    /// <p>The ID of the batch import job to delete.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }

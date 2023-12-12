@@ -5,7 +5,7 @@
 pub struct ListScheduledQueriesInput {
     /// <p>The maximum number of items to return in the output. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as the argument to the subsequent call to <code>ListScheduledQueriesRequest</code>.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> A pagination token to resume pagination.</p>
+    /// <p>A pagination token to resume pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListScheduledQueriesInput {
@@ -13,7 +13,7 @@ impl ListScheduledQueriesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> A pagination token to resume pagination.</p>
+    /// <p>A pagination token to resume pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,17 +47,17 @@ impl ListScheduledQueriesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> A pagination token to resume pagination.</p>
+    /// <p>A pagination token to resume pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A pagination token to resume pagination.</p>
+    /// <p>A pagination token to resume pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A pagination token to resume pagination.</p>
+    /// <p>A pagination token to resume pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

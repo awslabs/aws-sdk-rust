@@ -16,8 +16,8 @@ pub struct ResolverEndpoint {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
     /// <ul>
-    /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
-    /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
+    /// <li><p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
+    /// <li><p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
     /// </ul>
     pub direction: ::std::option::Option<crate::types::ResolverEndpointDirection>,
     /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
@@ -26,16 +26,16 @@ pub struct ResolverEndpoint {
     pub host_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p> </li>
-    /// <li> <p> <code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p> </li>
-    /// <li> <p> <code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p> </li>
-    /// <li> <p> <code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p> </li>
-    /// <li> <p> <code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
+    /// <li><p><code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p></li>
+    /// <li><p><code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p></li>
+    /// <li><p><code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p></li>
+    /// <li><p><code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p></li>
+    /// <li><p><code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
     /// <ul>
-    /// <li> <p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p> </li>
-    /// <li> <p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
+    /// <li><p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p></li>
+    /// <li><p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p></li>
+    /// </ul></li>
+    /// <li><p><code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ResolverEndpointStatus>,
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
@@ -44,11 +44,11 @@ pub struct ResolverEndpoint {
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
-    /// <p> The Resolver endpoint IP address type. </p>
+    /// <p>The Resolver endpoint IP address type.</p>
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon EC2 instance type. </p>
+    /// <p>The Amazon EC2 instance type.</p>
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl ResolverEndpoint {
@@ -76,8 +76,8 @@ impl ResolverEndpoint {
     }
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
     /// <ul>
-    /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
-    /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
+    /// <li><p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
+    /// <li><p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
     /// </ul>
     pub fn direction(&self) -> ::std::option::Option<&crate::types::ResolverEndpointDirection> {
         self.direction.as_ref()
@@ -92,16 +92,16 @@ impl ResolverEndpoint {
     }
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p> </li>
-    /// <li> <p> <code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p> </li>
-    /// <li> <p> <code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p> </li>
-    /// <li> <p> <code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p> </li>
-    /// <li> <p> <code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
+    /// <li><p><code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p></li>
+    /// <li><p><code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p></li>
+    /// <li><p><code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p></li>
+    /// <li><p><code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p></li>
+    /// <li><p><code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
     /// <ul>
-    /// <li> <p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p> </li>
-    /// <li> <p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
+    /// <li><p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p></li>
+    /// <li><p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p></li>
+    /// </ul></li>
+    /// <li><p><code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResolverEndpointStatus> {
         self.status.as_ref()
@@ -118,7 +118,7 @@ impl ResolverEndpoint {
     pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
-    /// <p> The Resolver endpoint IP address type. </p>
+    /// <p>The Resolver endpoint IP address type.</p>
     pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
@@ -126,7 +126,7 @@ impl ResolverEndpoint {
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
-    /// <p> The Amazon EC2 instance type. </p>
+    /// <p>The Amazon EC2 instance type.</p>
     pub fn preferred_instance_type(&self) -> ::std::option::Option<&str> {
         self.preferred_instance_type.as_deref()
     }
@@ -237,8 +237,8 @@ impl ResolverEndpointBuilder {
     }
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
     /// <ul>
-    /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
-    /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
+    /// <li><p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
+    /// <li><p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
     /// </ul>
     pub fn direction(mut self, input: crate::types::ResolverEndpointDirection) -> Self {
         self.direction = ::std::option::Option::Some(input);
@@ -246,8 +246,8 @@ impl ResolverEndpointBuilder {
     }
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
     /// <ul>
-    /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
-    /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
+    /// <li><p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
+    /// <li><p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
     /// </ul>
     pub fn set_direction(mut self, input: ::std::option::Option<crate::types::ResolverEndpointDirection>) -> Self {
         self.direction = input;
@@ -255,8 +255,8 @@ impl ResolverEndpointBuilder {
     }
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
     /// <ul>
-    /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
-    /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
+    /// <li><p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
+    /// <li><p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
     /// </ul>
     pub fn get_direction(&self) -> &::std::option::Option<crate::types::ResolverEndpointDirection> {
         &self.direction
@@ -291,16 +291,16 @@ impl ResolverEndpointBuilder {
     }
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p> </li>
-    /// <li> <p> <code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p> </li>
-    /// <li> <p> <code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p> </li>
-    /// <li> <p> <code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p> </li>
-    /// <li> <p> <code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
+    /// <li><p><code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p></li>
+    /// <li><p><code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p></li>
+    /// <li><p><code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p></li>
+    /// <li><p><code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p></li>
+    /// <li><p><code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
     /// <ul>
-    /// <li> <p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p> </li>
-    /// <li> <p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
+    /// <li><p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p></li>
+    /// <li><p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p></li>
+    /// </ul></li>
+    /// <li><p><code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ResolverEndpointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -308,16 +308,16 @@ impl ResolverEndpointBuilder {
     }
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p> </li>
-    /// <li> <p> <code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p> </li>
-    /// <li> <p> <code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p> </li>
-    /// <li> <p> <code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p> </li>
-    /// <li> <p> <code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
+    /// <li><p><code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p></li>
+    /// <li><p><code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p></li>
+    /// <li><p><code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p></li>
+    /// <li><p><code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p></li>
+    /// <li><p><code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
     /// <ul>
-    /// <li> <p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p> </li>
-    /// <li> <p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
+    /// <li><p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p></li>
+    /// <li><p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p></li>
+    /// </ul></li>
+    /// <li><p><code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResolverEndpointStatus>) -> Self {
         self.status = input;
@@ -325,16 +325,16 @@ impl ResolverEndpointBuilder {
     }
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p> </li>
-    /// <li> <p> <code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p> </li>
-    /// <li> <p> <code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p> </li>
-    /// <li> <p> <code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p> </li>
-    /// <li> <p> <code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
+    /// <li><p><code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p></li>
+    /// <li><p><code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p></li>
+    /// <li><p><code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p></li>
+    /// <li><p><code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p></li>
+    /// <li><p><code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
     /// <ul>
-    /// <li> <p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p> </li>
-    /// <li> <p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
+    /// <li><p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p></li>
+    /// <li><p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p></li>
+    /// </ul></li>
+    /// <li><p><code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResolverEndpointStatus> {
         &self.status
@@ -381,17 +381,17 @@ impl ResolverEndpointBuilder {
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.modification_time
     }
-    /// <p> The Resolver endpoint IP address type. </p>
+    /// <p>The Resolver endpoint IP address type.</p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.resolver_endpoint_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The Resolver endpoint IP address type. </p>
+    /// <p>The Resolver endpoint IP address type.</p>
     pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
         self.resolver_endpoint_type = input;
         self
     }
-    /// <p> The Resolver endpoint IP address type. </p>
+    /// <p>The Resolver endpoint IP address type.</p>
     pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         &self.resolver_endpoint_type
     }
@@ -409,17 +409,17 @@ impl ResolverEndpointBuilder {
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }
-    /// <p> The Amazon EC2 instance type. </p>
+    /// <p>The Amazon EC2 instance type.</p>
     pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon EC2 instance type. </p>
+    /// <p>The Amazon EC2 instance type.</p>
     pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_instance_type = input;
         self
     }
-    /// <p> The Amazon EC2 instance type. </p>
+    /// <p>The Amazon EC2 instance type.</p>
     pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_instance_type
     }

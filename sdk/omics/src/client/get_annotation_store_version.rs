@@ -3,22 +3,22 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAnnotationStoreVersion`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::set_name):<br>required: **true**<br><p> The name given to an annotation store version to distinguish it from others. </p><br>
-    ///   - [`version_name(impl Into<String>)`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::version_name) / [`set_version_name(Option<String>)`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::set_version_name):<br>required: **true**<br><p> The name given to an annotation store version to distinguish it from others. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::set_name):<br>required: **true**<br><p>The name given to an annotation store version to distinguish it from others.</p><br>
+    ///   - [`version_name(impl Into<String>)`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::version_name) / [`set_version_name(Option<String>)`](crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::set_version_name):<br>required: **true**<br><p>The name given to an annotation store version to distinguish it from others.</p><br>
     /// - On success, responds with [`GetAnnotationStoreVersionOutput`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput) with field(s):
-    ///   - [`store_id(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::store_id): <p> The store ID for annotation store version. </p>
-    ///   - [`id(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::id): <p> The annotation store version ID. </p>
-    ///   - [`status(VersionStatus)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::status): <p> The status of an annotation store version. </p>
-    ///   - [`version_arn(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_arn): <p> The Arn for the annotation store. </p>
-    ///   - [`name(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::name): <p> The name of the annotation store. </p>
-    ///   - [`version_name(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_name): <p> The name given to an annotation store version to distinguish it from others. </p>
-    ///   - [`description(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::description): <p> The description for an annotation store version. </p>
-    ///   - [`creation_time(DateTime)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::creation_time): <p> The time stamp for when an annotation store version was created. </p>
-    ///   - [`update_time(DateTime)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::update_time): <p> The time stamp for when an annotation store version was updated. </p>
-    ///   - [`tags(HashMap::<String, String>)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::tags): <p> Any tags associated with an annotation store version. </p>
-    ///   - [`version_options(Option<VersionOptions>)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_options): <p> The options for an annotation store version. </p>
-    ///   - [`status_message(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::status_message): <p> The status of an annotation store version. </p>
-    ///   - [`version_size_bytes(i64)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_size_bytes): <p> The size of the annotation store version in Bytes. </p>
+    ///   - [`store_id(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::store_id): <p>The store ID for annotation store version.</p>
+    ///   - [`id(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::id): <p>The annotation store version ID.</p>
+    ///   - [`status(VersionStatus)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::status): <p>The status of an annotation store version.</p>
+    ///   - [`version_arn(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_arn): <p>The Arn for the annotation store.</p>
+    ///   - [`name(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::name): <p>The name of the annotation store.</p>
+    ///   - [`version_name(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_name): <p>The name given to an annotation store version to distinguish it from others.</p>
+    ///   - [`description(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::description): <p>The description for an annotation store version.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::creation_time): <p>The time stamp for when an annotation store version was created.</p>
+    ///   - [`update_time(DateTime)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::update_time): <p>The time stamp for when an annotation store version was updated.</p>
+    ///   - [`tags(HashMap::<String, String>)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::tags): <p>Any tags associated with an annotation store version.</p>
+    ///   - [`version_options(Option<VersionOptions>)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_options): <p>The options for an annotation store version.</p>
+    ///   - [`status_message(String)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::status_message): <p>The status of an annotation store version.</p>
+    ///   - [`version_size_bytes(i64)`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput::version_size_bytes): <p>The size of the annotation store version in Bytes.</p>
     /// - On failure, responds with [`SdkError<GetAnnotationStoreVersionError>`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError)
     pub fn get_annotation_store_version(&self) -> crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder {
         crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionFluentBuilder::new(self.handle.clone())

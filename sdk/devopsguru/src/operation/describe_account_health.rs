@@ -237,13 +237,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeAccou
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeAccountHealthError {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
+    /// <p>Contains information about data passed in to a field during a request that is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

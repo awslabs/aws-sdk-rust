@@ -22,7 +22,7 @@ impl ListControlDomainInsightsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListControlDomainInsights`.
 ///
-/// <p>Lists the latest analytics data for control domains across all of your active assessments. </p> <note>
+/// <p>Lists the latest analytics data for control domains across all of your active assessments.</p> <note>
 /// <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that control domain.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,31 +116,31 @@ impl ListControlDomainInsightsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator {
         crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

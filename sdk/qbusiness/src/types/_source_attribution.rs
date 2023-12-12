@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceAttribution {
-    /// <p>The title of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>The content extract from the document on which the generated response is based. </p>
+    /// <p>The content extract from the document on which the generated response is based.</p>
     pub snippet: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The URL of the document which is the source for the Amazon Q generated response.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The number attached to a citation in an Amazon Q generated response.</p>
     pub citation_number: ::std::option::Option<i32>,
@@ -18,15 +18,15 @@ pub struct SourceAttribution {
     pub text_message_segments: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>,
 }
 impl SourceAttribution {
-    /// <p>The title of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The content extract from the document on which the generated response is based. </p>
+    /// <p>The content extract from the document on which the generated response is based.</p>
     pub fn snippet(&self) -> ::std::option::Option<&str> {
         self.snippet.as_deref()
     }
-    /// <p>The URL of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The URL of the document which is the source for the Amazon Q generated response.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -64,45 +64,45 @@ pub struct SourceAttributionBuilder {
     pub(crate) text_message_segments: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>,
 }
 impl SourceAttributionBuilder {
-    /// <p>The title of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The title of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p>The title of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>The content extract from the document on which the generated response is based. </p>
+    /// <p>The content extract from the document on which the generated response is based.</p>
     pub fn snippet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snippet = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content extract from the document on which the generated response is based. </p>
+    /// <p>The content extract from the document on which the generated response is based.</p>
     pub fn set_snippet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snippet = input;
         self
     }
-    /// <p>The content extract from the document on which the generated response is based. </p>
+    /// <p>The content extract from the document on which the generated response is based.</p>
     pub fn get_snippet(&self) -> &::std::option::Option<::std::string::String> {
         &self.snippet
     }
-    /// <p>The URL of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The URL of the document which is the source for the Amazon Q generated response.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The URL of the document which is the source for the Amazon Q generated response.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL of the document which is the source for the Amazon Q generated response. </p>
+    /// <p>The URL of the document which is the source for the Amazon Q generated response.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

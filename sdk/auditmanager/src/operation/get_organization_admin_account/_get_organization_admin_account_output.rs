@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOrganizationAdminAccountOutput {
-    /// <p> The identifier for the administrator account. </p>
+    /// <p>The identifier for the administrator account.</p>
     pub admin_account_id: ::std::option::Option<::std::string::String>,
-    /// <p> The identifier for the organization. </p>
+    /// <p>The identifier for the organization.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOrganizationAdminAccountOutput {
-    /// <p> The identifier for the administrator account. </p>
+    /// <p>The identifier for the administrator account.</p>
     pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
-    /// <p> The identifier for the organization. </p>
+    /// <p>The identifier for the organization.</p>
     pub fn organization_id(&self) -> ::std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct GetOrganizationAdminAccountOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetOrganizationAdminAccountOutputBuilder {
-    /// <p> The identifier for the administrator account. </p>
+    /// <p>The identifier for the administrator account.</p>
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier for the administrator account. </p>
+    /// <p>The identifier for the administrator account.</p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account_id = input;
         self
     }
-    /// <p> The identifier for the administrator account. </p>
+    /// <p>The identifier for the administrator account.</p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account_id
     }
-    /// <p> The identifier for the organization. </p>
+    /// <p>The identifier for the organization.</p>
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier for the organization. </p>
+    /// <p>The identifier for the organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
-    /// <p> The identifier for the organization. </p>
+    /// <p>The identifier for the organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }

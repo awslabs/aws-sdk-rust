@@ -23,7 +23,7 @@ impl UpdateFeatureInputBuilder {
 /// Fluent builder constructing a request to `UpdateFeature`.
 ///
 /// <p>Updates an existing feature.</p>
-/// <p>You can't use this operation to update the tags of an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
+/// <p>You can't use this operation to update the tags of an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFeatureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

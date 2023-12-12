@@ -22,7 +22,7 @@ impl ListSnomedctInferenceJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSNOMEDCTInferenceJobs`.
 ///
-/// <p> Gets a list of InferSNOMEDCT jobs a user has submitted. </p>
+/// <p>Gets a list of InferSNOMEDCT jobs a user has submitted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSNOMEDCTInferenceJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +122,31 @@ impl ListSNOMEDCTInferenceJobsFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
         self.inner.get_filter()
     }
-    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
+    /// <p>Identifies the next page of InferSNOMEDCT results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
+    /// <p>Identifies the next page of InferSNOMEDCT results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
+    /// <p>Identifies the next page of InferSNOMEDCT results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of results to return in each page. The default is 100. </p>
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of results to return in each page. The default is 100. </p>
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of results to return in each page. The default is 100. </p>
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

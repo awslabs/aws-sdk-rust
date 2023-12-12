@@ -138,21 +138,21 @@ impl CreateJobTemplateFluentBuilder {
         self.inner.get_job_arn()
     }
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
-    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn document_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_source(input.into());
         self
     }
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
-    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn set_document_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_source(input);
         self
     }
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
-    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn get_document_source(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_source()
@@ -295,20 +295,20 @@ impl CreateJobTemplateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
     ///
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
-    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
+    /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn destination_package_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_package_versions(input.into());
         self
     }
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
-    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
+    /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn set_destination_package_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_destination_package_versions(input);
         self
     }
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
-    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
+    /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn get_destination_package_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_destination_package_versions()
     }

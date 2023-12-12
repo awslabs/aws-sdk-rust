@@ -31,7 +31,7 @@ pub struct CreateSimulationJobOutput {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -107,7 +107,7 @@ pub struct CreateSimulationJobOutput {
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
     /// <p>The logging configuration.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
-    /// <p>The maximum simulation job duration in seconds. </p>
+    /// <p>The maximum simulation job duration in seconds.</p>
     pub max_job_duration_in_seconds: i64,
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub simulation_time_millis: i64,
@@ -166,7 +166,7 @@ impl CreateSimulationJobOutput {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -250,7 +250,7 @@ impl CreateSimulationJobOutput {
     pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
-    /// <p>The maximum simulation job duration in seconds. </p>
+    /// <p>The maximum simulation job duration in seconds.</p>
     pub fn max_job_duration_in_seconds(&self) -> i64 {
         self.max_job_duration_in_seconds
     }
@@ -418,7 +418,7 @@ impl CreateSimulationJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -509,7 +509,7 @@ impl CreateSimulationJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -600,7 +600,7 @@ impl CreateSimulationJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
+    /// <p>Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -714,17 +714,17 @@ impl CreateSimulationJobOutputBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         &self.logging_config
     }
-    /// <p>The maximum simulation job duration in seconds. </p>
+    /// <p>The maximum simulation job duration in seconds.</p>
     pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
         self.max_job_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum simulation job duration in seconds. </p>
+    /// <p>The maximum simulation job duration in seconds.</p>
     pub fn set_max_job_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_job_duration_in_seconds = input;
         self
     }
-    /// <p>The maximum simulation job duration in seconds. </p>
+    /// <p>The maximum simulation job duration in seconds.</p>
     pub fn get_max_job_duration_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.max_job_duration_in_seconds
     }

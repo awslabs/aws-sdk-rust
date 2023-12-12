@@ -12,7 +12,7 @@ pub struct PhoneNumberInformation {
     pub phone_number: ::std::string::String,
     /// <p>The current status of the phone number.</p>
     pub status: crate::types::NumberStatus,
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub iso_country_code: ::std::string::String,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub message_type: crate::types::MessageType,
@@ -28,7 +28,7 @@ pub struct PhoneNumberInformation {
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub two_way_channel_role: ::std::option::Option<::std::string::String>,
-    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
+    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a></p>
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the phone number.</p>
     pub opt_out_list_name: ::std::string::String,
@@ -60,7 +60,7 @@ impl PhoneNumberInformation {
     pub fn status(&self) -> &crate::types::NumberStatus {
         &self.status
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn iso_country_code(&self) -> &str {
         use std::ops::Deref;
         self.iso_country_code.deref()
@@ -95,7 +95,7 @@ impl PhoneNumberInformation {
     pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
         self.two_way_channel_role.as_deref()
     }
-    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
+    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a></p>
     pub fn self_managed_opt_outs_enabled(&self) -> bool {
         self.self_managed_opt_outs_enabled
     }
@@ -211,18 +211,18 @@ impl PhoneNumberInformationBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NumberStatus> {
         &self.status
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }
@@ -334,18 +334,18 @@ impl PhoneNumberInformationBuilder {
     pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.two_way_channel_role
     }
-    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
+    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a></p>
     /// This field is required.
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
+    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a></p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.self_managed_opt_outs_enabled = input;
         self
     }
-    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
+    /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a></p>
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
         &self.self_managed_opt_outs_enabled
     }

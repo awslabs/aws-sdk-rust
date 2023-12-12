@@ -9,7 +9,7 @@ pub struct UpdateJobExecutionInput {
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
-    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    /// <p>Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub step_timeout_in_minutes: ::std::option::Option<i64>,
@@ -35,7 +35,7 @@ impl UpdateJobExecutionInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::JobExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    /// <p>Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn status_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.status_details.as_ref()
     }
@@ -131,7 +131,7 @@ impl UpdateJobExecutionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
     ///
-    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    /// <p>Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn status_details(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -142,7 +142,7 @@ impl UpdateJobExecutionInputBuilder {
         self.status_details = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    /// <p>Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn set_status_details(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -150,7 +150,7 @@ impl UpdateJobExecutionInputBuilder {
         self.status_details = input;
         self
     }
-    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    /// <p>Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.status_details
     }

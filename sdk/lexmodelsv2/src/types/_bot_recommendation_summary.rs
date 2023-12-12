@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotRecommendationSummary {
     /// <p>The status of the bot recommendation.</p>
-    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub bot_recommendation_status: crate::types::BotRecommendationStatus,
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
     pub bot_recommendation_id: ::std::string::String,
@@ -16,7 +16,7 @@ pub struct BotRecommendationSummary {
 }
 impl BotRecommendationSummary {
     /// <p>The status of the bot recommendation.</p>
-    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub fn bot_recommendation_status(&self) -> &crate::types::BotRecommendationStatus {
         &self.bot_recommendation_status
     }
@@ -52,20 +52,20 @@ pub struct BotRecommendationSummaryBuilder {
 }
 impl BotRecommendationSummaryBuilder {
     /// <p>The status of the bot recommendation.</p>
-    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     /// This field is required.
     pub fn bot_recommendation_status(mut self, input: crate::types::BotRecommendationStatus) -> Self {
         self.bot_recommendation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the bot recommendation.</p>
-    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub fn set_bot_recommendation_status(mut self, input: ::std::option::Option<crate::types::BotRecommendationStatus>) -> Self {
         self.bot_recommendation_status = input;
         self
     }
     /// <p>The status of the bot recommendation.</p>
-    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub fn get_bot_recommendation_status(&self) -> &::std::option::Option<crate::types::BotRecommendationStatus> {
         &self.bot_recommendation_status
     }

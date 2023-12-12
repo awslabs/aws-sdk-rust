@@ -5,7 +5,7 @@
 pub struct DeleteAppInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application.</p>
     pub force_delete: ::std::option::Option<bool>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl DeleteAppInput {
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application.</p>
     pub fn force_delete(&self) -> ::std::option::Option<bool> {
         self.force_delete
     }
@@ -55,17 +55,17 @@ impl DeleteAppInputBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
-    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.force_delete = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
     }
-    /// <p>A boolean option to force the deletion of an Resilience Hub application. </p>
+    /// <p>A boolean option to force the deletion of an Resilience Hub application.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }

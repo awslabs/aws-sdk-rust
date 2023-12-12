@@ -12,9 +12,9 @@ pub struct DirectoryConnectSettings {
     pub customer_dns_ips: ::std::vec::Vec<::std::string::String>,
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
-    /// <li> <p>Read users and groups</p> </li>
-    /// <li> <p>Create computer objects</p> </li>
-    /// <li> <p>Join computers to the domain</p> </li>
+    /// <li><p>Read users and groups</p></li>
+    /// <li><p>Create computer objects</p></li>
+    /// <li><p>Join computers to the domain</p></li>
     /// </ul>
     pub customer_user_name: ::std::string::String,
 }
@@ -36,9 +36,9 @@ impl DirectoryConnectSettings {
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
-    /// <li> <p>Read users and groups</p> </li>
-    /// <li> <p>Create computer objects</p> </li>
-    /// <li> <p>Join computers to the domain</p> </li>
+    /// <li><p>Read users and groups</p></li>
+    /// <li><p>Create computer objects</p></li>
+    /// <li><p>Join computers to the domain</p></li>
     /// </ul>
     pub fn customer_user_name(&self) -> &str {
         use std::ops::Deref;
@@ -119,9 +119,9 @@ impl DirectoryConnectSettingsBuilder {
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
-    /// <li> <p>Read users and groups</p> </li>
-    /// <li> <p>Create computer objects</p> </li>
-    /// <li> <p>Join computers to the domain</p> </li>
+    /// <li><p>Read users and groups</p></li>
+    /// <li><p>Create computer objects</p></li>
+    /// <li><p>Join computers to the domain</p></li>
     /// </ul>
     /// This field is required.
     pub fn customer_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,9 +130,9 @@ impl DirectoryConnectSettingsBuilder {
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
-    /// <li> <p>Read users and groups</p> </li>
-    /// <li> <p>Create computer objects</p> </li>
-    /// <li> <p>Join computers to the domain</p> </li>
+    /// <li><p>Read users and groups</p></li>
+    /// <li><p>Create computer objects</p></li>
+    /// <li><p>Join computers to the domain</p></li>
     /// </ul>
     pub fn set_customer_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_user_name = input;
@@ -140,9 +140,9 @@ impl DirectoryConnectSettingsBuilder {
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
-    /// <li> <p>Read users and groups</p> </li>
-    /// <li> <p>Create computer objects</p> </li>
-    /// <li> <p>Join computers to the domain</p> </li>
+    /// <li><p>Read users and groups</p></li>
+    /// <li><p>Create computer objects</p></li>
+    /// <li><p>Join computers to the domain</p></li>
     /// </ul>
     pub fn get_customer_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_user_name

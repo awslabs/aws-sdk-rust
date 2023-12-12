@@ -108,17 +108,17 @@ impl StartDBClusterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code></p>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
-    /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
-    /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code></p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
     }

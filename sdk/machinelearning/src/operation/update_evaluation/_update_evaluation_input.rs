@@ -5,7 +5,7 @@
 pub struct UpdateEvaluationInput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
     pub evaluation_id: ::std::option::Option<::std::string::String>,
-    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.</p>
     pub evaluation_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEvaluationInput {
@@ -13,7 +13,7 @@ impl UpdateEvaluationInput {
     pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
         self.evaluation_id.as_deref()
     }
-    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.</p>
     pub fn evaluation_name(&self) -> ::std::option::Option<&str> {
         self.evaluation_name.as_deref()
     }
@@ -48,18 +48,18 @@ impl UpdateEvaluationInputBuilder {
     pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_id
     }
-    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.</p>
     /// This field is required.
     pub fn evaluation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.</p>
     pub fn set_evaluation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_name = input;
         self
     }
-    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.</p>
     pub fn get_evaluation_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_name
     }

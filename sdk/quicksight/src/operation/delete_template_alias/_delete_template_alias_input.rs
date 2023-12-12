@@ -7,7 +7,7 @@ pub struct DeleteTemplateAliasInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the template that the specified alias is for.</p>
     pub template_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
+    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.</p>
     pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTemplateAliasInput {
@@ -19,7 +19,7 @@ impl DeleteTemplateAliasInput {
     pub fn template_id(&self) -> ::std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
+    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.</p>
     pub fn alias_name(&self) -> ::std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -70,18 +70,18 @@ impl DeleteTemplateAliasInputBuilder {
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_id
     }
-    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
+    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.</p>
     /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
+    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_name = input;
         self
     }
-    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
+    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_name
     }

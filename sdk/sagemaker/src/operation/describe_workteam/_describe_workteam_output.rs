@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkteamOutput {
-    /// <p>A <code>Workteam</code> instance that contains information about the work team. </p>
+    /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     pub workteam: ::std::option::Option<crate::types::Workteam>,
     _request_id: Option<String>,
 }
 impl DescribeWorkteamOutput {
-    /// <p>A <code>Workteam</code> instance that contains information about the work team. </p>
+    /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     pub fn workteam(&self) -> ::std::option::Option<&crate::types::Workteam> {
         self.workteam.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeWorkteamOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeWorkteamOutputBuilder {
-    /// <p>A <code>Workteam</code> instance that contains information about the work team. </p>
+    /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     /// This field is required.
     pub fn workteam(mut self, input: crate::types::Workteam) -> Self {
         self.workteam = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>Workteam</code> instance that contains information about the work team. </p>
+    /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     pub fn set_workteam(mut self, input: ::std::option::Option<crate::types::Workteam>) -> Self {
         self.workteam = input;
         self
     }
-    /// <p>A <code>Workteam</code> instance that contains information about the work team. </p>
+    /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     pub fn get_workteam(&self) -> &::std::option::Option<crate::types::Workteam> {
         &self.workteam
     }

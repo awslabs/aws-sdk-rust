@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results per page. </p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p><br>
     /// - On success, responds with [`ListReplicationSetsOutput`](crate::operation::list_replication_sets::ListReplicationSetsOutput) with field(s):
     ///   - [`replication_set_arns(Vec::<String>)`](crate::operation::list_replication_sets::ListReplicationSetsOutput::replication_set_arns): <p>The Amazon Resource Name (ARN) of the list replication set.</p>

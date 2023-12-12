@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobOutput {
-    /// <p> The ID of the Amazon Web Services account that the dashboard snapshot job is executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dashboard that you have started a snapshot job for.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
@@ -17,24 +17,24 @@ pub struct DescribeDashboardSnapshotJobOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>COMPLETED</code> - The job was completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The job failed to execute.</p> </li>
-    /// <li> <p> <code>QUEUED</code> - The job is queued and hasn't started yet.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The job is still running.</p> </li>
+    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub job_status: ::std::option::Option<crate::types::SnapshotJobStatus>,
-    /// <p> The time that the snapshot job was created. </p>
+    /// <p>The time that the snapshot job was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The time that the snapshot job status was last updated. </p>
+    /// <p>The time that the snapshot job status was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The Amazon Web Services request ID for this operation. </p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request</p>
     pub status: i32,
     _request_id: Option<String>,
 }
 impl DescribeDashboardSnapshotJobOutput {
-    /// <p> The ID of the Amazon Web Services account that the dashboard snapshot job is executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -60,23 +60,23 @@ impl DescribeDashboardSnapshotJobOutput {
     }
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>COMPLETED</code> - The job was completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The job failed to execute.</p> </li>
-    /// <li> <p> <code>QUEUED</code> - The job is queued and hasn't started yet.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The job is still running.</p> </li>
+    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::SnapshotJobStatus> {
         self.job_status.as_ref()
     }
-    /// <p> The time that the snapshot job was created. </p>
+    /// <p>The time that the snapshot job was created.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p> The time that the snapshot job status was last updated. </p>
+    /// <p>The time that the snapshot job status was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p> The Amazon Web Services request ID for this operation. </p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -115,17 +115,17 @@ pub struct DescribeDashboardSnapshotJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeDashboardSnapshotJobOutputBuilder {
-    /// <p> The ID of the Amazon Web Services account that the dashboard snapshot job is executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the Amazon Web Services account that the dashboard snapshot job is executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p> The ID of the Amazon Web Services account that the dashboard snapshot job is executed in. </p>
+    /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
@@ -201,10 +201,10 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
     }
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>COMPLETED</code> - The job was completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The job failed to execute.</p> </li>
-    /// <li> <p> <code>QUEUED</code> - The job is queued and hasn't started yet.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The job is still running.</p> </li>
+    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub fn job_status(mut self, input: crate::types::SnapshotJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -212,10 +212,10 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
     }
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>COMPLETED</code> - The job was completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The job failed to execute.</p> </li>
-    /// <li> <p> <code>QUEUED</code> - The job is queued and hasn't started yet.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The job is still running.</p> </li>
+    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::SnapshotJobStatus>) -> Self {
         self.job_status = input;
@@ -223,53 +223,53 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
     }
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>COMPLETED</code> - The job was completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The job failed to execute.</p> </li>
-    /// <li> <p> <code>QUEUED</code> - The job is queued and hasn't started yet.</p> </li>
-    /// <li> <p> <code>RUNNING</code> - The job is still running.</p> </li>
+    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::SnapshotJobStatus> {
         &self.job_status
     }
-    /// <p> The time that the snapshot job was created. </p>
+    /// <p>The time that the snapshot job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The time that the snapshot job was created. </p>
+    /// <p>The time that the snapshot job was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
-    /// <p> The time that the snapshot job was created. </p>
+    /// <p>The time that the snapshot job was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_time
     }
-    /// <p> The time that the snapshot job status was last updated. </p>
+    /// <p>The time that the snapshot job status was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The time that the snapshot job status was last updated. </p>
+    /// <p>The time that the snapshot job status was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p> The time that the snapshot job status was last updated. </p>
+    /// <p>The time that the snapshot job status was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
-    /// <p> The Amazon Web Services request ID for this operation. </p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Web Services request ID for this operation. </p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
-    /// <p> The Amazon Web Services request ID for this operation. </p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }

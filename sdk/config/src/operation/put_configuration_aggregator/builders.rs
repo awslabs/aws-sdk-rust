@@ -23,12 +23,12 @@ impl PutConfigurationAggregatorInputBuilder {
 /// Fluent builder constructing a request to `PutConfigurationAggregator`.
 ///
 /// <p>Creates and updates the configuration aggregator with the selected source accounts and regions. The source account can be individual account(s) or an organization.</p>
-/// <p> <code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional accounts into the aggregator, call <code>DescribeConfigurationAggregators</code> to get the previous accounts and then append new ones.</p> <note>
+/// <p><code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional accounts into the aggregator, call <code>DescribeConfigurationAggregators</code> to get the previous accounts and then append new ones.</p> <note>
 /// <p>Config should be enabled in source accounts and regions you want to aggregate.</p>
 /// <p>If your source type is an organization, you must be signed in to the management account or a registered delegated administrator and all the features must be enabled in your organization. If the caller is a management account, Config calls <code>EnableAwsServiceAccess</code> API to enable integration between Config and Organizations. If the caller is a registered delegated administrator, Config calls <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.</p>
-/// <p>To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register a Delegated Administrator</a> in the <i>Config developer guide</i>. </p>
+/// <p>To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register a Delegated Administrator</a> in the <i>Config developer guide</i>.</p>
 /// </note> <note>
-/// <p> <code>PutConfigurationAggregator</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different <code>tags</code> values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
+/// <p><code>PutConfigurationAggregator</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different <code>tags</code> values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConfigurationAggregatorFluentBuilder {
@@ -133,17 +133,17 @@ impl PutConfigurationAggregatorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_aggregation_sources`](Self::set_account_aggregation_sources).
     ///
-    /// <p>A list of AccountAggregationSource object. </p>
+    /// <p>A list of AccountAggregationSource object.</p>
     pub fn account_aggregation_sources(mut self, input: crate::types::AccountAggregationSource) -> Self {
         self.inner = self.inner.account_aggregation_sources(input);
         self
     }
-    /// <p>A list of AccountAggregationSource object. </p>
+    /// <p>A list of AccountAggregationSource object.</p>
     pub fn set_account_aggregation_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>) -> Self {
         self.inner = self.inner.set_account_aggregation_sources(input);
         self
     }
-    /// <p>A list of AccountAggregationSource object. </p>
+    /// <p>A list of AccountAggregationSource object.</p>
     pub fn get_account_aggregation_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>> {
         self.inner.get_account_aggregation_sources()
     }

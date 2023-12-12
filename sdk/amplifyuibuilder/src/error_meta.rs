@@ -11,7 +11,7 @@ pub enum Error {
     ResourceConflictException(crate::types::error::ResourceConflictException),
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account. </p>
+    /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

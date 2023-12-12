@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Outpost {
-    /// <p> The ID of the Outpost. </p>
+    /// <p>The ID of the Outpost.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the Outpost owner.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -26,11 +26,11 @@ pub struct Outpost {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub site_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The hardware type. </p>
+    /// <p>The hardware type.</p>
     pub supported_hardware_type: ::std::option::Option<crate::types::SupportedHardwareType>,
 }
 impl Outpost {
-    /// <p> The ID of the Outpost. </p>
+    /// <p>The ID of the Outpost.</p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -74,7 +74,7 @@ impl Outpost {
     pub fn site_arn(&self) -> ::std::option::Option<&str> {
         self.site_arn.as_deref()
     }
-    /// <p> The hardware type. </p>
+    /// <p>The hardware type.</p>
     pub fn supported_hardware_type(&self) -> ::std::option::Option<&crate::types::SupportedHardwareType> {
         self.supported_hardware_type.as_ref()
     }
@@ -104,17 +104,17 @@ pub struct OutpostBuilder {
     pub(crate) supported_hardware_type: ::std::option::Option<crate::types::SupportedHardwareType>,
 }
 impl OutpostBuilder {
-    /// <p> The ID of the Outpost. </p>
+    /// <p>The ID of the Outpost.</p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the Outpost. </p>
+    /// <p>The ID of the Outpost.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }
-    /// <p> The ID of the Outpost. </p>
+    /// <p>The ID of the Outpost.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
     }
@@ -264,17 +264,17 @@ impl OutpostBuilder {
     pub fn get_site_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.site_arn
     }
-    /// <p> The hardware type. </p>
+    /// <p>The hardware type.</p>
     pub fn supported_hardware_type(mut self, input: crate::types::SupportedHardwareType) -> Self {
         self.supported_hardware_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The hardware type. </p>
+    /// <p>The hardware type.</p>
     pub fn set_supported_hardware_type(mut self, input: ::std::option::Option<crate::types::SupportedHardwareType>) -> Self {
         self.supported_hardware_type = input;
         self
     }
-    /// <p> The hardware type. </p>
+    /// <p>The hardware type.</p>
     pub fn get_supported_hardware_type(&self) -> &::std::option::Option<crate::types::SupportedHardwareType> {
         &self.supported_hardware_type
     }

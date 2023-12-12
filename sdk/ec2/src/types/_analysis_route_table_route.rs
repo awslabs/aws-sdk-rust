@@ -20,9 +20,9 @@ pub struct AnalysisRouteTableRoute {
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes how the route was created. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>CreateRouteTable - The route was automatically created when the route table was created.</p> </li>
-    /// <li> <p>CreateRoute - The route was manually added to the route table.</p> </li>
-    /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
+    /// <li><p>CreateRouteTable - The route was automatically created when the route table was created.</p></li>
+    /// <li><p>CreateRoute - The route was manually added to the route table.</p></li>
+    /// <li><p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub origin: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a transit gateway.</p>
@@ -31,8 +31,8 @@ pub struct AnalysisRouteTableRoute {
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>active</p> </li>
-    /// <li> <p>blackhole</p> </li>
+    /// <li><p>active</p></li>
+    /// <li><p>blackhole</p></li>
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a carrier gateway.</p>
@@ -73,9 +73,9 @@ impl AnalysisRouteTableRoute {
     }
     /// <p>Describes how the route was created. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>CreateRouteTable - The route was automatically created when the route table was created.</p> </li>
-    /// <li> <p>CreateRoute - The route was manually added to the route table.</p> </li>
-    /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
+    /// <li><p>CreateRouteTable - The route was automatically created when the route table was created.</p></li>
+    /// <li><p>CreateRoute - The route was manually added to the route table.</p></li>
+    /// <li><p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn origin(&self) -> ::std::option::Option<&str> {
         self.origin.as_deref()
@@ -90,8 +90,8 @@ impl AnalysisRouteTableRoute {
     }
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>active</p> </li>
-    /// <li> <p>blackhole</p> </li>
+    /// <li><p>active</p></li>
+    /// <li><p>blackhole</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
@@ -236,9 +236,9 @@ impl AnalysisRouteTableRouteBuilder {
     }
     /// <p>Describes how the route was created. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>CreateRouteTable - The route was automatically created when the route table was created.</p> </li>
-    /// <li> <p>CreateRoute - The route was manually added to the route table.</p> </li>
-    /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
+    /// <li><p>CreateRouteTable - The route was automatically created when the route table was created.</p></li>
+    /// <li><p>CreateRoute - The route was manually added to the route table.</p></li>
+    /// <li><p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin = ::std::option::Option::Some(input.into());
@@ -246,9 +246,9 @@ impl AnalysisRouteTableRouteBuilder {
     }
     /// <p>Describes how the route was created. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>CreateRouteTable - The route was automatically created when the route table was created.</p> </li>
-    /// <li> <p>CreateRoute - The route was manually added to the route table.</p> </li>
-    /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
+    /// <li><p>CreateRouteTable - The route was automatically created when the route table was created.</p></li>
+    /// <li><p>CreateRoute - The route was manually added to the route table.</p></li>
+    /// <li><p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn set_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin = input;
@@ -256,9 +256,9 @@ impl AnalysisRouteTableRouteBuilder {
     }
     /// <p>Describes how the route was created. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>CreateRouteTable - The route was automatically created when the route table was created.</p> </li>
-    /// <li> <p>CreateRoute - The route was manually added to the route table.</p> </li>
-    /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
+    /// <li><p>CreateRouteTable - The route was automatically created when the route table was created.</p></li>
+    /// <li><p>CreateRoute - The route was manually added to the route table.</p></li>
+    /// <li><p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn get_origin(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin
@@ -293,8 +293,8 @@ impl AnalysisRouteTableRouteBuilder {
     }
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>active</p> </li>
-    /// <li> <p>blackhole</p> </li>
+    /// <li><p>active</p></li>
+    /// <li><p>blackhole</p></li>
     /// </ul>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -302,8 +302,8 @@ impl AnalysisRouteTableRouteBuilder {
     }
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>active</p> </li>
-    /// <li> <p>blackhole</p> </li>
+    /// <li><p>active</p></li>
+    /// <li><p>blackhole</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
@@ -311,8 +311,8 @@ impl AnalysisRouteTableRouteBuilder {
     }
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>active</p> </li>
-    /// <li> <p>blackhole</p> </li>
+    /// <li><p>active</p></li>
+    /// <li><p>blackhole</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state

@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultipartReadSetUploadsOutput {
-    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> An array of multipart uploads. </p>
+    /// <p>An array of multipart uploads.</p>
     pub uploads: ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>,
     _request_id: Option<String>,
 }
 impl ListMultipartReadSetUploadsOutput {
-    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> An array of multipart uploads. </p>
+    /// <p>An array of multipart uploads.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.uploads.is_none()`.
     pub fn uploads(&self) -> &[crate::types::MultipartReadSetUploadListItem] {
@@ -42,17 +42,17 @@ pub struct ListMultipartReadSetUploadsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListMultipartReadSetUploadsOutputBuilder {
-    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListMultipartReadSetUploadsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_uploads`](Self::set_uploads).
     ///
-    /// <p> An array of multipart uploads. </p>
+    /// <p>An array of multipart uploads.</p>
     pub fn uploads(mut self, input: crate::types::MultipartReadSetUploadListItem) -> Self {
         let mut v = self.uploads.unwrap_or_default();
         v.push(input);
         self.uploads = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of multipart uploads. </p>
+    /// <p>An array of multipart uploads.</p>
     pub fn set_uploads(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>) -> Self {
         self.uploads = input;
         self
     }
-    /// <p> An array of multipart uploads. </p>
+    /// <p>An array of multipart uploads.</p>
     pub fn get_uploads(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>> {
         &self.uploads
     }

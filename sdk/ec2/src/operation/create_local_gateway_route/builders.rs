@@ -22,10 +22,10 @@ impl CreateLocalGatewayRouteInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocalGatewayRoute`.
 ///
-/// <p>Creates a static route for the specified local gateway route table. You must specify one of the following targets: </p>
+/// <p>Creates a static route for the specified local gateway route table. You must specify one of the following targets:</p>
 /// <ul>
-/// <li> <p> <code>LocalGatewayVirtualInterfaceGroupId</code> </p> </li>
-/// <li> <p> <code>NetworkInterfaceId</code> </p> </li>
+/// <li><p><code>LocalGatewayVirtualInterfaceGroupId</code></p></li>
+/// <li><p><code>NetworkInterfaceId</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteFluentBuilder {
@@ -182,17 +182,17 @@ impl CreateLocalGatewayRouteFluentBuilder {
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_interface_id()
     }
-    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
     pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_prefix_list_id(input.into());
         self
     }
-    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
     }
-    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_prefix_list_id()
     }

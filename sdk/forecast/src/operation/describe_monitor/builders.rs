@@ -24,13 +24,13 @@ impl DescribeMonitorInputBuilder {
 ///
 /// <p>Describes a monitor resource. In addition to listing the properties provided in the <code>CreateMonitor</code> request, this operation lists the following properties:</p>
 /// <ul>
-/// <li> <p> <code>Baseline</code> </p> </li>
-/// <li> <p> <code>CreationTime</code> </p> </li>
-/// <li> <p> <code>LastEvaluationTime</code> </p> </li>
-/// <li> <p> <code>LastEvaluationState</code> </p> </li>
-/// <li> <p> <code>LastModificationTime</code> </p> </li>
-/// <li> <p> <code>Message</code> </p> </li>
-/// <li> <p> <code>Status</code> </p> </li>
+/// <li><p><code>Baseline</code></p></li>
+/// <li><p><code>CreationTime</code></p></li>
+/// <li><p><code>LastEvaluationTime</code></p></li>
+/// <li><p><code>LastEvaluationState</code></p></li>
+/// <li><p><code>LastModificationTime</code></p></li>
+/// <li><p><code>Message</code></p></li>
+/// <li><p><code>Status</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMonitorFluentBuilder {

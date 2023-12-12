@@ -11,7 +11,7 @@ pub struct CreateLinkInput {
     /// <p>The type of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p> The upload speed and download speed in Mbps. </p>
+    /// <p>The upload speed and download speed in Mbps.</p>
     pub bandwidth: ::std::option::Option<crate::types::Bandwidth>,
     /// <p>The provider of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
@@ -36,7 +36,7 @@ impl CreateLinkInput {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p> The upload speed and download speed in Mbps. </p>
+    /// <p>The upload speed and download speed in Mbps.</p>
     pub fn bandwidth(&self) -> ::std::option::Option<&crate::types::Bandwidth> {
         self.bandwidth.as_ref()
     }
@@ -125,18 +125,18 @@ impl CreateLinkInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p> The upload speed and download speed in Mbps. </p>
+    /// <p>The upload speed and download speed in Mbps.</p>
     /// This field is required.
     pub fn bandwidth(mut self, input: crate::types::Bandwidth) -> Self {
         self.bandwidth = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The upload speed and download speed in Mbps. </p>
+    /// <p>The upload speed and download speed in Mbps.</p>
     pub fn set_bandwidth(mut self, input: ::std::option::Option<crate::types::Bandwidth>) -> Self {
         self.bandwidth = input;
         self
     }
-    /// <p> The upload speed and download speed in Mbps. </p>
+    /// <p>The upload speed and download speed in Mbps.</p>
     pub fn get_bandwidth(&self) -> &::std::option::Option<crate::types::Bandwidth> {
         &self.bandwidth
     }

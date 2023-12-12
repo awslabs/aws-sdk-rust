@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusInput {
-    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     pub cost_allocation_tags_status: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>>,
 }
 impl UpdateCostAllocationTagsStatusInput {
-    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_allocation_tags_status.is_none()`.
     pub fn cost_allocation_tags_status(&self) -> &[crate::types::CostAllocationTagStatusEntry] {
@@ -32,14 +32,14 @@ impl UpdateCostAllocationTagsStatusInputBuilder {
     ///
     /// To override the contents of this collection use [`set_cost_allocation_tags_status`](Self::set_cost_allocation_tags_status).
     ///
-    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     pub fn cost_allocation_tags_status(mut self, input: crate::types::CostAllocationTagStatusEntry) -> Self {
         let mut v = self.cost_allocation_tags_status.unwrap_or_default();
         v.push(input);
         self.cost_allocation_tags_status = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     pub fn set_cost_allocation_tags_status(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>>,
@@ -47,7 +47,7 @@ impl UpdateCostAllocationTagsStatusInputBuilder {
         self.cost_allocation_tags_status = input;
         self
     }
-    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     pub fn get_cost_allocation_tags_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>> {
         &self.cost_allocation_tags_status
     }

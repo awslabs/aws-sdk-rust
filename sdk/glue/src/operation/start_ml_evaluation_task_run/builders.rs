@@ -22,7 +22,7 @@ impl StartMlEvaluationTaskRunInputBuilder {
 }
 /// Fluent builder constructing a request to `StartMLEvaluationTaskRun`.
 ///
-/// <p>Starts a task to estimate the quality of the transform. </p>
+/// <p>Starts a task to estimate the quality of the transform.</p>
 /// <p>When you provide label sets as examples of truth, Glue machine learning uses some of those examples to learn from them. The rest of the labels are used as a test to estimate quality.</p>
 /// <p>Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to get more information about the stats of the <code>EvaluationTaskRun</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

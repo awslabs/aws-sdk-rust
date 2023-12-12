@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeprecateSystemTemplate`](crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the system to delete.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the system to delete.</p> <p>The ID should be in the following format.</p> <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p><br>
     /// - On success, responds with [`DeprecateSystemTemplateOutput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput)
     /// - On failure, responds with [`SdkError<DeprecateSystemTemplateError>`](crate::operation::deprecate_system_template::DeprecateSystemTemplateError)
     #[deprecated(note = "since: 2022-08-30")]

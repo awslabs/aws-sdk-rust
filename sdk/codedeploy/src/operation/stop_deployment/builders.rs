@@ -108,31 +108,31 @@ impl StopDeploymentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_id()
     }
-    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
+    /// <p>Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision.</p>
     pub fn auto_rollback_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_rollback_enabled(input);
         self
     }
-    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
+    /// <p>Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision.</p>
     pub fn set_auto_rollback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_rollback_enabled(input);
         self
     }
-    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
+    /// <p>Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision.</p>
     pub fn get_auto_rollback_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_rollback_enabled()
     }

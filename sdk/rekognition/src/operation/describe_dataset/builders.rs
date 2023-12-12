@@ -25,7 +25,7 @@ impl DescribeDatasetInputBuilder {
 /// <note>
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
-/// <p> Describes an Amazon Rekognition Custom Labels dataset. You can get information such as the current status of a dataset and statistics about the images and labels in a dataset. </p>
+/// <p>Describes an Amazon Rekognition Custom Labels dataset. You can get information such as the current status of a dataset and statistics about the images and labels in a dataset.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:DescribeDataset</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDatasetFluentBuilder {
@@ -112,17 +112,17 @@ impl DescribeDatasetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to describe.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to describe.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to describe.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_arn()
     }

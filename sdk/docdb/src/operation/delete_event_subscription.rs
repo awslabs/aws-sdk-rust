@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteEventSu
 pub enum DeleteEventSubscriptionError {
     /// <p>Someone else might be modifying a subscription. Wait a few seconds, and try again.</p>
     InvalidEventSubscriptionStateFault(crate::types::error::InvalidEventSubscriptionStateFault),
-    /// <p>The subscription name does not exist. </p>
+    /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::types::error::SubscriptionNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

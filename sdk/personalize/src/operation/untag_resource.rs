@@ -251,7 +251,7 @@ pub enum UntagResourceError {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource). </p>
+    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource).</p>
     TooManyTagKeysException(crate::types::error::TooManyTagKeysException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>The continuation token for the next set of results, if the results cannot be returned in one response.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum amount of data that can be contained in a single set of results.</p><br>
     /// - On success, responds with [`ListResourcesOutput`](crate::operation::list_resources::ListResourcesOutput) with field(s):
-    ///   - [`resources(Option<Vec::<Resource>>)`](crate::operation::list_resources::ListResourcesOutput::resources): <p>An array of resources associated with the project. </p>
+    ///   - [`resources(Option<Vec::<Resource>>)`](crate::operation::list_resources::ListResourcesOutput::resources): <p>An array of resources associated with the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resources::ListResourcesOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::operation::list_resources::ListResourcesError)
     pub fn list_resources(&self) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {

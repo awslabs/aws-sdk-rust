@@ -10,7 +10,7 @@ pub struct Criterion {
     pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
     pub contains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An "exists" operator to match for the filter used to create the rule. </p>
+    /// <p>An "exists" operator to match for the filter used to create the rule.</p>
     pub exists: ::std::option::Option<bool>,
 }
 impl Criterion {
@@ -32,7 +32,7 @@ impl Criterion {
     pub fn contains(&self) -> &[::std::string::String] {
         self.contains.as_deref().unwrap_or_default()
     }
-    /// <p>An "exists" operator to match for the filter used to create the rule. </p>
+    /// <p>An "exists" operator to match for the filter used to create the rule.</p>
     pub fn exists(&self) -> ::std::option::Option<bool> {
         self.exists
     }
@@ -114,17 +114,17 @@ impl CriterionBuilder {
     pub fn get_contains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contains
     }
-    /// <p>An "exists" operator to match for the filter used to create the rule. </p>
+    /// <p>An "exists" operator to match for the filter used to create the rule.</p>
     pub fn exists(mut self, input: bool) -> Self {
         self.exists = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An "exists" operator to match for the filter used to create the rule. </p>
+    /// <p>An "exists" operator to match for the filter used to create the rule.</p>
     pub fn set_exists(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exists = input;
         self
     }
-    /// <p>An "exists" operator to match for the filter used to create the rule. </p>
+    /// <p>An "exists" operator to match for the filter used to create the rule.</p>
     pub fn get_exists(&self) -> &::std::option::Option<bool> {
         &self.exists
     }

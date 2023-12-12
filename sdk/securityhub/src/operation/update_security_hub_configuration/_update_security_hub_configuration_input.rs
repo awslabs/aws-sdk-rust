@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityHubConfigurationInput {
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
     pub auto_enable_controls: ::std::option::Option<bool>,
     /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
@@ -13,7 +13,7 @@ pub struct UpdateSecurityHubConfigurationInput {
 }
 impl UpdateSecurityHubConfigurationInput {
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
     pub fn auto_enable_controls(&self) -> ::std::option::Option<bool> {
         self.auto_enable_controls
     }
@@ -40,19 +40,19 @@ pub struct UpdateSecurityHubConfigurationInputBuilder {
 }
 impl UpdateSecurityHubConfigurationInputBuilder {
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
     pub fn auto_enable_controls(mut self, input: bool) -> Self {
         self.auto_enable_controls = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
     pub fn set_auto_enable_controls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_enable_controls = input;
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
     pub fn get_auto_enable_controls(&self) -> &::std::option::Option<bool> {
         &self.auto_enable_controls
     }

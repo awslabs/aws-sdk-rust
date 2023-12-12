@@ -22,7 +22,7 @@ impl ListPackagesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPackages`.
 ///
-/// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects for packages in a repository that match the request parameters. </p>
+/// <p>Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects for packages in a repository that match the request parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPackagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListPackagesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_packages::paginator::ListPackagesPaginator {
         crate::operation::list_packages::paginator::ListPackagesPaginator::new(self.handle, self.inner)
     }
-    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
+    /// <p>The name of the domain that contains the repository that contains the requested packages.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
+    /// <p>The name of the domain that contains the repository that contains the requested packages.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
+    /// <p>The name of the domain that contains the repository that contains the requested packages.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_owner()
     }
-    /// <p> The name of the repository that contains the requested packages. </p>
+    /// <p>The name of the repository that contains the requested packages.</p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
         self
     }
-    /// <p> The name of the repository that contains the requested packages. </p>
+    /// <p>The name of the repository that contains the requested packages.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
-    /// <p> The name of the repository that contains the requested packages. </p>
+    /// <p>The name of the repository that contains the requested packages.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository()
     }
@@ -173,10 +173,10 @@ impl ListPackagesFluentBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -185,10 +185,10 @@ impl ListPackagesFluentBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -197,53 +197,53 @@ impl ListPackagesFluentBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
-    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
     pub fn package_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_prefix(input.into());
         self
     }
-    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
     pub fn set_package_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_prefix(input);
         self
     }
-    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
     pub fn get_package_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package_prefix()
     }
-    /// <p> The maximum number of results to return per page. </p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of results to return per page. </p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of results to return per page. </p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

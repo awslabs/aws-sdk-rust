@@ -22,7 +22,7 @@ impl ListEventIntegrationAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEventIntegrationAssociations`.
 ///
-/// <p>Returns a paginated list of event integration associations in the account. </p>
+/// <p>Returns a paginated list of event integration associations in the account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventIntegrationAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListEventIntegrationAssociationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_event_integration_associations::paginator::ListEventIntegrationAssociationsPaginator {
         crate::operation::list_event_integration_associations::paginator::ListEventIntegrationAssociationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the event integration. </p>
+    /// <p>The name of the event integration.</p>
     pub fn event_integration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_integration_name(input.into());
         self
     }
-    /// <p>The name of the event integration. </p>
+    /// <p>The name of the event integration.</p>
     pub fn set_event_integration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_integration_name(input);
         self
     }
-    /// <p>The name of the event integration. </p>
+    /// <p>The name of the event integration.</p>
     pub fn get_event_integration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_integration_name()
     }

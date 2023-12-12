@@ -6,7 +6,7 @@
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
-    /// <p>The ID of the service that is associated with the error. </p>
+    /// <p>The ID of the service that is associated with the error.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service quota that was exceeded.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ThrottlingException {
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
-    /// <p>The ID of the service that is associated with the error. </p>
+    /// <p>The ID of the service that is associated with the error.</p>
     pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
@@ -92,17 +92,17 @@ impl ThrottlingExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The ID of the service that is associated with the error. </p>
+    /// <p>The ID of the service that is associated with the error.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the service that is associated with the error. </p>
+    /// <p>The ID of the service that is associated with the error.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
-    /// <p>The ID of the service that is associated with the error. </p>
+    /// <p>The ID of the service that is associated with the error.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }

@@ -257,13 +257,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeSNOME
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeSNOMEDCTInferenceJobError {
-    /// <p> An internal server error occurred. Retry your request. </p>
+    /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    /// <p>The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

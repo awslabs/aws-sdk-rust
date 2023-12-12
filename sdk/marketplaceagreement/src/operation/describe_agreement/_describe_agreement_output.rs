@@ -14,7 +14,7 @@ pub struct DescribeAgreementOutput {
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the offer was accepted or the agreement was created.</p> <note>
-    /// <p> <code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
+    /// <p><code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
     /// </note>
     pub acceptance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p>
@@ -26,15 +26,15 @@ pub struct DescribeAgreementOutput {
     /// <p>The current status of the agreement.</p>
     /// <p>Statuses include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – The terms of the agreement are active.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code> – The agreement ended without a specified reason.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> – The agreement ended on the defined end date.</p> </li>
-    /// <li> <p> <code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p> </li>
-    /// <li> <p> <code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p> </li>
-    /// <li> <p> <code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p> </li>
-    /// <li> <p> <code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p> </li>
-    /// <li> <p> <code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p> </li>
+    /// <li><p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
+    /// <li><p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
+    /// <li><p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
+    /// <li><p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
+    /// <li><p><code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p></li>
+    /// <li><p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
+    /// <li><p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
+    /// <li><p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
+    /// <li><p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::AgreementStatus>,
     _request_id: Option<String>,
@@ -61,7 +61,7 @@ impl DescribeAgreementOutput {
         self.end_time.as_ref()
     }
     /// <p>The date and time the offer was accepted or the agreement was created.</p> <note>
-    /// <p> <code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
+    /// <p><code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
     /// </note>
     pub fn acceptance_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.acceptance_time.as_ref()
@@ -81,15 +81,15 @@ impl DescribeAgreementOutput {
     /// <p>The current status of the agreement.</p>
     /// <p>Statuses include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – The terms of the agreement are active.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code> – The agreement ended without a specified reason.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> – The agreement ended on the defined end date.</p> </li>
-    /// <li> <p> <code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p> </li>
-    /// <li> <p> <code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p> </li>
-    /// <li> <p> <code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p> </li>
-    /// <li> <p> <code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p> </li>
-    /// <li> <p> <code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p> </li>
+    /// <li><p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
+    /// <li><p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
+    /// <li><p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
+    /// <li><p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
+    /// <li><p><code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p></li>
+    /// <li><p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
+    /// <li><p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
+    /// <li><p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
+    /// <li><p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatus> {
         self.status.as_ref()
@@ -195,21 +195,21 @@ impl DescribeAgreementOutputBuilder {
         &self.end_time
     }
     /// <p>The date and time the offer was accepted or the agreement was created.</p> <note>
-    /// <p> <code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
+    /// <p><code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
     /// </note>
     pub fn acceptance_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.acceptance_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the offer was accepted or the agreement was created.</p> <note>
-    /// <p> <code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
+    /// <p><code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
     /// </note>
     pub fn set_acceptance_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.acceptance_time = input;
         self
     }
     /// <p>The date and time the offer was accepted or the agreement was created.</p> <note>
-    /// <p> <code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
+    /// <p><code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
     /// </note>
     pub fn get_acceptance_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.acceptance_time
@@ -259,15 +259,15 @@ impl DescribeAgreementOutputBuilder {
     /// <p>The current status of the agreement.</p>
     /// <p>Statuses include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – The terms of the agreement are active.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code> – The agreement ended without a specified reason.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> – The agreement ended on the defined end date.</p> </li>
-    /// <li> <p> <code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p> </li>
-    /// <li> <p> <code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p> </li>
-    /// <li> <p> <code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p> </li>
-    /// <li> <p> <code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p> </li>
-    /// <li> <p> <code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p> </li>
+    /// <li><p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
+    /// <li><p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
+    /// <li><p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
+    /// <li><p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
+    /// <li><p><code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p></li>
+    /// <li><p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
+    /// <li><p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
+    /// <li><p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
+    /// <li><p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AgreementStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -276,15 +276,15 @@ impl DescribeAgreementOutputBuilder {
     /// <p>The current status of the agreement.</p>
     /// <p>Statuses include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – The terms of the agreement are active.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code> – The agreement ended without a specified reason.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> – The agreement ended on the defined end date.</p> </li>
-    /// <li> <p> <code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p> </li>
-    /// <li> <p> <code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p> </li>
-    /// <li> <p> <code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p> </li>
-    /// <li> <p> <code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p> </li>
-    /// <li> <p> <code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p> </li>
+    /// <li><p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
+    /// <li><p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
+    /// <li><p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
+    /// <li><p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
+    /// <li><p><code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p></li>
+    /// <li><p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
+    /// <li><p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
+    /// <li><p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
+    /// <li><p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatus>) -> Self {
         self.status = input;
@@ -293,15 +293,15 @@ impl DescribeAgreementOutputBuilder {
     /// <p>The current status of the agreement.</p>
     /// <p>Statuses include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – The terms of the agreement are active.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code> – The agreement ended without a specified reason.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> – The agreement ended on the defined end date.</p> </li>
-    /// <li> <p> <code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p> </li>
-    /// <li> <p> <code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p> </li>
-    /// <li> <p> <code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p> </li>
-    /// <li> <p> <code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p> </li>
-    /// <li> <p> <code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p> </li>
+    /// <li><p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
+    /// <li><p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
+    /// <li><p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
+    /// <li><p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
+    /// <li><p><code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p></li>
+    /// <li><p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
+    /// <li><p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
+    /// <li><p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
+    /// <li><p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatus> {
         &self.status

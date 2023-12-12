@@ -22,7 +22,7 @@ impl ListImportsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListImports`.
 ///
-/// <p> Lists completed imports within the past 90 days. </p>
+/// <p>Lists completed imports within the past 90 days.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListImportsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_imports::paginator::ListImportsPaginator {
         crate::operation::list_imports::paginator::ListImportsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
+    /// <p>The Amazon Resource Name (ARN) associated with the table that was imported to.</p>
     pub fn table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
+    /// <p>The Amazon Resource Name (ARN) associated with the table that was imported to.</p>
     pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
+    /// <p>The Amazon Resource Name (ARN) associated with the table that was imported to.</p>
     pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_arn()
     }
-    /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
+    /// <p>The number of <code>ImportSummary </code>objects returned in a single page.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
         self
     }
-    /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
+    /// <p>The number of <code>ImportSummary </code>objects returned in a single page.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }
-    /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
+    /// <p>The number of <code>ImportSummary </code>objects returned in a single page.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_page_size()
     }
-    /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

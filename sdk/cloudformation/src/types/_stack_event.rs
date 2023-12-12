@@ -38,8 +38,8 @@ pub struct StackEvent {
     pub hook_invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
-    /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
+    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub hook_failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
 }
@@ -108,8 +108,8 @@ impl StackEvent {
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
-    /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
+    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub fn hook_failure_mode(&self) -> ::std::option::Option<&crate::types::HookFailureMode> {
         self.hook_failure_mode.as_ref()
@@ -366,8 +366,8 @@ impl StackEventBuilder {
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
-    /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
+    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub fn hook_failure_mode(mut self, input: crate::types::HookFailureMode) -> Self {
         self.hook_failure_mode = ::std::option::Option::Some(input);
@@ -375,8 +375,8 @@ impl StackEventBuilder {
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
-    /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
+    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub fn set_hook_failure_mode(mut self, input: ::std::option::Option<crate::types::HookFailureMode>) -> Self {
         self.hook_failure_mode = input;
@@ -384,8 +384,8 @@ impl StackEventBuilder {
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
-    /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
+    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub fn get_hook_failure_mode(&self) -> &::std::option::Option<crate::types::HookFailureMode> {
         &self.hook_failure_mode

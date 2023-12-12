@@ -38,7 +38,7 @@ pub struct EventSourceMappingConfiguration {
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     /// <p>The name of the Kafka topic.</p>
     pub topics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    /// <p>(Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     pub source_access_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SourceAccessConfiguration>>,
@@ -132,7 +132,7 @@ impl EventSourceMappingConfiguration {
     pub fn topics(&self) -> &[::std::string::String] {
         self.topics.as_deref().unwrap_or_default()
     }
-    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    /// <p>(Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
     pub fn queues(&self) -> &[::std::string::String] {
@@ -461,19 +461,19 @@ impl EventSourceMappingConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
     ///
-    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    /// <p>(Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     pub fn queues(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.queues.unwrap_or_default();
         v.push(input.into());
         self.queues = ::std::option::Option::Some(v);
         self
     }
-    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    /// <p>(Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.queues = input;
         self
     }
-    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    /// <p>(Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.queues
     }

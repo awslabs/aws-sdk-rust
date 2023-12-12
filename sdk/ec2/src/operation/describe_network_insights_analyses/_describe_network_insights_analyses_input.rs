@@ -13,8 +13,8 @@ pub struct DescribeNetworkInsightsAnalysesInput {
     pub analysis_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <li><p>path-found - A Boolean value that indicates whether a feasible path is found.</p></li>
+    /// <li><p>status - The status of the analysis (running | succeeded | failed).</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -45,8 +45,8 @@ impl DescribeNetworkInsightsAnalysesInput {
     }
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <li><p>path-found - A Boolean value that indicates whether a feasible path is found.</p></li>
+    /// <li><p>status - The status of the analysis (running | succeeded | failed).</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -155,8 +155,8 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
     ///
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <li><p>path-found - A Boolean value that indicates whether a feasible path is found.</p></li>
+    /// <li><p>status - The status of the analysis (running | succeeded | failed).</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -166,8 +166,8 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
     }
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <li><p>path-found - A Boolean value that indicates whether a feasible path is found.</p></li>
+    /// <li><p>status - The status of the analysis (running | succeeded | failed).</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -175,8 +175,8 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
     }
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <li><p>path-found - A Boolean value that indicates whether a feasible path is found.</p></li>
+    /// <li><p>status - The status of the analysis (running | succeeded | failed).</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

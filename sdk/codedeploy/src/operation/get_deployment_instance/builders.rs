@@ -109,31 +109,31 @@ impl GetDeploymentInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
-    /// <p> The unique ID of a deployment. </p>
+    /// <p>The unique ID of a deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_id()
     }
-    /// <p> The unique ID of an instance in the deployment group. </p>
+    /// <p>The unique ID of an instance in the deployment group.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p> The unique ID of an instance in the deployment group. </p>
+    /// <p>The unique ID of an instance in the deployment group.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p> The unique ID of an instance in the deployment group. </p>
+    /// <p>The unique ID of an instance in the deployment group.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

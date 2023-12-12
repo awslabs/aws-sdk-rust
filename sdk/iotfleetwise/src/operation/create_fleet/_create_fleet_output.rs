@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetOutput {
-    /// <p> The ID of the created fleet. </p>
+    /// <p>The ID of the created fleet.</p>
     pub id: ::std::string::String,
-    /// <p> The ARN of the created fleet. </p>
+    /// <p>The ARN of the created fleet.</p>
     pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateFleetOutput {
-    /// <p> The ID of the created fleet. </p>
+    /// <p>The ID of the created fleet.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p> The ARN of the created fleet. </p>
+    /// <p>The ARN of the created fleet.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -42,33 +42,33 @@ pub struct CreateFleetOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateFleetOutputBuilder {
-    /// <p> The ID of the created fleet. </p>
+    /// <p>The ID of the created fleet.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the created fleet. </p>
+    /// <p>The ID of the created fleet.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> The ID of the created fleet. </p>
+    /// <p>The ID of the created fleet.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p> The ARN of the created fleet. </p>
+    /// <p>The ARN of the created fleet.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the created fleet. </p>
+    /// <p>The ARN of the created fleet.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> The ARN of the created fleet. </p>
+    /// <p>The ARN of the created fleet.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

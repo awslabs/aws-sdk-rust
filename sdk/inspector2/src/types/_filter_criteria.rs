@@ -74,7 +74,7 @@ pub struct FilterCriteria {
     pub lambda_function_layers: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
     pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
+    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub lambda_function_last_modified_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>Filters the list of AWS Lambda functions by execution role.</p>
     pub lambda_function_execution_role_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -82,7 +82,7 @@ pub struct FilterCriteria {
     pub exploit_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
     pub code_vulnerability_detector_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
     pub code_vulnerability_detector_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
     pub code_vulnerability_file_path: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -300,7 +300,7 @@ impl FilterCriteria {
     pub fn lambda_function_runtime(&self) -> &[crate::types::StringFilter] {
         self.lambda_function_runtime.as_deref().unwrap_or_default()
     }
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
+    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_last_modified_at.is_none()`.
     pub fn lambda_function_last_modified_at(&self) -> &[crate::types::DateFilter] {
@@ -324,7 +324,7 @@ impl FilterCriteria {
     pub fn code_vulnerability_detector_name(&self) -> &[crate::types::StringFilter] {
         self.code_vulnerability_detector_name.as_deref().unwrap_or_default()
     }
-    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_vulnerability_detector_tags.is_none()`.
     pub fn code_vulnerability_detector_tags(&self) -> &[crate::types::StringFilter] {
@@ -1102,19 +1102,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_last_modified_at`](Self::set_lambda_function_last_modified_at).
     ///
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
+    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub fn lambda_function_last_modified_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.lambda_function_last_modified_at.unwrap_or_default();
         v.push(input);
         self.lambda_function_last_modified_at = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
+    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub fn set_lambda_function_last_modified_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.lambda_function_last_modified_at = input;
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
+    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub fn get_lambda_function_last_modified_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.lambda_function_last_modified_at
     }
@@ -1182,19 +1182,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_code_vulnerability_detector_tags`](Self::set_code_vulnerability_detector_tags).
     ///
-    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
     pub fn code_vulnerability_detector_tags(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.code_vulnerability_detector_tags.unwrap_or_default();
         v.push(input);
         self.code_vulnerability_detector_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
     pub fn set_code_vulnerability_detector_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.code_vulnerability_detector_tags = input;
         self
     }
-    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
     pub fn get_code_vulnerability_detector_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.code_vulnerability_detector_tags
     }

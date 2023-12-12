@@ -6,7 +6,7 @@
 pub struct InstanceBlockDeviceMapping {
     /// <p>The block device name.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
-    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched.</p>
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDevice>,
 }
 impl InstanceBlockDeviceMapping {
@@ -14,7 +14,7 @@ impl InstanceBlockDeviceMapping {
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
-    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched.</p>
     pub fn ebs(&self) -> ::std::option::Option<&crate::types::EbsInstanceBlockDevice> {
         self.ebs.as_ref()
     }
@@ -48,17 +48,17 @@ impl InstanceBlockDeviceMappingBuilder {
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
-    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched.</p>
     pub fn ebs(mut self, input: crate::types::EbsInstanceBlockDevice) -> Self {
         self.ebs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched.</p>
     pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::EbsInstanceBlockDevice>) -> Self {
         self.ebs = input;
         self
     }
-    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched.</p>
     pub fn get_ebs(&self) -> &::std::option::Option<crate::types::EbsInstanceBlockDevice> {
         &self.ebs
     }

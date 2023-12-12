@@ -27,7 +27,7 @@ pub struct CreateAssetOutput {
     pub first_revision_created_by: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms that are attached to the created asset.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The ID of the Amazon DataZone project that owns the created asset. </p>
+    /// <p>The ID of the Amazon DataZone project that owns the created asset.</p>
     pub owning_project_id: ::std::string::String,
     /// <p>The ID of the Amazon DataZone domain in which the asset was created.</p>
     pub domain_id: ::std::string::String,
@@ -97,7 +97,7 @@ impl CreateAssetOutput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of the Amazon DataZone project that owns the created asset. </p>
+    /// <p>The ID of the Amazon DataZone project that owns the created asset.</p>
     pub fn owning_project_id(&self) -> &str {
         use std::ops::Deref;
         self.owning_project_id.deref()
@@ -368,18 +368,18 @@ impl CreateAssetOutputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
-    /// <p>The ID of the Amazon DataZone project that owns the created asset. </p>
+    /// <p>The ID of the Amazon DataZone project that owns the created asset.</p>
     /// This field is required.
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon DataZone project that owns the created asset. </p>
+    /// <p>The ID of the Amazon DataZone project that owns the created asset.</p>
     pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owning_project_id = input;
         self
     }
-    /// <p>The ID of the Amazon DataZone project that owns the created asset. </p>
+    /// <p>The ID of the Amazon DataZone project that owns the created asset.</p>
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owning_project_id
     }

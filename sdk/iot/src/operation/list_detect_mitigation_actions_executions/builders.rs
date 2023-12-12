@@ -22,7 +22,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDetectMitigationActionsExecutions`.
 ///
-/// <p> Lists mitigation actions executions for a Device Defender ML Detect Security Profile. </p>
+/// <p>Lists mitigation actions executions for a Device Defender ML Detect Security Profile.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDetectMitigationActionsExecutionsFluentBuilder {
@@ -123,101 +123,101 @@ impl ListDetectMitigationActionsExecutionsFluentBuilder {
             self.inner,
         )
     }
-    /// <p> The unique identifier of the task. </p>
+    /// <p>The unique identifier of the task.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// <p> The unique identifier of the task. </p>
+    /// <p>The unique identifier of the task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// <p> The unique identifier of the task. </p>
+    /// <p>The unique identifier of the task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }
-    /// <p> The unique identifier of the violation. </p>
+    /// <p>The unique identifier of the violation.</p>
     pub fn violation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.violation_id(input.into());
         self
     }
-    /// <p> The unique identifier of the violation. </p>
+    /// <p>The unique identifier of the violation.</p>
     pub fn set_violation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_violation_id(input);
         self
     }
-    /// <p> The unique identifier of the violation. </p>
+    /// <p>The unique identifier of the violation.</p>
     pub fn get_violation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_violation_id()
     }
-    /// <p> The name of the thing whose mitigation actions are listed. </p>
+    /// <p>The name of the thing whose mitigation actions are listed.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
         self
     }
-    /// <p> The name of the thing whose mitigation actions are listed. </p>
+    /// <p>The name of the thing whose mitigation actions are listed.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_name(input);
         self
     }
-    /// <p> The name of the thing whose mitigation actions are listed. </p>
+    /// <p>The name of the thing whose mitigation actions are listed.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_thing_name()
     }
-    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
+    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
+    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
+    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
+    /// <p>The end of the time period for which ML Detect mitigation actions executions are returned.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
+    /// <p>The end of the time period for which ML Detect mitigation actions executions are returned.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
+    /// <p>The end of the time period for which ML Detect mitigation actions executions are returned.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p> The maximum number of results to return at one time. The default is 25. </p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of results to return at one time. The default is 25. </p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of results to return at one time. The default is 25. </p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> The token for the next set of results. </p>
+    /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The token for the next set of results. </p>
+    /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The token for the next set of results. </p>
+    /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

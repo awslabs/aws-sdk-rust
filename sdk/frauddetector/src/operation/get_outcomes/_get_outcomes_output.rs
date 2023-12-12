@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOutcomesOutput {
-    /// <p>The outcomes. </p>
+    /// <p>The outcomes.</p>
     pub outcomes: ::std::option::Option<::std::vec::Vec<crate::types::Outcome>>,
     /// <p>The next page token for subsequent requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOutcomesOutput {
-    /// <p>The outcomes. </p>
+    /// <p>The outcomes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
     pub fn outcomes(&self) -> &[crate::types::Outcome] {
@@ -46,19 +46,19 @@ impl GetOutcomesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
     ///
-    /// <p>The outcomes. </p>
+    /// <p>The outcomes.</p>
     pub fn outcomes(mut self, input: crate::types::Outcome) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
         v.push(input);
         self.outcomes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The outcomes. </p>
+    /// <p>The outcomes.</p>
     pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Outcome>>) -> Self {
         self.outcomes = input;
         self
     }
-    /// <p>The outcomes. </p>
+    /// <p>The outcomes.</p>
     pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Outcome>> {
         &self.outcomes
     }

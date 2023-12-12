@@ -245,13 +245,13 @@ pub enum StartDBInstanceError {
     /// <p>The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB security group.</p>
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
+    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),

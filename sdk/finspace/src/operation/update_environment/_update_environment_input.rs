@@ -11,8 +11,8 @@ pub struct UpdateEnvironmentInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub federation_mode: ::std::option::Option<crate::types::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
@@ -33,8 +33,8 @@ impl UpdateEnvironmentInput {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub fn federation_mode(&self) -> ::std::option::Option<&crate::types::FederationMode> {
         self.federation_mode.as_ref()
@@ -107,8 +107,8 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub fn federation_mode(mut self, input: crate::types::FederationMode) -> Self {
         self.federation_mode = ::std::option::Option::Some(input);
@@ -116,8 +116,8 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub fn set_federation_mode(mut self, input: ::std::option::Option<crate::types::FederationMode>) -> Self {
         self.federation_mode = input;
@@ -125,8 +125,8 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub fn get_federation_mode(&self) -> &::std::option::Option<crate::types::FederationMode> {
         &self.federation_mode

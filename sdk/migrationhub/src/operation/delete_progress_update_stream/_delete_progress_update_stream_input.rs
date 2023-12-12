@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProgressUpdateStreamInput {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub progress_update_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteProgressUpdateStreamInput {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn progress_update_stream_name(&self) -> ::std::option::Option<&str> {
         self.progress_update_stream_name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteProgressUpdateStreamInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteProgressUpdateStreamInputBuilder {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     /// This field is required.
     pub fn progress_update_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn set_progress_update_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream_name = input;
         self
     }
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn get_progress_update_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.progress_update_stream_name
     }

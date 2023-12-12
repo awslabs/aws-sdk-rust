@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampMetricValuePair {
-    /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
     pub metric_value: ::std::option::Option<f64>,
 }
 impl TimestampMetricValuePair {
-    /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct TimestampMetricValuePairBuilder {
     pub(crate) metric_value: ::std::option::Option<f64>,
 }
 impl TimestampMetricValuePairBuilder {
-    /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }

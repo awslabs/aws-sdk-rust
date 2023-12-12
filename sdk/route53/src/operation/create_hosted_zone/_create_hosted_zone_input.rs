@@ -15,8 +15,8 @@ pub struct CreateHostedZoneInput {
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
+    /// <li><p>For public and private hosted zones, an optional comment</p></li>
+    /// <li><p>For private hosted zones, an optional <code>PrivateZone</code> element</p></li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub hosted_zone_config: ::std::option::Option<crate::types::HostedZoneConfig>,
@@ -42,8 +42,8 @@ impl CreateHostedZoneInput {
     }
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
+    /// <li><p>For public and private hosted zones, an optional comment</p></li>
+    /// <li><p>For private hosted zones, an optional <code>PrivateZone</code> element</p></li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub fn hosted_zone_config(&self) -> ::std::option::Option<&crate::types::HostedZoneConfig> {
@@ -128,8 +128,8 @@ impl CreateHostedZoneInputBuilder {
     }
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
+    /// <li><p>For public and private hosted zones, an optional comment</p></li>
+    /// <li><p>For private hosted zones, an optional <code>PrivateZone</code> element</p></li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub fn hosted_zone_config(mut self, input: crate::types::HostedZoneConfig) -> Self {
@@ -138,8 +138,8 @@ impl CreateHostedZoneInputBuilder {
     }
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
+    /// <li><p>For public and private hosted zones, an optional comment</p></li>
+    /// <li><p>For private hosted zones, an optional <code>PrivateZone</code> element</p></li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub fn set_hosted_zone_config(mut self, input: ::std::option::Option<crate::types::HostedZoneConfig>) -> Self {
@@ -148,8 +148,8 @@ impl CreateHostedZoneInputBuilder {
     }
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
+    /// <li><p>For public and private hosted zones, an optional comment</p></li>
+    /// <li><p>For private hosted zones, an optional <code>PrivateZone</code> element</p></li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub fn get_hosted_zone_config(&self) -> &::std::option::Option<crate::types::HostedZoneConfig> {

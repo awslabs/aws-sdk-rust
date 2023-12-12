@@ -109,85 +109,85 @@ impl ModifyVpnConnectionOptionsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Site-to-Site VPN connection. </p>
+    /// <p>The ID of the Site-to-Site VPN connection.</p>
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_connection_id(input.into());
         self
     }
-    /// <p>The ID of the Site-to-Site VPN connection. </p>
+    /// <p>The ID of the Site-to-Site VPN connection.</p>
     pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
-    /// <p>The ID of the Site-to-Site VPN connection. </p>
+    /// <p>The ID of the Site-to-Site VPN connection.</p>
     pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpn_connection_id()
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn local_ipv4_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_ipv4_network_cidr(input.into());
         self
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn set_local_ipv4_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_ipv4_network_cidr(input);
         self
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn get_local_ipv4_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_ipv4_network_cidr()
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn remote_ipv4_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remote_ipv4_network_cidr(input.into());
         self
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn set_remote_ipv4_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_remote_ipv4_network_cidr(input);
         self
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn get_remote_ipv4_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_remote_ipv4_network_cidr()
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn local_ipv6_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_ipv6_network_cidr(input.into());
         self
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn set_local_ipv6_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_ipv6_network_cidr(input);
         self
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn get_local_ipv6_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_ipv6_network_cidr()
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn remote_ipv6_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remote_ipv6_network_cidr(input.into());
         self
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn set_remote_ipv6_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_remote_ipv6_network_cidr(input);
         self
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn get_remote_ipv6_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_remote_ipv6_network_cidr()
     }

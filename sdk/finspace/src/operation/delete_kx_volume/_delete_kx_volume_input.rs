@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKxVolumeInput {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the volume that you want to delete. </p>
+    /// <p>The name of the volume that you want to delete.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKxVolumeInput {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p> The name of the volume that you want to delete. </p>
+    /// <p>The name of the volume that you want to delete.</p>
     pub fn volume_name(&self) -> ::std::option::Option<&str> {
         self.volume_name.as_deref()
     }
@@ -40,33 +40,33 @@ pub struct DeleteKxVolumeInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKxVolumeInputBuilder {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p> The name of the volume that you want to delete. </p>
+    /// <p>The name of the volume that you want to delete.</p>
     /// This field is required.
     pub fn volume_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the volume that you want to delete. </p>
+    /// <p>The name of the volume that you want to delete.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_name = input;
         self
     }
-    /// <p> The name of the volume that you want to delete. </p>
+    /// <p>The name of the volume that you want to delete.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_name
     }

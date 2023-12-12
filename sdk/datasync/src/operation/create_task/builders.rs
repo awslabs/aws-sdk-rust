@@ -125,45 +125,45 @@ impl CreateTaskFluentBuilder {
     pub fn get_source_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_location_arn()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location.</p>
     pub fn destination_location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_location_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location.</p>
     pub fn set_destination_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_location_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location.</p>
     pub fn get_destination_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_location_arn()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task.</p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_log_group_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_watch_log_group_arn()
     }
-    /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
+    /// <p>The name of a task. This value is a text reference that is used to identify the task in the console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
+    /// <p>The name of a task. This value is a text reference that is used to identify the task in the console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
+    /// <p>The name of a task. This value is a text reference that is used to identify the task in the console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -221,19 +221,19 @@ impl CreateTaskFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
-    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
-    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
-    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         self.inner.get_tags()
     }

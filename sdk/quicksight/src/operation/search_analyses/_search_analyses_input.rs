@@ -5,7 +5,7 @@
 pub struct SearchAnalysesInput {
     /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The structure for the search filters that you want to apply to your search. </p>
+    /// <p>The structure for the search filters that you want to apply to your search.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSearchFilter>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl SearchAnalysesInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The structure for the search filters that you want to apply to your search. </p>
+    /// <p>The structure for the search filters that you want to apply to your search.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::AnalysisSearchFilter] {
@@ -68,19 +68,19 @@ impl SearchAnalysesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The structure for the search filters that you want to apply to your search. </p>
+    /// <p>The structure for the search filters that you want to apply to your search.</p>
     pub fn filters(mut self, input: crate::types::AnalysisSearchFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The structure for the search filters that you want to apply to your search. </p>
+    /// <p>The structure for the search filters that you want to apply to your search.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSearchFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>The structure for the search filters that you want to apply to your search. </p>
+    /// <p>The structure for the search filters that you want to apply to your search.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSearchFilter>> {
         &self.filters
     }

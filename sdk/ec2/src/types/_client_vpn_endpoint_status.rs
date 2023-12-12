@@ -6,10 +6,10 @@
 pub struct ClientVpnEndpointStatus {
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
     /// <ul>
-    /// <li> <p> <code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p> </li>
-    /// <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
+    /// <li><p><code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p></li>
+    /// <li><p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
     /// <p>A message about the status of the Client VPN endpoint.</p>
@@ -18,10 +18,10 @@ pub struct ClientVpnEndpointStatus {
 impl ClientVpnEndpointStatus {
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
     /// <ul>
-    /// <li> <p> <code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p> </li>
-    /// <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
+    /// <li><p><code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p></li>
+    /// <li><p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::ClientVpnEndpointStatusCode> {
         self.code.as_ref()
@@ -48,10 +48,10 @@ pub struct ClientVpnEndpointStatusBuilder {
 impl ClientVpnEndpointStatusBuilder {
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
     /// <ul>
-    /// <li> <p> <code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p> </li>
-    /// <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
+    /// <li><p><code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p></li>
+    /// <li><p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub fn code(mut self, input: crate::types::ClientVpnEndpointStatusCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -59,10 +59,10 @@ impl ClientVpnEndpointStatusBuilder {
     }
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
     /// <ul>
-    /// <li> <p> <code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p> </li>
-    /// <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
+    /// <li><p><code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p></li>
+    /// <li><p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>) -> Self {
         self.code = input;
@@ -70,10 +70,10 @@ impl ClientVpnEndpointStatusBuilder {
     }
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
     /// <ul>
-    /// <li> <p> <code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p> </li>
-    /// <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li>
-    /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
+    /// <li><p><code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p></li>
+    /// <li><p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li><p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::ClientVpnEndpointStatusCode> {
         &self.code

@@ -22,7 +22,7 @@ impl GetEncoderConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEncoderConfiguration`.
 ///
-/// <p>Gets information about the specified EncoderConfiguration resource. </p>
+/// <p>Gets information about the specified EncoderConfiguration resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEncoderConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

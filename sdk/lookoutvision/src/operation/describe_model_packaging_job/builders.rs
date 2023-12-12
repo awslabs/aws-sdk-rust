@@ -22,9 +22,9 @@ impl DescribeModelPackagingJobInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeModelPackagingJob`.
 ///
-/// <p>Describes an Amazon Lookout for Vision model packaging job. </p>
+/// <p>Describes an Amazon Lookout for Vision model packaging job.</p>
 /// <p>This operation requires permissions to perform the <code>lookoutvision:DescribeModelPackagingJob</code> operation.</p>
-/// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
+/// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeModelPackagingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,31 +110,31 @@ impl DescribeModelPackagingJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
         self
     }
-    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
     }
-    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_name()
     }
-    /// <p>The job name for the model packaging job. </p>
+    /// <p>The job name for the model packaging job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
-    /// <p>The job name for the model packaging job. </p>
+    /// <p>The job name for the model packaging job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>The job name for the model packaging job. </p>
+    /// <p>The job name for the model packaging job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }

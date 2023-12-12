@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelStatementOutput {
-    /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
+    /// <p>A value that indicates whether the cancel statement succeeded (true).</p>
     pub status: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CancelStatementOutput {
-    /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
+    /// <p>A value that indicates whether the cancel statement succeeded (true).</p>
     pub fn status(&self) -> ::std::option::Option<bool> {
         self.status
     }
@@ -33,17 +33,17 @@ pub struct CancelStatementOutputBuilder {
     _request_id: Option<String>,
 }
 impl CancelStatementOutputBuilder {
-    /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
+    /// <p>A value that indicates whether the cancel statement succeeded (true).</p>
     pub fn status(mut self, input: bool) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
+    /// <p>A value that indicates whether the cancel statement succeeded (true).</p>
     pub fn set_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.status = input;
         self
     }
-    /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
+    /// <p>A value that indicates whether the cancel statement succeeded (true).</p>
     pub fn get_status(&self) -> &::std::option::Option<bool> {
         &self.status
     }

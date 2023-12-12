@@ -13,10 +13,10 @@ pub struct AwsElasticsearchDomainDetails {
     /// <p>Name of an Elasticsearch domain.</p>
     /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
     /// <p>Domain names must start with a lowercase letter and must be between 3 and 28 characters.</p>
-    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen). </p>
+    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen).</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an Elasticsearch domain.</p>
-    /// <p>The endpoint is a service URL. </p>
+    /// <p>The endpoint is a service URL.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -51,12 +51,12 @@ impl AwsElasticsearchDomainDetails {
     /// <p>Name of an Elasticsearch domain.</p>
     /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
     /// <p>Domain names must start with a lowercase letter and must be between 3 and 28 characters.</p>
-    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen). </p>
+    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen).</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an Elasticsearch domain.</p>
-    /// <p>The endpoint is a service URL. </p>
+    /// <p>The endpoint is a service URL.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
@@ -164,7 +164,7 @@ impl AwsElasticsearchDomainDetailsBuilder {
     /// <p>Name of an Elasticsearch domain.</p>
     /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
     /// <p>Domain names must start with a lowercase letter and must be between 3 and 28 characters.</p>
-    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen). </p>
+    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen).</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -172,7 +172,7 @@ impl AwsElasticsearchDomainDetailsBuilder {
     /// <p>Name of an Elasticsearch domain.</p>
     /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
     /// <p>Domain names must start with a lowercase letter and must be between 3 and 28 characters.</p>
-    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen). </p>
+    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
@@ -180,24 +180,24 @@ impl AwsElasticsearchDomainDetailsBuilder {
     /// <p>Name of an Elasticsearch domain.</p>
     /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
     /// <p>Domain names must start with a lowercase letter and must be between 3 and 28 characters.</p>
-    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen). </p>
+    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen).</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an Elasticsearch domain.</p>
-    /// <p>The endpoint is a service URL. </p>
+    /// <p>The endpoint is a service URL.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an Elasticsearch domain.</p>
-    /// <p>The endpoint is a service URL. </p>
+    /// <p>The endpoint is a service URL.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an Elasticsearch domain.</p>
-    /// <p>The endpoint is a service URL. </p>
+    /// <p>The endpoint is a service URL.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }

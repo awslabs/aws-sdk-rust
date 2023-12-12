@@ -164,17 +164,17 @@ impl CreateListenerFluentBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }
-    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
+    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
         self.inner = self.inner.default_action(input);
         self
     }
-    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
+    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
     pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.inner = self.inner.set_default_action(input);
         self
     }
-    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
+    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
     pub fn get_default_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         self.inner.get_default_action()
     }

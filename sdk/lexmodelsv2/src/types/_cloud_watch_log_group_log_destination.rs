@@ -6,7 +6,7 @@
 pub struct CloudWatchLogGroupLogDestination {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
     pub cloud_watch_log_group_arn: ::std::string::String,
-    /// <p>The prefix of the log stream name within the log group that you specified </p>
+    /// <p>The prefix of the log stream name within the log group that you specified</p>
     pub log_prefix: ::std::string::String,
 }
 impl CloudWatchLogGroupLogDestination {
@@ -15,7 +15,7 @@ impl CloudWatchLogGroupLogDestination {
         use std::ops::Deref;
         self.cloud_watch_log_group_arn.deref()
     }
-    /// <p>The prefix of the log stream name within the log group that you specified </p>
+    /// <p>The prefix of the log stream name within the log group that you specified</p>
     pub fn log_prefix(&self) -> &str {
         use std::ops::Deref;
         self.log_prefix.deref()
@@ -51,18 +51,18 @@ impl CloudWatchLogGroupLogDestinationBuilder {
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_log_group_arn
     }
-    /// <p>The prefix of the log stream name within the log group that you specified </p>
+    /// <p>The prefix of the log stream name within the log group that you specified</p>
     /// This field is required.
     pub fn log_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prefix of the log stream name within the log group that you specified </p>
+    /// <p>The prefix of the log stream name within the log group that you specified</p>
     pub fn set_log_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_prefix = input;
         self
     }
-    /// <p>The prefix of the log stream name within the log group that you specified </p>
+    /// <p>The prefix of the log stream name within the log group that you specified</p>
     pub fn get_log_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_prefix
     }

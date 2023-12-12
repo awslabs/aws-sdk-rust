@@ -5,15 +5,15 @@
 pub struct ImportAsProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned.</p>
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
     pub physical_id: ::std::option::Option<::std::string::String>,
@@ -23,8 +23,8 @@ pub struct ImportAsProvisionedProductInput {
 impl ImportAsProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -37,7 +37,7 @@ impl ImportAsProvisionedProductInput {
     pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned.</p>
     pub fn provisioned_product_name(&self) -> ::std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
@@ -71,8 +71,8 @@ pub struct ImportAsProvisionedProductInputBuilder {
 impl ImportAsProvisionedProductInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -80,8 +80,8 @@ impl ImportAsProvisionedProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -89,8 +89,8 @@ impl ImportAsProvisionedProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -125,18 +125,18 @@ impl ImportAsProvisionedProductInputBuilder {
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioning_artifact_id
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned.</p>
     /// This field is required.
     pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned.</p>
     pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_name = input;
         self
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned.</p>
     pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioned_product_name
     }

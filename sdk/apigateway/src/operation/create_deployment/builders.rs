@@ -210,17 +210,17 @@ impl CreateDeploymentFluentBuilder {
     pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_variables()
     }
-    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
     pub fn canary_settings(mut self, input: crate::types::DeploymentCanarySettings) -> Self {
         self.inner = self.inner.canary_settings(input);
         self
     }
-    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
     pub fn set_canary_settings(mut self, input: ::std::option::Option<crate::types::DeploymentCanarySettings>) -> Self {
         self.inner = self.inner.set_canary_settings(input);
         self
     }
-    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
     pub fn get_canary_settings(&self) -> &::std::option::Option<crate::types::DeploymentCanarySettings> {
         self.inner.get_canary_settings()
     }

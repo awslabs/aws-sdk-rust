@@ -110,8 +110,8 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>
-    /// <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>
+    /// <li><p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
+    /// <li><p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);
@@ -119,8 +119,8 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>
-    /// <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>
+    /// <li><p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
+    /// <li><p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.inner = self.inner.set_identity_type(input);
@@ -128,8 +128,8 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>
-    /// <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>
+    /// <li><p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
+    /// <li><p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
         self.inner.get_identity_type()
@@ -150,11 +150,11 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
-    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
-    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
-    /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
-    /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
+    /// <li><p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
+    /// <li><p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
+    /// <li><p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
+    /// <li><p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
+    /// <li><p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     pub fn user_role(mut self, input: crate::types::UserRole) -> Self {
         self.inner = self.inner.user_role(input);
@@ -162,11 +162,11 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
-    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
-    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
-    /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
-    /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
+    /// <li><p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
+    /// <li><p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
+    /// <li><p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
+    /// <li><p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
+    /// <li><p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     pub fn set_user_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
         self.inner = self.inner.set_user_role(input);
@@ -174,40 +174,40 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
-    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
-    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
-    /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
-    /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
+    /// <li><p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
+    /// <li><p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
+    /// <li><p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
+    /// <li><p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
+    /// <li><p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     pub fn get_user_role(&self) -> &::std::option::Option<crate::types::UserRole> {
         self.inner.get_user_role()
     }
-    /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
+    /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight.</p>
     pub fn iam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
+    /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight.</p>
     pub fn set_iam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_arn(input);
         self
     }
-    /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
+    /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight.</p>
     pub fn get_iam_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_arn()
     }
-    /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
+    /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i></p>
     pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_name(input.into());
         self
     }
-    /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
+    /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i></p>
     pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_name(input);
         self
     }
-    /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
+    /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i></p>
     pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_name()
     }
@@ -255,13 +255,13 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li> <p>Create and update data sources</p> </li>
-    /// <li> <p>Create and update datasets</p> </li>
-    /// <li> <p>Create and update email reports</p> </li>
-    /// <li> <p>Subscribe to email reports</p> </li>
+    /// <li><p>Create and update data sources</p></li>
+    /// <li><p>Create and update datasets</p></li>
+    /// <li><p>Create and update email reports</p></li>
+    /// <li><p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
     /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn custom_permissions_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -270,13 +270,13 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li> <p>Create and update data sources</p> </li>
-    /// <li> <p>Create and update datasets</p> </li>
-    /// <li> <p>Create and update email reports</p> </li>
-    /// <li> <p>Subscribe to email reports</p> </li>
+    /// <li><p>Create and update data sources</p></li>
+    /// <li><p>Create and update datasets</p></li>
+    /// <li><p>Create and update email reports</p></li>
+    /// <li><p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
     /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn set_custom_permissions_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -285,13 +285,13 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li> <p>Create and update data sources</p> </li>
-    /// <li> <p>Create and update datasets</p> </li>
-    /// <li> <p>Create and update email reports</p> </li>
-    /// <li> <p>Subscribe to email reports</p> </li>
+    /// <li><p>Create and update data sources</p></li>
+    /// <li><p>Create and update datasets</p></li>
+    /// <li><p>Create and update email reports</p></li>
+    /// <li><p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
     /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn get_custom_permissions_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,8 +299,8 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
-    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
+    /// <li><p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
+    /// <li><p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub fn external_login_federation_provider_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_login_federation_provider_type(input.into());
@@ -308,8 +308,8 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
-    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
+    /// <li><p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
+    /// <li><p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub fn set_external_login_federation_provider_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_login_federation_provider_type(input);
@@ -317,8 +317,8 @@ impl RegisterUserFluentBuilder {
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
-    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
+    /// <li><p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
+    /// <li><p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub fn get_external_login_federation_provider_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_login_federation_provider_type()

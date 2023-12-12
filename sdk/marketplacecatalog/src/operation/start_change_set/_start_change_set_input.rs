@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChangeSetInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>Array of <code>change</code> object.</p>
     pub change_set: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
-    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique token to identify the request to ensure idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct StartChangeSetInput {
     pub change_set_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartChangeSetInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -25,7 +25,7 @@ impl StartChangeSetInput {
     pub fn change_set(&self) -> &[crate::types::Change] {
         self.change_set.as_deref().unwrap_or_default()
     }
-    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.</p>
     pub fn change_set_name(&self) -> ::std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
@@ -58,18 +58,18 @@ pub struct StartChangeSetInputBuilder {
     pub(crate) change_set_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartChangeSetInputBuilder {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
@@ -93,17 +93,17 @@ impl StartChangeSetInputBuilder {
     pub fn get_change_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Change>> {
         &self.change_set
     }
-    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.</p>
     pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.</p>
     pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
-    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.</p>
     pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_set_name
     }

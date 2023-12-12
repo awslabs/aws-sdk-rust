@@ -29,9 +29,9 @@ pub struct AwsS3BucketDetails {
     pub bucket_notification_configuration: ::std::option::Option<crate::types::AwsS3BucketNotificationConfiguration>,
     /// <p>The versioning state of an S3 bucket.</p>
     pub bucket_versioning_configuration: ::std::option::Option<crate::types::AwsS3BucketBucketVersioningConfiguration>,
-    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the bucket. </p>
+    /// <p>Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.</p>
     pub object_lock_configuration: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration>,
-    /// <p> The name of the bucket. </p>
+    /// <p>The name of the bucket.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketDetails {
@@ -84,11 +84,11 @@ impl AwsS3BucketDetails {
     pub fn bucket_versioning_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketBucketVersioningConfiguration> {
         self.bucket_versioning_configuration.as_ref()
     }
-    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the bucket. </p>
+    /// <p>Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.</p>
     pub fn object_lock_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketObjectLockConfiguration> {
         self.object_lock_configuration.as_ref()
     }
-    /// <p> The name of the bucket. </p>
+    /// <p>The name of the bucket.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -300,31 +300,31 @@ impl AwsS3BucketDetailsBuilder {
     pub fn get_bucket_versioning_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketBucketVersioningConfiguration> {
         &self.bucket_versioning_configuration
     }
-    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the bucket. </p>
+    /// <p>Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.</p>
     pub fn object_lock_configuration(mut self, input: crate::types::AwsS3BucketObjectLockConfiguration) -> Self {
         self.object_lock_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the bucket. </p>
+    /// <p>Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.</p>
     pub fn set_object_lock_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration>) -> Self {
         self.object_lock_configuration = input;
         self
     }
-    /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the bucket. </p>
+    /// <p>Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.</p>
     pub fn get_object_lock_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration> {
         &self.object_lock_configuration
     }
-    /// <p> The name of the bucket. </p>
+    /// <p>The name of the bucket.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the bucket. </p>
+    /// <p>The name of the bucket.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the bucket. </p>
+    /// <p>The name of the bucket.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

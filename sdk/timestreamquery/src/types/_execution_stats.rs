@@ -10,7 +10,7 @@ pub struct ExecutionStats {
     pub data_writes: i64,
     /// <p>Bytes metered for a single scheduled query run.</p>
     pub bytes_metered: i64,
-    /// <p>The number of records ingested for a single scheduled query run. </p>
+    /// <p>The number of records ingested for a single scheduled query run.</p>
     pub records_ingested: i64,
     /// <p>Number of rows present in the output from running a query before ingestion to destination data source.</p>
     pub query_result_rows: i64,
@@ -28,7 +28,7 @@ impl ExecutionStats {
     pub fn bytes_metered(&self) -> i64 {
         self.bytes_metered
     }
-    /// <p>The number of records ingested for a single scheduled query run. </p>
+    /// <p>The number of records ingested for a single scheduled query run.</p>
     pub fn records_ingested(&self) -> i64 {
         self.records_ingested
     }
@@ -97,17 +97,17 @@ impl ExecutionStatsBuilder {
     pub fn get_bytes_metered(&self) -> &::std::option::Option<i64> {
         &self.bytes_metered
     }
-    /// <p>The number of records ingested for a single scheduled query run. </p>
+    /// <p>The number of records ingested for a single scheduled query run.</p>
     pub fn records_ingested(mut self, input: i64) -> Self {
         self.records_ingested = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of records ingested for a single scheduled query run. </p>
+    /// <p>The number of records ingested for a single scheduled query run.</p>
     pub fn set_records_ingested(mut self, input: ::std::option::Option<i64>) -> Self {
         self.records_ingested = input;
         self
     }
-    /// <p>The number of records ingested for a single scheduled query run. </p>
+    /// <p>The number of records ingested for a single scheduled query run.</p>
     pub fn get_records_ingested(&self) -> &::std::option::Option<i64> {
         &self.records_ingested
     }

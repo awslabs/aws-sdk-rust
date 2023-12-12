@@ -32,9 +32,9 @@ impl CreateDeliveryStreamInputBuilder {
 /// <p>When you specify <code>S3DestinationConfiguration</code>, you can also provide the following optional values: BufferingHints, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code>. By default, if no <code>BufferingHints</code> value is provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first. <code>BufferingHints</code> is a hint, so there are some cases where the service cannot adhere to these conditions strictly. For example, record boundaries might be such that the size is a little over or under the configured buffering size. By default, no encryption is performed. We strongly recommend that you enable encryption to ensure secure data storage in Amazon S3.</p>
 /// <p>A few notes about Amazon Redshift as a destination:</p>
 /// <ul>
-/// <li> <p>An Amazon Redshift destination requires an S3 bucket as intermediate location. Kinesis Data Firehose first delivers data to Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.</p> </li>
-/// <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p> </li>
-/// <li> <p>We strongly recommend that you use the user name and password you provide exclusively with Kinesis Data Firehose, and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</p> </li>
+/// <li><p>An Amazon Redshift destination requires an S3 bucket as intermediate location. Kinesis Data Firehose first delivers data to Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.</p></li>
+/// <li><p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p></li>
+/// <li><p>We strongly recommend that you use the user name and password you provide exclusively with Kinesis Data Firehose, and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</p></li>
 /// </ul>
 /// <p>Kinesis Data Firehose assumes the IAM role that is configured as part of the destination. The role should allow the Kinesis Data Firehose principal to assume the role, and the role should have permissions that allow the service to deliver the data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -138,8 +138,8 @@ impl CreateDeliveryStreamFluentBuilder {
     }
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// <li><p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <li><p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
     pub fn delivery_stream_type(mut self, input: crate::types::DeliveryStreamType) -> Self {
         self.inner = self.inner.delivery_stream_type(input);
@@ -147,8 +147,8 @@ impl CreateDeliveryStreamFluentBuilder {
     }
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// <li><p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <li><p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
     pub fn set_delivery_stream_type(mut self, input: ::std::option::Option<crate::types::DeliveryStreamType>) -> Self {
         self.inner = self.inner.set_delivery_stream_type(input);
@@ -156,8 +156,8 @@ impl CreateDeliveryStreamFluentBuilder {
     }
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// <li><p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <li><p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
     pub fn get_delivery_stream_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamType> {
         self.inner.get_delivery_stream_type()

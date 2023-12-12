@@ -22,13 +22,13 @@ impl TransactGetItemsInputBuilder {
 }
 /// Fluent builder constructing a request to `TransactGetItems`.
 ///
-/// <p> <code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or more tables (but not from indexes) in a single account and Region. A <code>TransactGetItems</code> call can contain up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that specifies an item to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code> cannot retrieve items from tables in more than one Amazon Web Services account or Region. The aggregate size of the items in the transaction cannot exceed 4 MB.</p>
+/// <p><code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or more tables (but not from indexes) in a single account and Region. A <code>TransactGetItems</code> call can contain up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that specifies an item to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code> cannot retrieve items from tables in more than one Amazon Web Services account or Region. The aggregate size of the items in the transaction cannot exceed 4 MB.</p>
 /// <p>DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following is true:</p>
 /// <ul>
-/// <li> <p>A conflicting operation is in the process of updating an item to be read.</p> </li>
-/// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-/// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-/// <li> <p>The aggregate size of the items in the transaction exceeded 4 MB.</p> </li>
+/// <li><p>A conflicting operation is in the process of updating an item to be read.</p></li>
+/// <li><p>There is insufficient provisioned capacity for the transaction to be completed.</p></li>
+/// <li><p>There is a user error, such as an invalid data format.</p></li>
+/// <li><p>The aggregate size of the items in the transaction exceeded 4 MB.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TransactGetItemsFluentBuilder {

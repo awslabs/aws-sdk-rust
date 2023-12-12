@@ -15,9 +15,9 @@ pub enum Error {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource). </p>
+    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource).</p>
     TooManyTagKeysException(crate::types::error::TooManyTagKeysException),
-    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

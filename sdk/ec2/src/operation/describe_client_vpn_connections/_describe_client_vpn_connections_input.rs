@@ -7,8 +7,8 @@ pub struct DescribeClientVpnConnectionsInput {
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
-    /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
+    /// <li><p><code>connection-id</code> - The ID of the connection.</p></li>
+    /// <li><p><code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The token to retrieve the next page of results.</p>
@@ -25,8 +25,8 @@ impl DescribeClientVpnConnectionsInput {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
-    /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
+    /// <li><p><code>connection-id</code> - The ID of the connection.</p></li>
+    /// <li><p><code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -85,8 +85,8 @@ impl DescribeClientVpnConnectionsInputBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
-    /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
+    /// <li><p><code>connection-id</code> - The ID of the connection.</p></li>
+    /// <li><p><code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -96,8 +96,8 @@ impl DescribeClientVpnConnectionsInputBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
-    /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
+    /// <li><p><code>connection-id</code> - The ID of the connection.</p></li>
+    /// <li><p><code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -105,8 +105,8 @@ impl DescribeClientVpnConnectionsInputBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
-    /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
+    /// <li><p><code>connection-id</code> - The ID of the connection.</p></li>
+    /// <li><p><code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

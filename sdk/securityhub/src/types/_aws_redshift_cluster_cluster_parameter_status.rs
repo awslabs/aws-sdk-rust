@@ -7,7 +7,7 @@ pub struct AwsRedshiftClusterClusterParameterStatus {
     /// <p>The name of the parameter.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
+    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code></p>
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     pub parameter_apply_error_description: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl AwsRedshiftClusterClusterParameterStatus {
         self.parameter_name.as_deref()
     }
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
+    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code></p>
     pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
         self.parameter_apply_status.as_deref()
     }
@@ -58,19 +58,19 @@ impl AwsRedshiftClusterClusterParameterStatusBuilder {
         &self.parameter_name
     }
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
+    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code></p>
     pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
+    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code></p>
     pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_status = input;
         self
     }
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
+    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code></p>
     pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_apply_status
     }

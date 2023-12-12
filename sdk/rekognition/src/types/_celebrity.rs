@@ -8,7 +8,7 @@ pub struct Celebrity {
     pub urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the celebrity.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the celebrity. </p>
+    /// <p>A unique identifier for the celebrity.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
     pub face: ::std::option::Option<crate::types::ComparedFace>,
@@ -28,7 +28,7 @@ impl Celebrity {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A unique identifier for the celebrity. </p>
+    /// <p>A unique identifier for the celebrity.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -98,17 +98,17 @@ impl CelebrityBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A unique identifier for the celebrity. </p>
+    /// <p>A unique identifier for the celebrity.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the celebrity. </p>
+    /// <p>A unique identifier for the celebrity.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>A unique identifier for the celebrity. </p>
+    /// <p>A unique identifier for the celebrity.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

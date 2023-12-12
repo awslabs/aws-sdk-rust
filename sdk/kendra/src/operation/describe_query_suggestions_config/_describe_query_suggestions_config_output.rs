@@ -11,7 +11,7 @@ pub struct DescribeQuerySuggestionsConfigOutput {
     pub status: ::std::option::Option<crate::types::QuerySuggestionsStatus>,
     /// <p>How recent your queries are in your query log time window (in days).</p>
     pub query_log_look_back_window_in_days: ::std::option::Option<i32>,
-    /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
+    /// <p><code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
     pub include_queries_without_user_information: ::std::option::Option<bool>,
     /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
     pub minimum_number_of_querying_users: ::std::option::Option<i32>,
@@ -21,7 +21,7 @@ pub struct DescribeQuerySuggestionsConfigOutput {
     /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
     pub last_suggestions_build_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
-    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
+    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions.</p>
     pub last_clear_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
@@ -46,7 +46,7 @@ impl DescribeQuerySuggestionsConfigOutput {
     pub fn query_log_look_back_window_in_days(&self) -> ::std::option::Option<i32> {
         self.query_log_look_back_window_in_days
     }
-    /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
+    /// <p><code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
     pub fn include_queries_without_user_information(&self) -> ::std::option::Option<bool> {
         self.include_queries_without_user_information
     }
@@ -64,7 +64,7 @@ impl DescribeQuerySuggestionsConfigOutput {
         self.last_suggestions_build_time.as_ref()
     }
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
-    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
+    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions.</p>
     pub fn last_clear_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_clear_time.as_ref()
     }
@@ -156,17 +156,17 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
     pub fn get_query_log_look_back_window_in_days(&self) -> &::std::option::Option<i32> {
         &self.query_log_look_back_window_in_days
     }
-    /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
+    /// <p><code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
     pub fn include_queries_without_user_information(mut self, input: bool) -> Self {
         self.include_queries_without_user_information = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
+    /// <p><code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
     pub fn set_include_queries_without_user_information(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_queries_without_user_information = input;
         self
     }
-    /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
+    /// <p><code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
     pub fn get_include_queries_without_user_information(&self) -> &::std::option::Option<bool> {
         &self.include_queries_without_user_information
     }
@@ -216,19 +216,19 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         &self.last_suggestions_build_time
     }
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
-    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
+    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions.</p>
     pub fn last_clear_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_clear_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
-    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
+    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions.</p>
     pub fn set_last_clear_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_clear_time = input;
         self
     }
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
-    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
+    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions.</p>
     pub fn get_last_clear_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_clear_time
     }

@@ -24,11 +24,11 @@ impl GetComputeAuthTokenInputBuilder {
 ///
 /// <p>Requests an authentication token from Amazon GameLift for a registered compute in an Anywhere fleet. The game servers that are running on the compute use this token to authenticate with the Amazon GameLift service. Each server process must provide a valid authentication token in its call to the Amazon GameLift server SDK action <code>InitSDK()</code>.</p>
 /// <p>Authentication tokens are valid for a limited time span. Use a mechanism to regularly request a fresh authentication token before the current token expires.</p>
-/// <p> <b>Learn more</b> </p>
+/// <p><b>Learn more</b></p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create an Anywhere fleet</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test your integration</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server SDK reference guides</a> (for version 5.x)</p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create an Anywhere fleet</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test your integration</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server SDK reference guides</a> (for version 5.x)</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComputeAuthTokenFluentBuilder {

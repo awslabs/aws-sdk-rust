@@ -22,7 +22,7 @@ impl DisassociateSubnetCidrBlockInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateSubnetCidrBlock`.
 ///
-/// <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an IPv6 CIDR block only. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it. </p>
+/// <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an IPv6 CIDR block only. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSubnetCidrBlockFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

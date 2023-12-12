@@ -7,10 +7,10 @@ pub struct CreateFirewallInput {
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
-    /// <p>You can't change this setting after you create the firewall. </p>
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.</p>
     pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub delete_protection: ::std::option::Option<bool>,
@@ -34,12 +34,12 @@ impl CreateFirewallInput {
     pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
-    /// <p>You can't change this setting after you create the firewall. </p>
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_mappings.is_none()`.
     pub fn subnet_mappings(&self) -> &[crate::types::SubnetMapping] {
@@ -125,21 +125,21 @@ impl CreateFirewallInputBuilder {
     pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_policy_arn
     }
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
-    /// <p>You can't change this setting after you create the firewall. </p>
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
     /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
-    /// <p>You can't change this setting after you create the firewall. </p>
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
-    /// <p>You can't change this setting after you create the firewall. </p>
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
@@ -147,19 +147,19 @@ impl CreateFirewallInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
     ///
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.</p>
     pub fn subnet_mappings(mut self, input: crate::types::SubnetMapping) -> Self {
         let mut v = self.subnet_mappings.unwrap_or_default();
         v.push(input);
         self.subnet_mappings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.</p>
     pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>) -> Self {
         self.subnet_mappings = input;
         self
     }
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.</p>
     pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         &self.subnet_mappings
     }

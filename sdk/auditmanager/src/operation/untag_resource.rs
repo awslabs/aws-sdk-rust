@@ -262,11 +262,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagResource
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UntagResourceError {
-    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
+    /// <p>An internal service error occurred during the processing of your request. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The resource that's specified in the request can't be found. </p>
+    /// <p>The resource that's specified in the request can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> The request has invalid or missing parameters. </p>
+    /// <p>The request has invalid or missing parameters.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

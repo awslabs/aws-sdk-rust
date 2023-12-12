@@ -22,7 +22,7 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetManagedEndpointSessionCredentials`.
 ///
-/// <p>Generate a session token to connect to a managed endpoint. </p>
+/// <p>Generate a session token to connect to a managed endpoint.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedEndpointSessionCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,45 +111,45 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
+    /// <p>The ARN of the managed endpoint for which the request is submitted.</p>
     pub fn endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_identifier(input.into());
         self
     }
-    /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
+    /// <p>The ARN of the managed endpoint for which the request is submitted.</p>
     pub fn set_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_identifier(input);
         self
     }
-    /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
+    /// <p>The ARN of the managed endpoint for which the request is submitted.</p>
     pub fn get_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_identifier()
     }
-    /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
+    /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to.</p>
     pub fn virtual_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_identifier(input.into());
         self
     }
-    /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
+    /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to.</p>
     pub fn set_virtual_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_cluster_identifier(input);
         self
     }
-    /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
+    /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to.</p>
     pub fn get_virtual_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_virtual_cluster_identifier()
     }
-    /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
+    /// <p>The IAM Execution Role ARN that will be used by the job run.</p>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
-    /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
+    /// <p>The IAM Execution Role ARN that will be used by the job run.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
-    /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
+    /// <p>The IAM Execution Role ARN that will be used by the job run.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_arn()
     }

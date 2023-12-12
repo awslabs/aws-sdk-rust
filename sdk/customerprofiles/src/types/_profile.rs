@@ -20,9 +20,9 @@ pub struct Profile {
     pub middle_name: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s last name.</p>
     pub last_name: ::std::option::Option<::std::string::String>,
-    /// <p>The customer’s birth date. </p>
+    /// <p>The customer’s birth date.</p>
     pub birth_date: ::std::option::Option<::std::string::String>,
-    /// <p>The gender with which the customer identifies. </p>
+    /// <p>The gender with which the customer identifies.</p>
     pub gender: ::std::option::Option<crate::types::Gender>,
     /// <p>The customer's phone number, which has not been specified as a mobile, home, or business number.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ pub struct Profile {
     pub home_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s home phone number.</p>
     pub business_phone_number: ::std::option::Option<::std::string::String>,
-    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s personal email address.</p>
     pub personal_email_address: ::std::option::Option<::std::string::String>,
@@ -51,8 +51,8 @@ pub struct Profile {
     /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
     /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
     /// <ul>
-    /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
-    /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+    /// <li><p><code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p></li>
+    /// <li><p><code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p></li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
     pub found_by_items: ::std::option::Option<::std::vec::Vec<crate::types::FoundByKeyValue>>,
@@ -94,11 +94,11 @@ impl Profile {
     pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The customer’s birth date. </p>
+    /// <p>The customer’s birth date.</p>
     pub fn birth_date(&self) -> ::std::option::Option<&str> {
         self.birth_date.as_deref()
     }
-    /// <p>The gender with which the customer identifies. </p>
+    /// <p>The gender with which the customer identifies.</p>
     pub fn gender(&self) -> ::std::option::Option<&crate::types::Gender> {
         self.gender.as_ref()
     }
@@ -118,7 +118,7 @@ impl Profile {
     pub fn business_phone_number(&self) -> ::std::option::Option<&str> {
         self.business_phone_number.as_deref()
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address.</p>
     pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -153,8 +153,8 @@ impl Profile {
     /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
     /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
     /// <ul>
-    /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
-    /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+    /// <li><p><code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p></li>
+    /// <li><p><code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p></li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
     ///
@@ -352,31 +352,31 @@ impl ProfileBuilder {
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_name
     }
-    /// <p>The customer’s birth date. </p>
+    /// <p>The customer’s birth date.</p>
     pub fn birth_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.birth_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The customer’s birth date. </p>
+    /// <p>The customer’s birth date.</p>
     pub fn set_birth_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.birth_date = input;
         self
     }
-    /// <p>The customer’s birth date. </p>
+    /// <p>The customer’s birth date.</p>
     pub fn get_birth_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.birth_date
     }
-    /// <p>The gender with which the customer identifies. </p>
+    /// <p>The gender with which the customer identifies.</p>
     pub fn gender(mut self, input: crate::types::Gender) -> Self {
         self.gender = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The gender with which the customer identifies. </p>
+    /// <p>The gender with which the customer identifies.</p>
     pub fn set_gender(mut self, input: ::std::option::Option<crate::types::Gender>) -> Self {
         self.gender = input;
         self
     }
-    /// <p>The gender with which the customer identifies. </p>
+    /// <p>The gender with which the customer identifies.</p>
     pub fn get_gender(&self) -> &::std::option::Option<crate::types::Gender> {
         &self.gender
     }
@@ -436,17 +436,17 @@ impl ProfileBuilder {
     pub fn get_business_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.business_phone_number
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }
@@ -561,8 +561,8 @@ impl ProfileBuilder {
     /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
     /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
     /// <ul>
-    /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
-    /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+    /// <li><p><code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p></li>
+    /// <li><p><code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p></li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
     pub fn found_by_items(mut self, input: crate::types::FoundByKeyValue) -> Self {
@@ -574,8 +574,8 @@ impl ProfileBuilder {
     /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
     /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
     /// <ul>
-    /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
-    /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+    /// <li><p><code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p></li>
+    /// <li><p><code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p></li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
     pub fn set_found_by_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FoundByKeyValue>>) -> Self {
@@ -585,8 +585,8 @@ impl ProfileBuilder {
     /// <p>A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
     /// <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p>
     /// <ul>
-    /// <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li>
-    /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
+    /// <li><p><code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p></li>
+    /// <li><p><code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p></li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
     pub fn get_found_by_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FoundByKeyValue>> {

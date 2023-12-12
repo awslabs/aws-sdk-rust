@@ -10,9 +10,9 @@ pub struct SnsConfiguration {
     pub sns_topic_arn: ::std::string::String,
     /// <p>The format of the SNS topic.</p>
     /// <ul>
-    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// <li><p><code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p></li>
+    /// <li><p><code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p></li>
+    /// <li><p><code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p></li>
     /// </ul>
     pub sns_format: ::std::option::Option<crate::types::SnsFormat>,
 }
@@ -29,9 +29,9 @@ impl SnsConfiguration {
     }
     /// <p>The format of the SNS topic.</p>
     /// <ul>
-    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// <li><p><code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p></li>
+    /// <li><p><code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p></li>
+    /// <li><p><code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p></li>
     /// </ul>
     pub fn sns_format(&self) -> ::std::option::Option<&crate::types::SnsFormat> {
         self.sns_format.as_ref()
@@ -85,9 +85,9 @@ impl SnsConfigurationBuilder {
     }
     /// <p>The format of the SNS topic.</p>
     /// <ul>
-    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// <li><p><code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p></li>
+    /// <li><p><code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p></li>
+    /// <li><p><code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p></li>
     /// </ul>
     pub fn sns_format(mut self, input: crate::types::SnsFormat) -> Self {
         self.sns_format = ::std::option::Option::Some(input);
@@ -95,9 +95,9 @@ impl SnsConfigurationBuilder {
     }
     /// <p>The format of the SNS topic.</p>
     /// <ul>
-    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// <li><p><code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p></li>
+    /// <li><p><code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p></li>
+    /// <li><p><code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p></li>
     /// </ul>
     pub fn set_sns_format(mut self, input: ::std::option::Option<crate::types::SnsFormat>) -> Self {
         self.sns_format = input;
@@ -105,9 +105,9 @@ impl SnsConfigurationBuilder {
     }
     /// <p>The format of the SNS topic.</p>
     /// <ul>
-    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// <li><p><code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p></li>
+    /// <li><p><code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p></li>
+    /// <li><p><code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p></li>
     /// </ul>
     pub fn get_sns_format(&self) -> &::std::option::Option<crate::types::SnsFormat> {
         &self.sns_format

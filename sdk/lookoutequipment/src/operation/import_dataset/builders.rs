@@ -136,31 +136,31 @@ impl ImportDatasetFluentBuilder {
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_name()
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_side_kms_key_id(input.into());
         self
     }
-    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
-    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_side_kms_key_id()
     }

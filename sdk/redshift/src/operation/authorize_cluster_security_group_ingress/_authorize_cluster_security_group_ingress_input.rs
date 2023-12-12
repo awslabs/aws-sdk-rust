@@ -10,8 +10,8 @@ pub struct AuthorizeClusterSecurityGroupIngressInput {
     pub cidrip: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
     pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
-    /// <p>Example: <code>111122223333</code> </p>
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value.</p>
+    /// <p>Example: <code>111122223333</code></p>
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizeClusterSecurityGroupIngressInput {
@@ -27,8 +27,8 @@ impl AuthorizeClusterSecurityGroupIngressInput {
     pub fn ec2_security_group_name(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_name.as_deref()
     }
-    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
-    /// <p>Example: <code>111122223333</code> </p>
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value.</p>
+    /// <p>Example: <code>111122223333</code></p>
     pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_owner_id.as_deref()
     }
@@ -93,20 +93,20 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
     pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_security_group_name
     }
-    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
-    /// <p>Example: <code>111122223333</code> </p>
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value.</p>
+    /// <p>Example: <code>111122223333</code></p>
     pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
-    /// <p>Example: <code>111122223333</code> </p>
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value.</p>
+    /// <p>Example: <code>111122223333</code></p>
     pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }
-    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
-    /// <p>Example: <code>111122223333</code> </p>
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value.</p>
+    /// <p>Example: <code>111122223333</code></p>
     pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_security_group_owner_id
     }

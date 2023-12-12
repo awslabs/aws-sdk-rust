@@ -7,13 +7,13 @@ pub struct CreateElasticsearchDomainInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</p>
     pub elasticsearch_cluster_config: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
-    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes.</p>
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
-    /// <p> IAM access policy as a JSON-formatted string.</p>
+    /// <p>IAM access policy as a JSON-formatted string.</p>
     pub access_policies: ::std::option::Option<::std::string::String>,
-    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
@@ -23,7 +23,7 @@ pub struct CreateElasticsearchDomainInput {
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
-    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
@@ -45,19 +45,19 @@ impl CreateElasticsearchDomainInput {
     pub fn elasticsearch_version(&self) -> ::std::option::Option<&str> {
         self.elasticsearch_version.as_deref()
     }
-    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</p>
     pub fn elasticsearch_cluster_config(&self) -> ::std::option::Option<&crate::types::ElasticsearchClusterConfig> {
         self.elasticsearch_cluster_config.as_ref()
     }
-    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes.</p>
     pub fn ebs_options(&self) -> ::std::option::Option<&crate::types::EbsOptions> {
         self.ebs_options.as_ref()
     }
-    /// <p> IAM access policy as a JSON-formatted string.</p>
+    /// <p>IAM access policy as a JSON-formatted string.</p>
     pub fn access_policies(&self) -> ::std::option::Option<&str> {
         self.access_policies.as_deref()
     }
-    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
     pub fn snapshot_options(&self) -> ::std::option::Option<&crate::types::SnapshotOptions> {
         self.snapshot_options.as_ref()
     }
@@ -77,7 +77,7 @@ impl CreateElasticsearchDomainInput {
     pub fn node_to_node_encryption_options(&self) -> ::std::option::Option<&crate::types::NodeToNodeEncryptionOptions> {
         self.node_to_node_encryption_options.as_ref()
     }
-    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn advanced_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.advanced_options.as_ref()
     }
@@ -164,59 +164,59 @@ impl CreateElasticsearchDomainInputBuilder {
     pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.elasticsearch_version
     }
-    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</p>
     pub fn elasticsearch_cluster_config(mut self, input: crate::types::ElasticsearchClusterConfig) -> Self {
         self.elasticsearch_cluster_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</p>
     pub fn set_elasticsearch_cluster_config(mut self, input: ::std::option::Option<crate::types::ElasticsearchClusterConfig>) -> Self {
         self.elasticsearch_cluster_config = input;
         self
     }
-    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</p>
     pub fn get_elasticsearch_cluster_config(&self) -> &::std::option::Option<crate::types::ElasticsearchClusterConfig> {
         &self.elasticsearch_cluster_config
     }
-    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes.</p>
     pub fn ebs_options(mut self, input: crate::types::EbsOptions) -> Self {
         self.ebs_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes.</p>
     pub fn set_ebs_options(mut self, input: ::std::option::Option<crate::types::EbsOptions>) -> Self {
         self.ebs_options = input;
         self
     }
-    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes.</p>
     pub fn get_ebs_options(&self) -> &::std::option::Option<crate::types::EbsOptions> {
         &self.ebs_options
     }
-    /// <p> IAM access policy as a JSON-formatted string.</p>
+    /// <p>IAM access policy as a JSON-formatted string.</p>
     pub fn access_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policies = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> IAM access policy as a JSON-formatted string.</p>
+    /// <p>IAM access policy as a JSON-formatted string.</p>
     pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policies = input;
         self
     }
-    /// <p> IAM access policy as a JSON-formatted string.</p>
+    /// <p>IAM access policy as a JSON-formatted string.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_policies
     }
-    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
         self.snapshot_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
     pub fn set_snapshot_options(mut self, input: ::std::option::Option<crate::types::SnapshotOptions>) -> Self {
         self.snapshot_options = input;
         self
     }
-    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
     pub fn get_snapshot_options(&self) -> &::std::option::Option<crate::types::SnapshotOptions> {
         &self.snapshot_options
     }
@@ -280,7 +280,7 @@ impl CreateElasticsearchDomainInputBuilder {
     ///
     /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
     ///
-    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn advanced_options(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -291,7 +291,7 @@ impl CreateElasticsearchDomainInputBuilder {
         self.advanced_options = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn set_advanced_options(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -299,7 +299,7 @@ impl CreateElasticsearchDomainInputBuilder {
         self.advanced_options = input;
         self
     }
-    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.advanced_options
     }

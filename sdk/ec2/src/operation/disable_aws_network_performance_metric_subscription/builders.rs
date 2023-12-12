@@ -158,17 +158,17 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
         self.inner.get_metric()
     }
-    /// <p>The statistic used for the disabled subscription. </p>
+    /// <p>The statistic used for the disabled subscription.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
         self.inner = self.inner.statistic(input);
         self
     }
-    /// <p>The statistic used for the disabled subscription. </p>
+    /// <p>The statistic used for the disabled subscription.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
         self.inner = self.inner.set_statistic(input);
         self
     }
-    /// <p>The statistic used for the disabled subscription. </p>
+    /// <p>The statistic used for the disabled subscription.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
         self.inner.get_statistic()
     }

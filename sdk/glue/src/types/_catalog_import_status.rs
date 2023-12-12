@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogImportStatus {
-    /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    /// <p><code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub import_completed: bool,
     /// <p>The time that the migration was started.</p>
     pub import_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -12,7 +12,7 @@ pub struct CatalogImportStatus {
     pub imported_by: ::std::option::Option<::std::string::String>,
 }
 impl CatalogImportStatus {
-    /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    /// <p><code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub fn import_completed(&self) -> bool {
         self.import_completed
     }
@@ -41,17 +41,17 @@ pub struct CatalogImportStatusBuilder {
     pub(crate) imported_by: ::std::option::Option<::std::string::String>,
 }
 impl CatalogImportStatusBuilder {
-    /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    /// <p><code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub fn import_completed(mut self, input: bool) -> Self {
         self.import_completed = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    /// <p><code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub fn set_import_completed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.import_completed = input;
         self
     }
-    /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    /// <p><code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub fn get_import_completed(&self) -> &::std::option::Option<bool> {
         &self.import_completed
     }

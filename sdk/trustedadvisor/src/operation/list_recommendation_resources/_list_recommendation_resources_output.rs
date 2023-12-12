@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationResourcesOutput {
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of Recommendation Resources</p>
     pub recommendation_resource_summaries: ::std::vec::Vec<crate::types::RecommendationResourceSummary>,
     _request_id: Option<String>,
 }
 impl ListRecommendationResourcesOutput {
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct ListRecommendationResourcesOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListRecommendationResourcesOutputBuilder {
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

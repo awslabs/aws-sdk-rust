@@ -6,9 +6,9 @@
 pub struct OntapVolumeConfiguration {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
-    /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
+    /// <li><p><code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p></li>
+    /// <li><p><code>CACHE</code> specifies that the volume is a FlexCache volume.</p></li>
     /// </ul>
     pub flex_cache_endpoint_type: ::std::option::Option<crate::types::FlexCacheEndpointType>,
     /// <p>Specifies the directory that network-attached storage (NAS) clients use to mount the volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name or IP address. You can create a <code>JunctionPath</code> directly below a parent volume junction or on a directory within a volume. A <code>JunctionPath</code> for a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even <code>/dir1/dir2/vol3</code>.</p>
@@ -30,23 +30,23 @@ pub struct OntapVolumeConfiguration {
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
-    /// <li> <p> <code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p> </li>
-    /// <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p> </li>
+    /// <li><p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
+    /// <li><p><code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p></li>
+    /// <li><p><code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p></li>
     /// </ul>
     pub ontap_volume_type: ::std::option::Option<crate::types::OntapVolumeType>,
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub snapshot_policy: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub copy_tags_to_backups: ::std::option::Option<bool>,
-    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume.</p>
     pub snaplock_configuration: ::std::option::Option<crate::types::SnaplockConfiguration>,
     /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
     pub volume_style: ::std::option::Option<crate::types::VolumeStyle>,
@@ -58,9 +58,9 @@ pub struct OntapVolumeConfiguration {
 impl OntapVolumeConfiguration {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
-    /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
+    /// <li><p><code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p></li>
+    /// <li><p><code>CACHE</code> specifies that the volume is a FlexCache volume.</p></li>
     /// </ul>
     pub fn flex_cache_endpoint_type(&self) -> ::std::option::Option<&crate::types::FlexCacheEndpointType> {
         self.flex_cache_endpoint_type.as_ref()
@@ -100,18 +100,18 @@ impl OntapVolumeConfiguration {
     }
     /// <p>Specifies the type of volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
-    /// <li> <p> <code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p> </li>
-    /// <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p> </li>
+    /// <li><p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
+    /// <li><p><code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p></li>
+    /// <li><p><code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p></li>
     /// </ul>
     pub fn ontap_volume_type(&self) -> ::std::option::Option<&crate::types::OntapVolumeType> {
         self.ontap_volume_type.as_ref()
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
@@ -122,7 +122,7 @@ impl OntapVolumeConfiguration {
     pub fn copy_tags_to_backups(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_backups
     }
-    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume.</p>
     pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::SnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
@@ -170,9 +170,9 @@ pub struct OntapVolumeConfigurationBuilder {
 impl OntapVolumeConfigurationBuilder {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
-    /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
+    /// <li><p><code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p></li>
+    /// <li><p><code>CACHE</code> specifies that the volume is a FlexCache volume.</p></li>
     /// </ul>
     pub fn flex_cache_endpoint_type(mut self, input: crate::types::FlexCacheEndpointType) -> Self {
         self.flex_cache_endpoint_type = ::std::option::Option::Some(input);
@@ -180,9 +180,9 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
-    /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
+    /// <li><p><code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p></li>
+    /// <li><p><code>CACHE</code> specifies that the volume is a FlexCache volume.</p></li>
     /// </ul>
     pub fn set_flex_cache_endpoint_type(mut self, input: ::std::option::Option<crate::types::FlexCacheEndpointType>) -> Self {
         self.flex_cache_endpoint_type = input;
@@ -190,9 +190,9 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
-    /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
+    /// <li><p><code>NONE</code> specifies that the volume doesn't have a FlexCache configuration. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p></li>
+    /// <li><p><code>CACHE</code> specifies that the volume is a FlexCache volume.</p></li>
     /// </ul>
     pub fn get_flex_cache_endpoint_type(&self) -> &::std::option::Option<crate::types::FlexCacheEndpointType> {
         &self.flex_cache_endpoint_type
@@ -314,9 +314,9 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the type of volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
-    /// <li> <p> <code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p> </li>
-    /// <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p> </li>
+    /// <li><p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
+    /// <li><p><code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p></li>
+    /// <li><p><code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p></li>
     /// </ul>
     pub fn ontap_volume_type(mut self, input: crate::types::OntapVolumeType) -> Self {
         self.ontap_volume_type = ::std::option::Option::Some(input);
@@ -324,9 +324,9 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the type of volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
-    /// <li> <p> <code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p> </li>
-    /// <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p> </li>
+    /// <li><p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
+    /// <li><p><code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p></li>
+    /// <li><p><code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p></li>
     /// </ul>
     pub fn set_ontap_volume_type(mut self, input: ::std::option::Option<crate::types::OntapVolumeType>) -> Self {
         self.ontap_volume_type = input;
@@ -334,18 +334,18 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the type of volume. Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
-    /// <li> <p> <code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p> </li>
-    /// <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p> </li>
+    /// <li><p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
+    /// <li><p><code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p></li>
+    /// <li><p><code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p></li>
     /// </ul>
     pub fn get_ontap_volume_type(&self) -> &::std::option::Option<crate::types::OntapVolumeType> {
         &self.ontap_volume_type
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
@@ -355,9 +355,9 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
@@ -367,9 +367,9 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
@@ -390,17 +390,17 @@ impl OntapVolumeConfigurationBuilder {
     pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
         &self.copy_tags_to_backups
     }
-    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume.</p>
     pub fn snaplock_configuration(mut self, input: crate::types::SnaplockConfiguration) -> Self {
         self.snaplock_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume.</p>
     pub fn set_snaplock_configuration(mut self, input: ::std::option::Option<crate::types::SnaplockConfiguration>) -> Self {
         self.snaplock_configuration = input;
         self
     }
-    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume.</p>
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::SnaplockConfiguration> {
         &self.snaplock_configuration
     }

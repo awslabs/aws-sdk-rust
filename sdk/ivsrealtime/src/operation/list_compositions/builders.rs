@@ -22,7 +22,7 @@ impl ListCompositionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCompositions`.
 ///
-/// <p>Gets summary information about all Compositions in your account, in the AWS region where the API request is processed. </p>
+/// <p>Gets summary information about all Compositions in your account, in the AWS region where the API request is processed.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCompositionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

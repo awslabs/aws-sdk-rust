@@ -14,8 +14,8 @@ pub struct FilterListControl {
     pub display_options: ::std::option::Option<crate::types::ListControlDisplayOptions>,
     /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p> </li>
-    /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p> </li>
+    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
+    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::SheetControlListType>,
     /// <p>A list of selectable values that are used in a control.</p>
@@ -45,8 +45,8 @@ impl FilterListControl {
     }
     /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p> </li>
-    /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p> </li>
+    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
+    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlListType> {
         self.r#type.as_ref()
@@ -141,8 +141,8 @@ impl FilterListControlBuilder {
     }
     /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p> </li>
-    /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p> </li>
+    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
+    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SheetControlListType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -150,8 +150,8 @@ impl FilterListControlBuilder {
     }
     /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p> </li>
-    /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p> </li>
+    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
+    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SheetControlListType>) -> Self {
         self.r#type = input;
@@ -159,8 +159,8 @@ impl FilterListControlBuilder {
     }
     /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p> </li>
-    /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p> </li>
+    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
+    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlListType> {
         &self.r#type

@@ -22,7 +22,7 @@ impl TagStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `TagStream`.
 ///
-/// <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management User Guide</i>. </p>
+/// <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management User Guide</i>.</p>
 /// <p>You must provide either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
 /// <p>This operation requires permission for the <code>KinesisVideo:TagStream</code> action.</p>
 /// <p>A Kinesis video stream can support up to 50 tags.</p>

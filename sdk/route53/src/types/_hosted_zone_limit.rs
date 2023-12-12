@@ -6,8 +6,8 @@
 pub struct HostedZoneLimit {
     /// <p>The limit that you requested. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+    /// <li><p><b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p></li>
+    /// <li><p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
     /// </ul>
     pub r#type: crate::types::HostedZoneLimitType,
     /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
@@ -16,8 +16,8 @@ pub struct HostedZoneLimit {
 impl HostedZoneLimit {
     /// <p>The limit that you requested. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+    /// <li><p><b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p></li>
+    /// <li><p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::HostedZoneLimitType {
         &self.r#type
@@ -44,8 +44,8 @@ pub struct HostedZoneLimitBuilder {
 impl HostedZoneLimitBuilder {
     /// <p>The limit that you requested. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+    /// <li><p><b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p></li>
+    /// <li><p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::HostedZoneLimitType) -> Self {
@@ -54,8 +54,8 @@ impl HostedZoneLimitBuilder {
     }
     /// <p>The limit that you requested. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+    /// <li><p><b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p></li>
+    /// <li><p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HostedZoneLimitType>) -> Self {
         self.r#type = input;
@@ -63,8 +63,8 @@ impl HostedZoneLimitBuilder {
     }
     /// <p>The limit that you requested. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+    /// <li><p><b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p></li>
+    /// <li><p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::HostedZoneLimitType> {
         &self.r#type

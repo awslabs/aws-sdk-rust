@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateExpirationForHIT`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hit_id(impl Into<String>)`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder::set_hit_id):<br>required: **true**<br><p> The HIT to update. </p><br>
-    ///   - [`expire_at(DateTime)`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder::expire_at) / [`set_expire_at(Option<DateTime>)`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder::set_expire_at):<br>required: **true**<br><p> The date and time at which you want the HIT to expire </p><br>
+    ///   - [`hit_id(impl Into<String>)`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder::set_hit_id):<br>required: **true**<br><p>The HIT to update.</p><br>
+    ///   - [`expire_at(DateTime)`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder::expire_at) / [`set_expire_at(Option<DateTime>)`](crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder::set_expire_at):<br>required: **true**<br><p>The date and time at which you want the HIT to expire</p><br>
     /// - On success, responds with [`UpdateExpirationForHitOutput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput)
     /// - On failure, responds with [`SdkError<UpdateExpirationForHITError>`](crate::operation::update_expiration_for_hit::UpdateExpirationForHITError)
     pub fn update_expiration_for_hit(&self) -> crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHITFluentBuilder {

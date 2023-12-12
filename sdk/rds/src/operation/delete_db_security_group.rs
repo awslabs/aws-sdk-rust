@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDBSecur
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDBSecurityGroupError {
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
+    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::types::error::InvalidDbSecurityGroupStateFault),

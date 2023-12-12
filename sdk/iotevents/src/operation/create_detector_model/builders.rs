@@ -196,17 +196,17 @@ impl CreateDetectorModelFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
     pub fn evaluation_method(mut self, input: crate::types::EvaluationMethod) -> Self {
         self.inner = self.inner.evaluation_method(input);
         self
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
     pub fn set_evaluation_method(mut self, input: ::std::option::Option<crate::types::EvaluationMethod>) -> Self {
         self.inner = self.inner.set_evaluation_method(input);
         self
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
     pub fn get_evaluation_method(&self) -> &::std::option::Option<crate::types::EvaluationMethod> {
         self.inner.get_evaluation_method()
     }

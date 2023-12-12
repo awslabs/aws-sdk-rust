@@ -5,7 +5,7 @@
 pub struct DescribeScheduleOutput {
     /// <p>The date and time that the schedule was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The identifier (user name) of the user who created the schedule. </p>
+    /// <p>The identifier (user name) of the user who created the schedule.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
     pub job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -28,7 +28,7 @@ impl DescribeScheduleOutput {
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
-    /// <p>The identifier (user name) of the user who created the schedule. </p>
+    /// <p>The identifier (user name) of the user who created the schedule.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -106,17 +106,17 @@ impl DescribeScheduleOutputBuilder {
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
     }
-    /// <p>The identifier (user name) of the user who created the schedule. </p>
+    /// <p>The identifier (user name) of the user who created the schedule.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier (user name) of the user who created the schedule. </p>
+    /// <p>The identifier (user name) of the user who created the schedule.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The identifier (user name) of the user who created the schedule. </p>
+    /// <p>The identifier (user name) of the user who created the schedule.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }

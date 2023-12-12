@@ -9,9 +9,9 @@ pub struct ConfigRuleComplianceFilters {
     /// <p>The rule compliance status.</p>
     /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
-    /// <p>The 12-digit account ID of the source account. </p>
+    /// <p>The 12-digit account ID of the source account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The source region where the data is aggregated. </p>
+    /// <p>The source region where the data is aggregated.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
 impl ConfigRuleComplianceFilters {
@@ -24,11 +24,11 @@ impl ConfigRuleComplianceFilters {
     pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ComplianceType> {
         self.compliance_type.as_ref()
     }
-    /// <p>The 12-digit account ID of the source account. </p>
+    /// <p>The 12-digit account ID of the source account.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The source region where the data is aggregated. </p>
+    /// <p>The source region where the data is aggregated.</p>
     pub fn aws_region(&self) -> ::std::option::Option<&str> {
         self.aws_region.as_deref()
     }
@@ -81,31 +81,31 @@ impl ConfigRuleComplianceFiltersBuilder {
     pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {
         &self.compliance_type
     }
-    /// <p>The 12-digit account ID of the source account. </p>
+    /// <p>The 12-digit account ID of the source account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account ID of the source account. </p>
+    /// <p>The 12-digit account ID of the source account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The 12-digit account ID of the source account. </p>
+    /// <p>The 12-digit account ID of the source account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The source region where the data is aggregated. </p>
+    /// <p>The source region where the data is aggregated.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source region where the data is aggregated. </p>
+    /// <p>The source region where the data is aggregated.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
     }
-    /// <p>The source region where the data is aggregated. </p>
+    /// <p>The source region where the data is aggregated.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_region
     }

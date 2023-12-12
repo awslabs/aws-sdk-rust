@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyImageAttributeInput {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
     pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the AMI.</p>
     pub description: ::std::option::Option<crate::types::AttributeValue>,
@@ -36,7 +36,7 @@ pub struct ModifyImageAttributeInput {
 }
 impl ModifyImageAttributeInput {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
     pub fn attribute(&self) -> ::std::option::Option<&str> {
         self.attribute.as_deref()
     }
@@ -128,19 +128,19 @@ pub struct ModifyImageAttributeInputBuilder {
 }
 impl ModifyImageAttributeInputBuilder {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
     pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
     pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
     pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotationShift {
-    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation.</p>
     pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time a shift rotation begins.</p>
     pub start_time: ::aws_smithy_types::DateTime,
@@ -16,7 +16,7 @@ pub struct RotationShift {
     pub shift_details: ::std::option::Option<crate::types::ShiftDetails>,
 }
 impl RotationShift {
-    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_ids.is_none()`.
     pub fn contact_ids(&self) -> &[::std::string::String] {
@@ -61,19 +61,19 @@ impl RotationShiftBuilder {
     ///
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation.</p>
     pub fn contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
         v.push(input.into());
         self.contact_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation.</p>
     pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contact_ids = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation.</p>
     pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contact_ids
     }

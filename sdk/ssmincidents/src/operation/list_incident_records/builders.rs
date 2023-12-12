@@ -22,7 +22,7 @@ impl ListIncidentRecordsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListIncidentRecords`.
 ///
-/// <p>Lists all incident records in your account. Use this command to retrieve the Amazon Resource Name (ARN) of the incident record you want to update. </p>
+/// <p>Lists all incident records in your account. Use this command to retrieve the Amazon Resource Name (ARN) of the incident record you want to update.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIncidentRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -120,16 +120,16 @@ impl ListIncidentRecordsFluentBuilder {
     ///
     /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p>
     /// <ul>
-    /// <li> <p> <code>creationTime</code> </p> </li>
-    /// <li> <p> <code>impact</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
-    /// <li> <p> <code>createdBy</code> </p> </li>
+    /// <li><p><code>creationTime</code></p></li>
+    /// <li><p><code>impact</code></p></li>
+    /// <li><p><code>status</code></p></li>
+    /// <li><p><code>createdBy</code></p></li>
     /// </ul>
     /// <p>Note the following when when you use Filters:</p>
     /// <ul>
-    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
-    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
-    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
+    /// <li><p>If you don't specify a Filter, the response includes all incident records.</p></li>
+    /// <li><p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p></li>
+    /// <li><p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -137,16 +137,16 @@ impl ListIncidentRecordsFluentBuilder {
     }
     /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p>
     /// <ul>
-    /// <li> <p> <code>creationTime</code> </p> </li>
-    /// <li> <p> <code>impact</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
-    /// <li> <p> <code>createdBy</code> </p> </li>
+    /// <li><p><code>creationTime</code></p></li>
+    /// <li><p><code>impact</code></p></li>
+    /// <li><p><code>status</code></p></li>
+    /// <li><p><code>createdBy</code></p></li>
     /// </ul>
     /// <p>Note the following when when you use Filters:</p>
     /// <ul>
-    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
-    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
-    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
+    /// <li><p>If you don't specify a Filter, the response includes all incident records.</p></li>
+    /// <li><p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p></li>
+    /// <li><p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -154,16 +154,16 @@ impl ListIncidentRecordsFluentBuilder {
     }
     /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p>
     /// <ul>
-    /// <li> <p> <code>creationTime</code> </p> </li>
-    /// <li> <p> <code>impact</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
-    /// <li> <p> <code>createdBy</code> </p> </li>
+    /// <li><p><code>creationTime</code></p></li>
+    /// <li><p><code>impact</code></p></li>
+    /// <li><p><code>status</code></p></li>
+    /// <li><p><code>createdBy</code></p></li>
     /// </ul>
     /// <p>Note the following when when you use Filters:</p>
     /// <ul>
-    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
-    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
-    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
+    /// <li><p>If you don't specify a Filter, the response includes all incident records.</p></li>
+    /// <li><p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p></li>
+    /// <li><p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

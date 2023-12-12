@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`network_id(impl Into<String>)`](crate::operation::get_node::builders::GetNodeFluentBuilder::network_id) / [`set_network_id(Option<String>)`](crate::operation::get_node::builders::GetNodeFluentBuilder::set_network_id):<br>required: **true**<br><p>The unique identifier of the network that the node is on.</p><br>
-    ///   - [`member_id(impl Into<String>)`](crate::operation::get_node::builders::GetNodeFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::get_node::builders::GetNodeFluentBuilder::set_member_id):<br>required: **false**<br><p>The unique identifier of the member that owns the node.</p>  <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p><br>
+    ///   - [`member_id(impl Into<String>)`](crate::operation::get_node::builders::GetNodeFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::get_node::builders::GetNodeFluentBuilder::set_member_id):<br>required: **false**<br><p>The unique identifier of the member that owns the node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p><br>
     ///   - [`node_id(impl Into<String>)`](crate::operation::get_node::builders::GetNodeFluentBuilder::node_id) / [`set_node_id(Option<String>)`](crate::operation::get_node::builders::GetNodeFluentBuilder::set_node_id):<br>required: **true**<br><p>The unique identifier of the node.</p><br>
     /// - On success, responds with [`GetNodeOutput`](crate::operation::get_node::GetNodeOutput) with field(s):
     ///   - [`node(Option<Node>)`](crate::operation::get_node::GetNodeOutput::node): <p>Properties of the node configuration.</p>

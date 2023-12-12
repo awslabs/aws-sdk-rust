@@ -22,7 +22,7 @@ impl ListAssessmentFrameworksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAssessmentFrameworks`.
 ///
-/// <p> Returns a list of the frameworks that are available in the Audit Manager framework library. </p>
+/// <p>Returns a list of the frameworks that are available in the Audit Manager framework library.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListAssessmentFrameworksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_assessment_frameworks::paginator::ListAssessmentFrameworksPaginator {
         crate::operation::list_assessment_frameworks::paginator::ListAssessmentFrameworksPaginator::new(self.handle, self.inner)
     }
-    /// <p> The type of framework, such as a standard framework or a custom framework. </p>
+    /// <p>The type of framework, such as a standard framework or a custom framework.</p>
     pub fn framework_type(mut self, input: crate::types::FrameworkType) -> Self {
         self.inner = self.inner.framework_type(input);
         self
     }
-    /// <p> The type of framework, such as a standard framework or a custom framework. </p>
+    /// <p>The type of framework, such as a standard framework or a custom framework.</p>
     pub fn set_framework_type(mut self, input: ::std::option::Option<crate::types::FrameworkType>) -> Self {
         self.inner = self.inner.set_framework_type(input);
         self
     }
-    /// <p> The type of framework, such as a standard framework or a custom framework. </p>
+    /// <p>The type of framework, such as a standard framework or a custom framework.</p>
     pub fn get_framework_type(&self) -> &::std::option::Option<crate::types::FrameworkType> {
         self.inner.get_framework_type()
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

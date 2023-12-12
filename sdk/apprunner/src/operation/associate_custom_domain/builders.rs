@@ -138,19 +138,19 @@ impl AssociateCustomDomainFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn enable_www_subdomain(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_www_subdomain(input);
         self
     }
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn set_enable_www_subdomain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_www_subdomain(input);
         self
     }
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn get_enable_www_subdomain(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_www_subdomain()
     }

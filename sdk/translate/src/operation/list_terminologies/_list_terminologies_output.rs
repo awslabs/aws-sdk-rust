@@ -5,7 +5,7 @@
 pub struct ListTerminologiesOutput {
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
     pub terminology_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>>,
-    /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
+    /// <p>If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListTerminologiesOutput {
     pub fn terminology_properties_list(&self) -> &[crate::types::TerminologyProperties] {
         self.terminology_properties_list.as_deref().unwrap_or_default()
     }
-    /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
+    /// <p>If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListTerminologiesOutputBuilder {
     pub fn get_terminology_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>> {
         &self.terminology_properties_list
     }
-    /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
+    /// <p>If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
+    /// <p>If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
+    /// <p>If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

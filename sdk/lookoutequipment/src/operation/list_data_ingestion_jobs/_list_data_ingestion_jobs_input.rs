@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsInput {
-    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    /// <p>The name of the dataset being used for the data ingestion job.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    /// <p>Specifies the maximum number of data ingestion jobs to list.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Indicates the status of the data ingestion job. </p>
+    /// <p>Indicates the status of the data ingestion job.</p>
     pub status: ::std::option::Option<crate::types::IngestionJobStatus>,
 }
 impl ListDataIngestionJobsInput {
-    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    /// <p>The name of the dataset being used for the data ingestion job.</p>
     pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    /// <p>Specifies the maximum number of data ingestion jobs to list.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Indicates the status of the data ingestion job. </p>
+    /// <p>Indicates the status of the data ingestion job.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionJobStatus> {
         self.status.as_ref()
     }
@@ -47,59 +47,59 @@ pub struct ListDataIngestionJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::IngestionJobStatus>,
 }
 impl ListDataIngestionJobsInputBuilder {
-    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    /// <p>The name of the dataset being used for the data ingestion job.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    /// <p>The name of the dataset being used for the data ingestion job.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
     }
-    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    /// <p>The name of the dataset being used for the data ingestion job.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_name
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    /// <p>Specifies the maximum number of data ingestion jobs to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    /// <p>Specifies the maximum number of data ingestion jobs to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    /// <p>Specifies the maximum number of data ingestion jobs to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Indicates the status of the data ingestion job. </p>
+    /// <p>Indicates the status of the data ingestion job.</p>
     pub fn status(mut self, input: crate::types::IngestionJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the status of the data ingestion job. </p>
+    /// <p>Indicates the status of the data ingestion job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Indicates the status of the data ingestion job. </p>
+    /// <p>Indicates the status of the data ingestion job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionJobStatus> {
         &self.status
     }

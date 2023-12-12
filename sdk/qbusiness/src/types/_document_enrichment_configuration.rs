@@ -11,13 +11,13 @@ pub struct DocumentEnrichmentConfiguration {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub pre_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,
     /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Q.</p>
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub post_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,
 }
 impl DocumentEnrichmentConfiguration {
@@ -31,7 +31,7 @@ impl DocumentEnrichmentConfiguration {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn pre_extraction_hook_configuration(&self) -> ::std::option::Option<&crate::types::HookConfiguration> {
         self.pre_extraction_hook_configuration.as_ref()
     }
@@ -39,7 +39,7 @@ impl DocumentEnrichmentConfiguration {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn post_extraction_hook_configuration(&self) -> ::std::option::Option<&crate::types::HookConfiguration> {
         self.post_extraction_hook_configuration.as_ref()
     }
@@ -87,7 +87,7 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn pre_extraction_hook_configuration(mut self, input: crate::types::HookConfiguration) -> Self {
         self.pre_extraction_hook_configuration = ::std::option::Option::Some(input);
         self
@@ -96,7 +96,7 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn set_pre_extraction_hook_configuration(mut self, input: ::std::option::Option<crate::types::HookConfiguration>) -> Self {
         self.pre_extraction_hook_configuration = input;
         self
@@ -105,7 +105,7 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn get_pre_extraction_hook_configuration(&self) -> &::std::option::Option<crate::types::HookConfiguration> {
         &self.pre_extraction_hook_configuration
     }
@@ -113,7 +113,7 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn post_extraction_hook_configuration(mut self, input: crate::types::HookConfiguration) -> Self {
         self.post_extraction_hook_configuration = ::std::option::Option::Some(input);
         self
@@ -122,7 +122,7 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn set_post_extraction_hook_configuration(mut self, input: ::std::option::Option<crate::types::HookConfiguration>) -> Self {
         self.post_extraction_hook_configuration = input;
         self
@@ -131,7 +131,7 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn get_post_extraction_hook_configuration(&self) -> &::std::option::Option<crate::types::HookConfiguration> {
         &self.post_extraction_hook_configuration
     }

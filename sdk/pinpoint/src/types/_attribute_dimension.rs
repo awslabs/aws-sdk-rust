@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeDimension {
-    /// <p>The type of segment dimension to use. Valid values are: </p>
+    /// <p>The type of segment dimension to use. Valid values are:</p>
     /// <ul>
     /// <li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li>
     /// <li>EXCLUSIVE - endpoints that have attributes matching the values are excluded in the segment.</li>
@@ -20,7 +20,7 @@ pub struct AttributeDimension {
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttributeDimension {
-    /// <p>The type of segment dimension to use. Valid values are: </p>
+    /// <p>The type of segment dimension to use. Valid values are:</p>
     /// <ul>
     /// <li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li>
     /// <li>EXCLUSIVE - endpoints that have attributes matching the values are excluded in the segment.</li>
@@ -56,7 +56,7 @@ pub struct AttributeDimensionBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttributeDimensionBuilder {
-    /// <p>The type of segment dimension to use. Valid values are: </p>
+    /// <p>The type of segment dimension to use. Valid values are:</p>
     /// <ul>
     /// <li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li>
     /// <li>EXCLUSIVE - endpoints that have attributes matching the values are excluded in the segment.</li>
@@ -71,7 +71,7 @@ impl AttributeDimensionBuilder {
         self.attribute_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of segment dimension to use. Valid values are: </p>
+    /// <p>The type of segment dimension to use. Valid values are:</p>
     /// <ul>
     /// <li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li>
     /// <li>EXCLUSIVE - endpoints that have attributes matching the values are excluded in the segment.</li>
@@ -86,7 +86,7 @@ impl AttributeDimensionBuilder {
         self.attribute_type = input;
         self
     }
-    /// <p>The type of segment dimension to use. Valid values are: </p>
+    /// <p>The type of segment dimension to use. Valid values are:</p>
     /// <ul>
     /// <li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li>
     /// <li>EXCLUSIVE - endpoints that have attributes matching the values are excluded in the segment.</li>

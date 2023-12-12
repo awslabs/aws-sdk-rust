@@ -12,8 +12,8 @@ pub struct GetDatasetOutput {
     pub dataset_title: ::std::option::Option<::std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub kind: ::std::option::Option<crate::types::DatasetKind>,
     /// <p>A description of the Dataset.</p>
@@ -28,10 +28,10 @@ pub struct GetDatasetOutput {
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+    /// <li><p><code>PENDING</code> – Dataset is pending creation.</p></li>
+    /// <li><p><code>FAILED</code> – Dataset creation has failed.</p></li>
+    /// <li><p><code>SUCCESS</code> – Dataset creation has succeeded.</p></li>
+    /// <li><p><code>RUNNING</code> – Dataset creation is running.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     _request_id: Option<String>,
@@ -51,8 +51,8 @@ impl GetDatasetOutput {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub fn kind(&self) -> ::std::option::Option<&crate::types::DatasetKind> {
         self.kind.as_ref()
@@ -79,10 +79,10 @@ impl GetDatasetOutput {
     }
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+    /// <li><p><code>PENDING</code> – Dataset is pending creation.</p></li>
+    /// <li><p><code>FAILED</code> – Dataset creation has failed.</p></li>
+    /// <li><p><code>SUCCESS</code> – Dataset creation has succeeded.</p></li>
+    /// <li><p><code>RUNNING</code> – Dataset creation is running.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
@@ -161,8 +161,8 @@ impl GetDatasetOutputBuilder {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub fn kind(mut self, input: crate::types::DatasetKind) -> Self {
         self.kind = ::std::option::Option::Some(input);
@@ -170,8 +170,8 @@ impl GetDatasetOutputBuilder {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub fn set_kind(mut self, input: ::std::option::Option<crate::types::DatasetKind>) -> Self {
         self.kind = input;
@@ -179,8 +179,8 @@ impl GetDatasetOutputBuilder {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub fn get_kind(&self) -> &::std::option::Option<crate::types::DatasetKind> {
         &self.kind
@@ -257,10 +257,10 @@ impl GetDatasetOutputBuilder {
     }
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+    /// <li><p><code>PENDING</code> – Dataset is pending creation.</p></li>
+    /// <li><p><code>FAILED</code> – Dataset creation has failed.</p></li>
+    /// <li><p><code>SUCCESS</code> – Dataset creation has succeeded.</p></li>
+    /// <li><p><code>RUNNING</code> – Dataset creation is running.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -268,10 +268,10 @@ impl GetDatasetOutputBuilder {
     }
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+    /// <li><p><code>PENDING</code> – Dataset is pending creation.</p></li>
+    /// <li><p><code>FAILED</code> – Dataset creation has failed.</p></li>
+    /// <li><p><code>SUCCESS</code> – Dataset creation has succeeded.</p></li>
+    /// <li><p><code>RUNNING</code> – Dataset creation is running.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
@@ -279,10 +279,10 @@ impl GetDatasetOutputBuilder {
     }
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+    /// <li><p><code>PENDING</code> – Dataset is pending creation.</p></li>
+    /// <li><p><code>FAILED</code> – Dataset creation has failed.</p></li>
+    /// <li><p><code>SUCCESS</code> – Dataset creation has succeeded.</p></li>
+    /// <li><p><code>RUNNING</code> – Dataset creation is running.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
         &self.status

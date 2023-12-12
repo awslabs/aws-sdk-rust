@@ -5,13 +5,13 @@
 pub struct ImportModelVersionOutput {
     /// <p>The name for the machine learning model.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
     pub model_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the model version being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model version being created.</p>
     pub model_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model being created.</p>
     pub model_version: ::std::option::Option<i64>,
-    /// <p>The status of the <code>ImportModelVersion</code> operation. </p>
+    /// <p>The status of the <code>ImportModelVersion</code> operation.</p>
     pub status: ::std::option::Option<crate::types::ModelVersionStatus>,
     _request_id: Option<String>,
 }
@@ -20,11 +20,11 @@ impl ImportModelVersionOutput {
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
     pub fn model_arn(&self) -> ::std::option::Option<&str> {
         self.model_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model version being created.</p>
     pub fn model_version_arn(&self) -> ::std::option::Option<&str> {
         self.model_version_arn.as_deref()
     }
@@ -32,7 +32,7 @@ impl ImportModelVersionOutput {
     pub fn model_version(&self) -> ::std::option::Option<i64> {
         self.model_version
     }
-    /// <p>The status of the <code>ImportModelVersion</code> operation. </p>
+    /// <p>The status of the <code>ImportModelVersion</code> operation.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ModelVersionStatus> {
         self.status.as_ref()
     }
@@ -75,31 +75,31 @@ impl ImportModelVersionOutputBuilder {
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model version being created.</p>
     pub fn model_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model version being created.</p>
     pub fn set_model_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version being created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the model version being created.</p>
     pub fn get_model_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_version_arn
     }
@@ -117,17 +117,17 @@ impl ImportModelVersionOutputBuilder {
     pub fn get_model_version(&self) -> &::std::option::Option<i64> {
         &self.model_version
     }
-    /// <p>The status of the <code>ImportModelVersion</code> operation. </p>
+    /// <p>The status of the <code>ImportModelVersion</code> operation.</p>
     pub fn status(mut self, input: crate::types::ModelVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the <code>ImportModelVersion</code> operation. </p>
+    /// <p>The status of the <code>ImportModelVersion</code> operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelVersionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the <code>ImportModelVersion</code> operation. </p>
+    /// <p>The status of the <code>ImportModelVersion</code> operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelVersionStatus> {
         &self.status
     }

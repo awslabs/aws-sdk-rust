@@ -9,7 +9,7 @@ pub struct IpSet {
     pub ip_family: ::std::option::Option<::std::string::String>,
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The types of IP addresses included in this IP set. </p>
+    /// <p>The types of IP addresses included in this IP set.</p>
     pub ip_address_family: ::std::option::Option<crate::types::IpAddressFamily>,
 }
 impl IpSet {
@@ -24,7 +24,7 @@ impl IpSet {
     pub fn ip_addresses(&self) -> &[::std::string::String] {
         self.ip_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The types of IP addresses included in this IP set. </p>
+    /// <p>The types of IP addresses included in this IP set.</p>
     pub fn ip_address_family(&self) -> ::std::option::Option<&crate::types::IpAddressFamily> {
         self.ip_address_family.as_ref()
     }
@@ -82,17 +82,17 @@ impl IpSetBuilder {
     pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_addresses
     }
-    /// <p>The types of IP addresses included in this IP set. </p>
+    /// <p>The types of IP addresses included in this IP set.</p>
     pub fn ip_address_family(mut self, input: crate::types::IpAddressFamily) -> Self {
         self.ip_address_family = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The types of IP addresses included in this IP set. </p>
+    /// <p>The types of IP addresses included in this IP set.</p>
     pub fn set_ip_address_family(mut self, input: ::std::option::Option<crate::types::IpAddressFamily>) -> Self {
         self.ip_address_family = input;
         self
     }
-    /// <p>The types of IP addresses included in this IP set. </p>
+    /// <p>The types of IP addresses included in this IP set.</p>
     pub fn get_ip_address_family(&self) -> &::std::option::Option<crate::types::IpAddressFamily> {
         &self.ip_address_family
     }

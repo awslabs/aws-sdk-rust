@@ -12,7 +12,7 @@ pub struct LabelingJobSummary {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the job was last modified (timestamp).</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The current status of the labeling job. </p>
+    /// <p>The current status of the labeling job.</p>
     pub labeling_job_status: ::std::option::Option<crate::types::LabelingJobStatus>,
     /// <p>Counts showing the progress of the labeling job.</p>
     pub label_counters: ::std::option::Option<crate::types::LabelCounters>,
@@ -46,7 +46,7 @@ impl LabelingJobSummary {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The current status of the labeling job. </p>
+    /// <p>The current status of the labeling job.</p>
     pub fn labeling_job_status(&self) -> ::std::option::Option<&crate::types::LabelingJobStatus> {
         self.labeling_job_status.as_ref()
     }
@@ -164,18 +164,18 @@ impl LabelingJobSummaryBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>The current status of the labeling job. </p>
+    /// <p>The current status of the labeling job.</p>
     /// This field is required.
     pub fn labeling_job_status(mut self, input: crate::types::LabelingJobStatus) -> Self {
         self.labeling_job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the labeling job. </p>
+    /// <p>The current status of the labeling job.</p>
     pub fn set_labeling_job_status(mut self, input: ::std::option::Option<crate::types::LabelingJobStatus>) -> Self {
         self.labeling_job_status = input;
         self
     }
-    /// <p>The current status of the labeling job. </p>
+    /// <p>The current status of the labeling job.</p>
     pub fn get_labeling_job_status(&self) -> &::std::option::Option<crate::types::LabelingJobStatus> {
         &self.labeling_job_status
     }

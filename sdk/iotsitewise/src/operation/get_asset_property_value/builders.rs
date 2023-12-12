@@ -25,8 +25,8 @@ impl GetAssetPropertyValueInputBuilder {
 /// <p>Gets an asset property's current value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying current values</a> in the <i>IoT SiteWise User Guide</i>.</p>
 /// <p>To identify an asset property, you must specify one of the following:</p>
 /// <ul>
-/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
-/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+/// <li><p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p></li>
+/// <li><p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssetPropertyValueFluentBuilder {

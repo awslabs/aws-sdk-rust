@@ -6,7 +6,7 @@
 pub struct CreateDbSubnetGroupInput {
     /// <p>The name for the subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the subnet group.</p>
     pub db_subnet_group_description: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreateDbSubnetGroupInput {
 impl CreateDbSubnetGroupInput {
     /// <p>The name for the subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -58,7 +58,7 @@ pub struct CreateDbSubnetGroupInputBuilder {
 impl CreateDbSubnetGroupInputBuilder {
     /// <p>The name for the subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     /// This field is required.
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
@@ -66,14 +66,14 @@ impl CreateDbSubnetGroupInputBuilder {
     }
     /// <p>The name for the subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
     /// <p>The name for the subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_subnet_group_name
     }

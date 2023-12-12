@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKxDataviewOutput {
-    /// <p> The name of the database where you created the dataview.</p>
+    /// <p>The name of the database where you created the dataview.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the dataview.</p>
     pub dataview_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
-    /// <p> The identifier of the availability zones. </p>
+    /// <p>The identifier of the availability zones.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
-    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
+    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
-    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
+    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
-    /// <p> The current active changeset versions of the database on the given dataview. </p>
+    /// <p>The current active changeset versions of the database on the given dataview.</p>
     pub active_versions: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>>,
     /// <p>A description of the dataview.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -29,21 +29,21 @@ pub struct GetKxDataviewOutput {
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
+    /// <p>The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The status of dataview creation.</p>
+    /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The dataview creation is in progress.</p> </li>
-    /// <li> <p> <code>UPDATING</code> – The dataview is in the process of being updated.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> – The dataview is active.</p> </li>
+    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::KxDataviewStatus>,
-    /// <p> The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetKxDataviewOutput {
-    /// <p> The name of the database where you created the dataview.</p>
+    /// <p>The name of the database where you created the dataview.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -51,29 +51,29 @@ impl GetKxDataviewOutput {
     pub fn dataview_name(&self) -> ::std::option::Option<&str> {
         self.dataview_name.as_deref()
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
-    /// <p> The identifier of the availability zones. </p>
+    /// <p>The identifier of the availability zones.</p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
-    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
+    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
     pub fn changeset_id(&self) -> ::std::option::Option<&str> {
         self.changeset_id.as_deref()
     }
-    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
+    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_configurations.is_none()`.
     pub fn segment_configurations(&self) -> &[crate::types::KxDataviewSegmentConfiguration] {
         self.segment_configurations.as_deref().unwrap_or_default()
     }
-    /// <p> The current active changeset versions of the database on the given dataview. </p>
+    /// <p>The current active changeset versions of the database on the given dataview.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_versions.is_none()`.
     pub fn active_versions(&self) -> &[crate::types::KxDataviewActiveVersion] {
@@ -95,20 +95,20 @@ impl GetKxDataviewOutput {
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
-    /// <p> The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
+    /// <p>The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
-    /// <p> The status of dataview creation.</p>
+    /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The dataview creation is in progress.</p> </li>
-    /// <li> <p> <code>UPDATING</code> – The dataview is in the process of being updated.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> – The dataview is active.</p> </li>
+    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::KxDataviewStatus> {
         self.status.as_ref()
     }
-    /// <p> The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -146,17 +146,17 @@ pub struct GetKxDataviewOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetKxDataviewOutputBuilder {
-    /// <p> The name of the database where you created the dataview.</p>
+    /// <p>The name of the database where you created the dataview.</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the database where you created the dataview.</p>
+    /// <p>The name of the database where you created the dataview.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p> The name of the database where you created the dataview.</p>
+    /// <p>The name of the database where you created the dataview.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
@@ -174,57 +174,57 @@ impl GetKxDataviewOutputBuilder {
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataview_name
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.az_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.az_mode = input;
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         &self.az_mode
     }
-    /// <p> The identifier of the availability zones. </p>
+    /// <p>The identifier of the availability zones.</p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier of the availability zones. </p>
+    /// <p>The identifier of the availability zones.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
-    /// <p> The identifier of the availability zones. </p>
+    /// <p>The identifier of the availability zones.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
-    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
+    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
+    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.changeset_id = input;
         self
     }
-    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
+    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.changeset_id
     }
@@ -232,19 +232,19 @@ impl GetKxDataviewOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_configurations`](Self::set_segment_configurations).
     ///
-    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
+    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         let mut v = self.segment_configurations.unwrap_or_default();
         v.push(input);
         self.segment_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
+    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
         self.segment_configurations = input;
         self
     }
-    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
+    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
         &self.segment_configurations
     }
@@ -252,19 +252,19 @@ impl GetKxDataviewOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_active_versions`](Self::set_active_versions).
     ///
-    /// <p> The current active changeset versions of the database on the given dataview. </p>
+    /// <p>The current active changeset versions of the database on the given dataview.</p>
     pub fn active_versions(mut self, input: crate::types::KxDataviewActiveVersion) -> Self {
         let mut v = self.active_versions.unwrap_or_default();
         v.push(input);
         self.active_versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The current active changeset versions of the database on the given dataview. </p>
+    /// <p>The current active changeset versions of the database on the given dataview.</p>
     pub fn set_active_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>>) -> Self {
         self.active_versions = input;
         self
     }
-    /// <p> The current active changeset versions of the database on the given dataview. </p>
+    /// <p>The current active changeset versions of the database on the given dataview.</p>
     pub fn get_active_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>> {
         &self.active_versions
     }
@@ -324,60 +324,60 @@ impl GetKxDataviewOutputBuilder {
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
-    /// <p> The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
+    /// <p>The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
+    /// <p>The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_timestamp = input;
         self
     }
-    /// <p> The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
+    /// <p>The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
-    /// <p> The status of dataview creation.</p>
+    /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The dataview creation is in progress.</p> </li>
-    /// <li> <p> <code>UPDATING</code> – The dataview is in the process of being updated.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> – The dataview is active.</p> </li>
+    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::KxDataviewStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of dataview creation.</p>
+    /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The dataview creation is in progress.</p> </li>
-    /// <li> <p> <code>UPDATING</code> – The dataview is in the process of being updated.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> – The dataview is active.</p> </li>
+    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxDataviewStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p> The status of dataview creation.</p>
+    /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The dataview creation is in progress.</p> </li>
-    /// <li> <p> <code>UPDATING</code> – The dataview is in the process of being updated.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> – The dataview is active.</p> </li>
+    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KxDataviewStatus> {
         &self.status
     }
-    /// <p> The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p> The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }

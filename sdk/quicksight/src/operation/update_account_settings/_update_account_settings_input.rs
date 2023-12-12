@@ -5,7 +5,7 @@
 pub struct UpdateAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace.</p>
     pub default_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub notification_email: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl UpdateAccountSettingsInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace.</p>
     pub fn default_namespace(&self) -> ::std::option::Option<&str> {
         self.default_namespace.as_deref()
     }
@@ -62,18 +62,18 @@ impl UpdateAccountSettingsInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace.</p>
     /// This field is required.
     pub fn default_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace.</p>
     pub fn set_default_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_namespace = input;
         self
     }
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace.</p>
     pub fn get_default_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_namespace
     }

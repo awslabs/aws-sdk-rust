@@ -8,7 +8,7 @@ pub struct ServerlessCache {
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the serverless cache.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>When the serverless cache was created. </p>
+    /// <p>When the serverless cache was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the serverless cache. The allowed values are CREATING, AVAILABLE, DELETING, CREATE-FAILED and MODIFYING.</p>
     pub status: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl ServerlessCache {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>When the serverless cache was created. </p>
+    /// <p>When the serverless cache was created.</p>
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
@@ -171,17 +171,17 @@ impl ServerlessCacheBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>When the serverless cache was created. </p>
+    /// <p>When the serverless cache was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When the serverless cache was created. </p>
+    /// <p>When the serverless cache was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>When the serverless cache was created. </p>
+    /// <p>When the serverless cache was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }

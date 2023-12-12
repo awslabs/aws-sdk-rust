@@ -8,11 +8,11 @@ pub struct JiraConfiguration {
     pub jira_account_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jiraId—The Jira user name or email.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
+    /// <li><p>jiraId—The Jira user name or email.</p></li>
+    /// <li><p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p></li>
     /// </ul>
     pub secret_arn: ::std::string::String,
-    /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
+    /// <p><code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub use_change_log: bool,
     /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
     pub project: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,14 +47,14 @@ impl JiraConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jiraId—The Jira user name or email.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
+    /// <li><p>jiraId—The Jira user name or email.</p></li>
+    /// <li><p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p></li>
     /// </ul>
     pub fn secret_arn(&self) -> &str {
         use std::ops::Deref;
         self.secret_arn.deref()
     }
-    /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
+    /// <p><code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub fn use_change_log(&self) -> bool {
         self.use_change_log
     }
@@ -174,8 +174,8 @@ impl JiraConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jiraId—The Jira user name or email.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
+    /// <li><p>jiraId—The Jira user name or email.</p></li>
+    /// <li><p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,8 +184,8 @@ impl JiraConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jiraId—The Jira user name or email.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
+    /// <li><p>jiraId—The Jira user name or email.</p></li>
+    /// <li><p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p></li>
     /// </ul>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
@@ -193,23 +193,23 @@ impl JiraConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jiraId—The Jira user name or email.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
+    /// <li><p>jiraId—The Jira user name or email.</p></li>
+    /// <li><p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p></li>
     /// </ul>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
-    /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
+    /// <p><code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
+    /// <p><code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
     }
-    /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
+    /// <p><code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
         &self.use_change_log
     }

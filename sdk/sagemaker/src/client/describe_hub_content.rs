@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`hub_content_type(Option<HubContentType>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::hub_content_type): <p>The type of hub content.</p>
     ///   - [`document_schema_version(Option<String>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::document_schema_version): <p>The document schema version for the hub content.</p>
     ///   - [`hub_name(Option<String>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::hub_name): <p>The name of the hub that contains the content.</p>
-    ///   - [`hub_arn(Option<String>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::hub_arn): <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    ///   - [`hub_arn(Option<String>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::hub_arn): <p>The Amazon Resource Name (ARN) of the hub that contains the content.</p>
     ///   - [`hub_content_display_name(Option<String>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::hub_content_display_name): <p>The display name of the hub content.</p>
     ///   - [`hub_content_description(Option<String>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::hub_content_description): <p>A description of the hub content.</p>
     ///   - [`hub_content_markdown(Option<String>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::hub_content_markdown): <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>

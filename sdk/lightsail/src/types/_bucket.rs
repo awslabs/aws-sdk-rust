@@ -29,9 +29,9 @@ pub struct Bucket {
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
     /// <p>The following options can be configured:</p>
     /// <ul>
-    /// <li> <p> <code>Enabled</code> - Object versioning is enabled.</p> </li>
-    /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
-    /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
+    /// <li><p><code>Enabled</code> - Object versioning is enabled.</p></li>
+    /// <li><p><code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p></li>
+    /// <li><p><code>NeverEnabled</code> - Object versioning has never been enabled.</p></li>
     /// </ul>
     pub object_versioning: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
@@ -96,9 +96,9 @@ impl Bucket {
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
     /// <p>The following options can be configured:</p>
     /// <ul>
-    /// <li> <p> <code>Enabled</code> - Object versioning is enabled.</p> </li>
-    /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
-    /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
+    /// <li><p><code>Enabled</code> - Object versioning is enabled.</p></li>
+    /// <li><p><code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p></li>
+    /// <li><p><code>NeverEnabled</code> - Object versioning has never been enabled.</p></li>
     /// </ul>
     pub fn object_versioning(&self) -> ::std::option::Option<&str> {
         self.object_versioning.as_deref()
@@ -315,9 +315,9 @@ impl BucketBuilder {
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
     /// <p>The following options can be configured:</p>
     /// <ul>
-    /// <li> <p> <code>Enabled</code> - Object versioning is enabled.</p> </li>
-    /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
-    /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
+    /// <li><p><code>Enabled</code> - Object versioning is enabled.</p></li>
+    /// <li><p><code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p></li>
+    /// <li><p><code>NeverEnabled</code> - Object versioning has never been enabled.</p></li>
     /// </ul>
     pub fn object_versioning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_versioning = ::std::option::Option::Some(input.into());
@@ -326,9 +326,9 @@ impl BucketBuilder {
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
     /// <p>The following options can be configured:</p>
     /// <ul>
-    /// <li> <p> <code>Enabled</code> - Object versioning is enabled.</p> </li>
-    /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
-    /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
+    /// <li><p><code>Enabled</code> - Object versioning is enabled.</p></li>
+    /// <li><p><code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p></li>
+    /// <li><p><code>NeverEnabled</code> - Object versioning has never been enabled.</p></li>
     /// </ul>
     pub fn set_object_versioning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_versioning = input;
@@ -337,9 +337,9 @@ impl BucketBuilder {
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
     /// <p>The following options can be configured:</p>
     /// <ul>
-    /// <li> <p> <code>Enabled</code> - Object versioning is enabled.</p> </li>
-    /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
-    /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
+    /// <li><p><code>Enabled</code> - Object versioning is enabled.</p></li>
+    /// <li><p><code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p></li>
+    /// <li><p><code>NeverEnabled</code> - Object versioning has never been enabled.</p></li>
     /// </ul>
     pub fn get_object_versioning(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_versioning

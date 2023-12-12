@@ -12,7 +12,7 @@ pub struct FraudsterRegistrationJobSummary {
     pub job_status: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>A timestamp of when the fraudster registration job was created. </p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of when the fraudster registration job ended.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -38,7 +38,7 @@ impl FraudsterRegistrationJobSummary {
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>A timestamp of when the fraudster registration job was created. </p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -146,17 +146,17 @@ impl FraudsterRegistrationJobSummaryBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p>A timestamp of when the fraudster registration job was created. </p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp of when the fraudster registration job was created. </p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>A timestamp of when the fraudster registration job was created. </p>
+    /// <p>A timestamp of when the fraudster registration job was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

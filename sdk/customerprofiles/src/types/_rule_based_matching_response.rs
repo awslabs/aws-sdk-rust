@@ -10,18 +10,18 @@ pub struct RuleBasedMatchingResponse {
     pub matching_rules: ::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>>,
     /// <p>PENDING</p>
     /// <ul>
-    /// <li> <p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p> </li>
+    /// <li><p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p></li>
     /// </ul>
     /// <p>IN_PROGRESS</p>
     /// <ul>
-    /// <li> <p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p> </li>
+    /// <li><p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p></li>
     /// </ul>
     /// <p>ACTIVE</p>
     /// <ul>
-    /// <li> <p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p> </li>
+    /// <li><p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::RuleBasedMatchingStatus>,
-    /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
+    /// <p><a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a></p>
     pub max_allowed_rule_level_for_merging: ::std::option::Option<i32>,
     /// <p>Indicates the maximum allowed rule level.</p>
     pub max_allowed_rule_level_for_matching: ::std::option::Option<i32>,
@@ -29,8 +29,8 @@ pub struct RuleBasedMatchingResponse {
     pub attribute_types_selector: ::std::option::Option<crate::types::AttributeTypesSelector>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
-    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub exporting_config: ::std::option::Option<crate::types::ExportingConfig>,
 }
@@ -47,20 +47,20 @@ impl RuleBasedMatchingResponse {
     }
     /// <p>PENDING</p>
     /// <ul>
-    /// <li> <p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p> </li>
+    /// <li><p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p></li>
     /// </ul>
     /// <p>IN_PROGRESS</p>
     /// <ul>
-    /// <li> <p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p> </li>
+    /// <li><p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p></li>
     /// </ul>
     /// <p>ACTIVE</p>
     /// <ul>
-    /// <li> <p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p> </li>
+    /// <li><p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RuleBasedMatchingStatus> {
         self.status.as_ref()
     }
-    /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
+    /// <p><a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a></p>
     pub fn max_allowed_rule_level_for_merging(&self) -> ::std::option::Option<i32> {
         self.max_allowed_rule_level_for_merging
     }
@@ -76,8 +76,8 @@ impl RuleBasedMatchingResponse {
     pub fn conflict_resolution(&self) -> ::std::option::Option<&crate::types::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
-    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub fn exporting_config(&self) -> ::std::option::Option<&crate::types::ExportingConfig> {
         self.exporting_config.as_ref()
@@ -140,15 +140,15 @@ impl RuleBasedMatchingResponseBuilder {
     }
     /// <p>PENDING</p>
     /// <ul>
-    /// <li> <p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p> </li>
+    /// <li><p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p></li>
     /// </ul>
     /// <p>IN_PROGRESS</p>
     /// <ul>
-    /// <li> <p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p> </li>
+    /// <li><p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p></li>
     /// </ul>
     /// <p>ACTIVE</p>
     /// <ul>
-    /// <li> <p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p> </li>
+    /// <li><p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::RuleBasedMatchingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -156,15 +156,15 @@ impl RuleBasedMatchingResponseBuilder {
     }
     /// <p>PENDING</p>
     /// <ul>
-    /// <li> <p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p> </li>
+    /// <li><p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p></li>
     /// </ul>
     /// <p>IN_PROGRESS</p>
     /// <ul>
-    /// <li> <p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p> </li>
+    /// <li><p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p></li>
     /// </ul>
     /// <p>ACTIVE</p>
     /// <ul>
-    /// <li> <p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p> </li>
+    /// <li><p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RuleBasedMatchingStatus>) -> Self {
         self.status = input;
@@ -172,30 +172,30 @@ impl RuleBasedMatchingResponseBuilder {
     }
     /// <p>PENDING</p>
     /// <ul>
-    /// <li> <p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p> </li>
+    /// <li><p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p></li>
     /// </ul>
     /// <p>IN_PROGRESS</p>
     /// <ul>
-    /// <li> <p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p> </li>
+    /// <li><p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p></li>
     /// </ul>
     /// <p>ACTIVE</p>
     /// <ul>
-    /// <li> <p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p> </li>
+    /// <li><p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RuleBasedMatchingStatus> {
         &self.status
     }
-    /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
+    /// <p><a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a></p>
     pub fn max_allowed_rule_level_for_merging(mut self, input: i32) -> Self {
         self.max_allowed_rule_level_for_merging = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
+    /// <p><a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a></p>
     pub fn set_max_allowed_rule_level_for_merging(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_allowed_rule_level_for_merging = input;
         self
     }
-    /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
+    /// <p><a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a></p>
     pub fn get_max_allowed_rule_level_for_merging(&self) -> &::std::option::Option<i32> {
         &self.max_allowed_rule_level_for_merging
     }
@@ -241,22 +241,22 @@ impl RuleBasedMatchingResponseBuilder {
     pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         &self.conflict_resolution
     }
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
-    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub fn exporting_config(mut self, input: crate::types::ExportingConfig) -> Self {
         self.exporting_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
-    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub fn set_exporting_config(mut self, input: ::std::option::Option<crate::types::ExportingConfig>) -> Self {
         self.exporting_config = input;
         self
     }
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
-    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub fn get_exporting_config(&self) -> &::std::option::Option<crate::types::ExportingConfig> {
         &self.exporting_config

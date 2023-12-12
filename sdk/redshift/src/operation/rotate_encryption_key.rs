@@ -244,11 +244,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RotateEncrypt
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RotateEncryptionKeyError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),
-    /// <p>The specified cluster is not in the <code>available</code> state. </p>
+    /// <p>The specified cluster is not in the <code>available</code> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),

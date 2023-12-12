@@ -17,7 +17,7 @@ pub struct ComputeResourceUpdate {
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
     /// </note> <note>
-    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values.</p>
     /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub desiredv_cpus: ::std::option::Option<i32>,
@@ -108,7 +108,7 @@ pub struct ComputeResourceUpdate {
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub update_to_latest_image_version: ::std::option::Option<bool>,
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub r#type: ::std::option::Option<crate::types::CrType>,
     /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure. To remove the custom AMI ID and use the default AMI ID, set this value to an empty string.</p>
@@ -137,7 +137,7 @@ impl ComputeResourceUpdate {
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
     /// </note> <note>
-    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values.</p>
     /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn desiredv_cpus(&self) -> ::std::option::Option<i32> {
@@ -262,7 +262,7 @@ impl ComputeResourceUpdate {
         self.update_to_latest_image_version
     }
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CrType> {
         self.r#type.as_ref()
@@ -352,7 +352,7 @@ impl ComputeResourceUpdateBuilder {
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
     /// </note> <note>
-    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values.</p>
     /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn desiredv_cpus(mut self, input: i32) -> Self {
@@ -364,7 +364,7 @@ impl ComputeResourceUpdateBuilder {
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
     /// </note> <note>
-    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values.</p>
     /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn set_desiredv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -376,7 +376,7 @@ impl ComputeResourceUpdateBuilder {
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
     /// </note> <note>
-    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values. </p>
+    /// <p>When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and <code>maxvCpus</code> values.</p>
     /// <p>Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current <code>desiredvCpus</code> value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting Batch</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn get_desiredv_cpus(&self) -> &::std::option::Option<i32> {
@@ -767,21 +767,21 @@ impl ComputeResourceUpdateBuilder {
         &self.update_to_latest_image_version
     }
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn r#type(mut self, input: crate::types::CrType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CrType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CrType> {
         &self.r#type

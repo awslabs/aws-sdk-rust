@@ -8,13 +8,13 @@ pub struct AccountSettings {
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
     pub edition: ::std::option::Option<crate::types::Edition>,
-    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
+    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account.</p>
     pub default_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
     pub notification_email: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub public_sharing_enabled: bool,
-    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
+    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.</p>
     pub termination_protection_enabled: bool,
 }
 impl AccountSettings {
@@ -26,7 +26,7 @@ impl AccountSettings {
     pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
         self.edition.as_ref()
     }
-    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
+    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account.</p>
     pub fn default_namespace(&self) -> ::std::option::Option<&str> {
         self.default_namespace.as_deref()
     }
@@ -38,7 +38,7 @@ impl AccountSettings {
     pub fn public_sharing_enabled(&self) -> bool {
         self.public_sharing_enabled
     }
-    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
+    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.</p>
     pub fn termination_protection_enabled(&self) -> bool {
         self.termination_protection_enabled
     }
@@ -90,17 +90,17 @@ impl AccountSettingsBuilder {
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
         &self.edition
     }
-    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
+    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account.</p>
     pub fn default_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
+    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account.</p>
     pub fn set_default_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_namespace = input;
         self
     }
-    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
+    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account.</p>
     pub fn get_default_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_namespace
     }
@@ -132,17 +132,17 @@ impl AccountSettingsBuilder {
     pub fn get_public_sharing_enabled(&self) -> &::std::option::Option<bool> {
         &self.public_sharing_enabled
     }
-    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
+    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.</p>
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
         self.termination_protection_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
+    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.</p>
     pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.termination_protection_enabled = input;
         self
     }
-    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
+    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.</p>
     pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.termination_protection_enabled
     }

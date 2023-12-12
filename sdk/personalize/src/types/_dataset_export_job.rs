@@ -3,7 +3,7 @@
 /// <p>Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.</p>
 /// <p>A dataset export job can be in one of the following states:</p>
 /// <ul>
-/// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+/// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -14,18 +14,18 @@ pub struct DatasetExportJob {
     pub dataset_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
     pub ingestion_mode: ::std::option::Option<crate::types::IngestionMode>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
-    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    /// <p><code>s3://bucket-name/folder-name/</code></p>
     pub job_output: ::std::option::Option<crate::types::DatasetExportJobOutput>,
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -47,7 +47,7 @@ impl DatasetExportJob {
     pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
     pub fn ingestion_mode(&self) -> ::std::option::Option<&crate::types::IngestionMode> {
         self.ingestion_mode.as_ref()
     }
@@ -58,13 +58,13 @@ impl DatasetExportJob {
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
-    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    /// <p><code>s3://bucket-name/folder-name/</code></p>
     pub fn job_output(&self) -> ::std::option::Option<&crate::types::DatasetExportJobOutput> {
         self.job_output.as_ref()
     }
@@ -146,17 +146,17 @@ impl DatasetExportJobBuilder {
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_arn
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
     pub fn ingestion_mode(mut self, input: crate::types::IngestionMode) -> Self {
         self.ingestion_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
     pub fn set_ingestion_mode(mut self, input: ::std::option::Option<crate::types::IngestionMode>) -> Self {
         self.ingestion_mode = input;
         self
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
     pub fn get_ingestion_mode(&self) -> &::std::option::Option<crate::types::IngestionMode> {
         &self.ingestion_mode
     }
@@ -177,7 +177,7 @@ impl DatasetExportJobBuilder {
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -186,7 +186,7 @@ impl DatasetExportJobBuilder {
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -195,25 +195,25 @@ impl DatasetExportJobBuilder {
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
-    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    /// <p><code>s3://bucket-name/folder-name/</code></p>
     pub fn job_output(mut self, input: crate::types::DatasetExportJobOutput) -> Self {
         self.job_output = ::std::option::Option::Some(input);
         self
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
-    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    /// <p><code>s3://bucket-name/folder-name/</code></p>
     pub fn set_job_output(mut self, input: ::std::option::Option<crate::types::DatasetExportJobOutput>) -> Self {
         self.job_output = input;
         self
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
-    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    /// <p><code>s3://bucket-name/folder-name/</code></p>
     pub fn get_job_output(&self) -> &::std::option::Option<crate::types::DatasetExportJobOutput> {
         &self.job_output
     }

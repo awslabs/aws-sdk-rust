@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicy`](crate::operation::get_policy::builders::GetPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action. </p><br>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action.</p><br>
     /// - On success, responds with [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy): <p>The policy attached to the private CA as a JSON document.</p>
     /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::operation::get_policy::GetPolicyError)

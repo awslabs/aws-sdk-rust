@@ -22,8 +22,8 @@ impl DescribeNodeAssociationStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeNodeAssociationStatus`.
 ///
-/// <p> Returns the current status of an existing association or disassociation request. </p>
-/// <p> A <code>ResourceNotFoundException</code> is thrown when no recent association or disassociation request with the specified token is found, or when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
+/// <p>Returns the current status of an existing association or disassociation request.</p>
+/// <p>A <code>ResourceNotFoundException</code> is thrown when no recent association or disassociation request with the specified token is found, or when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNodeAssociationStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,31 +109,31 @@ impl DescribeNodeAssociationStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub fn node_association_status_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_association_status_token(input.into());
         self
     }
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub fn set_node_association_status_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_association_status_token(input);
         self
     }
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub fn get_node_association_status_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_association_status_token()
     }
-    /// <p>The name of the server from which to disassociate the node. </p>
+    /// <p>The name of the server from which to disassociate the node.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
-    /// <p>The name of the server from which to disassociate the node. </p>
+    /// <p>The name of the server from which to disassociate the node.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
-    /// <p>The name of the server from which to disassociate the node. </p>
+    /// <p>The name of the server from which to disassociate the node.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }

@@ -22,7 +22,7 @@ impl ListModelsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListModels`.
 ///
-/// <p>Generates a list of all models in the account, including model name and ARN, dataset, and status. </p>
+/// <p>Generates a list of all models in the account, including model name and ARN, dataset, and status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl ListModelsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_models::paginator::ListModelsPaginator {
         crate::operation::list_models::paginator::ListModelsPaginator::new(self.handle, self.inner)
     }
-    /// <p> An opaque pagination token indicating where to continue the listing of machine learning models. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of machine learning models.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> An opaque pagination token indicating where to continue the listing of machine learning models. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of machine learning models.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> An opaque pagination token indicating where to continue the listing of machine learning models. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of machine learning models.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> Specifies the maximum number of machine learning models to list. </p>
+    /// <p>Specifies the maximum number of machine learning models to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> Specifies the maximum number of machine learning models to list. </p>
+    /// <p>Specifies the maximum number of machine learning models to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> Specifies the maximum number of machine learning models to list. </p>
+    /// <p>Specifies the maximum number of machine learning models to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The status of the machine learning model. </p>
+    /// <p>The status of the machine learning model.</p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status of the machine learning model. </p>
+    /// <p>The status of the machine learning model.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status of the machine learning model. </p>
+    /// <p>The status of the machine learning model.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
         self.inner.get_status()
     }
-    /// <p>The beginning of the name of the machine learning models being listed. </p>
+    /// <p>The beginning of the name of the machine learning models being listed.</p>
     pub fn model_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name_begins_with(input.into());
         self
     }
-    /// <p>The beginning of the name of the machine learning models being listed. </p>
+    /// <p>The beginning of the name of the machine learning models being listed.</p>
     pub fn set_model_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name_begins_with(input);
         self
     }
-    /// <p>The beginning of the name of the machine learning models being listed. </p>
+    /// <p>The beginning of the name of the machine learning models being listed.</p>
     pub fn get_model_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name_begins_with()
     }
-    /// <p>The beginning of the name of the dataset of the machine learning models to be listed. </p>
+    /// <p>The beginning of the name of the dataset of the machine learning models to be listed.</p>
     pub fn dataset_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name_begins_with(input.into());
         self
     }
-    /// <p>The beginning of the name of the dataset of the machine learning models to be listed. </p>
+    /// <p>The beginning of the name of the dataset of the machine learning models to be listed.</p>
     pub fn set_dataset_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name_begins_with(input);
         self
     }
-    /// <p>The beginning of the name of the dataset of the machine learning models to be listed. </p>
+    /// <p>The beginning of the name of the dataset of the machine learning models to be listed.</p>
     pub fn get_dataset_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_name_begins_with()
     }

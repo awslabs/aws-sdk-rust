@@ -27,13 +27,13 @@ pub struct CreateIndexInput {
     /// ATTRIBUTE_FILTER
     /// </dt>
     /// <dd>
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>.</p>
     /// </dd>
     /// <dt>
     /// USER_TOKEN
     /// </dt>
     /// <dd>
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable.</p>
     /// </dd>
     /// </dl>
     pub user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
@@ -85,13 +85,13 @@ impl CreateIndexInput {
     /// ATTRIBUTE_FILTER
     /// </dt>
     /// <dd>
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>.</p>
     /// </dd>
     /// <dt>
     /// USER_TOKEN
     /// </dt>
     /// <dd>
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable.</p>
     /// </dd>
     /// </dl>
     pub fn user_context_policy(&self) -> ::std::option::Option<&crate::types::UserContextPolicy> {
@@ -263,13 +263,13 @@ impl CreateIndexInputBuilder {
     /// ATTRIBUTE_FILTER
     /// </dt>
     /// <dd>
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>.</p>
     /// </dd>
     /// <dt>
     /// USER_TOKEN
     /// </dt>
     /// <dd>
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable.</p>
     /// </dd>
     /// </dl>
     pub fn user_context_policy(mut self, input: crate::types::UserContextPolicy) -> Self {
@@ -282,13 +282,13 @@ impl CreateIndexInputBuilder {
     /// ATTRIBUTE_FILTER
     /// </dt>
     /// <dd>
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>.</p>
     /// </dd>
     /// <dt>
     /// USER_TOKEN
     /// </dt>
     /// <dd>
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable.</p>
     /// </dd>
     /// </dl>
     pub fn set_user_context_policy(mut self, input: ::std::option::Option<crate::types::UserContextPolicy>) -> Self {
@@ -301,13 +301,13 @@ impl CreateIndexInputBuilder {
     /// ATTRIBUTE_FILTER
     /// </dt>
     /// <dd>
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>.</p>
     /// </dd>
     /// <dt>
     /// USER_TOKEN
     /// </dt>
     /// <dd>
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable.</p>
     /// </dd>
     /// </dl>
     pub fn get_user_context_policy(&self) -> &::std::option::Option<crate::types::UserContextPolicy> {

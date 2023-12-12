@@ -10,15 +10,15 @@ pub struct UpdateAppBlockBuilderInput {
     /// <p>The display name of the app block builder.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub platform: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.standard.xlarge</p> </li>
-    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.standard.xlarge</p></li>
+    /// <li><p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration for the app block builder.</p>
@@ -48,17 +48,17 @@ impl UpdateAppBlockBuilderInput {
         self.display_name.as_deref()
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformType> {
         self.platform.as_ref()
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.standard.xlarge</p> </li>
-    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.standard.xlarge</p></li>
+    /// <li><p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -157,29 +157,29 @@ impl UpdateAppBlockBuilderInputBuilder {
         &self.display_name
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn platform(mut self, input: crate::types::PlatformType) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.platform = input;
         self
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
         &self.platform
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.standard.xlarge</p> </li>
-    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.standard.xlarge</p></li>
+    /// <li><p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
@@ -187,11 +187,11 @@ impl UpdateAppBlockBuilderInputBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.standard.xlarge</p> </li>
-    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.standard.xlarge</p></li>
+    /// <li><p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
@@ -199,11 +199,11 @@ impl UpdateAppBlockBuilderInputBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.standard.xlarge</p> </li>
-    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.standard.xlarge</p></li>
+    /// <li><p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type

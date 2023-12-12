@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportSourceCredentialsInput {
-    /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+    /// <p>The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
     pub token: ::std::option::Option<::std::string::String>,
-    /// <p> The source provider used for this project. </p>
+    /// <p>The source provider used for this project.</p>
     pub server_type: ::std::option::Option<crate::types::ServerType>,
-    /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    /// <p>The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console.</p>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
-    /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+    /// <p>Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.</p>
     pub should_overwrite: ::std::option::Option<bool>,
 }
 impl ImportSourceCredentialsInput {
-    /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+    /// <p>The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
     pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
-    /// <p> The source provider used for this project. </p>
+    /// <p>The source provider used for this project.</p>
     pub fn server_type(&self) -> ::std::option::Option<&crate::types::ServerType> {
         self.server_type.as_ref()
     }
-    /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    /// <p>The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console.</p>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
     }
-    /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+    /// <p>Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.</p>
     pub fn should_overwrite(&self) -> ::std::option::Option<bool> {
         self.should_overwrite
     }
@@ -65,76 +65,76 @@ pub struct ImportSourceCredentialsInputBuilder {
     pub(crate) should_overwrite: ::std::option::Option<bool>,
 }
 impl ImportSourceCredentialsInputBuilder {
-    /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+    /// <p>The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+    /// <p>The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+    /// <p>The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
     /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
     }
-    /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }
-    /// <p> The source provider used for this project. </p>
+    /// <p>The source provider used for this project.</p>
     /// This field is required.
     pub fn server_type(mut self, input: crate::types::ServerType) -> Self {
         self.server_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The source provider used for this project. </p>
+    /// <p>The source provider used for this project.</p>
     pub fn set_server_type(mut self, input: ::std::option::Option<crate::types::ServerType>) -> Self {
         self.server_type = input;
         self
     }
-    /// <p> The source provider used for this project. </p>
+    /// <p>The source provider used for this project.</p>
     pub fn get_server_type(&self) -> &::std::option::Option<crate::types::ServerType> {
         &self.server_type
     }
-    /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    /// <p>The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console.</p>
     /// This field is required.
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    /// <p>The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
         self.auth_type = input;
         self
     }
-    /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    /// <p>The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
         &self.auth_type
     }
-    /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+    /// <p>Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.</p>
     pub fn should_overwrite(mut self, input: bool) -> Self {
         self.should_overwrite = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+    /// <p>Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.</p>
     pub fn set_should_overwrite(mut self, input: ::std::option::Option<bool>) -> Self {
         self.should_overwrite = input;
         self
     }
-    /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+    /// <p>Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.</p>
     pub fn get_should_overwrite(&self) -> &::std::option::Option<bool> {
         &self.should_overwrite
     }

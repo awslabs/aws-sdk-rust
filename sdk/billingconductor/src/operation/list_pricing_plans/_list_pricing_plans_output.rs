@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingPlansOutput {
-    /// <p> The billing period for which the described pricing plans are applicable. </p>
+    /// <p>The billing period for which the described pricing plans are applicable.</p>
     pub billing_period: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
+    /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
     pub pricing_plans: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>,
-    /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPricingPlansOutput {
-    /// <p> The billing period for which the described pricing plans are applicable. </p>
+    /// <p>The billing period for which the described pricing plans are applicable.</p>
     pub fn billing_period(&self) -> ::std::option::Option<&str> {
         self.billing_period.as_deref()
     }
-    /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
+    /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_plans.is_none()`.
     pub fn pricing_plans(&self) -> &[crate::types::PricingPlanListElement] {
         self.pricing_plans.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49,17 +49,17 @@ pub struct ListPricingPlansOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListPricingPlansOutputBuilder {
-    /// <p> The billing period for which the described pricing plans are applicable. </p>
+    /// <p>The billing period for which the described pricing plans are applicable.</p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The billing period for which the described pricing plans are applicable. </p>
+    /// <p>The billing period for which the described pricing plans are applicable.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
-    /// <p> The billing period for which the described pricing plans are applicable. </p>
+    /// <p>The billing period for which the described pricing plans are applicable.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.billing_period
     }
@@ -67,33 +67,33 @@ impl ListPricingPlansOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pricing_plans`](Self::set_pricing_plans).
     ///
-    /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
+    /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
     pub fn pricing_plans(mut self, input: crate::types::PricingPlanListElement) -> Self {
         let mut v = self.pricing_plans.unwrap_or_default();
         v.push(input);
         self.pricing_plans = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
+    /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
     pub fn set_pricing_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>) -> Self {
         self.pricing_plans = input;
         self
     }
-    /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
+    /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
     pub fn get_pricing_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>> {
         &self.pricing_plans
     }
-    /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

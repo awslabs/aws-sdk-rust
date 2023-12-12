@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InviteAccountToOrganizationInput {
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
-    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
-    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p><code>--target Id=123456789012,Type=ACCOUNT</code></p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
-    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// <p><code>--target Id=diego@example.com,Type=EMAIL</code></p>
     pub target: ::std::option::Option<crate::types::HandshakeParty>,
     /// <p>Additional information that you want to include in the generated email to the recipient account owner.</p>
     pub notes: ::std::option::Option<::std::string::String>,
@@ -21,11 +21,11 @@ pub struct InviteAccountToOrganizationInput {
 }
 impl InviteAccountToOrganizationInput {
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
-    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
-    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p><code>--target Id=123456789012,Type=ACCOUNT</code></p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
-    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// <p><code>--target Id=diego@example.com,Type=EMAIL</code></p>
     pub fn target(&self) -> ::std::option::Option<&crate::types::HandshakeParty> {
         self.target.as_ref()
     }
@@ -70,32 +70,32 @@ pub struct InviteAccountToOrganizationInputBuilder {
 }
 impl InviteAccountToOrganizationInputBuilder {
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
-    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
-    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p><code>--target Id=123456789012,Type=ACCOUNT</code></p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
-    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// <p><code>--target Id=diego@example.com,Type=EMAIL</code></p>
     /// This field is required.
     pub fn target(mut self, input: crate::types::HandshakeParty) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
-    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
-    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p><code>--target Id=123456789012,Type=ACCOUNT</code></p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
-    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// <p><code>--target Id=diego@example.com,Type=EMAIL</code></p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::HandshakeParty>) -> Self {
         self.target = input;
         self
     }
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
-    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
-    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p><code>--target Id=123456789012,Type=ACCOUNT</code></p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
-    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// <p><code>--target Id=diego@example.com,Type=EMAIL</code></p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::HandshakeParty> {
         &self.target
     }

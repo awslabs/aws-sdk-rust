@@ -10,7 +10,7 @@ pub struct LaunchTemplate {
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The time launch template was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The principal that created the launch template. </p>
+    /// <p>The principal that created the launch template.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the default version of the launch template.</p>
     pub default_version_number: ::std::option::Option<i64>,
@@ -32,7 +32,7 @@ impl LaunchTemplate {
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The principal that created the launch template. </p>
+    /// <p>The principal that created the launch template.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -113,17 +113,17 @@ impl LaunchTemplateBuilder {
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>The principal that created the launch template. </p>
+    /// <p>The principal that created the launch template.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The principal that created the launch template. </p>
+    /// <p>The principal that created the launch template.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The principal that created the launch template. </p>
+    /// <p>The principal that created the launch template.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }

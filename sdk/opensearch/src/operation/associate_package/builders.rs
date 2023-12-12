@@ -108,17 +108,17 @@ impl AssociatePackageFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_id(input.into());
         self
     }
-    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_id(input);
         self
     }
-    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package_id()
     }

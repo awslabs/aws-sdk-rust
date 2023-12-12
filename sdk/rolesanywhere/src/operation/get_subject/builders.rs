@@ -22,8 +22,8 @@ impl GetSubjectInputBuilder {
 }
 /// Fluent builder constructing a request to `GetSubject`.
 ///
-/// <p>Gets a <i>subject</i>, which associates a certificate identity with authentication attempts. The subject stores auditing information such as the status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication. </p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>. </p>
+/// <p>Gets a <i>subject</i>, which associates a certificate identity with authentication attempts. The subject stores auditing information such as the status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication.</p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSubjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl GetSubjectFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the subject. </p>
+    /// <p>The unique identifier of the subject.</p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subject_id(input.into());
         self
     }
-    /// <p>The unique identifier of the subject. </p>
+    /// <p>The unique identifier of the subject.</p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subject_id(input);
         self
     }
-    /// <p>The unique identifier of the subject. </p>
+    /// <p>The unique identifier of the subject.</p>
     pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subject_id()
     }

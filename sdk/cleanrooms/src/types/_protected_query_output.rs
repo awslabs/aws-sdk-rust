@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProtectedQueryOutput {
-    /// <p>The list of member Amazon Web Services account(s) that received the results of the query. </p>
+    /// <p>The list of member Amazon Web Services account(s) that received the results of the query.</p>
     MemberList(::std::vec::Vec<crate::types::ProtectedQuerySingleMemberOutput>),
     /// <p>If present, the output for a protected query with an `S3` output type.</p>
     S3(crate::types::ProtectedQueryS3Output),

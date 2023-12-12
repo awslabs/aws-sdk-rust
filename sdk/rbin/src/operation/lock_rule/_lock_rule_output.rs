@@ -19,10 +19,10 @@ pub struct LockRuleOutput {
     pub lock_configuration: ::std::option::Option<crate::types::LockConfiguration>,
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
-    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+    /// <li><p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
+    /// <li><p><code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p></li>
+    /// <li><p><code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p></li>
+    /// <li><p><code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p></li>
     /// </ul>
     pub lock_state: ::std::option::Option<crate::types::LockState>,
     /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
@@ -62,10 +62,10 @@ impl LockRuleOutput {
     }
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
-    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+    /// <li><p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
+    /// <li><p><code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p></li>
+    /// <li><p><code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p></li>
+    /// <li><p><code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p></li>
     /// </ul>
     pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
         self.lock_state.as_ref()
@@ -209,10 +209,10 @@ impl LockRuleOutputBuilder {
     }
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
-    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+    /// <li><p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
+    /// <li><p><code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p></li>
+    /// <li><p><code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p></li>
+    /// <li><p><code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p></li>
     /// </ul>
     pub fn lock_state(mut self, input: crate::types::LockState) -> Self {
         self.lock_state = ::std::option::Option::Some(input);
@@ -220,10 +220,10 @@ impl LockRuleOutputBuilder {
     }
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
-    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+    /// <li><p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
+    /// <li><p><code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p></li>
+    /// <li><p><code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p></li>
+    /// <li><p><code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p></li>
     /// </ul>
     pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
         self.lock_state = input;
@@ -231,10 +231,10 @@ impl LockRuleOutputBuilder {
     }
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
-    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+    /// <li><p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
+    /// <li><p><code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p></li>
+    /// <li><p><code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p></li>
+    /// <li><p><code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p></li>
     /// </ul>
     pub fn get_lock_state(&self) -> &::std::option::Option<crate::types::LockState> {
         &self.lock_state

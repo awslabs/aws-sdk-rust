@@ -12,7 +12,7 @@ pub struct Speaker {
     pub generated_speaker_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the speaker.</p>
     pub status: ::std::option::Option<crate::types::SpeakerStatus>,
-    /// <p>A timestamp of when the speaker was created. </p>
+    /// <p>A timestamp of when the speaker was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the speaker's last update.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -36,7 +36,7 @@ impl Speaker {
     pub fn status(&self) -> ::std::option::Option<&crate::types::SpeakerStatus> {
         self.status.as_ref()
     }
-    /// <p>A timestamp of when the speaker was created. </p>
+    /// <p>A timestamp of when the speaker was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -138,17 +138,17 @@ impl SpeakerBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SpeakerStatus> {
         &self.status
     }
-    /// <p>A timestamp of when the speaker was created. </p>
+    /// <p>A timestamp of when the speaker was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp of when the speaker was created. </p>
+    /// <p>A timestamp of when the speaker was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>A timestamp of when the speaker was created. </p>
+    /// <p>A timestamp of when the speaker was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

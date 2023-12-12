@@ -122,17 +122,17 @@ impl ListFieldLevelEncryptionProfilesFluentBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_marker()
     }
-    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
         self
     }
-    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
     }
-    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_items()
     }

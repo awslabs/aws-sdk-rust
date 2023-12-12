@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrustAnchorOutput {
-    /// <p>The state of the trust anchor after a read or write operation. </p>
+    /// <p>The state of the trust anchor after a read or write operation.</p>
     pub trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,
 }
 impl UpdateTrustAnchorOutput {
-    /// <p>The state of the trust anchor after a read or write operation. </p>
+    /// <p>The state of the trust anchor after a read or write operation.</p>
     pub fn trust_anchor(&self) -> ::std::option::Option<&crate::types::TrustAnchorDetail> {
         self.trust_anchor.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateTrustAnchorOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateTrustAnchorOutputBuilder {
-    /// <p>The state of the trust anchor after a read or write operation. </p>
+    /// <p>The state of the trust anchor after a read or write operation.</p>
     /// This field is required.
     pub fn trust_anchor(mut self, input: crate::types::TrustAnchorDetail) -> Self {
         self.trust_anchor = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the trust anchor after a read or write operation. </p>
+    /// <p>The state of the trust anchor after a read or write operation.</p>
     pub fn set_trust_anchor(mut self, input: ::std::option::Option<crate::types::TrustAnchorDetail>) -> Self {
         self.trust_anchor = input;
         self
     }
-    /// <p>The state of the trust anchor after a read or write operation. </p>
+    /// <p>The state of the trust anchor after a read or write operation.</p>
     pub fn get_trust_anchor(&self) -> &::std::option::Option<crate::types::TrustAnchorDetail> {
         &self.trust_anchor
     }

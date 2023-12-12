@@ -10,7 +10,7 @@ pub struct Address {
     pub street_suffix: ::std::option::Option<::std::string::String>,
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
     pub post_directional: ::std::option::Option<::std::string::String>,
-    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code> </p>
+    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code></p>
     pub pre_directional: ::std::option::Option<::std::string::String>,
     /// <p>The numeric portion of an address.</p>
     pub street_number: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl Address {
     pub fn post_directional(&self) -> ::std::option::Option<&str> {
         self.post_directional.as_deref()
     }
-    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code> </p>
+    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code></p>
     pub fn pre_directional(&self) -> ::std::option::Option<&str> {
         self.pre_directional.as_deref()
     }
@@ -148,17 +148,17 @@ impl AddressBuilder {
     pub fn get_post_directional(&self) -> &::std::option::Option<::std::string::String> {
         &self.post_directional
     }
-    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code> </p>
+    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code></p>
     pub fn pre_directional(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_directional = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code> </p>
+    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code></p>
     pub fn set_pre_directional(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_directional = input;
         self
     }
-    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code> </p>
+    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code></p>
     pub fn get_pre_directional(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_directional
     }

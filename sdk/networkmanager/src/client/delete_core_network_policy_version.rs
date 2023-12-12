@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`core_network_id(impl Into<String>)`](crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionFluentBuilder::set_core_network_id):<br>required: **true**<br><p>The ID of a core network for the deleted policy.</p><br>
     ///   - [`policy_version_id(i32)`](crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionFluentBuilder::policy_version_id) / [`set_policy_version_id(Option<i32>)`](crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionFluentBuilder::set_policy_version_id):<br>required: **true**<br><p>The version ID of the deleted policy.</p><br>
     /// - On success, responds with [`DeleteCoreNetworkPolicyVersionOutput`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput) with field(s):
-    ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput::core_network_policy): <p>Returns information about the deleted policy version. </p>
+    ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput::core_network_policy): <p>Returns information about the deleted policy version.</p>
     /// - On failure, responds with [`SdkError<DeleteCoreNetworkPolicyVersionError>`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError)
     pub fn delete_core_network_policy_version(
         &self,

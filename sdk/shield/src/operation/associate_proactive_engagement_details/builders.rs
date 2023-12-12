@@ -22,10 +22,10 @@ impl AssociateProactiveEngagementDetailsInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateProactiveEngagementDetails`.
 ///
-/// <p>Initializes proactive engagement and sets the list of contacts for the Shield Response Team (SRT) to use. You must provide at least one phone number in the emergency contact list. </p>
-/// <p>After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>. </p> <note>
+/// <p>Initializes proactive engagement and sets the list of contacts for the Shield Response Team (SRT) to use. You must provide at least one phone number in the emergency contact list.</p>
+/// <p>After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.</p> <note>
 /// <p>This call defines the list of email addresses and phone numbers that the SRT can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
-/// <p>The contacts that you provide in the request replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it to this call. </p>
+/// <p>The contacts that you provide in the request replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it to this call.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateProactiveEngagementDetailsFluentBuilder {
@@ -117,25 +117,25 @@ impl AssociateProactiveEngagementDetailsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_emergency_contact_list`](Self::set_emergency_contact_list).
     ///
-    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
-    /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
+    /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
     pub fn emergency_contact_list(mut self, input: crate::types::EmergencyContact) -> Self {
         self.inner = self.inner.emergency_contact_list(input);
         self
     }
-    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
-    /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
+    /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
     pub fn set_emergency_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>) -> Self {
         self.inner = self.inner.set_emergency_contact_list(input);
         self
     }
-    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
-    /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
+    /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
     pub fn get_emergency_contact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>> {
         self.inner.get_emergency_contact_list()

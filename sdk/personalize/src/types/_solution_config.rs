@@ -16,7 +16,7 @@ pub struct SolutionConfig {
     pub auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
-    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    /// <p>Specifies the training data configuration to use when creating a custom solution version (trained model).</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
 }
 impl SolutionConfig {
@@ -46,7 +46,7 @@ impl SolutionConfig {
     pub fn optimization_objective(&self) -> ::std::option::Option<&crate::types::OptimizationObjective> {
         self.optimization_objective.as_ref()
     }
-    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    /// <p>Specifies the training data configuration to use when creating a custom solution version (trained model).</p>
     pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
         self.training_data_config.as_ref()
     }
@@ -185,17 +185,17 @@ impl SolutionConfigBuilder {
     pub fn get_optimization_objective(&self) -> &::std::option::Option<crate::types::OptimizationObjective> {
         &self.optimization_objective
     }
-    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    /// <p>Specifies the training data configuration to use when creating a custom solution version (trained model).</p>
     pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
         self.training_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    /// <p>Specifies the training data configuration to use when creating a custom solution version (trained model).</p>
     pub fn set_training_data_config(mut self, input: ::std::option::Option<crate::types::TrainingDataConfig>) -> Self {
         self.training_data_config = input;
         self
     }
-    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    /// <p>Specifies the training data configuration to use when creating a custom solution version (trained model).</p>
     pub fn get_training_data_config(&self) -> &::std::option::Option<crate::types::TrainingDataConfig> {
         &self.training_data_config
     }

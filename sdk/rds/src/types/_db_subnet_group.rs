@@ -20,11 +20,11 @@ pub struct DbSubnetGroup {
     /// <p>The network type of the DB subnet group.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DbSubnetGroup {
@@ -57,11 +57,11 @@ impl DbSubnetGroup {
     /// <p>The network type of the DB subnet group.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
     pub fn supported_network_types(&self) -> &[::std::string::String] {
@@ -185,11 +185,11 @@ impl DbSubnetGroupBuilder {
     /// <p>The network type of the DB subnet group.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn supported_network_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_network_types.unwrap_or_default();
         v.push(input.into());
@@ -199,11 +199,11 @@ impl DbSubnetGroupBuilder {
     /// <p>The network type of the DB subnet group.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_supported_network_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_network_types = input;
         self
@@ -211,11 +211,11 @@ impl DbSubnetGroupBuilder {
     /// <p>The network type of the DB subnet group.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_network_types
     }

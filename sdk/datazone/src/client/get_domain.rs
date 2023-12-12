@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`single_sign_on(Option<SingleSignOn>)`](crate::operation::get_domain::GetDomainOutput::single_sign_on): <p>The single sing-on option of the specified Amazon DataZone domain.</p>
     ///   - [`domain_execution_role(String)`](crate::operation::get_domain::GetDomainOutput::domain_execution_role): <p>The domain execution role with which the Amazon DataZone domain is created.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_domain::GetDomainOutput::arn): <p>The ARN of the specified Amazon DataZone domain.</p>
-    ///   - [`kms_key_identifier(Option<String>)`](crate::operation::get_domain::GetDomainOutput::kms_key_identifier): <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    ///   - [`kms_key_identifier(Option<String>)`](crate::operation::get_domain::GetDomainOutput::kms_key_identifier): <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     ///   - [`status(DomainStatus)`](crate::operation::get_domain::GetDomainOutput::status): <p>The status of the specified Amazon DataZone domain.</p>
     ///   - [`portal_url(Option<String>)`](crate::operation::get_domain::GetDomainOutput::portal_url): <p>The URL of the data portal for this Amazon DataZone domain.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_domain::GetDomainOutput::created_at): <p>The timestamp of when the Amazon DataZone domain was created.</p>

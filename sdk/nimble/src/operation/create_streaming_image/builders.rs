@@ -164,17 +164,17 @@ impl CreateStreamingImageFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_id()
     }

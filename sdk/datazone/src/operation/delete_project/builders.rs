@@ -22,7 +22,7 @@ impl DeleteProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProject`.
 ///
-/// <p>Deletes a project in Amazon DataZone. </p>
+/// <p>Deletes a project in Amazon DataZone.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

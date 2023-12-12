@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsV2Output {
-    /// <p>The channel of the contact. <code>Voice</code> will not be returned. </p>
+    /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
     pub channel: crate::types::RealTimeContactAnalysisSupportedChannel,
     /// <p>Status of real-time contact analysis.</p>
     pub status: crate::types::RealTimeContactAnalysisStatus,
@@ -14,7 +14,7 @@ pub struct ListRealtimeContactAnalysisSegmentsV2Output {
     _request_id: Option<String>,
 }
 impl ListRealtimeContactAnalysisSegmentsV2Output {
-    /// <p>The channel of the contact. <code>Voice</code> will not be returned. </p>
+    /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
     pub fn channel(&self) -> &crate::types::RealTimeContactAnalysisSupportedChannel {
         &self.channel
     }
@@ -55,18 +55,18 @@ pub struct ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
     _request_id: Option<String>,
 }
 impl ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
-    /// <p>The channel of the contact. <code>Voice</code> will not be returned. </p>
+    /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
     /// This field is required.
     pub fn channel(mut self, input: crate::types::RealTimeContactAnalysisSupportedChannel) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The channel of the contact. <code>Voice</code> will not be returned. </p>
+    /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisSupportedChannel>) -> Self {
         self.channel = input;
         self
     }
-    /// <p>The channel of the contact. <code>Voice</code> will not be returned. </p>
+    /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisSupportedChannel> {
         &self.channel
     }

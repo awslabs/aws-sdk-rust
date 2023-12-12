@@ -6,8 +6,8 @@
 pub struct ResourceTagSet {
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub resource_type: ::std::option::Option<crate::types::TagResourceType>,
     /// <p>The ID for the specified resource.</p>
@@ -18,8 +18,8 @@ pub struct ResourceTagSet {
 impl ResourceTagSet {
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TagResourceType> {
         self.resource_type.as_ref()
@@ -53,8 +53,8 @@ pub struct ResourceTagSetBuilder {
 impl ResourceTagSetBuilder {
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn resource_type(mut self, input: crate::types::TagResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -62,8 +62,8 @@ impl ResourceTagSetBuilder {
     }
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.resource_type = input;
@@ -71,8 +71,8 @@ impl ResourceTagSetBuilder {
     }
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TagResourceType> {
         &self.resource_type

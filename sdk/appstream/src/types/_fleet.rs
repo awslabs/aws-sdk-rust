@@ -18,39 +18,39 @@ pub struct Fleet {
     pub image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.compute.large</p></li>
+    /// <li><p>stream.compute.xlarge</p></li>
+    /// <li><p>stream.compute.2xlarge</p></li>
+    /// <li><p>stream.compute.4xlarge</p></li>
+    /// <li><p>stream.compute.8xlarge</p></li>
+    /// <li><p>stream.memory.large</p></li>
+    /// <li><p>stream.memory.xlarge</p></li>
+    /// <li><p>stream.memory.2xlarge</p></li>
+    /// <li><p>stream.memory.4xlarge</p></li>
+    /// <li><p>stream.memory.8xlarge</p></li>
+    /// <li><p>stream.memory.z1d.large</p></li>
+    /// <li><p>stream.memory.z1d.xlarge</p></li>
+    /// <li><p>stream.memory.z1d.2xlarge</p></li>
+    /// <li><p>stream.memory.z1d.3xlarge</p></li>
+    /// <li><p>stream.memory.z1d.6xlarge</p></li>
+    /// <li><p>stream.memory.z1d.12xlarge</p></li>
+    /// <li><p>stream.graphics-design.large</p></li>
+    /// <li><p>stream.graphics-design.xlarge</p></li>
+    /// <li><p>stream.graphics-design.2xlarge</p></li>
+    /// <li><p>stream.graphics-design.4xlarge</p></li>
+    /// <li><p>stream.graphics-desktop.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.4xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.8xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.12xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.16xlarge</p></li>
+    /// <li><p>stream.graphics-pro.4xlarge</p></li>
+    /// <li><p>stream.graphics-pro.8xlarge</p></li>
+    /// <li><p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The fleet type.</p>
@@ -71,7 +71,7 @@ pub struct Fleet {
     pub fleet_type: ::std::option::Option<crate::types::FleetType>,
     /// <p>The capacity status for the fleet.</p>
     pub compute_capacity_status: ::std::option::Option<crate::types::ComputeCapacityStatus>,
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub max_user_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
@@ -87,11 +87,11 @@ pub struct Fleet {
     pub fleet_errors: ::std::option::Option<::std::vec::Vec<crate::types::FleetError>>,
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
     pub enable_default_internet_access: ::std::option::Option<bool>,
-    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain.</p>
     pub domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity.</p>
     /// </note>
     pub idle_disconnect_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
@@ -138,39 +138,39 @@ impl Fleet {
     }
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.compute.large</p></li>
+    /// <li><p>stream.compute.xlarge</p></li>
+    /// <li><p>stream.compute.2xlarge</p></li>
+    /// <li><p>stream.compute.4xlarge</p></li>
+    /// <li><p>stream.compute.8xlarge</p></li>
+    /// <li><p>stream.memory.large</p></li>
+    /// <li><p>stream.memory.xlarge</p></li>
+    /// <li><p>stream.memory.2xlarge</p></li>
+    /// <li><p>stream.memory.4xlarge</p></li>
+    /// <li><p>stream.memory.8xlarge</p></li>
+    /// <li><p>stream.memory.z1d.large</p></li>
+    /// <li><p>stream.memory.z1d.xlarge</p></li>
+    /// <li><p>stream.memory.z1d.2xlarge</p></li>
+    /// <li><p>stream.memory.z1d.3xlarge</p></li>
+    /// <li><p>stream.memory.z1d.6xlarge</p></li>
+    /// <li><p>stream.memory.z1d.12xlarge</p></li>
+    /// <li><p>stream.graphics-design.large</p></li>
+    /// <li><p>stream.graphics-design.xlarge</p></li>
+    /// <li><p>stream.graphics-design.2xlarge</p></li>
+    /// <li><p>stream.graphics-design.4xlarge</p></li>
+    /// <li><p>stream.graphics-desktop.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.4xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.8xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.12xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.16xlarge</p></li>
+    /// <li><p>stream.graphics-pro.4xlarge</p></li>
+    /// <li><p>stream.graphics-pro.8xlarge</p></li>
+    /// <li><p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -197,7 +197,7 @@ impl Fleet {
     pub fn compute_capacity_status(&self) -> ::std::option::Option<&crate::types::ComputeCapacityStatus> {
         self.compute_capacity_status.as_ref()
     }
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn max_user_duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_user_duration_in_seconds
@@ -229,13 +229,13 @@ impl Fleet {
     pub fn enable_default_internet_access(&self) -> ::std::option::Option<bool> {
         self.enable_default_internet_access
     }
-    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain.</p>
     pub fn domain_join_info(&self) -> ::std::option::Option<&crate::types::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity.</p>
     /// </note>
     pub fn idle_disconnect_timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.idle_disconnect_timeout_in_seconds
@@ -399,39 +399,39 @@ impl FleetBuilder {
     }
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.compute.large</p></li>
+    /// <li><p>stream.compute.xlarge</p></li>
+    /// <li><p>stream.compute.2xlarge</p></li>
+    /// <li><p>stream.compute.4xlarge</p></li>
+    /// <li><p>stream.compute.8xlarge</p></li>
+    /// <li><p>stream.memory.large</p></li>
+    /// <li><p>stream.memory.xlarge</p></li>
+    /// <li><p>stream.memory.2xlarge</p></li>
+    /// <li><p>stream.memory.4xlarge</p></li>
+    /// <li><p>stream.memory.8xlarge</p></li>
+    /// <li><p>stream.memory.z1d.large</p></li>
+    /// <li><p>stream.memory.z1d.xlarge</p></li>
+    /// <li><p>stream.memory.z1d.2xlarge</p></li>
+    /// <li><p>stream.memory.z1d.3xlarge</p></li>
+    /// <li><p>stream.memory.z1d.6xlarge</p></li>
+    /// <li><p>stream.memory.z1d.12xlarge</p></li>
+    /// <li><p>stream.graphics-design.large</p></li>
+    /// <li><p>stream.graphics-design.xlarge</p></li>
+    /// <li><p>stream.graphics-design.2xlarge</p></li>
+    /// <li><p>stream.graphics-design.4xlarge</p></li>
+    /// <li><p>stream.graphics-desktop.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.4xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.8xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.12xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.16xlarge</p></li>
+    /// <li><p>stream.graphics-pro.4xlarge</p></li>
+    /// <li><p>stream.graphics-pro.8xlarge</p></li>
+    /// <li><p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
     /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -440,39 +440,39 @@ impl FleetBuilder {
     }
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.compute.large</p></li>
+    /// <li><p>stream.compute.xlarge</p></li>
+    /// <li><p>stream.compute.2xlarge</p></li>
+    /// <li><p>stream.compute.4xlarge</p></li>
+    /// <li><p>stream.compute.8xlarge</p></li>
+    /// <li><p>stream.memory.large</p></li>
+    /// <li><p>stream.memory.xlarge</p></li>
+    /// <li><p>stream.memory.2xlarge</p></li>
+    /// <li><p>stream.memory.4xlarge</p></li>
+    /// <li><p>stream.memory.8xlarge</p></li>
+    /// <li><p>stream.memory.z1d.large</p></li>
+    /// <li><p>stream.memory.z1d.xlarge</p></li>
+    /// <li><p>stream.memory.z1d.2xlarge</p></li>
+    /// <li><p>stream.memory.z1d.3xlarge</p></li>
+    /// <li><p>stream.memory.z1d.6xlarge</p></li>
+    /// <li><p>stream.memory.z1d.12xlarge</p></li>
+    /// <li><p>stream.graphics-design.large</p></li>
+    /// <li><p>stream.graphics-design.xlarge</p></li>
+    /// <li><p>stream.graphics-design.2xlarge</p></li>
+    /// <li><p>stream.graphics-design.4xlarge</p></li>
+    /// <li><p>stream.graphics-desktop.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.4xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.8xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.12xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.16xlarge</p></li>
+    /// <li><p>stream.graphics-pro.4xlarge</p></li>
+    /// <li><p>stream.graphics-pro.8xlarge</p></li>
+    /// <li><p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
@@ -480,39 +480,39 @@ impl FleetBuilder {
     }
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.compute.large</p></li>
+    /// <li><p>stream.compute.xlarge</p></li>
+    /// <li><p>stream.compute.2xlarge</p></li>
+    /// <li><p>stream.compute.4xlarge</p></li>
+    /// <li><p>stream.compute.8xlarge</p></li>
+    /// <li><p>stream.memory.large</p></li>
+    /// <li><p>stream.memory.xlarge</p></li>
+    /// <li><p>stream.memory.2xlarge</p></li>
+    /// <li><p>stream.memory.4xlarge</p></li>
+    /// <li><p>stream.memory.8xlarge</p></li>
+    /// <li><p>stream.memory.z1d.large</p></li>
+    /// <li><p>stream.memory.z1d.xlarge</p></li>
+    /// <li><p>stream.memory.z1d.2xlarge</p></li>
+    /// <li><p>stream.memory.z1d.3xlarge</p></li>
+    /// <li><p>stream.memory.z1d.6xlarge</p></li>
+    /// <li><p>stream.memory.z1d.12xlarge</p></li>
+    /// <li><p>stream.graphics-design.large</p></li>
+    /// <li><p>stream.graphics-design.xlarge</p></li>
+    /// <li><p>stream.graphics-design.2xlarge</p></li>
+    /// <li><p>stream.graphics-design.4xlarge</p></li>
+    /// <li><p>stream.graphics-desktop.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.2xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.4xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.8xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.12xlarge</p></li>
+    /// <li><p>stream.graphics.g4dn.16xlarge</p></li>
+    /// <li><p>stream.graphics-pro.4xlarge</p></li>
+    /// <li><p>stream.graphics-pro.8xlarge</p></li>
+    /// <li><p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
@@ -588,19 +588,19 @@ impl FleetBuilder {
     pub fn get_compute_capacity_status(&self) -> &::std::option::Option<crate::types::ComputeCapacityStatus> {
         &self.compute_capacity_status
     }
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
         self.max_user_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn set_max_user_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_user_duration_in_seconds = input;
         self
     }
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn get_max_user_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.max_user_duration_in_seconds
@@ -699,23 +699,23 @@ impl FleetBuilder {
     pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
         &self.enable_default_internet_access
     }
-    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain.</p>
     pub fn domain_join_info(mut self, input: crate::types::DomainJoinInfo) -> Self {
         self.domain_join_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain.</p>
     pub fn set_domain_join_info(mut self, input: ::std::option::Option<crate::types::DomainJoinInfo>) -> Self {
         self.domain_join_info = input;
         self
     }
-    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain.</p>
     pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
         &self.domain_join_info
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity.</p>
     /// </note>
     pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
         self.idle_disconnect_timeout_in_seconds = ::std::option::Option::Some(input);
@@ -723,7 +723,7 @@ impl FleetBuilder {
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity.</p>
     /// </note>
     pub fn set_idle_disconnect_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.idle_disconnect_timeout_in_seconds = input;
@@ -731,7 +731,7 @@ impl FleetBuilder {
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity.</p>
     /// </note>
     pub fn get_idle_disconnect_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.idle_disconnect_timeout_in_seconds

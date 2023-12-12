@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResendOperationAuthorizationInput {
-    /// <p> Operation ID. </p>
+    /// <p>Operation ID.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
 }
 impl ResendOperationAuthorizationInput {
-    /// <p> Operation ID. </p>
+    /// <p>Operation ID.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct ResendOperationAuthorizationInputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
 }
 impl ResendOperationAuthorizationInputBuilder {
-    /// <p> Operation ID. </p>
+    /// <p>Operation ID.</p>
     /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Operation ID. </p>
+    /// <p>Operation ID.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
-    /// <p> Operation ID. </p>
+    /// <p>Operation ID.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }

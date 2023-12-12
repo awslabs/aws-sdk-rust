@@ -5,8 +5,8 @@
 pub struct GetResourceShareAssociationsInput {
     /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
     /// <ul>
-    /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
-    /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
+    /// <li><p><code>PRINCIPAL</code> – list the principals whose associations you want to see.</p></li>
+    /// <li><p><code>RESOURCE</code> – list the resources whose associations you want to see.</p></li>
     /// </ul>
     pub association_type: ::std::option::Option<crate::types::ResourceShareAssociationType>,
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
@@ -27,8 +27,8 @@ pub struct GetResourceShareAssociationsInput {
 impl GetResourceShareAssociationsInput {
     /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
     /// <ul>
-    /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
-    /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
+    /// <li><p><code>PRINCIPAL</code> – list the principals whose associations you want to see.</p></li>
+    /// <li><p><code>RESOURCE</code> – list the resources whose associations you want to see.</p></li>
     /// </ul>
     pub fn association_type(&self) -> ::std::option::Option<&crate::types::ResourceShareAssociationType> {
         self.association_type.as_ref()
@@ -84,8 +84,8 @@ pub struct GetResourceShareAssociationsInputBuilder {
 impl GetResourceShareAssociationsInputBuilder {
     /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
     /// <ul>
-    /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
-    /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
+    /// <li><p><code>PRINCIPAL</code> – list the principals whose associations you want to see.</p></li>
+    /// <li><p><code>RESOURCE</code> – list the resources whose associations you want to see.</p></li>
     /// </ul>
     /// This field is required.
     pub fn association_type(mut self, input: crate::types::ResourceShareAssociationType) -> Self {
@@ -94,8 +94,8 @@ impl GetResourceShareAssociationsInputBuilder {
     }
     /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
     /// <ul>
-    /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
-    /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
+    /// <li><p><code>PRINCIPAL</code> – list the principals whose associations you want to see.</p></li>
+    /// <li><p><code>RESOURCE</code> – list the resources whose associations you want to see.</p></li>
     /// </ul>
     pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::ResourceShareAssociationType>) -> Self {
         self.association_type = input;
@@ -103,8 +103,8 @@ impl GetResourceShareAssociationsInputBuilder {
     }
     /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
     /// <ul>
-    /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
-    /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
+    /// <li><p><code>PRINCIPAL</code> – list the principals whose associations you want to see.</p></li>
+    /// <li><p><code>RESOURCE</code> – list the resources whose associations you want to see.</p></li>
     /// </ul>
     pub fn get_association_type(&self) -> &::std::option::Option<crate::types::ResourceShareAssociationType> {
         &self.association_type

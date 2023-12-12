@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RedshiftSettings {
     /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
-    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
+    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field.</p>
     pub accept_any_date: ::std::option::Option<bool>,
     /// <p>Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.</p>
     pub after_connect_script: ::std::option::Option<::std::string::String>,
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster.</p>
     /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
     pub bucket_folder: ::std::option::Option<::std::string::String>,
@@ -23,21 +23,21 @@ pub struct RedshiftSettings {
     pub connection_timeout: ::std::option::Option<i32>,
     /// <p>The name of the Amazon Redshift data warehouse (service) that you are working with.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>.</p>
     pub date_format: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.</p>
     pub empty_as_null: ::std::option::Option<bool>,
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.</p> <note>
     /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
     /// </note>
-    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code></p>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionModeValue>,
     /// <p>This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded from the source data files used to populate the tables. The default is <code>false</code>.</p>
     pub explicit_ids: ::std::option::Option<bool>,
     /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
-    /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.</p>
+    /// <p><code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub file_transfer_upload_streams: ::std::option::Option<i32>,
     /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
     pub load_timeout: ::std::option::Option<i32>,
@@ -59,8 +59,8 @@ pub struct RedshiftSettings {
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
     pub server_side_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>.</p>
     pub time_format: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The default is <code>false</code>.</p>
     pub trim_blanks: ::std::option::Option<bool>,
@@ -81,7 +81,7 @@ pub struct RedshiftSettings {
 }
 impl RedshiftSettings {
     /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
-    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
+    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field.</p>
     pub fn accept_any_date(&self) -> ::std::option::Option<bool> {
         self.accept_any_date
     }
@@ -89,7 +89,7 @@ impl RedshiftSettings {
     pub fn after_connect_script(&self) -> ::std::option::Option<&str> {
         self.after_connect_script.as_deref()
     }
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster.</p>
     /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
     pub fn bucket_folder(&self) -> ::std::option::Option<&str> {
@@ -115,8 +115,8 @@ impl RedshiftSettings {
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>.</p>
     pub fn date_format(&self) -> ::std::option::Option<&str> {
         self.date_format.as_deref()
     }
@@ -124,10 +124,10 @@ impl RedshiftSettings {
     pub fn empty_as_null(&self) -> ::std::option::Option<bool> {
         self.empty_as_null
     }
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.</p> <note>
     /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
     /// </note>
-    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code></p>
     pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionModeValue> {
         self.encryption_mode.as_ref()
     }
@@ -136,8 +136,8 @@ impl RedshiftSettings {
         self.explicit_ids
     }
     /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
-    /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.</p>
+    /// <p><code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub fn file_transfer_upload_streams(&self) -> ::std::option::Option<i32> {
         self.file_transfer_upload_streams
     }
@@ -181,8 +181,8 @@ impl RedshiftSettings {
     pub fn server_side_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.server_side_encryption_kms_key_id.as_deref()
     }
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>.</p>
     pub fn time_format(&self) -> ::std::option::Option<&str> {
         self.time_format.as_deref()
     }
@@ -299,19 +299,19 @@ pub struct RedshiftSettingsBuilder {
 }
 impl RedshiftSettingsBuilder {
     /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
-    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
+    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field.</p>
     pub fn accept_any_date(mut self, input: bool) -> Self {
         self.accept_any_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
-    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
+    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field.</p>
     pub fn set_accept_any_date(mut self, input: ::std::option::Option<bool>) -> Self {
         self.accept_any_date = input;
         self
     }
     /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
-    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
+    /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field.</p>
     pub fn get_accept_any_date(&self) -> &::std::option::Option<bool> {
         &self.accept_any_date
     }
@@ -329,21 +329,21 @@ impl RedshiftSettingsBuilder {
     pub fn get_after_connect_script(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_connect_script
     }
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster.</p>
     /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
     pub fn bucket_folder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_folder = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster.</p>
     /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
     pub fn set_bucket_folder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_folder = input;
         self
     }
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster.</p>
     /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
     pub fn get_bucket_folder(&self) -> &::std::option::Option<::std::string::String> {
@@ -419,20 +419,20 @@ impl RedshiftSettingsBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>.</p>
     pub fn date_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_format = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>.</p>
     pub fn set_date_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_format = input;
         self
     }
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>.</p>
     pub fn get_date_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.date_format
     }
@@ -450,26 +450,26 @@ impl RedshiftSettingsBuilder {
     pub fn get_empty_as_null(&self) -> &::std::option::Option<bool> {
         &self.empty_as_null
     }
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.</p> <note>
     /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
     /// </note>
-    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code></p>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionModeValue) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.</p> <note>
     /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
     /// </note>
-    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code></p>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionModeValue>) -> Self {
         self.encryption_mode = input;
         self
     }
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.</p> <note>
     /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
     /// </note>
-    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+    /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code></p>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionModeValue> {
         &self.encryption_mode
     }
@@ -488,22 +488,22 @@ impl RedshiftSettingsBuilder {
         &self.explicit_ids
     }
     /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
-    /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.</p>
+    /// <p><code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub fn file_transfer_upload_streams(mut self, input: i32) -> Self {
         self.file_transfer_upload_streams = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
-    /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.</p>
+    /// <p><code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub fn set_file_transfer_upload_streams(mut self, input: ::std::option::Option<i32>) -> Self {
         self.file_transfer_upload_streams = input;
         self
     }
     /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
-    /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.</p>
+    /// <p><code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub fn get_file_transfer_upload_streams(&self) -> &::std::option::Option<i32> {
         &self.file_transfer_upload_streams
     }
@@ -647,20 +647,20 @@ impl RedshiftSettingsBuilder {
     pub fn get_server_side_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_side_encryption_kms_key_id
     }
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>.</p>
     pub fn time_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_format = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>.</p>
     pub fn set_time_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_format = input;
         self
     }
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
-    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string.</p>
+    /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>.</p>
     pub fn get_time_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.time_format
     }

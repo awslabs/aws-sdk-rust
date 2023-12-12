@@ -26,7 +26,7 @@ impl RemoveTagsFromStreamInputBuilder {
 /// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
 /// <p>If you specify a tag that does not exist, it is ignored.</p>
-/// <p> <code>RemoveTagsFromStream</code> has a limit of five transactions per second per account.</p>
+/// <p><code>RemoveTagsFromStream</code> has a limit of five transactions per second per account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFromStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

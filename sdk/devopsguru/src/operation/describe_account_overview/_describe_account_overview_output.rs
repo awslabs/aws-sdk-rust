@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountOverviewOutput {
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub reactive_insights: i32,
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub proactive_insights: i32,
-    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
+    /// <p>The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.</p>
     pub mean_time_to_recover_in_milliseconds: i64,
     _request_id: Option<String>,
 }
 impl DescribeAccountOverviewOutput {
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn reactive_insights(&self) -> i32 {
         self.reactive_insights
     }
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn proactive_insights(&self) -> i32 {
         self.proactive_insights
     }
-    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
+    /// <p>The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.</p>
     pub fn mean_time_to_recover_in_milliseconds(&self) -> i64 {
         self.mean_time_to_recover_in_milliseconds
     }
@@ -47,48 +47,48 @@ pub struct DescribeAccountOverviewOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeAccountOverviewOutputBuilder {
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     /// This field is required.
     pub fn reactive_insights(mut self, input: i32) -> Self {
         self.reactive_insights = ::std::option::Option::Some(input);
         self
     }
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn set_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reactive_insights = input;
         self
     }
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn get_reactive_insights(&self) -> &::std::option::Option<i32> {
         &self.reactive_insights
     }
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     /// This field is required.
     pub fn proactive_insights(mut self, input: i32) -> Self {
         self.proactive_insights = ::std::option::Option::Some(input);
         self
     }
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn set_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.proactive_insights = input;
         self
     }
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn get_proactive_insights(&self) -> &::std::option::Option<i32> {
         &self.proactive_insights
     }
-    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
+    /// <p>The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.</p>
     /// This field is required.
     pub fn mean_time_to_recover_in_milliseconds(mut self, input: i64) -> Self {
         self.mean_time_to_recover_in_milliseconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
+    /// <p>The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.</p>
     pub fn set_mean_time_to_recover_in_milliseconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.mean_time_to_recover_in_milliseconds = input;
         self
     }
-    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
+    /// <p>The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.</p>
     pub fn get_mean_time_to_recover_in_milliseconds(&self) -> &::std::option::Option<i64> {
         &self.mean_time_to_recover_in_milliseconds
     }

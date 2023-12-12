@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualGatewayConnectionPool {
-    /// <p>An object that represents a type of connection pool. </p>
+    /// <p>An object that represents a type of connection pool.</p>
     Grpc(crate::types::VirtualGatewayGrpcConnectionPool),
     /// <p>An object that represents a type of connection pool.</p>
     Http(crate::types::VirtualGatewayHttpConnectionPool),

@@ -10,7 +10,7 @@ pub struct DescribeFleetLocationAttributesOutput {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
-    /// <p> Location-specific information on the requested fleet's remote locations.</p>
+    /// <p>Location-specific information on the requested fleet's remote locations.</p>
     pub location_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl DescribeFleetLocationAttributesOutput {
     pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p> Location-specific information on the requested fleet's remote locations.</p>
+    /// <p>Location-specific information on the requested fleet's remote locations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_attributes.is_none()`.
     pub fn location_attributes(&self) -> &[crate::types::LocationAttributes] {
@@ -103,19 +103,19 @@ impl DescribeFleetLocationAttributesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_location_attributes`](Self::set_location_attributes).
     ///
-    /// <p> Location-specific information on the requested fleet's remote locations.</p>
+    /// <p>Location-specific information on the requested fleet's remote locations.</p>
     pub fn location_attributes(mut self, input: crate::types::LocationAttributes) -> Self {
         let mut v = self.location_attributes.unwrap_or_default();
         v.push(input);
         self.location_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Location-specific information on the requested fleet's remote locations.</p>
+    /// <p>Location-specific information on the requested fleet's remote locations.</p>
     pub fn set_location_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>) -> Self {
         self.location_attributes = input;
         self
     }
-    /// <p> Location-specific information on the requested fleet's remote locations.</p>
+    /// <p>Location-specific information on the requested fleet's remote locations.</p>
     pub fn get_location_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>> {
         &self.location_attributes
     }

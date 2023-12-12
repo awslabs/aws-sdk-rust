@@ -6,7 +6,7 @@
 pub struct GetConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
     pub config_id: ::std::string::String,
-    /// <p>ARN of a <code>Config</code> </p>
+    /// <p>ARN of a <code>Config</code></p>
     pub config_arn: ::std::string::String,
     /// <p>Name of a <code>Config</code>.</p>
     pub name: ::std::string::String,
@@ -24,7 +24,7 @@ impl GetConfigOutput {
         use std::ops::Deref;
         self.config_id.deref()
     }
-    /// <p>ARN of a <code>Config</code> </p>
+    /// <p>ARN of a <code>Config</code></p>
     pub fn config_arn(&self) -> &str {
         use std::ops::Deref;
         self.config_arn.deref()
@@ -87,18 +87,18 @@ impl GetConfigOutputBuilder {
     pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_id
     }
-    /// <p>ARN of a <code>Config</code> </p>
+    /// <p>ARN of a <code>Config</code></p>
     /// This field is required.
     pub fn config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of a <code>Config</code> </p>
+    /// <p>ARN of a <code>Config</code></p>
     pub fn set_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_arn = input;
         self
     }
-    /// <p>ARN of a <code>Config</code> </p>
+    /// <p>ARN of a <code>Config</code></p>
     pub fn get_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_arn
     }

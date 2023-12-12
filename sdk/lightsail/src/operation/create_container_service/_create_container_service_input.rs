@@ -13,13 +13,13 @@ pub struct CreateContainerServiceInput {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code></p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
-    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
-    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
-    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
+    /// <li><p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p></li>
+    /// <li><p>Must contain 1 to 63 characters.</p></li>
+    /// <li><p>Must contain only alphanumeric characters and hyphens.</p></li>
+    /// <li><p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p></li>
     /// </ul>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The power specification for the container service.</p>
@@ -58,13 +58,13 @@ impl CreateContainerServiceInput {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code></p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
-    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
-    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
-    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
+    /// <li><p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p></li>
+    /// <li><p>Must contain 1 to 63 characters.</p></li>
+    /// <li><p>Must contain only alphanumeric characters and hyphens.</p></li>
+    /// <li><p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p></li>
     /// </ul>
     pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
@@ -140,13 +140,13 @@ impl CreateContainerServiceInputBuilder {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code></p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
-    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
-    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
-    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
+    /// <li><p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p></li>
+    /// <li><p>Must contain 1 to 63 characters.</p></li>
+    /// <li><p>Must contain only alphanumeric characters and hyphens.</p></li>
+    /// <li><p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p></li>
     /// </ul>
     /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,13 +163,13 @@ impl CreateContainerServiceInputBuilder {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code></p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
-    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
-    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
-    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
+    /// <li><p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p></li>
+    /// <li><p>Must contain 1 to 63 characters.</p></li>
+    /// <li><p>Must contain only alphanumeric characters and hyphens.</p></li>
+    /// <li><p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p></li>
     /// </ul>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
@@ -185,13 +185,13 @@ impl CreateContainerServiceInputBuilder {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code></p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
-    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
-    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
-    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
+    /// <li><p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p></li>
+    /// <li><p>Must contain 1 to 63 characters.</p></li>
+    /// <li><p>Must contain only alphanumeric characters and hyphens.</p></li>
+    /// <li><p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p></li>
     /// </ul>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name

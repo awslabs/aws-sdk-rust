@@ -22,7 +22,7 @@ impl UpdateAnomalyMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAnomalyMonitor`.
 ///
-/// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and doesn't change anomalies detected in the past. </p>
+/// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and doesn't change anomalies detected in the past.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAnomalyMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateAnomalyMonitorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs).</p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_arn(input.into());
         self
     }
-    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs).</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_arn(input);
         self
     }
-    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs).</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_arn()
     }
-    /// <p>The new name for the cost anomaly monitor. </p>
+    /// <p>The new name for the cost anomaly monitor.</p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
         self
     }
-    /// <p>The new name for the cost anomaly monitor. </p>
+    /// <p>The new name for the cost anomaly monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
-    /// <p>The new name for the cost anomaly monitor. </p>
+    /// <p>The new name for the cost anomaly monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }

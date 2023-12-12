@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicyOutput {
-    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
     pub firewall_rule_group_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFirewallRuleGroupPolicyOutput {
-    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
     pub fn firewall_rule_group_policy(&self) -> ::std::option::Option<&str> {
         self.firewall_rule_group_policy.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GetFirewallRuleGroupPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetFirewallRuleGroupPolicyOutputBuilder {
-    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
     pub fn firewall_rule_group_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
     pub fn set_firewall_rule_group_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_policy = input;
         self
     }
-    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
     pub fn get_firewall_rule_group_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_policy
     }

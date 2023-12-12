@@ -22,7 +22,7 @@ impl ListBonusPaymentsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListBonusPayments`.
 ///
-/// <p> The <code>ListBonusPayments</code> operation retrieves the amounts of bonuses you have paid to Workers for a given HIT or assignment. </p>
+/// <p>The <code>ListBonusPayments</code> operation retrieves the amounts of bonuses you have paid to Workers for a given HIT or assignment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBonusPaymentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

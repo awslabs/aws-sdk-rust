@@ -22,7 +22,7 @@ impl GetInsightsByAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetInsightsByAssessment`.
 ///
-/// <p>Gets the latest analytics data for a specific active assessment. </p>
+/// <p>Gets the latest analytics data for a specific active assessment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInsightsByAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetInsightsByAssessmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p>The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p>The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }

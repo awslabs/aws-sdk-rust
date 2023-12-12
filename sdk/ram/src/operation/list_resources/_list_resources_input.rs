@@ -5,8 +5,8 @@
 pub struct ListResourcesInput {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
+    /// <li><p><b> <code>SELF</code> </b> – resources that your account shares with other accounts</p></li>
+    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p></li>
     /// </ul>
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
@@ -24,9 +24,9 @@ pub struct ListResourcesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// <li><p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
+    /// <li><p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
+    /// <li><p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
@@ -34,8 +34,8 @@ pub struct ListResourcesInput {
 impl ListResourcesInput {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
+    /// <li><p><b> <code>SELF</code> </b> – resources that your account shares with other accounts</p></li>
+    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p></li>
     /// </ul>
     pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
@@ -71,9 +71,9 @@ impl ListResourcesInput {
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// <li><p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
+    /// <li><p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
+    /// <li><p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScopeFilter> {
@@ -103,8 +103,8 @@ pub struct ListResourcesInputBuilder {
 impl ListResourcesInputBuilder {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
+    /// <li><p><b> <code>SELF</code> </b> – resources that your account shares with other accounts</p></li>
+    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
@@ -113,8 +113,8 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
+    /// <li><p><b> <code>SELF</code> </b> – resources that your account shares with other accounts</p></li>
+    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p></li>
     /// </ul>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.resource_owner = input;
@@ -122,8 +122,8 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
+    /// <li><p><b> <code>SELF</code> </b> – resources that your account shares with other accounts</p></li>
+    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p></li>
     /// </ul>
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         &self.resource_owner
@@ -229,9 +229,9 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// <li><p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
+    /// <li><p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
+    /// <li><p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn resource_region_scope(mut self, input: crate::types::ResourceRegionScopeFilter) -> Self {
@@ -240,9 +240,9 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// <li><p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
+    /// <li><p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
+    /// <li><p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
@@ -251,9 +251,9 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// <li><p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
+    /// <li><p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
+    /// <li><p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {

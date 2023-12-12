@@ -24,15 +24,15 @@ impl ListHostedZonesByVpcInputBuilder {
 ///
 /// <p>Lists all the private hosted zones that a specified VPC is associated with, regardless of which Amazon Web Services account or Amazon Web Services service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains one of the following values:</p>
 /// <ul>
-/// <li> <p>An <code>OwningAccount</code> element, which contains the account number of either the current Amazon Web Services account or another Amazon Web Services account. Some services, such as Cloud Map, create hosted zones using the current account. </p> </li>
-/// <li> <p>An <code>OwningService</code> element, which identifies the Amazon Web Services service that created and owns the hosted zone. For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
+/// <li><p>An <code>OwningAccount</code> element, which contains the account number of either the current Amazon Web Services account or another Amazon Web Services account. Some services, such as Cloud Map, create hosted zones using the current account.</p></li>
+/// <li><p>An <code>OwningService</code> element, which identifies the Amazon Web Services service that created and owns the hosted zone. For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>.</p></li>
 /// </ul> <note>
 /// <p>When listing private hosted zones, the hosted zone and the Amazon VPC must belong to the same partition where the hosted zones were created. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
 /// <p>The following are the supported partitions:</p>
 /// <ul>
-/// <li> <p> <code>aws</code> - Amazon Web Services Regions</p> </li>
-/// <li> <p> <code>aws-cn</code> - China Regions</p> </li>
-/// <li> <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+/// <li><p><code>aws</code> - Amazon Web Services Regions</p></li>
+/// <li><p><code>aws-cn</code> - China Regions</p></li>
+/// <li><p><code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
 /// </note>
@@ -135,17 +135,17 @@ impl ListHostedZonesByVPCFluentBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
-    /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
+    /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in.</p>
     pub fn vpc_region(mut self, input: crate::types::VpcRegion) -> Self {
         self.inner = self.inner.vpc_region(input);
         self
     }
-    /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
+    /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in.</p>
     pub fn set_vpc_region(mut self, input: ::std::option::Option<crate::types::VpcRegion>) -> Self {
         self.inner = self.inner.set_vpc_region(input);
         self
     }
-    /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
+    /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in.</p>
     pub fn get_vpc_region(&self) -> &::std::option::Option<crate::types::VpcRegion> {
         self.inner.get_vpc_region()
     }
@@ -163,21 +163,21 @@ impl ListHostedZonesByVPCFluentBuilder {
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_items()
     }
-    /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
+    /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request.</p>
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
+    /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request.</p>
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
+    /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request.</p>
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {

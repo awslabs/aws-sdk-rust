@@ -7,7 +7,7 @@ pub struct StartJobRunInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual cluster ID for which the job run request is submitted.</p>
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
-    /// <p>The client idempotency token of the job run request. </p>
+    /// <p>The client idempotency token of the job run request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The execution role ARN for the job run.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl StartJobRunInput {
     pub fn virtual_cluster_id(&self) -> ::std::option::Option<&str> {
         self.virtual_cluster_id.as_deref()
     }
-    /// <p>The client idempotency token of the job run request. </p>
+    /// <p>The client idempotency token of the job run request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -125,18 +125,18 @@ impl StartJobRunInputBuilder {
     pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_cluster_id
     }
-    /// <p>The client idempotency token of the job run request. </p>
+    /// <p>The client idempotency token of the job run request.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client idempotency token of the job run request. </p>
+    /// <p>The client idempotency token of the job run request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The client idempotency token of the job run request. </p>
+    /// <p>The client idempotency token of the job run request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

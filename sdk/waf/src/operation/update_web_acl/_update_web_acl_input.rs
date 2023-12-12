@@ -10,9 +10,9 @@ pub struct UpdateWebAclInput {
     /// <p>An array of updates to make to the <code>WebACL</code>.</p>
     /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
-    /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
-    /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
+    /// <li><p><code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code></p></li>
+    /// <li><p><code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p></li>
+    /// <li><p><code>WafAction</code>: Contains <code>Type</code></p></li>
     /// </ul>
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>>,
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
@@ -30,9 +30,9 @@ impl UpdateWebAclInput {
     /// <p>An array of updates to make to the <code>WebACL</code>.</p>
     /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
-    /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
-    /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
+    /// <li><p><code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code></p></li>
+    /// <li><p><code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p></li>
+    /// <li><p><code>WafAction</code>: Contains <code>Type</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
@@ -98,9 +98,9 @@ impl UpdateWebAclInputBuilder {
     /// <p>An array of updates to make to the <code>WebACL</code>.</p>
     /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
-    /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
-    /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
+    /// <li><p><code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code></p></li>
+    /// <li><p><code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p></li>
+    /// <li><p><code>WafAction</code>: Contains <code>Type</code></p></li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::WebAclUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
@@ -111,9 +111,9 @@ impl UpdateWebAclInputBuilder {
     /// <p>An array of updates to make to the <code>WebACL</code>.</p>
     /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
-    /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
-    /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
+    /// <li><p><code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code></p></li>
+    /// <li><p><code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p></li>
+    /// <li><p><code>WafAction</code>: Contains <code>Type</code></p></li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>>) -> Self {
         self.updates = input;
@@ -122,9 +122,9 @@ impl UpdateWebAclInputBuilder {
     /// <p>An array of updates to make to the <code>WebACL</code>.</p>
     /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
-    /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
-    /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
+    /// <li><p><code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code></p></li>
+    /// <li><p><code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p></li>
+    /// <li><p><code>WafAction</code>: Contains <code>Type</code></p></li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>> {
         &self.updates

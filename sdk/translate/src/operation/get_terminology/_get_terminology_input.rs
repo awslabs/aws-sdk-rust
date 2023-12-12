@@ -6,7 +6,7 @@ pub struct GetTerminologyInput {
     /// <p>The name of the custom terminology being retrieved.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology.</p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub terminology_data_format: ::std::option::Option<crate::types::TerminologyDataFormat>,
 }
@@ -16,7 +16,7 @@ impl GetTerminologyInput {
         self.name.as_deref()
     }
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology.</p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub fn terminology_data_format(&self) -> ::std::option::Option<&crate::types::TerminologyDataFormat> {
         self.terminology_data_format.as_ref()
@@ -53,21 +53,21 @@ impl GetTerminologyInputBuilder {
         &self.name
     }
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology.</p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub fn terminology_data_format(mut self, input: crate::types::TerminologyDataFormat) -> Self {
         self.terminology_data_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology.</p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub fn set_terminology_data_format(mut self, input: ::std::option::Option<crate::types::TerminologyDataFormat>) -> Self {
         self.terminology_data_format = input;
         self
     }
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology.</p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub fn get_terminology_data_format(&self) -> &::std::option::Option<crate::types::TerminologyDataFormat> {
         &self.terminology_data_format

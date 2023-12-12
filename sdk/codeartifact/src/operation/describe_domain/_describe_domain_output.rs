@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainOutput {
-    /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
+    /// <p>Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories.</p>
     pub domain: ::std::option::Option<crate::types::DomainDescription>,
     _request_id: Option<String>,
 }
 impl DescribeDomainOutput {
-    /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
+    /// <p>Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories.</p>
     pub fn domain(&self) -> ::std::option::Option<&crate::types::DomainDescription> {
         self.domain.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeDomainOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeDomainOutputBuilder {
-    /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
+    /// <p>Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories.</p>
     pub fn domain(mut self, input: crate::types::DomainDescription) -> Self {
         self.domain = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
+    /// <p>Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainDescription>) -> Self {
         self.domain = input;
         self
     }
-    /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
+    /// <p>Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::DomainDescription> {
         &self.domain
     }

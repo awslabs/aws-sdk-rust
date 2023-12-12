@@ -5,50 +5,50 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ModifyClusterInput {
     /// <p>The unique identifier of the cluster to be modified.</p>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new cluster type.</p>
-    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request. </p>
-    /// <p>Valid Values: <code> multi-node | single-node </code> </p>
+    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request.</p>
+    /// <p>Valid Values: <code> multi-node | single-node </code></p>
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: Integer greater than <code>0</code>.</p>
     pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.</p>
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
-    /// <li> <p>Must contain at least one uppercase letter.</p> </li>
-    /// <li> <p>Must contain at least one lowercase letter.</p> </li>
-    /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
+    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li><p>Must contain at least one uppercase letter.</p></li>
+    /// <li><p>Must contain at least one lowercase letter.</p></li>
+    /// <li><p>Must contain one number.</p></li>
+    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
+    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>.</p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
     pub cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
     /// <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: Uses existing setting.</p>
@@ -67,10 +67,10 @@ pub struct ModifyClusterInput {
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Example: <code>1.0</code> </p>
+    /// <p>Example: <code>1.0</code></p>
     pub cluster_version: ::std::option::Option<::std::string::String>,
-    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
+    /// <p>Default: <code>false</code></p>
     pub allow_version_upgrade: ::std::option::Option<bool>,
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
@@ -79,13 +79,13 @@ pub struct ModifyClusterInput {
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Alphabetic characters must be lowercase.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub new_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. Only clusters in VPCs can be set to be publicly available.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
@@ -93,13 +93,13 @@ pub struct ModifyClusterInput {
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub elastic_ip: ::std::option::Option<::std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.</p>
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
-    /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
+    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key.</p>
+    /// <p>If the value is not encrypted (false), then the cluster is decrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -109,7 +109,7 @@ pub struct ModifyClusterInput {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The option to change the port of an Amazon Redshift cluster.</p>
     pub port: ::std::option::Option<i32>,
-    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub manage_master_password: ::std::option::Option<bool>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -120,24 +120,24 @@ pub struct ModifyClusterInput {
 }
 impl ModifyClusterInput {
     /// <p>The unique identifier of the cluster to be modified.</p>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The new cluster type.</p>
-    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request. </p>
-    /// <p>Valid Values: <code> multi-node | single-node </code> </p>
+    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request.</p>
+    /// <p>Valid Values: <code> multi-node | single-node </code></p>
     pub fn cluster_type(&self) -> ::std::option::Option<&str> {
         self.cluster_type.as_deref()
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: Integer greater than <code>0</code>.</p>
     pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_nodes
@@ -146,9 +146,9 @@ impl ModifyClusterInput {
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
@@ -161,29 +161,29 @@ impl ModifyClusterInput {
     pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
         self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
-    /// <li> <p>Must contain at least one uppercase letter.</p> </li>
-    /// <li> <p>Must contain at least one lowercase letter.</p> </li>
-    /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
+    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li><p>Must contain at least one uppercase letter.</p></li>
+    /// <li><p>Must contain at least one lowercase letter.</p></li>
+    /// <li><p>Must contain one number.</p></li>
+    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
-    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
+    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>.</p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
     pub fn cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.cluster_parameter_group_name.as_deref()
     }
-    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
     /// <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: Uses existing setting.</p>
@@ -208,12 +208,12 @@ impl ModifyClusterInput {
     }
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Example: <code>1.0</code> </p>
+    /// <p>Example: <code>1.0</code></p>
     pub fn cluster_version(&self) -> ::std::option::Option<&str> {
         self.cluster_version.as_deref()
     }
-    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
+    /// <p>Default: <code>false</code></p>
     pub fn allow_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_version_upgrade
     }
@@ -228,13 +228,13 @@ impl ModifyClusterInput {
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Alphabetic characters must be lowercase.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub fn new_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.new_cluster_identifier.as_deref()
     }
@@ -248,7 +248,7 @@ impl ModifyClusterInput {
         self.elastic_ip.as_deref()
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(&self) -> ::std::option::Option<bool> {
         self.enhanced_vpc_routing
@@ -257,8 +257,8 @@ impl ModifyClusterInput {
     pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
         self.maintenance_track_name.as_deref()
     }
-    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
-    /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
+    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key.</p>
+    /// <p>If the value is not encrypted (false), then the cluster is decrypted.</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
@@ -278,7 +278,7 @@ impl ModifyClusterInput {
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
-    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub fn manage_master_password(&self) -> ::std::option::Option<bool> {
         self.manage_master_password
     }
@@ -373,79 +373,79 @@ pub struct ModifyClusterInputBuilder {
 }
 impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster to be modified.</p>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cluster to be modified.</p>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
     /// <p>The unique identifier of the cluster to be modified.</p>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
     /// <p>The new cluster type.</p>
-    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request. </p>
-    /// <p>Valid Values: <code> multi-node | single-node </code> </p>
+    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request.</p>
+    /// <p>Valid Values: <code> multi-node | single-node </code></p>
     pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new cluster type.</p>
-    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request. </p>
-    /// <p>Valid Values: <code> multi-node | single-node </code> </p>
+    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request.</p>
+    /// <p>Valid Values: <code> multi-node | single-node </code></p>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type = input;
         self
     }
     /// <p>The new cluster type.</p>
-    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request. </p>
-    /// <p>Valid Values: <code> multi-node | single-node </code> </p>
+    /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request.</p>
+    /// <p>Valid Values: <code> multi-node | single-node </code></p>
     pub fn get_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_type
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: Integer greater than <code>0</code>.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
         self.number_of_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: Integer greater than <code>0</code>.</p>
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
     }
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
-    /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: Integer greater than <code>0</code>.</p>
     pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
         &self.number_of_nodes
@@ -458,9 +458,9 @@ impl ModifyClusterInputBuilder {
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn cluster_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_security_groups.unwrap_or_default();
@@ -472,9 +472,9 @@ impl ModifyClusterInputBuilder {
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cluster_security_groups = input;
@@ -484,9 +484,9 @@ impl ModifyClusterInputBuilder {
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cluster_security_groups
@@ -511,77 +511,77 @@ impl ModifyClusterInputBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
-    /// <li> <p>Must contain at least one uppercase letter.</p> </li>
-    /// <li> <p>Must contain at least one lowercase letter.</p> </li>
-    /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
+    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li><p>Must contain at least one uppercase letter.</p></li>
+    /// <li><p>Must contain at least one lowercase letter.</p></li>
+    /// <li><p>Must contain one number.</p></li>
+    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
-    /// <li> <p>Must contain at least one uppercase letter.</p> </li>
-    /// <li> <p>Must contain at least one lowercase letter.</p> </li>
-    /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
+    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li><p>Must contain at least one uppercase letter.</p></li>
+    /// <li><p>Must contain at least one lowercase letter.</p></li>
+    /// <li><p>Must contain one number.</p></li>
+    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
-    /// <li> <p>Must contain at least one uppercase letter.</p> </li>
-    /// <li> <p>Must contain at least one lowercase letter.</p> </li>
-    /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
+    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li><p>Must contain at least one uppercase letter.</p></li>
+    /// <li><p>Must contain at least one lowercase letter.</p></li>
+    /// <li><p>Must contain one number.</p></li>
+    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
     }
-    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
+    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>.</p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
     pub fn cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
+    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>.</p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
     pub fn set_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = input;
         self
     }
-    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
+    /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>.</p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
     pub fn get_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_parameter_group_name
     }
-    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
     /// <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: Uses existing setting.</p>
@@ -590,7 +590,7 @@ impl ModifyClusterInputBuilder {
         self.automated_snapshot_retention_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
     /// <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: Uses existing setting.</p>
@@ -599,7 +599,7 @@ impl ModifyClusterInputBuilder {
         self.automated_snapshot_retention_period = input;
         self
     }
-    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
     /// <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: Uses existing setting.</p>
@@ -658,38 +658,38 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Example: <code>1.0</code> </p>
+    /// <p>Example: <code>1.0</code></p>
     pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Example: <code>1.0</code> </p>
+    /// <p>Example: <code>1.0</code></p>
     pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_version = input;
         self
     }
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Example: <code>1.0</code> </p>
+    /// <p>Example: <code>1.0</code></p>
     pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_version
     }
-    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
+    /// <p>Default: <code>false</code></p>
     pub fn allow_version_upgrade(mut self, input: bool) -> Self {
         self.allow_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_allow_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_version_upgrade = input;
         self
     }
-    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_allow_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.allow_version_upgrade
     }
@@ -724,13 +724,13 @@ impl ModifyClusterInputBuilder {
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Alphabetic characters must be lowercase.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub fn new_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -738,13 +738,13 @@ impl ModifyClusterInputBuilder {
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Alphabetic characters must be lowercase.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub fn set_new_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_cluster_identifier = input;
         self
@@ -752,13 +752,13 @@ impl ModifyClusterInputBuilder {
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Alphabetic characters must be lowercase.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplecluster</code> </p>
+    /// <p>Example: <code>examplecluster</code></p>
     pub fn get_new_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_cluster_identifier
     }
@@ -794,21 +794,21 @@ impl ModifyClusterInputBuilder {
         &self.elastic_ip
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.enhanced_vpc_routing = ::std::option::Option::Some(input);
         self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
         &self.enhanced_vpc_routing
@@ -827,20 +827,20 @@ impl ModifyClusterInputBuilder {
     pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_track_name
     }
-    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
-    /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
+    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key.</p>
+    /// <p>If the value is not encrypted (false), then the cluster is decrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
-    /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
+    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key.</p>
+    /// <p>If the value is not encrypted (false), then the cluster is decrypted.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
-    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
-    /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
+    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key.</p>
+    /// <p>If the value is not encrypted (false), then the cluster is decrypted.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
@@ -900,17 +900,17 @@ impl ModifyClusterInputBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
-    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub fn manage_master_password(mut self, input: bool) -> Self {
         self.manage_master_password = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manage_master_password = input;
         self
     }
-    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
         &self.manage_master_password
     }

@@ -16,7 +16,7 @@ pub struct ScheduledInstancesEbs {
     /// <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type.</p>
-    /// <p>Default: <code>gp2</code> </p>
+    /// <p>Default: <code>gp2</code></p>
     pub volume_type: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesEbs {
@@ -42,7 +42,7 @@ impl ScheduledInstancesEbs {
         self.volume_size
     }
     /// <p>The volume type.</p>
-    /// <p>Default: <code>gp2</code> </p>
+    /// <p>Default: <code>gp2</code></p>
     pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
     }
@@ -140,19 +140,19 @@ impl ScheduledInstancesEbsBuilder {
         &self.volume_size
     }
     /// <p>The volume type.</p>
-    /// <p>Default: <code>gp2</code> </p>
+    /// <p>Default: <code>gp2</code></p>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume type.</p>
-    /// <p>Default: <code>gp2</code> </p>
+    /// <p>Default: <code>gp2</code></p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>The volume type.</p>
-    /// <p>Default: <code>gp2</code> </p>
+    /// <p>Default: <code>gp2</code></p>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_type
     }

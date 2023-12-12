@@ -23,7 +23,7 @@ impl PutActionInteractionsInputBuilder {
 /// Fluent builder constructing a request to `PutActionInteractions`.
 ///
 /// <p>Records action interaction event data. An <i>action interaction</i> event is an interaction between a user and an <i>action</i>. For example, a user taking an action, such a enrolling in a membership program or downloading your app.</p>
-/// <p> For more information about recording action interactions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-action-interaction-events.html">Recording action interaction events</a>. For more information about actions in an Actions dataset, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/actions-datasets.html">Actions dataset</a>.</p>
+/// <p>For more information about recording action interactions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-action-interaction-events.html">Recording action interaction events</a>. For more information about actions in an Actions dataset, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/actions-datasets.html">Actions dataset</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutActionInteractionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

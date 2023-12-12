@@ -5,7 +5,7 @@
 pub struct GetMapSpritesOutput {
     /// <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
     pub blob: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
+    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP Cache-Control directive for the value.</p>
     pub cache_control: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl GetMapSpritesOutput {
     pub fn blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
-    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
+    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>.</p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -61,17 +61,17 @@ impl GetMapSpritesOutputBuilder {
     pub fn get_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.blob
     }
-    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
+    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
+    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
+    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }

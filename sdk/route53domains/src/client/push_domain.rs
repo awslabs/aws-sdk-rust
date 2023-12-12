@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PushDomain`](crate::operation::push_domain::builders::PushDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::push_domain::builders::PushDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::push_domain::builders::PushDomainFluentBuilder::set_domain_name):<br>required: **true**<br><p> Name of the domain. </p><br>
-    ///   - [`target(impl Into<String>)`](crate::operation::push_domain::builders::PushDomainFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::push_domain::builders::PushDomainFluentBuilder::set_target):<br>required: **true**<br><p> New IPS tag for the domain. </p><br>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::push_domain::builders::PushDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::push_domain::builders::PushDomainFluentBuilder::set_domain_name):<br>required: **true**<br><p>Name of the domain.</p><br>
+    ///   - [`target(impl Into<String>)`](crate::operation::push_domain::builders::PushDomainFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::push_domain::builders::PushDomainFluentBuilder::set_target):<br>required: **true**<br><p>New IPS tag for the domain.</p><br>
     /// - On success, responds with [`PushDomainOutput`](crate::operation::push_domain::PushDomainOutput)
     /// - On failure, responds with [`SdkError<PushDomainError>`](crate::operation::push_domain::PushDomainError)
     pub fn push_domain(&self) -> crate::operation::push_domain::builders::PushDomainFluentBuilder {

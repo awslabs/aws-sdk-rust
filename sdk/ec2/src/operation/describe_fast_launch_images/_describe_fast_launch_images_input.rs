@@ -7,9 +7,9 @@ pub struct DescribeFastLaunchImagesInput {
     pub image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
-    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
-    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
+    /// <li><p><code>resource-type</code> - The resource type for pre-provisioning.</p></li>
+    /// <li><p><code>owner-id</code> - The owner ID for the pre-provisioning resource.</p></li>
+    /// <li><p><code>state</code> - The current state of fast launching for the Windows AMI.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -28,9 +28,9 @@ impl DescribeFastLaunchImagesInput {
     }
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
-    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
-    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
+    /// <li><p><code>resource-type</code> - The resource type for pre-provisioning.</p></li>
+    /// <li><p><code>owner-id</code> - The owner ID for the pre-provisioning resource.</p></li>
+    /// <li><p><code>state</code> - The current state of fast launching for the Windows AMI.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -94,9 +94,9 @@ impl DescribeFastLaunchImagesInputBuilder {
     ///
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
-    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
-    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
+    /// <li><p><code>resource-type</code> - The resource type for pre-provisioning.</p></li>
+    /// <li><p><code>owner-id</code> - The owner ID for the pre-provisioning resource.</p></li>
+    /// <li><p><code>state</code> - The current state of fast launching for the Windows AMI.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -106,9 +106,9 @@ impl DescribeFastLaunchImagesInputBuilder {
     }
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
-    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
-    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
+    /// <li><p><code>resource-type</code> - The resource type for pre-provisioning.</p></li>
+    /// <li><p><code>owner-id</code> - The owner ID for the pre-provisioning resource.</p></li>
+    /// <li><p><code>state</code> - The current state of fast launching for the Windows AMI.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -116,9 +116,9 @@ impl DescribeFastLaunchImagesInputBuilder {
     }
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
-    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
-    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
+    /// <li><p><code>resource-type</code> - The resource type for pre-provisioning.</p></li>
+    /// <li><p><code>owner-id</code> - The owner ID for the pre-provisioning resource.</p></li>
+    /// <li><p><code>state</code> - The current state of fast launching for the Windows AMI.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

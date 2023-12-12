@@ -13,7 +13,7 @@ pub struct GetExpenseAnalysisOutput {
     pub expense_documents: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>>,
     /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The current model version of AnalyzeExpense.</p>
     pub analyze_expense_model_version: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ impl GetExpenseAnalysisOutput {
     pub fn warnings(&self) -> &[crate::types::Warning] {
         self.warnings.as_deref().unwrap_or_default()
     }
-    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
@@ -161,17 +161,17 @@ impl GetExpenseAnalysisOutputBuilder {
     pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Warning>> {
         &self.warnings
     }
-    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }

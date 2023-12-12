@@ -10,8 +10,8 @@ pub struct NotificationConfig {
     pub notification_events: ::std::option::Option<::std::vec::Vec<crate::types::NotificationEvent>>,
     /// <p>The type of notification.</p>
     /// <ul>
-    /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
-    /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
+    /// <li><p><code>Command</code>: Receive notification when the status of a command changes.</p></li>
+    /// <li><p><code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes.</p></li>
     /// </ul>
     pub notification_type: ::std::option::Option<crate::types::NotificationType>,
 }
@@ -28,8 +28,8 @@ impl NotificationConfig {
     }
     /// <p>The type of notification.</p>
     /// <ul>
-    /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
-    /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
+    /// <li><p><code>Command</code>: Receive notification when the status of a command changes.</p></li>
+    /// <li><p><code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes.</p></li>
     /// </ul>
     pub fn notification_type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
         self.notification_type.as_ref()
@@ -87,8 +87,8 @@ impl NotificationConfigBuilder {
     }
     /// <p>The type of notification.</p>
     /// <ul>
-    /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
-    /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
+    /// <li><p><code>Command</code>: Receive notification when the status of a command changes.</p></li>
+    /// <li><p><code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes.</p></li>
     /// </ul>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.notification_type = ::std::option::Option::Some(input);
@@ -96,8 +96,8 @@ impl NotificationConfigBuilder {
     }
     /// <p>The type of notification.</p>
     /// <ul>
-    /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
-    /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
+    /// <li><p><code>Command</code>: Receive notification when the status of a command changes.</p></li>
+    /// <li><p><code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes.</p></li>
     /// </ul>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.notification_type = input;
@@ -105,8 +105,8 @@ impl NotificationConfigBuilder {
     }
     /// <p>The type of notification.</p>
     /// <ul>
-    /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
-    /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
+    /// <li><p><code>Command</code>: Receive notification when the status of a command changes.</p></li>
+    /// <li><p><code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes.</p></li>
     /// </ul>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
         &self.notification_type

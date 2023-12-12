@@ -5,7 +5,7 @@
 pub struct GetWebExperienceInput {
     /// <p>The identifier of the Amazon Q application linked to the web experience.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q web experience. </p>
+    /// <p>The identifier of the Amazon Q web experience.</p>
     pub web_experience_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWebExperienceInput {
@@ -13,7 +13,7 @@ impl GetWebExperienceInput {
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q web experience. </p>
+    /// <p>The identifier of the Amazon Q web experience.</p>
     pub fn web_experience_id(&self) -> ::std::option::Option<&str> {
         self.web_experience_id.as_deref()
     }
@@ -48,18 +48,18 @@ impl GetWebExperienceInputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the Amazon Q web experience. </p>
+    /// <p>The identifier of the Amazon Q web experience.</p>
     /// This field is required.
     pub fn web_experience_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_experience_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience. </p>
+    /// <p>The identifier of the Amazon Q web experience.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_experience_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q web experience. </p>
+    /// <p>The identifier of the Amazon Q web experience.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_experience_id
     }

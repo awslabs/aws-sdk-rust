@@ -23,7 +23,7 @@ impl DisassociateResolverRuleInputBuilder {
 /// Fluent builder constructing a request to `DisassociateResolverRule`.
 ///
 /// <p>Removes the association between a specified Resolver rule and a specified VPC.</p> <important>
-/// <p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that you specified in the Resolver rule. </p>
+/// <p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that you specified in the Resolver rule.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateResolverRuleFluentBuilder {

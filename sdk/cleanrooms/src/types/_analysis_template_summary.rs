@@ -10,7 +10,7 @@ pub struct AnalysisTemplateSummary {
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The identifier of the analysis template.</p>
     pub id: ::std::string::String,
-    /// <p>The name of the analysis template. </p>
+    /// <p>The name of the analysis template.</p>
     pub name: ::std::string::String,
     /// <p>The time that the analysis template summary was last updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
@@ -40,7 +40,7 @@ impl AnalysisTemplateSummary {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The name of the analysis template. </p>
+    /// <p>The name of the analysis template.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -142,18 +142,18 @@ impl AnalysisTemplateSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The name of the analysis template. </p>
+    /// <p>The name of the analysis template.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the analysis template. </p>
+    /// <p>The name of the analysis template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the analysis template. </p>
+    /// <p>The name of the analysis template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

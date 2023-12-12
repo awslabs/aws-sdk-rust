@@ -8,7 +8,7 @@ pub struct ServiceQuotaExceededException {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the resource affected.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p> Type of the resource affected.</p>
+    /// <p>Type of the resource affected.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The originating service.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl ServiceQuotaExceededException {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p> Type of the resource affected.</p>
+    /// <p>Type of the resource affected.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -110,17 +110,17 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p> Type of the resource affected.</p>
+    /// <p>Type of the resource affected.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Type of the resource affected.</p>
+    /// <p>Type of the resource affected.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p> Type of the resource affected.</p>
+    /// <p>Type of the resource affected.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

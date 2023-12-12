@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the virtual cluster that will be deleted.</p><br>
     /// - On success, responds with [`DeleteVirtualClusterOutput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput::id): <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    ///   - [`id(Option<String>)`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput::id): <p>This output contains the ID of the virtual cluster that will be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualClusterError>`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterError)
     pub fn delete_virtual_cluster(&self) -> crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder {
         crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder::new(self.handle.clone())

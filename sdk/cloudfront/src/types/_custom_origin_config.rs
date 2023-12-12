@@ -10,9 +10,9 @@ pub struct CustomOriginConfig {
     pub https_port: i32,
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p> </li>
-    /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
-    /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
+    /// <li><p><code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p></li>
+    /// <li><p><code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p></li>
+    /// <li><p><code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p></li>
     /// </ul>
     pub origin_protocol_policy: crate::types::OriginProtocolPolicy,
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
@@ -36,9 +36,9 @@ impl CustomOriginConfig {
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p> </li>
-    /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
-    /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
+    /// <li><p><code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p></li>
+    /// <li><p><code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p></li>
+    /// <li><p><code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p></li>
     /// </ul>
     pub fn origin_protocol_policy(&self) -> &crate::types::OriginProtocolPolicy {
         &self.origin_protocol_policy
@@ -110,9 +110,9 @@ impl CustomOriginConfigBuilder {
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p> </li>
-    /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
-    /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
+    /// <li><p><code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p></li>
+    /// <li><p><code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p></li>
+    /// <li><p><code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p></li>
     /// </ul>
     /// This field is required.
     pub fn origin_protocol_policy(mut self, input: crate::types::OriginProtocolPolicy) -> Self {
@@ -121,9 +121,9 @@ impl CustomOriginConfigBuilder {
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p> </li>
-    /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
-    /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
+    /// <li><p><code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p></li>
+    /// <li><p><code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p></li>
+    /// <li><p><code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p></li>
     /// </ul>
     pub fn set_origin_protocol_policy(mut self, input: ::std::option::Option<crate::types::OriginProtocolPolicy>) -> Self {
         self.origin_protocol_policy = input;
@@ -131,9 +131,9 @@ impl CustomOriginConfigBuilder {
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p> </li>
-    /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
-    /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
+    /// <li><p><code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p></li>
+    /// <li><p><code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p></li>
+    /// <li><p><code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p></li>
     /// </ul>
     pub fn get_origin_protocol_policy(&self) -> &::std::option::Option<crate::types::OriginProtocolPolicy> {
         &self.origin_protocol_policy

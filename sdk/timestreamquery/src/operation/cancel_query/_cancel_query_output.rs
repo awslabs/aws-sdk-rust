@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQueryOutput {
-    /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
+    /// <p>A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued.</p>
     pub cancellation_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelQueryOutput {
-    /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
+    /// <p>A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued.</p>
     pub fn cancellation_message(&self) -> ::std::option::Option<&str> {
         self.cancellation_message.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CancelQueryOutputBuilder {
     _request_id: Option<String>,
 }
 impl CancelQueryOutputBuilder {
-    /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
+    /// <p>A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued.</p>
     pub fn cancellation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cancellation_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
+    /// <p>A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued.</p>
     pub fn set_cancellation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cancellation_message = input;
         self
     }
-    /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
+    /// <p>A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued.</p>
     pub fn get_cancellation_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.cancellation_message
     }

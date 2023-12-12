@@ -6,7 +6,7 @@
 pub struct DescribeTagsOutput {
     /// <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
+    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.</p>
     pub tags: ::std::vec::Vec<crate::types::Tag>,
     /// <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl DescribeTagsOutput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
+    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.</p>
     pub fn tags(&self) -> &[crate::types::Tag] {
         use std::ops::Deref;
         self.tags.deref()
@@ -67,19 +67,19 @@ impl DescribeTagsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
+    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
+    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
+    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

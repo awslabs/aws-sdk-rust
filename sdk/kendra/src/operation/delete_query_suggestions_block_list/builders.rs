@@ -24,7 +24,7 @@ impl DeleteQuerySuggestionsBlockListInputBuilder {
 ///
 /// <p>Deletes a block list used for query suggestions for an index.</p>
 /// <p>A deleted block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions list to add back the queries that were previously blocked.</p>
-/// <p> <code>DeleteQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+/// <p><code>DeleteQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQuerySuggestionsBlockListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -24,9 +24,9 @@ impl ListCreatedArtifactsInputBuilder {
 ///
 /// <p>Lists the created artifacts attached to a given migration task in an update stream. This API has the following traits:</p>
 /// <ul>
-/// <li> <p>Gets the list of the created artifacts while migration is taking place.</p> </li>
-/// <li> <p>Shows the artifacts created by the migration tool that was associated by the <code>AssociateCreatedArtifact</code> API. </p> </li>
-/// <li> <p>Lists created artifacts in a paginated interface. </p> </li>
+/// <li><p>Gets the list of the created artifacts while migration is taking place.</p></li>
+/// <li><p>Shows the artifacts created by the migration tool that was associated by the <code>AssociateCreatedArtifact</code> API.</p></li>
+/// <li><p>Lists created artifacts in a paginated interface.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCreatedArtifactsFluentBuilder {
@@ -119,31 +119,31 @@ impl ListCreatedArtifactsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_created_artifacts::paginator::ListCreatedArtifactsPaginator {
         crate::operation::list_created_artifacts::paginator::ListCreatedArtifactsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the ProgressUpdateStream. </p>
+    /// <p>The name of the ProgressUpdateStream.</p>
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream. </p>
+    /// <p>The name of the ProgressUpdateStream.</p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
-    /// <p>The name of the ProgressUpdateStream. </p>
+    /// <p>The name of the ProgressUpdateStream.</p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_progress_update_stream()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_task_name()
     }

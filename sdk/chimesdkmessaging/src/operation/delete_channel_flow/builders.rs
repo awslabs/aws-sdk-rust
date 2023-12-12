@@ -23,7 +23,7 @@ impl DeleteChannelFlowInputBuilder {
 /// Fluent builder constructing a request to `DeleteChannelFlow`.
 ///
 /// <p>Deletes a channel flow, an irreversible process. This is a developer API.</p> <note>
-/// <p> This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels. </p>
+/// <p>This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteChannelFlowFluentBuilder {

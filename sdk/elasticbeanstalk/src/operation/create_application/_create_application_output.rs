@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
-    /// <p> The <code>ApplicationDescription</code> of the application. </p>
+    /// <p>The <code>ApplicationDescription</code> of the application.</p>
     pub application: ::std::option::Option<crate::types::ApplicationDescription>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
-    /// <p> The <code>ApplicationDescription</code> of the application. </p>
+    /// <p>The <code>ApplicationDescription</code> of the application.</p>
     pub fn application(&self) -> ::std::option::Option<&crate::types::ApplicationDescription> {
         self.application.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct CreateApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateApplicationOutputBuilder {
-    /// <p> The <code>ApplicationDescription</code> of the application. </p>
+    /// <p>The <code>ApplicationDescription</code> of the application.</p>
     pub fn application(mut self, input: crate::types::ApplicationDescription) -> Self {
         self.application = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The <code>ApplicationDescription</code> of the application. </p>
+    /// <p>The <code>ApplicationDescription</code> of the application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<crate::types::ApplicationDescription>) -> Self {
         self.application = input;
         self
     }
-    /// <p> The <code>ApplicationDescription</code> of the application. </p>
+    /// <p>The <code>ApplicationDescription</code> of the application.</p>
     pub fn get_application(&self) -> &::std::option::Option<crate::types::ApplicationDescription> {
         &self.application
     }

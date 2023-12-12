@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p><br>
     /// - On success, responds with [`ListWebhooksOutput`](crate::operation::list_webhooks::ListWebhooksOutput) with field(s):
     ///   - [`webhooks(Option<Vec::<ListWebhookItem>>)`](crate::operation::list_webhooks::ListWebhooksOutput::webhooks): <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_webhooks::ListWebhooksOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_webhooks::ListWebhooksOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list.</p>
     /// - On failure, responds with [`SdkError<ListWebhooksError>`](crate::operation::list_webhooks::ListWebhooksError)
     pub fn list_webhooks(&self) -> crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder {
         crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::new(self.handle.clone())

@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateFleet`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p> The unique ID of the fleet to create. </p><br>
-    ///   - [`description(impl Into<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_description):<br>required: **false**<br><p> A brief description of the fleet to create. </p><br>
-    ///   - [`signal_catalog_arn(impl Into<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::signal_catalog_arn) / [`set_signal_catalog_arn(Option<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_signal_catalog_arn):<br>required: **true**<br><p> The Amazon Resource Name (ARN) of a signal catalog. </p><br>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p>The unique ID of the fleet to create.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_description):<br>required: **false**<br><p>A brief description of the fleet to create.</p><br>
+    ///   - [`signal_catalog_arn(impl Into<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::signal_catalog_arn) / [`set_signal_catalog_arn(Option<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_signal_catalog_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of a signal catalog.</p><br>
     ///   - [`tags(Tag)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_tags):<br>required: **false**<br><p>Metadata that can be used to manage the fleet.</p><br>
     /// - On success, responds with [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput) with field(s):
-    ///   - [`id(String)`](crate::operation::create_fleet::CreateFleetOutput::id): <p> The ID of the created fleet. </p>
-    ///   - [`arn(String)`](crate::operation::create_fleet::CreateFleetOutput::arn): <p> The ARN of the created fleet. </p>
+    ///   - [`id(String)`](crate::operation::create_fleet::CreateFleetOutput::id): <p>The ID of the created fleet.</p>
+    ///   - [`arn(String)`](crate::operation::create_fleet::CreateFleetOutput::arn): <p>The ARN of the created fleet.</p>
     /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::operation::create_fleet::CreateFleetError)
     pub fn create_fleet(&self) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
         crate::operation::create_fleet::builders::CreateFleetFluentBuilder::new(self.handle.clone())

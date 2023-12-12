@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectionInput {
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
 impl GetConnectionInput {
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }
 impl GetConnectionInputBuilder {
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }

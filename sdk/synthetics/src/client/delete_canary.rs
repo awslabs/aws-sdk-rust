@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::set_name):<br>required: **true**<br><p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p><br>
-    ///   - [`delete_lambda(bool)`](crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::delete_lambda) / [`set_delete_lambda(Option<bool>)`](crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::set_delete_lambda):<br>required: **false**<br><p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>  <p>Type: Boolean</p><br>
+    ///   - [`delete_lambda(bool)`](crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::delete_lambda) / [`set_delete_lambda(Option<bool>)`](crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder::set_delete_lambda):<br>required: **false**<br><p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p> <p>Type: Boolean</p><br>
     /// - On success, responds with [`DeleteCanaryOutput`](crate::operation::delete_canary::DeleteCanaryOutput)
     /// - On failure, responds with [`SdkError<DeleteCanaryError>`](crate::operation::delete_canary::DeleteCanaryError)
     pub fn delete_canary(&self) -> crate::operation::delete_canary::builders::DeleteCanaryFluentBuilder {

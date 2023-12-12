@@ -22,7 +22,7 @@ impl UpdateKxDataviewInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateKxDataview`.
 ///
-/// <p> Updates the specified dataview. The dataviews get automatically updated when any new changesets are ingested. Each update of the dataview creates a new version, including changeset details and cache configurations</p>
+/// <p>Updates the specified dataview. The dataviews get automatically updated when any new changesets are ingested. Each update of the dataview creates a new version, including changeset details and cache configurations</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKxDataviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl UpdateKxDataviewFluentBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p> The name of the database.</p>
+    /// <p>The name of the database.</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
-    /// <p> The name of the database.</p>
+    /// <p>The name of the database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
-    /// <p> The name of the database.</p>
+    /// <p>The name of the database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
@@ -150,17 +150,17 @@ impl UpdateKxDataviewFluentBuilder {
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataview_name()
     }
-    /// <p> The description for a dataview. </p>
+    /// <p>The description for a dataview.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The description for a dataview. </p>
+    /// <p>The description for a dataview.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> The description for a dataview. </p>
+    /// <p>The description for a dataview.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -182,17 +182,17 @@ impl UpdateKxDataviewFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_configurations`](Self::set_segment_configurations).
     ///
-    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
+    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         self.inner = self.inner.segment_configurations(input);
         self
     }
-    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
+    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
         self.inner = self.inner.set_segment_configurations(input);
         self
     }
-    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
+    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
         self.inner.get_segment_configurations()
     }

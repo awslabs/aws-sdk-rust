@@ -263,7 +263,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeletePluginE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeletePluginError {
-    /// <p> You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
+    /// <p>You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>You are trying to perform an action that conflicts with the current status of your resource. Fix any inconsistences with your resources and try again.</p>
     ConflictException(crate::types::error::ConflictException),

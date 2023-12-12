@@ -10,15 +10,15 @@ pub struct DefaultImportClientBrandingAttributes {
     pub logo: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub support_email: ::std::option::Option<::std::string::String>,
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub support_link: ::std::option::Option<::std::string::String>,
@@ -34,8 +34,8 @@ impl DefaultImportClientBrandingAttributes {
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn support_email(&self) -> ::std::option::Option<&str> {
@@ -43,8 +43,8 @@ impl DefaultImportClientBrandingAttributes {
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn support_link(&self) -> ::std::option::Option<&str> {
@@ -93,8 +93,8 @@ impl DefaultImportClientBrandingAttributesBuilder {
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn support_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +103,8 @@ impl DefaultImportClientBrandingAttributesBuilder {
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -113,8 +113,8 @@ impl DefaultImportClientBrandingAttributesBuilder {
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,8 @@ impl DefaultImportClientBrandingAttributesBuilder {
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn support_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,8 +132,8 @@ impl DefaultImportClientBrandingAttributesBuilder {
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_support_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -142,8 +142,8 @@ impl DefaultImportClientBrandingAttributesBuilder {
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_support_link(&self) -> &::std::option::Option<::std::string::String> {

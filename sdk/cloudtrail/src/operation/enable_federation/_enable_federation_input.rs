@@ -5,7 +5,7 @@
 pub struct EnableFederationInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to enable Lake query federation.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
-    /// <p> The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>. </p>
+    /// <p>The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>.</p>
     pub federation_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EnableFederationInput {
@@ -13,7 +13,7 @@ impl EnableFederationInput {
     pub fn event_data_store(&self) -> ::std::option::Option<&str> {
         self.event_data_store.as_deref()
     }
-    /// <p> The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>. </p>
+    /// <p>The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>.</p>
     pub fn federation_role_arn(&self) -> ::std::option::Option<&str> {
         self.federation_role_arn.as_deref()
     }
@@ -48,18 +48,18 @@ impl EnableFederationInputBuilder {
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_data_store
     }
-    /// <p> The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>. </p>
+    /// <p>The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>.</p>
     /// This field is required.
     pub fn federation_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.federation_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>. </p>
+    /// <p>The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>.</p>
     pub fn set_federation_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.federation_role_arn = input;
         self
     }
-    /// <p> The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>. </p>
+    /// <p>The ARN of the federation role to use for the event data store. Amazon Web Services services like Lake Formation use this federation role to access data for the federated event data store. The federation role must exist in your account and provide the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions-role">required minimum permissions</a>.</p>
     pub fn get_federation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.federation_role_arn
     }

@@ -7,16 +7,16 @@ pub struct Grantee {
     /// <p>Screen name of the grantee.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Email address of the grantee.</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>
@@ -34,16 +34,16 @@ impl Grantee {
         self.display_name.as_deref()
     }
     /// <p>Email address of the grantee.</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>
@@ -96,16 +96,16 @@ impl GranteeBuilder {
         &self.display_name
     }
     /// <p>Email address of the grantee.</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>
@@ -114,16 +114,16 @@ impl GranteeBuilder {
         self
     }
     /// <p>Email address of the grantee.</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>
@@ -132,16 +132,16 @@ impl GranteeBuilder {
         self
     }
     /// <p>Email address of the grantee.</p> <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li> <p>US East (N. Virginia)</p> </li>
-    /// <li> <p>US West (N. California)</p> </li>
-    /// <li> <p> US West (Oregon)</p> </li>
-    /// <li> <p> Asia Pacific (Singapore)</p> </li>
-    /// <li> <p>Asia Pacific (Sydney)</p> </li>
-    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
-    /// <li> <p>Europe (Ireland)</p> </li>
-    /// <li> <p>South America (São Paulo)</p> </li>
+    /// <li><p>US East (N. Virginia)</p></li>
+    /// <li><p>US West (N. California)</p></li>
+    /// <li><p>US West (Oregon)</p></li>
+    /// <li><p>Asia Pacific (Singapore)</p></li>
+    /// <li><p>Asia Pacific (Sydney)</p></li>
+    /// <li><p>Asia Pacific (Tokyo)</p></li>
+    /// <li><p>Europe (Ireland)</p></li>
+    /// <li><p>South America (São Paulo)</p></li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>

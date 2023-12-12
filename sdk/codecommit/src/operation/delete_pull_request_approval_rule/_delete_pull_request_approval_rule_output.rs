@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePullRequestApprovalRuleOutput {
-    /// <p>The ID of the deleted approval rule. </p> <note>
+    /// <p>The ID of the deleted approval rule.</p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     pub approval_rule_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeletePullRequestApprovalRuleOutput {
-    /// <p>The ID of the deleted approval rule. </p> <note>
+    /// <p>The ID of the deleted approval rule.</p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     pub fn approval_rule_id(&self) -> &str {
@@ -38,7 +38,7 @@ pub struct DeletePullRequestApprovalRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeletePullRequestApprovalRuleOutputBuilder {
-    /// <p>The ID of the deleted approval rule. </p> <note>
+    /// <p>The ID of the deleted approval rule.</p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     /// This field is required.
@@ -46,14 +46,14 @@ impl DeletePullRequestApprovalRuleOutputBuilder {
         self.approval_rule_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the deleted approval rule. </p> <note>
+    /// <p>The ID of the deleted approval rule.</p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     pub fn set_approval_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_id = input;
         self
     }
-    /// <p>The ID of the deleted approval rule. </p> <note>
+    /// <p>The ID of the deleted approval rule.</p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     pub fn get_approval_rule_id(&self) -> &::std::option::Option<::std::string::String> {

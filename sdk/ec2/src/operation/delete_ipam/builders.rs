@@ -23,7 +23,7 @@ impl DeleteIpamInputBuilder {
 /// Fluent builder constructing a request to `DeleteIpam`.
 ///
 /// <p>Delete an IPAM. Deleting an IPAM removes all monitored data associated with the IPAM including the historical data for CIDRs.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIpamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -139,13 +139,13 @@ impl DeleteIpamFluentBuilder {
     }
     /// <p>Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes. You cannot delete the IPAM with this option if there is a pool in your public scope. If you use this option, IPAM does the following:</p>
     /// <ul>
-    /// <li> <p>Deallocates any CIDRs allocated to VPC resources (such as VPCs) in pools in private scopes.</p> <note>
+    /// <li><p>Deallocates any CIDRs allocated to VPC resources (such as VPCs) in pools in private scopes.</p> <note>
     /// <p>No VPC resources are deleted as a result of enabling this option. The CIDR associated with the resource will no longer be allocated from an IPAM pool, but the CIDR itself will remain unchanged.</p>
-    /// </note> </li>
-    /// <li> <p>Deprovisions all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p> </li>
-    /// <li> <p>Deletes all IPAM pools in private scopes.</p> </li>
-    /// <li> <p>Deletes all non-default private scopes in the IPAM.</p> </li>
-    /// <li> <p>Deletes the default public and private scopes and the IPAM.</p> </li>
+    /// </note></li>
+    /// <li><p>Deprovisions all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p></li>
+    /// <li><p>Deletes all IPAM pools in private scopes.</p></li>
+    /// <li><p>Deletes all non-default private scopes in the IPAM.</p></li>
+    /// <li><p>Deletes the default public and private scopes and the IPAM.</p></li>
     /// </ul>
     pub fn cascade(mut self, input: bool) -> Self {
         self.inner = self.inner.cascade(input);
@@ -153,13 +153,13 @@ impl DeleteIpamFluentBuilder {
     }
     /// <p>Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes. You cannot delete the IPAM with this option if there is a pool in your public scope. If you use this option, IPAM does the following:</p>
     /// <ul>
-    /// <li> <p>Deallocates any CIDRs allocated to VPC resources (such as VPCs) in pools in private scopes.</p> <note>
+    /// <li><p>Deallocates any CIDRs allocated to VPC resources (such as VPCs) in pools in private scopes.</p> <note>
     /// <p>No VPC resources are deleted as a result of enabling this option. The CIDR associated with the resource will no longer be allocated from an IPAM pool, but the CIDR itself will remain unchanged.</p>
-    /// </note> </li>
-    /// <li> <p>Deprovisions all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p> </li>
-    /// <li> <p>Deletes all IPAM pools in private scopes.</p> </li>
-    /// <li> <p>Deletes all non-default private scopes in the IPAM.</p> </li>
-    /// <li> <p>Deletes the default public and private scopes and the IPAM.</p> </li>
+    /// </note></li>
+    /// <li><p>Deprovisions all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p></li>
+    /// <li><p>Deletes all IPAM pools in private scopes.</p></li>
+    /// <li><p>Deletes all non-default private scopes in the IPAM.</p></li>
+    /// <li><p>Deletes the default public and private scopes and the IPAM.</p></li>
     /// </ul>
     pub fn set_cascade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cascade(input);
@@ -167,13 +167,13 @@ impl DeleteIpamFluentBuilder {
     }
     /// <p>Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes. You cannot delete the IPAM with this option if there is a pool in your public scope. If you use this option, IPAM does the following:</p>
     /// <ul>
-    /// <li> <p>Deallocates any CIDRs allocated to VPC resources (such as VPCs) in pools in private scopes.</p> <note>
+    /// <li><p>Deallocates any CIDRs allocated to VPC resources (such as VPCs) in pools in private scopes.</p> <note>
     /// <p>No VPC resources are deleted as a result of enabling this option. The CIDR associated with the resource will no longer be allocated from an IPAM pool, but the CIDR itself will remain unchanged.</p>
-    /// </note> </li>
-    /// <li> <p>Deprovisions all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p> </li>
-    /// <li> <p>Deletes all IPAM pools in private scopes.</p> </li>
-    /// <li> <p>Deletes all non-default private scopes in the IPAM.</p> </li>
-    /// <li> <p>Deletes the default public and private scopes and the IPAM.</p> </li>
+    /// </note></li>
+    /// <li><p>Deprovisions all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p></li>
+    /// <li><p>Deletes all IPAM pools in private scopes.</p></li>
+    /// <li><p>Deletes all non-default private scopes in the IPAM.</p></li>
+    /// <li><p>Deletes the default public and private scopes and the IPAM.</p></li>
     /// </ul>
     pub fn get_cascade(&self) -> &::std::option::Option<bool> {
         self.inner.get_cascade()

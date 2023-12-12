@@ -22,7 +22,7 @@ impl ListOutpostsWithS3InputBuilder {
 }
 /// Fluent builder constructing a request to `ListOutpostsWithS3`.
 ///
-/// <p>Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM). </p>
+/// <p>Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOutpostsWithS3FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

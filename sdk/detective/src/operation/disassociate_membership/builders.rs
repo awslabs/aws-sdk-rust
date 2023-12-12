@@ -23,7 +23,7 @@ impl DisassociateMembershipInputBuilder {
 /// Fluent builder constructing a request to `DisassociateMembership`.
 ///
 /// <p>Removes the member account from the specified behavior graph. This operation can only be called by an invited member account that has the <code>ENABLED</code> status.</p>
-/// <p> <code>DisassociateMembership</code> cannot be called by an organization account in the organization behavior graph. For the organization behavior graph, the Detective administrator account determines which organization accounts to enable or disable as member accounts.</p>
+/// <p><code>DisassociateMembership</code> cannot be called by an organization account in the organization behavior graph. For the organization behavior graph, the Detective administrator account determines which organization accounts to enable or disable as member accounts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

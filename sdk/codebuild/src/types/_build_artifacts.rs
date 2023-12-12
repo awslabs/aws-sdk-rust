@@ -16,11 +16,11 @@ pub struct BuildArtifacts {
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
     pub md5_sum: ::std::option::Option<::std::string::String>,
-    /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
+    /// <p>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</p>
     pub override_artifact_name: ::std::option::Option<bool>,
-    /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
+    /// <p>Information that tells you if encryption for build artifacts is disabled.</p>
     pub encryption_disabled: ::std::option::Option<bool>,
-    /// <p> An identifier for this artifact definition. </p>
+    /// <p>An identifier for this artifact definition.</p>
     pub artifact_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -45,8 +45,8 @@ pub struct BuildArtifacts {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
+    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
@@ -72,15 +72,15 @@ impl BuildArtifacts {
     pub fn md5_sum(&self) -> ::std::option::Option<&str> {
         self.md5_sum.as_deref()
     }
-    /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
+    /// <p>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</p>
     pub fn override_artifact_name(&self) -> ::std::option::Option<bool> {
         self.override_artifact_name
     }
-    /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
+    /// <p>Information that tells you if encryption for build artifacts is disabled.</p>
     pub fn encryption_disabled(&self) -> ::std::option::Option<bool> {
         self.encryption_disabled
     }
-    /// <p> An identifier for this artifact definition. </p>
+    /// <p>An identifier for this artifact definition.</p>
     pub fn artifact_identifier(&self) -> ::std::option::Option<&str> {
         self.artifact_identifier.as_deref()
     }
@@ -107,8 +107,8 @@ impl BuildArtifacts {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
+    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
@@ -197,45 +197,45 @@ impl BuildArtifactsBuilder {
     pub fn get_md5_sum(&self) -> &::std::option::Option<::std::string::String> {
         &self.md5_sum
     }
-    /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
+    /// <p>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</p>
     pub fn override_artifact_name(mut self, input: bool) -> Self {
         self.override_artifact_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
+    /// <p>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</p>
     pub fn set_override_artifact_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.override_artifact_name = input;
         self
     }
-    /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
+    /// <p>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</p>
     pub fn get_override_artifact_name(&self) -> &::std::option::Option<bool> {
         &self.override_artifact_name
     }
-    /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
+    /// <p>Information that tells you if encryption for build artifacts is disabled.</p>
     pub fn encryption_disabled(mut self, input: bool) -> Self {
         self.encryption_disabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
+    /// <p>Information that tells you if encryption for build artifacts is disabled.</p>
     pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_disabled = input;
         self
     }
-    /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
+    /// <p>Information that tells you if encryption for build artifacts is disabled.</p>
     pub fn get_encryption_disabled(&self) -> &::std::option::Option<bool> {
         &self.encryption_disabled
     }
-    /// <p> An identifier for this artifact definition. </p>
+    /// <p>An identifier for this artifact definition.</p>
     pub fn artifact_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An identifier for this artifact definition. </p>
+    /// <p>An identifier for this artifact definition.</p>
     pub fn set_artifact_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_identifier = input;
         self
     }
-    /// <p> An identifier for this artifact definition. </p>
+    /// <p>An identifier for this artifact definition.</p>
     pub fn get_artifact_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.artifact_identifier
     }
@@ -262,8 +262,8 @@ impl BuildArtifactsBuilder {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
+    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
@@ -295,8 +295,8 @@ impl BuildArtifactsBuilder {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
+    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
@@ -328,8 +328,8 @@ impl BuildArtifactsBuilder {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
+    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>

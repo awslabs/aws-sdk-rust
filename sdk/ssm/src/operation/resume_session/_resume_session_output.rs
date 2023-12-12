@@ -8,8 +8,8 @@ pub struct ResumeSessionOutput {
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
     pub token_value: ::std::option::Option<::std::string::String>,
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p><b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p><b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub stream_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -23,8 +23,8 @@ impl ResumeSessionOutput {
         self.token_value.as_deref()
     }
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p><b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p><b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn stream_url(&self) -> ::std::option::Option<&str> {
         self.stream_url.as_deref()
     }
@@ -80,22 +80,22 @@ impl ResumeSessionOutputBuilder {
         &self.token_value
     }
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p><b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p><b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn stream_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p><b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p><b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn set_stream_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_url = input;
         self
     }
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p><b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p><b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn get_stream_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_url
     }

@@ -6,18 +6,18 @@
 pub struct ExpenseCurrency {
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
-    /// <li> <p>USD</p> </li>
-    /// <li> <p>EUR</p> </li>
-    /// <li> <p>GBP</p> </li>
-    /// <li> <p>CAD</p> </li>
-    /// <li> <p>INR</p> </li>
-    /// <li> <p>JPY</p> </li>
-    /// <li> <p>CHF</p> </li>
-    /// <li> <p>AUD</p> </li>
-    /// <li> <p>CNY</p> </li>
-    /// <li> <p>BZR</p> </li>
-    /// <li> <p>SEK</p> </li>
-    /// <li> <p>HKD</p> </li>
+    /// <li><p>USD</p></li>
+    /// <li><p>EUR</p></li>
+    /// <li><p>GBP</p></li>
+    /// <li><p>CAD</p></li>
+    /// <li><p>INR</p></li>
+    /// <li><p>JPY</p></li>
+    /// <li><p>CHF</p></li>
+    /// <li><p>AUD</p></li>
+    /// <li><p>CNY</p></li>
+    /// <li><p>BZR</p></li>
+    /// <li><p>SEK</p></li>
+    /// <li><p>HKD</p></li>
     /// </ul>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>Percentage confideence in the detected currency.</p>
@@ -26,18 +26,18 @@ pub struct ExpenseCurrency {
 impl ExpenseCurrency {
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
-    /// <li> <p>USD</p> </li>
-    /// <li> <p>EUR</p> </li>
-    /// <li> <p>GBP</p> </li>
-    /// <li> <p>CAD</p> </li>
-    /// <li> <p>INR</p> </li>
-    /// <li> <p>JPY</p> </li>
-    /// <li> <p>CHF</p> </li>
-    /// <li> <p>AUD</p> </li>
-    /// <li> <p>CNY</p> </li>
-    /// <li> <p>BZR</p> </li>
-    /// <li> <p>SEK</p> </li>
-    /// <li> <p>HKD</p> </li>
+    /// <li><p>USD</p></li>
+    /// <li><p>EUR</p></li>
+    /// <li><p>GBP</p></li>
+    /// <li><p>CAD</p></li>
+    /// <li><p>INR</p></li>
+    /// <li><p>JPY</p></li>
+    /// <li><p>CHF</p></li>
+    /// <li><p>AUD</p></li>
+    /// <li><p>CNY</p></li>
+    /// <li><p>BZR</p></li>
+    /// <li><p>SEK</p></li>
+    /// <li><p>HKD</p></li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
@@ -64,18 +64,18 @@ pub struct ExpenseCurrencyBuilder {
 impl ExpenseCurrencyBuilder {
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
-    /// <li> <p>USD</p> </li>
-    /// <li> <p>EUR</p> </li>
-    /// <li> <p>GBP</p> </li>
-    /// <li> <p>CAD</p> </li>
-    /// <li> <p>INR</p> </li>
-    /// <li> <p>JPY</p> </li>
-    /// <li> <p>CHF</p> </li>
-    /// <li> <p>AUD</p> </li>
-    /// <li> <p>CNY</p> </li>
-    /// <li> <p>BZR</p> </li>
-    /// <li> <p>SEK</p> </li>
-    /// <li> <p>HKD</p> </li>
+    /// <li><p>USD</p></li>
+    /// <li><p>EUR</p></li>
+    /// <li><p>GBP</p></li>
+    /// <li><p>CAD</p></li>
+    /// <li><p>INR</p></li>
+    /// <li><p>JPY</p></li>
+    /// <li><p>CHF</p></li>
+    /// <li><p>AUD</p></li>
+    /// <li><p>CNY</p></li>
+    /// <li><p>BZR</p></li>
+    /// <li><p>SEK</p></li>
+    /// <li><p>HKD</p></li>
     /// </ul>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -83,18 +83,18 @@ impl ExpenseCurrencyBuilder {
     }
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
-    /// <li> <p>USD</p> </li>
-    /// <li> <p>EUR</p> </li>
-    /// <li> <p>GBP</p> </li>
-    /// <li> <p>CAD</p> </li>
-    /// <li> <p>INR</p> </li>
-    /// <li> <p>JPY</p> </li>
-    /// <li> <p>CHF</p> </li>
-    /// <li> <p>AUD</p> </li>
-    /// <li> <p>CNY</p> </li>
-    /// <li> <p>BZR</p> </li>
-    /// <li> <p>SEK</p> </li>
-    /// <li> <p>HKD</p> </li>
+    /// <li><p>USD</p></li>
+    /// <li><p>EUR</p></li>
+    /// <li><p>GBP</p></li>
+    /// <li><p>CAD</p></li>
+    /// <li><p>INR</p></li>
+    /// <li><p>JPY</p></li>
+    /// <li><p>CHF</p></li>
+    /// <li><p>AUD</p></li>
+    /// <li><p>CNY</p></li>
+    /// <li><p>BZR</p></li>
+    /// <li><p>SEK</p></li>
+    /// <li><p>HKD</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
@@ -102,18 +102,18 @@ impl ExpenseCurrencyBuilder {
     }
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
-    /// <li> <p>USD</p> </li>
-    /// <li> <p>EUR</p> </li>
-    /// <li> <p>GBP</p> </li>
-    /// <li> <p>CAD</p> </li>
-    /// <li> <p>INR</p> </li>
-    /// <li> <p>JPY</p> </li>
-    /// <li> <p>CHF</p> </li>
-    /// <li> <p>AUD</p> </li>
-    /// <li> <p>CNY</p> </li>
-    /// <li> <p>BZR</p> </li>
-    /// <li> <p>SEK</p> </li>
-    /// <li> <p>HKD</p> </li>
+    /// <li><p>USD</p></li>
+    /// <li><p>EUR</p></li>
+    /// <li><p>GBP</p></li>
+    /// <li><p>CAD</p></li>
+    /// <li><p>INR</p></li>
+    /// <li><p>JPY</p></li>
+    /// <li><p>CHF</p></li>
+    /// <li><p>AUD</p></li>
+    /// <li><p>CNY</p></li>
+    /// <li><p>BZR</p></li>
+    /// <li><p>SEK</p></li>
+    /// <li><p>HKD</p></li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code

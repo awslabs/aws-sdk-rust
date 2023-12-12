@@ -8,9 +8,9 @@ pub struct TestAlarmInput {
     /// <p>The alarm state to test.</p>
     /// <p>An alarm has the following possible states that can be tested:</p>
     /// <ul>
-    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
-    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
+    /// <li><p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
+    /// <li><p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
+    /// <li><p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::AlarmState>,
 }
@@ -22,9 +22,9 @@ impl TestAlarmInput {
     /// <p>The alarm state to test.</p>
     /// <p>An alarm has the following possible states that can be tested:</p>
     /// <ul>
-    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
-    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
+    /// <li><p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
+    /// <li><p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
+    /// <li><p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::AlarmState> {
         self.state.as_ref()
@@ -63,9 +63,9 @@ impl TestAlarmInputBuilder {
     /// <p>The alarm state to test.</p>
     /// <p>An alarm has the following possible states that can be tested:</p>
     /// <ul>
-    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
-    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
+    /// <li><p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
+    /// <li><p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
+    /// <li><p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     /// This field is required.
     pub fn state(mut self, input: crate::types::AlarmState) -> Self {
@@ -75,9 +75,9 @@ impl TestAlarmInputBuilder {
     /// <p>The alarm state to test.</p>
     /// <p>An alarm has the following possible states that can be tested:</p>
     /// <ul>
-    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
-    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
+    /// <li><p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
+    /// <li><p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
+    /// <li><p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AlarmState>) -> Self {
         self.state = input;
@@ -86,9 +86,9 @@ impl TestAlarmInputBuilder {
     /// <p>The alarm state to test.</p>
     /// <p>An alarm has the following possible states that can be tested:</p>
     /// <ul>
-    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
-    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
+    /// <li><p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
+    /// <li><p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
+    /// <li><p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AlarmState> {
         &self.state

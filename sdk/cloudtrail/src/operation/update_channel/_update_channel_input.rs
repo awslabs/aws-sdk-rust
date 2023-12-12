@@ -7,7 +7,7 @@ pub struct UpdateChannelInput {
     pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
-    /// <p> Changes the name of the channel. </p>
+    /// <p>Changes the name of the channel.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelInput {
@@ -21,7 +21,7 @@ impl UpdateChannelInput {
     pub fn destinations(&self) -> &[crate::types::Destination] {
         self.destinations.as_deref().unwrap_or_default()
     }
-    /// <p> Changes the name of the channel. </p>
+    /// <p>Changes the name of the channel.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -77,17 +77,17 @@ impl UpdateChannelInputBuilder {
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         &self.destinations
     }
-    /// <p> Changes the name of the channel. </p>
+    /// <p>Changes the name of the channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Changes the name of the channel. </p>
+    /// <p>Changes the name of the channel.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> Changes the name of the channel. </p>
+    /// <p>Changes the name of the channel.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteAgentsInput {
-    /// <p> The list of agents to delete. </p>
+    /// <p>The list of agents to delete.</p>
     pub delete_agents: ::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>>,
 }
 impl BatchDeleteAgentsInput {
-    /// <p> The list of agents to delete. </p>
+    /// <p>The list of agents to delete.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_agents.is_none()`.
     pub fn delete_agents(&self) -> &[crate::types::DeleteAgent] {
@@ -32,19 +32,19 @@ impl BatchDeleteAgentsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_delete_agents`](Self::set_delete_agents).
     ///
-    /// <p> The list of agents to delete. </p>
+    /// <p>The list of agents to delete.</p>
     pub fn delete_agents(mut self, input: crate::types::DeleteAgent) -> Self {
         let mut v = self.delete_agents.unwrap_or_default();
         v.push(input);
         self.delete_agents = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of agents to delete. </p>
+    /// <p>The list of agents to delete.</p>
     pub fn set_delete_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>>) -> Self {
         self.delete_agents = input;
         self
     }
-    /// <p> The list of agents to delete. </p>
+    /// <p>The list of agents to delete.</p>
     pub fn get_delete_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>> {
         &self.delete_agents
     }

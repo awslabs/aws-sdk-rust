@@ -6,9 +6,9 @@
 pub struct VirtualGatewayListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <li><p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
+    /// <li><p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
+    /// <li><p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
     /// </ul>
     pub mode: crate::types::VirtualGatewayListenerTlsMode,
     /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
@@ -19,9 +19,9 @@ pub struct VirtualGatewayListenerTls {
 impl VirtualGatewayListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <li><p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
+    /// <li><p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
+    /// <li><p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
     /// </ul>
     pub fn mode(&self) -> &crate::types::VirtualGatewayListenerTlsMode {
         &self.mode
@@ -53,9 +53,9 @@ pub struct VirtualGatewayListenerTlsBuilder {
 impl VirtualGatewayListenerTlsBuilder {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <li><p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
+    /// <li><p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
+    /// <li><p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
     /// </ul>
     /// This field is required.
     pub fn mode(mut self, input: crate::types::VirtualGatewayListenerTlsMode) -> Self {
@@ -64,9 +64,9 @@ impl VirtualGatewayListenerTlsBuilder {
     }
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <li><p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
+    /// <li><p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
+    /// <li><p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::VirtualGatewayListenerTlsMode>) -> Self {
         self.mode = input;
@@ -74,9 +74,9 @@ impl VirtualGatewayListenerTlsBuilder {
     }
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <li><p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
+    /// <li><p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
+    /// <li><p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::VirtualGatewayListenerTlsMode> {
         &self.mode

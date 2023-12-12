@@ -257,7 +257,7 @@ pub enum AuthorizeDBSecurityGroupIngressError {
     AuthorizationAlreadyExistsFault(crate::types::error::AuthorizationAlreadyExistsFault),
     /// <p>The DB security group authorization quota has been reached.</p>
     AuthorizationQuotaExceededFault(crate::types::error::AuthorizationQuotaExceededFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
+    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::types::error::InvalidDbSecurityGroupStateFault),

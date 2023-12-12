@@ -22,7 +22,7 @@ impl DescribeCacheSecurityGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCacheSecurityGroups`.
 ///
-/// <p>Returns a list of cache security group descriptions. If a cache security group name is specified, the list contains only the description of that group. This applicable only when you have ElastiCache in Classic setup </p>
+/// <p>Returns a list of cache security group descriptions. If a cache security group name is specified, the list contains only the description of that group. This applicable only when you have ElastiCache in Classic setup</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCacheSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -244,11 +244,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyClusterDbRevisionError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>Cluster is already on the latest database revision.</p>
     ClusterOnLatestRevisionFault(crate::types::error::ClusterOnLatestRevisionFault),
-    /// <p>The specified cluster is not in the <code>available</code> state. </p>
+    /// <p>The specified cluster is not in the <code>available</code> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),

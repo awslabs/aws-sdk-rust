@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKxScalingGroupsOutput {
-    /// <p> A list of scaling groups available in a kdb environment.</p>
+    /// <p>A list of scaling groups available in a kdb environment.</p>
     pub scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::KxScalingGroup>>,
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListKxScalingGroupsOutput {
-    /// <p> A list of scaling groups available in a kdb environment.</p>
+    /// <p>A list of scaling groups available in a kdb environment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_groups.is_none()`.
     pub fn scaling_groups(&self) -> &[crate::types::KxScalingGroup] {
         self.scaling_groups.as_deref().unwrap_or_default()
     }
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListKxScalingGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_scaling_groups`](Self::set_scaling_groups).
     ///
-    /// <p> A list of scaling groups available in a kdb environment.</p>
+    /// <p>A list of scaling groups available in a kdb environment.</p>
     pub fn scaling_groups(mut self, input: crate::types::KxScalingGroup) -> Self {
         let mut v = self.scaling_groups.unwrap_or_default();
         v.push(input);
         self.scaling_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of scaling groups available in a kdb environment.</p>
+    /// <p>A list of scaling groups available in a kdb environment.</p>
     pub fn set_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxScalingGroup>>) -> Self {
         self.scaling_groups = input;
         self
     }
-    /// <p> A list of scaling groups available in a kdb environment.</p>
+    /// <p>A list of scaling groups available in a kdb environment.</p>
     pub fn get_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxScalingGroup>> {
         &self.scaling_groups
     }
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

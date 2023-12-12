@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDryRunProgressOutput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput) with field(s):
     ///   - [`dry_run_progress_status(Option<DryRunProgressStatus>)`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput::dry_run_progress_status): <p>The current status of the dry run, including any validation errors.</p>
     ///   - [`dry_run_config(Option<DomainStatus>)`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput::dry_run_config): <p>Details about the changes you're planning to make on the domain.</p>
-    ///   - [`dry_run_results(Option<DryRunResults>)`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput::dry_run_results): <p>The results of the dry run. </p>
+    ///   - [`dry_run_results(Option<DryRunResults>)`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput::dry_run_results): <p>The results of the dry run.</p>
     /// - On failure, responds with [`SdkError<DescribeDryRunProgressError>`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressError)
     pub fn describe_dry_run_progress(&self) -> crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressFluentBuilder {
         crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressFluentBuilder::new(self.handle.clone())

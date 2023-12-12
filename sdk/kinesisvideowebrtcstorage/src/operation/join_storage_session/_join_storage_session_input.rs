@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinStorageSessionInput {
-    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
 }
 impl JoinStorageSessionInput {
-    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct JoinStorageSessionInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
 }
 impl JoinStorageSessionInputBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_arn
     }

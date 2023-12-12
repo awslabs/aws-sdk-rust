@@ -7,7 +7,7 @@ pub struct RestoreAnalysisOutput {
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the analysis that you're restoring. </p>
+    /// <p>The ID of the analysis that you're restoring.</p>
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl RestoreAnalysisOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID of the analysis that you're restoring. </p>
+    /// <p>The ID of the analysis that you're restoring.</p>
     pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
@@ -82,17 +82,17 @@ impl RestoreAnalysisOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ID of the analysis that you're restoring. </p>
+    /// <p>The ID of the analysis that you're restoring.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the analysis that you're restoring. </p>
+    /// <p>The ID of the analysis that you're restoring.</p>
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_id = input;
         self
     }
-    /// <p>The ID of the analysis that you're restoring. </p>
+    /// <p>The ID of the analysis that you're restoring.</p>
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }

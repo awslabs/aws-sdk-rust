@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateApprovalRuleTemplateWithRepositoryInput {
-    /// <p>The name for the approval rule template. </p>
+    /// <p>The name for the approval rule template.</p>
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that you want to associate with the template.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateApprovalRuleTemplateWithRepositoryInput {
-    /// <p>The name for the approval rule template. </p>
+    /// <p>The name for the approval rule template.</p>
     pub fn approval_rule_template_name(&self) -> ::std::option::Option<&str> {
         self.approval_rule_template_name.as_deref()
     }
@@ -35,18 +35,18 @@ pub struct AssociateApprovalRuleTemplateWithRepositoryInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateApprovalRuleTemplateWithRepositoryInputBuilder {
-    /// <p>The name for the approval rule template. </p>
+    /// <p>The name for the approval rule template.</p>
     /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the approval rule template. </p>
+    /// <p>The name for the approval rule template.</p>
     pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }
-    /// <p>The name for the approval rule template. </p>
+    /// <p>The name for the approval rule template.</p>
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_name
     }

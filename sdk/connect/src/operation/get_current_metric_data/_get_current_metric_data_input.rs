@@ -7,18 +7,18 @@ pub struct GetCurrentMetricDataInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p> </li>
+    /// <li><p>Queues: 100</p></li>
+    /// <li><p>Routing profiles: 100</p></li>
+    /// <li><p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
     /// </ul>
-    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
+    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub filters: ::std::option::Option<crate::types::Filters>,
-    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>
+    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
     /// <ul>
-    /// <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p> </li>
-    /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
-    /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
+    /// <li><p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
+    /// <li><p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
+    /// <li><p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
     /// </ul>
     pub groupings: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
     /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
@@ -28,95 +28,95 @@ pub struct GetCurrentMetricDataInput {
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ERROR
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_NON_PRODUCTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CALL
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CONTACT
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ONLINE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_STAFFED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_IN_QUEUE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_SCHEDULED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a></p>
     /// </dd>
     /// <dt>
     /// OLDEST_CONTACT_AGE
     /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
-    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
+    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS.</p>
     /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
-    /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
+    /// <p><code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
     /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_ACTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a></p>
     /// </dd>
     /// </dl>
     pub current_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>>,
@@ -128,7 +128,7 @@ pub struct GetCurrentMetricDataInput {
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
+    /// <li><p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
     pub sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>,
 }
@@ -139,20 +139,20 @@ impl GetCurrentMetricDataInput {
     }
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p> </li>
+    /// <li><p>Queues: 100</p></li>
+    /// <li><p>Routing profiles: 100</p></li>
+    /// <li><p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
     /// </ul>
-    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
+    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::Filters> {
         self.filters.as_ref()
     }
-    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>
+    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
     /// <ul>
-    /// <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p> </li>
-    /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
-    /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
+    /// <li><p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
+    /// <li><p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
+    /// <li><p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groupings.is_none()`.
@@ -166,95 +166,95 @@ impl GetCurrentMetricDataInput {
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ERROR
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_NON_PRODUCTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CALL
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CONTACT
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ONLINE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_STAFFED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_IN_QUEUE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_SCHEDULED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a></p>
     /// </dd>
     /// <dt>
     /// OLDEST_CONTACT_AGE
     /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
-    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
+    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS.</p>
     /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
-    /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
+    /// <p><code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
     /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_ACTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a></p>
     /// </dd>
     /// </dl>
     ///
@@ -274,7 +274,7 @@ impl GetCurrentMetricDataInput {
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
+    /// <li><p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_criteria.is_none()`.
@@ -319,11 +319,11 @@ impl GetCurrentMetricDataInputBuilder {
     }
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p> </li>
+    /// <li><p>Queues: 100</p></li>
+    /// <li><p>Routing profiles: 100</p></li>
+    /// <li><p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
     /// </ul>
-    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
+    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     /// This field is required.
     pub fn filters(mut self, input: crate::types::Filters) -> Self {
@@ -332,11 +332,11 @@ impl GetCurrentMetricDataInputBuilder {
     }
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p> </li>
+    /// <li><p>Queues: 100</p></li>
+    /// <li><p>Routing profiles: 100</p></li>
+    /// <li><p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
     /// </ul>
-    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
+    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
         self.filters = input;
@@ -344,11 +344,11 @@ impl GetCurrentMetricDataInputBuilder {
     }
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p> </li>
+    /// <li><p>Queues: 100</p></li>
+    /// <li><p>Routing profiles: 100</p></li>
+    /// <li><p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
     /// </ul>
-    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
+    /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
         &self.filters
@@ -357,11 +357,11 @@ impl GetCurrentMetricDataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_groupings`](Self::set_groupings).
     ///
-    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>
+    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
     /// <ul>
-    /// <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p> </li>
-    /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
-    /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
+    /// <li><p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
+    /// <li><p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
+    /// <li><p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
     /// </ul>
     pub fn groupings(mut self, input: crate::types::Grouping) -> Self {
         let mut v = self.groupings.unwrap_or_default();
@@ -369,21 +369,21 @@ impl GetCurrentMetricDataInputBuilder {
         self.groupings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>
+    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
     /// <ul>
-    /// <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p> </li>
-    /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
-    /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
+    /// <li><p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
+    /// <li><p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
+    /// <li><p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
     /// </ul>
     pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>) -> Self {
         self.groupings = input;
         self
     }
-    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>
+    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
     /// <ul>
-    /// <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p> </li>
-    /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
-    /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
+    /// <li><p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
+    /// <li><p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
+    /// <li><p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
     /// </ul>
     pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grouping>> {
         &self.groupings
@@ -399,95 +399,95 @@ impl GetCurrentMetricDataInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ERROR
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_NON_PRODUCTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CALL
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CONTACT
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ONLINE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_STAFFED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_IN_QUEUE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_SCHEDULED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a></p>
     /// </dd>
     /// <dt>
     /// OLDEST_CONTACT_AGE
     /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
-    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
+    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS.</p>
     /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
-    /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
+    /// <p><code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
     /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_ACTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a></p>
     /// </dd>
     /// </dl>
     pub fn current_metrics(mut self, input: crate::types::CurrentMetric) -> Self {
@@ -503,95 +503,95 @@ impl GetCurrentMetricDataInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ERROR
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_NON_PRODUCTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CALL
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CONTACT
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ONLINE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_STAFFED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_IN_QUEUE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_SCHEDULED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a></p>
     /// </dd>
     /// <dt>
     /// OLDEST_CONTACT_AGE
     /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
-    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
+    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS.</p>
     /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
-    /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
+    /// <p><code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
     /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_ACTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a></p>
     /// </dd>
     /// </dl>
     pub fn set_current_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>>) -> Self {
@@ -605,95 +605,95 @@ impl GetCurrentMetricDataInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ERROR
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_NON_PRODUCTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CALL
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ON_CONTACT
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_ONLINE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a></p>
     /// </dd>
     /// <dt>
     /// AGENTS_STAFFED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_IN_QUEUE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_SCHEDULED
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a></p>
     /// </dd>
     /// <dt>
     /// OLDEST_CONTACT_AGE
     /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
-    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
+    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS.</p>
     /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
-    /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
+    /// <p><code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
     /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_ACTIVE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a></p>
     /// </dd>
     /// <dt>
     /// SLOTS_AVAILABLE
     /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a></p>
     /// </dd>
     /// </dl>
     pub fn get_current_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>> {
@@ -737,7 +737,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
+    /// <li><p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
     pub fn sort_criteria(mut self, input: crate::types::CurrentMetricSortCriteria) -> Self {
         let mut v = self.sort_criteria.unwrap_or_default();
@@ -748,7 +748,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
+    /// <li><p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>) -> Self {
         self.sort_criteria = input;
@@ -757,7 +757,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
+    /// <li><p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>> {
         &self.sort_criteria

@@ -7,14 +7,14 @@ pub struct CreateBatchImportJobInput {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The URI that points to the Amazon S3 location of your data file.</p>
     pub input_path: ::std::option::Option<::std::string::String>,
-    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    /// <p>The URI that points to the Amazon S3 location for storing your results.</p>
     pub output_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event type.</p>
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
     /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A collection of key-value pairs associated with this request. </p>
+    /// <p>A collection of key-value pairs associated with this request.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBatchImportJobInput {
@@ -26,7 +26,7 @@ impl CreateBatchImportJobInput {
     pub fn input_path(&self) -> ::std::option::Option<&str> {
         self.input_path.as_deref()
     }
-    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    /// <p>The URI that points to the Amazon S3 location for storing your results.</p>
     pub fn output_path(&self) -> ::std::option::Option<&str> {
         self.output_path.as_deref()
     }
@@ -39,7 +39,7 @@ impl CreateBatchImportJobInput {
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>A collection of key-value pairs associated with this request. </p>
+    /// <p>A collection of key-value pairs associated with this request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -95,18 +95,18 @@ impl CreateBatchImportJobInputBuilder {
     pub fn get_input_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_path
     }
-    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    /// <p>The URI that points to the Amazon S3 location for storing your results.</p>
     /// This field is required.
     pub fn output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    /// <p>The URI that points to the Amazon S3 location for storing your results.</p>
     pub fn set_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_path = input;
         self
     }
-    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    /// <p>The URI that points to the Amazon S3 location for storing your results.</p>
     pub fn get_output_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_path
     }
@@ -147,19 +147,19 @@ impl CreateBatchImportJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A collection of key-value pairs associated with this request. </p>
+    /// <p>A collection of key-value pairs associated with this request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A collection of key-value pairs associated with this request. </p>
+    /// <p>A collection of key-value pairs associated with this request.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A collection of key-value pairs associated with this request. </p>
+    /// <p>A collection of key-value pairs associated with this request.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

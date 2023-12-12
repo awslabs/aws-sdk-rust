@@ -13,7 +13,7 @@ pub struct Node {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the node.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Attributes of the blockchain framework being used.</p>
     pub framework_attributes: ::std::option::Option<crate::types::NodeFrameworkAttributes>,
@@ -24,15 +24,15 @@ pub struct Node {
     pub state_db: ::std::option::Option<crate::types::StateDbType>,
     /// <p>The status of the node.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <li><p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The node has been created and can participate in the network.</p></li>
+    /// <li><p><code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p></li>
+    /// <li><p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p></li>
+    /// <li><p><code>UPDATING</code> - The node is in the process of being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The node is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> - The node can no longer participate on the network.</p></li>
+    /// <li><p><code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::NodeStatus>,
     /// <p>The date and time that the node was created.</p>
@@ -65,7 +65,7 @@ impl Node {
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -84,15 +84,15 @@ impl Node {
     }
     /// <p>The status of the node.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <li><p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The node has been created and can participate in the network.</p></li>
+    /// <li><p><code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p></li>
+    /// <li><p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p></li>
+    /// <li><p><code>UPDATING</code> - The node is in the process of being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The node is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> - The node can no longer participate on the network.</p></li>
+    /// <li><p><code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::NodeStatus> {
         self.status.as_ref()
@@ -202,17 +202,17 @@ impl NodeBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
@@ -263,15 +263,15 @@ impl NodeBuilder {
     }
     /// <p>The status of the node.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <li><p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The node has been created and can participate in the network.</p></li>
+    /// <li><p><code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p></li>
+    /// <li><p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p></li>
+    /// <li><p><code>UPDATING</code> - The node is in the process of being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The node is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> - The node can no longer participate on the network.</p></li>
+    /// <li><p><code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::NodeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -279,15 +279,15 @@ impl NodeBuilder {
     }
     /// <p>The status of the node.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <li><p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The node has been created and can participate in the network.</p></li>
+    /// <li><p><code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p></li>
+    /// <li><p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p></li>
+    /// <li><p><code>UPDATING</code> - The node is in the process of being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The node is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> - The node can no longer participate on the network.</p></li>
+    /// <li><p><code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NodeStatus>) -> Self {
         self.status = input;
@@ -295,15 +295,15 @@ impl NodeBuilder {
     }
     /// <p>The status of the node.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <li><p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The node has been created and can participate in the network.</p></li>
+    /// <li><p><code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p></li>
+    /// <li><p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p></li>
+    /// <li><p><code>UPDATING</code> - The node is in the process of being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The node is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> - The node can no longer participate on the network.</p></li>
+    /// <li><p><code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NodeStatus> {
         &self.status

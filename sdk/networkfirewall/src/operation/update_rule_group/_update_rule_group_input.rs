@@ -3,83 +3,83 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuleGroupInput {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
-    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub rule_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>An object that defines the rule group rules. </p> <note>
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
+    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub rule_group: ::std::option::Option<crate::types::RuleGroup>,
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
     pub rules: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
-    /// <p>A description of the rule group. </p>
+    /// <p>A description of the rule group.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
     pub source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
-    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub analyze_rule_group: ::std::option::Option<bool>,
 }
 impl UpdateRuleGroupInput {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
-    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn update_token(&self) -> ::std::option::Option<&str> {
         self.update_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>An object that defines the rule group rules. </p> <note>
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
+    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn rule_group(&self) -> ::std::option::Option<&crate::types::RuleGroup> {
         self.rule_group.as_ref()
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
     pub fn rules(&self) -> ::std::option::Option<&str> {
         self.rules.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
         self.r#type.as_ref()
     }
-    /// <p>A description of the rule group. </p>
+    /// <p>A description of the rule group.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -91,7 +91,7 @@ impl UpdateRuleGroupInput {
     pub fn source_metadata(&self) -> ::std::option::Option<&crate::types::SourceMetadata> {
         self.source_metadata.as_ref()
     }
-    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub fn analyze_rule_group(&self) -> ::std::option::Option<bool> {
         self.analyze_rule_group
     }
@@ -120,152 +120,152 @@ pub struct UpdateRuleGroupInputBuilder {
     pub(crate) analyze_rule_group: ::std::option::Option<bool>,
 }
 impl UpdateRuleGroupInputBuilder {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
-    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     /// This field is required.
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
-    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_token = input;
         self
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
-    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_token
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_group_arn
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_name = input;
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_group_name
     }
-    /// <p>An object that defines the rule group rules. </p> <note>
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
+    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn rule_group(mut self, input: crate::types::RuleGroup) -> Self {
         self.rule_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that defines the rule group rules. </p> <note>
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
+    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroup>) -> Self {
         self.rule_group = input;
         self
     }
-    /// <p>An object that defines the rule group rules. </p> <note>
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
+    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
         &self.rule_group
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
     pub fn rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rules = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rules = input;
         self
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::string::String> {
         &self.rules
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
         &self.r#type
     }
-    /// <p>A description of the rule group. </p>
+    /// <p>A description of the rule group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the rule group. </p>
+    /// <p>A description of the rule group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the rule group. </p>
+    /// <p>A description of the rule group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
@@ -297,17 +297,17 @@ impl UpdateRuleGroupInputBuilder {
     pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::SourceMetadata> {
         &self.source_metadata
     }
-    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub fn analyze_rule_group(mut self, input: bool) -> Self {
         self.analyze_rule_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub fn set_analyze_rule_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.analyze_rule_group = input;
         self
     }
-    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
         &self.analyze_rule_group
     }

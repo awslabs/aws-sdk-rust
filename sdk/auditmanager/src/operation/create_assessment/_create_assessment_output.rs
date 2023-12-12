@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentOutput {
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    /// <p>An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.</p>
     pub assessment: ::std::option::Option<crate::types::Assessment>,
     _request_id: Option<String>,
 }
 impl CreateAssessmentOutput {
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    /// <p>An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.</p>
     pub fn assessment(&self) -> ::std::option::Option<&crate::types::Assessment> {
         self.assessment.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateAssessmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAssessmentOutputBuilder {
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    /// <p>An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.</p>
     pub fn assessment(mut self, input: crate::types::Assessment) -> Self {
         self.assessment = ::std::option::Option::Some(input);
         self
     }
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    /// <p>An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.</p>
     pub fn set_assessment(mut self, input: ::std::option::Option<crate::types::Assessment>) -> Self {
         self.assessment = input;
         self
     }
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    /// <p>An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.</p>
     pub fn get_assessment(&self) -> &::std::option::Option<crate::types::Assessment> {
         &self.assessment
     }

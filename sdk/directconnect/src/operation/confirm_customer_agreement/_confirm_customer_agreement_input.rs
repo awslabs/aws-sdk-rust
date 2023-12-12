@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementInput {
-    /// <p> The name of the customer agreement. </p>
+    /// <p>The name of the customer agreement.</p>
     pub agreement_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmCustomerAgreementInput {
-    /// <p> The name of the customer agreement. </p>
+    /// <p>The name of the customer agreement.</p>
     pub fn agreement_name(&self) -> ::std::option::Option<&str> {
         self.agreement_name.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct ConfirmCustomerAgreementInputBuilder {
     pub(crate) agreement_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmCustomerAgreementInputBuilder {
-    /// <p> The name of the customer agreement. </p>
+    /// <p>The name of the customer agreement.</p>
     pub fn agreement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agreement_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the customer agreement. </p>
+    /// <p>The name of the customer agreement.</p>
     pub fn set_agreement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agreement_name = input;
         self
     }
-    /// <p> The name of the customer agreement. </p>
+    /// <p>The name of the customer agreement.</p>
     pub fn get_agreement_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_name
     }

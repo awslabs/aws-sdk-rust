@@ -3,30 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub struct GetPackageVersionAssetOutput {
-    /// <p> The binary file, or asset, that is downloaded.</p>
+    /// <p>The binary file, or asset, that is downloaded.</p>
     pub asset: ::aws_smithy_types::byte_stream::ByteStream,
-    /// <p> The name of the asset that is downloaded. </p>
+    /// <p>The name of the asset that is downloaded.</p>
     pub asset_name: ::std::option::Option<::std::string::String>,
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub package_version: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the package version revision that contains the downloaded asset. </p>
+    /// <p>The name of the package version revision that contains the downloaded asset.</p>
     pub package_version_revision: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPackageVersionAssetOutput {
-    /// <p> The binary file, or asset, that is downloaded.</p>
+    /// <p>The binary file, or asset, that is downloaded.</p>
     pub fn asset(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.asset
     }
-    /// <p> The name of the asset that is downloaded. </p>
+    /// <p>The name of the asset that is downloaded.</p>
     pub fn asset_name(&self) -> ::std::option::Option<&str> {
         self.asset_name.as_deref()
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn package_version(&self) -> ::std::option::Option<&str> {
         self.package_version.as_deref()
     }
-    /// <p> The name of the package version revision that contains the downloaded asset. </p>
+    /// <p>The name of the package version revision that contains the downloaded asset.</p>
     pub fn package_version_revision(&self) -> ::std::option::Option<&str> {
         self.package_version_revision.as_deref()
     }
@@ -54,59 +54,59 @@ pub struct GetPackageVersionAssetOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPackageVersionAssetOutputBuilder {
-    /// <p> The binary file, or asset, that is downloaded.</p>
+    /// <p>The binary file, or asset, that is downloaded.</p>
     pub fn asset(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.asset = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The binary file, or asset, that is downloaded.</p>
+    /// <p>The binary file, or asset, that is downloaded.</p>
     pub fn set_asset(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.asset = input;
         self
     }
-    /// <p> The binary file, or asset, that is downloaded.</p>
+    /// <p>The binary file, or asset, that is downloaded.</p>
     pub fn get_asset(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.asset
     }
-    /// <p> The name of the asset that is downloaded. </p>
+    /// <p>The name of the asset that is downloaded.</p>
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the asset that is downloaded. </p>
+    /// <p>The name of the asset that is downloaded.</p>
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_name = input;
         self
     }
-    /// <p> The name of the asset that is downloaded. </p>
+    /// <p>The name of the asset that is downloaded.</p>
     pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_name
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_version
     }
-    /// <p> The name of the package version revision that contains the downloaded asset. </p>
+    /// <p>The name of the package version revision that contains the downloaded asset.</p>
     pub fn package_version_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the package version revision that contains the downloaded asset. </p>
+    /// <p>The name of the package version revision that contains the downloaded asset.</p>
     pub fn set_package_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version_revision = input;
         self
     }
-    /// <p> The name of the package version revision that contains the downloaded asset. </p>
+    /// <p>The name of the package version revision that contains the downloaded asset.</p>
     pub fn get_package_version_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_version_revision
     }

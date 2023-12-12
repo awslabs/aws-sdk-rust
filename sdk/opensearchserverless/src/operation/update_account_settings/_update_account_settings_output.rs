@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsOutput {
-    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account. </p>
+    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account.</p>
     pub account_settings_detail: ::std::option::Option<crate::types::AccountSettingsDetail>,
     _request_id: Option<String>,
 }
 impl UpdateAccountSettingsOutput {
-    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account. </p>
+    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account.</p>
     pub fn account_settings_detail(&self) -> ::std::option::Option<&crate::types::AccountSettingsDetail> {
         self.account_settings_detail.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAccountSettingsOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAccountSettingsOutputBuilder {
-    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account. </p>
+    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account.</p>
     pub fn account_settings_detail(mut self, input: crate::types::AccountSettingsDetail) -> Self {
         self.account_settings_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account. </p>
+    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account.</p>
     pub fn set_account_settings_detail(mut self, input: ::std::option::Option<crate::types::AccountSettingsDetail>) -> Self {
         self.account_settings_detail = input;
         self
     }
-    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account. </p>
+    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account.</p>
     pub fn get_account_settings_detail(&self) -> &::std::option::Option<crate::types::AccountSettingsDetail> {
         &self.account_settings_detail
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeStepItem {
-    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
+    /// <p>Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:</p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
@@ -12,7 +12,7 @@ pub struct UpgradeStepItem {
     /// </ul>
     /// <p></p>
     pub upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
-    /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
+    /// <p>The status of a particular step during an upgrade. The status can take one of the following values:</p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -27,7 +27,7 @@ pub struct UpgradeStepItem {
     pub progress_percent: ::std::option::Option<f64>,
 }
 impl UpgradeStepItem {
-    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
+    /// <p>Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:</p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
@@ -37,7 +37,7 @@ impl UpgradeStepItem {
     pub fn upgrade_step(&self) -> ::std::option::Option<&crate::types::UpgradeStep> {
         self.upgrade_step.as_ref()
     }
-    /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
+    /// <p>The status of a particular step during an upgrade. The status can take one of the following values:</p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -76,7 +76,7 @@ pub struct UpgradeStepItemBuilder {
     pub(crate) progress_percent: ::std::option::Option<f64>,
 }
 impl UpgradeStepItemBuilder {
-    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
+    /// <p>Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:</p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
@@ -87,7 +87,7 @@ impl UpgradeStepItemBuilder {
         self.upgrade_step = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
+    /// <p>Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:</p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
@@ -98,7 +98,7 @@ impl UpgradeStepItemBuilder {
         self.upgrade_step = input;
         self
     }
-    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
+    /// <p>Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:</p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
@@ -108,7 +108,7 @@ impl UpgradeStepItemBuilder {
     pub fn get_upgrade_step(&self) -> &::std::option::Option<crate::types::UpgradeStep> {
         &self.upgrade_step
     }
-    /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
+    /// <p>The status of a particular step during an upgrade. The status can take one of the following values:</p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -120,7 +120,7 @@ impl UpgradeStepItemBuilder {
         self.upgrade_step_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
+    /// <p>The status of a particular step during an upgrade. The status can take one of the following values:</p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -132,7 +132,7 @@ impl UpgradeStepItemBuilder {
         self.upgrade_step_status = input;
         self
     }
-    /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
+    /// <p>The status of a particular step during an upgrade. The status can take one of the following values:</p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>

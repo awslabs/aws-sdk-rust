@@ -27,7 +27,7 @@ pub enum Error {
     PreconditionNotMetException(crate::types::error::PreconditionNotMetException),
     /// <p>The user with the provided name isn't found. This error can happen in any operation that requires finding a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
     QuickSightUserNotFoundException(crate::types::error::QuickSightUserNotFoundException),
-    /// <p>The resource specified already exists. </p>
+    /// <p>The resource specified already exists.</p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
@@ -37,7 +37,7 @@ pub enum Error {
     SessionLifetimeInMinutesInvalidException(crate::types::error::SessionLifetimeInMinutesInvalidException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b> page. </p>
+    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b> page.</p>
     /// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::types::error::UnsupportedPricingPlanException),
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateGlobalNetwork`](crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`description(impl Into<String>)`](crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder::set_description):<br>required: **false**<br><p>A description of the global network.</p>  <p>Constraints: Maximum length of 256 characters.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder::set_description):<br>required: **false**<br><p>A description of the global network.</p> <p>Constraints: Maximum length of 256 characters.</p><br>
     ///   - [`tags(Tag)`](crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder::set_tags):<br>required: **false**<br><p>The tags to apply to the resource during creation.</p><br>
     /// - On success, responds with [`CreateGlobalNetworkOutput`](crate::operation::create_global_network::CreateGlobalNetworkOutput) with field(s):
     ///   - [`global_network(Option<GlobalNetwork>)`](crate::operation::create_global_network::CreateGlobalNetworkOutput::global_network): <p>Information about the global network object.</p>

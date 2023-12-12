@@ -34,7 +34,7 @@ pub struct AppAssessment {
     pub policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
+    /// <p>A resource error object containing a list of errors retrieving an application's resources.</p>
     pub resource_errors_details: ::std::option::Option<crate::types::ResourceErrorsDetails>,
     /// <p>Version name of the published application.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
@@ -105,7 +105,7 @@ impl AppAssessment {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
+    /// <p>A resource error object containing a list of errors retrieving an application's resources.</p>
     pub fn resource_errors_details(&self) -> ::std::option::Option<&crate::types::ResourceErrorsDetails> {
         self.resource_errors_details.as_ref()
     }
@@ -403,17 +403,17 @@ impl AppAssessmentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
+    /// <p>A resource error object containing a list of errors retrieving an application's resources.</p>
     pub fn resource_errors_details(mut self, input: crate::types::ResourceErrorsDetails) -> Self {
         self.resource_errors_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
+    /// <p>A resource error object containing a list of errors retrieving an application's resources.</p>
     pub fn set_resource_errors_details(mut self, input: ::std::option::Option<crate::types::ResourceErrorsDetails>) -> Self {
         self.resource_errors_details = input;
         self
     }
-    /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
+    /// <p>A resource error object containing a list of errors retrieving an application's resources.</p>
     pub fn get_resource_errors_details(&self) -> &::std::option::Option<crate::types::ResourceErrorsDetails> {
         &self.resource_errors_details
     }

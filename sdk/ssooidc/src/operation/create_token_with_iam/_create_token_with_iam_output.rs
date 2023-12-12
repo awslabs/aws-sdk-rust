@@ -12,11 +12,11 @@ pub struct CreateTokenWithIamOutput {
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub refresh_token: ::std::option::Option<::std::string::String>,
-    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token.</p>
     pub id_token: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported: </p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
-    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
+    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported:</p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
+    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub issued_token_type: ::std::option::Option<::std::string::String>,
     /// <p>The list of scopes for which authorization is granted. The access token that is issued is limited to the scopes that are granted.</p>
     pub scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -40,13 +40,13 @@ impl CreateTokenWithIamOutput {
     pub fn refresh_token(&self) -> ::std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token.</p>
     pub fn id_token(&self) -> ::std::option::Option<&str> {
         self.id_token.as_deref()
     }
-    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported: </p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
-    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
+    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported:</p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
+    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub fn issued_token_type(&self) -> ::std::option::Option<&str> {
         self.issued_token_type.as_deref()
     }
@@ -156,37 +156,37 @@ impl CreateTokenWithIamOutputBuilder {
     pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.refresh_token
     }
-    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token.</p>
     pub fn id_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token.</p>
     pub fn set_id_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id_token = input;
         self
     }
-    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token.</p>
     pub fn get_id_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.id_token
     }
-    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported: </p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
-    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
+    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported:</p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
+    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub fn issued_token_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issued_token_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported: </p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
-    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
+    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported:</p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
+    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub fn set_issued_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issued_token_type = input;
         self
     }
-    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported: </p>
-    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
-    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
+    /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported:</p>
+    /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
+    /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub fn get_issued_token_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.issued_token_type
     }

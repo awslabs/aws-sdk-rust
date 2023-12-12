@@ -258,7 +258,7 @@ pub enum UpdateSignalCatalogError {
     InvalidNodeException(crate::types::error::InvalidNodeException),
     /// <p>The request couldn't be completed because it contains signals that aren't valid.</p>
     InvalidSignalsException(crate::types::error::InvalidSignalsException),
-    /// <p>A service quota was exceeded. </p>
+    /// <p>A service quota was exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource wasn't found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

@@ -154,56 +154,56 @@ impl CreateAppBlockBuilderFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn platform(mut self, input: crate::types::AppBlockBuilderPlatformType) -> Self {
         self.inner = self.inner.platform(input);
         self
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppBlockBuilderPlatformType> {
         self.inner.get_platform()
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.standard.xlarge</p> </li>
-    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.standard.xlarge</p></li>
+    /// <li><p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
@@ -211,11 +211,11 @@ impl CreateAppBlockBuilderFluentBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.standard.xlarge</p> </li>
-    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.standard.xlarge</p></li>
+    /// <li><p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
@@ -223,11 +223,11 @@ impl CreateAppBlockBuilderFluentBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.standard.xlarge</p> </li>
-    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li><p>stream.standard.small</p></li>
+    /// <li><p>stream.standard.medium</p></li>
+    /// <li><p>stream.standard.large</p></li>
+    /// <li><p>stream.standard.xlarge</p></li>
+    /// <li><p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_type()

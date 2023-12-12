@@ -27,10 +27,10 @@ impl DeleteStateMachineVersionInputBuilder {
 /// </note> <note>
 /// <p>You can't delete a state machine version currently referenced by one or more aliases. Before you delete a version, you must either delete the aliases or update them to point to another state machine version.</p>
 /// </note>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>PublishStateMachineVersion</code> </p> </li>
-/// <li> <p> <code>ListStateMachineVersions</code> </p> </li>
+/// <li><p><code>PublishStateMachineVersion</code></p></li>
+/// <li><p><code>ListStateMachineVersions</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStateMachineVersionFluentBuilder {

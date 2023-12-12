@@ -122,17 +122,17 @@ impl DescribePermissionSetFluentBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_arn()
     }
-    /// <p>The ARN of the permission set. </p>
+    /// <p>The ARN of the permission set.</p>
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
-    /// <p>The ARN of the permission set. </p>
+    /// <p>The ARN of the permission set.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
-    /// <p>The ARN of the permission set. </p>
+    /// <p>The ARN of the permission set.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_permission_set_arn()
     }

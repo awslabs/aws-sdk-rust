@@ -6,8 +6,8 @@ pub struct GetBucketsAggregationOutput {
     /// <p>The total number of things that fit the query string criteria.</p>
     pub total_count: i32,
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-    /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-    /// <p> <code>count</code>: The number of documents that have that value.</p>
+    /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p><code>count</code>: The number of documents that have that value.</p>
     pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
     _request_id: Option<String>,
 }
@@ -17,8 +17,8 @@ impl GetBucketsAggregationOutput {
         self.total_count
     }
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-    /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-    /// <p> <code>count</code>: The number of documents that have that value.</p>
+    /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p><code>count</code>: The number of documents that have that value.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
     pub fn buckets(&self) -> &[crate::types::Bucket] {
@@ -65,8 +65,8 @@ impl GetBucketsAggregationOutputBuilder {
     /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
     ///
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-    /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-    /// <p> <code>count</code>: The number of documents that have that value.</p>
+    /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p><code>count</code>: The number of documents that have that value.</p>
     pub fn buckets(mut self, input: crate::types::Bucket) -> Self {
         let mut v = self.buckets.unwrap_or_default();
         v.push(input);
@@ -74,15 +74,15 @@ impl GetBucketsAggregationOutputBuilder {
         self
     }
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-    /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-    /// <p> <code>count</code>: The number of documents that have that value.</p>
+    /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p><code>count</code>: The number of documents that have that value.</p>
     pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>) -> Self {
         self.buckets = input;
         self
     }
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-    /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-    /// <p> <code>count</code>: The number of documents that have that value.</p>
+    /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p><code>count</code>: The number of documents that have that value.</p>
     pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
         &self.buckets
     }

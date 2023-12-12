@@ -5,7 +5,7 @@
 pub struct UpdateRotationInput {
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
     pub rotation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time the rotation goes into effect.</p>
@@ -22,7 +22,7 @@ impl UpdateRotationInput {
     pub fn rotation_id(&self) -> ::std::option::Option<&str> {
         self.rotation_id.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_ids.is_none()`.
@@ -81,7 +81,7 @@ impl UpdateRotationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
@@ -89,13 +89,13 @@ impl UpdateRotationInputBuilder {
         self.contact_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contact_ids = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contact_ids

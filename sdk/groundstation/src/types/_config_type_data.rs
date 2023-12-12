@@ -15,7 +15,7 @@ pub enum ConfigTypeData {
     DataflowEndpointConfig(crate::types::DataflowEndpointConfig),
     /// <p>Information about an S3 recording <code>Config</code>.</p>
     S3RecordingConfig(crate::types::S3RecordingConfig),
-    /// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. </p>
+    /// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.</p>
     TrackingConfig(crate::types::TrackingConfig),
     /// <p>Information about an uplink echo <code>Config</code>.</p>
     /// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>

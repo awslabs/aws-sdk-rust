@@ -108,17 +108,17 @@ impl GetFoundationModelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The model identifier. </p>
+    /// <p>The model identifier.</p>
     pub fn model_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_identifier(input.into());
         self
     }
-    /// <p>The model identifier. </p>
+    /// <p>The model identifier.</p>
     pub fn set_model_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_identifier(input);
         self
     }
-    /// <p>The model identifier. </p>
+    /// <p>The model identifier.</p>
     pub fn get_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_identifier()
     }

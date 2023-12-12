@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssociatedResourceInput {
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource associated with the application.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The name or ID of the resource associated with the application.</p>
     pub resource: ::std::option::Option<::std::string::String>,
-    /// <p> A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results. </p>
+    /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> States whether an application tag is applied, not applied, in the process of being applied, or skipped. </p>
+    /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     pub resource_tag_status: ::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>>,
-    /// <p> The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional. </p>
+    /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetAssociatedResourceInput {
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn application(&self) -> ::std::option::Option<&str> {
         self.application.as_deref()
     }
@@ -29,17 +29,17 @@ impl GetAssociatedResourceInput {
     pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p> A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results. </p>
+    /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> States whether an application tag is applied, not applied, in the process of being applied, or skipped. </p>
+    /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tag_status.is_none()`.
     pub fn resource_tag_status(&self) -> &[crate::types::ResourceItemStatus] {
         self.resource_tag_status.as_deref().unwrap_or_default()
     }
-    /// <p> The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional. </p>
+    /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -63,18 +63,18 @@ pub struct GetAssociatedResourceInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl GetAssociatedResourceInputBuilder {
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application = input;
         self
     }
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
         &self.application
     }
@@ -108,17 +108,17 @@ impl GetAssociatedResourceInputBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource
     }
-    /// <p> A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results. </p>
+    /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results. </p>
+    /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results. </p>
+    /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -126,33 +126,33 @@ impl GetAssociatedResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tag_status`](Self::set_resource_tag_status).
     ///
-    /// <p> States whether an application tag is applied, not applied, in the process of being applied, or skipped. </p>
+    /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     pub fn resource_tag_status(mut self, input: crate::types::ResourceItemStatus) -> Self {
         let mut v = self.resource_tag_status.unwrap_or_default();
         v.push(input);
         self.resource_tag_status = ::std::option::Option::Some(v);
         self
     }
-    /// <p> States whether an application tag is applied, not applied, in the process of being applied, or skipped. </p>
+    /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     pub fn set_resource_tag_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>>) -> Self {
         self.resource_tag_status = input;
         self
     }
-    /// <p> States whether an application tag is applied, not applied, in the process of being applied, or skipped. </p>
+    /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     pub fn get_resource_tag_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>> {
         &self.resource_tag_status
     }
-    /// <p> The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional. </p>
+    /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional. </p>
+    /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional. </p>
+    /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

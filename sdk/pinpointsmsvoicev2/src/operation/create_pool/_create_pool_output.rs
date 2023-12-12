@@ -9,9 +9,9 @@ pub struct CreatePoolOutput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <li><p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
+    /// <li><p>ACTIVE: The pool is active and available for use.</p></li>
+    /// <li><p>DELETING: The pool is being deleted.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::PoolStatus>,
     /// <p>The type of message for the pool to use.</p>
@@ -28,7 +28,7 @@ pub struct CreatePoolOutput {
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub shared_routes_enabled: bool,
-    /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
+    /// <p>When set to true deletion protection is enabled. By default this is set to false.</p>
     pub deletion_protection_enabled: bool,
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -47,9 +47,9 @@ impl CreatePoolOutput {
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <li><p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
+    /// <li><p>ACTIVE: The pool is active and available for use.</p></li>
+    /// <li><p>DELETING: The pool is being deleted.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::PoolStatus> {
         self.status.as_ref()
@@ -82,7 +82,7 @@ impl CreatePoolOutput {
     pub fn shared_routes_enabled(&self) -> bool {
         self.shared_routes_enabled
     }
-    /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
+    /// <p>When set to true deletion protection is enabled. By default this is set to false.</p>
     pub fn deletion_protection_enabled(&self) -> bool {
         self.deletion_protection_enabled
     }
@@ -159,9 +159,9 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <li><p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
+    /// <li><p>ACTIVE: The pool is active and available for use.</p></li>
+    /// <li><p>DELETING: The pool is being deleted.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::PoolStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -169,9 +169,9 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <li><p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
+    /// <li><p>ACTIVE: The pool is active and available for use.</p></li>
+    /// <li><p>DELETING: The pool is being deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PoolStatus>) -> Self {
         self.status = input;
@@ -179,9 +179,9 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <li><p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
+    /// <li><p>ACTIVE: The pool is active and available for use.</p></li>
+    /// <li><p>DELETING: The pool is being deleted.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PoolStatus> {
         &self.status
@@ -284,17 +284,17 @@ impl CreatePoolOutputBuilder {
     pub fn get_shared_routes_enabled(&self) -> &::std::option::Option<bool> {
         &self.shared_routes_enabled
     }
-    /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
+    /// <p>When set to true deletion protection is enabled. By default this is set to false.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.deletion_protection_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
+    /// <p>When set to true deletion protection is enabled. By default this is set to false.</p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection_enabled = input;
         self
     }
-    /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
+    /// <p>When set to true deletion protection is enabled. By default this is set to false.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }

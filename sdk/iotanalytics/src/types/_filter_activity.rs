@@ -6,7 +6,7 @@
 pub struct FilterActivity {
     /// <p>The name of the filter activity.</p>
     pub name: ::std::string::String,
-    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
     pub filter: ::std::string::String,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl FilterActivity {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
     pub fn filter(&self) -> &str {
         use std::ops::Deref;
         self.filter.deref()
@@ -58,18 +58,18 @@ impl FilterActivityBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
     /// This field is required.
     pub fn filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
     pub fn get_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter
     }

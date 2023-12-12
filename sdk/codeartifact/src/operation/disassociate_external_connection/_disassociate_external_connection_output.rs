@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateExternalConnectionOutput {
-    /// <p> The repository associated with the removed external connection. </p>
+    /// <p>The repository associated with the removed external connection.</p>
     pub repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,
 }
 impl DisassociateExternalConnectionOutput {
-    /// <p> The repository associated with the removed external connection. </p>
+    /// <p>The repository associated with the removed external connection.</p>
     pub fn repository(&self) -> ::std::option::Option<&crate::types::RepositoryDescription> {
         self.repository.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DisassociateExternalConnectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl DisassociateExternalConnectionOutputBuilder {
-    /// <p> The repository associated with the removed external connection. </p>
+    /// <p>The repository associated with the removed external connection.</p>
     pub fn repository(mut self, input: crate::types::RepositoryDescription) -> Self {
         self.repository = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The repository associated with the removed external connection. </p>
+    /// <p>The repository associated with the removed external connection.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<crate::types::RepositoryDescription>) -> Self {
         self.repository = input;
         self
     }
-    /// <p> The repository associated with the removed external connection. </p>
+    /// <p>The repository associated with the removed external connection.</p>
     pub fn get_repository(&self) -> &::std::option::Option<crate::types::RepositoryDescription> {
         &self.repository
     }

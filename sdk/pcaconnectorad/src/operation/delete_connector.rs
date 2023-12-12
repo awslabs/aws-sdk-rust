@@ -248,17 +248,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteConnect
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteConnectorError {
-    /// <p>You can receive this error if you attempt to create a resource share when you don't have the required permissions. This can be caused by insufficient permissions in policies attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP) that affects your Amazon Web Services account. </p>
+    /// <p>You can receive this error if you attempt to create a resource share when you don't have the required permissions. This can be caused by insufficient permissions in policies attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP) that affects your Amazon Web Services account.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This request cannot be completed for one of the following reasons because the requested resource was being concurrently modified by another request.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or failure with an internal server. </p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure with an internal server.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The operation tried to access a nonexistent resource. The resource might not be specified correctly, or its status might not be ACTIVE.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The limit on the number of requests per second was exceeded. </p>
+    /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>An input validation error occurred. For example, invalid characters in a template name, or if a pagination token is invalid. </p>
+    /// <p>An input validation error occurred. For example, invalid characters in a template name, or if a pagination token is invalid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

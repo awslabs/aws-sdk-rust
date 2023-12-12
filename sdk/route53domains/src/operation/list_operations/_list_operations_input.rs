@@ -11,13 +11,13 @@ pub struct ListOperationsInput {
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
     pub max_items: ::std::option::Option<i32>,
-    /// <p> The status of the operations. </p>
+    /// <p>The status of the operations.</p>
     pub status: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
-    /// <p> An arrays of the domains operation types. </p>
+    /// <p>An arrays of the domains operation types.</p>
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>,
-    /// <p> The sort type for returned values. </p>
+    /// <p>The sort type for returned values.</p>
     pub sort_by: ::std::option::Option<crate::types::ListOperationsSortAttributeName>,
-    /// <p> The sort order for returned values, either ascending or descending. </p>
+    /// <p>The sort order for returned values, either ascending or descending.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListOperationsInput {
@@ -34,23 +34,23 @@ impl ListOperationsInput {
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
-    /// <p> The status of the operations. </p>
+    /// <p>The status of the operations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
     pub fn status(&self) -> &[crate::types::OperationStatus] {
         self.status.as_deref().unwrap_or_default()
     }
-    /// <p> An arrays of the domains operation types. </p>
+    /// <p>An arrays of the domains operation types.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
     pub fn r#type(&self) -> &[crate::types::OperationType] {
         self.r#type.as_deref().unwrap_or_default()
     }
-    /// <p> The sort type for returned values. </p>
+    /// <p>The sort type for returned values.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListOperationsSortAttributeName> {
         self.sort_by.as_ref()
     }
-    /// <p> The sort order for returned values, either ascending or descending. </p>
+    /// <p>The sort order for returned values, either ascending or descending.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -124,19 +124,19 @@ impl ListOperationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
-    /// <p> The status of the operations. </p>
+    /// <p>The status of the operations.</p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
         v.push(input);
         self.status = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The status of the operations. </p>
+    /// <p>The status of the operations.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
         self.status = input;
         self
     }
-    /// <p> The status of the operations. </p>
+    /// <p>The status of the operations.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
         &self.status
     }
@@ -144,47 +144,47 @@ impl ListOperationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
     ///
-    /// <p> An arrays of the domains operation types. </p>
+    /// <p>An arrays of the domains operation types.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
         let mut v = self.r#type.unwrap_or_default();
         v.push(input);
         self.r#type = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An arrays of the domains operation types. </p>
+    /// <p>An arrays of the domains operation types.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p> An arrays of the domains operation types. </p>
+    /// <p>An arrays of the domains operation types.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationType>> {
         &self.r#type
     }
-    /// <p> The sort type for returned values. </p>
+    /// <p>The sort type for returned values.</p>
     pub fn sort_by(mut self, input: crate::types::ListOperationsSortAttributeName) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The sort type for returned values. </p>
+    /// <p>The sort type for returned values.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListOperationsSortAttributeName>) -> Self {
         self.sort_by = input;
         self
     }
-    /// <p> The sort type for returned values. </p>
+    /// <p>The sort type for returned values.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
         &self.sort_by
     }
-    /// <p> The sort order for returned values, either ascending or descending. </p>
+    /// <p>The sort order for returned values, either ascending or descending.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The sort order for returned values, either ascending or descending. </p>
+    /// <p>The sort order for returned values, either ascending or descending.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
-    /// <p> The sort order for returned values, either ascending or descending. </p>
+    /// <p>The sort order for returned values, either ascending or descending.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }

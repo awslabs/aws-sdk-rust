@@ -22,7 +22,7 @@ impl DeleteResourcePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
-/// <p>Deletes the resource policy set for the environment. </p>
+/// <p>Deletes the resource policy set for the environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

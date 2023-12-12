@@ -3,52 +3,52 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnnotationStoreVersionOutput {
-    /// <p> A generated ID for the annotation store </p>
+    /// <p>A generated ID for the annotation store</p>
     pub id: ::std::string::String,
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub version_name: ::std::string::String,
-    /// <p> The ID for the annotation store from which new versions are being created. </p>
+    /// <p>The ID for the annotation store from which new versions are being created.</p>
     pub store_id: ::std::string::String,
-    /// <p> The options for an annotation store version. </p>
+    /// <p>The options for an annotation store version.</p>
     pub version_options: ::std::option::Option<crate::types::VersionOptions>,
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub name: ::std::string::String,
-    /// <p> The status of a annotation store version. </p>
+    /// <p>The status of a annotation store version.</p>
     pub status: crate::types::VersionStatus,
-    /// <p> The time stamp for the creation of an annotation store version. </p>
+    /// <p>The time stamp for the creation of an annotation store version.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl CreateAnnotationStoreVersionOutput {
-    /// <p> A generated ID for the annotation store </p>
+    /// <p>A generated ID for the annotation store</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn version_name(&self) -> &str {
         use std::ops::Deref;
         self.version_name.deref()
     }
-    /// <p> The ID for the annotation store from which new versions are being created. </p>
+    /// <p>The ID for the annotation store from which new versions are being created.</p>
     pub fn store_id(&self) -> &str {
         use std::ops::Deref;
         self.store_id.deref()
     }
-    /// <p> The options for an annotation store version. </p>
+    /// <p>The options for an annotation store version.</p>
     pub fn version_options(&self) -> ::std::option::Option<&crate::types::VersionOptions> {
         self.version_options.as_ref()
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p> The status of a annotation store version. </p>
+    /// <p>The status of a annotation store version.</p>
     pub fn status(&self) -> &crate::types::VersionStatus {
         &self.status
     }
-    /// <p> The time stamp for the creation of an annotation store version. </p>
+    /// <p>The time stamp for the creation of an annotation store version.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
@@ -79,107 +79,107 @@ pub struct CreateAnnotationStoreVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAnnotationStoreVersionOutputBuilder {
-    /// <p> A generated ID for the annotation store </p>
+    /// <p>A generated ID for the annotation store</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A generated ID for the annotation store </p>
+    /// <p>A generated ID for the annotation store</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> A generated ID for the annotation store </p>
+    /// <p>A generated ID for the annotation store</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }
-    /// <p> The ID for the annotation store from which new versions are being created. </p>
+    /// <p>The ID for the annotation store from which new versions are being created.</p>
     /// This field is required.
     pub fn store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID for the annotation store from which new versions are being created. </p>
+    /// <p>The ID for the annotation store from which new versions are being created.</p>
     pub fn set_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.store_id = input;
         self
     }
-    /// <p> The ID for the annotation store from which new versions are being created. </p>
+    /// <p>The ID for the annotation store from which new versions are being created.</p>
     pub fn get_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.store_id
     }
-    /// <p> The options for an annotation store version. </p>
+    /// <p>The options for an annotation store version.</p>
     pub fn version_options(mut self, input: crate::types::VersionOptions) -> Self {
         self.version_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The options for an annotation store version. </p>
+    /// <p>The options for an annotation store version.</p>
     pub fn set_version_options(mut self, input: ::std::option::Option<crate::types::VersionOptions>) -> Self {
         self.version_options = input;
         self
     }
-    /// <p> The options for an annotation store version. </p>
+    /// <p>The options for an annotation store version.</p>
     pub fn get_version_options(&self) -> &::std::option::Option<crate::types::VersionOptions> {
         &self.version_options
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> The status of a annotation store version. </p>
+    /// <p>The status of a annotation store version.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::VersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of a annotation store version. </p>
+    /// <p>The status of a annotation store version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VersionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p> The status of a annotation store version. </p>
+    /// <p>The status of a annotation store version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VersionStatus> {
         &self.status
     }
-    /// <p> The time stamp for the creation of an annotation store version. </p>
+    /// <p>The time stamp for the creation of an annotation store version.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The time stamp for the creation of an annotation store version. </p>
+    /// <p>The time stamp for the creation of an annotation store version.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p> The time stamp for the creation of an annotation store version. </p>
+    /// <p>The time stamp for the creation of an annotation store version.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAlternateContactInput {
-    /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// <p>Specifies which of the alternate contacts to delete.</p>
     pub alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
     /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
@@ -14,7 +14,7 @@ pub struct DeleteAlternateContactInput {
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlternateContactInput {
-    /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// <p>Specifies which of the alternate contacts to delete.</p>
     pub fn alternate_contact_type(&self) -> ::std::option::Option<&crate::types::AlternateContactType> {
         self.alternate_contact_type.as_ref()
     }
@@ -43,18 +43,18 @@ pub struct DeleteAlternateContactInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlternateContactInputBuilder {
-    /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// <p>Specifies which of the alternate contacts to delete.</p>
     /// This field is required.
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
         self.alternate_contact_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// <p>Specifies which of the alternate contacts to delete.</p>
     pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
         self.alternate_contact_type = input;
         self
     }
-    /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// <p>Specifies which of the alternate contacts to delete.</p>
     pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
         &self.alternate_contact_type
     }

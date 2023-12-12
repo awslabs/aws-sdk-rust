@@ -7,13 +7,13 @@ pub struct GetMapSpritesInput {
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.png</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.png</code></p></li>
+    /// <li><p><code>sprites@2x.png</code> for high pixel density displays</p></li>
     /// </ul>
     /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.json</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.json</code></p></li>
+    /// <li><p><code>sprites@2x.json</code> for high pixel density displays</p></li>
     /// </ul>
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
@@ -26,13 +26,13 @@ impl GetMapSpritesInput {
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.png</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.png</code></p></li>
+    /// <li><p><code>sprites@2x.png</code> for high pixel density displays</p></li>
     /// </ul>
     /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.json</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.json</code></p></li>
+    /// <li><p><code>sprites@2x.json</code> for high pixel density displays</p></li>
     /// </ul>
     pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
@@ -84,13 +84,13 @@ impl GetMapSpritesInputBuilder {
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.png</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.png</code></p></li>
+    /// <li><p><code>sprites@2x.png</code> for high pixel density displays</p></li>
     /// </ul>
     /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.json</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.json</code></p></li>
+    /// <li><p><code>sprites@2x.json</code> for high pixel density displays</p></li>
     /// </ul>
     /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,13 +99,13 @@ impl GetMapSpritesInputBuilder {
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.png</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.png</code></p></li>
+    /// <li><p><code>sprites@2x.png</code> for high pixel density displays</p></li>
     /// </ul>
     /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.json</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.json</code></p></li>
+    /// <li><p><code>sprites@2x.json</code> for high pixel density displays</p></li>
     /// </ul>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
@@ -113,13 +113,13 @@ impl GetMapSpritesInputBuilder {
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.png</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.png</code></p></li>
+    /// <li><p><code>sprites@2x.png</code> for high pixel density displays</p></li>
     /// </ul>
     /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li> <p> <code>sprites.json</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// <li><p><code>sprites.json</code></p></li>
+    /// <li><p><code>sprites@2x.json</code> for high pixel density displays</p></li>
     /// </ul>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_name

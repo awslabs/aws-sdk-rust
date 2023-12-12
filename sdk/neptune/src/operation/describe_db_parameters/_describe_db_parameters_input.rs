@@ -6,12 +6,12 @@ pub struct DescribeDbParametersInput {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
-    /// <p>Valid Values: <code>user | system | engine-default</code> </p>
+    /// <p>Valid Values: <code>user | system | engine-default</code></p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is not currently supported.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -26,14 +26,14 @@ impl DescribeDbParametersInput {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
-    /// <p>Valid Values: <code>user | system | engine-default</code> </p>
+    /// <p>Valid Values: <code>user | system | engine-default</code></p>
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -75,7 +75,7 @@ impl DescribeDbParametersInputBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,7 +85,7 @@ impl DescribeDbParametersInputBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
@@ -94,28 +94,28 @@ impl DescribeDbParametersInputBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name
     }
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
-    /// <p>Valid Values: <code>user | system | engine-default</code> </p>
+    /// <p>Valid Values: <code>user | system | engine-default</code></p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
-    /// <p>Valid Values: <code>user | system | engine-default</code> </p>
+    /// <p>Valid Values: <code>user | system | engine-default</code></p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
-    /// <p>Valid Values: <code>user | system | engine-default</code> </p>
+    /// <p>Valid Values: <code>user | system | engine-default</code></p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }

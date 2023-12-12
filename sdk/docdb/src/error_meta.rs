@@ -6,41 +6,41 @@ pub enum Error {
     /// <p>The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified security group.</p>
     /// <p>Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
-    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+    /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
     /// <p>You already have a cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group. </p>
+    /// <p><code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The cluster can't be created because you have reached the maximum allowed quota of clusters.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
     /// <p>You already have a cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::types::error::DbClusterSnapshotAlreadyExistsFault),
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p><code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// <p>You already have a instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>A parameter group with the same name already exists.</p>
     DbParameterGroupAlreadyExistsFault(crate::types::error::DbParameterGroupAlreadyExistsFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
     /// <p>This request would cause you to exceed the allowed number of parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::types::error::DbParameterGroupQuotaExceededFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
+    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot. </p>
+    /// <p><code>DBSnapshotIdentifier</code> is already being used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::types::error::DbSnapshotAlreadyExistsFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
+    /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
-    /// <p> <code>DBSubnetGroupName</code> is already being used by an existing subnet group. </p>
+    /// <p><code>DBSubnetGroupName</code> is already being used by an existing subnet group.</p>
     DbSubnetGroupAlreadyExistsFault(crate::types::error::DbSubnetGroupAlreadyExistsFault),
     /// <p>Subnets in the subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The request would cause you to exceed the allowed number of subnet groups.</p>
     DbSubnetGroupQuotaExceededFault(crate::types::error::DbSubnetGroupQuotaExceededFault),
@@ -48,9 +48,9 @@ pub enum Error {
     DbSubnetQuotaExceededFault(crate::types::error::DbSubnetQuotaExceededFault),
     /// <p>The upgrade failed because a resource that the depends on can't be modified.</p>
     DbUpgradeDependencyFailureFault(crate::types::error::DbUpgradeDependencyFailureFault),
-    /// <p>You have reached the maximum number of event subscriptions. </p>
+    /// <p>You have reached the maximum number of event subscriptions.</p>
     EventSubscriptionQuotaExceededFault(crate::types::error::EventSubscriptionQuotaExceededFault),
-    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster identifier (unique name) to create a new global cluster. </p>
+    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster identifier (unique name) to create a new global cluster.</p>
     GlobalClusterAlreadyExistsFault(crate::types::error::GlobalClusterAlreadyExistsFault),
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.</p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),
@@ -62,13 +62,13 @@ pub enum Error {
     InsufficientDbClusterCapacityFault(crate::types::error::InsufficientDbClusterCapacityFault),
     /// <p>The specified instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
-    /// <p>There is not enough storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available. </p>
+    /// <p>There is not enough storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::types::error::InsufficientStorageClusterCapacityFault),
     /// <p>The provided value isn't a valid cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::types::error::InvalidDbClusterSnapshotStateFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state. </p>
+    /// <p>The specified instance isn't in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::types::error::InvalidDbParameterGroupStateFault),
@@ -78,7 +78,7 @@ pub enum Error {
     InvalidDbSnapshotStateFault(crate::types::error::InvalidDbSnapshotStateFault),
     /// <p>The subnet group can't be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::types::error::InvalidDbSubnetGroupStateFault),
-    /// <p> The subnet isn't in the <i>available</i> state. </p>
+    /// <p>The subnet isn't in the <i>available</i> state.</p>
     InvalidDbSubnetStateFault(crate::types::error::InvalidDbSubnetStateFault),
     /// <p>Someone else might be modifying a subscription. Wait a few seconds, and try again.</p>
     InvalidEventSubscriptionStateFault(crate::types::error::InvalidEventSubscriptionStateFault),
@@ -94,29 +94,29 @@ pub enum Error {
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::types::error::ResourceNotFoundFault),
-    /// <p>Amazon SNS has responded that there is a problem with the specified topic. </p>
+    /// <p>Amazon SNS has responded that there is a problem with the specified topic.</p>
     SnsInvalidTopicFault(crate::types::error::SnsInvalidTopicFault),
-    /// <p>You do not have permission to publish to the SNS topic Amazon Resource Name (ARN). </p>
+    /// <p>You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).</p>
     SnsNoAuthorizationFault(crate::types::error::SnsNoAuthorizationFault),
-    /// <p>The SNS topic Amazon Resource Name (ARN) does not exist. </p>
+    /// <p>The SNS topic Amazon Resource Name (ARN) does not exist.</p>
     SnsTopicArnNotFoundFault(crate::types::error::SnsTopicArnNotFoundFault),
-    /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with. </p>
+    /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
     SharedSnapshotQuotaExceededFault(crate::types::error::SharedSnapshotQuotaExceededFault),
     /// <p>The request would cause you to exceed the allowed number of snapshots.</p>
     SnapshotQuotaExceededFault(crate::types::error::SnapshotQuotaExceededFault),
-    /// <p>The requested source could not be found. </p>
+    /// <p>The requested source could not be found.</p>
     SourceNotFoundFault(crate::types::error::SourceNotFoundFault),
     /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
-    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance. </p>
+    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// <p>The subnet is already in use in the Availability Zone.</p>
     SubnetAlreadyInUse(crate::types::error::SubnetAlreadyInUse),
-    /// <p>The provided subscription name already exists. </p>
+    /// <p>The provided subscription name already exists.</p>
     SubscriptionAlreadyExistFault(crate::types::error::SubscriptionAlreadyExistFault),
-    /// <p>The provided category does not exist. </p>
+    /// <p>The provided category does not exist.</p>
     SubscriptionCategoryNotFoundFault(crate::types::error::SubscriptionCategoryNotFoundFault),
-    /// <p>The subscription name does not exist. </p>
+    /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::types::error::SubscriptionNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

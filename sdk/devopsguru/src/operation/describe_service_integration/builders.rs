@@ -22,7 +22,7 @@ impl DescribeServiceIntegrationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeServiceIntegration`.
 ///
-/// <p> Returns the integration status of services that are integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight. </p>
+/// <p>Returns the integration status of services that are integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeServiceIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     /// - On success, responds with [`ListFlowExecutionMessagesOutput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput) with field(s):
     ///   - [`messages(Option<Vec::<FlowExecutionMessage>>)`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput::messages): <p>A list of objects that contain information about events in the specified flow execution.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListFlowExecutionMessagesError>`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError)
     #[deprecated(note = "since: 2022-08-30")]
     pub fn list_flow_execution_messages(&self) -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesFluentBuilder {

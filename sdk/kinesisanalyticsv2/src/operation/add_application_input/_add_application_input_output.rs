@@ -7,7 +7,7 @@ pub struct AddApplicationInputOutput {
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the current application version.</p>
     pub application_version_id: ::std::option::Option<i64>,
-    /// <p>Describes the application input configuration. </p>
+    /// <p>Describes the application input configuration.</p>
     pub input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl AddApplicationInputOutput {
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
-    /// <p>Describes the application input configuration. </p>
+    /// <p>Describes the application input configuration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_descriptions.is_none()`.
     pub fn input_descriptions(&self) -> &[crate::types::InputDescription] {
@@ -81,19 +81,19 @@ impl AddApplicationInputOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_input_descriptions`](Self::set_input_descriptions).
     ///
-    /// <p>Describes the application input configuration. </p>
+    /// <p>Describes the application input configuration.</p>
     pub fn input_descriptions(mut self, input: crate::types::InputDescription) -> Self {
         let mut v = self.input_descriptions.unwrap_or_default();
         v.push(input);
         self.input_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes the application input configuration. </p>
+    /// <p>Describes the application input configuration.</p>
     pub fn set_input_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>) -> Self {
         self.input_descriptions = input;
         self
     }
-    /// <p>Describes the application input configuration. </p>
+    /// <p>Describes the application input configuration.</p>
     pub fn get_input_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
         &self.input_descriptions
     }

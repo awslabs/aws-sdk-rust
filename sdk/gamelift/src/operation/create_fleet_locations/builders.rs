@@ -22,14 +22,14 @@ impl CreateFleetLocationsInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFleetLocations`.
 ///
-/// <p>Adds remote locations to a fleet and begins populating the new locations with EC2 instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings. </p> <note>
+/// <p>Adds remote locations to a fleet and begins populating the new locations with EC2 instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings.</p> <note>
 /// <p>This operation cannot be used with fleets that don't support remote locations. Fleets can have multiple locations only if they reside in Amazon Web Services Regions that support this feature and were created after the feature was released in March 2021.</p>
 /// </note>
-/// <p>To add fleet locations, specify the fleet to be updated and provide a list of one or more locations. </p>
+/// <p>To add fleet locations, specify the fleet to be updated and provide a list of one or more locations.</p>
 /// <p>If successful, this operation returns the list of added locations with their status set to <code>NEW</code>. Amazon GameLift initiates the process of starting an instance in each added location. You can track the status of each new location by monitoring location creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.</p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location fleets</a> </p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFleetLocationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -133,17 +133,17 @@ impl CreateFleetLocationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
     ///
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn locations(mut self, input: crate::types::LocationConfiguration) -> Self {
         self.inner = self.inner.locations(input);
         self
     }
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>) -> Self {
         self.inner = self.inner.set_locations(input);
         self
     }
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         self.inner.get_locations()
     }

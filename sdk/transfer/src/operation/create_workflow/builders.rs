@@ -22,7 +22,7 @@ impl CreateWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateWorkflow`.
 ///
-/// <p> Allows you to create a workflow with specified steps and step details the workflow invokes after file transfer completes. After creating a workflow, you can associate the workflow created with any transfer servers by specifying the <code>workflow-details</code> field in <code>CreateServer</code> and <code>UpdateServer</code> operations. </p>
+/// <p>Allows you to create a workflow with specified steps and step details the workflow invokes after file transfer completes. After creating a workflow, you can associate the workflow created with any transfer servers by specifying the <code>workflow-details</code> field in <code>CreateServer</code> and <code>UpdateServer</code> operations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,49 +127,49 @@ impl CreateWorkflowFluentBuilder {
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
     ///
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
+    /// <p>The <code>TYPE</code> specifies which of the following actions is being taken for this step.</p>
     /// <ul>
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+    /// <li><p><b> <code>COPY</code> </b> - Copy the file to another location.</p></li>
+    /// <li><p><b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p></li>
+    /// <li><p><b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p></li>
+    /// <li><p><b> <code>DELETE</code> </b> - Delete the file.</p></li>
+    /// <li><p><b> <code>TAG</code> </b> - Add a tag to the file.</p></li>
     /// </ul> <note>
-    /// <p> Currently, copying and tagging are supported only on S3. </p>
+    /// <p>Currently, copying and tagging are supported only on S3.</p>
     /// </note>
-    /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
+    /// <p>For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path.</p>
     pub fn steps(mut self, input: crate::types::WorkflowStep) -> Self {
         self.inner = self.inner.steps(input);
         self
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
+    /// <p>The <code>TYPE</code> specifies which of the following actions is being taken for this step.</p>
     /// <ul>
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+    /// <li><p><b> <code>COPY</code> </b> - Copy the file to another location.</p></li>
+    /// <li><p><b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p></li>
+    /// <li><p><b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p></li>
+    /// <li><p><b> <code>DELETE</code> </b> - Delete the file.</p></li>
+    /// <li><p><b> <code>TAG</code> </b> - Add a tag to the file.</p></li>
     /// </ul> <note>
-    /// <p> Currently, copying and tagging are supported only on S3. </p>
+    /// <p>Currently, copying and tagging are supported only on S3.</p>
     /// </note>
-    /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
+    /// <p>For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path.</p>
     pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.inner = self.inner.set_steps(input);
         self
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
+    /// <p>The <code>TYPE</code> specifies which of the following actions is being taken for this step.</p>
     /// <ul>
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+    /// <li><p><b> <code>COPY</code> </b> - Copy the file to another location.</p></li>
+    /// <li><p><b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p></li>
+    /// <li><p><b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p></li>
+    /// <li><p><b> <code>DELETE</code> </b> - Delete the file.</p></li>
+    /// <li><p><b> <code>TAG</code> </b> - Add a tag to the file.</p></li>
     /// </ul> <note>
-    /// <p> Currently, copying and tagging are supported only on S3. </p>
+    /// <p>Currently, copying and tagging are supported only on S3.</p>
     /// </note>
-    /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
+    /// <p>For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path.</p>
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
         self.inner.get_steps()
     }

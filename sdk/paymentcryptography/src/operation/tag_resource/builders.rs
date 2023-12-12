@@ -26,11 +26,11 @@ impl TagResourceInputBuilder {
 /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
 /// </note>
 /// <p>Each tag consists of a tag key and a tag value, both of which are case-sensitive strings. The tag value can be an empty (null) string. To add a tag, specify a new tag key and a tag value. To edit a tag, specify an existing tag key and a new tag value. You can also add tags to an Amazon Web Services Payment Cryptography key when you create it with <code>CreateKey</code>.</p>
-/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>ListTagsForResource</code> </p> </li>
-/// <li> <p> <code>UntagResource</code> </p> </li>
+/// <li><p><code>ListTagsForResource</code></p></li>
+/// <li><p><code>UntagResource</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {

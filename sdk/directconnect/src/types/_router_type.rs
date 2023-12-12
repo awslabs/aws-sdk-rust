@@ -8,7 +8,7 @@ pub struct RouterType {
     pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The virtual interface router platform.</p>
     pub platform: ::std::option::Option<::std::string::String>,
-    /// <p>The router software. </p>
+    /// <p>The router software.</p>
     pub software: ::std::option::Option<::std::string::String>,
     /// <p>The template for the virtual interface's router.</p>
     pub xslt_template_name: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl RouterType {
     pub fn platform(&self) -> ::std::option::Option<&str> {
         self.platform.as_deref()
     }
-    /// <p>The router software. </p>
+    /// <p>The router software.</p>
     pub fn software(&self) -> ::std::option::Option<&str> {
         self.software.as_deref()
     }
@@ -90,17 +90,17 @@ impl RouterTypeBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform
     }
-    /// <p>The router software. </p>
+    /// <p>The router software.</p>
     pub fn software(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.software = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The router software. </p>
+    /// <p>The router software.</p>
     pub fn set_software(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.software = input;
         self
     }
-    /// <p>The router software. </p>
+    /// <p>The router software.</p>
     pub fn get_software(&self) -> &::std::option::Option<::std::string::String> {
         &self.software
     }

@@ -6,7 +6,7 @@
 pub struct GetRecordsOutput {
     /// <p>The data records retrieved from the shard.</p>
     pub records: ::std::vec::Vec<crate::types::Record>,
-    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
+    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data.</p>
     pub next_shard_iterator: ::std::option::Option<::std::string::String>,
     /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
     pub millis_behind_latest: ::std::option::Option<i64>,
@@ -20,7 +20,7 @@ impl GetRecordsOutput {
         use std::ops::Deref;
         self.records.deref()
     }
-    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
+    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data.</p>
     pub fn next_shard_iterator(&self) -> ::std::option::Option<&str> {
         self.next_shard_iterator.as_deref()
     }
@@ -78,17 +78,17 @@ impl GetRecordsOutputBuilder {
     pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
         &self.records
     }
-    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
+    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data.</p>
     pub fn next_shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
+    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data.</p>
     pub fn set_next_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_shard_iterator = input;
         self
     }
-    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
+    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data.</p>
     pub fn get_next_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_shard_iterator
     }

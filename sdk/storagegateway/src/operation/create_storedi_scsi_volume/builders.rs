@@ -153,19 +153,19 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self.inner.get_snapshot_id()
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn preserve_existing_data(mut self, input: bool) -> Self {
         self.inner = self.inner.preserve_existing_data(input);
         self
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_preserve_existing_data(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_preserve_existing_data(input);
         self
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn get_preserve_existing_data(&self) -> &::std::option::Option<bool> {
         self.inner.get_preserve_existing_data()
     }
@@ -204,19 +204,19 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self.inner.get_network_interface_id()
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn kms_encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.kms_encrypted(input);
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_kms_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_kms_encrypted(input);
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
         self.inner.get_kms_encrypted()
     }

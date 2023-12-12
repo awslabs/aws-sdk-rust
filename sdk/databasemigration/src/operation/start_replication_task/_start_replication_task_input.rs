@@ -16,7 +16,7 @@ pub struct StartReplicationTaskInput {
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub cdc_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
@@ -47,7 +47,7 @@ impl StartReplicationTaskInput {
         self.cdc_start_time.as_ref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
@@ -141,7 +141,7 @@ impl StartReplicationTaskInputBuilder {
         &self.cdc_start_time
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
@@ -152,7 +152,7 @@ impl StartReplicationTaskInputBuilder {
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
@@ -163,7 +163,7 @@ impl StartReplicationTaskInputBuilder {
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>

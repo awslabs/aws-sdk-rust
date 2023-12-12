@@ -18,13 +18,13 @@ pub struct SoftwarePackage {
     pub package_manager: ::std::option::Option<::std::string::String>,
     /// <p>The file system path to the package manager inventory file.</p>
     pub file_path: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+    /// <p>The version of the software package in which the vulnerability has been resolved.</p>
     pub fixed_in_version: ::std::option::Option<::std::string::String>,
-    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package.</p>
     pub remediation: ::std::option::Option<::std::string::String>,
-    /// <p>The source layer hash of the vulnerable package. </p>
+    /// <p>The source layer hash of the vulnerable package.</p>
     pub source_layer_hash: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
     pub source_layer_arn: ::std::option::Option<::std::string::String>,
 }
 impl SoftwarePackage {
@@ -56,19 +56,19 @@ impl SoftwarePackage {
     pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
-    /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+    /// <p>The version of the software package in which the vulnerability has been resolved.</p>
     pub fn fixed_in_version(&self) -> ::std::option::Option<&str> {
         self.fixed_in_version.as_deref()
     }
-    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package.</p>
     pub fn remediation(&self) -> ::std::option::Option<&str> {
         self.remediation.as_deref()
     }
-    /// <p>The source layer hash of the vulnerable package. </p>
+    /// <p>The source layer hash of the vulnerable package.</p>
     pub fn source_layer_hash(&self) -> ::std::option::Option<&str> {
         self.source_layer_hash.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
     pub fn source_layer_arn(&self) -> ::std::option::Option<&str> {
         self.source_layer_arn.as_deref()
     }
@@ -195,59 +195,59 @@ impl SoftwarePackageBuilder {
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_path
     }
-    /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+    /// <p>The version of the software package in which the vulnerability has been resolved.</p>
     pub fn fixed_in_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fixed_in_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+    /// <p>The version of the software package in which the vulnerability has been resolved.</p>
     pub fn set_fixed_in_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fixed_in_version = input;
         self
     }
-    /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+    /// <p>The version of the software package in which the vulnerability has been resolved.</p>
     pub fn get_fixed_in_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.fixed_in_version
     }
-    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package.</p>
     pub fn remediation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package.</p>
     pub fn set_remediation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation = input;
         self
     }
-    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package.</p>
     pub fn get_remediation(&self) -> &::std::option::Option<::std::string::String> {
         &self.remediation
     }
-    /// <p>The source layer hash of the vulnerable package. </p>
+    /// <p>The source layer hash of the vulnerable package.</p>
     pub fn source_layer_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_layer_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source layer hash of the vulnerable package. </p>
+    /// <p>The source layer hash of the vulnerable package.</p>
     pub fn set_source_layer_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_layer_hash = input;
         self
     }
-    /// <p>The source layer hash of the vulnerable package. </p>
+    /// <p>The source layer hash of the vulnerable package.</p>
     pub fn get_source_layer_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_layer_hash
     }
-    /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
     pub fn source_layer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_layer_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
     pub fn set_source_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_layer_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
+    /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
     pub fn get_source_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_layer_arn
     }

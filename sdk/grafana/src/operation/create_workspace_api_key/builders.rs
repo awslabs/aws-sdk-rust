@@ -123,19 +123,19 @@ impl CreateWorkspaceApiKeyFluentBuilder {
         self.inner.get_key_name()
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
     pub fn key_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_role(input.into());
         self
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
     pub fn set_key_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_role(input);
         self
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
     pub fn get_key_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_role()
     }

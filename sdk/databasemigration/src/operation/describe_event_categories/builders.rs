@@ -22,7 +22,7 @@ impl DescribeEventCategoriesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeEventCategories`.
 ///
-/// <p>Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
+/// <p>Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,19 +108,19 @@ impl DescribeEventCategoriesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_type(input.into());
         self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_type()

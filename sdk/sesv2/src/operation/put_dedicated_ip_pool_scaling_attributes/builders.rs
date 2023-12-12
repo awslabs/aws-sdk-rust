@@ -23,7 +23,7 @@ impl PutDedicatedIpPoolScalingAttributesInputBuilder {
 /// Fluent builder constructing a request to `PutDedicatedIpPoolScalingAttributes`.
 ///
 /// <p>Used to convert a dedicated IP pool to a different scaling mode.</p> <note>
-/// <p> <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.</p>
+/// <p><code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDedicatedIpPoolScalingAttributesFluentBuilder {

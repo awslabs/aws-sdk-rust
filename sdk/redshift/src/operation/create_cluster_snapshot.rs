@@ -243,13 +243,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateClusterSnapshotError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
     ClusterSnapshotAlreadyExistsFault(crate::types::error::ClusterSnapshotAlreadyExistsFault),
     /// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
     ClusterSnapshotQuotaExceededFault(crate::types::error::ClusterSnapshotQuotaExceededFault),
-    /// <p>The specified cluster is not in the <code>available</code> state. </p>
+    /// <p>The specified cluster is not in the <code>available</code> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>

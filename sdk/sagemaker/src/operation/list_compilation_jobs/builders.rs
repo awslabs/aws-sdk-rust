@@ -143,17 +143,17 @@ impl ListCompilationJobsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
-    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
-    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_after()
     }

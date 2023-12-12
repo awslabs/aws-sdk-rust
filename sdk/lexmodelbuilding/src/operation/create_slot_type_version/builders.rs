@@ -22,10 +22,10 @@ impl CreateSlotTypeVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSlotTypeVersion`.
 ///
-/// <p>Creates a new version of a slot type based on the <code>$LATEST</code> version of the specified slot type. If the <code>$LATEST</code> version of this resource has not changed since the last version that you created, Amazon Lex doesn't create a new version. It returns the last version that you created. </p> <note>
+/// <p>Creates a new version of a slot type based on the <code>$LATEST</code> version of the specified slot type. If the <code>$LATEST</code> version of this resource has not changed since the last version that you created, Amazon Lex doesn't create a new version. It returns the last version that you created.</p> <note>
 /// <p>You can update only the <code>$LATEST</code> version of a slot type. You can't update the numbered versions that you create with the <code>CreateSlotTypeVersion</code> operation.</p>
 /// </note>
-/// <p>When you create a version of a slot type, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>. </p>
+/// <p>When you create a version of a slot type, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>.</p>
 /// <p>This operation requires permissions for the <code>lex:CreateSlotTypeVersion</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSlotTypeVersionFluentBuilder {
@@ -112,17 +112,17 @@ impl CreateSlotTypeVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
+    /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
+    /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
+    /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

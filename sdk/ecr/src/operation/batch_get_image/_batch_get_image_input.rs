@@ -10,7 +10,7 @@ pub struct BatchGetImageInput {
     /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
     /// <p>The accepted media types for the request.</p>
-    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code></p>
     pub accepted_media_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetImageInput {
@@ -29,7 +29,7 @@ impl BatchGetImageInput {
         self.image_ids.as_deref().unwrap_or_default()
     }
     /// <p>The accepted media types for the request.</p>
-    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accepted_media_types.is_none()`.
     pub fn accepted_media_types(&self) -> &[::std::string::String] {
@@ -107,7 +107,7 @@ impl BatchGetImageInputBuilder {
     /// To override the contents of this collection use [`set_accepted_media_types`](Self::set_accepted_media_types).
     ///
     /// <p>The accepted media types for the request.</p>
-    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code></p>
     pub fn accepted_media_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accepted_media_types.unwrap_or_default();
         v.push(input.into());
@@ -115,13 +115,13 @@ impl BatchGetImageInputBuilder {
         self
     }
     /// <p>The accepted media types for the request.</p>
-    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code></p>
     pub fn set_accepted_media_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accepted_media_types = input;
         self
     }
     /// <p>The accepted media types for the request.</p>
-    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code></p>
     pub fn get_accepted_media_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accepted_media_types
     }

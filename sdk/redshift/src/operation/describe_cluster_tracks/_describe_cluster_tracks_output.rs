@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterTracksOutput {
-    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation.</p>
     pub maintenance_tracks: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeClusterTracksOutput {
-    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_tracks.is_none()`.
     pub fn maintenance_tracks(&self) -> &[crate::types::MaintenanceTrack] {
@@ -46,19 +46,19 @@ impl DescribeClusterTracksOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_maintenance_tracks`](Self::set_maintenance_tracks).
     ///
-    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation.</p>
     pub fn maintenance_tracks(mut self, input: crate::types::MaintenanceTrack) -> Self {
         let mut v = self.maintenance_tracks.unwrap_or_default();
         v.push(input);
         self.maintenance_tracks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation.</p>
     pub fn set_maintenance_tracks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>) -> Self {
         self.maintenance_tracks = input;
         self
     }
-    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation.</p>
     pub fn get_maintenance_tracks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>> {
         &self.maintenance_tracks
     }

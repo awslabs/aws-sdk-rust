@@ -5,9 +5,9 @@
 pub struct UpdateTaskProtectionOutput {
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
-    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
-    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
-    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// <li><p><code>taskArn</code>: The task ARN.</p></li>
+    /// <li><p><code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p></li>
+    /// <li><p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
     pub protected_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>,
     /// <p>Any failures associated with the call.</p>
@@ -17,9 +17,9 @@ pub struct UpdateTaskProtectionOutput {
 impl UpdateTaskProtectionOutput {
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
-    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
-    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
-    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// <li><p><code>taskArn</code>: The task ARN.</p></li>
+    /// <li><p><code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p></li>
+    /// <li><p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protected_tasks.is_none()`.
@@ -60,9 +60,9 @@ impl UpdateTaskProtectionOutputBuilder {
     ///
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
-    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
-    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
-    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// <li><p><code>taskArn</code>: The task ARN.</p></li>
+    /// <li><p><code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p></li>
+    /// <li><p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
     pub fn protected_tasks(mut self, input: crate::types::ProtectedTask) -> Self {
         let mut v = self.protected_tasks.unwrap_or_default();
@@ -72,9 +72,9 @@ impl UpdateTaskProtectionOutputBuilder {
     }
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
-    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
-    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
-    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// <li><p><code>taskArn</code>: The task ARN.</p></li>
+    /// <li><p><code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p></li>
+    /// <li><p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
     pub fn set_protected_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>) -> Self {
         self.protected_tasks = input;
@@ -82,9 +82,9 @@ impl UpdateTaskProtectionOutputBuilder {
     }
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
-    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
-    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
-    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// <li><p><code>taskArn</code>: The task ARN.</p></li>
+    /// <li><p><code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p></li>
+    /// <li><p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
     pub fn get_protected_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>> {
         &self.protected_tasks

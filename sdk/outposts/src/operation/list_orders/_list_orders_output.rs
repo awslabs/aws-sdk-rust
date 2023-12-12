@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrdersOutput {
-    /// <p> Information about the orders. </p>
+    /// <p>Information about the orders.</p>
     pub orders: ::std::option::Option<::std::vec::Vec<crate::types::OrderSummary>>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListOrdersOutput {
-    /// <p> Information about the orders. </p>
+    /// <p>Information about the orders.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orders.is_none()`.
     pub fn orders(&self) -> &[crate::types::OrderSummary] {
@@ -46,19 +46,19 @@ impl ListOrdersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_orders`](Self::set_orders).
     ///
-    /// <p> Information about the orders. </p>
+    /// <p>Information about the orders.</p>
     pub fn orders(mut self, input: crate::types::OrderSummary) -> Self {
         let mut v = self.orders.unwrap_or_default();
         v.push(input);
         self.orders = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Information about the orders. </p>
+    /// <p>Information about the orders.</p>
     pub fn set_orders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrderSummary>>) -> Self {
         self.orders = input;
         self
     }
-    /// <p> Information about the orders. </p>
+    /// <p>Information about the orders.</p>
     pub fn get_orders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderSummary>> {
         &self.orders
     }

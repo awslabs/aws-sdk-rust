@@ -22,7 +22,7 @@ impl ListApplicationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListApplications`.
 ///
-/// <p>Lists the IDs of the applications that you are monitoring. </p>
+/// <p>Lists the IDs of the applications that you are monitoring.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

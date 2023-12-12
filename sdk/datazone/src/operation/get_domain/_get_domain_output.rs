@@ -15,7 +15,7 @@ pub struct GetDomainOutput {
     pub domain_execution_role: ::std::string::String,
     /// <p>The ARN of the specified Amazon DataZone domain.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of the specified Amazon DataZone domain.</p>
     pub status: crate::types::DomainStatus,
@@ -56,7 +56,7 @@ impl GetDomainOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
     }
@@ -198,17 +198,17 @@ impl GetDomainOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_identifier = input;
         self
     }
-    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
+    /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }

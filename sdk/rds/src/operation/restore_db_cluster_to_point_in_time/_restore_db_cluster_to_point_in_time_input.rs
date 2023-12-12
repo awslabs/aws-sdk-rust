@@ -7,16 +7,16 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
-    /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -24,7 +24,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -32,12 +32,12 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be before the latest restorable time for the DB instance</p> </li>
-    /// <li> <p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li>
-    /// <li> <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p> </li>
-    /// <li> <p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>
+    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
+    /// <li><p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
+    /// <li><p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
-    /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub restore_to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
@@ -51,7 +51,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     pub port: ::std::option::Option<i32>,
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the option group for the new DB cluster.</p>
@@ -60,15 +60,15 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li> <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p> </li>
-    /// <li> <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p> </li>
+    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li><p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -81,18 +81,18 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub backtrack_window: ::std::option::Option<i64>,
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>RDS for MySQL</b> </p>
+    /// <p><b>RDS for MySQL</b></p>
     /// <p>Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>RDS for PostgreSQL</b> </p>
+    /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
+    /// <p><b>Aurora PostgreSQL</b></p>
     /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -102,10 +102,10 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -144,13 +144,13 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub publicly_accessible: ::std::option::Option<bool>,
@@ -165,11 +165,11 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the source DB cluster from which to restore.</p>
@@ -181,9 +181,9 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -191,8 +191,8 @@ impl RestoreDbClusterToPointInTimeInput {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
-    /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -202,7 +202,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn source_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -212,12 +212,12 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be before the latest restorable time for the DB instance</p> </li>
-    /// <li> <p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li>
-    /// <li> <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p> </li>
-    /// <li> <p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>
+    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
+    /// <li><p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
+    /// <li><p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
-    /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn restore_to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.restore_to_time.as_ref()
@@ -237,7 +237,7 @@ impl RestoreDbClusterToPointInTimeInput {
     }
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
@@ -254,7 +254,7 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
         self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -265,8 +265,8 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li> <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p> </li>
-    /// <li> <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p> </li>
+    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li><p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -283,20 +283,20 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn backtrack_window(&self) -> ::std::option::Option<i64> {
         self.backtrack_window
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>RDS for MySQL</b> </p>
+    /// <p><b>RDS for MySQL</b></p>
     /// <p>Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>RDS for PostgreSQL</b> </p>
+    /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
+    /// <p><b>Aurora PostgreSQL</b></p>
     /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -310,10 +310,10 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -370,13 +370,13 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
@@ -397,11 +397,11 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
@@ -460,9 +460,9 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// This field is required.
@@ -473,9 +473,9 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -485,9 +485,9 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -495,8 +495,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
-    /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -506,8 +506,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
-    /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -517,8 +517,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
-    /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -528,7 +528,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -538,7 +538,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -548,7 +548,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -558,12 +558,12 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be before the latest restorable time for the DB instance</p> </li>
-    /// <li> <p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li>
-    /// <li> <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p> </li>
-    /// <li> <p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>
+    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
+    /// <li><p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
+    /// <li><p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
-    /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn restore_to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.restore_to_time = ::std::option::Option::Some(input);
@@ -573,12 +573,12 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be before the latest restorable time for the DB instance</p> </li>
-    /// <li> <p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li>
-    /// <li> <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p> </li>
-    /// <li> <p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>
+    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
+    /// <li><p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
+    /// <li><p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
-    /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_restore_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_to_time = input;
@@ -588,12 +588,12 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be before the latest restorable time for the DB instance</p> </li>
-    /// <li> <p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li>
-    /// <li> <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p> </li>
-    /// <li> <p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>
+    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
+    /// <li><p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
+    /// <li><p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
-    /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_restore_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.restore_to_time
@@ -643,7 +643,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
@@ -651,7 +651,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
@@ -659,7 +659,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_subnet_group_name
@@ -708,19 +708,19 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
@@ -729,8 +729,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li> <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p> </li>
-    /// <li> <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p> </li>
+    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li><p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -743,8 +743,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li> <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p> </li>
-    /// <li> <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p> </li>
+    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li><p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -757,8 +757,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li> <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p> </li>
-    /// <li> <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p> </li>
+    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li><p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -789,7 +789,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn backtrack_window(mut self, input: i64) -> Self {
@@ -800,7 +800,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
@@ -811,7 +811,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn get_backtrack_window(&self) -> &::std::option::Option<i64> {
@@ -822,13 +822,13 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>RDS for MySQL</b> </p>
+    /// <p><b>RDS for MySQL</b></p>
     /// <p>Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>RDS for PostgreSQL</b> </p>
+    /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
+    /// <p><b>Aurora PostgreSQL</b></p>
     /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -840,13 +840,13 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>RDS for MySQL</b> </p>
+    /// <p><b>RDS for MySQL</b></p>
     /// <p>Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>RDS for PostgreSQL</b> </p>
+    /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
+    /// <p><b>Aurora PostgreSQL</b></p>
     /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -856,13 +856,13 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
-    /// <p> <b>RDS for MySQL</b> </p>
+    /// <p><b>RDS for MySQL</b></p>
     /// <p>Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>RDS for PostgreSQL</b> </p>
+    /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
-    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
+    /// <p><b>Aurora PostgreSQL</b></p>
     /// <p>Possible value is <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -874,10 +874,10 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -888,10 +888,10 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -902,10 +902,10 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -1068,13 +1068,13 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -1087,13 +1087,13 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -1106,13 +1106,13 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -1161,11 +1161,11 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
@@ -1174,11 +1174,11 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
@@ -1187,11 +1187,11 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>IPV4</code> </p> </li>
-    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// <li><p><code>IPV4</code></p></li>
+    /// <li><p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type

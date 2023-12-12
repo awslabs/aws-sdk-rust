@@ -6,13 +6,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicy {
-    /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    /// <p>Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub transition_to_ia: ::std::option::Option<crate::types::TransitionToIaRules>,
     /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub transition_to_primary_storage_class: ::std::option::Option<crate::types::TransitionToPrimaryStorageClassRules>,
 }
 impl LifecyclePolicy {
-    /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    /// <p>Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn transition_to_ia(&self) -> ::std::option::Option<&crate::types::TransitionToIaRules> {
         self.transition_to_ia.as_ref()
     }
@@ -36,17 +36,17 @@ pub struct LifecyclePolicyBuilder {
     pub(crate) transition_to_primary_storage_class: ::std::option::Option<crate::types::TransitionToPrimaryStorageClassRules>,
 }
 impl LifecyclePolicyBuilder {
-    /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    /// <p>Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn transition_to_ia(mut self, input: crate::types::TransitionToIaRules) -> Self {
         self.transition_to_ia = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    /// <p>Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn set_transition_to_ia(mut self, input: ::std::option::Option<crate::types::TransitionToIaRules>) -> Self {
         self.transition_to_ia = input;
         self
     }
-    /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    /// <p>Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn get_transition_to_ia(&self) -> &::std::option::Option<crate::types::TransitionToIaRules> {
         &self.transition_to_ia
     }

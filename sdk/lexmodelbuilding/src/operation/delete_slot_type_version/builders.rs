@@ -22,7 +22,7 @@ impl DeleteSlotTypeVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSlotTypeVersion`.
 ///
-/// <p>Deletes a specific version of a slot type. To delete all versions of a slot type, use the <code>DeleteSlotType</code> operation. </p>
+/// <p>Deletes a specific version of a slot type. To delete all versions of a slot type, use the <code>DeleteSlotType</code> operation.</p>
 /// <p>This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSlotTypeVersionFluentBuilder {

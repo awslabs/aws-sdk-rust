@@ -125,21 +125,21 @@ impl DeleteRelationalDatabaseFluentBuilder {
     }
     /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
     /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn skip_final_snapshot(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_final_snapshot(input);
         self
     }
     /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
     /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_final_snapshot(input);
         self
     }
     /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
     /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_final_snapshot()
     }
@@ -148,8 +148,8 @@ impl DeleteRelationalDatabaseFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li><p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn final_relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_relational_database_snapshot_name(input.into());
@@ -160,8 +160,8 @@ impl DeleteRelationalDatabaseFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li><p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_final_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_relational_database_snapshot_name(input);
@@ -172,8 +172,8 @@ impl DeleteRelationalDatabaseFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li><p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn get_final_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_relational_database_snapshot_name()

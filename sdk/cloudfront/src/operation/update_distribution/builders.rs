@@ -24,15 +24,15 @@ impl UpdateDistributionInputBuilder {
 ///
 /// <p>Updates the configuration for a CloudFront distribution.</p>
 /// <p>The update process includes getting the current distribution configuration, updating it to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the updates.</p>
-/// <p> <b>To update a web distribution using the CloudFront API</b> </p>
+/// <p><b>To update a web distribution using the CloudFront API</b></p>
 /// <ol>
-/// <li> <p>Use <code>GetDistributionConfig</code> to get the current configuration, including the version identifier (<code>ETag</code>).</p> </li>
-/// <li> <p>Update the distribution configuration that was returned in the response. Note the following important requirements and restrictions:</p>
+/// <li><p>Use <code>GetDistributionConfig</code> to get the current configuration, including the version identifier (<code>ETag</code>).</p></li>
+/// <li><p>Update the distribution configuration that was returned in the response. Note the following important requirements and restrictions:</p>
 /// <ul>
-/// <li> <p>You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>, then remove the <code>ETag</code> field.)</p> </li>
-/// <li> <p>You can't change the value of <code>CallerReference</code>.</p> </li>
-/// </ul> </li>
-/// <li> <p>Submit an <code>UpdateDistribution</code> request, providing the distribution configuration. The new configuration replaces the existing configuration. The values that you specify in an <code>UpdateDistribution</code> request are not merged into your existing configuration. Make sure to include all fields: the ones that you modified and also the ones that you didn't.</p> </li>
+/// <li><p>You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>, then remove the <code>ETag</code> field.)</p></li>
+/// <li><p>You can't change the value of <code>CallerReference</code>.</p></li>
+/// </ul></li>
+/// <li><p>Submit an <code>UpdateDistribution</code> request, providing the distribution configuration. The new configuration replaces the existing configuration. The values that you specify in an <code>UpdateDistribution</code> request are not merged into your existing configuration. Make sure to include all fields: the ones that you modified and also the ones that you didn't.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDistributionFluentBuilder {

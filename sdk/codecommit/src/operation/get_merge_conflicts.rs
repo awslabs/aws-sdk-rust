@@ -268,7 +268,7 @@ pub enum GetMergeConflictsError {
     InvalidConflictResolutionStrategyException(crate::types::error::InvalidConflictResolutionStrategyException),
     /// <p>The specified continuation token is not valid.</p>
     InvalidContinuationTokenException(crate::types::error::InvalidContinuationTokenException),
-    /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID. </p>
+    /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.</p>
     InvalidDestinationCommitSpecifierException(crate::types::error::InvalidDestinationCommitSpecifierException),
     /// <p>The specified value for the number of conflict files to return is not valid.</p>
     InvalidMaxConflictFilesException(crate::types::error::InvalidMaxConflictFilesException),

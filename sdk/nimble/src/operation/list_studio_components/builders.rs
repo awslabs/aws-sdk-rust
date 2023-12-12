@@ -146,31 +146,31 @@ impl ListStudioComponentsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
     ///
-    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    /// <p>Filters the request to studio components that are in one of the given states.</p>
     pub fn states(mut self, input: crate::types::StudioComponentState) -> Self {
         self.inner = self.inner.states(input);
         self
     }
-    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    /// <p>Filters the request to studio components that are in one of the given states.</p>
     pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
-    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    /// <p>Filters the request to studio components that are in one of the given states.</p>
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>> {
         self.inner.get_states()
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_id()
     }

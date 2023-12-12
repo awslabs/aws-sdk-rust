@@ -22,7 +22,7 @@ impl DetectKeyPhrasesInputBuilder {
 }
 /// Fluent builder constructing a request to `DetectKeyPhrases`.
 ///
-/// <p>Detects the key noun phrases found in the text. </p>
+/// <p>Detects the key noun phrases found in the text.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectKeyPhrasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

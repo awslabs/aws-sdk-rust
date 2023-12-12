@@ -16,15 +16,15 @@ pub struct Site {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub site_arn: ::std::option::Option<::std::string::String>,
-    /// <p> Notes about a site. </p>
+    /// <p>Notes about a site.</p>
     pub notes: ::std::option::Option<::std::string::String>,
-    /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
+    /// <p>The ISO-3166 two-letter country code where the hardware is installed and powered on.</p>
     pub operating_address_country_code: ::std::option::Option<::std::string::String>,
-    /// <p> State or region where the hardware is installed and powered on. </p>
+    /// <p>State or region where the hardware is installed and powered on.</p>
     pub operating_address_state_or_region: ::std::option::Option<::std::string::String>,
-    /// <p> City where the hardware is installed and powered on. </p>
+    /// <p>City where the hardware is installed and powered on.</p>
     pub operating_address_city: ::std::option::Option<::std::string::String>,
-    /// <p> Information about the physical and logistical details for a rack at the site. </p>
+    /// <p>Information about the physical and logistical details for a rack at the site.</p>
     pub rack_physical_properties: ::std::option::Option<crate::types::RackPhysicalProperties>,
 }
 impl Site {
@@ -52,23 +52,23 @@ impl Site {
     pub fn site_arn(&self) -> ::std::option::Option<&str> {
         self.site_arn.as_deref()
     }
-    /// <p> Notes about a site. </p>
+    /// <p>Notes about a site.</p>
     pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
+    /// <p>The ISO-3166 two-letter country code where the hardware is installed and powered on.</p>
     pub fn operating_address_country_code(&self) -> ::std::option::Option<&str> {
         self.operating_address_country_code.as_deref()
     }
-    /// <p> State or region where the hardware is installed and powered on. </p>
+    /// <p>State or region where the hardware is installed and powered on.</p>
     pub fn operating_address_state_or_region(&self) -> ::std::option::Option<&str> {
         self.operating_address_state_or_region.as_deref()
     }
-    /// <p> City where the hardware is installed and powered on. </p>
+    /// <p>City where the hardware is installed and powered on.</p>
     pub fn operating_address_city(&self) -> ::std::option::Option<&str> {
         self.operating_address_city.as_deref()
     }
-    /// <p> Information about the physical and logistical details for a rack at the site. </p>
+    /// <p>Information about the physical and logistical details for a rack at the site.</p>
     pub fn rack_physical_properties(&self) -> ::std::option::Option<&crate::types::RackPhysicalProperties> {
         self.rack_physical_properties.as_ref()
     }
@@ -187,73 +187,73 @@ impl SiteBuilder {
     pub fn get_site_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.site_arn
     }
-    /// <p> Notes about a site. </p>
+    /// <p>Notes about a site.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Notes about a site. </p>
+    /// <p>Notes about a site.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }
-    /// <p> Notes about a site. </p>
+    /// <p>Notes about a site.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.notes
     }
-    /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
+    /// <p>The ISO-3166 two-letter country code where the hardware is installed and powered on.</p>
     pub fn operating_address_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operating_address_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
+    /// <p>The ISO-3166 two-letter country code where the hardware is installed and powered on.</p>
     pub fn set_operating_address_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operating_address_country_code = input;
         self
     }
-    /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
+    /// <p>The ISO-3166 two-letter country code where the hardware is installed and powered on.</p>
     pub fn get_operating_address_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.operating_address_country_code
     }
-    /// <p> State or region where the hardware is installed and powered on. </p>
+    /// <p>State or region where the hardware is installed and powered on.</p>
     pub fn operating_address_state_or_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operating_address_state_or_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> State or region where the hardware is installed and powered on. </p>
+    /// <p>State or region where the hardware is installed and powered on.</p>
     pub fn set_operating_address_state_or_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operating_address_state_or_region = input;
         self
     }
-    /// <p> State or region where the hardware is installed and powered on. </p>
+    /// <p>State or region where the hardware is installed and powered on.</p>
     pub fn get_operating_address_state_or_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.operating_address_state_or_region
     }
-    /// <p> City where the hardware is installed and powered on. </p>
+    /// <p>City where the hardware is installed and powered on.</p>
     pub fn operating_address_city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operating_address_city = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> City where the hardware is installed and powered on. </p>
+    /// <p>City where the hardware is installed and powered on.</p>
     pub fn set_operating_address_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operating_address_city = input;
         self
     }
-    /// <p> City where the hardware is installed and powered on. </p>
+    /// <p>City where the hardware is installed and powered on.</p>
     pub fn get_operating_address_city(&self) -> &::std::option::Option<::std::string::String> {
         &self.operating_address_city
     }
-    /// <p> Information about the physical and logistical details for a rack at the site. </p>
+    /// <p>Information about the physical and logistical details for a rack at the site.</p>
     pub fn rack_physical_properties(mut self, input: crate::types::RackPhysicalProperties) -> Self {
         self.rack_physical_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Information about the physical and logistical details for a rack at the site. </p>
+    /// <p>Information about the physical and logistical details for a rack at the site.</p>
     pub fn set_rack_physical_properties(mut self, input: ::std::option::Option<crate::types::RackPhysicalProperties>) -> Self {
         self.rack_physical_properties = input;
         self
     }
-    /// <p> Information about the physical and logistical details for a rack at the site. </p>
+    /// <p>Information about the physical and logistical details for a rack at the site.</p>
     pub fn get_rack_physical_properties(&self) -> &::std::option::Option<crate::types::RackPhysicalProperties> {
         &self.rack_physical_properties
     }

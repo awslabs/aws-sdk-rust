@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemInput {
-    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// <p>A percentage custom line item ARN to disassociate the resources from.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
-    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    /// <p>A list containing the ARNs of resources to be disassociated.</p>
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemInput {
-    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// <p>A percentage custom line item ARN to disassociate the resources from.</p>
     pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
-    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    /// <p>A list containing the ARNs of resources to be disassociated.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
     pub fn resource_arns(&self) -> &[::std::string::String] {
@@ -44,18 +44,18 @@ pub struct BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     pub(crate) billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
-    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// <p>A percentage custom line item ARN to disassociate the resources from.</p>
     /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// <p>A percentage custom line item ARN to disassociate the resources from.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
-    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// <p>A percentage custom line item ARN to disassociate the resources from.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_arn
     }
@@ -63,19 +63,19 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    /// <p>A list containing the ARNs of resources to be disassociated.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    /// <p>A list containing the ARNs of resources to be disassociated.</p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
-    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    /// <p>A list containing the ARNs of resources to be disassociated.</p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }

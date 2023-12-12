@@ -22,7 +22,7 @@ impl CreateCodeSigningConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCodeSigningConfig`.
 ///
-/// <p>Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code signing configuration</a> defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if deployment validation checks fail). </p>
+/// <p>Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code signing configuration</a> defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if deployment validation checks fail).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCodeSigningConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl CreateCodeSigningConfigFluentBuilder {
     pub fn get_allowed_publishers(&self) -> &::std::option::Option<crate::types::AllowedPublishers> {
         self.inner.get_allowed_publishers()
     }
-    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
+    /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
     pub fn code_signing_policies(mut self, input: crate::types::CodeSigningPolicies) -> Self {
         self.inner = self.inner.code_signing_policies(input);
         self
     }
-    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
+    /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
     pub fn set_code_signing_policies(mut self, input: ::std::option::Option<crate::types::CodeSigningPolicies>) -> Self {
         self.inner = self.inner.set_code_signing_policies(input);
         self
     }
-    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
+    /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
     pub fn get_code_signing_policies(&self) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
         self.inner.get_code_signing_policies()
     }

@@ -6,24 +6,24 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub source_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub target_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
-    /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
+    /// <p>KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Not currently supported.</p>
@@ -37,28 +37,28 @@ impl CopyDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn source_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.source_db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn target_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.target_db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
-    /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
+    /// <p>KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -100,10 +100,10 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     /// This field is required.
     pub fn source_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -112,10 +112,10 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_cluster_snapshot_identifier = input;
         self
@@ -123,21 +123,21 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
-    /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn get_source_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_snapshot_identifier
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     /// This field is required.
     pub fn target_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -146,11 +146,11 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn set_target_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_db_cluster_snapshot_identifier = input;
         self
@@ -158,18 +158,18 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn get_target_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_cluster_snapshot_identifier
     }
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
-    /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
+    /// <p>KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -178,7 +178,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
-    /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
+    /// <p>KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
@@ -187,7 +187,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
-    /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
+    /// <p>KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id

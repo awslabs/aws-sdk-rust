@@ -18,9 +18,9 @@ pub struct WorkspaceProperties {
     pub compute_type_name: ::std::option::Option<crate::types::Compute>,
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
     /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+    /// <li><p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
+    /// <li><p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <li><p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
@@ -52,9 +52,9 @@ impl WorkspaceProperties {
     }
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
     /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+    /// <li><p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
+    /// <li><p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <li><p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
     ///
@@ -169,9 +169,9 @@ impl WorkspacePropertiesBuilder {
     ///
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
     /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+    /// <li><p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
+    /// <li><p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <li><p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
@@ -182,9 +182,9 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
     /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+    /// <li><p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
+    /// <li><p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <li><p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
@@ -193,9 +193,9 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
     /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+    /// <li><p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
+    /// <li><p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <li><p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {

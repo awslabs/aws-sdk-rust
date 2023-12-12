@@ -123,19 +123,19 @@ impl ResetCacheParameterGroupFluentBuilder {
         self.inner.get_cache_parameter_group_name()
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.inner = self.inner.reset_all_parameters(input);
         self
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_all_parameters(input);
         self
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
         self.inner.get_reset_all_parameters()
     }

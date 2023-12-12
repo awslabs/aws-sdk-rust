@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnomalyMonitorOutput {
-    /// <p>A cost anomaly monitor ARN. </p>
+    /// <p>A cost anomaly monitor ARN.</p>
     pub monitor_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateAnomalyMonitorOutput {
-    /// <p>A cost anomaly monitor ARN. </p>
+    /// <p>A cost anomaly monitor ARN.</p>
     pub fn monitor_arn(&self) -> &str {
         use std::ops::Deref;
         self.monitor_arn.deref()
@@ -34,18 +34,18 @@ pub struct UpdateAnomalyMonitorOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAnomalyMonitorOutputBuilder {
-    /// <p>A cost anomaly monitor ARN. </p>
+    /// <p>A cost anomaly monitor ARN.</p>
     /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A cost anomaly monitor ARN. </p>
+    /// <p>A cost anomaly monitor ARN.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_arn = input;
         self
     }
-    /// <p>A cost anomaly monitor ARN. </p>
+    /// <p>A cost anomaly monitor ARN.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_arn
     }

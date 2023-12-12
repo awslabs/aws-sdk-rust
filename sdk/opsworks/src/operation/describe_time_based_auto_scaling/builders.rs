@@ -25,7 +25,7 @@ impl DescribeTimeBasedAutoScalingInputBuilder {
 /// <p>Describes time-based auto scaling configurations for specified instances.</p> <note>
 /// <p>You must specify at least one of the parameters.</p>
 /// </note>
-/// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+/// <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTimeBasedAutoScalingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

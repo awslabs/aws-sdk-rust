@@ -11,10 +11,10 @@ pub struct MacSecKey {
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
-    /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
+    /// <li><p><code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p></li>
+    /// <li><p><code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p></li>
+    /// <li><p><code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p></li>
+    /// <li><p><code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p></li>
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
@@ -32,10 +32,10 @@ impl MacSecKey {
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
-    /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
+    /// <li><p><code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p></li>
+    /// <li><p><code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p></li>
+    /// <li><p><code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p></li>
+    /// <li><p><code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
@@ -93,10 +93,10 @@ impl MacSecKeyBuilder {
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
-    /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
+    /// <li><p><code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p></li>
+    /// <li><p><code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p></li>
+    /// <li><p><code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p></li>
+    /// <li><p><code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p></li>
     /// </ul>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -105,10 +105,10 @@ impl MacSecKeyBuilder {
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
-    /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
+    /// <li><p><code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p></li>
+    /// <li><p><code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p></li>
+    /// <li><p><code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p></li>
+    /// <li><p><code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
@@ -117,10 +117,10 @@ impl MacSecKeyBuilder {
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
-    /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
-    /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
+    /// <li><p><code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p></li>
+    /// <li><p><code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p></li>
+    /// <li><p><code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p></li>
+    /// <li><p><code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state

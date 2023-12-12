@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSecurityControlsOutput {
-    /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
+    /// <p>An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>.</p>
     pub security_controls: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>,
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned.</p>
     pub unprocessed_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>,
     _request_id: Option<String>,
 }
 impl BatchGetSecurityControlsOutput {
-    /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
+    /// <p>An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_controls.is_none()`.
     pub fn security_controls(&self) -> &[crate::types::SecurityControl] {
         self.security_controls.as_deref().unwrap_or_default()
     }
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_ids.is_none()`.
     pub fn unprocessed_ids(&self) -> &[crate::types::UnprocessedSecurityControl] {
@@ -48,19 +48,19 @@ impl BatchGetSecurityControlsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_controls`](Self::set_security_controls).
     ///
-    /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
+    /// <p>An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>.</p>
     pub fn security_controls(mut self, input: crate::types::SecurityControl) -> Self {
         let mut v = self.security_controls.unwrap_or_default();
         v.push(input);
         self.security_controls = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
+    /// <p>An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>.</p>
     pub fn set_security_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>) -> Self {
         self.security_controls = input;
         self
     }
-    /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
+    /// <p>An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>.</p>
     pub fn get_security_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>> {
         &self.security_controls
     }
@@ -68,19 +68,19 @@ impl BatchGetSecurityControlsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unprocessed_ids`](Self::set_unprocessed_ids).
     ///
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned.</p>
     pub fn unprocessed_ids(mut self, input: crate::types::UnprocessedSecurityControl) -> Self {
         let mut v = self.unprocessed_ids.unwrap_or_default();
         v.push(input);
         self.unprocessed_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned.</p>
     pub fn set_unprocessed_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>) -> Self {
         self.unprocessed_ids = input;
         self
     }
-    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
+    /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned.</p>
     pub fn get_unprocessed_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>> {
         &self.unprocessed_ids
     }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallRuleGroupInput {
-    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete.</p>
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallRuleGroupInput {
-    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete.</p>
     pub fn firewall_rule_group_id(&self) -> ::std::option::Option<&str> {
         self.firewall_rule_group_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteFirewallRuleGroupInputBuilder {
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallRuleGroupInputBuilder {
-    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete.</p>
     /// This field is required.
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete.</p>
     pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_id = input;
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete.</p>
     pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_id
     }

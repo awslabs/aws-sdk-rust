@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetHealth {
     /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
-    /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
+    /// <p><code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code></p>
     pub state: ::std::option::Option<crate::types::TargetState>,
     /// <p>The reason for the current health <code>State</code> of the RDS Proxy target.</p>
     pub reason: ::std::option::Option<crate::types::TargetHealthReason>,
@@ -14,7 +14,7 @@ pub struct TargetHealth {
 }
 impl TargetHealth {
     /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
-    /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
+    /// <p><code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code></p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::TargetState> {
         self.state.as_ref()
     }
@@ -44,19 +44,19 @@ pub struct TargetHealthBuilder {
 }
 impl TargetHealthBuilder {
     /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
-    /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
+    /// <p><code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code></p>
     pub fn state(mut self, input: crate::types::TargetState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
-    /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
+    /// <p><code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code></p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TargetState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
-    /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
+    /// <p><code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code></p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TargetState> {
         &self.state
     }

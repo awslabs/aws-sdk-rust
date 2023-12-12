@@ -5,7 +5,7 @@
 pub struct GetFederationTokenOutput {
     /// <p>The credentials to use for federation.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
-    /// <p>The URL to sign into the user's instance. </p>
+    /// <p>The URL to sign into the user's instance.</p>
     pub sign_in_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl GetFederationTokenOutput {
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
-    /// <p>The URL to sign into the user's instance. </p>
+    /// <p>The URL to sign into the user's instance.</p>
     pub fn sign_in_url(&self) -> ::std::option::Option<&str> {
         self.sign_in_url.as_deref()
     }
@@ -68,17 +68,17 @@ impl GetFederationTokenOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
         &self.credentials
     }
-    /// <p>The URL to sign into the user's instance. </p>
+    /// <p>The URL to sign into the user's instance.</p>
     pub fn sign_in_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sign_in_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL to sign into the user's instance. </p>
+    /// <p>The URL to sign into the user's instance.</p>
     pub fn set_sign_in_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sign_in_url = input;
         self
     }
-    /// <p>The URL to sign into the user's instance. </p>
+    /// <p>The URL to sign into the user's instance.</p>
     pub fn get_sign_in_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.sign_in_url
     }

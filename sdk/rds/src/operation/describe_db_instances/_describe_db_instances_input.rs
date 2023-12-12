@@ -7,17 +7,17 @@ pub struct DescribeDbInstancesInput {
     /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DB instance.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported Filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
+    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p></li>
+    /// <li><p><code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p></li>
+    /// <li><p><code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
@@ -31,7 +31,7 @@ impl DescribeDbInstancesInput {
     /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DB instance.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -39,11 +39,11 @@ impl DescribeDbInstancesInput {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported Filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
+    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p></li>
+    /// <li><p><code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p></li>
+    /// <li><p><code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -81,7 +81,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DB instance.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
@@ -90,7 +90,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DB instance.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -99,7 +99,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DB instance.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
@@ -111,11 +111,11 @@ impl DescribeDbInstancesInputBuilder {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported Filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
+    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p></li>
+    /// <li><p><code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p></li>
+    /// <li><p><code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -126,11 +126,11 @@ impl DescribeDbInstancesInputBuilder {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported Filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
+    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p></li>
+    /// <li><p><code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p></li>
+    /// <li><p><code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -139,11 +139,11 @@ impl DescribeDbInstancesInputBuilder {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported Filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
+    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p></li>
+    /// <li><p><code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p></li>
+    /// <li><p><code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

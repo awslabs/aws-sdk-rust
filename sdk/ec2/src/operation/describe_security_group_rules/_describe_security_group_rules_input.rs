@@ -5,15 +5,15 @@
 pub struct DescribeSecurityGroupRulesInput {
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li>
-    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>group-id</code> - The ID of the security group.</p></li>
+    /// <li><p><code>security-group-rule-id</code> - The ID of the security group rule.</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
+    /// </key></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The IDs of the security group rules.</p>
@@ -28,15 +28,15 @@ pub struct DescribeSecurityGroupRulesInput {
 impl DescribeSecurityGroupRulesInput {
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li>
-    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>group-id</code> - The ID of the security group.</p></li>
+    /// <li><p><code>security-group-rule-id</code> - The ID of the security group rule.</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
+    /// </key></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -86,15 +86,15 @@ impl DescribeSecurityGroupRulesInputBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li>
-    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>group-id</code> - The ID of the security group.</p></li>
+    /// <li><p><code>security-group-rule-id</code> - The ID of the security group rule.</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
+    /// </key></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -104,15 +104,15 @@ impl DescribeSecurityGroupRulesInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li>
-    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>group-id</code> - The ID of the security group.</p></li>
+    /// <li><p><code>security-group-rule-id</code> - The ID of the security group rule.</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
+    /// </key></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -120,15 +120,15 @@ impl DescribeSecurityGroupRulesInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li>
-    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>group-id</code> - The ID of the security group.</p></li>
+    /// <li><p><code>security-group-rule-id</code> - The ID of the security group rule.</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
+    /// </key></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

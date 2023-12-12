@@ -12,7 +12,7 @@ pub struct LaunchConfig {
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The port forwarding configuration.</p>
     pub port_forwarding_config: ::std::option::Option<crate::types::PortForwardingConfig>,
-    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface.</p>
     pub stream_ui: bool,
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
@@ -35,7 +35,7 @@ impl LaunchConfig {
     pub fn port_forwarding_config(&self) -> ::std::option::Option<&crate::types::PortForwardingConfig> {
         self.port_forwarding_config.as_ref()
     }
-    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface.</p>
     pub fn stream_ui(&self) -> bool {
         self.stream_ui
     }
@@ -135,17 +135,17 @@ impl LaunchConfigBuilder {
     pub fn get_port_forwarding_config(&self) -> &::std::option::Option<crate::types::PortForwardingConfig> {
         &self.port_forwarding_config
     }
-    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface.</p>
     pub fn stream_ui(mut self, input: bool) -> Self {
         self.stream_ui = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface.</p>
     pub fn set_stream_ui(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stream_ui = input;
         self
     }
-    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface.</p>
     pub fn get_stream_ui(&self) -> &::std::option::Option<bool> {
         &self.stream_ui
     }

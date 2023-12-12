@@ -14,13 +14,13 @@ pub struct ReadSetFilter {
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The filter's end date.</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The read set source's sample ID. </p>
+    /// <p>The read set source's sample ID.</p>
     pub sample_id: ::std::option::Option<::std::string::String>,
-    /// <p> The read set source's subject ID. </p>
+    /// <p>The read set source's subject ID.</p>
     pub subject_id: ::std::option::Option<::std::string::String>,
-    /// <p> Where the source originated. </p>
+    /// <p>Where the source originated.</p>
     pub generated_from: ::std::option::Option<::std::string::String>,
-    /// <p> The creation type of the read set. </p>
+    /// <p>The creation type of the read set.</p>
     pub creation_type: ::std::option::Option<crate::types::CreationType>,
 }
 impl ReadSetFilter {
@@ -44,19 +44,19 @@ impl ReadSetFilter {
     pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
-    /// <p> The read set source's sample ID. </p>
+    /// <p>The read set source's sample ID.</p>
     pub fn sample_id(&self) -> ::std::option::Option<&str> {
         self.sample_id.as_deref()
     }
-    /// <p> The read set source's subject ID. </p>
+    /// <p>The read set source's subject ID.</p>
     pub fn subject_id(&self) -> ::std::option::Option<&str> {
         self.subject_id.as_deref()
     }
-    /// <p> Where the source originated. </p>
+    /// <p>Where the source originated.</p>
     pub fn generated_from(&self) -> ::std::option::Option<&str> {
         self.generated_from.as_deref()
     }
-    /// <p> The creation type of the read set. </p>
+    /// <p>The creation type of the read set.</p>
     pub fn creation_type(&self) -> ::std::option::Option<&crate::types::CreationType> {
         self.creation_type.as_ref()
     }
@@ -153,59 +153,59 @@ impl ReadSetFilterBuilder {
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_before
     }
-    /// <p> The read set source's sample ID. </p>
+    /// <p>The read set source's sample ID.</p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The read set source's sample ID. </p>
+    /// <p>The read set source's sample ID.</p>
     pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_id = input;
         self
     }
-    /// <p> The read set source's sample ID. </p>
+    /// <p>The read set source's sample ID.</p>
     pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_id
     }
-    /// <p> The read set source's subject ID. </p>
+    /// <p>The read set source's subject ID.</p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The read set source's subject ID. </p>
+    /// <p>The read set source's subject ID.</p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_id = input;
         self
     }
-    /// <p> The read set source's subject ID. </p>
+    /// <p>The read set source's subject ID.</p>
     pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subject_id
     }
-    /// <p> Where the source originated. </p>
+    /// <p>Where the source originated.</p>
     pub fn generated_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_from = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Where the source originated. </p>
+    /// <p>Where the source originated.</p>
     pub fn set_generated_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_from = input;
         self
     }
-    /// <p> Where the source originated. </p>
+    /// <p>Where the source originated.</p>
     pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.generated_from
     }
-    /// <p> The creation type of the read set. </p>
+    /// <p>The creation type of the read set.</p>
     pub fn creation_type(mut self, input: crate::types::CreationType) -> Self {
         self.creation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The creation type of the read set. </p>
+    /// <p>The creation type of the read set.</p>
     pub fn set_creation_type(mut self, input: ::std::option::Option<crate::types::CreationType>) -> Self {
         self.creation_type = input;
         self
     }
-    /// <p> The creation type of the read set. </p>
+    /// <p>The creation type of the read set.</p>
     pub fn get_creation_type(&self) -> &::std::option::Option<crate::types::CreationType> {
         &self.creation_type
     }

@@ -6,8 +6,8 @@
 pub struct VdmAttributes {
     /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// <li><p><code>ENABLED</code> – Amazon SES enables VDM for your account.</p></li>
+    /// <li><p><code>DISABLED</code> – Amazon SES disables VDM for your account.</p></li>
     /// </ul>
     pub vdm_enabled: crate::types::FeatureStatus,
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
@@ -18,8 +18,8 @@ pub struct VdmAttributes {
 impl VdmAttributes {
     /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// <li><p><code>ENABLED</code> – Amazon SES enables VDM for your account.</p></li>
+    /// <li><p><code>DISABLED</code> – Amazon SES disables VDM for your account.</p></li>
     /// </ul>
     pub fn vdm_enabled(&self) -> &crate::types::FeatureStatus {
         &self.vdm_enabled
@@ -51,8 +51,8 @@ pub struct VdmAttributesBuilder {
 impl VdmAttributesBuilder {
     /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// <li><p><code>ENABLED</code> – Amazon SES enables VDM for your account.</p></li>
+    /// <li><p><code>DISABLED</code> – Amazon SES disables VDM for your account.</p></li>
     /// </ul>
     /// This field is required.
     pub fn vdm_enabled(mut self, input: crate::types::FeatureStatus) -> Self {
@@ -61,8 +61,8 @@ impl VdmAttributesBuilder {
     }
     /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// <li><p><code>ENABLED</code> – Amazon SES enables VDM for your account.</p></li>
+    /// <li><p><code>DISABLED</code> – Amazon SES disables VDM for your account.</p></li>
     /// </ul>
     pub fn set_vdm_enabled(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.vdm_enabled = input;
@@ -70,8 +70,8 @@ impl VdmAttributesBuilder {
     }
     /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// <li><p><code>ENABLED</code> – Amazon SES enables VDM for your account.</p></li>
+    /// <li><p><code>DISABLED</code> – Amazon SES disables VDM for your account.</p></li>
     /// </ul>
     pub fn get_vdm_enabled(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
         &self.vdm_enabled

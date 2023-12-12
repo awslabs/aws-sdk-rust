@@ -109,11 +109,11 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,11 +121,11 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -133,11 +133,11 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {

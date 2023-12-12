@@ -22,10 +22,10 @@ impl CreateStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateStream`.
 ///
-/// <p>Creates a new Kinesis video stream. </p>
-/// <p>When you create a new stream, Kinesis Video Streams assigns it a version number. When you change the stream's metadata, Kinesis Video Streams updates the version. </p>
-/// <p> <code>CreateStream</code> is an asynchronous operation.</p>
-/// <p>For information about how the service works, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How it Works</a>. </p>
+/// <p>Creates a new Kinesis video stream.</p>
+/// <p>When you create a new stream, Kinesis Video Streams assigns it a version number. When you change the stream's metadata, Kinesis Video Streams updates the version.</p>
+/// <p><code>CreateStream</code> is an asynchronous operation.</p>
+/// <p>For information about how the service works, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How it Works</a>.</p>
 /// <p>You must have permissions for the <code>KinesisVideo:CreateStream</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStreamFluentBuilder {
@@ -112,21 +112,21 @@ impl CreateStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p>The name of the device that is writing to the stream.</p> <note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_name(input.into());
         self
     }
-    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p>The name of the device that is writing to the stream.</p> <note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_name(input);
         self
     }
-    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p>The name of the device that is writing to the stream.</p> <note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,21 +171,21 @@ impl CreateStreamFluentBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
     /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
     /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
     /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
     /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
     /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }

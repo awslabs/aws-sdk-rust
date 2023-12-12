@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRegistrationAttachmentsOutput {
-    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments. </p>
+    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
     pub registration_attachments: ::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRegistrationAttachmentsOutput {
-    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments. </p>
+    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
     pub fn registration_attachments(&self) -> &[crate::types::RegistrationAttachmentsInformation] {
         use std::ops::Deref;
         self.registration_attachments.deref()
@@ -45,14 +45,14 @@ impl DescribeRegistrationAttachmentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_registration_attachments`](Self::set_registration_attachments).
     ///
-    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments. </p>
+    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
     pub fn registration_attachments(mut self, input: crate::types::RegistrationAttachmentsInformation) -> Self {
         let mut v = self.registration_attachments.unwrap_or_default();
         v.push(input);
         self.registration_attachments = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments. </p>
+    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
     pub fn set_registration_attachments(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>>,
@@ -60,7 +60,7 @@ impl DescribeRegistrationAttachmentsOutputBuilder {
         self.registration_attachments = input;
         self
     }
-    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments. </p>
+    /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
     pub fn get_registration_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>> {
         &self.registration_attachments
     }

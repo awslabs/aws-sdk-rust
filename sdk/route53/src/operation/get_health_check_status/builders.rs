@@ -22,7 +22,7 @@ impl GetHealthCheckStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `GetHealthCheckStatus`.
 ///
-/// <p>Gets status of a specified health check. </p> <important>
+/// <p>Gets status of a specified health check.</p> <important>
 /// <p>This API is intended for use during development to diagnose behavior. It doesn’t support production use-cases with high query rates that require immediate and actionable responses.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

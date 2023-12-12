@@ -22,7 +22,7 @@ impl UpdatePricingRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePricingRule`.
 ///
-/// <p> Updates an existing pricing rule. </p>
+/// <p>Updates an existing pricing rule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePricingRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,87 +108,87 @@ impl UpdatePricingRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing rule to update.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing rule to update.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing rule to update.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
+    /// <p>The new name of the pricing rule. The name must be unique to each pricing rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
+    /// <p>The new name of the pricing rule. The name must be unique to each pricing rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
+    /// <p>The new name of the pricing rule. The name must be unique to each pricing rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> The new description for the pricing rule. </p>
+    /// <p>The new description for the pricing rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The new description for the pricing rule. </p>
+    /// <p>The new description for the pricing rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> The new description for the pricing rule. </p>
+    /// <p>The new description for the pricing rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p> The new pricing rule type. </p>
+    /// <p>The new pricing rule type.</p>
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p> The new pricing rule type. </p>
+    /// <p>The new pricing rule type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PricingRuleType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p> The new pricing rule type. </p>
+    /// <p>The new pricing rule type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PricingRuleType> {
         self.inner.get_type()
     }
-    /// <p> The new modifier to show pricing plan rates as a percentage. </p>
+    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
         self.inner = self.inner.modifier_percentage(input);
         self
     }
-    /// <p> The new modifier to show pricing plan rates as a percentage. </p>
+    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
     pub fn set_modifier_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_modifier_percentage(input);
         self
     }
-    /// <p> The new modifier to show pricing plan rates as a percentage. </p>
+    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
     pub fn get_modifier_percentage(&self) -> &::std::option::Option<f64> {
         self.inner.get_modifier_percentage()
     }
-    /// <p> The set of tiering configurations for the pricing rule. </p>
+    /// <p>The set of tiering configurations for the pricing rule.</p>
     pub fn tiering(mut self, input: crate::types::UpdateTieringInput) -> Self {
         self.inner = self.inner.tiering(input);
         self
     }
-    /// <p> The set of tiering configurations for the pricing rule. </p>
+    /// <p>The set of tiering configurations for the pricing rule.</p>
     pub fn set_tiering(mut self, input: ::std::option::Option<crate::types::UpdateTieringInput>) -> Self {
         self.inner = self.inner.set_tiering(input);
         self
     }
-    /// <p> The set of tiering configurations for the pricing rule. </p>
+    /// <p>The set of tiering configurations for the pricing rule.</p>
     pub fn get_tiering(&self) -> &::std::option::Option<crate::types::UpdateTieringInput> {
         self.inner.get_tiering()
     }

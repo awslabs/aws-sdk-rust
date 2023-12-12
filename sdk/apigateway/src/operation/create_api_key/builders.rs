@@ -22,7 +22,7 @@ impl CreateApiKeyInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateApiKey`.
 ///
-/// <p>Create an ApiKey resource. </p>
+/// <p>Create an ApiKey resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApiKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

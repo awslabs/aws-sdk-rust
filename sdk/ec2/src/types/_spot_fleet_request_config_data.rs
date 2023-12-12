@@ -31,7 +31,7 @@ pub struct SpotFleetRequestConfigData {
     /// <p>Spot Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
-    /// <p>Default: <code>lowestPrice</code> </p>
+    /// <p>Default: <code>lowestPrice</code></p>
     pub allocation_strategy: ::std::option::Option<crate::types::AllocationStrategy>,
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
     pub on_demand_allocation_strategy: ::std::option::Option<crate::types::OnDemandAllocationStrategy>,
@@ -122,7 +122,7 @@ impl SpotFleetRequestConfigData {
     /// <p>Spot Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
-    /// <p>Default: <code>lowestPrice</code> </p>
+    /// <p>Default: <code>lowestPrice</code></p>
     pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::AllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
@@ -309,7 +309,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>Spot Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
-    /// <p>Default: <code>lowestPrice</code> </p>
+    /// <p>Default: <code>lowestPrice</code></p>
     pub fn allocation_strategy(mut self, input: crate::types::AllocationStrategy) -> Self {
         self.allocation_strategy = ::std::option::Option::Some(input);
         self
@@ -341,7 +341,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>Spot Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
-    /// <p>Default: <code>lowestPrice</code> </p>
+    /// <p>Default: <code>lowestPrice</code></p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::AllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
@@ -373,7 +373,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>Spot Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, Spot Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
-    /// <p>Default: <code>lowestPrice</code> </p>
+    /// <p>Default: <code>lowestPrice</code></p>
     pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::AllocationStrategy> {
         &self.allocation_strategy
     }

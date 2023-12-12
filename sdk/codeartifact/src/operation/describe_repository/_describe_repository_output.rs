@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRepositoryOutput {
-    /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
+    /// <p>A <code>RepositoryDescription</code> object that contains the requested repository information.</p>
     pub repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,
 }
 impl DescribeRepositoryOutput {
-    /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
+    /// <p>A <code>RepositoryDescription</code> object that contains the requested repository information.</p>
     pub fn repository(&self) -> ::std::option::Option<&crate::types::RepositoryDescription> {
         self.repository.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeRepositoryOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeRepositoryOutputBuilder {
-    /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
+    /// <p>A <code>RepositoryDescription</code> object that contains the requested repository information.</p>
     pub fn repository(mut self, input: crate::types::RepositoryDescription) -> Self {
         self.repository = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
+    /// <p>A <code>RepositoryDescription</code> object that contains the requested repository information.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<crate::types::RepositoryDescription>) -> Self {
         self.repository = input;
         self
     }
-    /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
+    /// <p>A <code>RepositoryDescription</code> object that contains the requested repository information.</p>
     pub fn get_repository(&self) -> &::std::option::Option<crate::types::RepositoryDescription> {
         &self.repository
     }

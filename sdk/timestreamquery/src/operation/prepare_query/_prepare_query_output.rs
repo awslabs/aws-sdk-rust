@@ -5,9 +5,9 @@
 pub struct PrepareQueryOutput {
     /// <p>The query string that you want prepare.</p>
     pub query_string: ::std::string::String,
-    /// <p>A list of SELECT clause columns of the submitted query string. </p>
+    /// <p>A list of SELECT clause columns of the submitted query string.</p>
     pub columns: ::std::vec::Vec<crate::types::SelectColumn>,
-    /// <p>A list of parameters used in the submitted query string. </p>
+    /// <p>A list of parameters used in the submitted query string.</p>
     pub parameters: ::std::vec::Vec<crate::types::ParameterMapping>,
     _request_id: Option<String>,
 }
@@ -17,12 +17,12 @@ impl PrepareQueryOutput {
         use std::ops::Deref;
         self.query_string.deref()
     }
-    /// <p>A list of SELECT clause columns of the submitted query string. </p>
+    /// <p>A list of SELECT clause columns of the submitted query string.</p>
     pub fn columns(&self) -> &[crate::types::SelectColumn] {
         use std::ops::Deref;
         self.columns.deref()
     }
-    /// <p>A list of parameters used in the submitted query string. </p>
+    /// <p>A list of parameters used in the submitted query string.</p>
     pub fn parameters(&self) -> &[crate::types::ParameterMapping] {
         use std::ops::Deref;
         self.parameters.deref()
@@ -79,19 +79,19 @@ impl PrepareQueryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
     ///
-    /// <p>A list of SELECT clause columns of the submitted query string. </p>
+    /// <p>A list of SELECT clause columns of the submitted query string.</p>
     pub fn columns(mut self, input: crate::types::SelectColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
         v.push(input);
         self.columns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of SELECT clause columns of the submitted query string. </p>
+    /// <p>A list of SELECT clause columns of the submitted query string.</p>
     pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>>) -> Self {
         self.columns = input;
         self
     }
-    /// <p>A list of SELECT clause columns of the submitted query string. </p>
+    /// <p>A list of SELECT clause columns of the submitted query string.</p>
     pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>> {
         &self.columns
     }
@@ -99,19 +99,19 @@ impl PrepareQueryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>A list of parameters used in the submitted query string. </p>
+    /// <p>A list of parameters used in the submitted query string.</p>
     pub fn parameters(mut self, input: crate::types::ParameterMapping) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
         self.parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of parameters used in the submitted query string. </p>
+    /// <p>A list of parameters used in the submitted query string.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p>A list of parameters used in the submitted query string. </p>
+    /// <p>A list of parameters used in the submitted query string.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>> {
         &self.parameters
     }

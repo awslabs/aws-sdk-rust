@@ -127,39 +127,39 @@ impl SearchPlaceIndexForPositionFluentBuilder {
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn position(mut self, input: f64) -> Self {
         self.inner = self.inner.position(input);
         self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_position(input);
         self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_position()
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code> </p>
+    /// <p>Default value: <code>50</code></p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code> </p>
+    /// <p>Default value: <code>50</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code> </p>
+    /// <p>Default value: <code>50</code></p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

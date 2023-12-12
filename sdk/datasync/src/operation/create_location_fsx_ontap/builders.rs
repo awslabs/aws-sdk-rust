@@ -130,8 +130,8 @@ impl CreateLocationFsxOntapFluentBuilder {
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
     /// <ul>
-    /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
-    /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
+    /// <li><p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
+    /// <li><p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,8 +141,8 @@ impl CreateLocationFsxOntapFluentBuilder {
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
     /// <ul>
-    /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
-    /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
+    /// <li><p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
+    /// <li><p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -152,8 +152,8 @@ impl CreateLocationFsxOntapFluentBuilder {
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
     /// <ul>
-    /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
-    /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
+    /// <li><p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
+    /// <li><p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

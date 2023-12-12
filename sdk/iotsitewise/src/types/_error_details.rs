@@ -8,7 +8,7 @@ pub struct ErrorDetails {
     pub code: crate::types::ErrorCode,
     /// <p>The error message.</p>
     pub message: ::std::string::String,
-    /// <p> A list of detailed errors. </p>
+    /// <p>A list of detailed errors.</p>
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::DetailedError>>,
 }
 impl ErrorDetails {
@@ -21,7 +21,7 @@ impl ErrorDetails {
         use std::ops::Deref;
         self.message.deref()
     }
-    /// <p> A list of detailed errors. </p>
+    /// <p>A list of detailed errors.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
     pub fn details(&self) -> &[crate::types::DetailedError] {
@@ -78,19 +78,19 @@ impl ErrorDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_details`](Self::set_details).
     ///
-    /// <p> A list of detailed errors. </p>
+    /// <p>A list of detailed errors.</p>
     pub fn details(mut self, input: crate::types::DetailedError) -> Self {
         let mut v = self.details.unwrap_or_default();
         v.push(input);
         self.details = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of detailed errors. </p>
+    /// <p>A list of detailed errors.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedError>>) -> Self {
         self.details = input;
         self
     }
-    /// <p> A list of detailed errors. </p>
+    /// <p>A list of detailed errors.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedError>> {
         &self.details
     }

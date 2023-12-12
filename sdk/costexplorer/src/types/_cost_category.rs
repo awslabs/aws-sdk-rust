@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategory {
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub cost_category_arn: ::std::string::String,
     /// <p>The effective start date of your Cost Category.</p>
     pub effective_start: ::std::string::String,
@@ -14,17 +14,17 @@ pub struct CostCategory {
     pub name: ::std::string::String,
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub rule_version: crate::types::CostCategoryRuleVersion,
-    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
+    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.</p>
     pub rules: ::std::vec::Vec<crate::types::CostCategoryRule>,
-    /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules that are used to allocate your charges between your Cost Category values.</p>
     pub split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
-    /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
+    /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
     pub processing_status: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
     /// <p>The default value for the cost category.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl CostCategory {
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub fn cost_category_arn(&self) -> &str {
         use std::ops::Deref;
         self.cost_category_arn.deref()
@@ -47,18 +47,18 @@ impl CostCategory {
     pub fn rule_version(&self) -> &crate::types::CostCategoryRuleVersion {
         &self.rule_version
     }
-    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
+    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.</p>
     pub fn rules(&self) -> &[crate::types::CostCategoryRule] {
         use std::ops::Deref;
         self.rules.deref()
     }
-    /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules that are used to allocate your charges between your Cost Category values.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.split_charge_rules.is_none()`.
     pub fn split_charge_rules(&self) -> &[crate::types::CostCategorySplitChargeRule] {
         self.split_charge_rules.as_deref().unwrap_or_default()
     }
-    /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
+    /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_status.is_none()`.
     pub fn processing_status(&self) -> &[crate::types::CostCategoryProcessingStatus] {
@@ -91,18 +91,18 @@ pub struct CostCategoryBuilder {
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }
 impl CostCategoryBuilder {
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     /// This field is required.
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
-    /// <p>The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cost_category_arn
     }
@@ -169,19 +169,19 @@ impl CostCategoryBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
+    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.</p>
     pub fn rules(mut self, input: crate::types::CostCategoryRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
         self.rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
+    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.</p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
         self.rules = input;
         self
     }
-    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
+    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.</p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
         &self.rules
     }
@@ -189,19 +189,19 @@ impl CostCategoryBuilder {
     ///
     /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
     ///
-    /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules that are used to allocate your charges between your Cost Category values.</p>
     pub fn split_charge_rules(mut self, input: crate::types::CostCategorySplitChargeRule) -> Self {
         let mut v = self.split_charge_rules.unwrap_or_default();
         v.push(input);
         self.split_charge_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules that are used to allocate your charges between your Cost Category values.</p>
     pub fn set_split_charge_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
         self.split_charge_rules = input;
         self
     }
-    /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules that are used to allocate your charges between your Cost Category values.</p>
     pub fn get_split_charge_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
         &self.split_charge_rules
     }
@@ -209,19 +209,19 @@ impl CostCategoryBuilder {
     ///
     /// To override the contents of this collection use [`set_processing_status`](Self::set_processing_status).
     ///
-    /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
+    /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
     pub fn processing_status(mut self, input: crate::types::CostCategoryProcessingStatus) -> Self {
         let mut v = self.processing_status.unwrap_or_default();
         v.push(input);
         self.processing_status = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
+    /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
     pub fn set_processing_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>) -> Self {
         self.processing_status = input;
         self
     }
-    /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
+    /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
     pub fn get_processing_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>> {
         &self.processing_status
     }

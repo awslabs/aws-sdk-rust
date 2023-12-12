@@ -13,7 +13,7 @@ pub struct ListCommandsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>,
 }
 impl ListCommandsInput {
@@ -35,7 +35,7 @@ impl ListCommandsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::CommandFilter] {
@@ -126,19 +126,19 @@ impl ListCommandsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn filters(mut self, input: crate::types::CommandFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
         &self.filters
     }

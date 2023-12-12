@@ -29,42 +29,42 @@ impl CreateExplainabilityInputBuilder {
 /// <p>Explainability helps you better understand how the attributes in your datasets impact forecast. Amazon Forecast uses a metric called Impact scores to quantify the relative impact of each attribute and determine whether they increase or decrease forecast values.</p>
 /// <p>To enable Forecast Explainability, your predictor must include at least one of the following: related time series, item metadata, or additional datasets like Holidays and the Weather Index.</p>
 /// <p>CreateExplainability accepts either a Predictor ARN or Forecast ARN. To receive aggregated Impact scores for all time series and time points in your datasets, provide a Predictor ARN. To receive Impact scores for specific time series and time points, provide a Forecast ARN.</p>
-/// <p> <b>CreateExplainability with a Predictor ARN</b> </p> <note>
+/// <p><b>CreateExplainability with a Predictor ARN</b></p> <note>
 /// <p>You can only have one Explainability resource per predictor. If you already enabled <code>ExplainPredictor</code> in <code>CreateAutoPredictor</code>, that predictor already has an Explainability resource.</p>
 /// </note>
 /// <p>The following parameters are required when providing a Predictor ARN:</p>
 /// <ul>
-/// <li> <p> <code>ExplainabilityName</code> - A unique name for the Explainability.</p> </li>
-/// <li> <p> <code>ResourceArn</code> - The Arn of the predictor.</p> </li>
-/// <li> <p> <code>TimePointGranularity</code> - Must be set to “ALL”.</p> </li>
-/// <li> <p> <code>TimeSeriesGranularity</code> - Must be set to “ALL”.</p> </li>
+/// <li><p><code>ExplainabilityName</code> - A unique name for the Explainability.</p></li>
+/// <li><p><code>ResourceArn</code> - The Arn of the predictor.</p></li>
+/// <li><p><code>TimePointGranularity</code> - Must be set to “ALL”.</p></li>
+/// <li><p><code>TimeSeriesGranularity</code> - Must be set to “ALL”.</p></li>
 /// </ul>
 /// <p>Do not specify a value for the following parameters:</p>
 /// <ul>
-/// <li> <p> <code>DataSource</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.</p> </li>
-/// <li> <p> <code>Schema</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.</p> </li>
-/// <li> <p> <code>StartDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.</p> </li>
-/// <li> <p> <code>EndDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.</p> </li>
+/// <li><p><code>DataSource</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.</p></li>
+/// <li><p><code>Schema</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.</p></li>
+/// <li><p><code>StartDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.</p></li>
+/// <li><p><code>EndDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.</p></li>
 /// </ul>
-/// <p> <b>CreateExplainability with a Forecast ARN</b> </p> <note>
+/// <p><b>CreateExplainability with a Forecast ARN</b></p> <note>
 /// <p>You can specify a maximum of 50 time series and 500 time points.</p>
 /// </note>
 /// <p>The following parameters are required when providing a Predictor ARN:</p>
 /// <ul>
-/// <li> <p> <code>ExplainabilityName</code> - A unique name for the Explainability.</p> </li>
-/// <li> <p> <code>ResourceArn</code> - The Arn of the forecast.</p> </li>
-/// <li> <p> <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p> </li>
-/// <li> <p> <code>TimeSeriesGranularity</code> - Either “ALL” or “SPECIFIC”.</p> </li>
+/// <li><p><code>ExplainabilityName</code> - A unique name for the Explainability.</p></li>
+/// <li><p><code>ResourceArn</code> - The Arn of the forecast.</p></li>
+/// <li><p><code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p></li>
+/// <li><p><code>TimeSeriesGranularity</code> - Either “ALL” or “SPECIFIC”.</p></li>
 /// </ul>
 /// <p>If you set TimeSeriesGranularity to “SPECIFIC”, you must also provide the following:</p>
 /// <ul>
-/// <li> <p> <code>DataSource</code> - The S3 location of the CSV file specifying your time series.</p> </li>
-/// <li> <p> <code>Schema</code> - The Schema defines the attributes and attribute types listed in the Data Source.</p> </li>
+/// <li><p><code>DataSource</code> - The S3 location of the CSV file specifying your time series.</p></li>
+/// <li><p><code>Schema</code> - The Schema defines the attributes and attribute types listed in the Data Source.</p></li>
 /// </ul>
 /// <p>If you set TimePointGranularity to “SPECIFIC”, you must also provide the following:</p>
 /// <ul>
-/// <li> <p> <code>StartDateTime</code> - The first timestamp in the range of time points.</p> </li>
-/// <li> <p> <code>EndDateTime</code> - The last timestamp in the range of time points.</p> </li>
+/// <li><p><code>StartDateTime</code> - The first timestamp in the range of time points.</p></li>
+/// <li><p><code>EndDateTime</code> - The last timestamp in the range of time points.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExplainabilityFluentBuilder {
@@ -276,12 +276,12 @@ impl CreateExplainabilityFluentBuilder {
     /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <li><p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
+    /// <li><p>Maximum number of tags per resource: 50.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
+    /// <li><p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -290,12 +290,12 @@ impl CreateExplainabilityFluentBuilder {
     /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <li><p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
+    /// <li><p>Maximum number of tags per resource: 50.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
+    /// <li><p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -304,12 +304,12 @@ impl CreateExplainabilityFluentBuilder {
     /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <li><p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
+    /// <li><p>Maximum number of tags per resource: 50.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
+    /// <li><p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()

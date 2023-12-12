@@ -8,7 +8,7 @@ pub struct DeleteResourcePolicyStatementInput {
     /// <p>The name of the statement (SID) to delete from the policy.</p>
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement.</p>
     pub expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyStatementInput {
@@ -21,7 +21,7 @@ impl DeleteResourcePolicyStatementInput {
         self.statement_id.as_deref()
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement.</p>
     pub fn expected_revision_id(&self) -> ::std::option::Option<&str> {
         self.expected_revision_id.as_deref()
     }
@@ -73,19 +73,19 @@ impl DeleteResourcePolicyStatementInputBuilder {
         &self.statement_id
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement.</p>
     pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement.</p>
     pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_revision_id = input;
         self
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement.</p>
     pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_revision_id
     }

@@ -8,7 +8,7 @@ pub struct FileSystemDataSource {
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
     pub file_system_access_mode: ::std::option::Option<crate::types::FileSystemAccessMode>,
-    /// <p>The file system type. </p>
+    /// <p>The file system type.</p>
     pub file_system_type: ::std::option::Option<crate::types::FileSystemType>,
     /// <p>The full path to the directory to associate with the channel.</p>
     pub directory_path: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl FileSystemDataSource {
     pub fn file_system_access_mode(&self) -> ::std::option::Option<&crate::types::FileSystemAccessMode> {
         self.file_system_access_mode.as_ref()
     }
-    /// <p>The file system type. </p>
+    /// <p>The file system type.</p>
     pub fn file_system_type(&self) -> ::std::option::Option<&crate::types::FileSystemType> {
         self.file_system_type.as_ref()
     }
@@ -78,18 +78,18 @@ impl FileSystemDataSourceBuilder {
     pub fn get_file_system_access_mode(&self) -> &::std::option::Option<crate::types::FileSystemAccessMode> {
         &self.file_system_access_mode
     }
-    /// <p>The file system type. </p>
+    /// <p>The file system type.</p>
     /// This field is required.
     pub fn file_system_type(mut self, input: crate::types::FileSystemType) -> Self {
         self.file_system_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The file system type. </p>
+    /// <p>The file system type.</p>
     pub fn set_file_system_type(mut self, input: ::std::option::Option<crate::types::FileSystemType>) -> Self {
         self.file_system_type = input;
         self
     }
-    /// <p>The file system type. </p>
+    /// <p>The file system type.</p>
     pub fn get_file_system_type(&self) -> &::std::option::Option<crate::types::FileSystemType> {
         &self.file_system_type
     }

@@ -22,7 +22,7 @@ impl CreateFlowInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFlow`.
 ///
-/// <p> Enables your application to create a new flow using Amazon AppFlow. You must create a connector profile before calling this API. Please note that the Request Syntax below shows syntax for multiple destinations, however, you can only transfer data to one item in this list at a time. Amazon AppFlow does not currently support flows to multiple destinations at once. </p>
+/// <p>Enables your application to create a new flow using Amazon AppFlow. You must create a connector profile before calling this API. Please note that the Request Syntax below shows syntax for multiple destinations, however, you can only transfer data to one item in this list at a time. Amazon AppFlow does not currently support flows to multiple destinations at once.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl CreateFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_name(input.into());
         self
     }
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_name(input);
         self
     }
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_name()
     }
-    /// <p> A description of the flow you want to create. </p>
+    /// <p>A description of the flow you want to create.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> A description of the flow you want to create. </p>
+    /// <p>A description of the flow you want to create.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> A description of the flow you want to create. </p>
+    /// <p>A description of the flow you want to create.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_arn(input.into());
         self
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
     pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_arn(input);
         self
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
     pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_arn()
     }
-    /// <p> The trigger settings that determine how and when the flow runs. </p>
+    /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
         self.inner = self.inner.trigger_config(input);
         self
     }
-    /// <p> The trigger settings that determine how and when the flow runs. </p>
+    /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub fn set_trigger_config(mut self, input: ::std::option::Option<crate::types::TriggerConfig>) -> Self {
         self.inner = self.inner.set_trigger_config(input);
         self
     }
-    /// <p> The trigger settings that determine how and when the flow runs. </p>
+    /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub fn get_trigger_config(&self) -> &::std::option::Option<crate::types::TriggerConfig> {
         self.inner.get_trigger_config()
     }
-    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
+    /// <p>The configuration that controls how Amazon AppFlow retrieves data from the source connector.</p>
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
         self.inner = self.inner.source_flow_config(input);
         self
     }
-    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
+    /// <p>The configuration that controls how Amazon AppFlow retrieves data from the source connector.</p>
     pub fn set_source_flow_config(mut self, input: ::std::option::Option<crate::types::SourceFlowConfig>) -> Self {
         self.inner = self.inner.set_source_flow_config(input);
         self
     }
-    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
+    /// <p>The configuration that controls how Amazon AppFlow retrieves data from the source connector.</p>
     pub fn get_source_flow_config(&self) -> &::std::option::Option<crate::types::SourceFlowConfig> {
         self.inner.get_source_flow_config()
     }
@@ -182,17 +182,17 @@ impl CreateFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
-    /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
+    /// <p>The configuration that controls how Amazon AppFlow places data in the destination connector.</p>
     pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
         self.inner = self.inner.destination_flow_config_list(input);
         self
     }
-    /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
+    /// <p>The configuration that controls how Amazon AppFlow places data in the destination connector.</p>
     pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
         self.inner = self.inner.set_destination_flow_config_list(input);
         self
     }
-    /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
+    /// <p>The configuration that controls how Amazon AppFlow places data in the destination connector.</p>
     pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
         self.inner.get_destination_flow_config_list()
     }
@@ -200,17 +200,17 @@ impl CreateFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
     ///
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         self.inner = self.inner.tasks(input);
         self
     }
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
     pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
     }
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
     pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
         self.inner.get_tasks()
     }
@@ -218,17 +218,17 @@ impl CreateFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags used to organize, track, or control access for your flow. </p>
+    /// <p>The tags used to organize, track, or control access for your flow.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p> The tags used to organize, track, or control access for your flow. </p>
+    /// <p>The tags used to organize, track, or control access for your flow.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> The tags used to organize, track, or control access for your flow. </p>
+    /// <p>The tags used to organize, track, or control access for your flow.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

@@ -246,7 +246,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutCompliance
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutComplianceItemsError {
-    /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types. </p>
+    /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types.</p>
     ComplianceTypeCountLimitExceededException(crate::types::error::ComplianceTypeCountLimitExceededException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),

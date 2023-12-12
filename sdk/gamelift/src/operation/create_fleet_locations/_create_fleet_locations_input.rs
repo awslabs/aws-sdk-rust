@@ -5,7 +5,7 @@
 pub struct CreateFleetLocationsInput {
     /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
 }
 impl CreateFleetLocationsInput {
@@ -13,7 +13,7 @@ impl CreateFleetLocationsInput {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
     pub fn locations(&self) -> &[crate::types::LocationConfiguration] {
@@ -54,19 +54,19 @@ impl CreateFleetLocationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
     ///
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn locations(mut self, input: crate::types::LocationConfiguration) -> Self {
         let mut v = self.locations.unwrap_or_default();
         v.push(input);
         self.locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>) -> Self {
         self.locations = input;
         self
     }
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         &self.locations
     }

@@ -15,11 +15,11 @@ pub struct CreatePresignedDomainUrlInput {
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The landing page that the user is directed to when accessing the presigned URL. Using this value, users can access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>studio::relative/path</code>: Directs users to the relative path in Studio.</p> </li>
-    /// <li> <p> <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p> </li>
-    /// <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p> </li>
-    /// <li> <p> <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p> </li>
-    /// <li> <p> <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p> </li>
+    /// <li><p><code>studio::relative/path</code>: Directs users to the relative path in Studio.</p></li>
+    /// <li><p><code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p></li>
+    /// <li><p><code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p></li>
+    /// <li><p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
+    /// <li><p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub landing_uri: ::std::option::Option<::std::string::String>,
 }
@@ -46,11 +46,11 @@ impl CreatePresignedDomainUrlInput {
     }
     /// <p>The landing page that the user is directed to when accessing the presigned URL. Using this value, users can access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>studio::relative/path</code>: Directs users to the relative path in Studio.</p> </li>
-    /// <li> <p> <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p> </li>
-    /// <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p> </li>
-    /// <li> <p> <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p> </li>
-    /// <li> <p> <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p> </li>
+    /// <li><p><code>studio::relative/path</code>: Directs users to the relative path in Studio.</p></li>
+    /// <li><p><code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p></li>
+    /// <li><p><code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p></li>
+    /// <li><p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
+    /// <li><p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub fn landing_uri(&self) -> ::std::option::Option<&str> {
         self.landing_uri.as_deref()
@@ -149,11 +149,11 @@ impl CreatePresignedDomainUrlInputBuilder {
     }
     /// <p>The landing page that the user is directed to when accessing the presigned URL. Using this value, users can access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>studio::relative/path</code>: Directs users to the relative path in Studio.</p> </li>
-    /// <li> <p> <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p> </li>
-    /// <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p> </li>
-    /// <li> <p> <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p> </li>
-    /// <li> <p> <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p> </li>
+    /// <li><p><code>studio::relative/path</code>: Directs users to the relative path in Studio.</p></li>
+    /// <li><p><code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p></li>
+    /// <li><p><code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p></li>
+    /// <li><p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
+    /// <li><p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub fn landing_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.landing_uri = ::std::option::Option::Some(input.into());
@@ -161,11 +161,11 @@ impl CreatePresignedDomainUrlInputBuilder {
     }
     /// <p>The landing page that the user is directed to when accessing the presigned URL. Using this value, users can access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>studio::relative/path</code>: Directs users to the relative path in Studio.</p> </li>
-    /// <li> <p> <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p> </li>
-    /// <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p> </li>
-    /// <li> <p> <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p> </li>
-    /// <li> <p> <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p> </li>
+    /// <li><p><code>studio::relative/path</code>: Directs users to the relative path in Studio.</p></li>
+    /// <li><p><code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p></li>
+    /// <li><p><code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p></li>
+    /// <li><p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
+    /// <li><p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub fn set_landing_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.landing_uri = input;
@@ -173,11 +173,11 @@ impl CreatePresignedDomainUrlInputBuilder {
     }
     /// <p>The landing page that the user is directed to when accessing the presigned URL. Using this value, users can access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>studio::relative/path</code>: Directs users to the relative path in Studio.</p> </li>
-    /// <li> <p> <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p> </li>
-    /// <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p> </li>
-    /// <li> <p> <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p> </li>
-    /// <li> <p> <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p> </li>
+    /// <li><p><code>studio::relative/path</code>: Directs users to the relative path in Studio.</p></li>
+    /// <li><p><code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic application.</p></li>
+    /// <li><p><code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p></li>
+    /// <li><p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
+    /// <li><p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub fn get_landing_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.landing_uri

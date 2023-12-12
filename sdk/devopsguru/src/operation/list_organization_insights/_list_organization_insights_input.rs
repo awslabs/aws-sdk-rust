@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrganizationInsightsInput {
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
     pub status_filter: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
     pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,7 +15,7 @@ pub struct ListOrganizationInsightsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOrganizationInsightsInput {
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
     pub fn status_filter(&self) -> ::std::option::Option<&crate::types::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
@@ -23,7 +23,7 @@ impl ListOrganizationInsightsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
@@ -58,18 +58,18 @@ pub struct ListOrganizationInsightsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOrganizationInsightsInputBuilder {
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
     /// This field is required.
     pub fn status_filter(mut self, input: crate::types::ListInsightsStatusFilter) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
         self.status_filter = input;
         self
     }
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
         &self.status_filter
     }
@@ -91,19 +91,19 @@ impl ListOrganizationInsightsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }

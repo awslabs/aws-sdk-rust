@@ -2,12 +2,12 @@
 
 /// <p>Filter used in the request. Supported filter keys depend on the API operation that includes the filter. API operations that use <code>MaintenanceWindowFilter&gt;</code> include the following:</p>
 /// <ul>
-/// <li> <p> <code>DescribeMaintenanceWindowExecutions</code> </p> </li>
-/// <li> <p> <code>DescribeMaintenanceWindowExecutionTaskInvocations</code> </p> </li>
-/// <li> <p> <code>DescribeMaintenanceWindowExecutionTasks</code> </p> </li>
-/// <li> <p> <code>DescribeMaintenanceWindows</code> </p> </li>
-/// <li> <p> <code>DescribeMaintenanceWindowTargets</code> </p> </li>
-/// <li> <p> <code>DescribeMaintenanceWindowTasks</code> </p> </li>
+/// <li><p><code>DescribeMaintenanceWindowExecutions</code></p></li>
+/// <li><p><code>DescribeMaintenanceWindowExecutionTaskInvocations</code></p></li>
+/// <li><p><code>DescribeMaintenanceWindowExecutionTasks</code></p></li>
+/// <li><p><code>DescribeMaintenanceWindows</code></p></li>
+/// <li><p><code>DescribeMaintenanceWindowTargets</code></p></li>
+/// <li><p><code>DescribeMaintenanceWindowTasks</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

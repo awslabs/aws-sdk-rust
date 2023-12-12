@@ -8,11 +8,11 @@ pub struct UpdateDistributionWithStagingConfigInput {
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
     pub staging_distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p> <code>
+    /// <p><code>
     /// <primary etag>
     /// ,
     /// <staging etag></staging>
-    /// </primary></code> </p>
+    /// </primary></code></p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDistributionWithStagingConfigInput {
@@ -25,11 +25,11 @@ impl UpdateDistributionWithStagingConfigInput {
         self.staging_distribution_id.as_deref()
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p> <code>
+    /// <p><code>
     /// <primary etag>
     /// ,
     /// <staging etag></staging>
-    /// </primary></code> </p>
+    /// </primary></code></p>
     pub fn if_match(&self) -> ::std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -80,31 +80,31 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
         &self.staging_distribution_id
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p> <code>
+    /// <p><code>
     /// <primary etag>
     /// ,
     /// <staging etag></staging>
-    /// </primary></code> </p>
+    /// </primary></code></p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p> <code>
+    /// <p><code>
     /// <primary etag>
     /// ,
     /// <staging etag></staging>
-    /// </primary></code> </p>
+    /// </primary></code></p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p> <code>
+    /// <p><code>
     /// <primary etag>
     /// ,
     /// <staging etag></staging>
-    /// </primary></code> </p>
+    /// </primary></code></p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }

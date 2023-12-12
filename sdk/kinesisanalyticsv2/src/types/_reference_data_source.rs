@@ -6,7 +6,7 @@
 pub struct ReferenceDataSource {
     /// <p>The name of the in-application table to create.</p>
     pub table_name: ::std::string::String,
-    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
+    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
     pub s3_reference_data_source: ::std::option::Option<crate::types::S3ReferenceDataSource>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub reference_schema: ::std::option::Option<crate::types::SourceSchema>,
@@ -17,7 +17,7 @@ impl ReferenceDataSource {
         use std::ops::Deref;
         self.table_name.deref()
     }
-    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
+    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
     pub fn s3_reference_data_source(&self) -> ::std::option::Option<&crate::types::S3ReferenceDataSource> {
         self.s3_reference_data_source.as_ref()
     }
@@ -57,17 +57,17 @@ impl ReferenceDataSourceBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
-    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
+    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
     pub fn s3_reference_data_source(mut self, input: crate::types::S3ReferenceDataSource) -> Self {
         self.s3_reference_data_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
+    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
     pub fn set_s3_reference_data_source(mut self, input: ::std::option::Option<crate::types::S3ReferenceDataSource>) -> Self {
         self.s3_reference_data_source = input;
         self
     }
-    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
+    /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
     pub fn get_s3_reference_data_source(&self) -> &::std::option::Option<crate::types::S3ReferenceDataSource> {
         &self.s3_reference_data_source
     }

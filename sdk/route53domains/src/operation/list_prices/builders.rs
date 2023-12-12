@@ -24,11 +24,11 @@ impl ListPricesInputBuilder {
 ///
 /// <p>Lists the following prices for either all the TLDs supported by Route&nbsp;53, or the specified TLD:</p>
 /// <ul>
-/// <li> <p>Registration</p> </li>
-/// <li> <p>Transfer</p> </li>
-/// <li> <p>Owner change</p> </li>
-/// <li> <p>Domain renewal</p> </li>
-/// <li> <p>Domain restoration</p> </li>
+/// <li><p>Registration</p></li>
+/// <li><p>Transfer</p></li>
+/// <li><p>Owner change</p></li>
+/// <li><p>Domain renewal</p></li>
+/// <li><p>Domain restoration</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPricesFluentBuilder {
@@ -138,19 +138,19 @@ impl ListPricesFluentBuilder {
     pub fn get_tld(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tld()
     }
-    /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+    /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
-    /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+    /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+    /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_marker()

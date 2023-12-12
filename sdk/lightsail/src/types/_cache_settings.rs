@@ -18,17 +18,17 @@ pub struct CacheSettings {
     /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p></li>
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
     pub allowed_http_methods: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP method responses that are cached by your distribution.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
     /// </ul>
     pub cached_http_methods: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded.</p>
@@ -58,9 +58,9 @@ impl CacheSettings {
     /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p></li>
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
     pub fn allowed_http_methods(&self) -> ::std::option::Option<&str> {
@@ -69,8 +69,8 @@ impl CacheSettings {
     /// <p>The HTTP method responses that are cached by your distribution.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
     /// </ul>
     pub fn cached_http_methods(&self) -> ::std::option::Option<&str> {
         self.cached_http_methods.as_deref()
@@ -166,9 +166,9 @@ impl CacheSettingsBuilder {
     /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p></li>
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
     pub fn allowed_http_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,9 +178,9 @@ impl CacheSettingsBuilder {
     /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p></li>
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
     pub fn set_allowed_http_methods(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -190,9 +190,9 @@ impl CacheSettingsBuilder {
     /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p></li>
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
     pub fn get_allowed_http_methods(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +201,8 @@ impl CacheSettingsBuilder {
     /// <p>The HTTP method responses that are cached by your distribution.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
     /// </ul>
     pub fn cached_http_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cached_http_methods = ::std::option::Option::Some(input.into());
@@ -211,8 +211,8 @@ impl CacheSettingsBuilder {
     /// <p>The HTTP method responses that are cached by your distribution.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
     /// </ul>
     pub fn set_cached_http_methods(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cached_http_methods = input;
@@ -221,8 +221,8 @@ impl CacheSettingsBuilder {
     /// <p>The HTTP method responses that are cached by your distribution.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
-    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
+    /// <li><p><code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p></li>
+    /// <li><p><code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
     /// </ul>
     pub fn get_cached_http_methods(&self) -> &::std::option::Option<::std::string::String> {
         &self.cached_http_methods

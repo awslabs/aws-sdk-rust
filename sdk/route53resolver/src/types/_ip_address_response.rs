@@ -10,7 +10,7 @@ pub struct IpAddressResponse {
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
     pub ip: ::std::option::Option<::std::string::String>,
-    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    /// <p>One IPv6 address that the Resolver endpoint uses for DNS queries.</p>
     pub ipv6: ::std::option::Option<::std::string::String>,
     /// <p>A status code that gives the current status of the request.</p>
     pub status: ::std::option::Option<crate::types::IpAddressStatus>,
@@ -34,7 +34,7 @@ impl IpAddressResponse {
     pub fn ip(&self) -> ::std::option::Option<&str> {
         self.ip.as_deref()
     }
-    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    /// <p>One IPv6 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn ipv6(&self) -> ::std::option::Option<&str> {
         self.ipv6.as_deref()
     }
@@ -118,17 +118,17 @@ impl IpAddressResponseBuilder {
     pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip
     }
-    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    /// <p>One IPv6 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    /// <p>One IPv6 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
     }
-    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    /// <p>One IPv6 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6
     }

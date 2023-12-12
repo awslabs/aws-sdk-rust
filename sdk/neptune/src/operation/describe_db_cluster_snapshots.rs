@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeDBClu
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotsError {
-    /// <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
+    /// <p><i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

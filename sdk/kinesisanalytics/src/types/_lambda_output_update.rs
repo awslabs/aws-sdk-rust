@@ -5,20 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
     /// </note>
     pub resource_arn_update: ::std::option::Option<::std::string::String>,
-    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl LambdaOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
     /// </note>
     pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
         self.resource_arn_update.as_deref()
     }
-    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn role_arn_update(&self) -> ::std::option::Option<&str> {
         self.role_arn_update.as_deref()
     }
@@ -39,36 +39,36 @@ pub struct LambdaOutputUpdateBuilder {
 }
 impl LambdaOutputUpdateBuilder {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
     /// </note>
     pub fn resource_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
     /// </note>
     pub fn set_resource_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn_update = input;
         self
     }
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p> <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
     /// </note>
     pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn_update
     }
-    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn role_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn_update = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn set_role_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn_update = input;
         self
     }
-    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn get_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn_update
     }

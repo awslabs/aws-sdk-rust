@@ -262,13 +262,13 @@ pub enum StartTextTranslationJobError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
+    /// <p>The request that you made is not valid. Check your request to determine why it's not valid and then retry the request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
+    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>. </p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     UnsupportedLanguagePairException(crate::types::error::UnsupportedLanguagePairException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

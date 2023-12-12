@@ -22,7 +22,7 @@ impl CreateDevEnvironmentInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDevEnvironment`.
 ///
-/// <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment that you can use to quickly work on the code stored in the source repositories of your project. </p> <note>
+/// <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment that you can use to quickly work on the code stored in the source repositories of your project.</p> <note>
 /// <p>When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these defaults apply to a Dev Environment created programmatically.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -142,17 +142,17 @@ impl CreateDevEnvironmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
     ///
-    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
+    /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
     pub fn repositories(mut self, input: crate::types::RepositoryInput) -> Self {
         self.inner = self.inner.repositories(input);
         self
     }
-    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
+    /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
     pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>) -> Self {
         self.inner = self.inner.set_repositories(input);
         self
     }
-    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
+    /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
     pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
         self.inner.get_repositories()
     }
@@ -189,36 +189,36 @@ impl CreateDevEnvironmentFluentBuilder {
     /// To override the contents of this collection use [`set_ides`](Self::set_ides).
     ///
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
     pub fn ides(mut self, input: crate::types::IdeConfiguration) -> Self {
         self.inner = self.inner.ides(input);
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
     pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
         self.inner = self.inner.set_ides(input);
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
     pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         self.inner.get_ides()
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.inner = self.inner.instance_type(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         self.inner.get_instance_type()
     }
@@ -236,21 +236,21 @@ impl CreateDevEnvironmentFluentBuilder {
     pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_inactivity_timeout_minutes()
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>Information about the amount of storage allocated to the Dev Environment.</p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn persistent_storage(mut self, input: crate::types::PersistentStorageConfiguration) -> Self {
         self.inner = self.inner.persistent_storage(input);
         self
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>Information about the amount of storage allocated to the Dev Environment.</p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn set_persistent_storage(mut self, input: ::std::option::Option<crate::types::PersistentStorageConfiguration>) -> Self {
         self.inner = self.inner.set_persistent_storage(input);
         self
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>Information about the amount of storage allocated to the Dev Environment.</p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn get_persistent_storage(&self) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {

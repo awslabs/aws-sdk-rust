@@ -2,15 +2,15 @@
 
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
+/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
 /// </note>
-/// <p>In a <code>GetByteMatchSet</code> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>. </p>
+/// <p>In a <code>GetByteMatchSet</code> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>.</p>
 /// <p>A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ByteMatchSet {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
-    /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub byte_match_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct ByteMatchSet {
 }
 impl ByteMatchSet {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
-    /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn byte_match_set_id(&self) -> &str {
         use std::ops::Deref;
         self.byte_match_set_id.deref()
@@ -51,20 +51,20 @@ pub struct ByteMatchSetBuilder {
 }
 impl ByteMatchSetBuilder {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
-    /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     /// This field is required.
     pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
-    /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.byte_match_set_id = input;
         self
     }
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
-    /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn get_byte_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.byte_match_set_id
     }

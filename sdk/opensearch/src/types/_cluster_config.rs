@@ -26,7 +26,7 @@ pub struct ClusterConfig {
     pub warm_count: ::std::option::Option<i32>,
     /// <p>Container for cold storage configuration options.</p>
     pub cold_storage_options: ::std::option::Option<crate::types::ColdStorageOptions>,
-    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.</p>
     pub multi_az_with_standby_enabled: ::std::option::Option<bool>,
 }
 impl ClusterConfig {
@@ -74,7 +74,7 @@ impl ClusterConfig {
     pub fn cold_storage_options(&self) -> ::std::option::Option<&crate::types::ColdStorageOptions> {
         self.cold_storage_options.as_ref()
     }
-    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.</p>
     pub fn multi_az_with_standby_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_az_with_standby_enabled
     }
@@ -258,17 +258,17 @@ impl ClusterConfigBuilder {
     pub fn get_cold_storage_options(&self) -> &::std::option::Option<crate::types::ColdStorageOptions> {
         &self.cold_storage_options
     }
-    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.</p>
     pub fn multi_az_with_standby_enabled(mut self, input: bool) -> Self {
         self.multi_az_with_standby_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.</p>
     pub fn set_multi_az_with_standby_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az_with_standby_enabled = input;
         self
     }
-    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+    /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.</p>
     pub fn get_multi_az_with_standby_enabled(&self) -> &::std::option::Option<bool> {
         &self.multi_az_with_standby_enabled
     }

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`dns_target(String)`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput::dns_target): <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
     ///   - [`service_arn(String)`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput::service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
     ///   - [`custom_domain(Option<CustomDomain>)`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput::custom_domain): <p>A description of the domain name that's being disassociated.</p>
-    ///   - [`vpc_dns_targets(Vec::<VpcDnsTarget>)`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    ///   - [`vpc_dns_targets(Vec::<VpcDnsTarget>)`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC.</p>
     /// - On failure, responds with [`SdkError<DisassociateCustomDomainError>`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainError)
     pub fn disassociate_custom_domain(&self) -> crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainFluentBuilder {
         crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainFluentBuilder::new(self.handle.clone())

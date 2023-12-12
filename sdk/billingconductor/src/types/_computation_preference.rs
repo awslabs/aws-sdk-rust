@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputationPreference {
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group.</p>
     pub pricing_plan_arn: ::std::string::String,
 }
 impl ComputationPreference {
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn pricing_plan_arn(&self) -> &str {
         use std::ops::Deref;
         self.pricing_plan_arn.deref()
@@ -28,18 +28,18 @@ pub struct ComputationPreferenceBuilder {
     pub(crate) pricing_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ComputationPreferenceBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group.</p>
     /// This field is required.
     pub fn pricing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn set_pricing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_plan_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn get_pricing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pricing_plan_arn
     }

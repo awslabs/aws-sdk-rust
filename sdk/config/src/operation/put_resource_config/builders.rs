@@ -22,9 +22,9 @@ impl PutResourceConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `PutResourceConfig`.
 ///
-/// <p>Records the configuration state for the resource provided in the request. The configuration state of a resource is represented in Config as Configuration Items. Once this API records the configuration item, you can retrieve the list of configuration items for the custom resource type using existing Config APIs. </p> <note>
+/// <p>Records the configuration state for the resource provided in the request. The configuration state of a resource is represented in Config as Configuration Items. Once this API records the configuration item, you can retrieve the list of configuration items for the custom resource type using existing Config APIs.</p> <note>
 /// <p>The custom resource type must be registered with CloudFormation. This API accepts the configuration item registered with CloudFormation.</p>
-/// <p>When you call this API, Config only stores configuration state of the resource provided in the request. This API does not change or remediate the configuration of the resource. </p>
+/// <p>When you call this API, Config only stores configuration state of the resource provided in the request. This API does not change or remediate the configuration of the resource.</p>
 /// <p>Write-only schema properites are not recorded as part of the published configuration item.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -112,21 +112,21 @@ impl PutResourceConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {

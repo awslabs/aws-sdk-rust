@@ -5,10 +5,10 @@
 pub struct SendEventInput {
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
-    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
+    /// <li><p>application/vnd.amazonaws.connect.event.typing</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.read</p></li>
     /// </ul>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
@@ -22,10 +22,10 @@ pub struct SendEventInput {
 impl SendEventInput {
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
-    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
+    /// <li><p>application/vnd.amazonaws.connect.event.typing</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.read</p></li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
@@ -63,10 +63,10 @@ pub struct SendEventInputBuilder {
 impl SendEventInputBuilder {
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
-    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
+    /// <li><p>application/vnd.amazonaws.connect.event.typing</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.read</p></li>
     /// </ul>
     /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,10 +75,10 @@ impl SendEventInputBuilder {
     }
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
-    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
+    /// <li><p>application/vnd.amazonaws.connect.event.typing</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.read</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
@@ -86,10 +86,10 @@ impl SendEventInputBuilder {
     }
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
-    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
+    /// <li><p>application/vnd.amazonaws.connect.event.typing</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
+    /// <li><p>application/vnd.amazonaws.connect.event.message.read</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type

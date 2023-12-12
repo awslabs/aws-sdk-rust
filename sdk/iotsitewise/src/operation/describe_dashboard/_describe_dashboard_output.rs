@@ -6,7 +6,7 @@ pub struct DescribeDashboardOutput {
     /// <p>The ID of the dashboard.</p>
     pub dashboard_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code></p>
     pub dashboard_arn: ::std::string::String,
     /// <p>The name of the dashboard.</p>
     pub dashboard_name: ::std::string::String,
@@ -29,7 +29,7 @@ impl DescribeDashboardOutput {
         self.dashboard_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code></p>
     pub fn dashboard_arn(&self) -> &str {
         use std::ops::Deref;
         self.dashboard_arn.deref()
@@ -105,20 +105,20 @@ impl DescribeDashboardOutputBuilder {
         &self.dashboard_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code></p>
     /// This field is required.
     pub fn dashboard_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code></p>
     pub fn set_dashboard_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_arn = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code></p>
     pub fn get_dashboard_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_arn
     }

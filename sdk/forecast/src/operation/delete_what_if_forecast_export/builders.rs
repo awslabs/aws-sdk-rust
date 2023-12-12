@@ -22,7 +22,7 @@ impl DeleteWhatIfForecastExportInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWhatIfForecastExport`.
 ///
-/// <p>Deletes a what-if forecast export created using the <code>CreateWhatIfForecastExport</code> operation. You can delete only what-if forecast exports that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfForecastExport</code> operation. </p>
+/// <p>Deletes a what-if forecast export created using the <code>CreateWhatIfForecastExport</code> operation. You can delete only what-if forecast exports that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfForecastExport</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWhatIfForecastExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeEvent
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeEventSubscriptionsError {
-    /// <p>The subscription name does not exist. </p>
+    /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::types::error::SubscriptionNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

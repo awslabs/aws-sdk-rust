@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifySnapsho
 pub enum ModifySnapshotScheduleError {
     /// <p>The schedule you submitted isn't valid.</p>
     InvalidScheduleFault(crate::types::error::InvalidScheduleFault),
-    /// <p>We could not find the specified snapshot schedule. </p>
+    /// <p>We could not find the specified snapshot schedule.</p>
     SnapshotScheduleNotFoundFault(crate::types::error::SnapshotScheduleNotFoundFault),
     /// <p>The specified snapshot schedule is already being updated.</p>
     SnapshotScheduleUpdateInProgressFault(crate::types::error::SnapshotScheduleUpdateInProgressFault),

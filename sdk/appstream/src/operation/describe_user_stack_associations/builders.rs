@@ -24,8 +24,8 @@ impl DescribeUserStackAssociationsInputBuilder {
 ///
 /// <p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p>
 /// <ul>
-/// <li> <p>The stack name</p> </li>
-/// <li> <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p> </li>
+/// <li><p>The stack name</p></li>
+/// <li><p>The user name (email address of the user associated with the stack) and the authentication type for the user</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeUserStackAssociationsFluentBuilder {

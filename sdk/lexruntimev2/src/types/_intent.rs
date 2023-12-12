@@ -8,7 +8,7 @@ pub struct Intent {
     pub name: ::std::string::String,
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,
-    /// <p>Contains fulfillment information for the intent. </p>
+    /// <p>Contains fulfillment information for the intent.</p>
     pub state: ::std::option::Option<crate::types::IntentState>,
     /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
     pub confirmation_state: ::std::option::Option<crate::types::ConfirmationState>,
@@ -23,7 +23,7 @@ impl Intent {
     pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Slot>> {
         self.slots.as_ref()
     }
-    /// <p>Contains fulfillment information for the intent. </p>
+    /// <p>Contains fulfillment information for the intent.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::IntentState> {
         self.state.as_ref()
     }
@@ -84,17 +84,17 @@ impl IntentBuilder {
     pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>> {
         &self.slots
     }
-    /// <p>Contains fulfillment information for the intent. </p>
+    /// <p>Contains fulfillment information for the intent.</p>
     pub fn state(mut self, input: crate::types::IntentState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains fulfillment information for the intent. </p>
+    /// <p>Contains fulfillment information for the intent.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IntentState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Contains fulfillment information for the intent. </p>
+    /// <p>Contains fulfillment information for the intent.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IntentState> {
         &self.state
     }

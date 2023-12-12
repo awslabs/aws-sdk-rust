@@ -281,19 +281,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListApplicati
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListApplicationsError {
-    /// <p>The user does not have sufficient access to perform this action. </p>
+    /// <p>The user does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An unexpected error occurred while processing the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request references a resource that does not exist. </p>
+    /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request would cause a service quota to be exceeded. </p>
+    /// <p>The request would cause a service quota to be exceeded.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>Request was denied because the request was throttled. </p>
+    /// <p>Request was denied because the request was throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input does not satisfy the constraints specified by an Amazon Web Service. </p>
+    /// <p>The input does not satisfy the constraints specified by an Amazon Web Service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAggregationAuthorizationOutput {
-    /// <p>Returns an AggregationAuthorization object. </p>
+    /// <p>Returns an AggregationAuthorization object.</p>
     pub aggregation_authorization: ::std::option::Option<crate::types::AggregationAuthorization>,
     _request_id: Option<String>,
 }
 impl PutAggregationAuthorizationOutput {
-    /// <p>Returns an AggregationAuthorization object. </p>
+    /// <p>Returns an AggregationAuthorization object.</p>
     pub fn aggregation_authorization(&self) -> ::std::option::Option<&crate::types::AggregationAuthorization> {
         self.aggregation_authorization.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct PutAggregationAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutAggregationAuthorizationOutputBuilder {
-    /// <p>Returns an AggregationAuthorization object. </p>
+    /// <p>Returns an AggregationAuthorization object.</p>
     pub fn aggregation_authorization(mut self, input: crate::types::AggregationAuthorization) -> Self {
         self.aggregation_authorization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns an AggregationAuthorization object. </p>
+    /// <p>Returns an AggregationAuthorization object.</p>
     pub fn set_aggregation_authorization(mut self, input: ::std::option::Option<crate::types::AggregationAuthorization>) -> Self {
         self.aggregation_authorization = input;
         self
     }
-    /// <p>Returns an AggregationAuthorization object. </p>
+    /// <p>Returns an AggregationAuthorization object.</p>
     pub fn get_aggregation_authorization(&self) -> &::std::option::Option<crate::types::AggregationAuthorization> {
         &self.aggregation_authorization
     }

@@ -9,7 +9,7 @@ pub struct CreateFleetInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub optimize_for_end_user_location: ::std::option::Option<bool>,
-    /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFleetInput {
@@ -25,7 +25,7 @@ impl CreateFleetInput {
     pub fn optimize_for_end_user_location(&self) -> ::std::option::Option<bool> {
         self.optimize_for_end_user_location
     }
-    /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -94,19 +94,19 @@ impl CreateFleetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

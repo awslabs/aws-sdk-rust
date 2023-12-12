@@ -4,10 +4,10 @@
 /// <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 /// <p>To create your customized metric specification:</p>
 /// <ul>
-/// <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
-/// <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases. </p> </li>
+/// <li><p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p></li>
+/// <li><p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases.</p></li>
 /// </ul>
-/// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
+/// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomizedMetricSpecification {
@@ -15,7 +15,7 @@ pub struct CustomizedMetricSpecification {
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the metric.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The dimensions of the metric. </p>
+    /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
     /// <p>The statistic of the metric.</p>
@@ -34,7 +34,7 @@ impl CustomizedMetricSpecification {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The dimensions of the metric. </p>
+    /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
@@ -107,7 +107,7 @@ impl CustomizedMetricSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
-    /// <p>The dimensions of the metric. </p>
+    /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub fn dimensions(mut self, input: crate::types::MetricDimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
@@ -115,13 +115,13 @@ impl CustomizedMetricSpecificationBuilder {
         self.dimensions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The dimensions of the metric. </p>
+    /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>) -> Self {
         self.dimensions = input;
         self
     }
-    /// <p>The dimensions of the metric. </p>
+    /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
         &self.dimensions

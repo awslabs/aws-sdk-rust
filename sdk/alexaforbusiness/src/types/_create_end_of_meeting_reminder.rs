@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndOfMeetingReminder {
-    /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     pub reminder_at_minutes: ::std::vec::Vec<i32>,
-    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub reminder_type: crate::types::EndOfMeetingReminderType,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub enabled: bool,
 }
 impl CreateEndOfMeetingReminder {
-    /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     pub fn reminder_at_minutes(&self) -> &[i32] {
         use std::ops::Deref;
         self.reminder_at_minutes.deref()
     }
-    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub fn reminder_type(&self) -> &crate::types::EndOfMeetingReminderType {
         &self.reminder_type
     }
@@ -46,34 +46,34 @@ impl CreateEndOfMeetingReminderBuilder {
     ///
     /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
     ///
-    /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     pub fn reminder_at_minutes(mut self, input: i32) -> Self {
         let mut v = self.reminder_at_minutes.unwrap_or_default();
         v.push(input);
         self.reminder_at_minutes = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     pub fn set_reminder_at_minutes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.reminder_at_minutes = input;
         self
     }
-    /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     pub fn get_reminder_at_minutes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.reminder_at_minutes
     }
-    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     /// This field is required.
     pub fn reminder_type(mut self, input: crate::types::EndOfMeetingReminderType) -> Self {
         self.reminder_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub fn set_reminder_type(mut self, input: ::std::option::Option<crate::types::EndOfMeetingReminderType>) -> Self {
         self.reminder_type = input;
         self
     }
-    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub fn get_reminder_type(&self) -> &::std::option::Option<crate::types::EndOfMeetingReminderType> {
         &self.reminder_type
     }

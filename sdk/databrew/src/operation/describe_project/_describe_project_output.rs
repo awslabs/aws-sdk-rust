@@ -27,14 +27,14 @@ pub struct DescribeProjectOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub session_status: ::std::option::Option<crate::types::SessionStatus>,
-    /// <p>The identifier (user name) of the user that opened the project for use. </p>
+    /// <p>The identifier (user name) of the user that opened the project for use.</p>
     pub opened_by: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the project was opened. </p>
+    /// <p>The date and time when the project was opened.</p>
     pub open_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -86,18 +86,18 @@ impl DescribeProjectOutput {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub fn session_status(&self) -> ::std::option::Option<&crate::types::SessionStatus> {
         self.session_status.as_ref()
     }
-    /// <p>The identifier (user name) of the user that opened the project for use. </p>
+    /// <p>The identifier (user name) of the user that opened the project for use.</p>
     pub fn opened_by(&self) -> ::std::option::Option<&str> {
         self.opened_by.as_deref()
     }
-    /// <p>The date and time when the project was opened. </p>
+    /// <p>The date and time when the project was opened.</p>
     pub fn open_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.open_date.as_ref()
     }
@@ -298,9 +298,9 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub fn session_status(mut self, input: crate::types::SessionStatus) -> Self {
         self.session_status = ::std::option::Option::Some(input);
@@ -308,9 +308,9 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub fn set_session_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
         self.session_status = input;
@@ -318,38 +318,38 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub fn get_session_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
         &self.session_status
     }
-    /// <p>The identifier (user name) of the user that opened the project for use. </p>
+    /// <p>The identifier (user name) of the user that opened the project for use.</p>
     pub fn opened_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opened_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier (user name) of the user that opened the project for use. </p>
+    /// <p>The identifier (user name) of the user that opened the project for use.</p>
     pub fn set_opened_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opened_by = input;
         self
     }
-    /// <p>The identifier (user name) of the user that opened the project for use. </p>
+    /// <p>The identifier (user name) of the user that opened the project for use.</p>
     pub fn get_opened_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.opened_by
     }
-    /// <p>The date and time when the project was opened. </p>
+    /// <p>The date and time when the project was opened.</p>
     pub fn open_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.open_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the project was opened. </p>
+    /// <p>The date and time when the project was opened.</p>
     pub fn set_open_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.open_date = input;
         self
     }
-    /// <p>The date and time when the project was opened. </p>
+    /// <p>The date and time when the project was opened.</p>
     pub fn get_open_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.open_date
     }

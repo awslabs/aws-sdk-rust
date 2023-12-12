@@ -23,7 +23,7 @@ impl UpdateAgentStatusInputBuilder {
 /// Fluent builder constructing a request to `UpdateAgentStatus`.
 ///
 /// <note>
-/// <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p>
+/// <p>For use by AWS Ground Station Agent and shouldn't be called directly.</p>
 /// </note>
 /// <p>Update the status of the agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

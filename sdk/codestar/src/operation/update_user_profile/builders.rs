@@ -22,7 +22,7 @@ impl UpdateUserProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateUserProfile`.
 ///
-/// <p>Updates a user's profile in AWS CodeStar. The user profile is not project-specific. Information in the user profile is displayed wherever the user's information appears to other users in AWS CodeStar. </p>
+/// <p>Updates a user's profile in AWS CodeStar. The user profile is not project-specific. Information in the user profile is displayed wherever the user's information appears to other users in AWS CodeStar.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

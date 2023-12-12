@@ -22,7 +22,7 @@ pub struct LicenseConfiguration {
     pub license_count_hard_limit: ::std::option::Option<bool>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub disassociate_when_not_found: ::std::option::Option<bool>,
-    /// <p>Number of licenses consumed. </p>
+    /// <p>Number of licenses consumed.</p>
     pub consumed_licenses: ::std::option::Option<i64>,
     /// <p>Status of the license configuration.</p>
     pub status: ::std::option::Option<::std::string::String>,
@@ -76,7 +76,7 @@ impl LicenseConfiguration {
     pub fn disassociate_when_not_found(&self) -> ::std::option::Option<bool> {
         self.disassociate_when_not_found
     }
-    /// <p>Number of licenses consumed. </p>
+    /// <p>Number of licenses consumed.</p>
     pub fn consumed_licenses(&self) -> ::std::option::Option<i64> {
         self.consumed_licenses
     }
@@ -272,17 +272,17 @@ impl LicenseConfigurationBuilder {
     pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
         &self.disassociate_when_not_found
     }
-    /// <p>Number of licenses consumed. </p>
+    /// <p>Number of licenses consumed.</p>
     pub fn consumed_licenses(mut self, input: i64) -> Self {
         self.consumed_licenses = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Number of licenses consumed. </p>
+    /// <p>Number of licenses consumed.</p>
     pub fn set_consumed_licenses(mut self, input: ::std::option::Option<i64>) -> Self {
         self.consumed_licenses = input;
         self
     }
-    /// <p>Number of licenses consumed. </p>
+    /// <p>Number of licenses consumed.</p>
     pub fn get_consumed_licenses(&self) -> &::std::option::Option<i64> {
         &self.consumed_licenses
     }

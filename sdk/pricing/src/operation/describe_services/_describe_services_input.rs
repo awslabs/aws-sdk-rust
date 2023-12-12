@@ -6,7 +6,7 @@ pub struct DescribeServicesInput {
     /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code> </p>
+    /// <p>Valid values are: <code>aws_v1</code></p>
     pub format_version: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl DescribeServicesInput {
         self.service_code.as_deref()
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code> </p>
+    /// <p>Valid values are: <code>aws_v1</code></p>
     pub fn format_version(&self) -> ::std::option::Option<&str> {
         self.format_version.as_deref()
     }
@@ -64,19 +64,19 @@ impl DescribeServicesInputBuilder {
         &self.service_code
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code> </p>
+    /// <p>Valid values are: <code>aws_v1</code></p>
     pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code> </p>
+    /// <p>Valid values are: <code>aws_v1</code></p>
     pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format_version = input;
         self
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code> </p>
+    /// <p>Valid values are: <code>aws_v1</code></p>
     pub fn get_format_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.format_version
     }

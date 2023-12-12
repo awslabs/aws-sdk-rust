@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnssecKey {
-    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment.</p>
     /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
     /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
     pub algorithm: ::std::option::Option<i32>,
@@ -14,19 +14,19 @@ pub struct DnssecKey {
     pub flags: ::std::option::Option<i32>,
     /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
     pub public_key: ::std::option::Option<::std::string::String>,
-    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
-    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+    /// <p>The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms.</p>
     pub digest_type: ::std::option::Option<i32>,
-    /// <p> The delegation signer digest.</p>
-    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+    /// <p>The delegation signer digest.</p>
+    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records.</p>
     pub digest: ::std::option::Option<::std::string::String>,
-    /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+    /// <p>A numeric identification of the DNSKEY record referred to by this DS record.</p>
     pub key_tag: ::std::option::Option<i32>,
-    /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+    /// <p>An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DnssecKey {
-    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment.</p>
     /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
     /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
     pub fn algorithm(&self) -> ::std::option::Option<i32> {
@@ -41,21 +41,21 @@ impl DnssecKey {
     pub fn public_key(&self) -> ::std::option::Option<&str> {
         self.public_key.as_deref()
     }
-    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
-    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+    /// <p>The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms.</p>
     pub fn digest_type(&self) -> ::std::option::Option<i32> {
         self.digest_type
     }
-    /// <p> The delegation signer digest.</p>
-    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+    /// <p>The delegation signer digest.</p>
+    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records.</p>
     pub fn digest(&self) -> ::std::option::Option<&str> {
         self.digest.as_deref()
     }
-    /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+    /// <p>A numeric identification of the DNSKEY record referred to by this DS record.</p>
     pub fn key_tag(&self) -> ::std::option::Option<i32> {
         self.key_tag
     }
-    /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+    /// <p>An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -80,21 +80,21 @@ pub struct DnssecKeyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl DnssecKeyBuilder {
-    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment.</p>
     /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
     /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
     pub fn algorithm(mut self, input: i32) -> Self {
         self.algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment.</p>
     /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
     /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
     pub fn set_algorithm(mut self, input: ::std::option::Option<i32>) -> Self {
         self.algorithm = input;
         self
     }
-    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment.</p>
     /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
     /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
     pub fn get_algorithm(&self) -> &::std::option::Option<i32> {
@@ -131,65 +131,65 @@ impl DnssecKeyBuilder {
     pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_key
     }
-    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
-    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+    /// <p>The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms.</p>
     pub fn digest_type(mut self, input: i32) -> Self {
         self.digest_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
-    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+    /// <p>The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms.</p>
     pub fn set_digest_type(mut self, input: ::std::option::Option<i32>) -> Self {
         self.digest_type = input;
         self
     }
-    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
-    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
+    /// <p>The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms.</p>
     pub fn get_digest_type(&self) -> &::std::option::Option<i32> {
         &self.digest_type
     }
-    /// <p> The delegation signer digest.</p>
-    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+    /// <p>The delegation signer digest.</p>
+    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records.</p>
     pub fn digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.digest = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The delegation signer digest.</p>
-    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+    /// <p>The delegation signer digest.</p>
+    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records.</p>
     pub fn set_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.digest = input;
         self
     }
-    /// <p> The delegation signer digest.</p>
-    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
+    /// <p>The delegation signer digest.</p>
+    /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records.</p>
     pub fn get_digest(&self) -> &::std::option::Option<::std::string::String> {
         &self.digest
     }
-    /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+    /// <p>A numeric identification of the DNSKEY record referred to by this DS record.</p>
     pub fn key_tag(mut self, input: i32) -> Self {
         self.key_tag = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+    /// <p>A numeric identification of the DNSKEY record referred to by this DS record.</p>
     pub fn set_key_tag(mut self, input: ::std::option::Option<i32>) -> Self {
         self.key_tag = input;
         self
     }
-    /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
+    /// <p>A numeric identification of the DNSKEY record referred to by this DS record.</p>
     pub fn get_key_tag(&self) -> &::std::option::Option<i32> {
         &self.key_tag
     }
-    /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+    /// <p>An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+    /// <p>An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
+    /// <p>An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

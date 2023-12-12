@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientAuthenticationSettingInfo {
-    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
+    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved.</p>
     pub r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
     /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
     pub status: ::std::option::Option<crate::types::ClientAuthenticationStatus>,
@@ -12,7 +12,7 @@ pub struct ClientAuthenticationSettingInfo {
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClientAuthenticationSettingInfo {
-    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
+    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct ClientAuthenticationSettingInfoBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClientAuthenticationSettingInfoBuilder {
-    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
+    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved.</p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
+    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
+    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
         &self.r#type
     }

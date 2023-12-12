@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     /// - On success, responds with [`DescribeWorkspaceImagesOutput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput) with field(s):
     ///   - [`images(Option<Vec::<WorkspaceImage>>)`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput::images): <p>Information about the images.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceImagesError>`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesError)
     pub fn describe_workspace_images(&self) -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesFluentBuilder {
         crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesFluentBuilder::new(self.handle.clone())

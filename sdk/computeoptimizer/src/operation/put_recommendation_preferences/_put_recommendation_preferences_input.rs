@@ -28,23 +28,23 @@ pub struct PutRecommendationPreferencesInput {
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
-    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
-    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
+    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
     /// <ul>
-    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
-    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// <li><p><code>P99_5</code> for threshold</p></li>
+    /// <li><p><code>PERCENT_17</code> for headroom</p></li>
     /// </ul> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub utilization_preferences: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>,
-    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
+    /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub preferred_resources: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>,
-    /// <p> The status of the savings estimation mode preference to create or update. </p>
+    /// <p>The status of the savings estimation mode preference to create or update.</p>
     /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
     /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -86,16 +86,16 @@ impl PutRecommendationPreferencesInput {
     pub fn external_metrics_preference(&self) -> ::std::option::Option<&crate::types::ExternalMetricsPreference> {
         self.external_metrics_preference.as_ref()
     }
-    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
         self.look_back_period.as_ref()
     }
-    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
+    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
     /// <ul>
-    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
-    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// <li><p><code>P99_5</code> for threshold</p></li>
+    /// <li><p><code>PERCENT_17</code> for headroom</p></li>
     /// </ul> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
@@ -104,7 +104,7 @@ impl PutRecommendationPreferencesInput {
     pub fn utilization_preferences(&self) -> &[crate::types::UtilizationPreference] {
         self.utilization_preferences.as_deref().unwrap_or_default()
     }
-    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
+    /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     ///
@@ -112,7 +112,7 @@ impl PutRecommendationPreferencesInput {
     pub fn preferred_resources(&self) -> &[crate::types::PreferredResource] {
         self.preferred_resources.as_deref().unwrap_or_default()
     }
-    /// <p> The status of the savings estimation mode preference to create or update. </p>
+    /// <p>The status of the savings estimation mode preference to create or update.</p>
     /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
     /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -258,21 +258,21 @@ impl PutRecommendationPreferencesInputBuilder {
     pub fn get_external_metrics_preference(&self) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
         &self.external_metrics_preference
     }
-    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
         self.look_back_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
         self.look_back_period = input;
         self
     }
-    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
@@ -282,10 +282,10 @@ impl PutRecommendationPreferencesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_utilization_preferences`](Self::set_utilization_preferences).
     ///
-    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
+    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
     /// <ul>
-    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
-    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// <li><p><code>P99_5</code> for threshold</p></li>
+    /// <li><p><code>PERCENT_17</code> for headroom</p></li>
     /// </ul> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
@@ -295,10 +295,10 @@ impl PutRecommendationPreferencesInputBuilder {
         self.utilization_preferences = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
+    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
     /// <ul>
-    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
-    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// <li><p><code>P99_5</code> for threshold</p></li>
+    /// <li><p><code>PERCENT_17</code> for headroom</p></li>
     /// </ul> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
@@ -306,10 +306,10 @@ impl PutRecommendationPreferencesInputBuilder {
         self.utilization_preferences = input;
         self
     }
-    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
+    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
     /// <ul>
-    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
-    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// <li><p><code>P99_5</code> for threshold</p></li>
+    /// <li><p><code>PERCENT_17</code> for headroom</p></li>
     /// </ul> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
@@ -320,7 +320,7 @@ impl PutRecommendationPreferencesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_preferred_resources`](Self::set_preferred_resources).
     ///
-    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
+    /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn preferred_resources(mut self, input: crate::types::PreferredResource) -> Self {
@@ -329,20 +329,20 @@ impl PutRecommendationPreferencesInputBuilder {
         self.preferred_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
+    /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>) -> Self {
         self.preferred_resources = input;
         self
     }
-    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
+    /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>> {
         &self.preferred_resources
     }
-    /// <p> The status of the savings estimation mode preference to create or update. </p>
+    /// <p>The status of the savings estimation mode preference to create or update.</p>
     /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
     /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -350,7 +350,7 @@ impl PutRecommendationPreferencesInputBuilder {
         self.savings_estimation_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of the savings estimation mode preference to create or update. </p>
+    /// <p>The status of the savings estimation mode preference to create or update.</p>
     /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
     /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -358,7 +358,7 @@ impl PutRecommendationPreferencesInputBuilder {
         self.savings_estimation_mode = input;
         self
     }
-    /// <p> The status of the savings estimation mode preference to create or update. </p>
+    /// <p>The status of the savings estimation mode preference to create or update.</p>
     /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
     /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckpointConfigurationUpdate {
-    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
+    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
-    /// <li> <p> <b>CheckpointingEnabled:</b> true</p> </li>
-    /// <li> <p> <b>CheckpointInterval:</b> 60000</p> </li>
-    /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
+    /// <li><p><b>CheckpointingEnabled:</b> true</p></li>
+    /// <li><p><b>CheckpointInterval:</b> 60000</p></li>
+    /// <li><p><b>MinPauseBetweenCheckpoints:</b> 5000</p></li>
     /// </ul>
     /// </note>
     pub configuration_type_update: ::std::option::Option<crate::types::ConfigurationType>,
@@ -27,12 +27,12 @@ pub struct CheckpointConfigurationUpdate {
     pub min_pause_between_checkpoints_update: ::std::option::Option<i64>,
 }
 impl CheckpointConfigurationUpdate {
-    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
+    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
-    /// <li> <p> <b>CheckpointingEnabled:</b> true</p> </li>
-    /// <li> <p> <b>CheckpointInterval:</b> 60000</p> </li>
-    /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
+    /// <li><p><b>CheckpointingEnabled:</b> true</p></li>
+    /// <li><p><b>CheckpointInterval:</b> 60000</p></li>
+    /// <li><p><b>MinPauseBetweenCheckpoints:</b> 5000</p></li>
     /// </ul>
     /// </note>
     pub fn configuration_type_update(&self) -> ::std::option::Option<&crate::types::ConfigurationType> {
@@ -74,36 +74,36 @@ pub struct CheckpointConfigurationUpdateBuilder {
     pub(crate) min_pause_between_checkpoints_update: ::std::option::Option<i64>,
 }
 impl CheckpointConfigurationUpdateBuilder {
-    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
+    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
-    /// <li> <p> <b>CheckpointingEnabled:</b> true</p> </li>
-    /// <li> <p> <b>CheckpointInterval:</b> 60000</p> </li>
-    /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
+    /// <li><p><b>CheckpointingEnabled:</b> true</p></li>
+    /// <li><p><b>CheckpointInterval:</b> 60000</p></li>
+    /// <li><p><b>MinPauseBetweenCheckpoints:</b> 5000</p></li>
     /// </ul>
     /// </note>
     pub fn configuration_type_update(mut self, input: crate::types::ConfigurationType) -> Self {
         self.configuration_type_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
+    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
-    /// <li> <p> <b>CheckpointingEnabled:</b> true</p> </li>
-    /// <li> <p> <b>CheckpointInterval:</b> 60000</p> </li>
-    /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
+    /// <li><p><b>CheckpointingEnabled:</b> true</p></li>
+    /// <li><p><b>CheckpointInterval:</b> 60000</p></li>
+    /// <li><p><b>MinPauseBetweenCheckpoints:</b> 5000</p></li>
     /// </ul>
     /// </note>
     pub fn set_configuration_type_update(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
         self.configuration_type_update = input;
         self
     }
-    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
+    /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
-    /// <li> <p> <b>CheckpointingEnabled:</b> true</p> </li>
-    /// <li> <p> <b>CheckpointInterval:</b> 60000</p> </li>
-    /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
+    /// <li><p><b>CheckpointingEnabled:</b> true</p></li>
+    /// <li><p><b>CheckpointInterval:</b> 60000</p></li>
+    /// <li><p><b>MinPauseBetweenCheckpoints:</b> 5000</p></li>
     /// </ul>
     /// </note>
     pub fn get_configuration_type_update(&self) -> &::std::option::Option<crate::types::ConfigurationType> {

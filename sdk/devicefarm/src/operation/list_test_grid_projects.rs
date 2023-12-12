@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTestGridP
 pub enum ListTestGridProjectsError {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::types::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

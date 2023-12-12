@@ -112,17 +112,17 @@ impl CreateModelExplainabilityJobDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_definition_name(input.into());
         self
     }
-    /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_definition_name(input);
         self
     }
-    /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_definition_name()
     }

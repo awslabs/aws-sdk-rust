@@ -108,17 +108,17 @@ impl GetCodeSigningConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_signing_config_arn(input.into());
         self
     }
-    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_signing_config_arn(input);
         self
     }
-    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code_signing_config_arn()
     }

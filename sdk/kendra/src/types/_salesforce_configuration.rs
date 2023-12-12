@@ -8,12 +8,12 @@ pub struct SalesforceConfiguration {
     pub server_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
-    /// <li> <p>consumerKey - The application public key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>consumerSecret - The application private key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>password - The password associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
+    /// <li><p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token.</p></li>
+    /// <li><p>consumerKey - The application public key generated when you created your Salesforce application.</p></li>
+    /// <li><p>consumerSecret - The application private key generated when you created your Salesforce application.</p></li>
+    /// <li><p>password - The password associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>securityToken - The token associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>username - The user name of the user logging in to the Salesforce instance.</p></li>
     /// </ul>
     pub secret_arn: ::std::string::String,
     /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
@@ -24,7 +24,7 @@ pub struct SalesforceConfiguration {
     pub chatter_feed_configuration: ::std::option::Option<crate::types::SalesforceChatterFeedConfiguration>,
     /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
     pub crawl_attachments: bool,
-    /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
+    /// <p>Configuration information for processing attachments to Salesforce standard objects.</p>
     pub standard_object_attachment_configuration: ::std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
     /// <p>A list of regular expression patterns to include certain documents in your Salesforce. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
@@ -41,12 +41,12 @@ impl SalesforceConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
-    /// <li> <p>consumerKey - The application public key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>consumerSecret - The application private key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>password - The password associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
+    /// <li><p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token.</p></li>
+    /// <li><p>consumerKey - The application public key generated when you created your Salesforce application.</p></li>
+    /// <li><p>consumerSecret - The application private key generated when you created your Salesforce application.</p></li>
+    /// <li><p>password - The password associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>securityToken - The token associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>username - The user name of the user logging in to the Salesforce instance.</p></li>
     /// </ul>
     pub fn secret_arn(&self) -> &str {
         use std::ops::Deref;
@@ -70,7 +70,7 @@ impl SalesforceConfiguration {
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
-    /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
+    /// <p>Configuration information for processing attachments to Salesforce standard objects.</p>
     pub fn standard_object_attachment_configuration(&self) -> ::std::option::Option<&crate::types::SalesforceStandardObjectAttachmentConfiguration> {
         self.standard_object_attachment_configuration.as_ref()
     }
@@ -128,12 +128,12 @@ impl SalesforceConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
-    /// <li> <p>consumerKey - The application public key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>consumerSecret - The application private key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>password - The password associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
+    /// <li><p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token.</p></li>
+    /// <li><p>consumerKey - The application public key generated when you created your Salesforce application.</p></li>
+    /// <li><p>consumerSecret - The application private key generated when you created your Salesforce application.</p></li>
+    /// <li><p>password - The password associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>securityToken - The token associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>username - The user name of the user logging in to the Salesforce instance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,12 +142,12 @@ impl SalesforceConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
-    /// <li> <p>consumerKey - The application public key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>consumerSecret - The application private key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>password - The password associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
+    /// <li><p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token.</p></li>
+    /// <li><p>consumerKey - The application public key generated when you created your Salesforce application.</p></li>
+    /// <li><p>consumerSecret - The application private key generated when you created your Salesforce application.</p></li>
+    /// <li><p>password - The password associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>securityToken - The token associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>username - The user name of the user logging in to the Salesforce instance.</p></li>
     /// </ul>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
@@ -155,12 +155,12 @@ impl SalesforceConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
-    /// <li> <p>consumerKey - The application public key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>consumerSecret - The application private key generated when you created your Salesforce application.</p> </li>
-    /// <li> <p>password - The password associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
-    /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
+    /// <li><p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token.</p></li>
+    /// <li><p>consumerKey - The application public key generated when you created your Salesforce application.</p></li>
+    /// <li><p>consumerSecret - The application private key generated when you created your Salesforce application.</p></li>
+    /// <li><p>password - The password associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>securityToken - The token associated with the user logging in to the Salesforce instance.</p></li>
+    /// <li><p>username - The user name of the user logging in to the Salesforce instance.</p></li>
     /// </ul>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
@@ -233,12 +233,12 @@ impl SalesforceConfigurationBuilder {
     pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
         &self.crawl_attachments
     }
-    /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
+    /// <p>Configuration information for processing attachments to Salesforce standard objects.</p>
     pub fn standard_object_attachment_configuration(mut self, input: crate::types::SalesforceStandardObjectAttachmentConfiguration) -> Self {
         self.standard_object_attachment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
+    /// <p>Configuration information for processing attachments to Salesforce standard objects.</p>
     pub fn set_standard_object_attachment_configuration(
         mut self,
         input: ::std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
@@ -246,7 +246,7 @@ impl SalesforceConfigurationBuilder {
         self.standard_object_attachment_configuration = input;
         self
     }
-    /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
+    /// <p>Configuration information for processing attachments to Salesforce standard objects.</p>
     pub fn get_standard_object_attachment_configuration(
         &self,
     ) -> &::std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration> {

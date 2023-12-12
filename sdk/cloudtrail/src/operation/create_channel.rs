@@ -245,9 +245,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateChannel
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateChannelError {
-    /// <p> This exception is thrown when the provided channel already exists. </p>
+    /// <p>This exception is thrown when the provided channel already exists.</p>
     ChannelAlreadyExistsException(crate::types::error::ChannelAlreadyExistsException),
-    /// <p> This exception is thrown when the maximum number of channels limit is exceeded. </p>
+    /// <p>This exception is thrown when the maximum number of channels limit is exceeded.</p>
     ChannelMaxLimitExceededException(crate::types::error::ChannelMaxLimitExceededException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsOutput {
-    /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
     pub configuration_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationSettingsOutput {
-    /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_settings.is_none()`.
     pub fn configuration_settings(&self) -> &[crate::types::ConfigurationSettingsDescription] {
@@ -40,14 +40,14 @@ impl DescribeConfigurationSettingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_settings`](Self::set_configuration_settings).
     ///
-    /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
     pub fn configuration_settings(mut self, input: crate::types::ConfigurationSettingsDescription) -> Self {
         let mut v = self.configuration_settings.unwrap_or_default();
         v.push(input);
         self.configuration_settings = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
     pub fn set_configuration_settings(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
@@ -55,7 +55,7 @@ impl DescribeConfigurationSettingsOutputBuilder {
         self.configuration_settings = input;
         self
     }
-    /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
+    /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
     pub fn get_configuration_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>> {
         &self.configuration_settings
     }

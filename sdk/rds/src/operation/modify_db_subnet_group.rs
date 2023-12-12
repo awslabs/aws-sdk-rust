@@ -244,7 +244,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBSubne
 pub enum ModifyDBSubnetGroupError {
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
+    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of subnets in a DB subnet groups.</p>
     DbSubnetQuotaExceededFault(crate::types::error::DbSubnetQuotaExceededFault),

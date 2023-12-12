@@ -24,7 +24,7 @@ impl ListSecurityProfilesInputBuilder {
 ///
 /// <p>Lists the Device Defender security profiles you've created. You can filter security profiles by dimension or custom metric.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a> action.</p> <note>
-/// <p> <code>dimensionName</code> and <code>metricName</code> cannot be used in the same request.</p>
+/// <p><code>dimensionName</code> and <code>metricName</code> cannot be used in the same request.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesFluentBuilder {
@@ -145,31 +145,31 @@ impl ListSecurityProfilesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code></p>
     pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dimension_name(input.into());
         self
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code></p>
     pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dimension_name(input);
         self
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code></p>
     pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dimension_name()
     }
-    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
+    /// <p>The name of the custom metric. Cannot be used with <code>dimensionName</code>.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
         self
     }
-    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
+    /// <p>The name of the custom metric. Cannot be used with <code>dimensionName</code>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
-    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
+    /// <p>The name of the custom metric. Cannot be used with <code>dimensionName</code>.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_metric_name()
     }

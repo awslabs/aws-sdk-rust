@@ -112,17 +112,17 @@ impl BatchPutMessageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_messages`](Self::set_messages).
     ///
-    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p>
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         self.inner = self.inner.messages(input);
         self
     }
-    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p>
     pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.inner = self.inner.set_messages(input);
         self
     }
-    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p>
     pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
         self.inner.get_messages()
     }

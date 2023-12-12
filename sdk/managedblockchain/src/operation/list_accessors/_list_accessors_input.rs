@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessorsInput {
-    /// <p> The maximum number of accessors to list.</p>
+    /// <p>The maximum number of accessors to list.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
@@ -13,11 +13,11 @@ pub struct ListAccessorsInput {
     pub network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
 }
 impl ListAccessorsInput {
-    /// <p> The maximum number of accessors to list.</p>
+    /// <p>The maximum number of accessors to list.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -44,31 +44,31 @@ pub struct ListAccessorsInputBuilder {
     pub(crate) network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
 }
 impl ListAccessorsInputBuilder {
-    /// <p> The maximum number of accessors to list.</p>
+    /// <p>The maximum number of accessors to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The maximum number of accessors to list.</p>
+    /// <p>The maximum number of accessors to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> The maximum number of accessors to list.</p>
+    /// <p>The maximum number of accessors to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

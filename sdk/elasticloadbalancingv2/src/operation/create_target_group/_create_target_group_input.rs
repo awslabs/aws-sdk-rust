@@ -36,10 +36,10 @@ pub struct CreateTargetGroupInput {
     pub matcher: ::std::option::Option<crate::types::Matcher>,
     /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
-    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+    /// <li><p><code>instance</code> - Register targets by instance ID. This is the default value.</p></li>
+    /// <li><p><code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p></li>
+    /// <li><p><code>lambda</code> - Register a single Lambda function as a target.</p></li>
+    /// <li><p><code>alb</code> - Register a single Application Load Balancer as a target.</p></li>
     /// </ul>
     pub target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
     /// <p>The tags to assign to the target group.</p>
@@ -109,10 +109,10 @@ impl CreateTargetGroupInput {
     }
     /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
-    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+    /// <li><p><code>instance</code> - Register targets by instance ID. This is the default value.</p></li>
+    /// <li><p><code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p></li>
+    /// <li><p><code>lambda</code> - Register a single Lambda function as a target.</p></li>
+    /// <li><p><code>alb</code> - Register a single Application Load Balancer as a target.</p></li>
     /// </ul>
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetTypeEnum> {
         self.target_type.as_ref()
@@ -366,10 +366,10 @@ impl CreateTargetGroupInputBuilder {
     }
     /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
-    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+    /// <li><p><code>instance</code> - Register targets by instance ID. This is the default value.</p></li>
+    /// <li><p><code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p></li>
+    /// <li><p><code>lambda</code> - Register a single Lambda function as a target.</p></li>
+    /// <li><p><code>alb</code> - Register a single Application Load Balancer as a target.</p></li>
     /// </ul>
     pub fn target_type(mut self, input: crate::types::TargetTypeEnum) -> Self {
         self.target_type = ::std::option::Option::Some(input);
@@ -377,10 +377,10 @@ impl CreateTargetGroupInputBuilder {
     }
     /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
-    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+    /// <li><p><code>instance</code> - Register targets by instance ID. This is the default value.</p></li>
+    /// <li><p><code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p></li>
+    /// <li><p><code>lambda</code> - Register a single Lambda function as a target.</p></li>
+    /// <li><p><code>alb</code> - Register a single Application Load Balancer as a target.</p></li>
     /// </ul>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetTypeEnum>) -> Self {
         self.target_type = input;
@@ -388,10 +388,10 @@ impl CreateTargetGroupInputBuilder {
     }
     /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
-    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+    /// <li><p><code>instance</code> - Register targets by instance ID. This is the default value.</p></li>
+    /// <li><p><code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p></li>
+    /// <li><p><code>lambda</code> - Register a single Lambda function as a target.</p></li>
+    /// <li><p><code>alb</code> - Register a single Application Load Balancer as a target.</p></li>
     /// </ul>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetTypeEnum> {
         &self.target_type

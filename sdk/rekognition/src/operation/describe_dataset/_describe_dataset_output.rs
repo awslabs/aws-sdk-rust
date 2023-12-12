@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutput {
-    /// <p> The description for the dataset. </p>
+    /// <p>The description for the dataset.</p>
     pub dataset_description: ::std::option::Option<crate::types::DatasetDescription>,
     _request_id: Option<String>,
 }
 impl DescribeDatasetOutput {
-    /// <p> The description for the dataset. </p>
+    /// <p>The description for the dataset.</p>
     pub fn dataset_description(&self) -> ::std::option::Option<&crate::types::DatasetDescription> {
         self.dataset_description.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeDatasetOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeDatasetOutputBuilder {
-    /// <p> The description for the dataset. </p>
+    /// <p>The description for the dataset.</p>
     pub fn dataset_description(mut self, input: crate::types::DatasetDescription) -> Self {
         self.dataset_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The description for the dataset. </p>
+    /// <p>The description for the dataset.</p>
     pub fn set_dataset_description(mut self, input: ::std::option::Option<crate::types::DatasetDescription>) -> Self {
         self.dataset_description = input;
         self
     }
-    /// <p> The description for the dataset. </p>
+    /// <p>The description for the dataset.</p>
     pub fn get_dataset_description(&self) -> &::std::option::Option<crate::types::DatasetDescription> {
         &self.dataset_description
     }

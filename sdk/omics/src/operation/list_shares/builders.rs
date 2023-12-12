@@ -22,7 +22,7 @@ impl ListSharesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListShares`.
 ///
-/// <p> Lists all shares associated with an account. </p>
+/// <p>Lists all shares associated with an account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSharesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListSharesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_shares::paginator::ListSharesPaginator {
         crate::operation::list_shares::paginator::ListSharesPaginator::new(self.handle, self.inner)
     }
-    /// <p> The account that owns the analytics store shared. </p>
+    /// <p>The account that owns the analytics store shared.</p>
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.inner = self.inner.resource_owner(input);
         self
     }
-    /// <p> The account that owns the analytics store shared. </p>
+    /// <p>The account that owns the analytics store shared.</p>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
-    /// <p> The account that owns the analytics store shared. </p>
+    /// <p>The account that owns the analytics store shared.</p>
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         self.inner.get_resource_owner()
     }
-    /// <p> Attributes used to filter for a specific subset of shares. </p>
+    /// <p>Attributes used to filter for a specific subset of shares.</p>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p> Attributes used to filter for a specific subset of shares. </p>
+    /// <p>Attributes used to filter for a specific subset of shares.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p> Attributes used to filter for a specific subset of shares. </p>
+    /// <p>Attributes used to filter for a specific subset of shares.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
         self.inner.get_filter()
     }
-    /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of shares to return in one page of results. </p>
+    /// <p>The maximum number of shares to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of shares to return in one page of results. </p>
+    /// <p>The maximum number of shares to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of shares to return in one page of results. </p>
+    /// <p>The maximum number of shares to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

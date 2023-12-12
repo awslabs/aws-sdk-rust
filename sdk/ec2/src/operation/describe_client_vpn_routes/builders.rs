@@ -134,9 +134,9 @@ impl DescribeClientVpnRoutesFluentBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p> </li>
-    /// <li> <p> <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
-    /// <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic is routed.</p> </li>
+    /// <li><p><code>destination-cidr</code> - The CIDR of the route destination.</p></li>
+    /// <li><p><code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p></li>
+    /// <li><p><code>target-subnet</code> - The ID of the subnet through which traffic is routed.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -144,9 +144,9 @@ impl DescribeClientVpnRoutesFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p> </li>
-    /// <li> <p> <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
-    /// <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic is routed.</p> </li>
+    /// <li><p><code>destination-cidr</code> - The CIDR of the route destination.</p></li>
+    /// <li><p><code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p></li>
+    /// <li><p><code>target-subnet</code> - The ID of the subnet through which traffic is routed.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -154,9 +154,9 @@ impl DescribeClientVpnRoutesFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p> </li>
-    /// <li> <p> <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
-    /// <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic is routed.</p> </li>
+    /// <li><p><code>destination-cidr</code> - The CIDR of the route destination.</p></li>
+    /// <li><p><code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p></li>
+    /// <li><p><code>target-subnet</code> - The ID of the subnet through which traffic is routed.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

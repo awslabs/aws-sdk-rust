@@ -22,7 +22,7 @@ impl GetCompatibleElasticsearchVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCompatibleElasticsearchVersions`.
 ///
-/// <p> Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a <code> <code>DomainName</code> </code> to get all upgrade compatible Elasticsearch versions for that specific domain. </p>
+/// <p>Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a <code> <code>DomainName</code> </code> to get all upgrade compatible Elasticsearch versions for that specific domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCompatibleElasticsearchVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

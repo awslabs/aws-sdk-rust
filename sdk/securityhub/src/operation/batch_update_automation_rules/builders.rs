@@ -22,7 +22,7 @@ impl BatchUpdateAutomationRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchUpdateAutomationRules`.
 ///
-/// <p> Updates one or more automation rules based on rule Amazon Resource Names (ARNs) and input parameters. </p>
+/// <p>Updates one or more automation rules based on rule Amazon Resource Names (ARNs) and input parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateAutomationRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,12 +112,12 @@ impl BatchUpdateAutomationRulesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_update_automation_rules_request_items`](Self::set_update_automation_rules_request_items).
     ///
-    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    /// <p>An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>.</p>
     pub fn update_automation_rules_request_items(mut self, input: crate::types::UpdateAutomationRulesRequestItem) -> Self {
         self.inner = self.inner.update_automation_rules_request_items(input);
         self
     }
-    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    /// <p>An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>.</p>
     pub fn set_update_automation_rules_request_items(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>>,
@@ -125,7 +125,7 @@ impl BatchUpdateAutomationRulesFluentBuilder {
         self.inner = self.inner.set_update_automation_rules_request_items(input);
         self
     }
-    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    /// <p>An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>.</p>
     pub fn get_update_automation_rules_request_items(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>> {

@@ -5,14 +5,14 @@
 pub struct StartCalculationExecutionOutput {
     /// <p>The calculation execution UUID.</p>
     pub calculation_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
-    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
-    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
-    /// <p> <code>RUNNING</code> - The calculation is running.</p>
-    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
-    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
-    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
-    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    /// <p><code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p><code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p><code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p><code>RUNNING</code> - The calculation is running.</p>
+    /// <p><code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p><code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p><code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p><code>FAILED</code> - The calculation failed and is no longer running.</p>
     pub state: ::std::option::Option<crate::types::CalculationExecutionState>,
     _request_id: Option<String>,
 }
@@ -21,14 +21,14 @@ impl StartCalculationExecutionOutput {
     pub fn calculation_execution_id(&self) -> ::std::option::Option<&str> {
         self.calculation_execution_id.as_deref()
     }
-    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
-    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
-    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
-    /// <p> <code>RUNNING</code> - The calculation is running.</p>
-    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
-    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
-    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
-    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    /// <p><code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p><code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p><code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p><code>RUNNING</code> - The calculation is running.</p>
+    /// <p><code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p><code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p><code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p><code>FAILED</code> - The calculation failed and is no longer running.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::CalculationExecutionState> {
         self.state.as_ref()
     }
@@ -68,38 +68,38 @@ impl StartCalculationExecutionOutputBuilder {
     pub fn get_calculation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculation_execution_id
     }
-    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
-    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
-    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
-    /// <p> <code>RUNNING</code> - The calculation is running.</p>
-    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
-    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
-    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
-    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    /// <p><code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p><code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p><code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p><code>RUNNING</code> - The calculation is running.</p>
+    /// <p><code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p><code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p><code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p><code>FAILED</code> - The calculation failed and is no longer running.</p>
     pub fn state(mut self, input: crate::types::CalculationExecutionState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
-    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
-    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
-    /// <p> <code>RUNNING</code> - The calculation is running.</p>
-    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
-    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
-    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
-    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    /// <p><code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p><code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p><code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p><code>RUNNING</code> - The calculation is running.</p>
+    /// <p><code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p><code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p><code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p><code>FAILED</code> - The calculation failed and is no longer running.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CalculationExecutionState>) -> Self {
         self.state = input;
         self
     }
-    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
-    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
-    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
-    /// <p> <code>RUNNING</code> - The calculation is running.</p>
-    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
-    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
-    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
-    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    /// <p><code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p><code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p><code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p><code>RUNNING</code> - The calculation is running.</p>
+    /// <p><code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p><code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p><code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p><code>FAILED</code> - The calculation failed and is no longer running.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CalculationExecutionState> {
         &self.state
     }

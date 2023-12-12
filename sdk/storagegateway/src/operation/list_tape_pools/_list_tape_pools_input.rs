@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTapePoolsInput {
-    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
+    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools.</p>
     pub pool_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
     pub marker: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListTapePoolsInput {
     pub limit: ::std::option::Option<i32>,
 }
 impl ListTapePoolsInput {
-    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
+    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_arns.is_none()`.
     pub fn pool_arns(&self) -> &[::std::string::String] {
@@ -46,19 +46,19 @@ impl ListTapePoolsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_pool_arns`](Self::set_pool_arns).
     ///
-    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
+    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools.</p>
     pub fn pool_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pool_arns.unwrap_or_default();
         v.push(input.into());
         self.pool_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
+    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools.</p>
     pub fn set_pool_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_arns = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
+    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools.</p>
     pub fn get_pool_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pool_arns
     }

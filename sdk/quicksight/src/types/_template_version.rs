@@ -12,13 +12,13 @@ pub struct TemplateVersion {
     pub version_number: ::std::option::Option<i64>,
     /// <p>The status that is associated with the template.</p>
     /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <li><p><code>CREATION_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATION_SUCCESSFUL</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>UPDATE_SUCCESSFUL</code></p></li>
+    /// <li><p><code>UPDATE_FAILED</code></p></li>
+    /// <li><p><code>DELETED</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
@@ -49,13 +49,13 @@ impl TemplateVersion {
     }
     /// <p>The status that is associated with the template.</p>
     /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <li><p><code>CREATION_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATION_SUCCESSFUL</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>UPDATE_SUCCESSFUL</code></p></li>
+    /// <li><p><code>UPDATE_FAILED</code></p></li>
+    /// <li><p><code>DELETED</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.status.as_ref()
@@ -157,13 +157,13 @@ impl TemplateVersionBuilder {
     }
     /// <p>The status that is associated with the template.</p>
     /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <li><p><code>CREATION_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATION_SUCCESSFUL</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>UPDATE_SUCCESSFUL</code></p></li>
+    /// <li><p><code>UPDATE_FAILED</code></p></li>
+    /// <li><p><code>DELETED</code></p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -171,13 +171,13 @@ impl TemplateVersionBuilder {
     }
     /// <p>The status that is associated with the template.</p>
     /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <li><p><code>CREATION_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATION_SUCCESSFUL</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>UPDATE_SUCCESSFUL</code></p></li>
+    /// <li><p><code>UPDATE_FAILED</code></p></li>
+    /// <li><p><code>DELETED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
@@ -185,13 +185,13 @@ impl TemplateVersionBuilder {
     }
     /// <p>The status that is associated with the template.</p>
     /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <li><p><code>CREATION_IN_PROGRESS</code></p></li>
+    /// <li><p><code>CREATION_SUCCESSFUL</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>UPDATE_SUCCESSFUL</code></p></li>
+    /// <li><p><code>UPDATE_FAILED</code></p></li>
+    /// <li><p><code>DELETED</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         &self.status

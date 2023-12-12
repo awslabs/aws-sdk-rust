@@ -4,16 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UploadPartCopyInput {
     /// <p>The bucket name.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
-    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <li><p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
+    /// <li><p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
     /// <account-id>
@@ -25,8 +25,8 @@ pub struct UploadPartCopyInput {
     /// </account-id>
     /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <ul>
-    /// <li> <p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p> </li>
-    /// <li> <p>Access points are not supported by directory buckets.</p> </li>
+    /// <li><p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p></li>
+    /// <li><p>Access points are not supported by directory buckets.</p></li>
     /// </ul>
     /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
@@ -38,37 +38,37 @@ pub struct UploadPartCopyInput {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
     /// </ul>
     /// <p>If your bucket has versioning enabled, you could have multiple versions of the same object. By default, <code>x-amz-copy-source</code> identifies the current version of the source object to copy. To copy a specific version of the source object to copy, append <code>?versionId=
-    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). </p>
-    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>. </p> <note>
-    /// <p> <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
+    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).</p>
+    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>.</p> <note>
+    /// <p><b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
     /// </note>
     pub copy_source: ::std::option::Option<::std::string::String>,
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub copy_source_if_match: ::std::option::Option<::std::string::String>,
     /// <p>Copies the object if it has been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub copy_source_if_modified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub copy_source_if_none_match: ::std::option::Option<::std::string::String>,
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub copy_source_if_unmodified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
     pub copy_source_range: ::std::option::Option<::std::string::String>,
@@ -113,18 +113,18 @@ pub struct UploadPartCopyInput {
 }
 impl UploadPartCopyInput {
     /// <p>The bucket name.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
-    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <li><p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
+    /// <li><p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
     /// <account-id>
@@ -136,8 +136,8 @@ impl UploadPartCopyInput {
     /// </account-id>
     /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <ul>
-    /// <li> <p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p> </li>
-    /// <li> <p>Access points are not supported by directory buckets.</p> </li>
+    /// <li><p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p></li>
+    /// <li><p>Access points are not supported by directory buckets.</p></li>
     /// </ul>
     /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
@@ -149,45 +149,45 @@ impl UploadPartCopyInput {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
     /// </ul>
     /// <p>If your bucket has versioning enabled, you could have multiple versions of the same object. By default, <code>x-amz-copy-source</code> identifies the current version of the source object to copy. To copy a specific version of the source object to copy, append <code>?versionId=
-    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). </p>
-    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>. </p> <note>
-    /// <p> <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
+    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).</p>
+    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>.</p> <note>
+    /// <p><b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
     /// </note>
     pub fn copy_source(&self) -> ::std::option::Option<&str> {
         self.copy_source.as_deref()
     }
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn copy_source_if_match(&self) -> ::std::option::Option<&str> {
         self.copy_source_if_match.as_deref()
     }
     /// <p>Copies the object if it has been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn copy_source_if_modified_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.copy_source_if_modified_since.as_ref()
     }
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn copy_source_if_none_match(&self) -> ::std::option::Option<&str> {
         self.copy_source_if_none_match.as_deref()
     }
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn copy_source_if_unmodified_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.copy_source_if_unmodified_since.as_ref()
     }
@@ -316,39 +316,39 @@ pub struct UploadPartCopyInputBuilder {
 }
 impl UploadPartCopyInputBuilder {
     /// <p>The bucket name.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bucket name.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The bucket name.</p>
-    /// <p> <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p> <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
-    /// <p> <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
-    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <li><p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
+    /// <li><p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
     /// <account-id>
@@ -360,8 +360,8 @@ impl UploadPartCopyInputBuilder {
     /// </account-id>
     /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <ul>
-    /// <li> <p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p> </li>
-    /// <li> <p>Access points are not supported by directory buckets.</p> </li>
+    /// <li><p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p></li>
+    /// <li><p>Access points are not supported by directory buckets.</p></li>
     /// </ul>
     /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
@@ -373,12 +373,12 @@ impl UploadPartCopyInputBuilder {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
     /// </ul>
     /// <p>If your bucket has versioning enabled, you could have multiple versions of the same object. By default, <code>x-amz-copy-source</code> identifies the current version of the source object to copy. To copy a specific version of the source object to copy, append <code>?versionId=
-    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). </p>
-    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>. </p> <note>
-    /// <p> <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
+    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).</p>
+    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>.</p> <note>
+    /// <p><b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
     /// </note>
     /// This field is required.
     pub fn copy_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -387,8 +387,8 @@ impl UploadPartCopyInputBuilder {
     }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
-    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <li><p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
+    /// <li><p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
     /// <account-id>
@@ -400,8 +400,8 @@ impl UploadPartCopyInputBuilder {
     /// </account-id>
     /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <ul>
-    /// <li> <p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p> </li>
-    /// <li> <p>Access points are not supported by directory buckets.</p> </li>
+    /// <li><p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p></li>
+    /// <li><p>Access points are not supported by directory buckets.</p></li>
     /// </ul>
     /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
@@ -413,12 +413,12 @@ impl UploadPartCopyInputBuilder {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
     /// </ul>
     /// <p>If your bucket has versioning enabled, you could have multiple versions of the same object. By default, <code>x-amz-copy-source</code> identifies the current version of the source object to copy. To copy a specific version of the source object to copy, append <code>?versionId=
-    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). </p>
-    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>. </p> <note>
-    /// <p> <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
+    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).</p>
+    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>.</p> <note>
+    /// <p><b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
     /// </note>
     pub fn set_copy_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.copy_source = input;
@@ -426,8 +426,8 @@ impl UploadPartCopyInputBuilder {
     }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
-    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <li><p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
+    /// <li><p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
     /// <account-id>
@@ -439,8 +439,8 @@ impl UploadPartCopyInputBuilder {
     /// </account-id>
     /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <ul>
-    /// <li> <p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p> </li>
-    /// <li> <p>Access points are not supported by directory buckets.</p> </li>
+    /// <li><p>Amazon S3 supports copy operations using Access points only when the source and destination buckets are in the same Amazon Web Services Region.</p></li>
+    /// <li><p>Access points are not supported by directory buckets.</p></li>
     /// </ul>
     /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
@@ -452,117 +452,117 @@ impl UploadPartCopyInputBuilder {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded.</p></li>
     /// </ul>
     /// <p>If your bucket has versioning enabled, you could have multiple versions of the same object. By default, <code>x-amz-copy-source</code> identifies the current version of the source object to copy. To copy a specific version of the source object to copy, append <code>?versionId=
-    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). </p>
-    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>. </p> <note>
-    /// <p> <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
+    /// <version-id></version-id></code> to the <code>x-amz-copy-source</code> request header (for example, <code>x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).</p>
+    /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>.</p> <note>
+    /// <p><b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
     /// </note>
     pub fn get_copy_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.copy_source
     }
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn copy_source_if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.copy_source_if_match = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn set_copy_source_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.copy_source_if_match = input;
         self
     }
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn get_copy_source_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.copy_source_if_match
     }
     /// <p>Copies the object if it has been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn copy_source_if_modified_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.copy_source_if_modified_since = ::std::option::Option::Some(input);
         self
     }
     /// <p>Copies the object if it has been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn set_copy_source_if_modified_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.copy_source_if_modified_since = input;
         self
     }
     /// <p>Copies the object if it has been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn get_copy_source_if_modified_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.copy_source_if_modified_since
     }
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn copy_source_if_none_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.copy_source_if_none_match = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn set_copy_source_if_none_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.copy_source_if_none_match = input;
         self
     }
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
-    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code. </p>
+    /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
+    /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn get_copy_source_if_none_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.copy_source_if_none_match
     }
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn copy_source_if_unmodified_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.copy_source_if_unmodified_since = ::std::option::Option::Some(input);
         self
     }
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn set_copy_source_if_unmodified_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.copy_source_if_unmodified_since = input;
         self
     }
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
-    /// <p> <code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
-    /// <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
-    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data. </p>
+    /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
+    /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
+    /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn get_copy_source_if_unmodified_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.copy_source_if_unmodified_since
     }

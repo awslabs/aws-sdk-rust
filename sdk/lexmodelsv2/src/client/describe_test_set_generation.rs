@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::description): <p>The test set description for the test set generation.</p>
     ///   - [`storage_location(Option<TestSetStorageLocation>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::storage_location): <p>The Amazon S3 storage location for the test set generation.</p>
     ///   - [`generation_data_source(Option<TestSetGenerationDataSource>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::generation_data_source): <p>The data source of the test set used for the test set generation.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::role_arn): <p> The roleARN of the test set used for the test set generation.</p>
+    ///   - [`role_arn(Option<String>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::role_arn): <p>The roleARN of the test set used for the test set generation.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::creation_date_time): <p>The creation date and time for the test set generation.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::last_updated_date_time): <p>The date and time of the last update for the test set generation.</p>
     /// - On failure, responds with [`SdkError<DescribeTestSetGenerationError>`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationError)

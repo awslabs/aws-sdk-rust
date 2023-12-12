@@ -109,19 +109,19 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
         self
     }
     /// <p>The ID of the reserved cache node offering to purchase.</p>
-    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
+    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub fn reserved_cache_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_cache_nodes_offering_id(input.into());
         self
     }
     /// <p>The ID of the reserved cache node offering to purchase.</p>
-    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
+    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub fn set_reserved_cache_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_cache_nodes_offering_id(input);
         self
     }
     /// <p>The ID of the reserved cache node offering to purchase.</p>
-    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
+    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub fn get_reserved_cache_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reserved_cache_nodes_offering_id()
     }
@@ -149,19 +149,19 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
         self.inner.get_reserved_cache_node_id()
     }
     /// <p>The number of cache node instances to reserve.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn cache_node_count(mut self, input: i32) -> Self {
         self.inner = self.inner.cache_node_count(input);
         self
     }
     /// <p>The number of cache node instances to reserve.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn set_cache_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_cache_node_count(input);
         self
     }
     /// <p>The number of cache node instances to reserve.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn get_cache_node_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_cache_node_count()
     }

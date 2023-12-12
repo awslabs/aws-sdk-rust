@@ -5,13 +5,13 @@
 pub struct GetOpsSummaryInput {
     /// <p>Specify the name of a resource data sync to get.</p>
     pub sync_name: ::std::option::Option<::std::string::String>,
-    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    /// <p>Optional filters used to scope down the returned OpsData.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
     pub aggregators: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>,
     /// <p>The OpsData data type to return.</p>
     pub result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>,
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -21,7 +21,7 @@ impl GetOpsSummaryInput {
     pub fn sync_name(&self) -> ::std::option::Option<&str> {
         self.sync_name.as_deref()
     }
-    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    /// <p>Optional filters used to scope down the returned OpsData.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::OpsFilter] {
@@ -39,7 +39,7 @@ impl GetOpsSummaryInput {
     pub fn result_attributes(&self) -> &[crate::types::OpsResultAttribute] {
         self.result_attributes.as_deref().unwrap_or_default()
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -85,19 +85,19 @@ impl GetOpsSummaryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    /// <p>Optional filters used to scope down the returned OpsData.</p>
     pub fn filters(mut self, input: crate::types::OpsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    /// <p>Optional filters used to scope down the returned OpsData.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    /// <p>Optional filters used to scope down the returned OpsData.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>> {
         &self.filters
     }
@@ -141,17 +141,17 @@ impl GetOpsSummaryInputBuilder {
     pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>> {
         &self.result_attributes
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

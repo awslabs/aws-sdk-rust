@@ -234,11 +234,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ScanSbomEndpo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ScanSbomError {
-    /// <p>You do not have sufficient access to perform this action. </p>
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or failure. </p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request was denied due to request throttling. </p>
+    /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::types::error::ValidationException),

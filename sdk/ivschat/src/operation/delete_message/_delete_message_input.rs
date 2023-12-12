@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMessageInput {
-    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
     pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct DeleteMessageInput {
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMessageInput {
-    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
     pub fn room_identifier(&self) -> ::std::option::Option<&str> {
         self.room_identifier.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct DeleteMessageInputBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMessageInputBuilder {
-    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
     /// This field is required.
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
     pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_identifier = input;
         self
     }
-    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
     pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.room_identifier
     }

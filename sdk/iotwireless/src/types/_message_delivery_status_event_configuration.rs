@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageDeliveryStatusEventConfiguration {
-    /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+    /// <p><code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.</p>
     pub wireless_device_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl MessageDeliveryStatusEventConfiguration {
-    /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+    /// <p><code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
     pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkEventNotificationConfigurations> {
         self.sidewalk.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct MessageDeliveryStatusEventConfigurationBuilder {
     pub(crate) wireless_device_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl MessageDeliveryStatusEventConfigurationBuilder {
-    /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+    /// <p><code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkEventNotificationConfigurations) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+    /// <p><code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
     pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkEventNotificationConfigurations>) -> Self {
         self.sidewalk = input;
         self
     }
-    /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+    /// <p><code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkEventNotificationConfigurations> {
         &self.sidewalk
     }

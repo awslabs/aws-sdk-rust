@@ -15,7 +15,7 @@ pub struct Connection {
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the connection. </p>
+    /// <p>The current status of the connection.</p>
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
     pub host_arn: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ impl Connection {
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
-    /// <p>The current status of the connection. </p>
+    /// <p>The current status of the connection.</p>
     pub fn connection_status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
         self.connection_status.as_ref()
     }
@@ -129,17 +129,17 @@ impl ConnectionBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
-    /// <p>The current status of the connection. </p>
+    /// <p>The current status of the connection.</p>
     pub fn connection_status(mut self, input: crate::types::ConnectionStatus) -> Self {
         self.connection_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the connection. </p>
+    /// <p>The current status of the connection.</p>
     pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
         self.connection_status = input;
         self
     }
-    /// <p>The current status of the connection. </p>
+    /// <p>The current status of the connection.</p>
     pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
         &self.connection_status
     }

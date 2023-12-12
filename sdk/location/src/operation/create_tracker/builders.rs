@@ -111,9 +111,9 @@ impl CreateTrackerFluentBuilder {
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>
-    /// <li> <p>Must be a unique tracker resource name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
+    /// <li><p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique tracker resource name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleTracker</code>.</p></li>
     /// </ul>
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tracker_name(input.into());
@@ -122,9 +122,9 @@ impl CreateTrackerFluentBuilder {
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>
-    /// <li> <p>Must be a unique tracker resource name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
+    /// <li><p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique tracker resource name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleTracker</code>.</p></li>
     /// </ul>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tracker_name(input);
@@ -133,9 +133,9 @@ impl CreateTrackerFluentBuilder {
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>
-    /// <li> <p>Must be a unique tracker resource name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
+    /// <li><p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique tracker resource name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleTracker</code>.</p></li>
     /// </ul>
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tracker_name()
@@ -207,45 +207,45 @@ impl CreateTrackerFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
@@ -253,9 +253,9 @@ impl CreateTrackerFluentBuilder {
     /// <p>Specifies the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
-    /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>
-    /// <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations. </p> </li>
+    /// <li><p><code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID.</p></li>
+    /// <li><p><code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.</p></li>
+    /// <li><p><code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations.</p></li>
     /// </ul>
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
     pub fn position_filtering(mut self, input: crate::types::PositionFiltering) -> Self {
@@ -265,9 +265,9 @@ impl CreateTrackerFluentBuilder {
     /// <p>Specifies the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
-    /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>
-    /// <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations. </p> </li>
+    /// <li><p><code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID.</p></li>
+    /// <li><p><code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.</p></li>
+    /// <li><p><code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations.</p></li>
     /// </ul>
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
     pub fn set_position_filtering(mut self, input: ::std::option::Option<crate::types::PositionFiltering>) -> Self {
@@ -277,9 +277,9 @@ impl CreateTrackerFluentBuilder {
     /// <p>Specifies the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
-    /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>
-    /// <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations. </p> </li>
+    /// <li><p><code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID.</p></li>
+    /// <li><p><code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.</p></li>
+    /// <li><p><code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations.</p></li>
     /// </ul>
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
     pub fn get_position_filtering(&self) -> &::std::option::Option<crate::types::PositionFiltering> {

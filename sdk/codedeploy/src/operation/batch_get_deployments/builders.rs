@@ -112,17 +112,17 @@ impl BatchGetDeploymentsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
     ///
-    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
+    /// <p>A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
     pub fn deployment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_ids(input.into());
         self
     }
-    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
+    /// <p>A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
     pub fn set_deployment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_deployment_ids(input);
         self
     }
-    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
+    /// <p>A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
     pub fn get_deployment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_deployment_ids()
     }

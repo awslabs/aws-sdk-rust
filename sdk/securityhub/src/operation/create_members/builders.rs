@@ -23,18 +23,18 @@ impl CreateMembersInputBuilder {
 /// Fluent builder constructing a request to `CreateMembers`.
 ///
 /// <p>Creates a member association in Security Hub between the specified accounts and the account used to make the request, which is the administrator account. If you are integrated with Organizations, then the administrator account is designated by the organization management account.</p>
-/// <p> <code>CreateMembers</code> is always used to add accounts that are not organization members.</p>
+/// <p><code>CreateMembers</code> is always used to add accounts that are not organization members.</p>
 /// <p>For accounts that are managed using Organizations, <code>CreateMembers</code> is only used in the following cases:</p>
 /// <ul>
-/// <li> <p>Security Hub is not configured to automatically add new organization accounts.</p> </li>
-/// <li> <p>The account was disassociated or deleted in Security Hub.</p> </li>
+/// <li><p>Security Hub is not configured to automatically add new organization accounts.</p></li>
+/// <li><p>The account was disassociated or deleted in Security Hub.</p></li>
 /// </ul>
 /// <p>This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you can use the <code>EnableSecurityHub</code> operation.</p>
 /// <p>For accounts that are not organization members, you create the account association and then send an invitation to the member account. To send the invitation, you use the <code>InviteMembers</code> operation. If the account owner accepts the invitation, the account becomes a member account in Security Hub.</p>
 /// <p>Accounts that are managed using Organizations do not receive an invitation. They automatically become a member account in Security Hub.</p>
 /// <ul>
-/// <li> <p>If the organization account does not have Security Hub enabled, then Security Hub and the default standards are automatically enabled. Note that Security Hub cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub before the administrator account enables it as a member account.</p> </li>
-/// <li> <p>For organization accounts that already have Security Hub enabled, Security Hub does not make any other changes to those accounts. It does not change their enabled standards or controls.</p> </li>
+/// <li><p>If the organization account does not have Security Hub enabled, then Security Hub and the default standards are automatically enabled. Note that Security Hub cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub before the administrator account enables it as a member account.</p></li>
+/// <li><p>For organization accounts that already have Security Hub enabled, Security Hub does not make any other changes to those accounts. It does not change their enabled standards or controls.</p></li>
 /// </ul>
 /// <p>A permissions policy is added that permits the administrator account to view the findings generated in the member account.</p>
 /// <p>To remove the association between the administrator and member accounts, use the <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code> operation.</p>

@@ -6,7 +6,7 @@
 pub struct DatasetUpdateSummary {
     /// <p>The Amazon Resource Name (ARN) of the schema that replaced the previous schema of the dataset.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the dataset update. </p>
+    /// <p>The status of the dataset update.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If updating a dataset fails, provides the reason why.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl DatasetUpdateSummary {
     pub fn schema_arn(&self) -> ::std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
-    /// <p>The status of the dataset update. </p>
+    /// <p>The status of the dataset update.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -69,17 +69,17 @@ impl DatasetUpdateSummaryBuilder {
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_arn
     }
-    /// <p>The status of the dataset update. </p>
+    /// <p>The status of the dataset update.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the dataset update. </p>
+    /// <p>The status of the dataset update.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the dataset update. </p>
+    /// <p>The status of the dataset update.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

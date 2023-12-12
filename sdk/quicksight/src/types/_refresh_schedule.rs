@@ -12,8 +12,8 @@ pub struct RefreshSchedule {
     pub start_after_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>FULL_REFRESH</code>: A complete refresh of a dataset.</p> </li>
-    /// <li> <p> <code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p> </li>
+    /// <li><p><code>FULL_REFRESH</code>: A complete refresh of a dataset.</p></li>
+    /// <li><p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
     /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub refresh_type: crate::types::IngestionType,
@@ -36,8 +36,8 @@ impl RefreshSchedule {
     }
     /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>FULL_REFRESH</code>: A complete refresh of a dataset.</p> </li>
-    /// <li> <p> <code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p> </li>
+    /// <li><p><code>FULL_REFRESH</code>: A complete refresh of a dataset.</p></li>
+    /// <li><p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
     /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn refresh_type(&self) -> &crate::types::IngestionType {
@@ -112,8 +112,8 @@ impl RefreshScheduleBuilder {
     }
     /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>FULL_REFRESH</code>: A complete refresh of a dataset.</p> </li>
-    /// <li> <p> <code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p> </li>
+    /// <li><p><code>FULL_REFRESH</code>: A complete refresh of a dataset.</p></li>
+    /// <li><p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
     /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     /// This field is required.
@@ -123,8 +123,8 @@ impl RefreshScheduleBuilder {
     }
     /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>FULL_REFRESH</code>: A complete refresh of a dataset.</p> </li>
-    /// <li> <p> <code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p> </li>
+    /// <li><p><code>FULL_REFRESH</code>: A complete refresh of a dataset.</p></li>
+    /// <li><p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
     /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_refresh_type(mut self, input: ::std::option::Option<crate::types::IngestionType>) -> Self {
@@ -133,8 +133,8 @@ impl RefreshScheduleBuilder {
     }
     /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>FULL_REFRESH</code>: A complete refresh of a dataset.</p> </li>
-    /// <li> <p> <code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p> </li>
+    /// <li><p><code>FULL_REFRESH</code>: A complete refresh of a dataset.</p></li>
+    /// <li><p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
     /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn get_refresh_type(&self) -> &::std::option::Option<crate::types::IngestionType> {

@@ -22,8 +22,8 @@ impl GetIntentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetIntent`.
 ///
-/// <p> Returns information about an intent. In addition to the intent name, you must specify the intent version. </p>
-/// <p> This operation requires permissions to perform the <code>lex:GetIntent</code> action. </p>
+/// <p>Returns information about an intent. In addition to the intent name, you must specify the intent version.</p>
+/// <p>This operation requires permissions to perform the <code>lex:GetIntent</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIntentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -103,17 +103,17 @@ impl GetIntentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the intent. The name is case sensitive. </p>
+    /// <p>The name of the intent. The name is case sensitive.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the intent. The name is case sensitive. </p>
+    /// <p>The name of the intent. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the intent. The name is case sensitive. </p>
+    /// <p>The name of the intent. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

@@ -156,8 +156,8 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     ///
     /// <p>The settings used when restoring the specified volume from snapshot.</p>
     /// <ul>
-    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
-    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// <li><p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p></li>
+    /// <li><p><code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p></li>
     /// </ul>
     pub fn options(mut self, input: crate::types::RestoreOpenZfsVolumeOption) -> Self {
         self.inner = self.inner.options(input);
@@ -165,8 +165,8 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     }
     /// <p>The settings used when restoring the specified volume from snapshot.</p>
     /// <ul>
-    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
-    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// <li><p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p></li>
+    /// <li><p><code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p></li>
     /// </ul>
     pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>) -> Self {
         self.inner = self.inner.set_options(input);
@@ -174,8 +174,8 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     }
     /// <p>The settings used when restoring the specified volume from snapshot.</p>
     /// <ul>
-    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
-    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// <li><p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p></li>
+    /// <li><p><code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p></li>
     /// </ul>
     pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>> {
         self.inner.get_options()

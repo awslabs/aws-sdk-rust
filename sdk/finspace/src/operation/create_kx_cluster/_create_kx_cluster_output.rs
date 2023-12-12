@@ -7,36 +7,36 @@ pub struct CreateKxClusterOutput {
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of cluster creation.</p>
     /// <ul>
-    /// <li> <p>PENDING – The cluster is pending creation.</p> </li>
-    /// <li> <p>CREATING – The cluster creation process is in progress.</p> </li>
-    /// <li> <p>CREATE_FAILED – The cluster creation process has failed.</p> </li>
-    /// <li> <p>RUNNING – The cluster creation process is running.</p> </li>
-    /// <li> <p>UPDATING – The cluster is in the process of being updated.</p> </li>
-    /// <li> <p>DELETING – The cluster is in the process of being deleted.</p> </li>
-    /// <li> <p>DELETED – The cluster has been deleted.</p> </li>
-    /// <li> <p>DELETE_FAILED – The cluster failed to delete.</p> </li>
+    /// <li><p>PENDING – The cluster is pending creation.</p></li>
+    /// <li><p>CREATING – The cluster creation process is in progress.</p></li>
+    /// <li><p>CREATE_FAILED – The cluster creation process has failed.</p></li>
+    /// <li><p>RUNNING – The cluster creation process is running.</p></li>
+    /// <li><p>UPDATING – The cluster is in the process of being updated.</p></li>
+    /// <li><p>DELETING – The cluster is in the process of being deleted.</p></li>
+    /// <li><p>DELETED – The cluster has been deleted.</p></li>
+    /// <li><p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::KxClusterStatus>,
-    /// <p>The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>A unique name for the cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
+    /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
     /// <ul>
-    /// <li> <p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p> </li>
-    /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
-    /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
-    /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
+    /// <li><p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p></li>
+    /// <li><p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p></li>
+    /// <li><p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p></li>
+    /// <li><p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p></li>
+    /// <li><p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
     pub cluster_type: ::std::option::Option<crate::types::KxClusterType>,
-    /// <p> A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>. </p>
+    /// <p>A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
     pub tickerplant_log_configuration: ::std::option::Option<crate::types::TickerplantLogConfiguration>,
-    /// <p> A list of volumes mounted on the cluster. </p>
+    /// <p>A list of volumes mounted on the cluster.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     /// <p>A list of databases that will be available for querying.</p>
     pub databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
-    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. </p>
+    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
     pub cache_storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>>,
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
     pub auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
@@ -52,21 +52,21 @@ pub struct CreateKxClusterOutput {
     pub initialization_script: ::std::option::Option<::std::string::String>,
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
     pub command_line_arguments: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>,
-    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
+    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
     pub code: ::std::option::Option<crate::types::CodeConfiguration>,
-    /// <p> An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster. </p>
+    /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The last time that the cluster was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose <code>clusterType</code> as RDB. All the data written to this storage space is lost when the cluster node is restarted.</p>
     pub savedown_storage_configuration: ::std::option::Option<crate::types::KxSavedownStorageConfiguration>,
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
-    /// <p> The availability zone identifiers for the requested regions. </p>
+    /// <p>The availability zone identifiers for the requested regions.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the cluster was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -81,19 +81,19 @@ impl CreateKxClusterOutput {
     }
     /// <p>The status of cluster creation.</p>
     /// <ul>
-    /// <li> <p>PENDING – The cluster is pending creation.</p> </li>
-    /// <li> <p>CREATING – The cluster creation process is in progress.</p> </li>
-    /// <li> <p>CREATE_FAILED – The cluster creation process has failed.</p> </li>
-    /// <li> <p>RUNNING – The cluster creation process is running.</p> </li>
-    /// <li> <p>UPDATING – The cluster is in the process of being updated.</p> </li>
-    /// <li> <p>DELETING – The cluster is in the process of being deleted.</p> </li>
-    /// <li> <p>DELETED – The cluster has been deleted.</p> </li>
-    /// <li> <p>DELETE_FAILED – The cluster failed to delete.</p> </li>
+    /// <li><p>PENDING – The cluster is pending creation.</p></li>
+    /// <li><p>CREATING – The cluster creation process is in progress.</p></li>
+    /// <li><p>CREATE_FAILED – The cluster creation process has failed.</p></li>
+    /// <li><p>RUNNING – The cluster creation process is running.</p></li>
+    /// <li><p>UPDATING – The cluster is in the process of being updated.</p></li>
+    /// <li><p>DELETING – The cluster is in the process of being deleted.</p></li>
+    /// <li><p>DELETED – The cluster has been deleted.</p></li>
+    /// <li><p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::KxClusterStatus> {
         self.status.as_ref()
     }
-    /// <p>The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -101,22 +101,22 @@ impl CreateKxClusterOutput {
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
+    /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
     /// <ul>
-    /// <li> <p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p> </li>
-    /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
-    /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
-    /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
+    /// <li><p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p></li>
+    /// <li><p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p></li>
+    /// <li><p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p></li>
+    /// <li><p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p></li>
+    /// <li><p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
     pub fn cluster_type(&self) -> ::std::option::Option<&crate::types::KxClusterType> {
         self.cluster_type.as_ref()
     }
-    /// <p> A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>. </p>
+    /// <p>A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
     pub fn tickerplant_log_configuration(&self) -> ::std::option::Option<&crate::types::TickerplantLogConfiguration> {
         self.tickerplant_log_configuration.as_ref()
     }
-    /// <p> A list of volumes mounted on the cluster. </p>
+    /// <p>A list of volumes mounted on the cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
     pub fn volumes(&self) -> &[crate::types::Volume] {
@@ -128,7 +128,7 @@ impl CreateKxClusterOutput {
     pub fn databases(&self) -> &[crate::types::KxDatabaseConfiguration] {
         self.databases.as_deref().unwrap_or_default()
     }
-    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. </p>
+    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_storage_configurations.is_none()`.
     pub fn cache_storage_configurations(&self) -> &[crate::types::KxCacheStorageConfiguration] {
@@ -164,11 +164,11 @@ impl CreateKxClusterOutput {
     pub fn command_line_arguments(&self) -> &[crate::types::KxCommandLineArgument] {
         self.command_line_arguments.as_deref().unwrap_or_default()
     }
-    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
+    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
     pub fn code(&self) -> ::std::option::Option<&crate::types::CodeConfiguration> {
         self.code.as_ref()
     }
-    /// <p> An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster. </p>
+    /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
@@ -180,15 +180,15 @@ impl CreateKxClusterOutput {
     pub fn savedown_storage_configuration(&self) -> ::std::option::Option<&crate::types::KxSavedownStorageConfiguration> {
         self.savedown_storage_configuration.as_ref()
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
-    /// <p> The availability zone identifiers for the requested regions. </p>
+    /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
@@ -260,14 +260,14 @@ impl CreateKxClusterOutputBuilder {
     }
     /// <p>The status of cluster creation.</p>
     /// <ul>
-    /// <li> <p>PENDING – The cluster is pending creation.</p> </li>
-    /// <li> <p>CREATING – The cluster creation process is in progress.</p> </li>
-    /// <li> <p>CREATE_FAILED – The cluster creation process has failed.</p> </li>
-    /// <li> <p>RUNNING – The cluster creation process is running.</p> </li>
-    /// <li> <p>UPDATING – The cluster is in the process of being updated.</p> </li>
-    /// <li> <p>DELETING – The cluster is in the process of being deleted.</p> </li>
-    /// <li> <p>DELETED – The cluster has been deleted.</p> </li>
-    /// <li> <p>DELETE_FAILED – The cluster failed to delete.</p> </li>
+    /// <li><p>PENDING – The cluster is pending creation.</p></li>
+    /// <li><p>CREATING – The cluster creation process is in progress.</p></li>
+    /// <li><p>CREATE_FAILED – The cluster creation process has failed.</p></li>
+    /// <li><p>RUNNING – The cluster creation process is running.</p></li>
+    /// <li><p>UPDATING – The cluster is in the process of being updated.</p></li>
+    /// <li><p>DELETING – The cluster is in the process of being deleted.</p></li>
+    /// <li><p>DELETED – The cluster has been deleted.</p></li>
+    /// <li><p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::KxClusterStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -275,14 +275,14 @@ impl CreateKxClusterOutputBuilder {
     }
     /// <p>The status of cluster creation.</p>
     /// <ul>
-    /// <li> <p>PENDING – The cluster is pending creation.</p> </li>
-    /// <li> <p>CREATING – The cluster creation process is in progress.</p> </li>
-    /// <li> <p>CREATE_FAILED – The cluster creation process has failed.</p> </li>
-    /// <li> <p>RUNNING – The cluster creation process is running.</p> </li>
-    /// <li> <p>UPDATING – The cluster is in the process of being updated.</p> </li>
-    /// <li> <p>DELETING – The cluster is in the process of being deleted.</p> </li>
-    /// <li> <p>DELETED – The cluster has been deleted.</p> </li>
-    /// <li> <p>DELETE_FAILED – The cluster failed to delete.</p> </li>
+    /// <li><p>PENDING – The cluster is pending creation.</p></li>
+    /// <li><p>CREATING – The cluster creation process is in progress.</p></li>
+    /// <li><p>CREATE_FAILED – The cluster creation process has failed.</p></li>
+    /// <li><p>RUNNING – The cluster creation process is running.</p></li>
+    /// <li><p>UPDATING – The cluster is in the process of being updated.</p></li>
+    /// <li><p>DELETING – The cluster is in the process of being deleted.</p></li>
+    /// <li><p>DELETED – The cluster has been deleted.</p></li>
+    /// <li><p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxClusterStatus>) -> Self {
         self.status = input;
@@ -290,29 +290,29 @@ impl CreateKxClusterOutputBuilder {
     }
     /// <p>The status of cluster creation.</p>
     /// <ul>
-    /// <li> <p>PENDING – The cluster is pending creation.</p> </li>
-    /// <li> <p>CREATING – The cluster creation process is in progress.</p> </li>
-    /// <li> <p>CREATE_FAILED – The cluster creation process has failed.</p> </li>
-    /// <li> <p>RUNNING – The cluster creation process is running.</p> </li>
-    /// <li> <p>UPDATING – The cluster is in the process of being updated.</p> </li>
-    /// <li> <p>DELETING – The cluster is in the process of being deleted.</p> </li>
-    /// <li> <p>DELETED – The cluster has been deleted.</p> </li>
-    /// <li> <p>DELETE_FAILED – The cluster failed to delete.</p> </li>
+    /// <li><p>PENDING – The cluster is pending creation.</p></li>
+    /// <li><p>CREATING – The cluster creation process is in progress.</p></li>
+    /// <li><p>CREATE_FAILED – The cluster creation process has failed.</p></li>
+    /// <li><p>RUNNING – The cluster creation process is running.</p></li>
+    /// <li><p>UPDATING – The cluster is in the process of being updated.</p></li>
+    /// <li><p>DELETING – The cluster is in the process of being deleted.</p></li>
+    /// <li><p>DELETED – The cluster has been deleted.</p></li>
+    /// <li><p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KxClusterStatus> {
         &self.status
     }
-    /// <p>The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p>The error message when a failed state occurs. </p>
+    /// <p>The error message when a failed state occurs.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
@@ -330,52 +330,52 @@ impl CreateKxClusterOutputBuilder {
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
-    /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
+    /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
     /// <ul>
-    /// <li> <p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p> </li>
-    /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
-    /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
-    /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
+    /// <li><p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p></li>
+    /// <li><p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p></li>
+    /// <li><p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p></li>
+    /// <li><p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p></li>
+    /// <li><p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
     pub fn cluster_type(mut self, input: crate::types::KxClusterType) -> Self {
         self.cluster_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
+    /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
     /// <ul>
-    /// <li> <p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p> </li>
-    /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
-    /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
-    /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
+    /// <li><p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p></li>
+    /// <li><p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p></li>
+    /// <li><p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p></li>
+    /// <li><p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p></li>
+    /// <li><p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
         self.cluster_type = input;
         self
     }
-    /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
+    /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
     /// <ul>
-    /// <li> <p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p> </li>
-    /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
-    /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
-    /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
+    /// <li><p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p></li>
+    /// <li><p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p></li>
+    /// <li><p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p></li>
+    /// <li><p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p></li>
+    /// <li><p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
     pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::KxClusterType> {
         &self.cluster_type
     }
-    /// <p> A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>. </p>
+    /// <p>A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
     pub fn tickerplant_log_configuration(mut self, input: crate::types::TickerplantLogConfiguration) -> Self {
         self.tickerplant_log_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>. </p>
+    /// <p>A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
     pub fn set_tickerplant_log_configuration(mut self, input: ::std::option::Option<crate::types::TickerplantLogConfiguration>) -> Self {
         self.tickerplant_log_configuration = input;
         self
     }
-    /// <p> A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>. </p>
+    /// <p>A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
     pub fn get_tickerplant_log_configuration(&self) -> &::std::option::Option<crate::types::TickerplantLogConfiguration> {
         &self.tickerplant_log_configuration
     }
@@ -383,19 +383,19 @@ impl CreateKxClusterOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
     ///
-    /// <p> A list of volumes mounted on the cluster. </p>
+    /// <p>A list of volumes mounted on the cluster.</p>
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
         v.push(input);
         self.volumes = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of volumes mounted on the cluster. </p>
+    /// <p>A list of volumes mounted on the cluster.</p>
     pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
         self.volumes = input;
         self
     }
-    /// <p> A list of volumes mounted on the cluster. </p>
+    /// <p>A list of volumes mounted on the cluster.</p>
     pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
         &self.volumes
     }
@@ -423,14 +423,14 @@ impl CreateKxClusterOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cache_storage_configurations`](Self::set_cache_storage_configurations).
     ///
-    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. </p>
+    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
     pub fn cache_storage_configurations(mut self, input: crate::types::KxCacheStorageConfiguration) -> Self {
         let mut v = self.cache_storage_configurations.unwrap_or_default();
         v.push(input);
         self.cache_storage_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. </p>
+    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
     pub fn set_cache_storage_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>>,
@@ -438,7 +438,7 @@ impl CreateKxClusterOutputBuilder {
         self.cache_storage_configurations = input;
         self
     }
-    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. </p>
+    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
     pub fn get_cache_storage_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>> {
         &self.cache_storage_configurations
     }
@@ -546,31 +546,31 @@ impl CreateKxClusterOutputBuilder {
     pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
         &self.command_line_arguments
     }
-    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
+    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
     pub fn code(mut self, input: crate::types::CodeConfiguration) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
+    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::CodeConfiguration>) -> Self {
         self.code = input;
         self
     }
-    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
+    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::CodeConfiguration> {
         &self.code
     }
-    /// <p> An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster. </p>
+    /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster. </p>
+    /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p> An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster. </p>
+    /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
@@ -602,43 +602,43 @@ impl CreateKxClusterOutputBuilder {
     pub fn get_savedown_storage_configuration(&self) -> &::std::option::Option<crate::types::KxSavedownStorageConfiguration> {
         &self.savedown_storage_configuration
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.az_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.az_mode = input;
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
-    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         &self.az_mode
     }
-    /// <p> The availability zone identifiers for the requested regions. </p>
+    /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The availability zone identifiers for the requested regions. </p>
+    /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
-    /// <p> The availability zone identifiers for the requested regions. </p>
+    /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }

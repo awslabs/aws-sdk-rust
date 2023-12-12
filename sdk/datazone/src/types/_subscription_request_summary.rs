@@ -20,7 +20,7 @@ pub struct SubscriptionRequestSummary {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The reason for the subscription request.</p>
     pub request_reason: ::std::string::String,
-    /// <p>The principals included in the subscription request. </p>
+    /// <p>The principals included in the subscription request.</p>
     pub subscribed_principals: ::std::vec::Vec<crate::types::SubscribedPrincipal>,
     /// <p>The listings included in the subscription request.</p>
     pub subscribed_listings: ::std::vec::Vec<crate::types::SubscribedListing>,
@@ -66,7 +66,7 @@ impl SubscriptionRequestSummary {
         use std::ops::Deref;
         self.request_reason.deref()
     }
-    /// <p>The principals included in the subscription request. </p>
+    /// <p>The principals included in the subscription request.</p>
     pub fn subscribed_principals(&self) -> &[crate::types::SubscribedPrincipal] {
         use std::ops::Deref;
         self.subscribed_principals.deref()
@@ -251,19 +251,19 @@ impl SubscriptionRequestSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_subscribed_principals`](Self::set_subscribed_principals).
     ///
-    /// <p>The principals included in the subscription request. </p>
+    /// <p>The principals included in the subscription request.</p>
     pub fn subscribed_principals(mut self, input: crate::types::SubscribedPrincipal) -> Self {
         let mut v = self.subscribed_principals.unwrap_or_default();
         v.push(input);
         self.subscribed_principals = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The principals included in the subscription request. </p>
+    /// <p>The principals included in the subscription request.</p>
     pub fn set_subscribed_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipal>>) -> Self {
         self.subscribed_principals = input;
         self
     }
-    /// <p>The principals included in the subscription request. </p>
+    /// <p>The principals included in the subscription request.</p>
     pub fn get_subscribed_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipal>> {
         &self.subscribed_principals
     }

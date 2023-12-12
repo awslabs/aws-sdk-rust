@@ -12,8 +12,8 @@ pub struct UpdateDatasetInput {
     pub dataset_title: ::std::option::Option<::std::string::String>,
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub kind: ::std::option::Option<crate::types::DatasetKind>,
     /// <p>A description for the Dataset.</p>
@@ -38,8 +38,8 @@ impl UpdateDatasetInput {
     }
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub fn kind(&self) -> ::std::option::Option<&crate::types::DatasetKind> {
         self.kind.as_ref()
@@ -123,8 +123,8 @@ impl UpdateDatasetInputBuilder {
     }
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     /// This field is required.
     pub fn kind(mut self, input: crate::types::DatasetKind) -> Self {
@@ -133,8 +133,8 @@ impl UpdateDatasetInputBuilder {
     }
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub fn set_kind(mut self, input: ::std::option::Option<crate::types::DatasetKind>) -> Self {
         self.kind = input;
@@ -142,8 +142,8 @@ impl UpdateDatasetInputBuilder {
     }
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <li><p><code>TABULAR</code> – Data is structured in a tabular format.</p></li>
+    /// <li><p><code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p></li>
     /// </ul>
     pub fn get_kind(&self) -> &::std::option::Option<crate::types::DatasetKind> {
         &self.kind

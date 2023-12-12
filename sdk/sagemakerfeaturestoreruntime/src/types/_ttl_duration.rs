@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TtlDuration {
-    /// <p> <code>TtlDuration</code> time unit.</p>
+    /// <p><code>TtlDuration</code> time unit.</p>
     pub unit: ::std::option::Option<crate::types::TtlDurationUnit>,
-    /// <p> <code>TtlDuration</code> time value.</p>
+    /// <p><code>TtlDuration</code> time value.</p>
     pub value: ::std::option::Option<i32>,
 }
 impl TtlDuration {
-    /// <p> <code>TtlDuration</code> time unit.</p>
+    /// <p><code>TtlDuration</code> time unit.</p>
     pub fn unit(&self) -> ::std::option::Option<&crate::types::TtlDurationUnit> {
         self.unit.as_ref()
     }
-    /// <p> <code>TtlDuration</code> time value.</p>
+    /// <p><code>TtlDuration</code> time value.</p>
     pub fn value(&self) -> ::std::option::Option<i32> {
         self.value
     }
@@ -34,33 +34,33 @@ pub struct TtlDurationBuilder {
     pub(crate) value: ::std::option::Option<i32>,
 }
 impl TtlDurationBuilder {
-    /// <p> <code>TtlDuration</code> time unit.</p>
+    /// <p><code>TtlDuration</code> time unit.</p>
     /// This field is required.
     pub fn unit(mut self, input: crate::types::TtlDurationUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TtlDuration</code> time unit.</p>
+    /// <p><code>TtlDuration</code> time unit.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::TtlDurationUnit>) -> Self {
         self.unit = input;
         self
     }
-    /// <p> <code>TtlDuration</code> time unit.</p>
+    /// <p><code>TtlDuration</code> time unit.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::TtlDurationUnit> {
         &self.unit
     }
-    /// <p> <code>TtlDuration</code> time value.</p>
+    /// <p><code>TtlDuration</code> time value.</p>
     /// This field is required.
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TtlDuration</code> time value.</p>
+    /// <p><code>TtlDuration</code> time value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
     }
-    /// <p> <code>TtlDuration</code> time value.</p>
+    /// <p><code>TtlDuration</code> time value.</p>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
         &self.value
     }

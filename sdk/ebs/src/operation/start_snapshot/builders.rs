@@ -22,7 +22,7 @@ impl StartSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `StartSnapshot`.
 ///
-/// <p>Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request completes. </p>
+/// <p>Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request completes.</p>
 /// <p>After creating the snapshot, use <a href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to write blocks of data to the snapshot.</p> <note>
 /// <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// </note>
@@ -254,8 +254,8 @@ impl StartSnapshotFluentBuilder {
     }
     /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li> <p>No blocks are written to the snapshot.</p> </li>
-    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
+    /// <li><p>No blocks are written to the snapshot.</p></li>
+    /// <li><p>The snapshot is not completed after writing the last block of data.</p></li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -264,8 +264,8 @@ impl StartSnapshotFluentBuilder {
     }
     /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li> <p>No blocks are written to the snapshot.</p> </li>
-    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
+    /// <li><p>No blocks are written to the snapshot.</p></li>
+    /// <li><p>The snapshot is not completed after writing the last block of data.</p></li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -274,8 +274,8 @@ impl StartSnapshotFluentBuilder {
     }
     /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li> <p>No blocks are written to the snapshot.</p> </li>
-    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
+    /// <li><p>No blocks are written to the snapshot.</p></li>
+    /// <li><p>The snapshot is not completed after writing the last block of data.</p></li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {

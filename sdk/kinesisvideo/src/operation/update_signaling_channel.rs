@@ -255,11 +255,11 @@ pub enum UpdateSignalingChannelError {
     ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
-    /// <p>When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is already mapped to a different Kinesis Video Stream resource, or if the provided input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following : </p>
+    /// <p>When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is already mapped to a different Kinesis Video Stream resource, or if the provided input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :</p>
     /// <ol>
-    /// <li> <p>The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is mapped to. </p> </li>
-    /// <li> <p>The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream is mapped to. </p> </li>
-    /// <li> <p>The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of the resource. </p> </li>
+    /// <li><p>The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is mapped to.</p></li>
+    /// <li><p>The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream is mapped to.</p></li>
+    /// <li><p>The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of the resource.</p></li>
     /// </ol>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>

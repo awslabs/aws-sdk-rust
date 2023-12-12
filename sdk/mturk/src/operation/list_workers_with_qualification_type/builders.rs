@@ -22,7 +22,7 @@ impl ListWorkersWithQualificationTypeInputBuilder {
 }
 /// Fluent builder constructing a request to `ListWorkersWithQualificationType`.
 ///
-/// <p> The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers that have been associated with a given Qualification type. </p>
+/// <p>The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers that have been associated with a given Qualification type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkersWithQualificationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,17 +128,17 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualification_type_id()
     }
-    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
+    /// <p>The status of the Qualifications to return. Can be <code>Granted | Revoked</code>.</p>
     pub fn status(mut self, input: crate::types::QualificationStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
+    /// <p>The status of the Qualifications to return. Can be <code>Granted | Revoked</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QualificationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
+    /// <p>The status of the Qualifications to return. Can be <code>Granted | Revoked</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QualificationStatus> {
         self.inner.get_status()
     }
@@ -156,17 +156,17 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> Limit the number of results returned. </p>
+    /// <p>Limit the number of results returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> Limit the number of results returned. </p>
+    /// <p>Limit the number of results returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> Limit the number of results returned. </p>
+    /// <p>Limit the number of results returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

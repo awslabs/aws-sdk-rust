@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of tags to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to resume pagination.</p><br>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Vec::<Tag>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>The tags currently associated with the Timestream resource. </p>
+    ///   - [`tags(Vec::<Tag>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>The tags currently associated with the Timestream resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::next_token): <p>A pagination token to resume pagination with a subsequent call to <code>ListTagsForResourceResponse</code>.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder {

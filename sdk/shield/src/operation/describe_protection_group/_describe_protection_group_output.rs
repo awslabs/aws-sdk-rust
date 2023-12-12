@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProtectionGroupOutput {
-    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives.</p>
     pub protection_group: ::std::option::Option<crate::types::ProtectionGroup>,
     _request_id: Option<String>,
 }
 impl DescribeProtectionGroupOutput {
-    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives.</p>
     pub fn protection_group(&self) -> ::std::option::Option<&crate::types::ProtectionGroup> {
         self.protection_group.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeProtectionGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeProtectionGroupOutputBuilder {
-    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives.</p>
     /// This field is required.
     pub fn protection_group(mut self, input: crate::types::ProtectionGroup) -> Self {
         self.protection_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives.</p>
     pub fn set_protection_group(mut self, input: ::std::option::Option<crate::types::ProtectionGroup>) -> Self {
         self.protection_group = input;
         self
     }
-    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives.</p>
     pub fn get_protection_group(&self) -> &::std::option::Option<crate::types::ProtectionGroup> {
         &self.protection_group
     }

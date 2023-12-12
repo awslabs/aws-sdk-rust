@@ -164,17 +164,17 @@ impl StartFraudsterRegistrationJobFluentBuilder {
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_access_role_arn()
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub fn registration_config(mut self, input: crate::types::RegistrationConfig) -> Self {
         self.inner = self.inner.registration_config(input);
         self
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub fn set_registration_config(mut self, input: ::std::option::Option<crate::types::RegistrationConfig>) -> Self {
         self.inner = self.inner.set_registration_config(input);
         self
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub fn get_registration_config(&self) -> &::std::option::Option<crate::types::RegistrationConfig> {
         self.inner.get_registration_config()
     }

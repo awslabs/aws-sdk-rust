@@ -6,7 +6,7 @@ pub struct DescribeProjectOutput {
     /// <p>The ID of the project.</p>
     pub project_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code></p>
     pub project_arn: ::std::string::String,
     /// <p>The name of the project.</p>
     pub project_name: ::std::string::String,
@@ -27,7 +27,7 @@ impl DescribeProjectOutput {
         self.project_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code></p>
     pub fn project_arn(&self) -> &str {
         use std::ops::Deref;
         self.project_arn.deref()
@@ -97,20 +97,20 @@ impl DescribeProjectOutputBuilder {
         &self.project_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code></p>
     /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code></p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_arn = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code></p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_arn
     }

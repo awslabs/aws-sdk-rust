@@ -18,7 +18,7 @@ pub struct UpdateAction {
     pub service_update_status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
     /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub service_update_recommended_apply_by_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Reflects the nature of the service update </p>
+    /// <p>Reflects the nature of the service update</p>
     pub service_update_type: ::std::option::Option<crate::types::ServiceUpdateType>,
     /// <p>The date that the service update is available to a replication group</p>
     pub update_action_available_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -68,7 +68,7 @@ impl UpdateAction {
     pub fn service_update_recommended_apply_by_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.service_update_recommended_apply_by_date.as_ref()
     }
-    /// <p>Reflects the nature of the service update </p>
+    /// <p>Reflects the nature of the service update</p>
     pub fn service_update_type(&self) -> ::std::option::Option<&crate::types::ServiceUpdateType> {
         self.service_update_type.as_ref()
     }
@@ -241,17 +241,17 @@ impl UpdateActionBuilder {
     pub fn get_service_update_recommended_apply_by_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.service_update_recommended_apply_by_date
     }
-    /// <p>Reflects the nature of the service update </p>
+    /// <p>Reflects the nature of the service update</p>
     pub fn service_update_type(mut self, input: crate::types::ServiceUpdateType) -> Self {
         self.service_update_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Reflects the nature of the service update </p>
+    /// <p>Reflects the nature of the service update</p>
     pub fn set_service_update_type(mut self, input: ::std::option::Option<crate::types::ServiceUpdateType>) -> Self {
         self.service_update_type = input;
         self
     }
-    /// <p>Reflects the nature of the service update </p>
+    /// <p>Reflects the nature of the service update</p>
     pub fn get_service_update_type(&self) -> &::std::option::Option<crate::types::ServiceUpdateType> {
         &self.service_update_type
     }

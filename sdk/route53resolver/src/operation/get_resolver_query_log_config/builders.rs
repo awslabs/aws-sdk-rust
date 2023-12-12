@@ -22,7 +22,7 @@ impl GetResolverQueryLogConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `GetResolverQueryLogConfig`.
 ///
-/// <p>Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to. </p>
+/// <p>Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

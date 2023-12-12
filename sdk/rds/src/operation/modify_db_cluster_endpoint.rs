@@ -244,7 +244,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBClust
 pub enum ModifyDBClusterEndpointError {
     /// <p>The specified custom endpoint doesn't exist.</p>
     DbClusterEndpointNotFoundFault(crate::types::error::DbClusterEndpointNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The requested operation can't be performed on the endpoint while the endpoint is in this state.</p>
     InvalidDbClusterEndpointStateFault(crate::types::error::InvalidDbClusterEndpointStateFault),

@@ -24,11 +24,11 @@ pub struct GetEmailIdentityOutput {
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <li><p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p></li>
+    /// <li><p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> – The verification process failed.</p></li>
+    /// <li><p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p></li>
+    /// <li><p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
     pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
     /// <p>An object that contains additional information about the verification status for the identity.</p>
@@ -74,11 +74,11 @@ impl GetEmailIdentityOutput {
     }
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <li><p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p></li>
+    /// <li><p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> – The verification process failed.</p></li>
+    /// <li><p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p></li>
+    /// <li><p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
     pub fn verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
         self.verification_status.as_ref()
@@ -249,11 +249,11 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <li><p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p></li>
+    /// <li><p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> – The verification process failed.</p></li>
+    /// <li><p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p></li>
+    /// <li><p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
     pub fn verification_status(mut self, input: crate::types::VerificationStatus) -> Self {
         self.verification_status = ::std::option::Option::Some(input);
@@ -261,11 +261,11 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <li><p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p></li>
+    /// <li><p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> – The verification process failed.</p></li>
+    /// <li><p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p></li>
+    /// <li><p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
     pub fn set_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
         self.verification_status = input;
@@ -273,11 +273,11 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <li><p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p></li>
+    /// <li><p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
+    /// <li><p><code>FAILED</code> – The verification process failed.</p></li>
+    /// <li><p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p></li>
+    /// <li><p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
     pub fn get_verification_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
         &self.verification_status

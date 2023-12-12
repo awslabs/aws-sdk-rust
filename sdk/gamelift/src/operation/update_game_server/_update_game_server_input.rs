@@ -7,11 +7,11 @@ pub struct UpdateGameServerInput {
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A custom string that uniquely identifies the game server to update.</p>
     pub game_server_id: ::std::option::Option<::std::string::String>,
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     pub game_server_data: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the game server is available or is currently hosting gameplay. You can update a game server status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
     pub utilization_status: ::std::option::Option<crate::types::GameServerUtilizationStatus>,
-    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp.</p>
     pub health_check: ::std::option::Option<crate::types::GameServerHealthCheck>,
 }
 impl UpdateGameServerInput {
@@ -23,7 +23,7 @@ impl UpdateGameServerInput {
     pub fn game_server_id(&self) -> ::std::option::Option<&str> {
         self.game_server_id.as_deref()
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     pub fn game_server_data(&self) -> ::std::option::Option<&str> {
         self.game_server_data.as_deref()
     }
@@ -31,7 +31,7 @@ impl UpdateGameServerInput {
     pub fn utilization_status(&self) -> ::std::option::Option<&crate::types::GameServerUtilizationStatus> {
         self.utilization_status.as_ref()
     }
-    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp.</p>
     pub fn health_check(&self) -> ::std::option::Option<&crate::types::GameServerHealthCheck> {
         self.health_check.as_ref()
     }
@@ -84,17 +84,17 @@ impl UpdateGameServerInputBuilder {
     pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_id
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     pub fn game_server_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     pub fn set_game_server_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_data = input;
         self
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_data
     }
@@ -112,17 +112,17 @@ impl UpdateGameServerInputBuilder {
     pub fn get_utilization_status(&self) -> &::std::option::Option<crate::types::GameServerUtilizationStatus> {
         &self.utilization_status
     }
-    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp.</p>
     pub fn health_check(mut self, input: crate::types::GameServerHealthCheck) -> Self {
         self.health_check = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp.</p>
     pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::GameServerHealthCheck>) -> Self {
         self.health_check = input;
         self
     }
-    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp.</p>
     pub fn get_health_check(&self) -> &::std::option::Option<crate::types::GameServerHealthCheck> {
         &self.health_check
     }

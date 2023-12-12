@@ -17,19 +17,19 @@ pub struct DescribeOptionGroupsInput {
     /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
@@ -59,19 +59,19 @@ impl DescribeOptionGroupsInput {
     /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn engine_name(&self) -> ::std::option::Option<&str> {
         self.engine_name.as_deref()
@@ -171,19 +171,19 @@ impl DescribeOptionGroupsInputBuilder {
     /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
@@ -192,19 +192,19 @@ impl DescribeOptionGroupsInputBuilder {
     /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
@@ -213,19 +213,19 @@ impl DescribeOptionGroupsInputBuilder {
     /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_name

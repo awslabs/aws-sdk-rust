@@ -22,7 +22,7 @@ impl StopTrainingJobInputBuilder {
 }
 /// Fluent builder constructing a request to `StopTrainingJob`.
 ///
-/// <p>Stops a training job. To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of the training is not lost. </p>
+/// <p>Stops a training job. To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of the training is not lost.</p>
 /// <p>When it receives a <code>StopTrainingJob</code> request, SageMaker changes the status of the job to <code>Stopping</code>. After SageMaker stops the job, it sets the status to <code>Stopped</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopTrainingJobFluentBuilder {

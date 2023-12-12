@@ -9,7 +9,7 @@ pub struct PutResourcePolicyInput {
     pub resource_policy: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a revision of the resource policy.</p>
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -25,7 +25,7 @@ impl PutResourcePolicyInput {
     pub fn policy_revision_id(&self) -> ::std::option::Option<&str> {
         self.policy_revision_id.as_deref()
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -91,18 +91,18 @@ impl PutResourcePolicyInputBuilder {
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_revision_id
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

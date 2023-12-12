@@ -272,7 +272,7 @@ pub enum ListDeploymentInstancesError {
     InvalidInstanceTypeException(crate::types::error::InvalidInstanceTypeException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p> The target filter name is invalid. </p>
+    /// <p>The target filter name is invalid.</p>
     InvalidTargetFilterNameException(crate::types::error::InvalidTargetFilterNameException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

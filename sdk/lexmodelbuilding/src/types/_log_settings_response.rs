@@ -12,7 +12,7 @@ pub struct LogSettingsResponse {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs are delivered.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
+    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.</p>
     pub resource_prefix: ::std::option::Option<::std::string::String>,
 }
 impl LogSettingsResponse {
@@ -32,7 +32,7 @@ impl LogSettingsResponse {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
+    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.</p>
     pub fn resource_prefix(&self) -> ::std::option::Option<&str> {
         self.resource_prefix.as_deref()
     }
@@ -111,17 +111,17 @@ impl LogSettingsResponseBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
+    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.</p>
     pub fn resource_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
+    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.</p>
     pub fn set_resource_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_prefix = input;
         self
     }
-    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
+    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.</p>
     pub fn get_resource_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_prefix
     }

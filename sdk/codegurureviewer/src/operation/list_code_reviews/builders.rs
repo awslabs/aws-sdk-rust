@@ -139,10 +139,10 @@ impl ListCodeReviewsFluentBuilder {
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li><p><code>Failed</code>: The code review failed.</p></li>
+    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn states(mut self, input: crate::types::JobState) -> Self {
         self.inner = self.inner.states(input);
@@ -151,10 +151,10 @@ impl ListCodeReviewsFluentBuilder {
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li><p><code>Failed</code>: The code review failed.</p></li>
+    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>) -> Self {
         self.inner = self.inner.set_states(input);
@@ -163,10 +163,10 @@ impl ListCodeReviewsFluentBuilder {
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li><p><code>Failed</code>: The code review failed.</p></li>
+    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobState>> {
         self.inner.get_states()

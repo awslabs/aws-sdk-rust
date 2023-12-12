@@ -18,7 +18,7 @@ pub struct WorkflowListItem {
     pub digest: ::std::option::Option<::std::string::String>,
     /// <p>When the workflow was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    /// <p>Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkflowListItem {
@@ -50,7 +50,7 @@ impl WorkflowListItem {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    /// <p>Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
@@ -178,19 +178,19 @@ impl WorkflowListItemBuilder {
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
-    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    /// <p>Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    /// <p>Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    /// <p>Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }

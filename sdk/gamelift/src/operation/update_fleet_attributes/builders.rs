@@ -23,10 +23,10 @@ impl UpdateFleetAttributesInputBuilder {
 /// Fluent builder constructing a request to `UpdateFleetAttributes`.
 ///
 /// <p>Updates a fleet's mutable attributes, including game session protection and resource creation limits.</p>
-/// <p>To update fleet attributes, specify the fleet ID and the property values that you want to change. </p>
+/// <p>To update fleet attributes, specify the fleet ID and the property values that you want to change.</p>
 /// <p>If successful, an updated <code>FleetAttributes</code> object is returned.</p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFleetAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -156,8 +156,8 @@ impl UpdateFleetAttributesFluentBuilder {
     }
     /// <p>The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that already exist are not affected. You can set protection for individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn new_game_session_protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.inner = self.inner.new_game_session_protection_policy(input);
@@ -165,8 +165,8 @@ impl UpdateFleetAttributesFluentBuilder {
     }
     /// <p>The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that already exist are not affected. You can set protection for individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn set_new_game_session_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.inner = self.inner.set_new_game_session_protection_policy(input);
@@ -174,23 +174,23 @@ impl UpdateFleetAttributesFluentBuilder {
     }
     /// <p>The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that already exist are not affected. You can set protection for individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         self.inner.get_new_game_session_protection_policy()
     }
-    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time.</p>
     pub fn resource_creation_limit_policy(mut self, input: crate::types::ResourceCreationLimitPolicy) -> Self {
         self.inner = self.inner.resource_creation_limit_policy(input);
         self
     }
-    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time.</p>
     pub fn set_resource_creation_limit_policy(mut self, input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>) -> Self {
         self.inner = self.inner.set_resource_creation_limit_policy(input);
         self
     }
-    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time.</p>
     pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         self.inner.get_resource_creation_limit_policy()
     }

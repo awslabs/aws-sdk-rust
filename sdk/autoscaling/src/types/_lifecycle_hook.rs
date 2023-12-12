@@ -9,7 +9,7 @@ pub struct LifecycleHook {
     /// <p>The name of the Auto Scaling group for the lifecycle hook.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle transition.</p>
-    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
+    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code></p>
     pub lifecycle_transition: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook.</p>
     pub notification_target_arn: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct LifecycleHook {
     /// <p>The maximum time, in seconds, that an instance can remain in a wait state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
     pub global_timeout: ::std::option::Option<i32>,
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
     pub default_result: ::std::option::Option<::std::string::String>,
 }
 impl LifecycleHook {
@@ -35,7 +35,7 @@ impl LifecycleHook {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The lifecycle transition.</p>
-    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
+    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code></p>
     pub fn lifecycle_transition(&self) -> ::std::option::Option<&str> {
         self.lifecycle_transition.as_deref()
     }
@@ -60,7 +60,7 @@ impl LifecycleHook {
         self.global_timeout
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
     pub fn default_result(&self) -> ::std::option::Option<&str> {
         self.default_result.as_deref()
     }
@@ -116,19 +116,19 @@ impl LifecycleHookBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The lifecycle transition.</p>
-    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
+    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code></p>
     pub fn lifecycle_transition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_transition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The lifecycle transition.</p>
-    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
+    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code></p>
     pub fn set_lifecycle_transition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_transition = input;
         self
     }
     /// <p>The lifecycle transition.</p>
-    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
+    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code></p>
     pub fn get_lifecycle_transition(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_transition
     }
@@ -203,19 +203,19 @@ impl LifecycleHookBuilder {
         &self.global_timeout
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
     pub fn default_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_result = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
     pub fn set_default_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_result = input;
         self
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
     pub fn get_default_result(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_result
     }

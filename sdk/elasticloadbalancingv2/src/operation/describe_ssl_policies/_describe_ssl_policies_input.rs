@@ -9,7 +9,7 @@ pub struct DescribeSslPoliciesInput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: ::std::option::Option<i32>,
-    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    /// <p>The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub load_balancer_type: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
 }
 impl DescribeSslPoliciesInput {
@@ -27,7 +27,7 @@ impl DescribeSslPoliciesInput {
     pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
-    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    /// <p>The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub fn load_balancer_type(&self) -> ::std::option::Option<&crate::types::LoadBalancerTypeEnum> {
         self.load_balancer_type.as_ref()
     }
@@ -97,17 +97,17 @@ impl DescribeSslPoliciesInputBuilder {
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
-    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    /// <p>The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub fn load_balancer_type(mut self, input: crate::types::LoadBalancerTypeEnum) -> Self {
         self.load_balancer_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    /// <p>The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub fn set_load_balancer_type(mut self, input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>) -> Self {
         self.load_balancer_type = input;
         self
     }
-    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    /// <p>The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub fn get_load_balancer_type(&self) -> &::std::option::Option<crate::types::LoadBalancerTypeEnum> {
         &self.load_balancer_type
     }

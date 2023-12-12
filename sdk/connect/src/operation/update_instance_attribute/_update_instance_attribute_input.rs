@@ -9,7 +9,7 @@ pub struct UpdateInstanceAttributeInput {
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     pub attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
-    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// <p>The value for the attribute. Maximum character limit is 100.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInstanceAttributeInput {
@@ -23,7 +23,7 @@ impl UpdateInstanceAttributeInput {
     pub fn attribute_type(&self) -> ::std::option::Option<&crate::types::InstanceAttributeType> {
         self.attribute_type.as_ref()
     }
-    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// <p>The value for the attribute. Maximum character limit is 100.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -80,18 +80,18 @@ impl UpdateInstanceAttributeInputBuilder {
     pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
         &self.attribute_type
     }
-    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// <p>The value for the attribute. Maximum character limit is 100.</p>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// <p>The value for the attribute. Maximum character limit is 100.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// <p>The value for the attribute. Maximum character limit is 100.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

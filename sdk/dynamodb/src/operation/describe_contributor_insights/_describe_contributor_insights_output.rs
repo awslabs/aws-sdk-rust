@@ -16,10 +16,10 @@ pub struct DescribeContributorInsightsOutput {
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
     /// <ul>
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+    /// <li><p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p></li>
+    /// <li><p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p></li>
+    /// <li><p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p></li>
+    /// <li><p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p></li>
     /// </ul>
     pub failure_exception: ::std::option::Option<crate::types::FailureException>,
     _request_id: Option<String>,
@@ -50,10 +50,10 @@ impl DescribeContributorInsightsOutput {
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
     /// <ul>
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+    /// <li><p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p></li>
+    /// <li><p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p></li>
+    /// <li><p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p></li>
+    /// <li><p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p></li>
     /// </ul>
     pub fn failure_exception(&self) -> ::std::option::Option<&crate::types::FailureException> {
         self.failure_exception.as_ref()
@@ -163,10 +163,10 @@ impl DescribeContributorInsightsOutputBuilder {
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
     /// <ul>
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+    /// <li><p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p></li>
+    /// <li><p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p></li>
+    /// <li><p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p></li>
+    /// <li><p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p></li>
     /// </ul>
     pub fn failure_exception(mut self, input: crate::types::FailureException) -> Self {
         self.failure_exception = ::std::option::Option::Some(input);
@@ -175,10 +175,10 @@ impl DescribeContributorInsightsOutputBuilder {
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
     /// <ul>
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+    /// <li><p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p></li>
+    /// <li><p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p></li>
+    /// <li><p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p></li>
+    /// <li><p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p></li>
     /// </ul>
     pub fn set_failure_exception(mut self, input: ::std::option::Option<crate::types::FailureException>) -> Self {
         self.failure_exception = input;
@@ -187,10 +187,10 @@ impl DescribeContributorInsightsOutputBuilder {
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
     /// <ul>
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+    /// <li><p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p></li>
+    /// <li><p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p></li>
+    /// <li><p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p></li>
+    /// <li><p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p></li>
     /// </ul>
     pub fn get_failure_exception(&self) -> &::std::option::Option<crate::types::FailureException> {
         &self.failure_exception

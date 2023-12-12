@@ -25,10 +25,10 @@ impl CreateQueryLoggingConfigInputBuilder {
 /// <p>Creates a configuration for DNS query logging. After you create a query logging configuration, Amazon Route 53 begins to publish log data to an Amazon CloudWatch Logs log group.</p>
 /// <p>DNS query logs contain information about the queries that Route 53 receives for a specified public hosted zone, such as the following:</p>
 /// <ul>
-/// <li> <p>Route 53 edge location that responded to the DNS query</p> </li>
-/// <li> <p>Domain or subdomain that was requested</p> </li>
-/// <li> <p>DNS record type, such as A or AAAA</p> </li>
-/// <li> <p>DNS response code, such as <code>NoError</code> or <code>ServFail</code> </p> </li>
+/// <li><p>Route 53 edge location that responded to the DNS query</p></li>
+/// <li><p>Domain or subdomain that was requested</p></li>
+/// <li><p>DNS record type, such as A or AAAA</p></li>
+/// <li><p>DNS response code, such as <code>NoError</code> or <code>ServFail</code></p></li>
 /// </ul>
 /// <dl>
 /// <dt>
@@ -39,19 +39,19 @@ impl CreateQueryLoggingConfigInputBuilder {
 /// <p>If you create a query logging configuration using the Route 53 console, Route 53 performs these operations automatically.</p>
 /// </note>
 /// <ol>
-/// <li> <p>Create a CloudWatch Logs log group, and make note of the ARN, which you specify when you create a query logging configuration. Note the following:</p>
+/// <li><p>Create a CloudWatch Logs log group, and make note of the ARN, which you specify when you create a query logging configuration. Note the following:</p>
 /// <ul>
-/// <li> <p>You must create the log group in the us-east-1 region.</p> </li>
-/// <li> <p>You must use the same Amazon Web Services account to create the log group and the hosted zone that you want to configure query logging for.</p> </li>
-/// <li> <p>When you create log groups for query logging, we recommend that you use a consistent prefix, for example:</p> <p> <code>/aws/route53/<i>hosted zone name</i> </code> </p> <p>In the next step, you'll create a resource policy, which controls access to one or more log groups and the associated Amazon Web Services resources, such as Route 53 hosted zones. There's a limit on the number of resource policies that you can create, so we recommend that you use a consistent prefix so you can use the same resource policy for all the log groups that you create for query logging.</p> </li>
-/// </ul> </li>
-/// <li> <p>Create a CloudWatch Logs resource policy, and give it the permissions that Route 53 needs to create log streams and to send query logs to log streams. For the value of <code>Resource</code>, specify the ARN for the log group that you created in the previous step. To use the same resource policy for all the CloudWatch Logs log groups that you created for query logging configurations, replace the hosted zone name with <code>*</code>, for example:</p> <p> <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code> </p> <p>To avoid the confused deputy problem, a security issue where an entity without a permission for an action can coerce a more-privileged entity to perform it, you can optionally limit the permissions that a service has to a resource in a resource-based policy by supplying the following values:</p>
+/// <li><p>You must create the log group in the us-east-1 region.</p></li>
+/// <li><p>You must use the same Amazon Web Services account to create the log group and the hosted zone that you want to configure query logging for.</p></li>
+/// <li><p>When you create log groups for query logging, we recommend that you use a consistent prefix, for example:</p> <p><code>/aws/route53/<i>hosted zone name</i> </code></p> <p>In the next step, you'll create a resource policy, which controls access to one or more log groups and the associated Amazon Web Services resources, such as Route 53 hosted zones. There's a limit on the number of resource policies that you can create, so we recommend that you use a consistent prefix so you can use the same resource policy for all the log groups that you create for query logging.</p></li>
+/// </ul></li>
+/// <li><p>Create a CloudWatch Logs resource policy, and give it the permissions that Route 53 needs to create log streams and to send query logs to log streams. For the value of <code>Resource</code>, specify the ARN for the log group that you created in the previous step. To use the same resource policy for all the CloudWatch Logs log groups that you created for query logging configurations, replace the hosted zone name with <code>*</code>, for example:</p> <p><code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code></p> <p>To avoid the confused deputy problem, a security issue where an entity without a permission for an action can coerce a more-privileged entity to perform it, you can optionally limit the permissions that a service has to a resource in a resource-based policy by supplying the following values:</p>
 /// <ul>
-/// <li> <p>For <code>aws:SourceArn</code>, supply the hosted zone ARN used in creating the query logging configuration. For example, <code>aws:SourceArn: arn:aws:route53:::hostedzone/hosted zone ID</code>.</p> </li>
-/// <li> <p>For <code>aws:SourceAccount</code>, supply the account ID for the account that creates the query logging configuration. For example, <code>aws:SourceAccount:111111111111</code>.</p> </li>
+/// <li><p>For <code>aws:SourceArn</code>, supply the hosted zone ARN used in creating the query logging configuration. For example, <code>aws:SourceArn: arn:aws:route53:::hostedzone/hosted zone ID</code>.</p></li>
+/// <li><p>For <code>aws:SourceAccount</code>, supply the account ID for the account that creates the query logging configuration. For example, <code>aws:SourceAccount:111111111111</code>.</p></li>
 /// </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The confused deputy problem</a> in the <i>Amazon Web Services IAM User Guide</i>.</p> <note>
 /// <p>You can't use the CloudWatch console to create or edit a resource policy. You must use the CloudWatch API, one of the Amazon Web Services SDKs, or the CLI.</p>
-/// </note> </li>
+/// </note></li>
 /// </ol>
 /// </dd>
 /// <dt>
@@ -60,11 +60,11 @@ impl CreateQueryLoggingConfigInputBuilder {
 /// <dd>
 /// <p>When Route 53 finishes creating the configuration for DNS query logging, it does the following:</p>
 /// <ul>
-/// <li> <p>Creates a log stream for an edge location the first time that the edge location responds to DNS queries for the specified hosted zone. That log stream is used to log all queries that Route 53 responds to for that edge location.</p> </li>
-/// <li> <p>Begins to send query logs to the applicable log stream.</p> </li>
+/// <li><p>Creates a log stream for an edge location the first time that the edge location responds to DNS queries for the specified hosted zone. That log stream is used to log all queries that Route 53 responds to for that edge location.</p></li>
+/// <li><p>Begins to send query logs to the applicable log stream.</p></li>
 /// </ul>
 /// <p>The name of each log stream is in the following format:</p>
-/// <p> <code> <i>hosted zone ID</i>/<i>edge location code</i> </code> </p>
+/// <p><code> <i>hosted zone ID</i>/<i>edge location code</i> </code></p>
 /// <p>The edge location code is a three-letter code and an arbitrarily assigned number, for example, DFW3. The three-letter code typically corresponds with the International Air Transport Association airport code for an airport near the edge location. (These abbreviations might change in the future.) For a list of edge locations, see "The Route 53 Global Network" on the <a href="http://aws.amazon.com/route53/details/">Route 53 Product Details</a> page.</p>
 /// </dd>
 /// <dt>
@@ -192,21 +192,21 @@ impl CreateQueryLoggingConfigFluentBuilder {
         self.inner.get_hosted_zone_id()
     }
     /// <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon Route 53 to send query logs to. This is the format of the ARN:</p>
-    /// <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> </p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i></p>
     /// <p>To get the ARN for a log group, you can use the CloudWatch console, the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html">DescribeLogGroups</a> API action, the <a href="https://docs.aws.amazon.com/cli/latest/reference/logs/describe-log-groups.html">describe-log-groups</a> command, or the applicable command in one of the Amazon Web Services SDKs.</p>
     pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_logs_log_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon Route 53 to send query logs to. This is the format of the ARN:</p>
-    /// <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> </p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i></p>
     /// <p>To get the ARN for a log group, you can use the CloudWatch console, the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html">DescribeLogGroups</a> API action, the <a href="https://docs.aws.amazon.com/cli/latest/reference/logs/describe-log-groups.html">describe-log-groups</a> command, or the applicable command in one of the Amazon Web Services SDKs.</p>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_log_group_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon Route 53 to send query logs to. This is the format of the ARN:</p>
-    /// <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> </p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i></p>
     /// <p>To get the ARN for a log group, you can use the CloudWatch console, the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html">DescribeLogGroups</a> API action, the <a href="https://docs.aws.amazon.com/cli/latest/reference/logs/describe-log-groups.html">describe-log-groups</a> command, or the applicable command in one of the Amazon Web Services SDKs.</p>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_watch_logs_log_group_arn()

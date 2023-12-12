@@ -22,7 +22,7 @@ impl ListIndexesForMembersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListIndexesForMembers`.
 ///
-/// <p>Retrieves a list of a member's indexes in all Amazon Web Services Regions that are currently collecting resource information for Amazon Web Services Resource Explorer. Only the management account or a delegated administrator with service access enabled can invoke this API call. </p>
+/// <p>Retrieves a list of a member's indexes in all Amazon Web Services Regions that are currently collecting resource information for Amazon Web Services Resource Explorer. Only the management account or a delegated administrator with service access enabled can invoke this API call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIndexesForMembersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

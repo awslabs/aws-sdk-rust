@@ -21,7 +21,7 @@ pub struct DescribeModelVersionOutput {
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The schema of the data used to train the model version.</p>
     pub schema: ::std::option::Option<::std::string::String>,
-    /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
+    /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub labels_input_configuration: ::std::option::Option<crate::types::LabelsInputConfiguration>,
     /// <p>The date on which the training data began being gathered. If you imported the version, this is the date that the training data in the source version began being gathered.</p>
     pub training_data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -34,7 +34,7 @@ pub struct DescribeModelVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the role that was used to train the model version.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
     pub data_pre_processing_configuration: ::std::option::Option<crate::types::DataPreProcessingConfiguration>,
     /// <p>The time when the training of the version began.</p>
     pub training_execution_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -62,11 +62,11 @@ pub struct DescribeModelVersionOutput {
     pub imported_data_size_in_bytes: ::std::option::Option<i64>,
     /// <p>If the model version was retrained, this field shows a summary of the performance of the prior model on the new training range. You can use the information in this JSON-formatted object to compare the new model version and the prior model version.</p>
     pub prior_model_metrics: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run. </p>
+    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run.</p>
     pub retraining_available_data_in_days: ::std::option::Option<i32>,
-    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining. </p>
+    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining.</p>
     pub auto_promotion_result: ::std::option::Option<crate::types::AutoPromotionResult>,
-    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model. </p>
+    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
     pub auto_promotion_result_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -107,7 +107,7 @@ impl DescribeModelVersionOutput {
     pub fn schema(&self) -> ::std::option::Option<&str> {
         self.schema.as_deref()
     }
-    /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
+    /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn labels_input_configuration(&self) -> ::std::option::Option<&crate::types::LabelsInputConfiguration> {
         self.labels_input_configuration.as_ref()
     }
@@ -132,7 +132,7 @@ impl DescribeModelVersionOutput {
         self.role_arn.as_deref()
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
     pub fn data_pre_processing_configuration(&self) -> ::std::option::Option<&crate::types::DataPreProcessingConfiguration> {
         self.data_pre_processing_configuration.as_ref()
     }
@@ -188,15 +188,15 @@ impl DescribeModelVersionOutput {
     pub fn prior_model_metrics(&self) -> ::std::option::Option<&str> {
         self.prior_model_metrics.as_deref()
     }
-    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run. </p>
+    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run.</p>
     pub fn retraining_available_data_in_days(&self) -> ::std::option::Option<i32> {
         self.retraining_available_data_in_days
     }
-    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining. </p>
+    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining.</p>
     pub fn auto_promotion_result(&self) -> ::std::option::Option<&crate::types::AutoPromotionResult> {
         self.auto_promotion_result.as_ref()
     }
-    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model. </p>
+    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
     pub fn auto_promotion_result_reason(&self) -> ::std::option::Option<&str> {
         self.auto_promotion_result_reason.as_deref()
     }
@@ -378,17 +378,17 @@ impl DescribeModelVersionOutputBuilder {
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema
     }
-    /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
+    /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn labels_input_configuration(mut self, input: crate::types::LabelsInputConfiguration) -> Self {
         self.labels_input_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
+    /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn set_labels_input_configuration(mut self, input: ::std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
         self.labels_input_configuration = input;
         self
     }
-    /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
+    /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn get_labels_input_configuration(&self) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
         &self.labels_input_configuration
     }
@@ -463,19 +463,19 @@ impl DescribeModelVersionOutputBuilder {
         &self.role_arn
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
     pub fn data_pre_processing_configuration(mut self, input: crate::types::DataPreProcessingConfiguration) -> Self {
         self.data_pre_processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
     pub fn set_data_pre_processing_configuration(mut self, input: ::std::option::Option<crate::types::DataPreProcessingConfiguration>) -> Self {
         self.data_pre_processing_configuration = input;
         self
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
     pub fn get_data_pre_processing_configuration(&self) -> &::std::option::Option<crate::types::DataPreProcessingConfiguration> {
         &self.data_pre_processing_configuration
     }
@@ -661,45 +661,45 @@ impl DescribeModelVersionOutputBuilder {
     pub fn get_prior_model_metrics(&self) -> &::std::option::Option<::std::string::String> {
         &self.prior_model_metrics
     }
-    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run. </p>
+    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run.</p>
     pub fn retraining_available_data_in_days(mut self, input: i32) -> Self {
         self.retraining_available_data_in_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run. </p>
+    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run.</p>
     pub fn set_retraining_available_data_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retraining_available_data_in_days = input;
         self
     }
-    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run. </p>
+    /// <p>Indicates the number of days of data used in the most recent scheduled retraining run.</p>
     pub fn get_retraining_available_data_in_days(&self) -> &::std::option::Option<i32> {
         &self.retraining_available_data_in_days
     }
-    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining. </p>
+    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining.</p>
     pub fn auto_promotion_result(mut self, input: crate::types::AutoPromotionResult) -> Self {
         self.auto_promotion_result = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining. </p>
+    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining.</p>
     pub fn set_auto_promotion_result(mut self, input: ::std::option::Option<crate::types::AutoPromotionResult>) -> Self {
         self.auto_promotion_result = input;
         self
     }
-    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining. </p>
+    /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining.</p>
     pub fn get_auto_promotion_result(&self) -> &::std::option::Option<crate::types::AutoPromotionResult> {
         &self.auto_promotion_result
     }
-    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model. </p>
+    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
     pub fn auto_promotion_result_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_promotion_result_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model. </p>
+    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
     pub fn set_auto_promotion_result_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_promotion_result_reason = input;
         self
     }
-    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model. </p>
+    /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
     pub fn get_auto_promotion_result_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_promotion_result_reason
     }

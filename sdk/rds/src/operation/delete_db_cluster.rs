@@ -244,7 +244,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDBClust
 pub enum DeleteDBClusterError {
     /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB cluster quota.</p>
     DbClusterAutomatedBackupQuotaExceededFault(crate::types::error::DbClusterAutomatedBackupQuotaExceededFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::types::error::DbClusterSnapshotAlreadyExistsFault),

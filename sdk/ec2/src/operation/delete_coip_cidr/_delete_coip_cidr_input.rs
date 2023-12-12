@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCoipCidrInput {
-    /// <p> A customer-owned IP address range that you want to delete. </p>
+    /// <p>A customer-owned IP address range that you want to delete.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
-    /// <p> The ID of the customer-owned address pool. </p>
+    /// <p>The ID of the customer-owned address pool.</p>
     pub coip_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteCoipCidrInput {
-    /// <p> A customer-owned IP address range that you want to delete. </p>
+    /// <p>A customer-owned IP address range that you want to delete.</p>
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
-    /// <p> The ID of the customer-owned address pool. </p>
+    /// <p>The ID of the customer-owned address pool.</p>
     pub fn coip_pool_id(&self) -> ::std::option::Option<&str> {
         self.coip_pool_id.as_deref()
     }
@@ -40,33 +40,33 @@ pub struct DeleteCoipCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteCoipCidrInputBuilder {
-    /// <p> A customer-owned IP address range that you want to delete. </p>
+    /// <p>A customer-owned IP address range that you want to delete.</p>
     /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A customer-owned IP address range that you want to delete. </p>
+    /// <p>A customer-owned IP address range that you want to delete.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }
-    /// <p> A customer-owned IP address range that you want to delete. </p>
+    /// <p>A customer-owned IP address range that you want to delete.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }
-    /// <p> The ID of the customer-owned address pool. </p>
+    /// <p>The ID of the customer-owned address pool.</p>
     /// This field is required.
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coip_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the customer-owned address pool. </p>
+    /// <p>The ID of the customer-owned address pool.</p>
     pub fn set_coip_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.coip_pool_id = input;
         self
     }
-    /// <p> The ID of the customer-owned address pool. </p>
+    /// <p>The ID of the customer-owned address pool.</p>
     pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.coip_pool_id
     }

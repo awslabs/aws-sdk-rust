@@ -6,7 +6,7 @@ pub struct DescribeAssetOutput {
     /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
     pub asset_arn: ::std::string::String,
     /// <p>The name of the asset.</p>
     pub asset_name: ::std::string::String,
@@ -40,7 +40,7 @@ impl DescribeAssetOutput {
         self.asset_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
     pub fn asset_arn(&self) -> &str {
         use std::ops::Deref;
         self.asset_arn.deref()
@@ -147,20 +147,20 @@ impl DescribeAssetOutputBuilder {
         &self.asset_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
     /// This field is required.
     pub fn asset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
     pub fn set_asset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_arn = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
     pub fn get_asset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_arn
     }

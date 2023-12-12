@@ -22,10 +22,10 @@ impl DeleteStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteStream`.
 ///
-/// <p>Deletes a Kinesis video stream and the data contained in the stream. </p>
+/// <p>Deletes a Kinesis video stream and the data contained in the stream.</p>
 /// <p>This method marks the stream for deletion, and makes the data in the stream inaccessible immediately.</p>
-/// <p> </p>
-/// <p> To ensure that you have the latest version of the stream before deleting it, you can specify the stream version. Kinesis Video Streams assigns a version to each stream. When you update a stream, Kinesis Video Streams assigns a new version number. To get the latest stream version, use the <code>DescribeStream</code> API. </p>
+/// <p></p>
+/// <p>To ensure that you have the latest version of the stream before deleting it, you can specify the stream version. Kinesis Video Streams assigns a version to each stream. When you update a stream, Kinesis Video Streams assigns a new version number. To get the latest stream version, use the <code>DescribeStream</code> API.</p>
 /// <p>This operation requires permission for the <code>KinesisVideo:DeleteStream</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStreamFluentBuilder {
@@ -112,35 +112,35 @@ impl DeleteStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stream_arn()
     }
-    /// <p>Optional: The version of the stream that you want to delete. </p>
+    /// <p>Optional: The version of the stream that you want to delete.</p>
     /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
-    /// <p>Optional: The version of the stream that you want to delete. </p>
+    /// <p>Optional: The version of the stream that you want to delete.</p>
     /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
-    /// <p>Optional: The version of the stream that you want to delete. </p>
+    /// <p>Optional: The version of the stream that you want to delete.</p>
     /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {

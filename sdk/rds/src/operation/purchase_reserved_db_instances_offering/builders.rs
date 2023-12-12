@@ -144,19 +144,19 @@ impl PurchaseReservedDBInstancesOfferingFluentBuilder {
         self.inner.get_reserved_db_instance_id()
     }
     /// <p>The number of instances to reserve.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn db_instance_count(mut self, input: i32) -> Self {
         self.inner = self.inner.db_instance_count(input);
         self
     }
     /// <p>The number of instances to reserve.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn set_db_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_db_instance_count(input);
         self
     }
     /// <p>The number of instances to reserve.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn get_db_instance_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_db_instance_count()
     }
@@ -164,17 +164,17 @@ impl PurchaseReservedDBInstancesOfferingFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

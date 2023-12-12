@@ -5,11 +5,11 @@
 pub struct UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: ::std::string::String,
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub budget_name: ::std::string::String,
-    /// <p> The previous action resource information. </p>
+    /// <p>The previous action resource information.</p>
     pub old_action: ::std::option::Option<crate::types::Action>,
-    /// <p> The updated action resource information. </p>
+    /// <p>The updated action resource information.</p>
     pub new_action: ::std::option::Option<crate::types::Action>,
     _request_id: Option<String>,
 }
@@ -19,16 +19,16 @@ impl UpdateBudgetActionOutput {
         use std::ops::Deref;
         self.account_id.deref()
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(&self) -> &str {
         use std::ops::Deref;
         self.budget_name.deref()
     }
-    /// <p> The previous action resource information. </p>
+    /// <p>The previous action resource information.</p>
     pub fn old_action(&self) -> ::std::option::Option<&crate::types::Action> {
         self.old_action.as_ref()
     }
-    /// <p> The updated action resource information. </p>
+    /// <p>The updated action resource information.</p>
     pub fn new_action(&self) -> ::std::option::Option<&crate::types::Action> {
         self.new_action.as_ref()
     }
@@ -71,48 +71,48 @@ impl UpdateBudgetActionOutputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }
-    /// <p> The previous action resource information. </p>
+    /// <p>The previous action resource information.</p>
     /// This field is required.
     pub fn old_action(mut self, input: crate::types::Action) -> Self {
         self.old_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The previous action resource information. </p>
+    /// <p>The previous action resource information.</p>
     pub fn set_old_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.old_action = input;
         self
     }
-    /// <p> The previous action resource information. </p>
+    /// <p>The previous action resource information.</p>
     pub fn get_old_action(&self) -> &::std::option::Option<crate::types::Action> {
         &self.old_action
     }
-    /// <p> The updated action resource information. </p>
+    /// <p>The updated action resource information.</p>
     /// This field is required.
     pub fn new_action(mut self, input: crate::types::Action) -> Self {
         self.new_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The updated action resource information. </p>
+    /// <p>The updated action resource information.</p>
     pub fn set_new_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.new_action = input;
         self
     }
-    /// <p> The updated action resource information. </p>
+    /// <p>The updated action resource information.</p>
     pub fn get_new_action(&self) -> &::std::option::Option<crate::types::Action> {
         &self.new_action
     }

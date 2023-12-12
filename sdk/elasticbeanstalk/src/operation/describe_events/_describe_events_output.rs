@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsOutput {
-    /// <p> A list of <code>EventDescription</code>. </p>
+    /// <p>A list of <code>EventDescription</code>.</p>
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventDescription>>,
-    /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
+    /// <p>If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEventsOutput {
-    /// <p> A list of <code>EventDescription</code>. </p>
+    /// <p>A list of <code>EventDescription</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
     pub fn events(&self) -> &[crate::types::EventDescription] {
         self.events.as_deref().unwrap_or_default()
     }
-    /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
+    /// <p>If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,33 +47,33 @@ impl DescribeEventsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
-    /// <p> A list of <code>EventDescription</code>. </p>
+    /// <p>A list of <code>EventDescription</code>.</p>
     pub fn events(mut self, input: crate::types::EventDescription) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
         self.events = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>EventDescription</code>. </p>
+    /// <p>A list of <code>EventDescription</code>.</p>
     pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventDescription>>) -> Self {
         self.events = input;
         self
     }
-    /// <p> A list of <code>EventDescription</code>. </p>
+    /// <p>A list of <code>EventDescription</code>.</p>
     pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDescription>> {
         &self.events
     }
-    /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
+    /// <p>If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
+    /// <p>If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
+    /// <p>If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

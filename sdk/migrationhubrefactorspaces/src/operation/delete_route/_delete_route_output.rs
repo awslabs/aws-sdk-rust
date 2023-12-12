@@ -11,9 +11,9 @@ pub struct DeleteRouteOutput {
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application that the route belongs to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub state: ::std::option::Option<crate::types::RouteState>,
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -34,11 +34,11 @@ impl DeleteRouteOutput {
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::RouteState> {
         self.state.as_ref()
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
@@ -124,31 +124,31 @@ impl DeleteRouteOutputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn state(mut self, input: crate::types::RouteState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
         &self.state
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }

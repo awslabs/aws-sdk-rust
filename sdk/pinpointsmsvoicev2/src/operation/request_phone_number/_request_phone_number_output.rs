@@ -11,11 +11,11 @@ pub struct RequestPhoneNumberOutput {
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: ::std::option::Option<crate::types::NumberStatus>,
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub message_type: ::std::option::Option<crate::types::MessageType>,
-    /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages or both.</p>
     pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     /// <p>The type of number that was released.</p>
     pub number_type: ::std::option::Option<crate::types::RequestableNumberType>,
@@ -31,9 +31,9 @@ pub struct RequestPhoneNumberOutput {
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
-    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub deletion_protection_enabled: bool,
-    /// <p>The unique identifier of the pool associated with the phone number </p>
+    /// <p>The unique identifier of the pool associated with the phone number</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the registration.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
@@ -60,7 +60,7 @@ impl RequestPhoneNumberOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::NumberStatus> {
         self.status.as_ref()
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
@@ -68,7 +68,7 @@ impl RequestPhoneNumberOutput {
     pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
-    /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages or both.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_capabilities.is_none()`.
     pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
@@ -102,11 +102,11 @@ impl RequestPhoneNumberOutput {
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
-    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(&self) -> bool {
         self.deletion_protection_enabled
     }
-    /// <p>The unique identifier of the pool associated with the phone number </p>
+    /// <p>The unique identifier of the pool associated with the phone number</p>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -219,17 +219,17 @@ impl RequestPhoneNumberOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NumberStatus> {
         &self.status
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }
@@ -251,19 +251,19 @@ impl RequestPhoneNumberOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_number_capabilities`](Self::set_number_capabilities).
     ///
-    /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages or both.</p>
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         let mut v = self.number_capabilities.unwrap_or_default();
         v.push(input);
         self.number_capabilities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages or both.</p>
     pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
         self.number_capabilities = input;
         self
     }
-    /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages or both.</p>
     pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
         &self.number_capabilities
     }
@@ -365,31 +365,31 @@ impl RequestPhoneNumberOutputBuilder {
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name
     }
-    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.deletion_protection_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection_enabled = input;
         self
     }
-    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
-    /// <p>The unique identifier of the pool associated with the phone number </p>
+    /// <p>The unique identifier of the pool associated with the phone number</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the pool associated with the phone number </p>
+    /// <p>The unique identifier of the pool associated with the phone number</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
-    /// <p>The unique identifier of the pool associated with the phone number </p>
+    /// <p>The unique identifier of the pool associated with the phone number</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }

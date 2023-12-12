@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrincipalUser {
-    /// <p> The identifier of the user. </p>
+    /// <p>The identifier of the user.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
     pub access: crate::types::ReadAccessType,
@@ -12,7 +12,7 @@ pub struct PrincipalUser {
     pub membership_type: ::std::option::Option<crate::types::MembershipType>,
 }
 impl PrincipalUser {
-    /// <p> The identifier of the user. </p>
+    /// <p>The identifier of the user.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct PrincipalUserBuilder {
     pub(crate) membership_type: ::std::option::Option<crate::types::MembershipType>,
 }
 impl PrincipalUserBuilder {
-    /// <p> The identifier of the user. </p>
+    /// <p>The identifier of the user.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier of the user. </p>
+    /// <p>The identifier of the user.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> The identifier of the user. </p>
+    /// <p>The identifier of the user.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

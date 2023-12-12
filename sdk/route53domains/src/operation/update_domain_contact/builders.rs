@@ -165,17 +165,17 @@ impl UpdateDomainContactFluentBuilder {
     pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
         self.inner.get_tech_contact()
     }
-    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub fn consent(mut self, input: crate::types::Consent) -> Self {
         self.inner = self.inner.consent(input);
         self
     }
-    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub fn set_consent(mut self, input: ::std::option::Option<crate::types::Consent>) -> Self {
         self.inner = self.inner.set_consent(input);
         self
     }
-    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
         self.inner.get_consent()
     }

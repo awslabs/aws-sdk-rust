@@ -22,7 +22,7 @@ impl ListImportFailuresInputBuilder {
 }
 /// Fluent builder constructing a request to `ListImportFailures`.
 ///
-/// <p> Returns a list of failures for the specified import. </p>
+/// <p>Returns a list of failures for the specified import.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImportFailuresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListImportFailuresFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_import_failures::paginator::ListImportFailuresPaginator {
         crate::operation::list_import_failures::paginator::ListImportFailuresPaginator::new(self.handle, self.inner)
     }
-    /// <p> The ID of the import. </p>
+    /// <p>The ID of the import.</p>
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.import_id(input.into());
         self
     }
-    /// <p> The ID of the import. </p>
+    /// <p>The ID of the import.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_import_id(input);
         self
     }
-    /// <p> The ID of the import. </p>
+    /// <p>The ID of the import.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_import_id()
     }
-    /// <p> The maximum number of failures to display on a single page. </p>
+    /// <p>The maximum number of failures to display on a single page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of failures to display on a single page. </p>
+    /// <p>The maximum number of failures to display on a single page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of failures to display on a single page. </p>
+    /// <p>The maximum number of failures to display on a single page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> A token you can use to get the next page of import failures. </p>
+    /// <p>A token you can use to get the next page of import failures.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> A token you can use to get the next page of import failures. </p>
+    /// <p>A token you can use to get the next page of import failures.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> A token you can use to get the next page of import failures. </p>
+    /// <p>A token you can use to get the next page of import failures.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

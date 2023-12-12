@@ -5,24 +5,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DriftStatusSummary {
-    /// <p> The drift status of the enabled control.</p>
+    /// <p>The drift status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected. </p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p> </li>
-    /// <li> <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control. </p> </li>
+    /// <li><p><code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p></li>
+    /// <li><p><code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control.</p></li>
     /// </ul>
     pub drift_status: ::std::option::Option<crate::types::DriftStatus>,
 }
 impl DriftStatusSummary {
-    /// <p> The drift status of the enabled control.</p>
+    /// <p>The drift status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected. </p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p> </li>
-    /// <li> <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control. </p> </li>
+    /// <li><p><code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p></li>
+    /// <li><p><code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control.</p></li>
     /// </ul>
     pub fn drift_status(&self) -> ::std::option::Option<&crate::types::DriftStatus> {
         self.drift_status.as_ref()
@@ -42,37 +42,37 @@ pub struct DriftStatusSummaryBuilder {
     pub(crate) drift_status: ::std::option::Option<crate::types::DriftStatus>,
 }
 impl DriftStatusSummaryBuilder {
-    /// <p> The drift status of the enabled control.</p>
+    /// <p>The drift status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected. </p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p> </li>
-    /// <li> <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control. </p> </li>
+    /// <li><p><code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p></li>
+    /// <li><p><code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control.</p></li>
     /// </ul>
     pub fn drift_status(mut self, input: crate::types::DriftStatus) -> Self {
         self.drift_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The drift status of the enabled control.</p>
+    /// <p>The drift status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected. </p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p> </li>
-    /// <li> <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control. </p> </li>
+    /// <li><p><code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p></li>
+    /// <li><p><code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control.</p></li>
     /// </ul>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::DriftStatus>) -> Self {
         self.drift_status = input;
         self
     }
-    /// <p> The drift status of the enabled control.</p>
+    /// <p>The drift status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected. </p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p> </li>
-    /// <li> <p> <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control. </p> </li>
+    /// <li><p><code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration doesn’t match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li><p><code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift for this enabled control. Drift is not supported for the control type.</p></li>
+    /// <li><p><code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control.</p></li>
     /// </ul>
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::DriftStatus> {
         &self.drift_status

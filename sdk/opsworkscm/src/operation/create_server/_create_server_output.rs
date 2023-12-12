@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServerOutput {
-    /// <p>The server that is created by the request. </p>
+    /// <p>The server that is created by the request.</p>
     pub server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
 }
 impl CreateServerOutput {
-    /// <p>The server that is created by the request. </p>
+    /// <p>The server that is created by the request.</p>
     pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
         self.server.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateServerOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateServerOutputBuilder {
-    /// <p>The server that is created by the request. </p>
+    /// <p>The server that is created by the request.</p>
     pub fn server(mut self, input: crate::types::Server) -> Self {
         self.server = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The server that is created by the request. </p>
+    /// <p>The server that is created by the request.</p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
         self.server = input;
         self
     }
-    /// <p>The server that is created by the request. </p>
+    /// <p>The server that is created by the request.</p>
     pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
         &self.server
     }

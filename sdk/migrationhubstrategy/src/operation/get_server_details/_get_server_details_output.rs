@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerDetailsOutput {
-    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> Detailed information about the server. </p>
+    /// <p>Detailed information about the server.</p>
     pub server_detail: ::std::option::Option<crate::types::ServerDetail>,
-    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
+    /// <p>The associated application group the server belongs to, as defined in AWS Application Discovery Service.</p>
     pub associated_applications: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
     _request_id: Option<String>,
 }
 impl GetServerDetailsOutput {
-    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> Detailed information about the server. </p>
+    /// <p>Detailed information about the server.</p>
     pub fn server_detail(&self) -> ::std::option::Option<&crate::types::ServerDetail> {
         self.server_detail.as_ref()
     }
-    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
+    /// <p>The associated application group the server belongs to, as defined in AWS Application Discovery Service.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_applications.is_none()`.
     pub fn associated_applications(&self) -> &[crate::types::AssociatedApplication] {
@@ -49,31 +49,31 @@ pub struct GetServerDetailsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetServerDetailsOutputBuilder {
-    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> Detailed information about the server. </p>
+    /// <p>Detailed information about the server.</p>
     pub fn server_detail(mut self, input: crate::types::ServerDetail) -> Self {
         self.server_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Detailed information about the server. </p>
+    /// <p>Detailed information about the server.</p>
     pub fn set_server_detail(mut self, input: ::std::option::Option<crate::types::ServerDetail>) -> Self {
         self.server_detail = input;
         self
     }
-    /// <p> Detailed information about the server. </p>
+    /// <p>Detailed information about the server.</p>
     pub fn get_server_detail(&self) -> &::std::option::Option<crate::types::ServerDetail> {
         &self.server_detail
     }
@@ -81,19 +81,19 @@ impl GetServerDetailsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_associated_applications`](Self::set_associated_applications).
     ///
-    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
+    /// <p>The associated application group the server belongs to, as defined in AWS Application Discovery Service.</p>
     pub fn associated_applications(mut self, input: crate::types::AssociatedApplication) -> Self {
         let mut v = self.associated_applications.unwrap_or_default();
         v.push(input);
         self.associated_applications = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
+    /// <p>The associated application group the server belongs to, as defined in AWS Application Discovery Service.</p>
     pub fn set_associated_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>) -> Self {
         self.associated_applications = input;
         self
     }
-    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
+    /// <p>The associated application group the server belongs to, as defined in AWS Application Discovery Service.</p>
     pub fn get_associated_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>> {
         &self.associated_applications
     }

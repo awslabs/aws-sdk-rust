@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDatasetInput {
-    /// <p>The name of the dataset to be deleted. </p>
+    /// <p>The name of the dataset to be deleted.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDatasetInput {
-    /// <p>The name of the dataset to be deleted. </p>
+    /// <p>The name of the dataset to be deleted.</p>
     pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteDatasetInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDatasetInputBuilder {
-    /// <p>The name of the dataset to be deleted. </p>
+    /// <p>The name of the dataset to be deleted.</p>
     /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the dataset to be deleted. </p>
+    /// <p>The name of the dataset to be deleted.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
     }
-    /// <p>The name of the dataset to be deleted. </p>
+    /// <p>The name of the dataset to be deleted.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_name
     }

@@ -9,7 +9,7 @@ pub struct GetUserOutput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub user_attributes: ::std::vec::Vec<crate::types::AttributeType>,
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
     pub preferred_mfa_setting: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl GetUserOutput {
         use std::ops::Deref;
         self.user_attributes.deref()
     }
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
     pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
@@ -124,19 +124,19 @@ impl GetUserOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
     ///
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn mfa_options(mut self, input: crate::types::MfaOptionType) -> Self {
         let mut v = self.mfa_options.unwrap_or_default();
         v.push(input);
         self.mfa_options = ::std::option::Option::Some(v);
         self
     }
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
         self.mfa_options = input;
         self
     }
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         &self.mfa_options
     }

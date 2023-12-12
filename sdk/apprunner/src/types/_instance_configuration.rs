@@ -5,22 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceConfiguration {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>1 vCPU</code> </p>
+    /// <p>Default: <code>1 vCPU</code></p>
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>2 GB</code> </p>
+    /// <p>Default: <code>2 GB</code></p>
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
     pub instance_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl InstanceConfiguration {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>1 vCPU</code> </p>
+    /// <p>Default: <code>1 vCPU</code></p>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>2 GB</code> </p>
+    /// <p>Default: <code>2 GB</code></p>
     pub fn memory(&self) -> ::std::option::Option<&str> {
         self.memory.as_deref()
     }
@@ -46,36 +46,36 @@ pub struct InstanceConfigurationBuilder {
 }
 impl InstanceConfigurationBuilder {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>1 vCPU</code> </p>
+    /// <p>Default: <code>1 vCPU</code></p>
     pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>1 vCPU</code> </p>
+    /// <p>Default: <code>1 vCPU</code></p>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu = input;
         self
     }
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>1 vCPU</code> </p>
+    /// <p>Default: <code>1 vCPU</code></p>
     pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpu
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>2 GB</code> </p>
+    /// <p>Default: <code>2 GB</code></p>
     pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>2 GB</code> </p>
+    /// <p>Default: <code>2 GB</code></p>
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory = input;
         self
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
-    /// <p>Default: <code>2 GB</code> </p>
+    /// <p>Default: <code>2 GB</code></p>
     pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory
     }

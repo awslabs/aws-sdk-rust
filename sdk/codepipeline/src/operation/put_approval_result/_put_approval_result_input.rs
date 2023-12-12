@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutApprovalResultInput {
-    /// <p>The name of the pipeline that contains the action. </p>
+    /// <p>The name of the pipeline that contains the action.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage that contains the action.</p>
     pub stage_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct PutApprovalResultInput {
     pub token: ::std::option::Option<::std::string::String>,
 }
 impl PutApprovalResultInput {
-    /// <p>The name of the pipeline that contains the action. </p>
+    /// <p>The name of the pipeline that contains the action.</p>
     pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
@@ -55,18 +55,18 @@ pub struct PutApprovalResultInputBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
 }
 impl PutApprovalResultInputBuilder {
-    /// <p>The name of the pipeline that contains the action. </p>
+    /// <p>The name of the pipeline that contains the action.</p>
     /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pipeline that contains the action. </p>
+    /// <p>The name of the pipeline that contains the action.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
-    /// <p>The name of the pipeline that contains the action. </p>
+    /// <p>The name of the pipeline that contains the action.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_name
     }

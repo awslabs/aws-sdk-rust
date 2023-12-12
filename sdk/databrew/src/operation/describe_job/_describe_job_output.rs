@@ -13,16 +13,16 @@ pub struct DescribeJobOutput {
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The name of the job.</p>
     pub name: ::std::string::String,
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - The job applies one or more transformations to a dataset.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::JobType>,
     /// <p>The identifier (user name) of the user who last modified the job.</p>
@@ -80,8 +80,8 @@ impl DescribeJobOutput {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -93,8 +93,8 @@ impl DescribeJobOutput {
     }
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - The job applies one or more transformations to a dataset.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::JobType> {
         self.r#type.as_ref()
@@ -277,8 +277,8 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input);
@@ -286,8 +286,8 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
@@ -295,8 +295,8 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         &self.encryption_mode
@@ -318,8 +318,8 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - The job applies one or more transformations to a dataset.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::JobType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -327,8 +327,8 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - The job applies one or more transformations to a dataset.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.r#type = input;
@@ -336,8 +336,8 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
+    /// <li><p><code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p></li>
+    /// <li><p><code>RECIPE</code> - The job applies one or more transformations to a dataset.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::JobType> {
         &self.r#type

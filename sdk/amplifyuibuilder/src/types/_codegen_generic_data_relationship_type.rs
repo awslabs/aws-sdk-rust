@@ -16,7 +16,7 @@ pub struct CodegenGenericDataRelationshipType {
     pub related_join_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the related join table in the data relationship.</p>
     pub related_join_table_name: ::std::option::Option<::std::string::String>,
-    /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
+    /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
     pub belongs_to_field_on_related_model: ::std::option::Option<::std::string::String>,
     /// <p>The associated fields of the data relationship.</p>
     pub associated_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -51,7 +51,7 @@ impl CodegenGenericDataRelationshipType {
     pub fn related_join_table_name(&self) -> ::std::option::Option<&str> {
         self.related_join_table_name.as_deref()
     }
-    /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
+    /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
     pub fn belongs_to_field_on_related_model(&self) -> ::std::option::Option<&str> {
         self.belongs_to_field_on_related_model.as_deref()
     }
@@ -180,17 +180,17 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     pub fn get_related_join_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_join_table_name
     }
-    /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
+    /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
     pub fn belongs_to_field_on_related_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.belongs_to_field_on_related_model = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
+    /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
     pub fn set_belongs_to_field_on_related_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.belongs_to_field_on_related_model = input;
         self
     }
-    /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
+    /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
     pub fn get_belongs_to_field_on_related_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.belongs_to_field_on_related_model
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStudio`](crate::operation::get_studio::builders::GetStudioFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::operation::get_studio::builders::GetStudioFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_studio::builders::GetStudioFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
+    ///   - [`studio_id(impl Into<String>)`](crate::operation::get_studio::builders::GetStudioFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_studio::builders::GetStudioFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID.</p><br>
     /// - On success, responds with [`GetStudioOutput`](crate::operation::get_studio::GetStudioOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::operation::get_studio::GetStudioOutput::studio): <p>Information about a studio.</p>
     /// - On failure, responds with [`SdkError<GetStudioError>`](crate::operation::get_studio::GetStudioError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopMetricStreams`](crate::operation::stop_metric_streams::builders::StopMetricStreamsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`names(impl Into<String>)`](crate::operation::stop_metric_streams::builders::StopMetricStreamsFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::stop_metric_streams::builders::StopMetricStreamsFluentBuilder::set_names):<br>required: **true**<br><p>The array of the names of metric streams to stop streaming.</p>  <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p><br>
+    ///   - [`names(impl Into<String>)`](crate::operation::stop_metric_streams::builders::StopMetricStreamsFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::stop_metric_streams::builders::StopMetricStreamsFluentBuilder::set_names):<br>required: **true**<br><p>The array of the names of metric streams to stop streaming.</p> <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p><br>
     /// - On success, responds with [`StopMetricStreamsOutput`](crate::operation::stop_metric_streams::StopMetricStreamsOutput)
     /// - On failure, responds with [`SdkError<StopMetricStreamsError>`](crate::operation::stop_metric_streams::StopMetricStreamsError)
     pub fn stop_metric_streams(&self) -> crate::operation::stop_metric_streams::builders::StopMetricStreamsFluentBuilder {

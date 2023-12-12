@@ -7,7 +7,7 @@ pub struct ResendContactReachabilityEmailOutput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
-    /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    /// <p><code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub is_already_verified: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl ResendContactReachabilityEmailOutput {
     pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    /// <p><code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub fn is_already_verified(&self) -> ::std::option::Option<bool> {
         self.is_already_verified
     }
@@ -85,17 +85,17 @@ impl ResendContactReachabilityEmailOutputBuilder {
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }
-    /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    /// <p><code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub fn is_already_verified(mut self, input: bool) -> Self {
         self.is_already_verified = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    /// <p><code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub fn set_is_already_verified(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_already_verified = input;
         self
     }
-    /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    /// <p><code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub fn get_is_already_verified(&self) -> &::std::option::Option<bool> {
         &self.is_already_verified
     }

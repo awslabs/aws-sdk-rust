@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEndpointsOutput {
-    /// <p> An array or endpoint objects. </p>
+    /// <p>An array or endpoint objects.</p>
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EndpointSummary>>,
-    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEndpointsOutput {
-    /// <p> An array or endpoint objects. </p>
+    /// <p>An array or endpoint objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
     pub fn endpoints(&self) -> &[crate::types::EndpointSummary] {
         self.endpoints.as_deref().unwrap_or_default()
     }
-    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListEndpointsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
     ///
-    /// <p> An array or endpoint objects. </p>
+    /// <p>An array or endpoint objects.</p>
     pub fn endpoints(mut self, input: crate::types::EndpointSummary) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
         v.push(input);
         self.endpoints = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array or endpoint objects. </p>
+    /// <p>An array or endpoint objects.</p>
     pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointSummary>>) -> Self {
         self.endpoints = input;
         self
     }
-    /// <p> An array or endpoint objects. </p>
+    /// <p>An array or endpoint objects.</p>
     pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointSummary>> {
         &self.endpoints
     }
-    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

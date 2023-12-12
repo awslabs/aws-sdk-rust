@@ -22,10 +22,10 @@ impl CreateFirewallInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFirewall`.
 ///
-/// <p>Creates an Network Firewall <code>Firewall</code> and accompanying <code>FirewallStatus</code> for a VPC. </p>
-/// <p>The firewall defines the configuration settings for an Network Firewall firewall. The settings that you can define at creation include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p>
-/// <p>After you create a firewall, you can provide additional settings, like the logging configuration. </p>
-/// <p>To update the settings for a firewall, you use the operations that apply to the settings themselves, for example <code>UpdateLoggingConfiguration</code>, <code>AssociateSubnets</code>, and <code>UpdateFirewallDeleteProtection</code>. </p>
+/// <p>Creates an Network Firewall <code>Firewall</code> and accompanying <code>FirewallStatus</code> for a VPC.</p>
+/// <p>The firewall defines the configuration settings for an Network Firewall firewall. The settings that you can define at creation include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource.</p>
+/// <p>After you create a firewall, you can provide additional settings, like the logging configuration.</p>
+/// <p>To update the settings for a firewall, you use the operations that apply to the settings themselves, for example <code>UpdateLoggingConfiguration</code>, <code>AssociateSubnets</code>, and <code>UpdateFirewallDeleteProtection</code>.</p>
 /// <p>To manage a firewall's tags, use the standard Amazon Web Services resource tagging operations, <code>ListTagsForResource</code>, <code>TagResource</code>, and <code>UntagResource</code>.</p>
 /// <p>To retrieve information about firewalls, use <code>ListFirewalls</code> and <code>DescribeFirewall</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -141,20 +141,20 @@ impl CreateFirewallFluentBuilder {
     pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_policy_arn()
     }
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
-    /// <p>You can't change this setting after you create the firewall. </p>
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
         self
     }
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
-    /// <p>You can't change this setting after you create the firewall. </p>
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
-    /// <p>You can't change this setting after you create the firewall. </p>
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
@@ -162,17 +162,17 @@ impl CreateFirewallFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
     ///
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.</p>
     pub fn subnet_mappings(mut self, input: crate::types::SubnetMapping) -> Self {
         self.inner = self.inner.subnet_mappings(input);
         self
     }
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.</p>
     pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>) -> Self {
         self.inner = self.inner.set_subnet_mappings(input);
         self
     }
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.</p>
     pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         self.inner.get_subnet_mappings()
     }

@@ -6,12 +6,12 @@
 pub struct ExplainabilityInfo {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     pub explainability_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the Explainability. States include: </p>
+    /// <p>The status of the Explainability. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -20,12 +20,12 @@ impl ExplainabilityInfo {
     pub fn explainability_arn(&self) -> ::std::option::Option<&str> {
         self.explainability_arn.as_deref()
     }
-    /// <p>The status of the Explainability. States include: </p>
+    /// <p>The status of the Explainability. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -60,34 +60,34 @@ impl ExplainabilityInfoBuilder {
     pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.explainability_arn
     }
-    /// <p>The status of the Explainability. States include: </p>
+    /// <p>The status of the Explainability. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the Explainability. States include: </p>
+    /// <p>The status of the Explainability. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the Explainability. States include: </p>
+    /// <p>The status of the Explainability. States include:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

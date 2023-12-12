@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnomalyMonitorInput {
-    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete.</p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnomalyMonitorInput {
-    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete.</p>
     pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
         self.monitor_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteAnomalyMonitorInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnomalyMonitorInputBuilder {
-    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete.</p>
     /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_arn = input;
         self
     }
-    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_arn
     }
