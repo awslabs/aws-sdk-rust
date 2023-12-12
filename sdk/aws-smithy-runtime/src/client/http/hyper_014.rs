@@ -132,53 +132,9 @@ pub fn default_client() -> Option<SharedHttpClient> {
 ///
 /// This connector also implements socket connect and read timeouts.
 ///
-/// # Examples
-///
-/// Construct a `HyperConnector` with the default TLS implementation (rustls).
-/// This can be useful when you want to share a Hyper connector between multiple
-/// generated Smithy clients.
-///
-/// ```no_run,ignore
-/// use aws_smithy_runtime::client::connectors::hyper_connector::{DefaultHttpsTcpConnector, HyperConnector};
-///
-/// let hyper_connector = HyperConnector::builder().build(DefaultHttpsTcpConnector::new());
-///
-/// // This connector can then be given to a generated service Config
-/// let config = my_service_client::Config::builder()
-///     .endpoint_url("http://localhost:1234")
-///     .http_connector(hyper_connector)
-///     .build();
-/// let client = my_service_client::Client::from_conf(config);
-/// ```
-///
-/// ## Use a Hyper client with WebPKI roots
-///
-/// A use case for where you may want to use the [`HyperConnector`] is when setting Hyper client settings
-/// that aren't otherwise exposed by the `Config` builder interface. Some examples include changing:
-///
-/// - Hyper client settings
-/// - Allowed TLS cipher suites
-/// - Using an alternative TLS connector library (not the default, rustls)
-/// - CA trust root certificates (illustrated using WebPKI below)
-///
-/// ```no_run,ignore
-/// use aws_smithy_runtime::client::connectors::hyper_connector::HyperConnector;
-///
-/// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
-///     .with_webpki_roots()
-///     .https_only()
-///     .enable_http1()
-///     .enable_http2()
-///     .build();
-/// let hyper_connector = HyperConnector::builder().build(https_connector);
-///
-/// // This connector can then be given to a generated service Config
-/// let config = my_service_client::Config::builder()
-///     .endpoint_url("https://example.com")
-///     .http_connector(hyper_connector)
-///     .build();
-/// let client = my_service_client::Client::from_conf(config);
-/// ```
+/// This shouldn't be used directly in most cases.
+/// See the docs on [`HyperClientBuilder`] for examples of how
+/// to customize the Hyper client.
 #[derive(Debug)]
 pub struct HyperConnector {
     adapter: Box<dyn HttpConnector>,
@@ -533,6 +489,55 @@ where
 ///
 /// This builder can be used to customize the underlying TCP connector used, as well as
 /// hyper client configuration.
+///
+/// # Examples
+///
+/// Construct a Hyper client with the default TLS implementation (rustls).
+/// This can be useful when you want to share a Hyper connector between multiple
+/// generated Smithy clients.
+///
+/// ```no_run,ignore
+/// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
+///
+/// let http_client = HyperClientBuilder::new().build_https();
+///
+/// // This connector can then be given to a generated service Config
+/// let config = my_service_client::Config::builder()
+///     .endpoint_url("http://localhost:1234")
+///     .http_client(http_client)
+///     .build();
+/// let client = my_service_client::Client::from_conf(config);
+/// ```
+///
+/// ## Use a Hyper client with WebPKI roots
+///
+/// A use case for where you may want to use the [`HyperClientBuilder`] is when
+/// setting Hyper client settings that aren't otherwise exposed by the `Config`
+/// builder interface. Some examples include changing:
+///
+/// - Hyper client settings
+/// - Allowed TLS cipher suites
+/// - Using an alternative TLS connector library (not the default, rustls)
+/// - CA trust root certificates (illustrated using WebPKI below)
+///
+/// ```no_run,ignore
+/// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
+///
+/// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
+///     .with_webpki_roots()
+///     .https_only()
+///     .enable_http1()
+///     .enable_http2()
+///     .build();
+/// let http_client = HyperClientBuilder::new().build(https_connector);
+///
+/// // This connector can then be given to a generated service Config
+/// let config = my_service_client::Config::builder()
+///     .endpoint_url("https://example.com")
+///     .http_client(http_client)
+///     .build();
+/// let client = my_service_client::Client::from_conf(config);
+/// ```
 #[derive(Clone, Default, Debug)]
 pub struct HyperClientBuilder {
     client_builder: Option<hyper_0_14::client::Builder>,

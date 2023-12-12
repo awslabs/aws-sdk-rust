@@ -27,6 +27,7 @@ pub struct AwsUserAgent {
     config_metadata: Vec<ConfigMetadata>,
     framework_metadata: Vec<FrameworkMetadata>,
     app_name: Option<AppName>,
+    build_env_additional_metadata: Option<AdditionalMetadata>,
 }
 
 impl AwsUserAgent {
@@ -49,6 +50,11 @@ impl AwsUserAgent {
             .get("AWS_EXECUTION_ENV")
             .ok()
             .map(|name| ExecEnvMetadata { name });
+
+        // Retrieve additional metadata at compile-time from the AWS_SDK_RUST_BUILD_UA_METADATA env var
+        let build_env_additional_metadata = option_env!("AWS_SDK_RUST_BUILD_UA_METADATA")
+            .and_then(|value| AdditionalMetadata::new(value).ok());
+
         AwsUserAgent {
             sdk_metadata,
             api_metadata,
@@ -63,6 +69,7 @@ impl AwsUserAgent {
             config_metadata: Default::default(),
             framework_metadata: Default::default(),
             app_name: Default::default(),
+            build_env_additional_metadata,
         }
     }
 
@@ -93,6 +100,7 @@ impl AwsUserAgent {
             config_metadata: Vec::new(),
             framework_metadata: Vec::new(),
             app_name: None,
+            build_env_additional_metadata: None,
         }
     }
 
@@ -187,6 +195,9 @@ impl AwsUserAgent {
         }
         if let Some(app_name) = &self.app_name {
             write!(ua_value, "app/{}", app_name).unwrap();
+        }
+        if let Some(additional_metadata) = &self.build_env_additional_metadata {
+            write!(ua_value, "{}", additional_metadata).unwrap();
         }
         if ua_value.ends_with(' ') {
             ua_value.truncate(ua_value.len() - 1);
@@ -662,39 +673,55 @@ mod test {
             "aws-sdk-rust/0.1 os/macos/1.15 lang/rust/1.50.0"
         );
     }
+
+    #[test]
+    fn generate_a_valid_ua_with_build_env_additional_metadata() {
+        let mut ua = AwsUserAgent::for_tests();
+        ua.build_env_additional_metadata = Some(AdditionalMetadata::new("asdf").unwrap());
+        assert_eq!(
+            ua.aws_ua_header(),
+            "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0 md/asdf"
+        );
+        assert_eq!(
+            ua.ua_header(),
+            "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0"
+        );
+    }
 }
 
 /*
 Appendix: User Agent ABNF
-sdk-ua-header        = "x-amz-user-agent:" OWS ua-string OWS
-ua-pair              = ua-name ["/" ua-value]
-ua-name              = token
-ua-value             = token
-version              = token
-name                 = token
-service-id           = token
-sdk-name             = java / ruby / php / dotnet / python / cli / kotlin / rust / js / cpp / go / go-v2
-os-family            = windows / linux / macos / android / ios / other
-config               = retry-mode
-additional-metadata  = "md/" ua-pair
-sdk-metadata         = "aws-sdk-" sdk-name "/" version
-api-metadata         = "api/" service-id "/" version
-os-metadata          = "os/" os-family ["/" version]
-language-metadata    = "lang/" language "/" version *(RWS additional-metadata)
-env-metadata         = "exec-env/" name
-feat-metadata        = "ft/" name ["/" version] *(RWS additional-metadata)
-config-metadata      = "cfg/" config ["/" value]
-framework-metadata   = "lib/" name ["/" version] *(RWS additional-metadata)
-appId                = "app/" name
-ua-string            = sdk-metadata RWS
-                       [api-metadata RWS]
-                       os-metadata RWS
-                       language-metadata RWS
-                       [env-metadata RWS]
-                       *(feat-metadata RWS)
-                       *(config-metadata RWS)
-                       *(framework-metadata RWS)
-                       [appId]
+sdk-ua-header                 = "x-amz-user-agent:" OWS ua-string OWS
+ua-pair                       = ua-name ["/" ua-value]
+ua-name                       = token
+ua-value                      = token
+version                       = token
+name                          = token
+service-id                    = token
+sdk-name                      = java / ruby / php / dotnet / python / cli / kotlin / rust / js / cpp / go / go-v2
+os-family                     = windows / linux / macos / android / ios / other
+config                        = retry-mode
+additional-metadata           = "md/" ua-pair
+sdk-metadata                  = "aws-sdk-" sdk-name "/" version
+api-metadata                  = "api/" service-id "/" version
+os-metadata                   = "os/" os-family ["/" version]
+language-metadata             = "lang/" language "/" version *(RWS additional-metadata)
+env-metadata                  = "exec-env/" name
+feat-metadata                 = "ft/" name ["/" version] *(RWS additional-metadata)
+config-metadata               = "cfg/" config ["/" value]
+framework-metadata            = "lib/" name ["/" version] *(RWS additional-metadata)
+app-id                        = "app/" name
+build-env-additional-metadata = "md/" value
+ua-string                     = sdk-metadata RWS
+                                [api-metadata RWS]
+                                os-metadata RWS
+                                language-metadata RWS
+                                [env-metadata RWS]
+                                *(feat-metadata RWS)
+                                *(config-metadata RWS)
+                                *(framework-metadata RWS)
+                                [app-id]
+                                [build-env-additional-metadata]
 
 # New metadata field might be added in the future and they must follow this format
 prefix               = token
