@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
 //!
 //! You can use Route 53 to:

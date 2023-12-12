@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! The Amplify UI Builder API provides a programmatic interface for creating and configuring user interface (UI) component libraries and themes for use in your Amplify applications. You can then connect these UI components to an application's backend Amazon Web Services resources.
 //!
 //! You can also use the Amplify Studio visual designer to create UI components and model data for an app. For more information, see [Introduction](https://docs.amplify.aws/console/adminui/intro) in the _Amplify Docs_.

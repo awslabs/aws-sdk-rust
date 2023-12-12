@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Contact Lens for Amazon Connect enables you to analyze conversations between customer and agents, by using speech transcription, natural language processing, and intelligent search capabilities. It performs sentiment analysis, detects issues, and enables you to automatically categorize contacts.
 //!
 //! Contact Lens for Amazon Connect provides both real-time and post-call analytics of customer-agent conversations. For more information, see [Analyze conversations using Contact Lens](https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html) in the _Amazon Connect Administrator Guide_.

@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! This is the _Amazon Lookout for Metrics API Reference_. For an introduction to the service with tutorials for getting started, visit [Amazon Lookout for Metrics Developer Guide](https://docs.aws.amazon.com/lookoutmetrics/latest/dev).
 //!
 //! ## Getting Started

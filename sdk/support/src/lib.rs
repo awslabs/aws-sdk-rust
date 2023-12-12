@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! The _Amazon Web Services Support API Reference_ is intended for programmers who need detailed information about the Amazon Web Services Support operations and data types. You can use the API to manage your support cases programmatically. The Amazon Web Services Support API uses HTTP methods that return results in JSON format.
 //!
 //! You can also use the Amazon Web Services Support API to access features for [Trusted Advisor](http://aws.amazon.com/premiumsupport/trustedadvisor/). You can return a list of checks and their descriptions, get check results, specify checks to refresh, and get the refresh status of checks.

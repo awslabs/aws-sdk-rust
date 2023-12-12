@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! This reference provides descriptions of the low-level AWS Marketplace Metering Service API.
 //!
 //! AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.

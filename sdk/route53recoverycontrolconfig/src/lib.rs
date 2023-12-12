@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Recovery Control Configuration API Reference for Amazon Route 53 Application Recovery Controller
 //!
 //! ## Getting Started

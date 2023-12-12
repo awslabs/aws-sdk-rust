@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! This is the _CodeCommit API Reference_. This reference provides descriptions of the operations and data types for CodeCommit API along with usage examples.
 //!
 //! You can use the CodeCommit API to work with the following objects:

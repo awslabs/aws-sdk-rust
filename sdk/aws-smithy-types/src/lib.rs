@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/* Automatically managed default lints */
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+/* End of automatically managed default lints */
 //! Protocol-agnostic types for smithy-rs.
 
 #![allow(clippy::derive_partial_eq_without_eq)]
@@ -13,7 +16,7 @@
     rust_2018_idioms,
     unreachable_pub
 )]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+
 pub mod base64;
 pub mod body;
 pub mod byte_stream;

@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/* Automatically managed default lints */
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+/* End of automatically managed default lints */
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![warn(
     missing_debug_implementations,
@@ -11,7 +14,6 @@
     rustdoc::missing_crate_level_docs,
     unreachable_pub
 )]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 
 //! `aws-config` provides implementations of region and credential resolution.
 //!
