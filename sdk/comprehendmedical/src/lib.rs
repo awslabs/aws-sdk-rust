@@ -190,9 +190,9 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod serde_util;
-
 mod endpoint_lib;
+
+mod serde_util;
 
 mod json_errors;
 

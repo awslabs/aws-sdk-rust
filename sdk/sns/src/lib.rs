@@ -190,11 +190,11 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
+mod endpoint_lib;
+
 mod lens;
 
 mod serde_util;
-
-mod endpoint_lib;
 
 mod rest_xml_wrapped_errors;
 

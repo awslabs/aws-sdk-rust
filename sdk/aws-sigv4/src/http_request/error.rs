@@ -7,7 +7,6 @@ use http::header::{InvalidHeaderName, InvalidHeaderValue};
 use http::uri::InvalidUri;
 use std::error::Error;
 use std::fmt;
-use std::str::Utf8Error;
 
 #[derive(Debug)]
 enum SigningErrorKind {
@@ -63,7 +62,6 @@ impl From<CanonicalRequestError> for SigningError {
 enum CanonicalRequestErrorKind {
     InvalidHeaderName { source: InvalidHeaderName },
     InvalidHeaderValue { source: InvalidHeaderValue },
-    InvalidUtf8InHeaderValue { source: Utf8Error },
     InvalidUri { source: InvalidUri },
     UnsupportedIdentityType,
 }
@@ -79,7 +77,6 @@ impl fmt::Display for CanonicalRequestError {
         match self.kind {
             InvalidHeaderName { .. } => write!(f, "invalid header name"),
             InvalidHeaderValue { .. } => write!(f, "invalid header value"),
-            InvalidUtf8InHeaderValue { .. } => write!(f, "invalid UTF-8 in header value"),
             InvalidUri { .. } => write!(f, "the uri was invalid"),
             UnsupportedIdentityType => {
                 write!(f, "only AWS credentials are supported for signing")
@@ -94,7 +91,6 @@ impl Error for CanonicalRequestError {
         match &self.kind {
             InvalidHeaderName { source } => Some(source),
             InvalidHeaderValue { source } => Some(source),
-            InvalidUtf8InHeaderValue { source } => Some(source),
             InvalidUri { source } => Some(source),
             UnsupportedIdentityType => None,
         }
@@ -102,12 +98,6 @@ impl Error for CanonicalRequestError {
 }
 
 impl CanonicalRequestError {
-    pub(crate) fn invalid_utf8_in_header_value(source: Utf8Error) -> Self {
-        Self {
-            kind: CanonicalRequestErrorKind::InvalidUtf8InHeaderValue { source },
-        }
-    }
-
     pub(crate) fn unsupported_identity_type() -> Self {
         Self {
             kind: CanonicalRequestErrorKind::UnsupportedIdentityType,

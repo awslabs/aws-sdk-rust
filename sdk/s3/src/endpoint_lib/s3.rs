@@ -7,7 +7,7 @@
 use crate::endpoint_lib::diagnostic::DiagnosticCollector;
 use crate::endpoint_lib::host::is_valid_host_label;
 use once_cell::sync::Lazy;
-use regex::Regex;
+use regex_lite::Regex;
 
 static VIRTUAL_HOSTABLE_SEGMENT: Lazy<Regex> = Lazy::new(|| Regex::new("^[a-z\\d][a-z\\d\\-.]{1,61}[a-z\\d]$").unwrap());
 

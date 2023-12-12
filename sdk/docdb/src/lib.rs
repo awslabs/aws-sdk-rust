@@ -186,9 +186,9 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod lens;
-
 mod endpoint_lib;
+
+mod lens;
 
 mod rest_xml_wrapped_errors;
 

@@ -201,11 +201,11 @@ mod s3_request_id;
 
 mod serialization_settings;
 
+mod endpoint_lib;
+
 mod lens;
 
 mod serde_util;
-
-mod endpoint_lib;
 
 mod event_receiver;
 

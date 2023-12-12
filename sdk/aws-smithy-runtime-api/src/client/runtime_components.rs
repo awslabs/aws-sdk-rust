@@ -44,12 +44,7 @@ pub(crate) mod sealed {
     /// This trait can be used to validate that certain required components or config values
     /// are available, and provide an error with helpful instructions if they are not.
     pub trait ValidateConfig: fmt::Debug + Send + Sync {
-        /// Validate the base client configuration.
-        ///
-        /// This gets called upon client construction. The full config may not be available at
-        /// this time (hence why it has [`RuntimeComponentsBuilder`] as an argument rather
-        /// than [`RuntimeComponents`]). Any error returned here will become a panic
-        /// in the client constructor.
+        #[doc = include_str!("../../rustdoc/validate_base_client_config.md")]
         fn validate_base_client_config(
             &self,
             runtime_components: &RuntimeComponentsBuilder,
@@ -59,11 +54,7 @@ pub(crate) mod sealed {
             Ok(())
         }
 
-        /// Validate the final client configuration.
-        ///
-        /// This gets called immediately after the [`Intercept::read_before_execution`] trait hook
-        /// when the final configuration has been resolved. Any error returned here will
-        /// cause the operation to return that error.
+        #[doc = include_str!("../../rustdoc/validate_final_config.md")]
         fn validate_final_config(
             &self,
             runtime_components: &RuntimeComponents,
