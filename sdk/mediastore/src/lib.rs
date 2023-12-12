@@ -25,7 +25,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.0.2", features = ["behavior-version-latest"] }
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
 //! aws-sdk-mediastore = "1.5.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

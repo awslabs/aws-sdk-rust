@@ -5,3 +5,5 @@
 
 /// Utility for capturing and displaying logs during a unit test.
 pub mod capture_test_logs;
+
+mod assertions;

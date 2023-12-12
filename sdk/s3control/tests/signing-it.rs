@@ -13,10 +13,10 @@ use aws_smithy_types::body::SdkBody;
 async fn test_signer() {
     let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
         http::Request::builder()
-            .header("authorization",
+        .header("authorization",
                     "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-east-1/s3/aws4_request, \
-                    SignedHeaders=host;x-amz-account-id;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-user-agent, \
-                    Signature=01a71226e959c7b0b998adf26fa266f9c3612df57a60b187d549822e86d90667")
+                    SignedHeaders=host;x-amz-account-id;x-amz-content-sha256;x-amz-date;x-amz-user-agent, \
+                    Signature=0102a74cb220f8445c4efada17660572ff813e07b524032ec831e8c2514be903")
             .uri("https://test-bucket.s3-control.us-east-1.amazonaws.com/v20180820/accesspoint")
             .body(SdkBody::empty())
             .unwrap(),

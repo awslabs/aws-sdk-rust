@@ -255,7 +255,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
             .push_auth_scheme(SharedAuthScheme::new(NoAuthScheme::default()));
         self.runtime_components
             .set_identity_cache(Some(IdentityCache::no_cache()));
-        self.runtime_components.push_identity_resolver(
+        self.runtime_components.set_identity_resolver(
             NO_AUTH_SCHEME_ID,
             SharedIdentityResolver::new(NoAuthIdentityResolver::new()),
         );

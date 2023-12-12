@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 http = "0.2.5"
-aws-config= { version = "1.0.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.0.3", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-apigatewaymanagement= { version = "1.5.0", path = "../../../sdk/apigatewaymanagement" }
 
 [dependencies.tokio]
