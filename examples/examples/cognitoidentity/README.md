@@ -24,7 +24,7 @@ Shows how to use the AWS SDK for Rust to work with Amazon Cognito Identity.
 
 ### Prerequisites
 
-For prerequisites, see the [README](../README.md#Prerequisites) in the `rust_dev_preview` folder.
+For prerequisites, see the [README](../README.md#Prerequisites) in the `rustv1` folder.
 
 
 <!--custom.prerequisites.start-->
@@ -46,7 +46,7 @@ For prerequisites, see the [README](../README.md#Prerequisites) in the `rust_dev
 
 
 To find instructions for running these tests, see the [README](../README.md#Tests)
-in the `rust_dev_preview` folder.
+in the `rustv1` folder.
 
 
 

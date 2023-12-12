@@ -24,7 +24,7 @@ Shows how to use the AWS SDK for Rust to work with Amazon Cognito Sync.
 
 ### Prerequisites
 
-For prerequisites, see the [README](../README.md#Prerequisites) in the `rust_dev_preview` folder.
+For prerequisites, see the [README](../README.md#Prerequisites) in the `rustv1` folder.
 
 
 <!--custom.prerequisites.start-->
@@ -52,7 +52,7 @@ Code excerpts that show you how to call individual service functions.
 
 
 To find instructions for running these tests, see the [README](../README.md#Tests)
-in the `rust_dev_preview` folder.
+in the `rustv1` folder.
 
 
 

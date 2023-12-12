@@ -6,11 +6,11 @@ edition = "2021"
 publish = false
 
 [dependencies]
+aws-config = { version = "1.1.0", path = "../../../sdk/aws-config" }
+aws-sdk-dynamodb = { version = "1.5.0", path = "../../../sdk/dynamodb" }
+aws-sdk-rekognition = { version = "1.5.0", path = "../../../sdk/rekognition" }
+aws-sdk-s3 = { version = "1.6.0", path = "../../../sdk/s3" }
 kamadak-exif = "0.5.4"
-aws-config= { version = "1.1.0", path = "../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "1.5.0", path = "../../../sdk/dynamodb" }
-aws-sdk-rekognition= { version = "1.5.0", path = "../../../sdk/rekognition" }
-aws-sdk-s3= { version = "1.6.0", path = "../../../sdk/s3" }
 aws-smithy-types= { version = "1.1.0", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
 aws-types= { version = "1.1.0", path = "../../../sdk/aws-types" }
 
